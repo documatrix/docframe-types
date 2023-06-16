@@ -87,10 +87,6 @@ mv ./build/Docframe.js.repaired ./build/Docframe.js
 
 protoc --go_out=. --go_opt=Mbuild/docframe.proto=/docframepb ./build/docframe.proto
 
-pushd src/DocumentElements
-go generate .
-popd
-
 pushd docframepb
 go generate .
 popd
