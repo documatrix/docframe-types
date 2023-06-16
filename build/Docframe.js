@@ -3424,6 +3424,7 @@ $root.ProtoFont = (function() {
      * @name IProtoFont
      * @interface IProtoFont
      * @property {number|null} [id] ProtoFont id
+     * @property {string|null} [name] ProtoFont name
      */
 
     /**
@@ -3448,6 +3449,14 @@ $root.ProtoFont = (function() {
      * @instance
      */
     ProtoFont.prototype.id = 0;
+
+    /**
+     * ProtoFont name.
+     * @member {string} name
+     * @memberof ProtoFont
+     * @instance
+     */
+    ProtoFont.prototype.name = "";
 
     /**
      * Creates a new ProtoFont instance using the specified properties.
@@ -3475,6 +3484,8 @@ $root.ProtoFont = (function() {
             writer = $Writer.create();
         if (message.id != null && Object.hasOwnProperty.call(message, "id"))
             writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
         return writer;
     };
 
@@ -3511,6 +3522,10 @@ $root.ProtoFont = (function() {
             switch (tag >>> 3) {
             case 1: {
                     message.id = reader.int32();
+                    break;
+                }
+            case 2: {
+                    message.name = reader.string();
                     break;
                 }
             default:
@@ -3551,6 +3566,9 @@ $root.ProtoFont = (function() {
         if (message.id != null && message.hasOwnProperty("id"))
             if (!$util.isInteger(message.id))
                 return "id: integer expected";
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
         return null;
     };
 
@@ -3568,6 +3586,8 @@ $root.ProtoFont = (function() {
         var message = new $root.ProtoFont();
         if (object.id != null)
             message.id = object.id | 0;
+        if (object.name != null)
+            message.name = String(object.name);
         return message;
     };
 
@@ -3584,10 +3604,14 @@ $root.ProtoFont = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.defaults)
+        if (options.defaults) {
             object.id = 0;
+            object.name = "";
+        }
         if (message.id != null && message.hasOwnProperty("id"))
             object.id = message.id;
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
         return object;
     };
 

@@ -1416,6 +1416,9 @@ export interface IProtoFont {
 
     /** ProtoFont id */
     id?: (number|null);
+
+    /** ProtoFont name */
+    name?: (string|null);
 }
 
 /** Represents a ProtoFont. */
@@ -1429,6 +1432,9 @@ export class ProtoFont implements IProtoFont {
 
     /** ProtoFont id. */
     public id: number;
+
+    /** ProtoFont name. */
+    public name: string;
 
     /**
      * Creates a new ProtoFont instance using the specified properties.
