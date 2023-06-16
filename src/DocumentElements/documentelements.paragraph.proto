@@ -1,0 +1,9 @@
+message ProtoParagraph {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  ProtoParagraphFormat format = 3;
+  ProtoParagraphFormat overwrite = 4;
+}

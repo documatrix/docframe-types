@@ -1,0 +1,130 @@
+message ProtoTable {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  ProtoTableSettings settings = 3;
+  string configName = 4;
+}
+
+message ProtoTableConfig {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  // extends DocumentElement
+
+  ProtoTableSettings settings = 2;
+  string configName = 3;
+}
+
+message ProtoTableSettings {
+  ProtoMeasure xOffset = 1;
+  ProtoBoxedBool leftMeasure = 2;
+  ProtoMeasure width = 3;
+  ProtoBoxedUint32 repeatHeader = 4;
+}
+
+
+enum ProtoTableContentGroupType {
+  BODY = 0;
+  HEADER = 1;
+  FOOTER = 2;
+  SUB_HEADER = 3;
+}
+
+message ProtoBoxedTableContentGroupType {
+  ProtoTableContentGroupType value = 1;
+  bool isNull = 2;
+}
+
+message ProtoTableContentGroup {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  ProtoTableContentGroupSettings settings = 3;
+}
+
+message ProtoTableContentGroupConfig {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  // extends DocumentElement
+
+  ProtoTableContentGroupSettings settings = 2;
+  string configName = 3;
+}
+
+message ProtoTableContentGroupSettings {
+  ProtoBoxedTableContentGroupType contentGroupType = 1;
+  repeated ProtoColor backgroundColors = 2;
+}
+
+
+message ProtoTableRow {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  ProtoTableRowSettings settings = 3;
+  ProtoBoxedUint32 rowConfigNumber = 4;
+}
+
+message ProtoTableRowConfig {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  // extends DocumentElement
+
+  ProtoTableRowSettings settings = 2;
+  string configName = 3;
+  string rowHeader = 4;
+  string rowFooter = 5;
+}
+
+message ProtoTableRowSettings {
+  ProtoMeasure minHeight = 1;
+}
+
+enum ProtoTableCellType {
+  TABLE_CELL_BODY = 0;
+  TABLE_CELL_ROW_HEADER = 1;
+  TABLE_CELL_ROW_FOOTER = 2;
+}
+
+message ProtoBoxedTableCellType {
+  ProtoTableCellType value = 1;
+  bool isNull = 2;
+}
+
+message ProtoTableCell {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  ProtoTableCellSettings settings = 3;
+  ProtoBoxedUint32 cellConfigNumber = 4;
+  ProtoBoxedUint32 index = 5;
+}
+
+message ProtoTableCellConfig {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  // extends DocumentElement
+
+  ProtoTableCellSettings settings = 2;
+  string configName = 3;
+  ProtoBoxedTableCellType cellType = 4;
+}
+
+message ProtoTableCellSettings {
+  ProtoMeasure width = 1;
+  ProtoBoxedHorizontalAlignment align = 2;
+  ProtoBoxedVerticalAlignment valign = 3;
+  ProtoColor backgroundColor = 4;
+  ProtoSideMeasures padding = 5;
+  ProtoSideBorders border = 6;
+  ProtoSideMeasures margin = 7;
+  double rotation = 8;
+}

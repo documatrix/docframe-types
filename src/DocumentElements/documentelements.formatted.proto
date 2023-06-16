@@ -1,0 +1,9 @@
+message ProtoFormatted {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  // extends DocumentElement
+
+  bool dteditorSyntax = 2;
+  string doctypeContent = 3;
+  string htmlContent = 4;
+}

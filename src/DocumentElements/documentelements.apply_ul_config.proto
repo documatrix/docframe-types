@@ -1,0 +1,4 @@
+
+message ProtoApplyUlConfig {
+  string ulConfigUuid = 1;
+}

@@ -1,0 +1,6 @@
+
+message ProtoPDef {
+  ProtoBoxedMeasure pageWidth = 1;
+  ProtoBoxedMeasure pageDepth = 2;
+  string Uuid = 3;
+}

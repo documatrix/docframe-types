@@ -1,0 +1,4 @@
+message ProtoBoxedString {
+  string value = 1;
+  bool isNull = 2;
+}

@@ -1,0 +1,8 @@
+message ProtoFont {
+  int32 id = 1;
+}
+
+message ProtoBoxedFont {
+  ProtoFont value = 1;
+  bool isNull = 2;
+}

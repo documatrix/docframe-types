@@ -1,0 +1,17 @@
+enum ProtoAdvancedIllustrationAreaTextFlowType {
+  DO_NOT_USE_AT_ALL = 0;
+  AROUND = 1;
+  NO_FLOW = 2;
+  FOREGROUND = 3;
+  BACKGROUND = 4;
+}
+
+message ProtoBoxedAdvancedIllustrationAreaTextFlowType {
+  ProtoAdvancedIllustrationAreaTextFlowType value = 1;
+  bool isNull = 2;
+}
+
+message ProtoAdvancedIllustrationArea {
+  ProtoBoxedAdvancedIllustrationAreaTextFlowType textFlow = 1;
+  ProtoSideMeasures margin = 2;
+}

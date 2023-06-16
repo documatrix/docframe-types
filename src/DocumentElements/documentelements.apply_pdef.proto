@@ -1,0 +1,4 @@
+
+message ProtoApplyProtoPDef {
+  string pDefUuid = 1;
+}

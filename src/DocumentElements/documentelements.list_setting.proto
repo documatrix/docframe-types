@@ -1,0 +1,14 @@
+message ProtoListSetting {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  // extends DocumentElement
+
+  string name = 2;
+  repeated ProtoListLevelSetting listLevelSettings = 3;
+  ProtoListLevelSetting defaultListLevelSetting = 4;
+}
+
+message ProtoBoxedListSetting {
+  ProtoListSetting value = 1;
+  bool isNull = 2;
+}

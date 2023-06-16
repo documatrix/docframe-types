@@ -1,0 +1,117 @@
+enum ProtoNumberType {
+  ARABIC = 0;
+  ROM_UPPERCASE = 1;
+  ROM_LOWERCASE = 2;
+  LETTER_UPPERCASE = 3;
+  LETTER_LOWERCASE = 4;
+}
+
+enum ProtoListLevelSettingType {
+  UNNUMBERED = 0;
+  NUMERIC = 1;
+  IMAGE = 2;
+}
+
+message ProtoListLevelSetting {
+  string listSettingName = 1;
+  ProtoBoxedUint32 fontSize = 2;
+  ProtoListLevelSettingType type = 3;
+  int32 level = 4;
+  string prefix = 5;
+  string suffix = 6;
+  ProtoFont fixFontFamily = 7;
+  bool fixBold = 8;
+  bool fixItalic = 9;
+  int32 indentionWidth = 10;
+  ProtoColor color = 11;
+
+  string imageName = 12;
+
+  ProtoFont fontFamily = 13;
+  ProtoBoxedBool bold = 14;
+  ProtoBoxedBool italic = 15;
+
+  ProtoNumberType numberType = 16;
+
+  string character = 17;
+}
+
+message ProtoImageListLevelSetting {
+  // extends ListLevelSetting
+  string listSettingName = 1;
+  ProtoBoxedUint32 fontSize = 2;
+  ProtoListLevelSettingType type = 3;
+  int32 level = 4;
+  string prefix = 5;
+  string suffix = 6;
+  ProtoFont fixFontFamily = 7;
+  bool fixBold = 8;
+  bool fixItalic = 9;
+  int32 indentionWidth = 10;
+  ProtoColor color = 11;
+  // extends ListLevelSetting
+
+  string imageName = 12;
+}
+
+message ProtoTextListLevelSetting {
+  // extends ListLevelSetting
+  string listSettingName = 1;
+  ProtoBoxedUint32 fontSize = 2;
+  ProtoListLevelSettingType type = 3;
+  int32 level = 4;
+  string prefix = 5;
+  string suffix = 6;
+  ProtoFont fixFontFamily = 7;
+  bool fixBold = 8;
+  bool fixItalic = 9;
+  int32 indentionWidth = 10;
+  ProtoColor color = 11;
+  // extends ListLevelSetting
+
+  ProtoFont fontFamily = 12;
+  ProtoBoxedBool bold = 13;
+  ProtoBoxedBool italic = 14;
+}
+
+message ProtoNumberListLevelSetting {
+  // extends TextListLevelSetting
+  string listSettingName = 1;
+  ProtoBoxedUint32 fontSize = 2;
+  ProtoListLevelSettingType type = 3;
+  int32 level = 4;
+  string prefix = 5;
+  string suffix = 6;
+  ProtoFont fixFontFamily = 7;
+  bool fixBold = 8;
+  bool fixItalic = 9;
+  int32 indentionWidth = 10;
+  ProtoColor color = 11;
+  ProtoFont fontFamily = 12;
+  ProtoBoxedBool bold = 13;
+  ProtoBoxedBool italic = 14;
+  // extends TextListLevelSetting
+
+  ProtoNumberType numberType = 15;
+}
+
+message ProtoUnnumberedListLevelSetting {
+  // extends TextListLevelSetting
+  string listSettingName = 1;
+  ProtoBoxedUint32 fontSize = 2;
+  ProtoListLevelSettingType type = 3;
+  int32 level = 4;
+  string prefix = 5;
+  string suffix = 6;
+  ProtoFont fixFontFamily = 7;
+  bool fixBold = 8;
+  bool fixItalic = 9;
+  int32 indentionWidth = 10;
+  ProtoColor color = 11;
+  ProtoFont fontFamily = 12;
+  ProtoBoxedBool bold = 13;
+  ProtoBoxedBool italic = 14;
+  // extends TextListLevelSetting
+
+  string character = 15;
+}

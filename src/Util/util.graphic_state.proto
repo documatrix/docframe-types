@@ -1,0 +1,9 @@
+message ProtoGraphicState {
+  ProtoBoxedBool bold = 1;
+  ProtoBoxedBool italic = 2;
+  repeated ProtoColor colorStack = 3;
+  ProtoBoxedBool subscript = 4;
+  ProtoBoxedBool superscript = 5;
+  ProtoBoxedBool underline = 6;
+  ProtoBoxedBool strikethrough = 7;
+}

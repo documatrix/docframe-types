@@ -1,0 +1,24 @@
+enum ProtoHorizontalAlignment {
+  ALIGN_LEFT = 0;
+  ALIGN_CENTER = 1;
+  ALIGN_RIGHT = 2;
+  ALIGN_JUSTIFY = 3;
+  ALIGN_FULL_JUSTIFY = 4;
+  ALIGN_CENTER_ON_PAGE = 5;
+}
+
+enum ProtoVerticalAlignment {
+  TOP = 0;
+  MIDDLE = 1;
+  BOTTOM = 2;
+}
+
+message ProtoBoxedHorizontalAlignment {
+  ProtoHorizontalAlignment value = 1;
+  bool isNull = 2;
+}
+
+message ProtoBoxedVerticalAlignment {
+  ProtoVerticalAlignment value = 1;
+  bool isNull = 2;
+}

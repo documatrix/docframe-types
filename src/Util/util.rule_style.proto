@@ -1,0 +1,14 @@
+enum ProtoRuleStyle {
+  DUMMY_RULE_STYLE = 0; // dummy is needed here, because otherwise protoc command produces error
+  SOLID = 1;
+  SPARSE_SHADING = 2;
+  MEDIUM_SHADING = 3;
+  DENSE_SHADING = 4;
+  LIGHT_DOTTED = 5;
+  MEDIUM_DOTTED = 6;
+  HEAVY_DOTTED = 7;
+  LIGHT_DASHED = 8;
+  MEDIUM_DASHED = 9;
+  HEAVY_DASHED = 10;
+  DASH_PATTERN = 11;
+}

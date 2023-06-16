@@ -1,0 +1,5 @@
+
+message ProtoUlConfig {
+  ProtoUnderlineMode mode = 1;
+  string Uuid = 2;
+}

@@ -1,0 +1,7 @@
+message ProtoSpaceVertically {
+  //extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  //extends DocumentElement
+
+  ProtoMeasure space = 2;
+}

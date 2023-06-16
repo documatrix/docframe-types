@@ -1,0 +1,7 @@
+message ProtoLink {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  // extends BranchDocumentElement
+
+  string url = 2;
+}

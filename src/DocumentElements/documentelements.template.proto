@@ -1,0 +1,11 @@
+message ProtoTemplate {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  // Maps DCT intern name to DCD intern name of the current template.
+  // This mapping might change while traversing the template tree and entering a new subtemplate.
+  map<string, string> containerMapping = 3;
+  repeated string comChannelUUIDs = 4;
+}

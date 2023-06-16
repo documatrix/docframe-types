@@ -1,0 +1,10 @@
+enum ProtoSPBMode {
+  NONE = 0;
+  SUPERSCRIPT = 1;
+  SUBSCRIPT = 2;
+}
+
+message ProtoBoxedSPBMode {
+  ProtoSPBMode value = 1;
+  bool isNull = 2;
+}

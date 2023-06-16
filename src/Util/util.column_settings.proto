@@ -1,0 +1,20 @@
+enum ProtoPositionMode {
+  CENTER = 0;
+  LEFT = 1;
+  FOLIO = 2;
+  RIGHT = 3;
+  REVERSE_FOLIO = 4;
+}
+
+message ProtoBoxedPositionMode {
+  ProtoPositionMode value = 1;
+  bool isNull = 2;
+}
+
+message ProtoColumnSettings {
+  ProtoBoxedMeasure width = 1;
+  ProtoBoxedMeasure interColumnSpace = 2;
+  ProtoBoxedMeasure positionOffset = 3;
+  ProtoPositionMode positionMode = 4;
+  ProtoBoxedMeasure outsideMargin = 5;
+}

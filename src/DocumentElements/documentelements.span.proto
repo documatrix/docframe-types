@@ -1,0 +1,14 @@
+message ProtoSpan {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  ProtoBoxedBool bold = 3;
+  ProtoBoxedBool italic = 4;
+  ProtoColor color = 5;
+  ProtoBoxedBool subscript = 6;
+  ProtoBoxedBool superscript = 7;
+  ProtoBoxedBool underline = 8;
+  ProtoBoxedBool strikethrough = 9;
+}

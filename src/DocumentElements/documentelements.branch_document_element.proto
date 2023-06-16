@@ -1,0 +1,8 @@
+message ProtoBranchDocumentElement {
+  repeated ProtoDocumentElement _children = 1;
+
+  //extends DocumentElement
+  ProtoDocumentElement parent = 2;
+  //extends DocumentElement
+
+}

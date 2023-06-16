@@ -1,0 +1,5 @@
+message ProtoLinebreak {
+  //extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  //extends DocumentElement
+}

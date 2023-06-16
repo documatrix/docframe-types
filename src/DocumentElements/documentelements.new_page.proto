@@ -1,0 +1,11 @@
+enum ProtoPageMode {
+  NEXT_PAGE = 0;
+  NEXT_RECTO_PAGE = 1;
+  NEXT_VERSO_PAGE = 2;
+}
+
+message ProtoNewPage {
+  uint32  paperTray = 1;
+  uint32  paperCount = 2;
+  ProtoPageMode pageMode = 3;
+}

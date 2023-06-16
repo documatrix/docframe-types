@@ -1,0 +1,16 @@
+message ProtoStrikethroughSpec {
+
+  // extends UnderlineSpec
+  ProtoMeasure weight = 1;
+  ProtoUnderlineMode mode = 2;
+  ProtoColor color = 3;
+  int32 offsetEm = 4;
+  ProtoRuleStyle style = 5;
+  // extends UnderlineSpec
+
+}
+
+message ProtoBoxedStrikethroughSpec {
+  ProtoStrikethroughSpec value = 1;
+  bool isNull = 2;
+}

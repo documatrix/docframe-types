@@ -1,0 +1,4 @@
+
+message ProtoApplyPtConfig {
+  string ptConfigUuid = 1;
+}

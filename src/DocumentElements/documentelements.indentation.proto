@@ -1,0 +1,11 @@
+message ProtoIndentation {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  ProtoBoxedMeasure left = 3;
+  ProtoBoxedMeasure right = 4;
+  string uuid = 5;
+  repeated string comChannelUUIDs = 6;
+}
