@@ -7593,6 +7593,9 @@ export interface IProtoBarcode {
 
     /** ProtoBarcode data */
     data?: (string|null);
+
+    /** ProtoBarcode positionAbsolute */
+    positionAbsolute?: (boolean|null);
 }
 
 /** Represents a ProtoBarcode. */
@@ -7630,6 +7633,9 @@ export class ProtoBarcode implements IProtoBarcode {
 
     /** ProtoBarcode data. */
     public data: string;
+
+    /** ProtoBarcode positionAbsolute. */
+    public positionAbsolute: boolean;
 
     /**
      * Creates a new ProtoBarcode instance using the specified properties.

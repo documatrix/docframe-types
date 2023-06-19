@@ -604,6 +604,7 @@ ProtoMeasure width = 6;
 ProtoMeasure height = 7;
 ProtoMeasure padding = 8;
 string data = 9;
+bool positionAbsolute = 10;
 }
 message ProtoBrickReference {
 string internName = 1;

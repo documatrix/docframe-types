@@ -19997,6 +19997,7 @@ $root.ProtoBarcode = (function() {
      * @property {IProtoMeasure|null} [height] ProtoBarcode height
      * @property {IProtoMeasure|null} [padding] ProtoBarcode padding
      * @property {string|null} [data] ProtoBarcode data
+     * @property {boolean|null} [positionAbsolute] ProtoBarcode positionAbsolute
      */
 
     /**
@@ -20087,6 +20088,14 @@ $root.ProtoBarcode = (function() {
     ProtoBarcode.prototype.data = "";
 
     /**
+     * ProtoBarcode positionAbsolute.
+     * @member {boolean} positionAbsolute
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.positionAbsolute = false;
+
+    /**
      * Creates a new ProtoBarcode instance using the specified properties.
      * @function create
      * @memberof ProtoBarcode
@@ -20128,6 +20137,8 @@ $root.ProtoBarcode = (function() {
             $root.ProtoMeasure.encode(message.padding, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
         if (message.data != null && Object.hasOwnProperty.call(message, "data"))
             writer.uint32(/* id 9, wireType 2 =*/74).string(message.data);
+        if (message.positionAbsolute != null && Object.hasOwnProperty.call(message, "positionAbsolute"))
+            writer.uint32(/* id 10, wireType 0 =*/80).bool(message.positionAbsolute);
         return writer;
     };
 
@@ -20196,6 +20207,10 @@ $root.ProtoBarcode = (function() {
                 }
             case 9: {
                     message.data = reader.string();
+                    break;
+                }
+            case 10: {
+                    message.positionAbsolute = reader.bool();
                     break;
                 }
             default:
@@ -20292,6 +20307,9 @@ $root.ProtoBarcode = (function() {
         if (message.data != null && message.hasOwnProperty("data"))
             if (!$util.isString(message.data))
                 return "data: string expected";
+        if (message.positionAbsolute != null && message.hasOwnProperty("positionAbsolute"))
+            if (typeof message.positionAbsolute !== "boolean")
+                return "positionAbsolute: boolean expected";
         return null;
     };
 
@@ -20416,6 +20434,8 @@ $root.ProtoBarcode = (function() {
         }
         if (object.data != null)
             message.data = String(object.data);
+        if (object.positionAbsolute != null)
+            message.positionAbsolute = Boolean(object.positionAbsolute);
         return message;
     };
 
@@ -20442,6 +20462,7 @@ $root.ProtoBarcode = (function() {
             object.height = null;
             object.padding = null;
             object.data = "";
+            object.positionAbsolute = false;
         }
         if (message.type != null && message.hasOwnProperty("type"))
             object.type = options.enums === String ? $root.ProtoBarcodeType[message.type] === undefined ? message.type : $root.ProtoBarcodeType[message.type] : message.type;
@@ -20461,6 +20482,8 @@ $root.ProtoBarcode = (function() {
             object.padding = $root.ProtoMeasure.toObject(message.padding, options);
         if (message.data != null && message.hasOwnProperty("data"))
             object.data = message.data;
+        if (message.positionAbsolute != null && message.hasOwnProperty("positionAbsolute"))
+            object.positionAbsolute = message.positionAbsolute;
         return object;
     };
 

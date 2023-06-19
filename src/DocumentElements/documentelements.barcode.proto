@@ -10,4 +10,5 @@ message ProtoBarcode {
   ProtoMeasure height = 7;
   ProtoMeasure padding = 8;
   string data = 9;
+  bool positionAbsolute = 10;
 }
