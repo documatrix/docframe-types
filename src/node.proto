@@ -57,6 +57,8 @@ message Node {
     ProtoTextListLevelSetting text_list_level_setting = 53;
     ProtoUnnumberedListLevelSetting unnumbered_list_level_setting = 54;
     ProtoIndentation indentation = 55;
+
+    ProtoBarcode barcode = 56;
   }
 }
 
@@ -121,4 +123,5 @@ enum NodeType {
   UTIL_CROP_SETTINGS = 58;
   UTIL_FLIP_SETTINGS = 59;
   DOCUMENT_ELEMENT_INDENTATION = 60;
+  DOCUMENT_ELEMENT_BARCODE = 61;
 }

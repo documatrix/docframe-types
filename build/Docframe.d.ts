@@ -2343,6 +2343,20 @@ export class ProtoBoxedVerticalAlignment implements IProtoBoxedVerticalAlignment
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
+/** ProtoBarcodeType enum. */
+export enum ProtoBarcodeType {
+    PDF417 = 0,
+    DATAMATRIX = 1,
+    BC128 = 2,
+    QR = 3,
+    ITF = 4,
+    EAN8 = 5,
+    EAN13 = 6,
+    CODE39 = 7,
+    SWISSQR = 8,
+    AZTEC = 9
+}
+
 /** Properties of a ProtoLinebreak. */
 export interface IProtoLinebreak {
 
@@ -7550,6 +7564,151 @@ export class ProtoText implements IProtoText {
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
+/** Properties of a ProtoBarcode. */
+export interface IProtoBarcode {
+
+    /** ProtoBarcode type */
+    type?: (ProtoBarcodeType|null);
+
+    /** ProtoBarcode x */
+    x?: (IProtoMeasure|null);
+
+    /** ProtoBarcode y */
+    y?: (IProtoMeasure|null);
+
+    /** ProtoBarcode referencePoint */
+    referencePoint?: (ProtoImageReferencePoint|null);
+
+    /** ProtoBarcode rotation */
+    rotation?: (number|null);
+
+    /** ProtoBarcode width */
+    width?: (IProtoMeasure|null);
+
+    /** ProtoBarcode height */
+    height?: (IProtoMeasure|null);
+
+    /** ProtoBarcode padding */
+    padding?: (IProtoMeasure|null);
+
+    /** ProtoBarcode data */
+    data?: (string|null);
+}
+
+/** Represents a ProtoBarcode. */
+export class ProtoBarcode implements IProtoBarcode {
+
+    /**
+     * Constructs a new ProtoBarcode.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoBarcode);
+
+    /** ProtoBarcode type. */
+    public type: ProtoBarcodeType;
+
+    /** ProtoBarcode x. */
+    public x?: (IProtoMeasure|null);
+
+    /** ProtoBarcode y. */
+    public y?: (IProtoMeasure|null);
+
+    /** ProtoBarcode referencePoint. */
+    public referencePoint: ProtoImageReferencePoint;
+
+    /** ProtoBarcode rotation. */
+    public rotation: number;
+
+    /** ProtoBarcode width. */
+    public width?: (IProtoMeasure|null);
+
+    /** ProtoBarcode height. */
+    public height?: (IProtoMeasure|null);
+
+    /** ProtoBarcode padding. */
+    public padding?: (IProtoMeasure|null);
+
+    /** ProtoBarcode data. */
+    public data: string;
+
+    /**
+     * Creates a new ProtoBarcode instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoBarcode instance
+     */
+    public static create(properties?: IProtoBarcode): ProtoBarcode;
+
+    /**
+     * Encodes the specified ProtoBarcode message. Does not implicitly {@link ProtoBarcode.verify|verify} messages.
+     * @param message ProtoBarcode message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoBarcode, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoBarcode message, length delimited. Does not implicitly {@link ProtoBarcode.verify|verify} messages.
+     * @param message ProtoBarcode message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoBarcode, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoBarcode message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoBarcode
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoBarcode;
+
+    /**
+     * Decodes a ProtoBarcode message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoBarcode
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoBarcode;
+
+    /**
+     * Verifies a ProtoBarcode message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoBarcode message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoBarcode
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoBarcode;
+
+    /**
+     * Creates a plain object from a ProtoBarcode message. Also converts values to other types if specified.
+     * @param message ProtoBarcode
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoBarcode, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoBarcode to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoBarcode
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
 /** Properties of a ProtoBrickReference. */
 export interface IProtoBrickReference {
 
@@ -8298,6 +8457,9 @@ export interface INode {
 
     /** Node indentation */
     indentation?: (IProtoIndentation|null);
+
+    /** Node barcode */
+    barcode?: (IProtoBarcode|null);
 }
 
 /** Represents a Node. */
@@ -8474,8 +8636,11 @@ export class Node implements INode {
     /** Node indentation. */
     public indentation?: (IProtoIndentation|null);
 
+    /** Node barcode. */
+    public barcode?: (IProtoBarcode|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"color"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"border"|"columnSettings"|"font"|"graphicState"|"htmlParser"|"measure"|"strikethroughSpec"|"underlineSpec"|"cropSettings"|"flipSettings"|"imageListLevelSetting"|"numberListLevelSetting"|"textListLevelSetting"|"unnumberedListLevelSetting"|"indentation");
+    public object?: ("listSetting"|"color"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"border"|"columnSettings"|"font"|"graphicState"|"htmlParser"|"measure"|"strikethroughSpec"|"underlineSpec"|"cropSettings"|"flipSettings"|"imageListLevelSetting"|"numberListLevelSetting"|"textListLevelSetting"|"unnumberedListLevelSetting"|"indentation"|"barcode");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -8616,7 +8781,8 @@ export enum NodeType {
     DOCUMENT_ELEMENT_FOOTER = 57,
     UTIL_CROP_SETTINGS = 58,
     UTIL_FLIP_SETTINGS = 59,
-    DOCUMENT_ELEMENT_INDENTATION = 60
+    DOCUMENT_ELEMENT_INDENTATION = 60,
+    DOCUMENT_ELEMENT_BARCODE = 61
 }
 
 /** Properties of a ProtoImage. */

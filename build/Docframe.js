@@ -5769,6 +5769,36 @@ $root.ProtoBoxedVerticalAlignment = (function() {
     return ProtoBoxedVerticalAlignment;
 })();
 
+/**
+ * ProtoBarcodeType enum.
+ * @name ProtoBarcodeType
+ * @enum {number}
+ * @property {number} PDF417=0 PDF417 value
+ * @property {number} DATAMATRIX=1 DATAMATRIX value
+ * @property {number} BC128=2 BC128 value
+ * @property {number} QR=3 QR value
+ * @property {number} ITF=4 ITF value
+ * @property {number} EAN8=5 EAN8 value
+ * @property {number} EAN13=6 EAN13 value
+ * @property {number} CODE39=7 CODE39 value
+ * @property {number} SWISSQR=8 SWISSQR value
+ * @property {number} AZTEC=9 AZTEC value
+ */
+$root.ProtoBarcodeType = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "PDF417"] = 0;
+    values[valuesById[1] = "DATAMATRIX"] = 1;
+    values[valuesById[2] = "BC128"] = 2;
+    values[valuesById[3] = "QR"] = 3;
+    values[valuesById[4] = "ITF"] = 4;
+    values[valuesById[5] = "EAN8"] = 5;
+    values[valuesById[6] = "EAN13"] = 6;
+    values[valuesById[7] = "CODE39"] = 7;
+    values[valuesById[8] = "SWISSQR"] = 8;
+    values[valuesById[9] = "AZTEC"] = 9;
+    return values;
+})();
+
 $root.ProtoLinebreak = (function() {
 
     /**
@@ -19952,6 +19982,517 @@ $root.ProtoText = (function() {
     return ProtoText;
 })();
 
+$root.ProtoBarcode = (function() {
+
+    /**
+     * Properties of a ProtoBarcode.
+     * @name IProtoBarcode
+     * @interface IProtoBarcode
+     * @property {ProtoBarcodeType|null} [type] ProtoBarcode type
+     * @property {IProtoMeasure|null} [x] ProtoBarcode x
+     * @property {IProtoMeasure|null} [y] ProtoBarcode y
+     * @property {ProtoImageReferencePoint|null} [referencePoint] ProtoBarcode referencePoint
+     * @property {number|null} [rotation] ProtoBarcode rotation
+     * @property {IProtoMeasure|null} [width] ProtoBarcode width
+     * @property {IProtoMeasure|null} [height] ProtoBarcode height
+     * @property {IProtoMeasure|null} [padding] ProtoBarcode padding
+     * @property {string|null} [data] ProtoBarcode data
+     */
+
+    /**
+     * Constructs a new ProtoBarcode.
+     * @name ProtoBarcode
+     * @classdesc Represents a ProtoBarcode.
+     * @implements IProtoBarcode
+     * @constructor
+     * @param {IProtoBarcode=} [properties] Properties to set
+     */
+    function ProtoBarcode(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoBarcode type.
+     * @member {ProtoBarcodeType} type
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.type = 0;
+
+    /**
+     * ProtoBarcode x.
+     * @member {IProtoMeasure|null|undefined} x
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.x = null;
+
+    /**
+     * ProtoBarcode y.
+     * @member {IProtoMeasure|null|undefined} y
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.y = null;
+
+    /**
+     * ProtoBarcode referencePoint.
+     * @member {ProtoImageReferencePoint} referencePoint
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.referencePoint = 0;
+
+    /**
+     * ProtoBarcode rotation.
+     * @member {number} rotation
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.rotation = 0;
+
+    /**
+     * ProtoBarcode width.
+     * @member {IProtoMeasure|null|undefined} width
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.width = null;
+
+    /**
+     * ProtoBarcode height.
+     * @member {IProtoMeasure|null|undefined} height
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.height = null;
+
+    /**
+     * ProtoBarcode padding.
+     * @member {IProtoMeasure|null|undefined} padding
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.padding = null;
+
+    /**
+     * ProtoBarcode data.
+     * @member {string} data
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.data = "";
+
+    /**
+     * Creates a new ProtoBarcode instance using the specified properties.
+     * @function create
+     * @memberof ProtoBarcode
+     * @static
+     * @param {IProtoBarcode=} [properties] Properties to set
+     * @returns {ProtoBarcode} ProtoBarcode instance
+     */
+    ProtoBarcode.create = function create(properties) {
+        return new ProtoBarcode(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoBarcode message. Does not implicitly {@link ProtoBarcode.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoBarcode
+     * @static
+     * @param {IProtoBarcode} message ProtoBarcode message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoBarcode.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+        if (message.x != null && Object.hasOwnProperty.call(message, "x"))
+            $root.ProtoMeasure.encode(message.x, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.y != null && Object.hasOwnProperty.call(message, "y"))
+            $root.ProtoMeasure.encode(message.y, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+        if (message.referencePoint != null && Object.hasOwnProperty.call(message, "referencePoint"))
+            writer.uint32(/* id 4, wireType 0 =*/32).int32(message.referencePoint);
+        if (message.rotation != null && Object.hasOwnProperty.call(message, "rotation"))
+            writer.uint32(/* id 5, wireType 5 =*/45).float(message.rotation);
+        if (message.width != null && Object.hasOwnProperty.call(message, "width"))
+            $root.ProtoMeasure.encode(message.width, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+        if (message.height != null && Object.hasOwnProperty.call(message, "height"))
+            $root.ProtoMeasure.encode(message.height, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+        if (message.padding != null && Object.hasOwnProperty.call(message, "padding"))
+            $root.ProtoMeasure.encode(message.padding, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+        if (message.data != null && Object.hasOwnProperty.call(message, "data"))
+            writer.uint32(/* id 9, wireType 2 =*/74).string(message.data);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoBarcode message, length delimited. Does not implicitly {@link ProtoBarcode.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoBarcode
+     * @static
+     * @param {IProtoBarcode} message ProtoBarcode message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoBarcode.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoBarcode message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoBarcode
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoBarcode} ProtoBarcode
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoBarcode.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBarcode();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.type = reader.int32();
+                    break;
+                }
+            case 2: {
+                    message.x = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.y = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 4: {
+                    message.referencePoint = reader.int32();
+                    break;
+                }
+            case 5: {
+                    message.rotation = reader.float();
+                    break;
+                }
+            case 6: {
+                    message.width = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 7: {
+                    message.height = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 8: {
+                    message.padding = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 9: {
+                    message.data = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoBarcode message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoBarcode
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoBarcode} ProtoBarcode
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoBarcode.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoBarcode message.
+     * @function verify
+     * @memberof ProtoBarcode
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoBarcode.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.type != null && message.hasOwnProperty("type"))
+            switch (message.type) {
+            default:
+                return "type: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                break;
+            }
+        if (message.x != null && message.hasOwnProperty("x")) {
+            var error = $root.ProtoMeasure.verify(message.x);
+            if (error)
+                return "x." + error;
+        }
+        if (message.y != null && message.hasOwnProperty("y")) {
+            var error = $root.ProtoMeasure.verify(message.y);
+            if (error)
+                return "y." + error;
+        }
+        if (message.referencePoint != null && message.hasOwnProperty("referencePoint"))
+            switch (message.referencePoint) {
+            default:
+                return "referencePoint: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                break;
+            }
+        if (message.rotation != null && message.hasOwnProperty("rotation"))
+            if (typeof message.rotation !== "number")
+                return "rotation: number expected";
+        if (message.width != null && message.hasOwnProperty("width")) {
+            var error = $root.ProtoMeasure.verify(message.width);
+            if (error)
+                return "width." + error;
+        }
+        if (message.height != null && message.hasOwnProperty("height")) {
+            var error = $root.ProtoMeasure.verify(message.height);
+            if (error)
+                return "height." + error;
+        }
+        if (message.padding != null && message.hasOwnProperty("padding")) {
+            var error = $root.ProtoMeasure.verify(message.padding);
+            if (error)
+                return "padding." + error;
+        }
+        if (message.data != null && message.hasOwnProperty("data"))
+            if (!$util.isString(message.data))
+                return "data: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoBarcode message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoBarcode
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoBarcode} ProtoBarcode
+     */
+    ProtoBarcode.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoBarcode)
+            return object;
+        var message = new $root.ProtoBarcode();
+        switch (object.type) {
+        default:
+            if (typeof object.type === "number") {
+                message.type = object.type;
+                break;
+            }
+            break;
+        case "PDF417":
+        case 0:
+            message.type = 0;
+            break;
+        case "DATAMATRIX":
+        case 1:
+            message.type = 1;
+            break;
+        case "BC128":
+        case 2:
+            message.type = 2;
+            break;
+        case "QR":
+        case 3:
+            message.type = 3;
+            break;
+        case "ITF":
+        case 4:
+            message.type = 4;
+            break;
+        case "EAN8":
+        case 5:
+            message.type = 5;
+            break;
+        case "EAN13":
+        case 6:
+            message.type = 6;
+            break;
+        case "CODE39":
+        case 7:
+            message.type = 7;
+            break;
+        case "SWISSQR":
+        case 8:
+            message.type = 8;
+            break;
+        case "AZTEC":
+        case 9:
+            message.type = 9;
+            break;
+        }
+        if (object.x != null) {
+            if (typeof object.x !== "object")
+                throw TypeError(".ProtoBarcode.x: object expected");
+            message.x = $root.ProtoMeasure.fromObject(object.x);
+        }
+        if (object.y != null) {
+            if (typeof object.y !== "object")
+                throw TypeError(".ProtoBarcode.y: object expected");
+            message.y = $root.ProtoMeasure.fromObject(object.y);
+        }
+        switch (object.referencePoint) {
+        default:
+            if (typeof object.referencePoint === "number") {
+                message.referencePoint = object.referencePoint;
+                break;
+            }
+            break;
+        case "REF_POINT_DO_NOT_USE_AT_ALL":
+        case 0:
+            message.referencePoint = 0;
+            break;
+        case "REF_POINT_BOTTOM_LEFT":
+        case 1:
+            message.referencePoint = 1;
+            break;
+        case "REF_POINT_TOP_LEFT":
+        case 2:
+            message.referencePoint = 2;
+            break;
+        case "REF_POINT_CENTER":
+        case 3:
+            message.referencePoint = 3;
+            break;
+        case "REF_POINT_BOTTOM_RIGHT":
+        case 4:
+            message.referencePoint = 4;
+            break;
+        case "REF_POINT_TOP_RIGHT":
+        case 5:
+            message.referencePoint = 5;
+            break;
+        }
+        if (object.rotation != null)
+            message.rotation = Number(object.rotation);
+        if (object.width != null) {
+            if (typeof object.width !== "object")
+                throw TypeError(".ProtoBarcode.width: object expected");
+            message.width = $root.ProtoMeasure.fromObject(object.width);
+        }
+        if (object.height != null) {
+            if (typeof object.height !== "object")
+                throw TypeError(".ProtoBarcode.height: object expected");
+            message.height = $root.ProtoMeasure.fromObject(object.height);
+        }
+        if (object.padding != null) {
+            if (typeof object.padding !== "object")
+                throw TypeError(".ProtoBarcode.padding: object expected");
+            message.padding = $root.ProtoMeasure.fromObject(object.padding);
+        }
+        if (object.data != null)
+            message.data = String(object.data);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoBarcode message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoBarcode
+     * @static
+     * @param {ProtoBarcode} message ProtoBarcode
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoBarcode.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.type = options.enums === String ? "PDF417" : 0;
+            object.x = null;
+            object.y = null;
+            object.referencePoint = options.enums === String ? "REF_POINT_DO_NOT_USE_AT_ALL" : 0;
+            object.rotation = 0;
+            object.width = null;
+            object.height = null;
+            object.padding = null;
+            object.data = "";
+        }
+        if (message.type != null && message.hasOwnProperty("type"))
+            object.type = options.enums === String ? $root.ProtoBarcodeType[message.type] === undefined ? message.type : $root.ProtoBarcodeType[message.type] : message.type;
+        if (message.x != null && message.hasOwnProperty("x"))
+            object.x = $root.ProtoMeasure.toObject(message.x, options);
+        if (message.y != null && message.hasOwnProperty("y"))
+            object.y = $root.ProtoMeasure.toObject(message.y, options);
+        if (message.referencePoint != null && message.hasOwnProperty("referencePoint"))
+            object.referencePoint = options.enums === String ? $root.ProtoImageReferencePoint[message.referencePoint] === undefined ? message.referencePoint : $root.ProtoImageReferencePoint[message.referencePoint] : message.referencePoint;
+        if (message.rotation != null && message.hasOwnProperty("rotation"))
+            object.rotation = options.json && !isFinite(message.rotation) ? String(message.rotation) : message.rotation;
+        if (message.width != null && message.hasOwnProperty("width"))
+            object.width = $root.ProtoMeasure.toObject(message.width, options);
+        if (message.height != null && message.hasOwnProperty("height"))
+            object.height = $root.ProtoMeasure.toObject(message.height, options);
+        if (message.padding != null && message.hasOwnProperty("padding"))
+            object.padding = $root.ProtoMeasure.toObject(message.padding, options);
+        if (message.data != null && message.hasOwnProperty("data"))
+            object.data = message.data;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoBarcode to JSON.
+     * @function toJSON
+     * @memberof ProtoBarcode
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoBarcode.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoBarcode
+     * @function getTypeUrl
+     * @memberof ProtoBarcode
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoBarcode.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoBarcode";
+    };
+
+    return ProtoBarcode;
+})();
+
 $root.ProtoBrickReference = (function() {
 
     /**
@@ -21626,6 +22167,7 @@ $root.Node = (function() {
      * @property {IProtoTextListLevelSetting|null} [textListLevelSetting] Node textListLevelSetting
      * @property {IProtoUnnumberedListLevelSetting|null} [unnumberedListLevelSetting] Node unnumberedListLevelSetting
      * @property {IProtoIndentation|null} [indentation] Node indentation
+     * @property {IProtoBarcode|null} [barcode] Node barcode
      */
 
     /**
@@ -22084,17 +22626,25 @@ $root.Node = (function() {
      */
     Node.prototype.indentation = null;
 
+    /**
+     * Node barcode.
+     * @member {IProtoBarcode|null|undefined} barcode
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.barcode = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"color"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"border"|"columnSettings"|"font"|"graphicState"|"htmlParser"|"measure"|"strikethroughSpec"|"underlineSpec"|"cropSettings"|"flipSettings"|"imageListLevelSetting"|"numberListLevelSetting"|"textListLevelSetting"|"unnumberedListLevelSetting"|"indentation"|undefined} object
+     * @member {"listSetting"|"color"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"border"|"columnSettings"|"font"|"graphicState"|"htmlParser"|"measure"|"strikethroughSpec"|"underlineSpec"|"cropSettings"|"flipSettings"|"imageListLevelSetting"|"numberListLevelSetting"|"textListLevelSetting"|"unnumberedListLevelSetting"|"indentation"|"barcode"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "color", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "listLevelSetting", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "border", "columnSettings", "font", "graphicState", "htmlParser", "measure", "strikethroughSpec", "underlineSpec", "cropSettings", "flipSettings", "imageListLevelSetting", "numberListLevelSetting", "textListLevelSetting", "unnumberedListLevelSetting", "indentation"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "color", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "listLevelSetting", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "border", "columnSettings", "font", "graphicState", "htmlParser", "measure", "strikethroughSpec", "underlineSpec", "cropSettings", "flipSettings", "imageListLevelSetting", "numberListLevelSetting", "textListLevelSetting", "unnumberedListLevelSetting", "indentation", "barcode"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -22233,6 +22783,8 @@ $root.Node = (function() {
             $root.ProtoUnnumberedListLevelSetting.encode(message.unnumberedListLevelSetting, writer.uint32(/* id 54, wireType 2 =*/434).fork()).ldelim();
         if (message.indentation != null && Object.hasOwnProperty.call(message, "indentation"))
             $root.ProtoIndentation.encode(message.indentation, writer.uint32(/* id 55, wireType 2 =*/442).fork()).ldelim();
+        if (message.barcode != null && Object.hasOwnProperty.call(message, "barcode"))
+            $root.ProtoBarcode.encode(message.barcode, writer.uint32(/* id 56, wireType 2 =*/450).fork()).ldelim();
         return writer;
     };
 
@@ -22487,6 +23039,10 @@ $root.Node = (function() {
                 }
             case 55: {
                     message.indentation = $root.ProtoIndentation.decode(reader, reader.uint32());
+                    break;
+                }
+            case 56: {
+                    message.barcode = $root.ProtoBarcode.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -23072,6 +23628,16 @@ $root.Node = (function() {
                     return "indentation." + error;
             }
         }
+        if (message.barcode != null && message.hasOwnProperty("barcode")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoBarcode.verify(message.barcode);
+                if (error)
+                    return "barcode." + error;
+            }
+        }
         return null;
     };
 
@@ -23367,6 +23933,11 @@ $root.Node = (function() {
                 throw TypeError(".Node.indentation: object expected");
             message.indentation = $root.ProtoIndentation.fromObject(object.indentation);
         }
+        if (object.barcode != null) {
+            if (typeof object.barcode !== "object")
+                throw TypeError(".Node.barcode: object expected");
+            message.barcode = $root.ProtoBarcode.fromObject(object.barcode);
+        }
         return message;
     };
 
@@ -23660,6 +24231,11 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "indentation";
         }
+        if (message.barcode != null && message.hasOwnProperty("barcode")) {
+            object.barcode = $root.ProtoBarcode.toObject(message.barcode, options);
+            if (options.oneofs)
+                object.object = "barcode";
+        }
         return object;
     };
 
@@ -23756,6 +24332,7 @@ $root.Node = (function() {
  * @property {number} UTIL_CROP_SETTINGS=58 UTIL_CROP_SETTINGS value
  * @property {number} UTIL_FLIP_SETTINGS=59 UTIL_FLIP_SETTINGS value
  * @property {number} DOCUMENT_ELEMENT_INDENTATION=60 DOCUMENT_ELEMENT_INDENTATION value
+ * @property {number} DOCUMENT_ELEMENT_BARCODE=61 DOCUMENT_ELEMENT_BARCODE value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -23819,6 +24396,7 @@ $root.NodeType = (function() {
     values[valuesById[58] = "UTIL_CROP_SETTINGS"] = 58;
     values[valuesById[59] = "UTIL_FLIP_SETTINGS"] = 59;
     values[valuesById[60] = "DOCUMENT_ELEMENT_INDENTATION"] = 60;
+    values[valuesById[61] = "DOCUMENT_ELEMENT_BARCODE"] = 61;
     return values;
 })();
 
