@@ -1,0 +1,9 @@
+message ProtoLoop {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  string path = 3;
+  string uuid = 4;
+}
