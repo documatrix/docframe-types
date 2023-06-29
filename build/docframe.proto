@@ -897,6 +897,8 @@ repeated string comChannelUUIDs = 6;
 message ProtoCarryOver {
 repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
+
+repeated string comChannelUUIDs = 3;
 }
 message ProtoLoopEntry {
 repeated ProtoDocumentElement _children = 1;
@@ -912,6 +914,7 @@ ProtoDocumentElement parent = 2;
 
 string path = 3;
 string uuid = 4;
+repeated string comChannelUUIDs = 5;
 }
 enum ProtoSubTotalPosition {
 POSITION_ABOVE_FOOTER = 0;
@@ -925,9 +928,12 @@ ProtoDocumentElement parent = 2;
 bool apply_immediate = 3;
 ProtoSubTotalPosition position = 4;
 ProtoMeasure height = 5;
+repeated string comChannelUUIDs = 6;
 }
 
 message ProtoWsArea {
 repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
+
+repeated string comChannelUUIDs = 3;
 }

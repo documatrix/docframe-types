@@ -12,5 +12,6 @@ message ProtoSubTotal {
   bool apply_immediate = 3;
   ProtoSubTotalPosition position = 4;
   ProtoMeasure height = 5;
+  repeated string comChannelUUIDs = 6;
 }
 
