@@ -67,6 +67,11 @@ declare -a FileArray=(
   "src/DocumentElements/documentelements.ul_config.proto"
   "src/DocumentElements/documentelements.new_page.proto"
   "src/DocumentElements/documentelements.indentation.proto"
+  "src/DocumentElements/documentelements.carry_over.proto"
+  "src/DocumentElements/documentelements.loop_entry.proto"
+  "src/DocumentElements/documentelements.loop.proto"
+  "src/DocumentElements/documentelements.sub_total.proto"
+  "src/DocumentElements/documentelements.ws_area.proto"
 )
 
 for file in ${FileArray[@]}; do

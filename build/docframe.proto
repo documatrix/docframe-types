@@ -702,6 +702,12 @@ ProtoUnnumberedListLevelSetting unnumbered_list_level_setting = 54;
 ProtoIndentation indentation = 55;
 
 ProtoBarcode barcode = 56;
+
+ProtoWsArea ws_area = 57;
+ProtoCarryOver carry_over = 58;
+ProtoSubTotal sub_total = 59;
+ProtoLoop loop = 60;
+ProtoLoopEntry loop_entry = 61;
 }
 }
 
@@ -767,6 +773,11 @@ UTIL_CROP_SETTINGS = 58;
 UTIL_FLIP_SETTINGS = 59;
 DOCUMENT_ELEMENT_INDENTATION = 60;
 DOCUMENT_ELEMENT_BARCODE = 61;
+DOCUMENT_ELEMENT_WS_AREA = 62;
+DOCUMENT_ELEMENT_CARRY_OVER = 63;
+DOCUMENT_ELEMENT_SUB_TOTAL = 64;
+DOCUMENT_ELEMENT_LOOP = 65;
+DOCUMENT_ELEMENT_LOOP_ENTRY = 66;
 }
 message ProtoImage {
 ProtoDocumentElement parent = 1;
@@ -882,4 +893,47 @@ ProtoBoxedMeasure left = 3;
 ProtoBoxedMeasure right = 4;
 string uuid = 5;
 repeated string comChannelUUIDs = 6;
+}
+message ProtoCarryOver {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+repeated string comChannelUUIDs = 3;
+}
+message ProtoLoopEntry {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+string path = 3;
+uint64 index = 4;
+string uuid = 5;
+}
+message ProtoLoop {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+string path = 3;
+string uuid = 4;
+repeated string comChannelUUIDs = 5;
+}
+enum ProtoSubTotalPosition {
+POSITION_ABOVE_FOOTER = 0;
+POSITION_BELOW_CONTENT = 1;
+}
+
+message ProtoSubTotal {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+bool apply_immediate = 3;
+ProtoSubTotalPosition position = 4;
+ProtoMeasure height = 5;
+repeated string comChannelUUIDs = 6;
+}
+
+message ProtoWsArea {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+repeated string comChannelUUIDs = 3;
 }

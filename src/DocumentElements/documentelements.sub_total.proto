@@ -1,0 +1,17 @@
+enum ProtoSubTotalPosition {
+  POSITION_ABOVE_FOOTER = 0;
+  POSITION_BELOW_CONTENT = 1;
+}
+
+message ProtoSubTotal {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  bool apply_immediate = 3;
+  ProtoSubTotalPosition position = 4;
+  ProtoMeasure height = 5;
+  repeated string comChannelUUIDs = 6;
+}
+

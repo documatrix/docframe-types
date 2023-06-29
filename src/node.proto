@@ -59,6 +59,12 @@ message Node {
     ProtoIndentation indentation = 55;
 
     ProtoBarcode barcode = 56;
+
+    ProtoWsArea ws_area = 57;
+    ProtoCarryOver carry_over = 58;
+    ProtoSubTotal sub_total = 59;
+    ProtoLoop loop = 60;
+    ProtoLoopEntry loop_entry = 61;
   }
 }
 
@@ -124,4 +130,9 @@ enum NodeType {
   UTIL_FLIP_SETTINGS = 59;
   DOCUMENT_ELEMENT_INDENTATION = 60;
   DOCUMENT_ELEMENT_BARCODE = 61;
+  DOCUMENT_ELEMENT_WS_AREA = 62;
+  DOCUMENT_ELEMENT_CARRY_OVER = 63;
+  DOCUMENT_ELEMENT_SUB_TOTAL = 64;
+  DOCUMENT_ELEMENT_LOOP = 65;
+  DOCUMENT_ELEMENT_LOOP_ENTRY = 66;
 }
