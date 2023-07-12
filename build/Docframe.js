@@ -15716,6 +15716,8 @@ $root.ProtoTable = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoTable parent
      * @property {IProtoTableSettings|null} [settings] ProtoTable settings
      * @property {string|null} [configName] ProtoTable configName
+     * @property {INode|null} [carryOver] ProtoTable carryOver
+     * @property {INode|null} [subTotal] ProtoTable subTotal
      */
 
     /**
@@ -15767,6 +15769,22 @@ $root.ProtoTable = (function() {
     ProtoTable.prototype.configName = "";
 
     /**
+     * ProtoTable carryOver.
+     * @member {INode|null|undefined} carryOver
+     * @memberof ProtoTable
+     * @instance
+     */
+    ProtoTable.prototype.carryOver = null;
+
+    /**
+     * ProtoTable subTotal.
+     * @member {INode|null|undefined} subTotal
+     * @memberof ProtoTable
+     * @instance
+     */
+    ProtoTable.prototype.subTotal = null;
+
+    /**
      * Creates a new ProtoTable instance using the specified properties.
      * @function create
      * @memberof ProtoTable
@@ -15799,6 +15817,10 @@ $root.ProtoTable = (function() {
             $root.ProtoTableSettings.encode(message.settings, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
         if (message.configName != null && Object.hasOwnProperty.call(message, "configName"))
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.configName);
+        if (message.carryOver != null && Object.hasOwnProperty.call(message, "carryOver"))
+            $root.Node.encode(message.carryOver, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+        if (message.subTotal != null && Object.hasOwnProperty.call(message, "subTotal"))
+            $root.Node.encode(message.subTotal, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
         return writer;
     };
 
@@ -15849,6 +15871,14 @@ $root.ProtoTable = (function() {
                 }
             case 4: {
                     message.configName = reader.string();
+                    break;
+                }
+            case 5: {
+                    message.carryOver = $root.Node.decode(reader, reader.uint32());
+                    break;
+                }
+            case 6: {
+                    message.subTotal = $root.Node.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -15908,6 +15938,16 @@ $root.ProtoTable = (function() {
         if (message.configName != null && message.hasOwnProperty("configName"))
             if (!$util.isString(message.configName))
                 return "configName: string expected";
+        if (message.carryOver != null && message.hasOwnProperty("carryOver")) {
+            var error = $root.Node.verify(message.carryOver);
+            if (error)
+                return "carryOver." + error;
+        }
+        if (message.subTotal != null && message.hasOwnProperty("subTotal")) {
+            var error = $root.Node.verify(message.subTotal);
+            if (error)
+                return "subTotal." + error;
+        }
         return null;
     };
 
@@ -15945,6 +15985,16 @@ $root.ProtoTable = (function() {
         }
         if (object.configName != null)
             message.configName = String(object.configName);
+        if (object.carryOver != null) {
+            if (typeof object.carryOver !== "object")
+                throw TypeError(".ProtoTable.carryOver: object expected");
+            message.carryOver = $root.Node.fromObject(object.carryOver);
+        }
+        if (object.subTotal != null) {
+            if (typeof object.subTotal !== "object")
+                throw TypeError(".ProtoTable.subTotal: object expected");
+            message.subTotal = $root.Node.fromObject(object.subTotal);
+        }
         return message;
     };
 
@@ -15967,6 +16017,8 @@ $root.ProtoTable = (function() {
             object.parent = null;
             object.settings = null;
             object.configName = "";
+            object.carryOver = null;
+            object.subTotal = null;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -15979,6 +16031,10 @@ $root.ProtoTable = (function() {
             object.settings = $root.ProtoTableSettings.toObject(message.settings, options);
         if (message.configName != null && message.hasOwnProperty("configName"))
             object.configName = message.configName;
+        if (message.carryOver != null && message.hasOwnProperty("carryOver"))
+            object.carryOver = $root.Node.toObject(message.carryOver, options);
+        if (message.subTotal != null && message.hasOwnProperty("subTotal"))
+            object.subTotal = $root.Node.toObject(message.subTotal, options);
         return object;
     };
 
@@ -22191,6 +22247,12 @@ $root.Node = (function() {
      * @property {IProtoUnnumberedListLevelSetting|null} [unnumberedListLevelSetting] Node unnumberedListLevelSetting
      * @property {IProtoIndentation|null} [indentation] Node indentation
      * @property {IProtoBarcode|null} [barcode] Node barcode
+     * @property {IProtoWsArea|null} [wsArea] Node wsArea
+     * @property {IProtoCarryOver|null} [carryOver] Node carryOver
+     * @property {IProtoSubTotal|null} [subTotal] Node subTotal
+     * @property {IProtoLoop|null} [loop] Node loop
+     * @property {IProtoLoopEntry|null} [loopEntry] Node loopEntry
+     * @property {IProtoRule|null} [rule] Node rule
      */
 
     /**
@@ -22657,17 +22719,65 @@ $root.Node = (function() {
      */
     Node.prototype.barcode = null;
 
+    /**
+     * Node wsArea.
+     * @member {IProtoWsArea|null|undefined} wsArea
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.wsArea = null;
+
+    /**
+     * Node carryOver.
+     * @member {IProtoCarryOver|null|undefined} carryOver
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.carryOver = null;
+
+    /**
+     * Node subTotal.
+     * @member {IProtoSubTotal|null|undefined} subTotal
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.subTotal = null;
+
+    /**
+     * Node loop.
+     * @member {IProtoLoop|null|undefined} loop
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.loop = null;
+
+    /**
+     * Node loopEntry.
+     * @member {IProtoLoopEntry|null|undefined} loopEntry
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.loopEntry = null;
+
+    /**
+     * Node rule.
+     * @member {IProtoRule|null|undefined} rule
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.rule = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"color"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"border"|"columnSettings"|"font"|"graphicState"|"htmlParser"|"measure"|"strikethroughSpec"|"underlineSpec"|"cropSettings"|"flipSettings"|"imageListLevelSetting"|"numberListLevelSetting"|"textListLevelSetting"|"unnumberedListLevelSetting"|"indentation"|"barcode"|undefined} object
+     * @member {"listSetting"|"color"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"border"|"columnSettings"|"font"|"graphicState"|"htmlParser"|"measure"|"strikethroughSpec"|"underlineSpec"|"cropSettings"|"flipSettings"|"imageListLevelSetting"|"numberListLevelSetting"|"textListLevelSetting"|"unnumberedListLevelSetting"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "color", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "listLevelSetting", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "border", "columnSettings", "font", "graphicState", "htmlParser", "measure", "strikethroughSpec", "underlineSpec", "cropSettings", "flipSettings", "imageListLevelSetting", "numberListLevelSetting", "textListLevelSetting", "unnumberedListLevelSetting", "indentation", "barcode"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "color", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "listLevelSetting", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "border", "columnSettings", "font", "graphicState", "htmlParser", "measure", "strikethroughSpec", "underlineSpec", "cropSettings", "flipSettings", "imageListLevelSetting", "numberListLevelSetting", "textListLevelSetting", "unnumberedListLevelSetting", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -22808,6 +22918,18 @@ $root.Node = (function() {
             $root.ProtoIndentation.encode(message.indentation, writer.uint32(/* id 55, wireType 2 =*/442).fork()).ldelim();
         if (message.barcode != null && Object.hasOwnProperty.call(message, "barcode"))
             $root.ProtoBarcode.encode(message.barcode, writer.uint32(/* id 56, wireType 2 =*/450).fork()).ldelim();
+        if (message.wsArea != null && Object.hasOwnProperty.call(message, "wsArea"))
+            $root.ProtoWsArea.encode(message.wsArea, writer.uint32(/* id 57, wireType 2 =*/458).fork()).ldelim();
+        if (message.carryOver != null && Object.hasOwnProperty.call(message, "carryOver"))
+            $root.ProtoCarryOver.encode(message.carryOver, writer.uint32(/* id 58, wireType 2 =*/466).fork()).ldelim();
+        if (message.subTotal != null && Object.hasOwnProperty.call(message, "subTotal"))
+            $root.ProtoSubTotal.encode(message.subTotal, writer.uint32(/* id 59, wireType 2 =*/474).fork()).ldelim();
+        if (message.loop != null && Object.hasOwnProperty.call(message, "loop"))
+            $root.ProtoLoop.encode(message.loop, writer.uint32(/* id 60, wireType 2 =*/482).fork()).ldelim();
+        if (message.loopEntry != null && Object.hasOwnProperty.call(message, "loopEntry"))
+            $root.ProtoLoopEntry.encode(message.loopEntry, writer.uint32(/* id 61, wireType 2 =*/490).fork()).ldelim();
+        if (message.rule != null && Object.hasOwnProperty.call(message, "rule"))
+            $root.ProtoRule.encode(message.rule, writer.uint32(/* id 62, wireType 2 =*/498).fork()).ldelim();
         return writer;
     };
 
@@ -23066,6 +23188,30 @@ $root.Node = (function() {
                 }
             case 56: {
                     message.barcode = $root.ProtoBarcode.decode(reader, reader.uint32());
+                    break;
+                }
+            case 57: {
+                    message.wsArea = $root.ProtoWsArea.decode(reader, reader.uint32());
+                    break;
+                }
+            case 58: {
+                    message.carryOver = $root.ProtoCarryOver.decode(reader, reader.uint32());
+                    break;
+                }
+            case 59: {
+                    message.subTotal = $root.ProtoSubTotal.decode(reader, reader.uint32());
+                    break;
+                }
+            case 60: {
+                    message.loop = $root.ProtoLoop.decode(reader, reader.uint32());
+                    break;
+                }
+            case 61: {
+                    message.loopEntry = $root.ProtoLoopEntry.decode(reader, reader.uint32());
+                    break;
+                }
+            case 62: {
+                    message.rule = $root.ProtoRule.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -23661,6 +23807,66 @@ $root.Node = (function() {
                     return "barcode." + error;
             }
         }
+        if (message.wsArea != null && message.hasOwnProperty("wsArea")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoWsArea.verify(message.wsArea);
+                if (error)
+                    return "wsArea." + error;
+            }
+        }
+        if (message.carryOver != null && message.hasOwnProperty("carryOver")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoCarryOver.verify(message.carryOver);
+                if (error)
+                    return "carryOver." + error;
+            }
+        }
+        if (message.subTotal != null && message.hasOwnProperty("subTotal")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoSubTotal.verify(message.subTotal);
+                if (error)
+                    return "subTotal." + error;
+            }
+        }
+        if (message.loop != null && message.hasOwnProperty("loop")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoLoop.verify(message.loop);
+                if (error)
+                    return "loop." + error;
+            }
+        }
+        if (message.loopEntry != null && message.hasOwnProperty("loopEntry")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoLoopEntry.verify(message.loopEntry);
+                if (error)
+                    return "loopEntry." + error;
+            }
+        }
+        if (message.rule != null && message.hasOwnProperty("rule")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoRule.verify(message.rule);
+                if (error)
+                    return "rule." + error;
+            }
+        }
         return null;
     };
 
@@ -23961,6 +24167,36 @@ $root.Node = (function() {
                 throw TypeError(".Node.barcode: object expected");
             message.barcode = $root.ProtoBarcode.fromObject(object.barcode);
         }
+        if (object.wsArea != null) {
+            if (typeof object.wsArea !== "object")
+                throw TypeError(".Node.wsArea: object expected");
+            message.wsArea = $root.ProtoWsArea.fromObject(object.wsArea);
+        }
+        if (object.carryOver != null) {
+            if (typeof object.carryOver !== "object")
+                throw TypeError(".Node.carryOver: object expected");
+            message.carryOver = $root.ProtoCarryOver.fromObject(object.carryOver);
+        }
+        if (object.subTotal != null) {
+            if (typeof object.subTotal !== "object")
+                throw TypeError(".Node.subTotal: object expected");
+            message.subTotal = $root.ProtoSubTotal.fromObject(object.subTotal);
+        }
+        if (object.loop != null) {
+            if (typeof object.loop !== "object")
+                throw TypeError(".Node.loop: object expected");
+            message.loop = $root.ProtoLoop.fromObject(object.loop);
+        }
+        if (object.loopEntry != null) {
+            if (typeof object.loopEntry !== "object")
+                throw TypeError(".Node.loopEntry: object expected");
+            message.loopEntry = $root.ProtoLoopEntry.fromObject(object.loopEntry);
+        }
+        if (object.rule != null) {
+            if (typeof object.rule !== "object")
+                throw TypeError(".Node.rule: object expected");
+            message.rule = $root.ProtoRule.fromObject(object.rule);
+        }
         return message;
     };
 
@@ -24259,6 +24495,36 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "barcode";
         }
+        if (message.wsArea != null && message.hasOwnProperty("wsArea")) {
+            object.wsArea = $root.ProtoWsArea.toObject(message.wsArea, options);
+            if (options.oneofs)
+                object.object = "wsArea";
+        }
+        if (message.carryOver != null && message.hasOwnProperty("carryOver")) {
+            object.carryOver = $root.ProtoCarryOver.toObject(message.carryOver, options);
+            if (options.oneofs)
+                object.object = "carryOver";
+        }
+        if (message.subTotal != null && message.hasOwnProperty("subTotal")) {
+            object.subTotal = $root.ProtoSubTotal.toObject(message.subTotal, options);
+            if (options.oneofs)
+                object.object = "subTotal";
+        }
+        if (message.loop != null && message.hasOwnProperty("loop")) {
+            object.loop = $root.ProtoLoop.toObject(message.loop, options);
+            if (options.oneofs)
+                object.object = "loop";
+        }
+        if (message.loopEntry != null && message.hasOwnProperty("loopEntry")) {
+            object.loopEntry = $root.ProtoLoopEntry.toObject(message.loopEntry, options);
+            if (options.oneofs)
+                object.object = "loopEntry";
+        }
+        if (message.rule != null && message.hasOwnProperty("rule")) {
+            object.rule = $root.ProtoRule.toObject(message.rule, options);
+            if (options.oneofs)
+                object.object = "rule";
+        }
         return object;
     };
 
@@ -24356,6 +24622,12 @@ $root.Node = (function() {
  * @property {number} UTIL_FLIP_SETTINGS=59 UTIL_FLIP_SETTINGS value
  * @property {number} DOCUMENT_ELEMENT_INDENTATION=60 DOCUMENT_ELEMENT_INDENTATION value
  * @property {number} DOCUMENT_ELEMENT_BARCODE=61 DOCUMENT_ELEMENT_BARCODE value
+ * @property {number} DOCUMENT_ELEMENT_WS_AREA=62 DOCUMENT_ELEMENT_WS_AREA value
+ * @property {number} DOCUMENT_ELEMENT_CARRY_OVER=63 DOCUMENT_ELEMENT_CARRY_OVER value
+ * @property {number} DOCUMENT_ELEMENT_SUB_TOTAL=64 DOCUMENT_ELEMENT_SUB_TOTAL value
+ * @property {number} DOCUMENT_ELEMENT_LOOP=65 DOCUMENT_ELEMENT_LOOP value
+ * @property {number} DOCUMENT_ELEMENT_LOOP_ENTRY=66 DOCUMENT_ELEMENT_LOOP_ENTRY value
+ * @property {number} DOCUMENT_ELEMENT_RULE=67 DOCUMENT_ELEMENT_RULE value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -24420,6 +24692,12 @@ $root.NodeType = (function() {
     values[valuesById[59] = "UTIL_FLIP_SETTINGS"] = 59;
     values[valuesById[60] = "DOCUMENT_ELEMENT_INDENTATION"] = 60;
     values[valuesById[61] = "DOCUMENT_ELEMENT_BARCODE"] = 61;
+    values[valuesById[62] = "DOCUMENT_ELEMENT_WS_AREA"] = 62;
+    values[valuesById[63] = "DOCUMENT_ELEMENT_CARRY_OVER"] = 63;
+    values[valuesById[64] = "DOCUMENT_ELEMENT_SUB_TOTAL"] = 64;
+    values[valuesById[65] = "DOCUMENT_ELEMENT_LOOP"] = 65;
+    values[valuesById[66] = "DOCUMENT_ELEMENT_LOOP_ENTRY"] = 66;
+    values[valuesById[67] = "DOCUMENT_ELEMENT_RULE"] = 67;
     return values;
 })();
 
@@ -28960,6 +29238,2106 @@ $root.ProtoIndentation = (function() {
     };
 
     return ProtoIndentation;
+})();
+
+$root.ProtoCarryOver = (function() {
+
+    /**
+     * Properties of a ProtoCarryOver.
+     * @name IProtoCarryOver
+     * @interface IProtoCarryOver
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoCarryOver _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoCarryOver parent
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoCarryOver comChannelUUIDs
+     */
+
+    /**
+     * Constructs a new ProtoCarryOver.
+     * @name ProtoCarryOver
+     * @classdesc Represents a ProtoCarryOver.
+     * @implements IProtoCarryOver
+     * @constructor
+     * @param {IProtoCarryOver=} [properties] Properties to set
+     */
+    function ProtoCarryOver(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoCarryOver _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoCarryOver
+     * @instance
+     */
+    ProtoCarryOver.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoCarryOver parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoCarryOver
+     * @instance
+     */
+    ProtoCarryOver.prototype.parent = null;
+
+    /**
+     * ProtoCarryOver comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoCarryOver
+     * @instance
+     */
+    ProtoCarryOver.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoCarryOver instance using the specified properties.
+     * @function create
+     * @memberof ProtoCarryOver
+     * @static
+     * @param {IProtoCarryOver=} [properties] Properties to set
+     * @returns {ProtoCarryOver} ProtoCarryOver instance
+     */
+    ProtoCarryOver.create = function create(properties) {
+        return new ProtoCarryOver(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoCarryOver message. Does not implicitly {@link ProtoCarryOver.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoCarryOver
+     * @static
+     * @param {IProtoCarryOver} message ProtoCarryOver message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoCarryOver.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoCarryOver message, length delimited. Does not implicitly {@link ProtoCarryOver.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoCarryOver
+     * @static
+     * @param {IProtoCarryOver} message ProtoCarryOver message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoCarryOver.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoCarryOver message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoCarryOver
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoCarryOver} ProtoCarryOver
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoCarryOver.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoCarryOver();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 2: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoCarryOver message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoCarryOver
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoCarryOver} ProtoCarryOver
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoCarryOver.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoCarryOver message.
+     * @function verify
+     * @memberof ProtoCarryOver
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoCarryOver.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i]);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoCarryOver message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoCarryOver
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoCarryOver} ProtoCarryOver
+     */
+    ProtoCarryOver.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoCarryOver)
+            return object;
+        var message = new $root.ProtoCarryOver();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoCarryOver._children: array expected");
+            message._children = [];
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoCarryOver._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i]);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoCarryOver.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoCarryOver.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoCarryOver message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoCarryOver
+     * @static
+     * @param {ProtoCarryOver} message ProtoCarryOver
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoCarryOver.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+        }
+        if (options.defaults)
+            object.parent = null;
+        if (message._children && message._children.length) {
+            object._children = [];
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoCarryOver to JSON.
+     * @function toJSON
+     * @memberof ProtoCarryOver
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoCarryOver.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoCarryOver
+     * @function getTypeUrl
+     * @memberof ProtoCarryOver
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoCarryOver.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoCarryOver";
+    };
+
+    return ProtoCarryOver;
+})();
+
+$root.ProtoLoopEntry = (function() {
+
+    /**
+     * Properties of a ProtoLoopEntry.
+     * @name IProtoLoopEntry
+     * @interface IProtoLoopEntry
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoLoopEntry _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoLoopEntry parent
+     * @property {string|null} [path] ProtoLoopEntry path
+     * @property {number|Long|null} [index] ProtoLoopEntry index
+     * @property {string|null} [uuid] ProtoLoopEntry uuid
+     */
+
+    /**
+     * Constructs a new ProtoLoopEntry.
+     * @name ProtoLoopEntry
+     * @classdesc Represents a ProtoLoopEntry.
+     * @implements IProtoLoopEntry
+     * @constructor
+     * @param {IProtoLoopEntry=} [properties] Properties to set
+     */
+    function ProtoLoopEntry(properties) {
+        this._children = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoLoopEntry _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoLoopEntry
+     * @instance
+     */
+    ProtoLoopEntry.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoLoopEntry parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoLoopEntry
+     * @instance
+     */
+    ProtoLoopEntry.prototype.parent = null;
+
+    /**
+     * ProtoLoopEntry path.
+     * @member {string} path
+     * @memberof ProtoLoopEntry
+     * @instance
+     */
+    ProtoLoopEntry.prototype.path = "";
+
+    /**
+     * ProtoLoopEntry index.
+     * @member {number|Long} index
+     * @memberof ProtoLoopEntry
+     * @instance
+     */
+    ProtoLoopEntry.prototype.index = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * ProtoLoopEntry uuid.
+     * @member {string} uuid
+     * @memberof ProtoLoopEntry
+     * @instance
+     */
+    ProtoLoopEntry.prototype.uuid = "";
+
+    /**
+     * Creates a new ProtoLoopEntry instance using the specified properties.
+     * @function create
+     * @memberof ProtoLoopEntry
+     * @static
+     * @param {IProtoLoopEntry=} [properties] Properties to set
+     * @returns {ProtoLoopEntry} ProtoLoopEntry instance
+     */
+    ProtoLoopEntry.create = function create(properties) {
+        return new ProtoLoopEntry(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoLoopEntry message. Does not implicitly {@link ProtoLoopEntry.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoLoopEntry
+     * @static
+     * @param {IProtoLoopEntry} message ProtoLoopEntry message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoLoopEntry.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.path != null && Object.hasOwnProperty.call(message, "path"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.path);
+        if (message.index != null && Object.hasOwnProperty.call(message, "index"))
+            writer.uint32(/* id 4, wireType 0 =*/32).uint64(message.index);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.uuid);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoLoopEntry message, length delimited. Does not implicitly {@link ProtoLoopEntry.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoLoopEntry
+     * @static
+     * @param {IProtoLoopEntry} message ProtoLoopEntry message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoLoopEntry.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoLoopEntry message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoLoopEntry
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoLoopEntry} ProtoLoopEntry
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoLoopEntry.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoLoopEntry();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 2: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.path = reader.string();
+                    break;
+                }
+            case 4: {
+                    message.index = reader.uint64();
+                    break;
+                }
+            case 5: {
+                    message.uuid = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoLoopEntry message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoLoopEntry
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoLoopEntry} ProtoLoopEntry
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoLoopEntry.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoLoopEntry message.
+     * @function verify
+     * @memberof ProtoLoopEntry
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoLoopEntry.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i]);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.path != null && message.hasOwnProperty("path"))
+            if (!$util.isString(message.path))
+                return "path: string expected";
+        if (message.index != null && message.hasOwnProperty("index"))
+            if (!$util.isInteger(message.index) && !(message.index && $util.isInteger(message.index.low) && $util.isInteger(message.index.high)))
+                return "index: integer|Long expected";
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoLoopEntry message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoLoopEntry
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoLoopEntry} ProtoLoopEntry
+     */
+    ProtoLoopEntry.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoLoopEntry)
+            return object;
+        var message = new $root.ProtoLoopEntry();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoLoopEntry._children: array expected");
+            message._children = [];
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoLoopEntry._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i]);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoLoopEntry.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.path != null)
+            message.path = String(object.path);
+        if (object.index != null)
+            if ($util.Long)
+                (message.index = $util.Long.fromValue(object.index)).unsigned = true;
+            else if (typeof object.index === "string")
+                message.index = parseInt(object.index, 10);
+            else if (typeof object.index === "number")
+                message.index = object.index;
+            else if (typeof object.index === "object")
+                message.index = new $util.LongBits(object.index.low >>> 0, object.index.high >>> 0).toNumber(true);
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoLoopEntry message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoLoopEntry
+     * @static
+     * @param {ProtoLoopEntry} message ProtoLoopEntry
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoLoopEntry.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object._children = [];
+        if (options.defaults) {
+            object.parent = null;
+            object.path = "";
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.index = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.index = options.longs === String ? "0" : 0;
+            object.uuid = "";
+        }
+        if (message._children && message._children.length) {
+            object._children = [];
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.path != null && message.hasOwnProperty("path"))
+            object.path = message.path;
+        if (message.index != null && message.hasOwnProperty("index"))
+            if (typeof message.index === "number")
+                object.index = options.longs === String ? String(message.index) : message.index;
+            else
+                object.index = options.longs === String ? $util.Long.prototype.toString.call(message.index) : options.longs === Number ? new $util.LongBits(message.index.low >>> 0, message.index.high >>> 0).toNumber(true) : message.index;
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoLoopEntry to JSON.
+     * @function toJSON
+     * @memberof ProtoLoopEntry
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoLoopEntry.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoLoopEntry
+     * @function getTypeUrl
+     * @memberof ProtoLoopEntry
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoLoopEntry.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoLoopEntry";
+    };
+
+    return ProtoLoopEntry;
+})();
+
+$root.ProtoLoop = (function() {
+
+    /**
+     * Properties of a ProtoLoop.
+     * @name IProtoLoop
+     * @interface IProtoLoop
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoLoop _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoLoop parent
+     * @property {string|null} [path] ProtoLoop path
+     * @property {string|null} [uuid] ProtoLoop uuid
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoLoop comChannelUUIDs
+     */
+
+    /**
+     * Constructs a new ProtoLoop.
+     * @name ProtoLoop
+     * @classdesc Represents a ProtoLoop.
+     * @implements IProtoLoop
+     * @constructor
+     * @param {IProtoLoop=} [properties] Properties to set
+     */
+    function ProtoLoop(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoLoop _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoLoop
+     * @instance
+     */
+    ProtoLoop.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoLoop parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoLoop
+     * @instance
+     */
+    ProtoLoop.prototype.parent = null;
+
+    /**
+     * ProtoLoop path.
+     * @member {string} path
+     * @memberof ProtoLoop
+     * @instance
+     */
+    ProtoLoop.prototype.path = "";
+
+    /**
+     * ProtoLoop uuid.
+     * @member {string} uuid
+     * @memberof ProtoLoop
+     * @instance
+     */
+    ProtoLoop.prototype.uuid = "";
+
+    /**
+     * ProtoLoop comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoLoop
+     * @instance
+     */
+    ProtoLoop.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoLoop instance using the specified properties.
+     * @function create
+     * @memberof ProtoLoop
+     * @static
+     * @param {IProtoLoop=} [properties] Properties to set
+     * @returns {ProtoLoop} ProtoLoop instance
+     */
+    ProtoLoop.create = function create(properties) {
+        return new ProtoLoop(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoLoop message. Does not implicitly {@link ProtoLoop.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoLoop
+     * @static
+     * @param {IProtoLoop} message ProtoLoop message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoLoop.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.path != null && Object.hasOwnProperty.call(message, "path"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.path);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.comChannelUUIDs[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoLoop message, length delimited. Does not implicitly {@link ProtoLoop.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoLoop
+     * @static
+     * @param {IProtoLoop} message ProtoLoop message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoLoop.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoLoop message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoLoop
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoLoop} ProtoLoop
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoLoop.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoLoop();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 2: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.path = reader.string();
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
+                    break;
+                }
+            case 5: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoLoop message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoLoop
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoLoop} ProtoLoop
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoLoop.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoLoop message.
+     * @function verify
+     * @memberof ProtoLoop
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoLoop.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i]);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.path != null && message.hasOwnProperty("path"))
+            if (!$util.isString(message.path))
+                return "path: string expected";
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoLoop message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoLoop
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoLoop} ProtoLoop
+     */
+    ProtoLoop.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoLoop)
+            return object;
+        var message = new $root.ProtoLoop();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoLoop._children: array expected");
+            message._children = [];
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoLoop._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i]);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoLoop.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.path != null)
+            message.path = String(object.path);
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoLoop.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoLoop message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoLoop
+     * @static
+     * @param {ProtoLoop} message ProtoLoop
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoLoop.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+        }
+        if (options.defaults) {
+            object.parent = null;
+            object.path = "";
+            object.uuid = "";
+        }
+        if (message._children && message._children.length) {
+            object._children = [];
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.path != null && message.hasOwnProperty("path"))
+            object.path = message.path;
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoLoop to JSON.
+     * @function toJSON
+     * @memberof ProtoLoop
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoLoop.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoLoop
+     * @function getTypeUrl
+     * @memberof ProtoLoop
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoLoop.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoLoop";
+    };
+
+    return ProtoLoop;
+})();
+
+/**
+ * ProtoSubTotalPosition enum.
+ * @name ProtoSubTotalPosition
+ * @enum {number}
+ * @property {number} POSITION_ABOVE_FOOTER=0 POSITION_ABOVE_FOOTER value
+ * @property {number} POSITION_BELOW_CONTENT=1 POSITION_BELOW_CONTENT value
+ */
+$root.ProtoSubTotalPosition = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "POSITION_ABOVE_FOOTER"] = 0;
+    values[valuesById[1] = "POSITION_BELOW_CONTENT"] = 1;
+    return values;
+})();
+
+$root.ProtoSubTotal = (function() {
+
+    /**
+     * Properties of a ProtoSubTotal.
+     * @name IProtoSubTotal
+     * @interface IProtoSubTotal
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoSubTotal _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoSubTotal parent
+     * @property {boolean|null} [applyImmediate] ProtoSubTotal applyImmediate
+     * @property {ProtoSubTotalPosition|null} [position] ProtoSubTotal position
+     * @property {IProtoMeasure|null} [height] ProtoSubTotal height
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoSubTotal comChannelUUIDs
+     */
+
+    /**
+     * Constructs a new ProtoSubTotal.
+     * @name ProtoSubTotal
+     * @classdesc Represents a ProtoSubTotal.
+     * @implements IProtoSubTotal
+     * @constructor
+     * @param {IProtoSubTotal=} [properties] Properties to set
+     */
+    function ProtoSubTotal(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoSubTotal _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoSubTotal
+     * @instance
+     */
+    ProtoSubTotal.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoSubTotal parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoSubTotal
+     * @instance
+     */
+    ProtoSubTotal.prototype.parent = null;
+
+    /**
+     * ProtoSubTotal applyImmediate.
+     * @member {boolean} applyImmediate
+     * @memberof ProtoSubTotal
+     * @instance
+     */
+    ProtoSubTotal.prototype.applyImmediate = false;
+
+    /**
+     * ProtoSubTotal position.
+     * @member {ProtoSubTotalPosition} position
+     * @memberof ProtoSubTotal
+     * @instance
+     */
+    ProtoSubTotal.prototype.position = 0;
+
+    /**
+     * ProtoSubTotal height.
+     * @member {IProtoMeasure|null|undefined} height
+     * @memberof ProtoSubTotal
+     * @instance
+     */
+    ProtoSubTotal.prototype.height = null;
+
+    /**
+     * ProtoSubTotal comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoSubTotal
+     * @instance
+     */
+    ProtoSubTotal.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoSubTotal instance using the specified properties.
+     * @function create
+     * @memberof ProtoSubTotal
+     * @static
+     * @param {IProtoSubTotal=} [properties] Properties to set
+     * @returns {ProtoSubTotal} ProtoSubTotal instance
+     */
+    ProtoSubTotal.create = function create(properties) {
+        return new ProtoSubTotal(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoSubTotal message. Does not implicitly {@link ProtoSubTotal.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoSubTotal
+     * @static
+     * @param {IProtoSubTotal} message ProtoSubTotal message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSubTotal.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.applyImmediate != null && Object.hasOwnProperty.call(message, "applyImmediate"))
+            writer.uint32(/* id 3, wireType 0 =*/24).bool(message.applyImmediate);
+        if (message.position != null && Object.hasOwnProperty.call(message, "position"))
+            writer.uint32(/* id 4, wireType 0 =*/32).int32(message.position);
+        if (message.height != null && Object.hasOwnProperty.call(message, "height"))
+            $root.ProtoMeasure.encode(message.height, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 6, wireType 2 =*/50).string(message.comChannelUUIDs[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoSubTotal message, length delimited. Does not implicitly {@link ProtoSubTotal.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoSubTotal
+     * @static
+     * @param {IProtoSubTotal} message ProtoSubTotal message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSubTotal.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoSubTotal message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoSubTotal
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoSubTotal} ProtoSubTotal
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSubTotal.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSubTotal();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 2: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.applyImmediate = reader.bool();
+                    break;
+                }
+            case 4: {
+                    message.position = reader.int32();
+                    break;
+                }
+            case 5: {
+                    message.height = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 6: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoSubTotal message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoSubTotal
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoSubTotal} ProtoSubTotal
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSubTotal.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoSubTotal message.
+     * @function verify
+     * @memberof ProtoSubTotal
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoSubTotal.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i]);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.applyImmediate != null && message.hasOwnProperty("applyImmediate"))
+            if (typeof message.applyImmediate !== "boolean")
+                return "applyImmediate: boolean expected";
+        if (message.position != null && message.hasOwnProperty("position"))
+            switch (message.position) {
+            default:
+                return "position: enum value expected";
+            case 0:
+            case 1:
+                break;
+            }
+        if (message.height != null && message.hasOwnProperty("height")) {
+            var error = $root.ProtoMeasure.verify(message.height);
+            if (error)
+                return "height." + error;
+        }
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoSubTotal message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoSubTotal
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoSubTotal} ProtoSubTotal
+     */
+    ProtoSubTotal.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoSubTotal)
+            return object;
+        var message = new $root.ProtoSubTotal();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoSubTotal._children: array expected");
+            message._children = [];
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoSubTotal._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i]);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoSubTotal.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.applyImmediate != null)
+            message.applyImmediate = Boolean(object.applyImmediate);
+        switch (object.position) {
+        default:
+            if (typeof object.position === "number") {
+                message.position = object.position;
+                break;
+            }
+            break;
+        case "POSITION_ABOVE_FOOTER":
+        case 0:
+            message.position = 0;
+            break;
+        case "POSITION_BELOW_CONTENT":
+        case 1:
+            message.position = 1;
+            break;
+        }
+        if (object.height != null) {
+            if (typeof object.height !== "object")
+                throw TypeError(".ProtoSubTotal.height: object expected");
+            message.height = $root.ProtoMeasure.fromObject(object.height);
+        }
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoSubTotal.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoSubTotal message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoSubTotal
+     * @static
+     * @param {ProtoSubTotal} message ProtoSubTotal
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoSubTotal.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+        }
+        if (options.defaults) {
+            object.parent = null;
+            object.applyImmediate = false;
+            object.position = options.enums === String ? "POSITION_ABOVE_FOOTER" : 0;
+            object.height = null;
+        }
+        if (message._children && message._children.length) {
+            object._children = [];
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.applyImmediate != null && message.hasOwnProperty("applyImmediate"))
+            object.applyImmediate = message.applyImmediate;
+        if (message.position != null && message.hasOwnProperty("position"))
+            object.position = options.enums === String ? $root.ProtoSubTotalPosition[message.position] === undefined ? message.position : $root.ProtoSubTotalPosition[message.position] : message.position;
+        if (message.height != null && message.hasOwnProperty("height"))
+            object.height = $root.ProtoMeasure.toObject(message.height, options);
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoSubTotal to JSON.
+     * @function toJSON
+     * @memberof ProtoSubTotal
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoSubTotal.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoSubTotal
+     * @function getTypeUrl
+     * @memberof ProtoSubTotal
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoSubTotal.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoSubTotal";
+    };
+
+    return ProtoSubTotal;
+})();
+
+$root.ProtoWsArea = (function() {
+
+    /**
+     * Properties of a ProtoWsArea.
+     * @name IProtoWsArea
+     * @interface IProtoWsArea
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoWsArea _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoWsArea parent
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoWsArea comChannelUUIDs
+     */
+
+    /**
+     * Constructs a new ProtoWsArea.
+     * @name ProtoWsArea
+     * @classdesc Represents a ProtoWsArea.
+     * @implements IProtoWsArea
+     * @constructor
+     * @param {IProtoWsArea=} [properties] Properties to set
+     */
+    function ProtoWsArea(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoWsArea _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoWsArea
+     * @instance
+     */
+    ProtoWsArea.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoWsArea parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoWsArea
+     * @instance
+     */
+    ProtoWsArea.prototype.parent = null;
+
+    /**
+     * ProtoWsArea comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoWsArea
+     * @instance
+     */
+    ProtoWsArea.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoWsArea instance using the specified properties.
+     * @function create
+     * @memberof ProtoWsArea
+     * @static
+     * @param {IProtoWsArea=} [properties] Properties to set
+     * @returns {ProtoWsArea} ProtoWsArea instance
+     */
+    ProtoWsArea.create = function create(properties) {
+        return new ProtoWsArea(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoWsArea message. Does not implicitly {@link ProtoWsArea.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoWsArea
+     * @static
+     * @param {IProtoWsArea} message ProtoWsArea message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoWsArea.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoWsArea message, length delimited. Does not implicitly {@link ProtoWsArea.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoWsArea
+     * @static
+     * @param {IProtoWsArea} message ProtoWsArea message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoWsArea.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoWsArea message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoWsArea
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoWsArea} ProtoWsArea
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoWsArea.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoWsArea();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 2: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoWsArea message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoWsArea
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoWsArea} ProtoWsArea
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoWsArea.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoWsArea message.
+     * @function verify
+     * @memberof ProtoWsArea
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoWsArea.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i]);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoWsArea message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoWsArea
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoWsArea} ProtoWsArea
+     */
+    ProtoWsArea.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoWsArea)
+            return object;
+        var message = new $root.ProtoWsArea();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoWsArea._children: array expected");
+            message._children = [];
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoWsArea._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i]);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoWsArea.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoWsArea.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoWsArea message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoWsArea
+     * @static
+     * @param {ProtoWsArea} message ProtoWsArea
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoWsArea.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+        }
+        if (options.defaults)
+            object.parent = null;
+        if (message._children && message._children.length) {
+            object._children = [];
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoWsArea to JSON.
+     * @function toJSON
+     * @memberof ProtoWsArea
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoWsArea.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoWsArea
+     * @function getTypeUrl
+     * @memberof ProtoWsArea
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoWsArea.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoWsArea";
+    };
+
+    return ProtoWsArea;
+})();
+
+$root.ProtoRule = (function() {
+
+    /**
+     * Properties of a ProtoRule.
+     * @name IProtoRule
+     * @interface IProtoRule
+     * @property {IProtoMeasure|null} [xOffset] ProtoRule xOffset
+     * @property {IProtoMeasure|null} [yOffset] ProtoRule yOffset
+     * @property {IProtoMeasure|null} [width] ProtoRule width
+     * @property {IProtoMeasure|null} [thickness] ProtoRule thickness
+     * @property {number|null} [rotation] ProtoRule rotation
+     * @property {IProtoColor|null} [color] ProtoRule color
+     * @property {ProtoRuleStyle|null} [style] ProtoRule style
+     */
+
+    /**
+     * Constructs a new ProtoRule.
+     * @name ProtoRule
+     * @classdesc Represents a ProtoRule.
+     * @implements IProtoRule
+     * @constructor
+     * @param {IProtoRule=} [properties] Properties to set
+     */
+    function ProtoRule(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoRule xOffset.
+     * @member {IProtoMeasure|null|undefined} xOffset
+     * @memberof ProtoRule
+     * @instance
+     */
+    ProtoRule.prototype.xOffset = null;
+
+    /**
+     * ProtoRule yOffset.
+     * @member {IProtoMeasure|null|undefined} yOffset
+     * @memberof ProtoRule
+     * @instance
+     */
+    ProtoRule.prototype.yOffset = null;
+
+    /**
+     * ProtoRule width.
+     * @member {IProtoMeasure|null|undefined} width
+     * @memberof ProtoRule
+     * @instance
+     */
+    ProtoRule.prototype.width = null;
+
+    /**
+     * ProtoRule thickness.
+     * @member {IProtoMeasure|null|undefined} thickness
+     * @memberof ProtoRule
+     * @instance
+     */
+    ProtoRule.prototype.thickness = null;
+
+    /**
+     * ProtoRule rotation.
+     * @member {number} rotation
+     * @memberof ProtoRule
+     * @instance
+     */
+    ProtoRule.prototype.rotation = 0;
+
+    /**
+     * ProtoRule color.
+     * @member {IProtoColor|null|undefined} color
+     * @memberof ProtoRule
+     * @instance
+     */
+    ProtoRule.prototype.color = null;
+
+    /**
+     * ProtoRule style.
+     * @member {ProtoRuleStyle} style
+     * @memberof ProtoRule
+     * @instance
+     */
+    ProtoRule.prototype.style = 0;
+
+    /**
+     * Creates a new ProtoRule instance using the specified properties.
+     * @function create
+     * @memberof ProtoRule
+     * @static
+     * @param {IProtoRule=} [properties] Properties to set
+     * @returns {ProtoRule} ProtoRule instance
+     */
+    ProtoRule.create = function create(properties) {
+        return new ProtoRule(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoRule message. Does not implicitly {@link ProtoRule.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoRule
+     * @static
+     * @param {IProtoRule} message ProtoRule message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoRule.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.xOffset != null && Object.hasOwnProperty.call(message, "xOffset"))
+            $root.ProtoMeasure.encode(message.xOffset, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.yOffset != null && Object.hasOwnProperty.call(message, "yOffset"))
+            $root.ProtoMeasure.encode(message.yOffset, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.width != null && Object.hasOwnProperty.call(message, "width"))
+            $root.ProtoMeasure.encode(message.width, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+        if (message.thickness != null && Object.hasOwnProperty.call(message, "thickness"))
+            $root.ProtoMeasure.encode(message.thickness, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+        if (message.rotation != null && Object.hasOwnProperty.call(message, "rotation"))
+            writer.uint32(/* id 5, wireType 1 =*/41).double(message.rotation);
+        if (message.color != null && Object.hasOwnProperty.call(message, "color"))
+            $root.ProtoColor.encode(message.color, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+        if (message.style != null && Object.hasOwnProperty.call(message, "style"))
+            writer.uint32(/* id 7, wireType 0 =*/56).int32(message.style);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoRule message, length delimited. Does not implicitly {@link ProtoRule.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoRule
+     * @static
+     * @param {IProtoRule} message ProtoRule message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoRule.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoRule message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoRule
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoRule} ProtoRule
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoRule.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoRule();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.xOffset = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.yOffset = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.width = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 4: {
+                    message.thickness = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 5: {
+                    message.rotation = reader.double();
+                    break;
+                }
+            case 6: {
+                    message.color = $root.ProtoColor.decode(reader, reader.uint32());
+                    break;
+                }
+            case 7: {
+                    message.style = reader.int32();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoRule message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoRule
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoRule} ProtoRule
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoRule.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoRule message.
+     * @function verify
+     * @memberof ProtoRule
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoRule.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.xOffset != null && message.hasOwnProperty("xOffset")) {
+            var error = $root.ProtoMeasure.verify(message.xOffset);
+            if (error)
+                return "xOffset." + error;
+        }
+        if (message.yOffset != null && message.hasOwnProperty("yOffset")) {
+            var error = $root.ProtoMeasure.verify(message.yOffset);
+            if (error)
+                return "yOffset." + error;
+        }
+        if (message.width != null && message.hasOwnProperty("width")) {
+            var error = $root.ProtoMeasure.verify(message.width);
+            if (error)
+                return "width." + error;
+        }
+        if (message.thickness != null && message.hasOwnProperty("thickness")) {
+            var error = $root.ProtoMeasure.verify(message.thickness);
+            if (error)
+                return "thickness." + error;
+        }
+        if (message.rotation != null && message.hasOwnProperty("rotation"))
+            if (typeof message.rotation !== "number")
+                return "rotation: number expected";
+        if (message.color != null && message.hasOwnProperty("color")) {
+            var error = $root.ProtoColor.verify(message.color);
+            if (error)
+                return "color." + error;
+        }
+        if (message.style != null && message.hasOwnProperty("style"))
+            switch (message.style) {
+            default:
+                return "style: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+                break;
+            }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoRule message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoRule
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoRule} ProtoRule
+     */
+    ProtoRule.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoRule)
+            return object;
+        var message = new $root.ProtoRule();
+        if (object.xOffset != null) {
+            if (typeof object.xOffset !== "object")
+                throw TypeError(".ProtoRule.xOffset: object expected");
+            message.xOffset = $root.ProtoMeasure.fromObject(object.xOffset);
+        }
+        if (object.yOffset != null) {
+            if (typeof object.yOffset !== "object")
+                throw TypeError(".ProtoRule.yOffset: object expected");
+            message.yOffset = $root.ProtoMeasure.fromObject(object.yOffset);
+        }
+        if (object.width != null) {
+            if (typeof object.width !== "object")
+                throw TypeError(".ProtoRule.width: object expected");
+            message.width = $root.ProtoMeasure.fromObject(object.width);
+        }
+        if (object.thickness != null) {
+            if (typeof object.thickness !== "object")
+                throw TypeError(".ProtoRule.thickness: object expected");
+            message.thickness = $root.ProtoMeasure.fromObject(object.thickness);
+        }
+        if (object.rotation != null)
+            message.rotation = Number(object.rotation);
+        if (object.color != null) {
+            if (typeof object.color !== "object")
+                throw TypeError(".ProtoRule.color: object expected");
+            message.color = $root.ProtoColor.fromObject(object.color);
+        }
+        switch (object.style) {
+        default:
+            if (typeof object.style === "number") {
+                message.style = object.style;
+                break;
+            }
+            break;
+        case "DUMMY_RULE_STYLE":
+        case 0:
+            message.style = 0;
+            break;
+        case "SOLID":
+        case 1:
+            message.style = 1;
+            break;
+        case "SPARSE_SHADING":
+        case 2:
+            message.style = 2;
+            break;
+        case "MEDIUM_SHADING":
+        case 3:
+            message.style = 3;
+            break;
+        case "DENSE_SHADING":
+        case 4:
+            message.style = 4;
+            break;
+        case "LIGHT_DOTTED":
+        case 5:
+            message.style = 5;
+            break;
+        case "MEDIUM_DOTTED":
+        case 6:
+            message.style = 6;
+            break;
+        case "HEAVY_DOTTED":
+        case 7:
+            message.style = 7;
+            break;
+        case "LIGHT_DASHED":
+        case 8:
+            message.style = 8;
+            break;
+        case "MEDIUM_DASHED":
+        case 9:
+            message.style = 9;
+            break;
+        case "HEAVY_DASHED":
+        case 10:
+            message.style = 10;
+            break;
+        case "DASH_PATTERN":
+        case 11:
+            message.style = 11;
+            break;
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoRule message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoRule
+     * @static
+     * @param {ProtoRule} message ProtoRule
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoRule.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.xOffset = null;
+            object.yOffset = null;
+            object.width = null;
+            object.thickness = null;
+            object.rotation = 0;
+            object.color = null;
+            object.style = options.enums === String ? "DUMMY_RULE_STYLE" : 0;
+        }
+        if (message.xOffset != null && message.hasOwnProperty("xOffset"))
+            object.xOffset = $root.ProtoMeasure.toObject(message.xOffset, options);
+        if (message.yOffset != null && message.hasOwnProperty("yOffset"))
+            object.yOffset = $root.ProtoMeasure.toObject(message.yOffset, options);
+        if (message.width != null && message.hasOwnProperty("width"))
+            object.width = $root.ProtoMeasure.toObject(message.width, options);
+        if (message.thickness != null && message.hasOwnProperty("thickness"))
+            object.thickness = $root.ProtoMeasure.toObject(message.thickness, options);
+        if (message.rotation != null && message.hasOwnProperty("rotation"))
+            object.rotation = options.json && !isFinite(message.rotation) ? String(message.rotation) : message.rotation;
+        if (message.color != null && message.hasOwnProperty("color"))
+            object.color = $root.ProtoColor.toObject(message.color, options);
+        if (message.style != null && message.hasOwnProperty("style"))
+            object.style = options.enums === String ? $root.ProtoRuleStyle[message.style] === undefined ? message.style : $root.ProtoRuleStyle[message.style] : message.style;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoRule to JSON.
+     * @function toJSON
+     * @memberof ProtoRule
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoRule.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoRule
+     * @function getTypeUrl
+     * @memberof ProtoRule
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoRule.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoRule";
+    };
+
+    return ProtoRule;
 })();
 
 module.exports = $root;
