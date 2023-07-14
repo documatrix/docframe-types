@@ -1,0 +1,9 @@
+message ProtoHrule {
+  ProtoMeasure  xOffset = 1;
+  ProtoMeasure  yOffset = 2;
+  ProtoMeasure  width = 3;
+  ProtoMeasure thickness = 4;
+  double rotation = 5;
+  ProtoColor color = 6;
+  ProtoRuleStyle style = 7;
+}

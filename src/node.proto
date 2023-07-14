@@ -41,7 +41,6 @@ message Node {
     ProtoTableRowConfig table_row_config = 38;
     ProtoTableContentGroupConfig table_content_group_config = 39;
     ProtoBrickReference brick_reference = 40;
-
     ProtoBorder border = 41;
     ProtoColumnSettings column_settings = 42;
     ProtoFont font = 43;
@@ -57,14 +56,13 @@ message Node {
     ProtoTextListLevelSetting text_list_level_setting = 53;
     ProtoUnnumberedListLevelSetting unnumbered_list_level_setting = 54;
     ProtoIndentation indentation = 55;
-
     ProtoBarcode barcode = 56;
-
     ProtoWsArea ws_area = 57;
     ProtoCarryOver carry_over = 58;
     ProtoSubTotal sub_total = 59;
     ProtoLoop loop = 60;
     ProtoLoopEntry loop_entry = 61;
+    ProtoHrule hrule = 62;
   }
 }
 
@@ -135,4 +133,5 @@ enum NodeType {
   DOCUMENT_ELEMENT_SUB_TOTAL = 64;
   DOCUMENT_ELEMENT_LOOP = 65;
   DOCUMENT_ELEMENT_LOOP_ENTRY = 66;
+  DOCUMENT_ELEMENT_HRULE = 67;
 }

@@ -684,7 +684,6 @@ ProtoTableCellConfig table_cell_config = 37;
 ProtoTableRowConfig table_row_config = 38;
 ProtoTableContentGroupConfig table_content_group_config = 39;
 ProtoBrickReference brick_reference = 40;
-
 ProtoBorder border = 41;
 ProtoColumnSettings column_settings = 42;
 ProtoFont font = 43;
@@ -700,14 +699,13 @@ ProtoNumberListLevelSetting number_list_level_setting = 52;
 ProtoTextListLevelSetting text_list_level_setting = 53;
 ProtoUnnumberedListLevelSetting unnumbered_list_level_setting = 54;
 ProtoIndentation indentation = 55;
-
 ProtoBarcode barcode = 56;
-
 ProtoWsArea ws_area = 57;
 ProtoCarryOver carry_over = 58;
 ProtoSubTotal sub_total = 59;
 ProtoLoop loop = 60;
 ProtoLoopEntry loop_entry = 61;
+ProtoHrule hrule = 62;
 }
 }
 
@@ -778,6 +776,7 @@ DOCUMENT_ELEMENT_CARRY_OVER = 63;
 DOCUMENT_ELEMENT_SUB_TOTAL = 64;
 DOCUMENT_ELEMENT_LOOP = 65;
 DOCUMENT_ELEMENT_LOOP_ENTRY = 66;
+DOCUMENT_ELEMENT_HRULE = 67;
 }
 message ProtoImage {
 ProtoDocumentElement parent = 1;
@@ -936,4 +935,13 @@ repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
 
 repeated string comChannelUUIDs = 3;
+}
+message ProtoHrule {
+ProtoMeasure xOffset = 1;
+ProtoMeasure yOffset = 2;
+ProtoMeasure width = 3;
+ProtoMeasure thickness = 4;
+double rotation = 5;
+ProtoColor color = 6;
+ProtoRuleStyle style = 7;
 }

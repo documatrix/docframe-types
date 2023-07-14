@@ -72,6 +72,7 @@ declare -a FileArray=(
   "src/DocumentElements/documentelements.loop.proto"
   "src/DocumentElements/documentelements.sub_total.proto"
   "src/DocumentElements/documentelements.ws_area.proto"
+  "src/DocumentElements/documentelements.hrule.proto"
 )
 
 for file in ${FileArray[@]}; do
