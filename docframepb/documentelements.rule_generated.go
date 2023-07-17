@@ -3,15 +3,15 @@
 package docframepb
 
 
-func (ProtoHrule *ProtoHrule) ToNode(children ...Message) *Node {
+func (ProtoRule *ProtoRule) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
 	}
 
 	node := &Node{
-		Object: &Node_Hrule{
-			Hrule: ProtoHrule,
+		Object: &Node_Rule{
+			Rule: ProtoRule,
 		},
 		Children: nodeChildren,
 	}
