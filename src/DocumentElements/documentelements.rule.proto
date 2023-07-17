@@ -1,0 +1,15 @@
+message ProtoRule {
+  ProtoMeasure  xOffset = 1;
+  ProtoMeasure  yOffset = 2;
+  ProtoMeasure  width = 3;
+  ProtoMeasure thickness = 4;
+  // Rotation of the rule is stored in degrees clockwise
+  // Examples:
+  //      0° = a horizontal rule to the right
+  //      90° = a vertical rule downwards
+  //      180° = a horizontal rule to the left
+  //      270° = a vertical rule upwards
+  double rotation = 5;
+  ProtoColor color = 6;
+  ProtoRuleStyle style = 7;
+}
