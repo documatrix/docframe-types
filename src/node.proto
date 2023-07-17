@@ -62,7 +62,7 @@ message Node {
     ProtoSubTotal sub_total = 59;
     ProtoLoop loop = 60;
     ProtoLoopEntry loop_entry = 61;
-    ProtoHrule hrule = 62;
+    ProtoRule rule = 62;
   }
 }
 
@@ -133,5 +133,5 @@ enum NodeType {
   DOCUMENT_ELEMENT_SUB_TOTAL = 64;
   DOCUMENT_ELEMENT_LOOP = 65;
   DOCUMENT_ELEMENT_LOOP_ENTRY = 66;
-  DOCUMENT_ELEMENT_HRULE = 67;
+  DOCUMENT_ELEMENT_RULE = 67;
 }

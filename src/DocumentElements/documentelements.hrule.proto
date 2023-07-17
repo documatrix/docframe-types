@@ -1,4 +1,4 @@
-message ProtoHrule {
+message ProtoRule {
   ProtoMeasure  xOffset = 1;
   ProtoMeasure  yOffset = 2;
   ProtoMeasure  width = 3;
