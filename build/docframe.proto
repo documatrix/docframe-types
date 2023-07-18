@@ -944,4 +944,5 @@ ProtoMeasure thickness = 4;
 double rotation = 5;
 ProtoColor color = 6;
 ProtoRuleStyle style = 7;
+uint64 count = 8;
 }
