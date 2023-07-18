@@ -12,4 +12,6 @@ message ProtoRule {
   double rotation = 5;
   ProtoColor color = 6;
   ProtoRuleStyle style = 7;
+  // Determines how often the rule is repeated
+  uint64 count = 8;
 }
