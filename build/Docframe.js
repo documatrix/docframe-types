@@ -30917,6 +30917,7 @@ $root.ProtoRule = (function() {
      * @property {number|null} [rotation] ProtoRule rotation
      * @property {IProtoColor|null} [color] ProtoRule color
      * @property {ProtoRuleStyle|null} [style] ProtoRule style
+     * @property {number|Long|null} [count] ProtoRule count
      */
 
     /**
@@ -30991,6 +30992,14 @@ $root.ProtoRule = (function() {
     ProtoRule.prototype.style = 0;
 
     /**
+     * ProtoRule count.
+     * @member {number|Long} count
+     * @memberof ProtoRule
+     * @instance
+     */
+    ProtoRule.prototype.count = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
      * Creates a new ProtoRule instance using the specified properties.
      * @function create
      * @memberof ProtoRule
@@ -31028,6 +31037,8 @@ $root.ProtoRule = (function() {
             $root.ProtoColor.encode(message.color, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
         if (message.style != null && Object.hasOwnProperty.call(message, "style"))
             writer.uint32(/* id 7, wireType 0 =*/56).int32(message.style);
+        if (message.count != null && Object.hasOwnProperty.call(message, "count"))
+            writer.uint32(/* id 8, wireType 0 =*/64).uint64(message.count);
         return writer;
     };
 
@@ -31088,6 +31099,10 @@ $root.ProtoRule = (function() {
                 }
             case 7: {
                     message.style = reader.int32();
+                    break;
+                }
+            case 8: {
+                    message.count = reader.uint64();
                     break;
                 }
             default:
@@ -31171,6 +31186,9 @@ $root.ProtoRule = (function() {
             case 11:
                 break;
             }
+        if (message.count != null && message.hasOwnProperty("count"))
+            if (!$util.isInteger(message.count) && !(message.count && $util.isInteger(message.count.low) && $util.isInteger(message.count.high)))
+                return "count: integer|Long expected";
         return null;
     };
 
@@ -31269,6 +31287,15 @@ $root.ProtoRule = (function() {
             message.style = 11;
             break;
         }
+        if (object.count != null)
+            if ($util.Long)
+                (message.count = $util.Long.fromValue(object.count)).unsigned = true;
+            else if (typeof object.count === "string")
+                message.count = parseInt(object.count, 10);
+            else if (typeof object.count === "number")
+                message.count = object.count;
+            else if (typeof object.count === "object")
+                message.count = new $util.LongBits(object.count.low >>> 0, object.count.high >>> 0).toNumber(true);
         return message;
     };
 
@@ -31293,6 +31320,11 @@ $root.ProtoRule = (function() {
             object.rotation = 0;
             object.color = null;
             object.style = options.enums === String ? "DUMMY_RULE_STYLE" : 0;
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.count = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.count = options.longs === String ? "0" : 0;
         }
         if (message.xOffset != null && message.hasOwnProperty("xOffset"))
             object.xOffset = $root.ProtoMeasure.toObject(message.xOffset, options);
@@ -31308,6 +31340,11 @@ $root.ProtoRule = (function() {
             object.color = $root.ProtoColor.toObject(message.color, options);
         if (message.style != null && message.hasOwnProperty("style"))
             object.style = options.enums === String ? $root.ProtoRuleStyle[message.style] === undefined ? message.style : $root.ProtoRuleStyle[message.style] : message.style;
+        if (message.count != null && message.hasOwnProperty("count"))
+            if (typeof message.count === "number")
+                object.count = options.longs === String ? String(message.count) : message.count;
+            else
+                object.count = options.longs === String ? $util.Long.prototype.toString.call(message.count) : options.longs === Number ? new $util.LongBits(message.count.low >>> 0, message.count.high >>> 0).toNumber(true) : message.count;
         return object;
     };
 

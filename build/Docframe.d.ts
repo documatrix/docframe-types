@@ -11211,6 +11211,9 @@ export interface IProtoRule {
 
     /** ProtoRule style */
     style?: (ProtoRuleStyle|null);
+
+    /** ProtoRule count */
+    count?: (number|Long|null);
 }
 
 /** Represents a ProtoRule. */
@@ -11242,6 +11245,9 @@ export class ProtoRule implements IProtoRule {
 
     /** ProtoRule style. */
     public style: ProtoRuleStyle;
+
+    /** ProtoRule count. */
+    public count: (number|Long);
 
     /**
      * Creates a new ProtoRule instance using the specified properties.
