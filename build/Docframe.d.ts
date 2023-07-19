@@ -5886,6 +5886,12 @@ export interface IProtoTable {
 
     /** ProtoTable configName */
     configName?: (string|null);
+
+    /** ProtoTable carryOver */
+    carryOver?: (INode|null);
+
+    /** ProtoTable subTotal */
+    subTotal?: (INode|null);
 }
 
 /** Represents a ProtoTable. */
@@ -5908,6 +5914,12 @@ export class ProtoTable implements IProtoTable {
 
     /** ProtoTable configName. */
     public configName: string;
+
+    /** ProtoTable carryOver. */
+    public carryOver?: (INode|null);
+
+    /** ProtoTable subTotal. */
+    public subTotal?: (INode|null);
 
     /**
      * Creates a new ProtoTable instance using the specified properties.
@@ -8466,6 +8478,24 @@ export interface INode {
 
     /** Node barcode */
     barcode?: (IProtoBarcode|null);
+
+    /** Node wsArea */
+    wsArea?: (IProtoWsArea|null);
+
+    /** Node carryOver */
+    carryOver?: (IProtoCarryOver|null);
+
+    /** Node subTotal */
+    subTotal?: (IProtoSubTotal|null);
+
+    /** Node loop */
+    loop?: (IProtoLoop|null);
+
+    /** Node loopEntry */
+    loopEntry?: (IProtoLoopEntry|null);
+
+    /** Node rule */
+    rule?: (IProtoRule|null);
 }
 
 /** Represents a Node. */
@@ -8645,8 +8675,26 @@ export class Node implements INode {
     /** Node barcode. */
     public barcode?: (IProtoBarcode|null);
 
+    /** Node wsArea. */
+    public wsArea?: (IProtoWsArea|null);
+
+    /** Node carryOver. */
+    public carryOver?: (IProtoCarryOver|null);
+
+    /** Node subTotal. */
+    public subTotal?: (IProtoSubTotal|null);
+
+    /** Node loop. */
+    public loop?: (IProtoLoop|null);
+
+    /** Node loopEntry. */
+    public loopEntry?: (IProtoLoopEntry|null);
+
+    /** Node rule. */
+    public rule?: (IProtoRule|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"color"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"border"|"columnSettings"|"font"|"graphicState"|"htmlParser"|"measure"|"strikethroughSpec"|"underlineSpec"|"cropSettings"|"flipSettings"|"imageListLevelSetting"|"numberListLevelSetting"|"textListLevelSetting"|"unnumberedListLevelSetting"|"indentation"|"barcode");
+    public object?: ("listSetting"|"color"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"border"|"columnSettings"|"font"|"graphicState"|"htmlParser"|"measure"|"strikethroughSpec"|"underlineSpec"|"cropSettings"|"flipSettings"|"imageListLevelSetting"|"numberListLevelSetting"|"textListLevelSetting"|"unnumberedListLevelSetting"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -8788,7 +8836,13 @@ export enum NodeType {
     UTIL_CROP_SETTINGS = 58,
     UTIL_FLIP_SETTINGS = 59,
     DOCUMENT_ELEMENT_INDENTATION = 60,
-    DOCUMENT_ELEMENT_BARCODE = 61
+    DOCUMENT_ELEMENT_BARCODE = 61,
+    DOCUMENT_ELEMENT_WS_AREA = 62,
+    DOCUMENT_ELEMENT_CARRY_OVER = 63,
+    DOCUMENT_ELEMENT_SUB_TOTAL = 64,
+    DOCUMENT_ELEMENT_LOOP = 65,
+    DOCUMENT_ELEMENT_LOOP_ENTRY = 66,
+    DOCUMENT_ELEMENT_RULE = 67
 }
 
 /** Properties of a ProtoImage. */
@@ -10535,6 +10589,738 @@ export class ProtoIndentation implements IProtoIndentation {
 
     /**
      * Gets the default type url for ProtoIndentation
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoCarryOver. */
+export interface IProtoCarryOver {
+
+    /** ProtoCarryOver _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoCarryOver parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoCarryOver comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoCarryOver. */
+export class ProtoCarryOver implements IProtoCarryOver {
+
+    /**
+     * Constructs a new ProtoCarryOver.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoCarryOver);
+
+    /** ProtoCarryOver _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoCarryOver parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoCarryOver comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoCarryOver instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoCarryOver instance
+     */
+    public static create(properties?: IProtoCarryOver): ProtoCarryOver;
+
+    /**
+     * Encodes the specified ProtoCarryOver message. Does not implicitly {@link ProtoCarryOver.verify|verify} messages.
+     * @param message ProtoCarryOver message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoCarryOver, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoCarryOver message, length delimited. Does not implicitly {@link ProtoCarryOver.verify|verify} messages.
+     * @param message ProtoCarryOver message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoCarryOver, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoCarryOver message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoCarryOver
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoCarryOver;
+
+    /**
+     * Decodes a ProtoCarryOver message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoCarryOver
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoCarryOver;
+
+    /**
+     * Verifies a ProtoCarryOver message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoCarryOver message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoCarryOver
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoCarryOver;
+
+    /**
+     * Creates a plain object from a ProtoCarryOver message. Also converts values to other types if specified.
+     * @param message ProtoCarryOver
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoCarryOver, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoCarryOver to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoCarryOver
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoLoopEntry. */
+export interface IProtoLoopEntry {
+
+    /** ProtoLoopEntry _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoLoopEntry parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoLoopEntry path */
+    path?: (string|null);
+
+    /** ProtoLoopEntry index */
+    index?: (number|Long|null);
+
+    /** ProtoLoopEntry uuid */
+    uuid?: (string|null);
+}
+
+/** Represents a ProtoLoopEntry. */
+export class ProtoLoopEntry implements IProtoLoopEntry {
+
+    /**
+     * Constructs a new ProtoLoopEntry.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoLoopEntry);
+
+    /** ProtoLoopEntry _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoLoopEntry parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoLoopEntry path. */
+    public path: string;
+
+    /** ProtoLoopEntry index. */
+    public index: (number|Long);
+
+    /** ProtoLoopEntry uuid. */
+    public uuid: string;
+
+    /**
+     * Creates a new ProtoLoopEntry instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoLoopEntry instance
+     */
+    public static create(properties?: IProtoLoopEntry): ProtoLoopEntry;
+
+    /**
+     * Encodes the specified ProtoLoopEntry message. Does not implicitly {@link ProtoLoopEntry.verify|verify} messages.
+     * @param message ProtoLoopEntry message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoLoopEntry, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoLoopEntry message, length delimited. Does not implicitly {@link ProtoLoopEntry.verify|verify} messages.
+     * @param message ProtoLoopEntry message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoLoopEntry, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoLoopEntry message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoLoopEntry
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoLoopEntry;
+
+    /**
+     * Decodes a ProtoLoopEntry message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoLoopEntry
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoLoopEntry;
+
+    /**
+     * Verifies a ProtoLoopEntry message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoLoopEntry message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoLoopEntry
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoLoopEntry;
+
+    /**
+     * Creates a plain object from a ProtoLoopEntry message. Also converts values to other types if specified.
+     * @param message ProtoLoopEntry
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoLoopEntry, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoLoopEntry to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoLoopEntry
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoLoop. */
+export interface IProtoLoop {
+
+    /** ProtoLoop _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoLoop parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoLoop path */
+    path?: (string|null);
+
+    /** ProtoLoop uuid */
+    uuid?: (string|null);
+
+    /** ProtoLoop comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoLoop. */
+export class ProtoLoop implements IProtoLoop {
+
+    /**
+     * Constructs a new ProtoLoop.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoLoop);
+
+    /** ProtoLoop _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoLoop parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoLoop path. */
+    public path: string;
+
+    /** ProtoLoop uuid. */
+    public uuid: string;
+
+    /** ProtoLoop comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoLoop instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoLoop instance
+     */
+    public static create(properties?: IProtoLoop): ProtoLoop;
+
+    /**
+     * Encodes the specified ProtoLoop message. Does not implicitly {@link ProtoLoop.verify|verify} messages.
+     * @param message ProtoLoop message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoLoop, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoLoop message, length delimited. Does not implicitly {@link ProtoLoop.verify|verify} messages.
+     * @param message ProtoLoop message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoLoop, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoLoop message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoLoop
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoLoop;
+
+    /**
+     * Decodes a ProtoLoop message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoLoop
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoLoop;
+
+    /**
+     * Verifies a ProtoLoop message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoLoop message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoLoop
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoLoop;
+
+    /**
+     * Creates a plain object from a ProtoLoop message. Also converts values to other types if specified.
+     * @param message ProtoLoop
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoLoop, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoLoop to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoLoop
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** ProtoSubTotalPosition enum. */
+export enum ProtoSubTotalPosition {
+    POSITION_ABOVE_FOOTER = 0,
+    POSITION_BELOW_CONTENT = 1
+}
+
+/** Properties of a ProtoSubTotal. */
+export interface IProtoSubTotal {
+
+    /** ProtoSubTotal _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoSubTotal parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSubTotal applyImmediate */
+    applyImmediate?: (boolean|null);
+
+    /** ProtoSubTotal position */
+    position?: (ProtoSubTotalPosition|null);
+
+    /** ProtoSubTotal height */
+    height?: (IProtoMeasure|null);
+
+    /** ProtoSubTotal comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoSubTotal. */
+export class ProtoSubTotal implements IProtoSubTotal {
+
+    /**
+     * Constructs a new ProtoSubTotal.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSubTotal);
+
+    /** ProtoSubTotal _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoSubTotal parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSubTotal applyImmediate. */
+    public applyImmediate: boolean;
+
+    /** ProtoSubTotal position. */
+    public position: ProtoSubTotalPosition;
+
+    /** ProtoSubTotal height. */
+    public height?: (IProtoMeasure|null);
+
+    /** ProtoSubTotal comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoSubTotal instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSubTotal instance
+     */
+    public static create(properties?: IProtoSubTotal): ProtoSubTotal;
+
+    /**
+     * Encodes the specified ProtoSubTotal message. Does not implicitly {@link ProtoSubTotal.verify|verify} messages.
+     * @param message ProtoSubTotal message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSubTotal, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSubTotal message, length delimited. Does not implicitly {@link ProtoSubTotal.verify|verify} messages.
+     * @param message ProtoSubTotal message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSubTotal, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSubTotal message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSubTotal
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSubTotal;
+
+    /**
+     * Decodes a ProtoSubTotal message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSubTotal
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSubTotal;
+
+    /**
+     * Verifies a ProtoSubTotal message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSubTotal message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSubTotal
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSubTotal;
+
+    /**
+     * Creates a plain object from a ProtoSubTotal message. Also converts values to other types if specified.
+     * @param message ProtoSubTotal
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSubTotal, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSubTotal to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoSubTotal
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoWsArea. */
+export interface IProtoWsArea {
+
+    /** ProtoWsArea _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoWsArea parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoWsArea comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoWsArea. */
+export class ProtoWsArea implements IProtoWsArea {
+
+    /**
+     * Constructs a new ProtoWsArea.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoWsArea);
+
+    /** ProtoWsArea _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoWsArea parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoWsArea comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoWsArea instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoWsArea instance
+     */
+    public static create(properties?: IProtoWsArea): ProtoWsArea;
+
+    /**
+     * Encodes the specified ProtoWsArea message. Does not implicitly {@link ProtoWsArea.verify|verify} messages.
+     * @param message ProtoWsArea message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoWsArea, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoWsArea message, length delimited. Does not implicitly {@link ProtoWsArea.verify|verify} messages.
+     * @param message ProtoWsArea message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoWsArea, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoWsArea message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoWsArea
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoWsArea;
+
+    /**
+     * Decodes a ProtoWsArea message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoWsArea
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoWsArea;
+
+    /**
+     * Verifies a ProtoWsArea message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoWsArea message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoWsArea
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoWsArea;
+
+    /**
+     * Creates a plain object from a ProtoWsArea message. Also converts values to other types if specified.
+     * @param message ProtoWsArea
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoWsArea, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoWsArea to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoWsArea
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoRule. */
+export interface IProtoRule {
+
+    /** ProtoRule xOffset */
+    xOffset?: (IProtoMeasure|null);
+
+    /** ProtoRule yOffset */
+    yOffset?: (IProtoMeasure|null);
+
+    /** ProtoRule width */
+    width?: (IProtoMeasure|null);
+
+    /** ProtoRule thickness */
+    thickness?: (IProtoMeasure|null);
+
+    /** ProtoRule rotation */
+    rotation?: (number|null);
+
+    /** ProtoRule color */
+    color?: (IProtoColor|null);
+
+    /** ProtoRule style */
+    style?: (ProtoRuleStyle|null);
+
+    /** ProtoRule count */
+    count?: (number|Long|null);
+}
+
+/** Represents a ProtoRule. */
+export class ProtoRule implements IProtoRule {
+
+    /**
+     * Constructs a new ProtoRule.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoRule);
+
+    /** ProtoRule xOffset. */
+    public xOffset?: (IProtoMeasure|null);
+
+    /** ProtoRule yOffset. */
+    public yOffset?: (IProtoMeasure|null);
+
+    /** ProtoRule width. */
+    public width?: (IProtoMeasure|null);
+
+    /** ProtoRule thickness. */
+    public thickness?: (IProtoMeasure|null);
+
+    /** ProtoRule rotation. */
+    public rotation: number;
+
+    /** ProtoRule color. */
+    public color?: (IProtoColor|null);
+
+    /** ProtoRule style. */
+    public style: ProtoRuleStyle;
+
+    /** ProtoRule count. */
+    public count: (number|Long);
+
+    /**
+     * Creates a new ProtoRule instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoRule instance
+     */
+    public static create(properties?: IProtoRule): ProtoRule;
+
+    /**
+     * Encodes the specified ProtoRule message. Does not implicitly {@link ProtoRule.verify|verify} messages.
+     * @param message ProtoRule message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoRule, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoRule message, length delimited. Does not implicitly {@link ProtoRule.verify|verify} messages.
+     * @param message ProtoRule message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoRule, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoRule message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoRule
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoRule;
+
+    /**
+     * Decodes a ProtoRule message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoRule
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoRule;
+
+    /**
+     * Verifies a ProtoRule message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoRule message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoRule
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoRule;
+
+    /**
+     * Creates a plain object from a ProtoRule message. Also converts values to other types if specified.
+     * @param message ProtoRule
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoRule, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoRule to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoRule
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
