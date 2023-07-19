@@ -12,6 +12,21 @@ message ProtoRule {
   double rotation = 5;
   ProtoColor color = 6;
   ProtoRuleStyle style = 7;
-  // Determines how often the rule is repeated
-  uint64 count = 8;
+  // Toggles whether the rule is a normal rule or a boundary rule
+  ProtoRuleMode mode = 8;
+  // If the rule is a boundary rule, this field contains the boundaries where the rule starts and ends.
+  // Both boundaries can be independently set to be either an absolute value e.g. PT or a relative value e.g. %.
+  // If the rule is a normal rule, this field is ignored.
+  ProtoRuleBoundaries boundaries = 9;
+}
+
+enum ProtoRuleMode {
+  NORMAL = 0;
+  BOUNDARY = 1;
+}
+
+// go-gen:ignore
+message ProtoRuleBoundaries {
+  ProtoMeasure start = 1;
+  ProtoMeasure end = 2;
 }

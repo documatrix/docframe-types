@@ -8,6 +8,7 @@ message ProtoListSetting {
   ProtoListLevelSetting defaultListLevelSetting = 4;
 }
 
+// go-gen:ignore
 message ProtoBoxedListSetting {
   ProtoListSetting value = 1;
   bool isNull = 2;
