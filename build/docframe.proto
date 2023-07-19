@@ -651,6 +651,7 @@ repeated Node children = 1;
 
 oneof object {
 ProtoListSetting list_setting = 2;
+ProtoColorDef colorDef = 3;
 ProtoBrick brick = 4;
 ProtoTemplate template = 5;
 ProtoFormatted formatted = 6;
@@ -676,7 +677,6 @@ ProtoUlConfig ul_config = 25;
 ProtoNewPage new_page = 26;
 ProtoVariable variable = 27;
 ProtoNamedString named_string = 28;
-ProtoListLevelSetting list_level_setting = 29;
 ProtoParagraph paragraph = 30;
 ProtoSection section = 31;
 ProtoSpan span = 32;
@@ -715,6 +715,7 @@ DOCUMENT_ELEMENT_TABLE_CELL = 12;
 DOCUMENT_ELEMENT_TABLE_ROW = 13;
 DOCUMENT_ELEMENT_TEMPLATE = 15;
 DOCUMENT_ELEMENT_TEXT = 16;
+DOCUMENT_ELEMENT_COLOR_DEF = 19;
 DOCUMENT_ELEMENT_IMAGE = 30;
 DOCUMENT_ELEMENT_NAMED_STRING = 34;
 DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP = 35;
@@ -926,4 +927,7 @@ BOUNDARY = 1;
 message ProtoRuleBoundaries {
 ProtoMeasure start = 1;
 ProtoMeasure end = 2;
+}
+message ProtoColorDef {
+ProtoColor color = 1;
 }
