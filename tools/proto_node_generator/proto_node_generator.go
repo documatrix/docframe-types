@@ -14,36 +14,9 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-var ignoreTypes = map[string]bool{
-	// DocumentElement types
-	"TableSettings":              true,
-	"TableContentGroupSettings":  true,
-	"TableRowSettings":           true,
-	"TableCellSettings":          true,
-	"BoxedTableContentGroupType": true,
-	"BoxedTableCellType":         true,
-
-	// Util types
-	"AdvancedIllustrationArea":                  true,
-	"BoxedAdvancedIllustrationAreaTextFlowType": true,
-	"BoxedHorizontalAlignment":                  true,
-	"BoxedVerticalAlignment":                    true,
-	"BoxedColor":                                true,
-	"BoxedFont":                                 true,
-	"BoxedListSetting":                          true,
-	"BoxedMeasure":                              true,
-	"BoxedPositionMode":                         true,
-	"BoxedSPB":                                  true,
-	"BoxedSPBMode":                              true,
-	"BoxedStrikethrough":                        true,
-	"BoxedStrikethroughSpec":                    true,
-	"BoxedUnderline":                            true,
-	"BoxedUnderlineSpec":                        true,
-	"CMYKColor":                                 true,
-	"RGBColor":                                  true,
-	"SideBorders":                               true,
-	"SideMeasures":                              true,
-}
+// ignoreTypeComment can be used to mark a Proto message as ignored by the generator.
+// Therefore no Node conversion will be written for it.
+const ignoreTypeComment = "// go-gen:ignore"
 
 func main() {
 	protoDocumentElementDir := flag.String("proto-document-element-dir", "", "The directory which contains the proto file per document element")
@@ -69,12 +42,6 @@ func main() {
 	err := workDir(*protoDocumentElementDir, *destinationDir, "DOCUMENT_ELEMENT")
 	if err != nil {
 		logrus.Errorf("Error processing directory %s: %s", *protoDocumentElementDir, err.Error())
-		os.Exit(1)
-	}
-
-	err = workDir(*protoUtilDir, *destinationDir, "UTIL")
-	if err != nil {
-		logrus.Errorf("Error processing directory %s: %s", *protoUtilDir, err.Error())
 		os.Exit(1)
 	}
 }
@@ -149,16 +116,23 @@ func generateFromProto(protoFile string, goFile string, nodeTypePrefix string) e
 
 	var currentElement *ElementData
 
+	ignoreNext := false
 	for fileScanner.Scan() {
 		line := fileScanner.Text()
+		if strings.HasPrefix(line, ignoreTypeComment) {
+			ignoreNext = true
+			continue
+		}
+
 		if match := messageRegex.FindStringSubmatch(line); match != nil {
 			if currentElement != nil {
 				elements = append(elements, currentElement)
 			}
 
 			typeName := strings.ReplaceAll(match[1], "Proto", "")
-			if _, ok := ignoreTypes[typeName]; ok {
+			if ignoreNext {
 				currentElement = nil
+				ignoreNext = false
 				continue
 			}
 
@@ -168,6 +142,8 @@ func generateFromProto(protoFile string, goFile string, nodeTypePrefix string) e
 				TypeName:       typeName,
 			}
 		}
+
+		ignoreNext = false
 	}
 
 	if currentElement != nil {

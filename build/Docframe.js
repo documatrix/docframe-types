@@ -1427,6 +1427,7 @@ $root.ProtoBoxedSPBMode = (function() {
  * @property {number} MEDIUM_DASHED=9 MEDIUM_DASHED value
  * @property {number} HEAVY_DASHED=10 HEAVY_DASHED value
  * @property {number} DASH_PATTERN=11 DASH_PATTERN value
+ * @property {number} DOUBLE=254 DOUBLE value
  */
 $root.ProtoRuleStyle = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -1442,6 +1443,7 @@ $root.ProtoRuleStyle = (function() {
     values[valuesById[9] = "MEDIUM_DASHED"] = 9;
     values[valuesById[10] = "HEAVY_DASHED"] = 10;
     values[valuesById[11] = "DASH_PATTERN"] = 11;
+    values[valuesById[254] = "DOUBLE"] = 254;
     return values;
 })();
 
@@ -1676,6 +1678,7 @@ $root.ProtoStrikethroughSpec = (function() {
             case 9:
             case 10:
             case 11:
+            case 254:
                 break;
             }
         return null;
@@ -1787,6 +1790,10 @@ $root.ProtoStrikethroughSpec = (function() {
         case "DASH_PATTERN":
         case 11:
             message.style = 11;
+            break;
+        case "DOUBLE":
+        case 254:
+            message.style = 254;
             break;
         }
         return message;
@@ -7988,6 +7995,7 @@ $root.ProtoUnderlineSpec = (function() {
             case 9:
             case 10:
             case 11:
+            case 254:
                 break;
             }
         return null;
@@ -8099,6 +8107,10 @@ $root.ProtoUnderlineSpec = (function() {
         case "DASH_PATTERN":
         case 11:
             message.style = 11;
+            break;
+        case "DOUBLE":
+        case 254:
+            message.style = 254;
             break;
         }
         return message;
@@ -22193,7 +22205,6 @@ $root.Node = (function() {
      * @interface INode
      * @property {Array.<INode>|null} [children] Node children
      * @property {IProtoListSetting|null} [listSetting] Node listSetting
-     * @property {IProtoColor|null} [color] Node color
      * @property {IProtoBrick|null} [brick] Node brick
      * @property {IProtoTemplate|null} [template] Node template
      * @property {IProtoFormatted|null} [formatted] Node formatted
@@ -22231,20 +22242,6 @@ $root.Node = (function() {
      * @property {IProtoTableRowConfig|null} [tableRowConfig] Node tableRowConfig
      * @property {IProtoTableContentGroupConfig|null} [tableContentGroupConfig] Node tableContentGroupConfig
      * @property {IProtoBrickReference|null} [brickReference] Node brickReference
-     * @property {IProtoBorder|null} [border] Node border
-     * @property {IProtoColumnSettings|null} [columnSettings] Node columnSettings
-     * @property {IProtoFont|null} [font] Node font
-     * @property {IProtoGraphicState|null} [graphicState] Node graphicState
-     * @property {IProtoHtmlParser|null} [htmlParser] Node htmlParser
-     * @property {IProtoMeasure|null} [measure] Node measure
-     * @property {IProtoStrikethroughSpec|null} [strikethroughSpec] Node strikethroughSpec
-     * @property {IProtoUnderlineSpec|null} [underlineSpec] Node underlineSpec
-     * @property {IProtoCropSettings|null} [cropSettings] Node cropSettings
-     * @property {IProtoFlipSettings|null} [flipSettings] Node flipSettings
-     * @property {IProtoImageListLevelSetting|null} [imageListLevelSetting] Node imageListLevelSetting
-     * @property {IProtoNumberListLevelSetting|null} [numberListLevelSetting] Node numberListLevelSetting
-     * @property {IProtoTextListLevelSetting|null} [textListLevelSetting] Node textListLevelSetting
-     * @property {IProtoUnnumberedListLevelSetting|null} [unnumberedListLevelSetting] Node unnumberedListLevelSetting
      * @property {IProtoIndentation|null} [indentation] Node indentation
      * @property {IProtoBarcode|null} [barcode] Node barcode
      * @property {IProtoWsArea|null} [wsArea] Node wsArea
@@ -22286,14 +22283,6 @@ $root.Node = (function() {
      * @instance
      */
     Node.prototype.listSetting = null;
-
-    /**
-     * Node color.
-     * @member {IProtoColor|null|undefined} color
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.color = null;
 
     /**
      * Node brick.
@@ -22592,118 +22581,6 @@ $root.Node = (function() {
     Node.prototype.brickReference = null;
 
     /**
-     * Node border.
-     * @member {IProtoBorder|null|undefined} border
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.border = null;
-
-    /**
-     * Node columnSettings.
-     * @member {IProtoColumnSettings|null|undefined} columnSettings
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.columnSettings = null;
-
-    /**
-     * Node font.
-     * @member {IProtoFont|null|undefined} font
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.font = null;
-
-    /**
-     * Node graphicState.
-     * @member {IProtoGraphicState|null|undefined} graphicState
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.graphicState = null;
-
-    /**
-     * Node htmlParser.
-     * @member {IProtoHtmlParser|null|undefined} htmlParser
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.htmlParser = null;
-
-    /**
-     * Node measure.
-     * @member {IProtoMeasure|null|undefined} measure
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.measure = null;
-
-    /**
-     * Node strikethroughSpec.
-     * @member {IProtoStrikethroughSpec|null|undefined} strikethroughSpec
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.strikethroughSpec = null;
-
-    /**
-     * Node underlineSpec.
-     * @member {IProtoUnderlineSpec|null|undefined} underlineSpec
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.underlineSpec = null;
-
-    /**
-     * Node cropSettings.
-     * @member {IProtoCropSettings|null|undefined} cropSettings
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.cropSettings = null;
-
-    /**
-     * Node flipSettings.
-     * @member {IProtoFlipSettings|null|undefined} flipSettings
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.flipSettings = null;
-
-    /**
-     * Node imageListLevelSetting.
-     * @member {IProtoImageListLevelSetting|null|undefined} imageListLevelSetting
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.imageListLevelSetting = null;
-
-    /**
-     * Node numberListLevelSetting.
-     * @member {IProtoNumberListLevelSetting|null|undefined} numberListLevelSetting
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.numberListLevelSetting = null;
-
-    /**
-     * Node textListLevelSetting.
-     * @member {IProtoTextListLevelSetting|null|undefined} textListLevelSetting
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.textListLevelSetting = null;
-
-    /**
-     * Node unnumberedListLevelSetting.
-     * @member {IProtoUnnumberedListLevelSetting|null|undefined} unnumberedListLevelSetting
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.unnumberedListLevelSetting = null;
-
-    /**
      * Node indentation.
      * @member {IProtoIndentation|null|undefined} indentation
      * @memberof Node
@@ -22772,12 +22649,12 @@ $root.Node = (function() {
 
     /**
      * Node object.
-     * @member {"listSetting"|"color"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"border"|"columnSettings"|"font"|"graphicState"|"htmlParser"|"measure"|"strikethroughSpec"|"underlineSpec"|"cropSettings"|"flipSettings"|"imageListLevelSetting"|"numberListLevelSetting"|"textListLevelSetting"|"unnumberedListLevelSetting"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|undefined} object
+     * @member {"listSetting"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "color", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "listLevelSetting", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "border", "columnSettings", "font", "graphicState", "htmlParser", "measure", "strikethroughSpec", "underlineSpec", "cropSettings", "flipSettings", "imageListLevelSetting", "numberListLevelSetting", "textListLevelSetting", "unnumberedListLevelSetting", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "listLevelSetting", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -22810,8 +22687,6 @@ $root.Node = (function() {
                 $root.Node.encode(message.children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.listSetting != null && Object.hasOwnProperty.call(message, "listSetting"))
             $root.ProtoListSetting.encode(message.listSetting, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.color != null && Object.hasOwnProperty.call(message, "color"))
-            $root.ProtoColor.encode(message.color, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
         if (message.brick != null && Object.hasOwnProperty.call(message, "brick"))
             $root.ProtoBrick.encode(message.brick, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
         if (message.template != null && Object.hasOwnProperty.call(message, "template"))
@@ -22886,34 +22761,6 @@ $root.Node = (function() {
             $root.ProtoTableContentGroupConfig.encode(message.tableContentGroupConfig, writer.uint32(/* id 39, wireType 2 =*/314).fork()).ldelim();
         if (message.brickReference != null && Object.hasOwnProperty.call(message, "brickReference"))
             $root.ProtoBrickReference.encode(message.brickReference, writer.uint32(/* id 40, wireType 2 =*/322).fork()).ldelim();
-        if (message.border != null && Object.hasOwnProperty.call(message, "border"))
-            $root.ProtoBorder.encode(message.border, writer.uint32(/* id 41, wireType 2 =*/330).fork()).ldelim();
-        if (message.columnSettings != null && Object.hasOwnProperty.call(message, "columnSettings"))
-            $root.ProtoColumnSettings.encode(message.columnSettings, writer.uint32(/* id 42, wireType 2 =*/338).fork()).ldelim();
-        if (message.font != null && Object.hasOwnProperty.call(message, "font"))
-            $root.ProtoFont.encode(message.font, writer.uint32(/* id 43, wireType 2 =*/346).fork()).ldelim();
-        if (message.graphicState != null && Object.hasOwnProperty.call(message, "graphicState"))
-            $root.ProtoGraphicState.encode(message.graphicState, writer.uint32(/* id 44, wireType 2 =*/354).fork()).ldelim();
-        if (message.htmlParser != null && Object.hasOwnProperty.call(message, "htmlParser"))
-            $root.ProtoHtmlParser.encode(message.htmlParser, writer.uint32(/* id 45, wireType 2 =*/362).fork()).ldelim();
-        if (message.measure != null && Object.hasOwnProperty.call(message, "measure"))
-            $root.ProtoMeasure.encode(message.measure, writer.uint32(/* id 46, wireType 2 =*/370).fork()).ldelim();
-        if (message.strikethroughSpec != null && Object.hasOwnProperty.call(message, "strikethroughSpec"))
-            $root.ProtoStrikethroughSpec.encode(message.strikethroughSpec, writer.uint32(/* id 47, wireType 2 =*/378).fork()).ldelim();
-        if (message.underlineSpec != null && Object.hasOwnProperty.call(message, "underlineSpec"))
-            $root.ProtoUnderlineSpec.encode(message.underlineSpec, writer.uint32(/* id 48, wireType 2 =*/386).fork()).ldelim();
-        if (message.cropSettings != null && Object.hasOwnProperty.call(message, "cropSettings"))
-            $root.ProtoCropSettings.encode(message.cropSettings, writer.uint32(/* id 49, wireType 2 =*/394).fork()).ldelim();
-        if (message.flipSettings != null && Object.hasOwnProperty.call(message, "flipSettings"))
-            $root.ProtoFlipSettings.encode(message.flipSettings, writer.uint32(/* id 50, wireType 2 =*/402).fork()).ldelim();
-        if (message.imageListLevelSetting != null && Object.hasOwnProperty.call(message, "imageListLevelSetting"))
-            $root.ProtoImageListLevelSetting.encode(message.imageListLevelSetting, writer.uint32(/* id 51, wireType 2 =*/410).fork()).ldelim();
-        if (message.numberListLevelSetting != null && Object.hasOwnProperty.call(message, "numberListLevelSetting"))
-            $root.ProtoNumberListLevelSetting.encode(message.numberListLevelSetting, writer.uint32(/* id 52, wireType 2 =*/418).fork()).ldelim();
-        if (message.textListLevelSetting != null && Object.hasOwnProperty.call(message, "textListLevelSetting"))
-            $root.ProtoTextListLevelSetting.encode(message.textListLevelSetting, writer.uint32(/* id 53, wireType 2 =*/426).fork()).ldelim();
-        if (message.unnumberedListLevelSetting != null && Object.hasOwnProperty.call(message, "unnumberedListLevelSetting"))
-            $root.ProtoUnnumberedListLevelSetting.encode(message.unnumberedListLevelSetting, writer.uint32(/* id 54, wireType 2 =*/434).fork()).ldelim();
         if (message.indentation != null && Object.hasOwnProperty.call(message, "indentation"))
             $root.ProtoIndentation.encode(message.indentation, writer.uint32(/* id 55, wireType 2 =*/442).fork()).ldelim();
         if (message.barcode != null && Object.hasOwnProperty.call(message, "barcode"))
@@ -22972,10 +22819,6 @@ $root.Node = (function() {
                 }
             case 2: {
                     message.listSetting = $root.ProtoListSetting.decode(reader, reader.uint32());
-                    break;
-                }
-            case 3: {
-                    message.color = $root.ProtoColor.decode(reader, reader.uint32());
                     break;
                 }
             case 4: {
@@ -23126,62 +22969,6 @@ $root.Node = (function() {
                     message.brickReference = $root.ProtoBrickReference.decode(reader, reader.uint32());
                     break;
                 }
-            case 41: {
-                    message.border = $root.ProtoBorder.decode(reader, reader.uint32());
-                    break;
-                }
-            case 42: {
-                    message.columnSettings = $root.ProtoColumnSettings.decode(reader, reader.uint32());
-                    break;
-                }
-            case 43: {
-                    message.font = $root.ProtoFont.decode(reader, reader.uint32());
-                    break;
-                }
-            case 44: {
-                    message.graphicState = $root.ProtoGraphicState.decode(reader, reader.uint32());
-                    break;
-                }
-            case 45: {
-                    message.htmlParser = $root.ProtoHtmlParser.decode(reader, reader.uint32());
-                    break;
-                }
-            case 46: {
-                    message.measure = $root.ProtoMeasure.decode(reader, reader.uint32());
-                    break;
-                }
-            case 47: {
-                    message.strikethroughSpec = $root.ProtoStrikethroughSpec.decode(reader, reader.uint32());
-                    break;
-                }
-            case 48: {
-                    message.underlineSpec = $root.ProtoUnderlineSpec.decode(reader, reader.uint32());
-                    break;
-                }
-            case 49: {
-                    message.cropSettings = $root.ProtoCropSettings.decode(reader, reader.uint32());
-                    break;
-                }
-            case 50: {
-                    message.flipSettings = $root.ProtoFlipSettings.decode(reader, reader.uint32());
-                    break;
-                }
-            case 51: {
-                    message.imageListLevelSetting = $root.ProtoImageListLevelSetting.decode(reader, reader.uint32());
-                    break;
-                }
-            case 52: {
-                    message.numberListLevelSetting = $root.ProtoNumberListLevelSetting.decode(reader, reader.uint32());
-                    break;
-                }
-            case 53: {
-                    message.textListLevelSetting = $root.ProtoTextListLevelSetting.decode(reader, reader.uint32());
-                    break;
-                }
-            case 54: {
-                    message.unnumberedListLevelSetting = $root.ProtoUnnumberedListLevelSetting.decode(reader, reader.uint32());
-                    break;
-                }
             case 55: {
                     message.indentation = $root.ProtoIndentation.decode(reader, reader.uint32());
                     break;
@@ -23265,16 +23052,6 @@ $root.Node = (function() {
                 var error = $root.ProtoListSetting.verify(message.listSetting);
                 if (error)
                     return "listSetting." + error;
-            }
-        }
-        if (message.color != null && message.hasOwnProperty("color")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoColor.verify(message.color);
-                if (error)
-                    return "color." + error;
             }
         }
         if (message.brick != null && message.hasOwnProperty("brick")) {
@@ -23647,146 +23424,6 @@ $root.Node = (function() {
                     return "brickReference." + error;
             }
         }
-        if (message.border != null && message.hasOwnProperty("border")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoBorder.verify(message.border);
-                if (error)
-                    return "border." + error;
-            }
-        }
-        if (message.columnSettings != null && message.hasOwnProperty("columnSettings")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoColumnSettings.verify(message.columnSettings);
-                if (error)
-                    return "columnSettings." + error;
-            }
-        }
-        if (message.font != null && message.hasOwnProperty("font")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoFont.verify(message.font);
-                if (error)
-                    return "font." + error;
-            }
-        }
-        if (message.graphicState != null && message.hasOwnProperty("graphicState")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoGraphicState.verify(message.graphicState);
-                if (error)
-                    return "graphicState." + error;
-            }
-        }
-        if (message.htmlParser != null && message.hasOwnProperty("htmlParser")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoHtmlParser.verify(message.htmlParser);
-                if (error)
-                    return "htmlParser." + error;
-            }
-        }
-        if (message.measure != null && message.hasOwnProperty("measure")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoMeasure.verify(message.measure);
-                if (error)
-                    return "measure." + error;
-            }
-        }
-        if (message.strikethroughSpec != null && message.hasOwnProperty("strikethroughSpec")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoStrikethroughSpec.verify(message.strikethroughSpec);
-                if (error)
-                    return "strikethroughSpec." + error;
-            }
-        }
-        if (message.underlineSpec != null && message.hasOwnProperty("underlineSpec")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoUnderlineSpec.verify(message.underlineSpec);
-                if (error)
-                    return "underlineSpec." + error;
-            }
-        }
-        if (message.cropSettings != null && message.hasOwnProperty("cropSettings")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoCropSettings.verify(message.cropSettings);
-                if (error)
-                    return "cropSettings." + error;
-            }
-        }
-        if (message.flipSettings != null && message.hasOwnProperty("flipSettings")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoFlipSettings.verify(message.flipSettings);
-                if (error)
-                    return "flipSettings." + error;
-            }
-        }
-        if (message.imageListLevelSetting != null && message.hasOwnProperty("imageListLevelSetting")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoImageListLevelSetting.verify(message.imageListLevelSetting);
-                if (error)
-                    return "imageListLevelSetting." + error;
-            }
-        }
-        if (message.numberListLevelSetting != null && message.hasOwnProperty("numberListLevelSetting")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoNumberListLevelSetting.verify(message.numberListLevelSetting);
-                if (error)
-                    return "numberListLevelSetting." + error;
-            }
-        }
-        if (message.textListLevelSetting != null && message.hasOwnProperty("textListLevelSetting")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoTextListLevelSetting.verify(message.textListLevelSetting);
-                if (error)
-                    return "textListLevelSetting." + error;
-            }
-        }
-        if (message.unnumberedListLevelSetting != null && message.hasOwnProperty("unnumberedListLevelSetting")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoUnnumberedListLevelSetting.verify(message.unnumberedListLevelSetting);
-                if (error)
-                    return "unnumberedListLevelSetting." + error;
-            }
-        }
         if (message.indentation != null && message.hasOwnProperty("indentation")) {
             if (properties.object === 1)
                 return "object: multiple values";
@@ -23896,11 +23533,6 @@ $root.Node = (function() {
             if (typeof object.listSetting !== "object")
                 throw TypeError(".Node.listSetting: object expected");
             message.listSetting = $root.ProtoListSetting.fromObject(object.listSetting);
-        }
-        if (object.color != null) {
-            if (typeof object.color !== "object")
-                throw TypeError(".Node.color: object expected");
-            message.color = $root.ProtoColor.fromObject(object.color);
         }
         if (object.brick != null) {
             if (typeof object.brick !== "object")
@@ -24087,76 +23719,6 @@ $root.Node = (function() {
                 throw TypeError(".Node.brickReference: object expected");
             message.brickReference = $root.ProtoBrickReference.fromObject(object.brickReference);
         }
-        if (object.border != null) {
-            if (typeof object.border !== "object")
-                throw TypeError(".Node.border: object expected");
-            message.border = $root.ProtoBorder.fromObject(object.border);
-        }
-        if (object.columnSettings != null) {
-            if (typeof object.columnSettings !== "object")
-                throw TypeError(".Node.columnSettings: object expected");
-            message.columnSettings = $root.ProtoColumnSettings.fromObject(object.columnSettings);
-        }
-        if (object.font != null) {
-            if (typeof object.font !== "object")
-                throw TypeError(".Node.font: object expected");
-            message.font = $root.ProtoFont.fromObject(object.font);
-        }
-        if (object.graphicState != null) {
-            if (typeof object.graphicState !== "object")
-                throw TypeError(".Node.graphicState: object expected");
-            message.graphicState = $root.ProtoGraphicState.fromObject(object.graphicState);
-        }
-        if (object.htmlParser != null) {
-            if (typeof object.htmlParser !== "object")
-                throw TypeError(".Node.htmlParser: object expected");
-            message.htmlParser = $root.ProtoHtmlParser.fromObject(object.htmlParser);
-        }
-        if (object.measure != null) {
-            if (typeof object.measure !== "object")
-                throw TypeError(".Node.measure: object expected");
-            message.measure = $root.ProtoMeasure.fromObject(object.measure);
-        }
-        if (object.strikethroughSpec != null) {
-            if (typeof object.strikethroughSpec !== "object")
-                throw TypeError(".Node.strikethroughSpec: object expected");
-            message.strikethroughSpec = $root.ProtoStrikethroughSpec.fromObject(object.strikethroughSpec);
-        }
-        if (object.underlineSpec != null) {
-            if (typeof object.underlineSpec !== "object")
-                throw TypeError(".Node.underlineSpec: object expected");
-            message.underlineSpec = $root.ProtoUnderlineSpec.fromObject(object.underlineSpec);
-        }
-        if (object.cropSettings != null) {
-            if (typeof object.cropSettings !== "object")
-                throw TypeError(".Node.cropSettings: object expected");
-            message.cropSettings = $root.ProtoCropSettings.fromObject(object.cropSettings);
-        }
-        if (object.flipSettings != null) {
-            if (typeof object.flipSettings !== "object")
-                throw TypeError(".Node.flipSettings: object expected");
-            message.flipSettings = $root.ProtoFlipSettings.fromObject(object.flipSettings);
-        }
-        if (object.imageListLevelSetting != null) {
-            if (typeof object.imageListLevelSetting !== "object")
-                throw TypeError(".Node.imageListLevelSetting: object expected");
-            message.imageListLevelSetting = $root.ProtoImageListLevelSetting.fromObject(object.imageListLevelSetting);
-        }
-        if (object.numberListLevelSetting != null) {
-            if (typeof object.numberListLevelSetting !== "object")
-                throw TypeError(".Node.numberListLevelSetting: object expected");
-            message.numberListLevelSetting = $root.ProtoNumberListLevelSetting.fromObject(object.numberListLevelSetting);
-        }
-        if (object.textListLevelSetting != null) {
-            if (typeof object.textListLevelSetting !== "object")
-                throw TypeError(".Node.textListLevelSetting: object expected");
-            message.textListLevelSetting = $root.ProtoTextListLevelSetting.fromObject(object.textListLevelSetting);
-        }
-        if (object.unnumberedListLevelSetting != null) {
-            if (typeof object.unnumberedListLevelSetting !== "object")
-                throw TypeError(".Node.unnumberedListLevelSetting: object expected");
-            message.unnumberedListLevelSetting = $root.ProtoUnnumberedListLevelSetting.fromObject(object.unnumberedListLevelSetting);
-        }
         if (object.indentation != null) {
             if (typeof object.indentation !== "object")
                 throw TypeError(".Node.indentation: object expected");
@@ -24224,11 +23786,6 @@ $root.Node = (function() {
             object.listSetting = $root.ProtoListSetting.toObject(message.listSetting, options);
             if (options.oneofs)
                 object.object = "listSetting";
-        }
-        if (message.color != null && message.hasOwnProperty("color")) {
-            object.color = $root.ProtoColor.toObject(message.color, options);
-            if (options.oneofs)
-                object.object = "color";
         }
         if (message.brick != null && message.hasOwnProperty("brick")) {
             object.brick = $root.ProtoBrick.toObject(message.brick, options);
@@ -24415,76 +23972,6 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "brickReference";
         }
-        if (message.border != null && message.hasOwnProperty("border")) {
-            object.border = $root.ProtoBorder.toObject(message.border, options);
-            if (options.oneofs)
-                object.object = "border";
-        }
-        if (message.columnSettings != null && message.hasOwnProperty("columnSettings")) {
-            object.columnSettings = $root.ProtoColumnSettings.toObject(message.columnSettings, options);
-            if (options.oneofs)
-                object.object = "columnSettings";
-        }
-        if (message.font != null && message.hasOwnProperty("font")) {
-            object.font = $root.ProtoFont.toObject(message.font, options);
-            if (options.oneofs)
-                object.object = "font";
-        }
-        if (message.graphicState != null && message.hasOwnProperty("graphicState")) {
-            object.graphicState = $root.ProtoGraphicState.toObject(message.graphicState, options);
-            if (options.oneofs)
-                object.object = "graphicState";
-        }
-        if (message.htmlParser != null && message.hasOwnProperty("htmlParser")) {
-            object.htmlParser = $root.ProtoHtmlParser.toObject(message.htmlParser, options);
-            if (options.oneofs)
-                object.object = "htmlParser";
-        }
-        if (message.measure != null && message.hasOwnProperty("measure")) {
-            object.measure = $root.ProtoMeasure.toObject(message.measure, options);
-            if (options.oneofs)
-                object.object = "measure";
-        }
-        if (message.strikethroughSpec != null && message.hasOwnProperty("strikethroughSpec")) {
-            object.strikethroughSpec = $root.ProtoStrikethroughSpec.toObject(message.strikethroughSpec, options);
-            if (options.oneofs)
-                object.object = "strikethroughSpec";
-        }
-        if (message.underlineSpec != null && message.hasOwnProperty("underlineSpec")) {
-            object.underlineSpec = $root.ProtoUnderlineSpec.toObject(message.underlineSpec, options);
-            if (options.oneofs)
-                object.object = "underlineSpec";
-        }
-        if (message.cropSettings != null && message.hasOwnProperty("cropSettings")) {
-            object.cropSettings = $root.ProtoCropSettings.toObject(message.cropSettings, options);
-            if (options.oneofs)
-                object.object = "cropSettings";
-        }
-        if (message.flipSettings != null && message.hasOwnProperty("flipSettings")) {
-            object.flipSettings = $root.ProtoFlipSettings.toObject(message.flipSettings, options);
-            if (options.oneofs)
-                object.object = "flipSettings";
-        }
-        if (message.imageListLevelSetting != null && message.hasOwnProperty("imageListLevelSetting")) {
-            object.imageListLevelSetting = $root.ProtoImageListLevelSetting.toObject(message.imageListLevelSetting, options);
-            if (options.oneofs)
-                object.object = "imageListLevelSetting";
-        }
-        if (message.numberListLevelSetting != null && message.hasOwnProperty("numberListLevelSetting")) {
-            object.numberListLevelSetting = $root.ProtoNumberListLevelSetting.toObject(message.numberListLevelSetting, options);
-            if (options.oneofs)
-                object.object = "numberListLevelSetting";
-        }
-        if (message.textListLevelSetting != null && message.hasOwnProperty("textListLevelSetting")) {
-            object.textListLevelSetting = $root.ProtoTextListLevelSetting.toObject(message.textListLevelSetting, options);
-            if (options.oneofs)
-                object.object = "textListLevelSetting";
-        }
-        if (message.unnumberedListLevelSetting != null && message.hasOwnProperty("unnumberedListLevelSetting")) {
-            object.unnumberedListLevelSetting = $root.ProtoUnnumberedListLevelSetting.toObject(message.unnumberedListLevelSetting, options);
-            if (options.oneofs)
-                object.object = "unnumberedListLevelSetting";
-        }
         if (message.indentation != null && message.hasOwnProperty("indentation")) {
             object.indentation = $root.ProtoIndentation.toObject(message.indentation, options);
             if (options.oneofs)
@@ -24566,7 +24053,6 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_BRICK=2 DOCUMENT_ELEMENT_BRICK value
  * @property {number} DOCUMENT_ELEMENT_DOCUMENT_ELEMENT=3 DOCUMENT_ELEMENT_DOCUMENT_ELEMENT value
  * @property {number} DOCUMENT_ELEMENT_LINEBREAK=4 DOCUMENT_ELEMENT_LINEBREAK value
- * @property {number} DOCUMENT_ELEMENT_LIST_LEVEL_SETTING=5 DOCUMENT_ELEMENT_LIST_LEVEL_SETTING value
  * @property {number} DOCUMENT_ELEMENT_LIST_SETTING=6 DOCUMENT_ELEMENT_LIST_SETTING value
  * @property {number} DOCUMENT_ELEMENT_PARAGRAPH_FORMAT=7 DOCUMENT_ELEMENT_PARAGRAPH_FORMAT value
  * @property {number} DOCUMENT_ELEMENT_PARAGRAPH=8 DOCUMENT_ELEMENT_PARAGRAPH value
@@ -24577,23 +24063,7 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_TABLE_ROW=13 DOCUMENT_ELEMENT_TABLE_ROW value
  * @property {number} DOCUMENT_ELEMENT_TEMPLATE=15 DOCUMENT_ELEMENT_TEMPLATE value
  * @property {number} DOCUMENT_ELEMENT_TEXT=16 DOCUMENT_ELEMENT_TEXT value
- * @property {number} UTIL_ALIGN=17 UTIL_ALIGN value
- * @property {number} UTIL_BORDER=18 UTIL_BORDER value
- * @property {number} UTIL_COLOR=19 UTIL_COLOR value
- * @property {number} UTIL_COLUMN_SETTINGS=20 UTIL_COLUMN_SETTINGS value
- * @property {number} UTIL_FONT=21 UTIL_FONT value
- * @property {number} UTIL_GRAPHIC_STATE=22 UTIL_GRAPHIC_STATE value
- * @property {number} UTIL_HTML_PARSER=23 UTIL_HTML_PARSER value
- * @property {number} UTIL_MEASURE=24 UTIL_MEASURE value
- * @property {number} UTIL_RULE_STYLE=25 UTIL_RULE_STYLE value
- * @property {number} UTIL_SPB_MODE=26 UTIL_SPB_MODE value
- * @property {number} UTIL_STRIKETHROUGH_SPEC=27 UTIL_STRIKETHROUGH_SPEC value
- * @property {number} UTIL_TEXT=28 UTIL_TEXT value
- * @property {number} UTIL_UNDERLINE_SPEC=29 UTIL_UNDERLINE_SPEC value
  * @property {number} DOCUMENT_ELEMENT_IMAGE=30 DOCUMENT_ELEMENT_IMAGE value
- * @property {number} DOCUMENT_ELEMENT_IMAGE_LIST_LEVEL_SETTING=31 DOCUMENT_ELEMENT_IMAGE_LIST_LEVEL_SETTING value
- * @property {number} DOCUMENT_ELEMENT_NUMBER_LIST_LEVEL_SETTING=32 DOCUMENT_ELEMENT_NUMBER_LIST_LEVEL_SETTING value
- * @property {number} DOCUMENT_ELEMENT_UNNUMBERED_LIST_LEVEL_SETTING=33 DOCUMENT_ELEMENT_UNNUMBERED_LIST_LEVEL_SETTING value
  * @property {number} DOCUMENT_ELEMENT_NAMED_STRING=34 DOCUMENT_ELEMENT_NAMED_STRING value
  * @property {number} DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP=35 DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP value
  * @property {number} DOCUMENT_ELEMENT_TABLE_CONFIG=36 DOCUMENT_ELEMENT_TABLE_CONFIG value
@@ -24603,7 +24073,6 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_LINK=40 DOCUMENT_ELEMENT_LINK value
  * @property {number} DOCUMENT_ELEMENT_DIRECTORY=41 DOCUMENT_ELEMENT_DIRECTORY value
  * @property {number} DOCUMENT_ELEMENT_TEXT_BRICK=42 DOCUMENT_ELEMENT_TEXT_BRICK value
- * @property {number} DOCUMENT_ELEMENT_TEXT_LIST_LEVEL_SETTING=43 DOCUMENT_ELEMENT_TEXT_LIST_LEVEL_SETTING value
  * @property {number} DOCUMENT_ELEMENT_VARIABLE=44 DOCUMENT_ELEMENT_VARIABLE value
  * @property {number} DOCUMENT_ELEMENT_SPACE_VERTICALLY=45 DOCUMENT_ELEMENT_SPACE_VERTICALLY value
  * @property {number} DOCUMENT_ELEMENT_FORMATTED=46 DOCUMENT_ELEMENT_FORMATTED value
@@ -24618,8 +24087,6 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_NEW_PAGE=55 DOCUMENT_ELEMENT_NEW_PAGE value
  * @property {number} DOCUMENT_ELEMENT_HEADER=56 DOCUMENT_ELEMENT_HEADER value
  * @property {number} DOCUMENT_ELEMENT_FOOTER=57 DOCUMENT_ELEMENT_FOOTER value
- * @property {number} UTIL_CROP_SETTINGS=58 UTIL_CROP_SETTINGS value
- * @property {number} UTIL_FLIP_SETTINGS=59 UTIL_FLIP_SETTINGS value
  * @property {number} DOCUMENT_ELEMENT_INDENTATION=60 DOCUMENT_ELEMENT_INDENTATION value
  * @property {number} DOCUMENT_ELEMENT_BARCODE=61 DOCUMENT_ELEMENT_BARCODE value
  * @property {number} DOCUMENT_ELEMENT_WS_AREA=62 DOCUMENT_ELEMENT_WS_AREA value
@@ -24636,7 +24103,6 @@ $root.NodeType = (function() {
     values[valuesById[2] = "DOCUMENT_ELEMENT_BRICK"] = 2;
     values[valuesById[3] = "DOCUMENT_ELEMENT_DOCUMENT_ELEMENT"] = 3;
     values[valuesById[4] = "DOCUMENT_ELEMENT_LINEBREAK"] = 4;
-    values[valuesById[5] = "DOCUMENT_ELEMENT_LIST_LEVEL_SETTING"] = 5;
     values[valuesById[6] = "DOCUMENT_ELEMENT_LIST_SETTING"] = 6;
     values[valuesById[7] = "DOCUMENT_ELEMENT_PARAGRAPH_FORMAT"] = 7;
     values[valuesById[8] = "DOCUMENT_ELEMENT_PARAGRAPH"] = 8;
@@ -24647,23 +24113,7 @@ $root.NodeType = (function() {
     values[valuesById[13] = "DOCUMENT_ELEMENT_TABLE_ROW"] = 13;
     values[valuesById[15] = "DOCUMENT_ELEMENT_TEMPLATE"] = 15;
     values[valuesById[16] = "DOCUMENT_ELEMENT_TEXT"] = 16;
-    values[valuesById[17] = "UTIL_ALIGN"] = 17;
-    values[valuesById[18] = "UTIL_BORDER"] = 18;
-    values[valuesById[19] = "UTIL_COLOR"] = 19;
-    values[valuesById[20] = "UTIL_COLUMN_SETTINGS"] = 20;
-    values[valuesById[21] = "UTIL_FONT"] = 21;
-    values[valuesById[22] = "UTIL_GRAPHIC_STATE"] = 22;
-    values[valuesById[23] = "UTIL_HTML_PARSER"] = 23;
-    values[valuesById[24] = "UTIL_MEASURE"] = 24;
-    values[valuesById[25] = "UTIL_RULE_STYLE"] = 25;
-    values[valuesById[26] = "UTIL_SPB_MODE"] = 26;
-    values[valuesById[27] = "UTIL_STRIKETHROUGH_SPEC"] = 27;
-    values[valuesById[28] = "UTIL_TEXT"] = 28;
-    values[valuesById[29] = "UTIL_UNDERLINE_SPEC"] = 29;
     values[valuesById[30] = "DOCUMENT_ELEMENT_IMAGE"] = 30;
-    values[valuesById[31] = "DOCUMENT_ELEMENT_IMAGE_LIST_LEVEL_SETTING"] = 31;
-    values[valuesById[32] = "DOCUMENT_ELEMENT_NUMBER_LIST_LEVEL_SETTING"] = 32;
-    values[valuesById[33] = "DOCUMENT_ELEMENT_UNNUMBERED_LIST_LEVEL_SETTING"] = 33;
     values[valuesById[34] = "DOCUMENT_ELEMENT_NAMED_STRING"] = 34;
     values[valuesById[35] = "DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP"] = 35;
     values[valuesById[36] = "DOCUMENT_ELEMENT_TABLE_CONFIG"] = 36;
@@ -24673,7 +24123,6 @@ $root.NodeType = (function() {
     values[valuesById[40] = "DOCUMENT_ELEMENT_LINK"] = 40;
     values[valuesById[41] = "DOCUMENT_ELEMENT_DIRECTORY"] = 41;
     values[valuesById[42] = "DOCUMENT_ELEMENT_TEXT_BRICK"] = 42;
-    values[valuesById[43] = "DOCUMENT_ELEMENT_TEXT_LIST_LEVEL_SETTING"] = 43;
     values[valuesById[44] = "DOCUMENT_ELEMENT_VARIABLE"] = 44;
     values[valuesById[45] = "DOCUMENT_ELEMENT_SPACE_VERTICALLY"] = 45;
     values[valuesById[46] = "DOCUMENT_ELEMENT_FORMATTED"] = 46;
@@ -24688,8 +24137,6 @@ $root.NodeType = (function() {
     values[valuesById[55] = "DOCUMENT_ELEMENT_NEW_PAGE"] = 55;
     values[valuesById[56] = "DOCUMENT_ELEMENT_HEADER"] = 56;
     values[valuesById[57] = "DOCUMENT_ELEMENT_FOOTER"] = 57;
-    values[valuesById[58] = "UTIL_CROP_SETTINGS"] = 58;
-    values[valuesById[59] = "UTIL_FLIP_SETTINGS"] = 59;
     values[valuesById[60] = "DOCUMENT_ELEMENT_INDENTATION"] = 60;
     values[valuesById[61] = "DOCUMENT_ELEMENT_BARCODE"] = 61;
     values[valuesById[62] = "DOCUMENT_ELEMENT_WS_AREA"] = 62;
@@ -30917,7 +30364,8 @@ $root.ProtoRule = (function() {
      * @property {number|null} [rotation] ProtoRule rotation
      * @property {IProtoColor|null} [color] ProtoRule color
      * @property {ProtoRuleStyle|null} [style] ProtoRule style
-     * @property {number|Long|null} [count] ProtoRule count
+     * @property {ProtoRuleMode|null} [mode] ProtoRule mode
+     * @property {IProtoRuleBoundaries|null} [boundaries] ProtoRule boundaries
      */
 
     /**
@@ -30992,12 +30440,20 @@ $root.ProtoRule = (function() {
     ProtoRule.prototype.style = 0;
 
     /**
-     * ProtoRule count.
-     * @member {number|Long} count
+     * ProtoRule mode.
+     * @member {ProtoRuleMode} mode
      * @memberof ProtoRule
      * @instance
      */
-    ProtoRule.prototype.count = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+    ProtoRule.prototype.mode = 0;
+
+    /**
+     * ProtoRule boundaries.
+     * @member {IProtoRuleBoundaries|null|undefined} boundaries
+     * @memberof ProtoRule
+     * @instance
+     */
+    ProtoRule.prototype.boundaries = null;
 
     /**
      * Creates a new ProtoRule instance using the specified properties.
@@ -31037,8 +30493,10 @@ $root.ProtoRule = (function() {
             $root.ProtoColor.encode(message.color, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
         if (message.style != null && Object.hasOwnProperty.call(message, "style"))
             writer.uint32(/* id 7, wireType 0 =*/56).int32(message.style);
-        if (message.count != null && Object.hasOwnProperty.call(message, "count"))
-            writer.uint32(/* id 8, wireType 0 =*/64).uint64(message.count);
+        if (message.mode != null && Object.hasOwnProperty.call(message, "mode"))
+            writer.uint32(/* id 8, wireType 0 =*/64).int32(message.mode);
+        if (message.boundaries != null && Object.hasOwnProperty.call(message, "boundaries"))
+            $root.ProtoRuleBoundaries.encode(message.boundaries, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
         return writer;
     };
 
@@ -31102,7 +30560,11 @@ $root.ProtoRule = (function() {
                     break;
                 }
             case 8: {
-                    message.count = reader.uint64();
+                    message.mode = reader.int32();
+                    break;
+                }
+            case 9: {
+                    message.boundaries = $root.ProtoRuleBoundaries.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -31184,11 +30646,22 @@ $root.ProtoRule = (function() {
             case 9:
             case 10:
             case 11:
+            case 254:
                 break;
             }
-        if (message.count != null && message.hasOwnProperty("count"))
-            if (!$util.isInteger(message.count) && !(message.count && $util.isInteger(message.count.low) && $util.isInteger(message.count.high)))
-                return "count: integer|Long expected";
+        if (message.mode != null && message.hasOwnProperty("mode"))
+            switch (message.mode) {
+            default:
+                return "mode: enum value expected";
+            case 0:
+            case 1:
+                break;
+            }
+        if (message.boundaries != null && message.hasOwnProperty("boundaries")) {
+            var error = $root.ProtoRuleBoundaries.verify(message.boundaries);
+            if (error)
+                return "boundaries." + error;
+        }
         return null;
     };
 
@@ -31286,16 +30759,32 @@ $root.ProtoRule = (function() {
         case 11:
             message.style = 11;
             break;
+        case "DOUBLE":
+        case 254:
+            message.style = 254;
+            break;
         }
-        if (object.count != null)
-            if ($util.Long)
-                (message.count = $util.Long.fromValue(object.count)).unsigned = true;
-            else if (typeof object.count === "string")
-                message.count = parseInt(object.count, 10);
-            else if (typeof object.count === "number")
-                message.count = object.count;
-            else if (typeof object.count === "object")
-                message.count = new $util.LongBits(object.count.low >>> 0, object.count.high >>> 0).toNumber(true);
+        switch (object.mode) {
+        default:
+            if (typeof object.mode === "number") {
+                message.mode = object.mode;
+                break;
+            }
+            break;
+        case "NORMAL":
+        case 0:
+            message.mode = 0;
+            break;
+        case "BOUNDARY":
+        case 1:
+            message.mode = 1;
+            break;
+        }
+        if (object.boundaries != null) {
+            if (typeof object.boundaries !== "object")
+                throw TypeError(".ProtoRule.boundaries: object expected");
+            message.boundaries = $root.ProtoRuleBoundaries.fromObject(object.boundaries);
+        }
         return message;
     };
 
@@ -31320,11 +30809,8 @@ $root.ProtoRule = (function() {
             object.rotation = 0;
             object.color = null;
             object.style = options.enums === String ? "DUMMY_RULE_STYLE" : 0;
-            if ($util.Long) {
-                var long = new $util.Long(0, 0, true);
-                object.count = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
-            } else
-                object.count = options.longs === String ? "0" : 0;
+            object.mode = options.enums === String ? "NORMAL" : 0;
+            object.boundaries = null;
         }
         if (message.xOffset != null && message.hasOwnProperty("xOffset"))
             object.xOffset = $root.ProtoMeasure.toObject(message.xOffset, options);
@@ -31340,11 +30826,10 @@ $root.ProtoRule = (function() {
             object.color = $root.ProtoColor.toObject(message.color, options);
         if (message.style != null && message.hasOwnProperty("style"))
             object.style = options.enums === String ? $root.ProtoRuleStyle[message.style] === undefined ? message.style : $root.ProtoRuleStyle[message.style] : message.style;
-        if (message.count != null && message.hasOwnProperty("count"))
-            if (typeof message.count === "number")
-                object.count = options.longs === String ? String(message.count) : message.count;
-            else
-                object.count = options.longs === String ? $util.Long.prototype.toString.call(message.count) : options.longs === Number ? new $util.LongBits(message.count.low >>> 0, message.count.high >>> 0).toNumber(true) : message.count;
+        if (message.mode != null && message.hasOwnProperty("mode"))
+            object.mode = options.enums === String ? $root.ProtoRuleMode[message.mode] === undefined ? message.mode : $root.ProtoRuleMode[message.mode] : message.mode;
+        if (message.boundaries != null && message.hasOwnProperty("boundaries"))
+            object.boundaries = $root.ProtoRuleBoundaries.toObject(message.boundaries, options);
         return object;
     };
 
@@ -31375,6 +30860,257 @@ $root.ProtoRule = (function() {
     };
 
     return ProtoRule;
+})();
+
+/**
+ * ProtoRuleMode enum.
+ * @name ProtoRuleMode
+ * @enum {number}
+ * @property {number} NORMAL=0 NORMAL value
+ * @property {number} BOUNDARY=1 BOUNDARY value
+ */
+$root.ProtoRuleMode = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "NORMAL"] = 0;
+    values[valuesById[1] = "BOUNDARY"] = 1;
+    return values;
+})();
+
+$root.ProtoRuleBoundaries = (function() {
+
+    /**
+     * Properties of a ProtoRuleBoundaries.
+     * @name IProtoRuleBoundaries
+     * @interface IProtoRuleBoundaries
+     * @property {IProtoMeasure|null} [start] ProtoRuleBoundaries start
+     * @property {IProtoMeasure|null} [end] ProtoRuleBoundaries end
+     */
+
+    /**
+     * Constructs a new ProtoRuleBoundaries.
+     * @name ProtoRuleBoundaries
+     * @classdesc Represents a ProtoRuleBoundaries.
+     * @implements IProtoRuleBoundaries
+     * @constructor
+     * @param {IProtoRuleBoundaries=} [properties] Properties to set
+     */
+    function ProtoRuleBoundaries(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoRuleBoundaries start.
+     * @member {IProtoMeasure|null|undefined} start
+     * @memberof ProtoRuleBoundaries
+     * @instance
+     */
+    ProtoRuleBoundaries.prototype.start = null;
+
+    /**
+     * ProtoRuleBoundaries end.
+     * @member {IProtoMeasure|null|undefined} end
+     * @memberof ProtoRuleBoundaries
+     * @instance
+     */
+    ProtoRuleBoundaries.prototype.end = null;
+
+    /**
+     * Creates a new ProtoRuleBoundaries instance using the specified properties.
+     * @function create
+     * @memberof ProtoRuleBoundaries
+     * @static
+     * @param {IProtoRuleBoundaries=} [properties] Properties to set
+     * @returns {ProtoRuleBoundaries} ProtoRuleBoundaries instance
+     */
+    ProtoRuleBoundaries.create = function create(properties) {
+        return new ProtoRuleBoundaries(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoRuleBoundaries message. Does not implicitly {@link ProtoRuleBoundaries.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoRuleBoundaries
+     * @static
+     * @param {IProtoRuleBoundaries} message ProtoRuleBoundaries message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoRuleBoundaries.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.start != null && Object.hasOwnProperty.call(message, "start"))
+            $root.ProtoMeasure.encode(message.start, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.end != null && Object.hasOwnProperty.call(message, "end"))
+            $root.ProtoMeasure.encode(message.end, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoRuleBoundaries message, length delimited. Does not implicitly {@link ProtoRuleBoundaries.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoRuleBoundaries
+     * @static
+     * @param {IProtoRuleBoundaries} message ProtoRuleBoundaries message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoRuleBoundaries.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoRuleBoundaries message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoRuleBoundaries
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoRuleBoundaries} ProtoRuleBoundaries
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoRuleBoundaries.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoRuleBoundaries();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.start = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.end = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoRuleBoundaries message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoRuleBoundaries
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoRuleBoundaries} ProtoRuleBoundaries
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoRuleBoundaries.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoRuleBoundaries message.
+     * @function verify
+     * @memberof ProtoRuleBoundaries
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoRuleBoundaries.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.start != null && message.hasOwnProperty("start")) {
+            var error = $root.ProtoMeasure.verify(message.start);
+            if (error)
+                return "start." + error;
+        }
+        if (message.end != null && message.hasOwnProperty("end")) {
+            var error = $root.ProtoMeasure.verify(message.end);
+            if (error)
+                return "end." + error;
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoRuleBoundaries message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoRuleBoundaries
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoRuleBoundaries} ProtoRuleBoundaries
+     */
+    ProtoRuleBoundaries.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoRuleBoundaries)
+            return object;
+        var message = new $root.ProtoRuleBoundaries();
+        if (object.start != null) {
+            if (typeof object.start !== "object")
+                throw TypeError(".ProtoRuleBoundaries.start: object expected");
+            message.start = $root.ProtoMeasure.fromObject(object.start);
+        }
+        if (object.end != null) {
+            if (typeof object.end !== "object")
+                throw TypeError(".ProtoRuleBoundaries.end: object expected");
+            message.end = $root.ProtoMeasure.fromObject(object.end);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoRuleBoundaries message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoRuleBoundaries
+     * @static
+     * @param {ProtoRuleBoundaries} message ProtoRuleBoundaries
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoRuleBoundaries.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.start = null;
+            object.end = null;
+        }
+        if (message.start != null && message.hasOwnProperty("start"))
+            object.start = $root.ProtoMeasure.toObject(message.start, options);
+        if (message.end != null && message.hasOwnProperty("end"))
+            object.end = $root.ProtoMeasure.toObject(message.end, options);
+        return object;
+    };
+
+    /**
+     * Converts this ProtoRuleBoundaries to JSON.
+     * @function toJSON
+     * @memberof ProtoRuleBoundaries
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoRuleBoundaries.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoRuleBoundaries
+     * @function getTypeUrl
+     * @memberof ProtoRuleBoundaries
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoRuleBoundaries.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoRuleBoundaries";
+    };
+
+    return ProtoRuleBoundaries;
 })();
 
 module.exports = $root;

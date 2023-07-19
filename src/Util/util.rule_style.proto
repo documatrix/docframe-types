@@ -11,4 +11,6 @@ enum ProtoRuleStyle {
   MEDIUM_DASHED = 9;
   HEAVY_DASHED = 10;
   DASH_PATTERN = 11;
+
+  DOUBLE = 254;
 }

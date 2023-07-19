@@ -42,6 +42,8 @@ LIGHT_DASHED = 8;
 MEDIUM_DASHED = 9;
 HEAVY_DASHED = 10;
 DASH_PATTERN = 11;
+
+DOUBLE = 254;
 }
 message ProtoStrikethroughSpec {
 
@@ -649,7 +651,6 @@ repeated Node children = 1;
 
 oneof object {
 ProtoListSetting list_setting = 2;
-ProtoColor color = 3;
 ProtoBrick brick = 4;
 ProtoTemplate template = 5;
 ProtoFormatted formatted = 6;
@@ -687,20 +688,6 @@ ProtoTableCellConfig table_cell_config = 37;
 ProtoTableRowConfig table_row_config = 38;
 ProtoTableContentGroupConfig table_content_group_config = 39;
 ProtoBrickReference brick_reference = 40;
-ProtoBorder border = 41;
-ProtoColumnSettings column_settings = 42;
-ProtoFont font = 43;
-ProtoGraphicState graphic_state = 44;
-ProtoHtmlParser html_parser = 45;
-ProtoMeasure measure = 46;
-ProtoStrikethroughSpec strikethrough_spec = 47;
-ProtoUnderlineSpec underline_spec = 48;
-ProtoCropSettings crop_settings = 49;
-ProtoFlipSettings flip_settings = 50;
-ProtoImageListLevelSetting image_list_level_setting = 51;
-ProtoNumberListLevelSetting number_list_level_setting = 52;
-ProtoTextListLevelSetting text_list_level_setting = 53;
-ProtoUnnumberedListLevelSetting unnumbered_list_level_setting = 54;
 ProtoIndentation indentation = 55;
 ProtoBarcode barcode = 56;
 ProtoWsArea ws_area = 57;
@@ -718,7 +705,6 @@ DOCUMENT_ELEMENT_BRICK_REFERENCE = 1;
 DOCUMENT_ELEMENT_BRICK = 2;
 DOCUMENT_ELEMENT_DOCUMENT_ELEMENT = 3;
 DOCUMENT_ELEMENT_LINEBREAK = 4;
-DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 5;
 DOCUMENT_ELEMENT_LIST_SETTING = 6;
 DOCUMENT_ELEMENT_PARAGRAPH_FORMAT = 7;
 DOCUMENT_ELEMENT_PARAGRAPH = 8;
@@ -729,23 +715,7 @@ DOCUMENT_ELEMENT_TABLE_CELL = 12;
 DOCUMENT_ELEMENT_TABLE_ROW = 13;
 DOCUMENT_ELEMENT_TEMPLATE = 15;
 DOCUMENT_ELEMENT_TEXT = 16;
-UTIL_ALIGN = 17;
-UTIL_BORDER = 18;
-UTIL_COLOR = 19;
-UTIL_COLUMN_SETTINGS = 20;
-UTIL_FONT = 21;
-UTIL_GRAPHIC_STATE = 22;
-UTIL_HTML_PARSER = 23;
-UTIL_MEASURE = 24;
-UTIL_RULE_STYLE = 25;
-UTIL_SPB_MODE = 26;
-UTIL_STRIKETHROUGH_SPEC = 27;
-UTIL_TEXT = 28;
-UTIL_UNDERLINE_SPEC = 29;
 DOCUMENT_ELEMENT_IMAGE = 30;
-DOCUMENT_ELEMENT_IMAGE_LIST_LEVEL_SETTING = 31;
-DOCUMENT_ELEMENT_NUMBER_LIST_LEVEL_SETTING = 32;
-DOCUMENT_ELEMENT_UNNUMBERED_LIST_LEVEL_SETTING = 33;
 DOCUMENT_ELEMENT_NAMED_STRING = 34;
 DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP = 35;
 DOCUMENT_ELEMENT_TABLE_CONFIG = 36;
@@ -755,7 +725,6 @@ DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP_CONFIG = 39;
 DOCUMENT_ELEMENT_LINK = 40;
 DOCUMENT_ELEMENT_DIRECTORY = 41;
 DOCUMENT_ELEMENT_TEXT_BRICK = 42;
-DOCUMENT_ELEMENT_TEXT_LIST_LEVEL_SETTING = 43;
 DOCUMENT_ELEMENT_VARIABLE = 44;
 DOCUMENT_ELEMENT_SPACE_VERTICALLY = 45;
 DOCUMENT_ELEMENT_FORMATTED = 46;
@@ -770,8 +739,6 @@ DOCUMENT_ELEMENT_UL_CONFIG = 54;
 DOCUMENT_ELEMENT_NEW_PAGE = 55;
 DOCUMENT_ELEMENT_HEADER = 56;
 DOCUMENT_ELEMENT_FOOTER = 57;
-UTIL_CROP_SETTINGS = 58;
-UTIL_FLIP_SETTINGS = 59;
 DOCUMENT_ELEMENT_INDENTATION = 60;
 DOCUMENT_ELEMENT_BARCODE = 61;
 DOCUMENT_ELEMENT_WS_AREA = 62;
@@ -947,5 +914,16 @@ ProtoMeasure thickness = 4;
 double rotation = 5;
 ProtoColor color = 6;
 ProtoRuleStyle style = 7;
-uint64 count = 8;
+ProtoRuleMode mode = 8;
+ProtoRuleBoundaries boundaries = 9;
+}
+
+enum ProtoRuleMode {
+NORMAL = 0;
+BOUNDARY = 1;
+}
+
+message ProtoRuleBoundaries {
+ProtoMeasure start = 1;
+ProtoMeasure end = 2;
 }

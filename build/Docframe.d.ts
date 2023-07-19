@@ -638,7 +638,8 @@ export enum ProtoRuleStyle {
     LIGHT_DASHED = 8,
     MEDIUM_DASHED = 9,
     HEAVY_DASHED = 10,
-    DASH_PATTERN = 11
+    DASH_PATTERN = 11,
+    DOUBLE = 254
 }
 
 /** Properties of a ProtoStrikethroughSpec. */
@@ -8317,9 +8318,6 @@ export interface INode {
     /** Node listSetting */
     listSetting?: (IProtoListSetting|null);
 
-    /** Node color */
-    color?: (IProtoColor|null);
-
     /** Node brick */
     brick?: (IProtoBrick|null);
 
@@ -8431,48 +8429,6 @@ export interface INode {
     /** Node brickReference */
     brickReference?: (IProtoBrickReference|null);
 
-    /** Node border */
-    border?: (IProtoBorder|null);
-
-    /** Node columnSettings */
-    columnSettings?: (IProtoColumnSettings|null);
-
-    /** Node font */
-    font?: (IProtoFont|null);
-
-    /** Node graphicState */
-    graphicState?: (IProtoGraphicState|null);
-
-    /** Node htmlParser */
-    htmlParser?: (IProtoHtmlParser|null);
-
-    /** Node measure */
-    measure?: (IProtoMeasure|null);
-
-    /** Node strikethroughSpec */
-    strikethroughSpec?: (IProtoStrikethroughSpec|null);
-
-    /** Node underlineSpec */
-    underlineSpec?: (IProtoUnderlineSpec|null);
-
-    /** Node cropSettings */
-    cropSettings?: (IProtoCropSettings|null);
-
-    /** Node flipSettings */
-    flipSettings?: (IProtoFlipSettings|null);
-
-    /** Node imageListLevelSetting */
-    imageListLevelSetting?: (IProtoImageListLevelSetting|null);
-
-    /** Node numberListLevelSetting */
-    numberListLevelSetting?: (IProtoNumberListLevelSetting|null);
-
-    /** Node textListLevelSetting */
-    textListLevelSetting?: (IProtoTextListLevelSetting|null);
-
-    /** Node unnumberedListLevelSetting */
-    unnumberedListLevelSetting?: (IProtoUnnumberedListLevelSetting|null);
-
     /** Node indentation */
     indentation?: (IProtoIndentation|null);
 
@@ -8512,9 +8468,6 @@ export class Node implements INode {
 
     /** Node listSetting. */
     public listSetting?: (IProtoListSetting|null);
-
-    /** Node color. */
-    public color?: (IProtoColor|null);
 
     /** Node brick. */
     public brick?: (IProtoBrick|null);
@@ -8627,48 +8580,6 @@ export class Node implements INode {
     /** Node brickReference. */
     public brickReference?: (IProtoBrickReference|null);
 
-    /** Node border. */
-    public border?: (IProtoBorder|null);
-
-    /** Node columnSettings. */
-    public columnSettings?: (IProtoColumnSettings|null);
-
-    /** Node font. */
-    public font?: (IProtoFont|null);
-
-    /** Node graphicState. */
-    public graphicState?: (IProtoGraphicState|null);
-
-    /** Node htmlParser. */
-    public htmlParser?: (IProtoHtmlParser|null);
-
-    /** Node measure. */
-    public measure?: (IProtoMeasure|null);
-
-    /** Node strikethroughSpec. */
-    public strikethroughSpec?: (IProtoStrikethroughSpec|null);
-
-    /** Node underlineSpec. */
-    public underlineSpec?: (IProtoUnderlineSpec|null);
-
-    /** Node cropSettings. */
-    public cropSettings?: (IProtoCropSettings|null);
-
-    /** Node flipSettings. */
-    public flipSettings?: (IProtoFlipSettings|null);
-
-    /** Node imageListLevelSetting. */
-    public imageListLevelSetting?: (IProtoImageListLevelSetting|null);
-
-    /** Node numberListLevelSetting. */
-    public numberListLevelSetting?: (IProtoNumberListLevelSetting|null);
-
-    /** Node textListLevelSetting. */
-    public textListLevelSetting?: (IProtoTextListLevelSetting|null);
-
-    /** Node unnumberedListLevelSetting. */
-    public unnumberedListLevelSetting?: (IProtoUnnumberedListLevelSetting|null);
-
     /** Node indentation. */
     public indentation?: (IProtoIndentation|null);
 
@@ -8694,7 +8605,7 @@ export class Node implements INode {
     public rule?: (IProtoRule|null);
 
     /** Node object. */
-    public object?: ("listSetting"|"color"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"border"|"columnSettings"|"font"|"graphicState"|"htmlParser"|"measure"|"strikethroughSpec"|"underlineSpec"|"cropSettings"|"flipSettings"|"imageListLevelSetting"|"numberListLevelSetting"|"textListLevelSetting"|"unnumberedListLevelSetting"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule");
+    public object?: ("listSetting"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -8781,7 +8692,6 @@ export enum NodeType {
     DOCUMENT_ELEMENT_BRICK = 2,
     DOCUMENT_ELEMENT_DOCUMENT_ELEMENT = 3,
     DOCUMENT_ELEMENT_LINEBREAK = 4,
-    DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 5,
     DOCUMENT_ELEMENT_LIST_SETTING = 6,
     DOCUMENT_ELEMENT_PARAGRAPH_FORMAT = 7,
     DOCUMENT_ELEMENT_PARAGRAPH = 8,
@@ -8792,23 +8702,7 @@ export enum NodeType {
     DOCUMENT_ELEMENT_TABLE_ROW = 13,
     DOCUMENT_ELEMENT_TEMPLATE = 15,
     DOCUMENT_ELEMENT_TEXT = 16,
-    UTIL_ALIGN = 17,
-    UTIL_BORDER = 18,
-    UTIL_COLOR = 19,
-    UTIL_COLUMN_SETTINGS = 20,
-    UTIL_FONT = 21,
-    UTIL_GRAPHIC_STATE = 22,
-    UTIL_HTML_PARSER = 23,
-    UTIL_MEASURE = 24,
-    UTIL_RULE_STYLE = 25,
-    UTIL_SPB_MODE = 26,
-    UTIL_STRIKETHROUGH_SPEC = 27,
-    UTIL_TEXT = 28,
-    UTIL_UNDERLINE_SPEC = 29,
     DOCUMENT_ELEMENT_IMAGE = 30,
-    DOCUMENT_ELEMENT_IMAGE_LIST_LEVEL_SETTING = 31,
-    DOCUMENT_ELEMENT_NUMBER_LIST_LEVEL_SETTING = 32,
-    DOCUMENT_ELEMENT_UNNUMBERED_LIST_LEVEL_SETTING = 33,
     DOCUMENT_ELEMENT_NAMED_STRING = 34,
     DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP = 35,
     DOCUMENT_ELEMENT_TABLE_CONFIG = 36,
@@ -8818,7 +8712,6 @@ export enum NodeType {
     DOCUMENT_ELEMENT_LINK = 40,
     DOCUMENT_ELEMENT_DIRECTORY = 41,
     DOCUMENT_ELEMENT_TEXT_BRICK = 42,
-    DOCUMENT_ELEMENT_TEXT_LIST_LEVEL_SETTING = 43,
     DOCUMENT_ELEMENT_VARIABLE = 44,
     DOCUMENT_ELEMENT_SPACE_VERTICALLY = 45,
     DOCUMENT_ELEMENT_FORMATTED = 46,
@@ -8833,8 +8726,6 @@ export enum NodeType {
     DOCUMENT_ELEMENT_NEW_PAGE = 55,
     DOCUMENT_ELEMENT_HEADER = 56,
     DOCUMENT_ELEMENT_FOOTER = 57,
-    UTIL_CROP_SETTINGS = 58,
-    UTIL_FLIP_SETTINGS = 59,
     DOCUMENT_ELEMENT_INDENTATION = 60,
     DOCUMENT_ELEMENT_BARCODE = 61,
     DOCUMENT_ELEMENT_WS_AREA = 62,
@@ -11212,8 +11103,11 @@ export interface IProtoRule {
     /** ProtoRule style */
     style?: (ProtoRuleStyle|null);
 
-    /** ProtoRule count */
-    count?: (number|Long|null);
+    /** ProtoRule mode */
+    mode?: (ProtoRuleMode|null);
+
+    /** ProtoRule boundaries */
+    boundaries?: (IProtoRuleBoundaries|null);
 }
 
 /** Represents a ProtoRule. */
@@ -11246,8 +11140,11 @@ export class ProtoRule implements IProtoRule {
     /** ProtoRule style. */
     public style: ProtoRuleStyle;
 
-    /** ProtoRule count. */
-    public count: (number|Long);
+    /** ProtoRule mode. */
+    public mode: ProtoRuleMode;
+
+    /** ProtoRule boundaries. */
+    public boundaries?: (IProtoRuleBoundaries|null);
 
     /**
      * Creates a new ProtoRule instance using the specified properties.
@@ -11321,6 +11218,115 @@ export class ProtoRule implements IProtoRule {
 
     /**
      * Gets the default type url for ProtoRule
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** ProtoRuleMode enum. */
+export enum ProtoRuleMode {
+    NORMAL = 0,
+    BOUNDARY = 1
+}
+
+/** Properties of a ProtoRuleBoundaries. */
+export interface IProtoRuleBoundaries {
+
+    /** ProtoRuleBoundaries start */
+    start?: (IProtoMeasure|null);
+
+    /** ProtoRuleBoundaries end */
+    end?: (IProtoMeasure|null);
+}
+
+/** Represents a ProtoRuleBoundaries. */
+export class ProtoRuleBoundaries implements IProtoRuleBoundaries {
+
+    /**
+     * Constructs a new ProtoRuleBoundaries.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoRuleBoundaries);
+
+    /** ProtoRuleBoundaries start. */
+    public start?: (IProtoMeasure|null);
+
+    /** ProtoRuleBoundaries end. */
+    public end?: (IProtoMeasure|null);
+
+    /**
+     * Creates a new ProtoRuleBoundaries instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoRuleBoundaries instance
+     */
+    public static create(properties?: IProtoRuleBoundaries): ProtoRuleBoundaries;
+
+    /**
+     * Encodes the specified ProtoRuleBoundaries message. Does not implicitly {@link ProtoRuleBoundaries.verify|verify} messages.
+     * @param message ProtoRuleBoundaries message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoRuleBoundaries, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoRuleBoundaries message, length delimited. Does not implicitly {@link ProtoRuleBoundaries.verify|verify} messages.
+     * @param message ProtoRuleBoundaries message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoRuleBoundaries, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoRuleBoundaries message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoRuleBoundaries
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoRuleBoundaries;
+
+    /**
+     * Decodes a ProtoRuleBoundaries message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoRuleBoundaries
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoRuleBoundaries;
+
+    /**
+     * Verifies a ProtoRuleBoundaries message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoRuleBoundaries message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoRuleBoundaries
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoRuleBoundaries;
+
+    /**
+     * Creates a plain object from a ProtoRuleBoundaries message. Also converts values to other types if specified.
+     * @param message ProtoRuleBoundaries
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoRuleBoundaries, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoRuleBoundaries to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoRuleBoundaries
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

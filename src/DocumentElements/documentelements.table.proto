@@ -20,6 +20,7 @@ message ProtoTableConfig {
   string configName = 3;
 }
 
+// go-gen:ignore
 message ProtoTableSettings {
   ProtoMeasure xOffset = 1;
   ProtoBoxedBool leftMeasure = 2;
@@ -35,6 +36,7 @@ enum ProtoTableContentGroupType {
   SUB_HEADER = 3;
 }
 
+// go-gen:ignore
 message ProtoBoxedTableContentGroupType {
   ProtoTableContentGroupType value = 1;
   bool isNull = 2;
@@ -58,6 +60,7 @@ message ProtoTableContentGroupConfig {
   string configName = 3;
 }
 
+// go-gen:ignore
 message ProtoTableContentGroupSettings {
   ProtoBoxedTableContentGroupType contentGroupType = 1;
   repeated ProtoColor backgroundColors = 2;
@@ -85,6 +88,7 @@ message ProtoTableRowConfig {
   string rowFooter = 5;
 }
 
+// go-gen:ignore
 message ProtoTableRowSettings {
   ProtoMeasure minHeight = 1;
 }
@@ -95,6 +99,7 @@ enum ProtoTableCellType {
   TABLE_CELL_ROW_FOOTER = 2;
 }
 
+// go-gen:ignore
 message ProtoBoxedTableCellType {
   ProtoTableCellType value = 1;
   bool isNull = 2;
@@ -121,6 +126,7 @@ message ProtoTableCellConfig {
   ProtoBoxedTableCellType cellType = 4;
 }
 
+// go-gen:ignore
 message ProtoTableCellSettings {
   ProtoMeasure width = 1;
   ProtoBoxedHorizontalAlignment align = 2;
