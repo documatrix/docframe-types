@@ -18803,6 +18803,7 @@ $root.ProtoTableCell = (function() {
      * @property {IProtoTableCellSettings|null} [settings] ProtoTableCell settings
      * @property {IProtoBoxedUint32|null} [cellConfigNumber] ProtoTableCell cellConfigNumber
      * @property {IProtoBoxedUint32|null} [index] ProtoTableCell index
+     * @property {boolean|null} [mergedLeft] ProtoTableCell mergedLeft
      */
 
     /**
@@ -18862,6 +18863,14 @@ $root.ProtoTableCell = (function() {
     ProtoTableCell.prototype.index = null;
 
     /**
+     * ProtoTableCell mergedLeft.
+     * @member {boolean} mergedLeft
+     * @memberof ProtoTableCell
+     * @instance
+     */
+    ProtoTableCell.prototype.mergedLeft = false;
+
+    /**
      * Creates a new ProtoTableCell instance using the specified properties.
      * @function create
      * @memberof ProtoTableCell
@@ -18896,6 +18905,8 @@ $root.ProtoTableCell = (function() {
             $root.ProtoBoxedUint32.encode(message.cellConfigNumber, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
         if (message.index != null && Object.hasOwnProperty.call(message, "index"))
             $root.ProtoBoxedUint32.encode(message.index, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+        if (message.mergedLeft != null && Object.hasOwnProperty.call(message, "mergedLeft"))
+            writer.uint32(/* id 6, wireType 0 =*/48).bool(message.mergedLeft);
         return writer;
     };
 
@@ -18950,6 +18961,10 @@ $root.ProtoTableCell = (function() {
                 }
             case 5: {
                     message.index = $root.ProtoBoxedUint32.decode(reader, reader.uint32());
+                    break;
+                }
+            case 6: {
+                    message.mergedLeft = reader.bool();
                     break;
                 }
             default:
@@ -19016,6 +19031,9 @@ $root.ProtoTableCell = (function() {
             if (error)
                 return "index." + error;
         }
+        if (message.mergedLeft != null && message.hasOwnProperty("mergedLeft"))
+            if (typeof message.mergedLeft !== "boolean")
+                return "mergedLeft: boolean expected";
         return null;
     };
 
@@ -19061,6 +19079,8 @@ $root.ProtoTableCell = (function() {
                 throw TypeError(".ProtoTableCell.index: object expected");
             message.index = $root.ProtoBoxedUint32.fromObject(object.index);
         }
+        if (object.mergedLeft != null)
+            message.mergedLeft = Boolean(object.mergedLeft);
         return message;
     };
 
@@ -19084,6 +19104,7 @@ $root.ProtoTableCell = (function() {
             object.settings = null;
             object.cellConfigNumber = null;
             object.index = null;
+            object.mergedLeft = false;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -19098,6 +19119,8 @@ $root.ProtoTableCell = (function() {
             object.cellConfigNumber = $root.ProtoBoxedUint32.toObject(message.cellConfigNumber, options);
         if (message.index != null && message.hasOwnProperty("index"))
             object.index = $root.ProtoBoxedUint32.toObject(message.index, options);
+        if (message.mergedLeft != null && message.hasOwnProperty("mergedLeft"))
+            object.mergedLeft = message.mergedLeft;
         return object;
     };
 
@@ -22205,6 +22228,7 @@ $root.Node = (function() {
      * @interface INode
      * @property {Array.<INode>|null} [children] Node children
      * @property {IProtoListSetting|null} [listSetting] Node listSetting
+     * @property {IProtoColorDef|null} [colorDef] Node colorDef
      * @property {IProtoBrick|null} [brick] Node brick
      * @property {IProtoTemplate|null} [template] Node template
      * @property {IProtoFormatted|null} [formatted] Node formatted
@@ -22230,7 +22254,6 @@ $root.Node = (function() {
      * @property {IProtoNewPage|null} [newPage] Node newPage
      * @property {IProtoVariable|null} [variable] Node variable
      * @property {IProtoNamedString|null} [namedString] Node namedString
-     * @property {IProtoListLevelSetting|null} [listLevelSetting] Node listLevelSetting
      * @property {IProtoParagraph|null} [paragraph] Node paragraph
      * @property {IProtoSection|null} [section] Node section
      * @property {IProtoSpan|null} [span] Node span
@@ -22283,6 +22306,14 @@ $root.Node = (function() {
      * @instance
      */
     Node.prototype.listSetting = null;
+
+    /**
+     * Node colorDef.
+     * @member {IProtoColorDef|null|undefined} colorDef
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.colorDef = null;
 
     /**
      * Node brick.
@@ -22485,14 +22516,6 @@ $root.Node = (function() {
     Node.prototype.namedString = null;
 
     /**
-     * Node listLevelSetting.
-     * @member {IProtoListLevelSetting|null|undefined} listLevelSetting
-     * @memberof Node
-     * @instance
-     */
-    Node.prototype.listLevelSetting = null;
-
-    /**
      * Node paragraph.
      * @member {IProtoParagraph|null|undefined} paragraph
      * @memberof Node
@@ -22649,12 +22672,12 @@ $root.Node = (function() {
 
     /**
      * Node object.
-     * @member {"listSetting"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "listLevelSetting", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -22687,6 +22710,8 @@ $root.Node = (function() {
                 $root.Node.encode(message.children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.listSetting != null && Object.hasOwnProperty.call(message, "listSetting"))
             $root.ProtoListSetting.encode(message.listSetting, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.colorDef != null && Object.hasOwnProperty.call(message, "colorDef"))
+            $root.ProtoColorDef.encode(message.colorDef, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
         if (message.brick != null && Object.hasOwnProperty.call(message, "brick"))
             $root.ProtoBrick.encode(message.brick, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
         if (message.template != null && Object.hasOwnProperty.call(message, "template"))
@@ -22737,8 +22762,6 @@ $root.Node = (function() {
             $root.ProtoVariable.encode(message.variable, writer.uint32(/* id 27, wireType 2 =*/218).fork()).ldelim();
         if (message.namedString != null && Object.hasOwnProperty.call(message, "namedString"))
             $root.ProtoNamedString.encode(message.namedString, writer.uint32(/* id 28, wireType 2 =*/226).fork()).ldelim();
-        if (message.listLevelSetting != null && Object.hasOwnProperty.call(message, "listLevelSetting"))
-            $root.ProtoListLevelSetting.encode(message.listLevelSetting, writer.uint32(/* id 29, wireType 2 =*/234).fork()).ldelim();
         if (message.paragraph != null && Object.hasOwnProperty.call(message, "paragraph"))
             $root.ProtoParagraph.encode(message.paragraph, writer.uint32(/* id 30, wireType 2 =*/242).fork()).ldelim();
         if (message.section != null && Object.hasOwnProperty.call(message, "section"))
@@ -22819,6 +22842,10 @@ $root.Node = (function() {
                 }
             case 2: {
                     message.listSetting = $root.ProtoListSetting.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.colorDef = $root.ProtoColorDef.decode(reader, reader.uint32());
                     break;
                 }
             case 4: {
@@ -22919,10 +22946,6 @@ $root.Node = (function() {
                 }
             case 28: {
                     message.namedString = $root.ProtoNamedString.decode(reader, reader.uint32());
-                    break;
-                }
-            case 29: {
-                    message.listLevelSetting = $root.ProtoListLevelSetting.decode(reader, reader.uint32());
                     break;
                 }
             case 30: {
@@ -23052,6 +23075,16 @@ $root.Node = (function() {
                 var error = $root.ProtoListSetting.verify(message.listSetting);
                 if (error)
                     return "listSetting." + error;
+            }
+        }
+        if (message.colorDef != null && message.hasOwnProperty("colorDef")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoColorDef.verify(message.colorDef);
+                if (error)
+                    return "colorDef." + error;
             }
         }
         if (message.brick != null && message.hasOwnProperty("brick")) {
@@ -23304,16 +23337,6 @@ $root.Node = (function() {
                     return "namedString." + error;
             }
         }
-        if (message.listLevelSetting != null && message.hasOwnProperty("listLevelSetting")) {
-            if (properties.object === 1)
-                return "object: multiple values";
-            properties.object = 1;
-            {
-                var error = $root.ProtoListLevelSetting.verify(message.listLevelSetting);
-                if (error)
-                    return "listLevelSetting." + error;
-            }
-        }
         if (message.paragraph != null && message.hasOwnProperty("paragraph")) {
             if (properties.object === 1)
                 return "object: multiple values";
@@ -23534,6 +23557,11 @@ $root.Node = (function() {
                 throw TypeError(".Node.listSetting: object expected");
             message.listSetting = $root.ProtoListSetting.fromObject(object.listSetting);
         }
+        if (object.colorDef != null) {
+            if (typeof object.colorDef !== "object")
+                throw TypeError(".Node.colorDef: object expected");
+            message.colorDef = $root.ProtoColorDef.fromObject(object.colorDef);
+        }
         if (object.brick != null) {
             if (typeof object.brick !== "object")
                 throw TypeError(".Node.brick: object expected");
@@ -23659,11 +23687,6 @@ $root.Node = (function() {
                 throw TypeError(".Node.namedString: object expected");
             message.namedString = $root.ProtoNamedString.fromObject(object.namedString);
         }
-        if (object.listLevelSetting != null) {
-            if (typeof object.listLevelSetting !== "object")
-                throw TypeError(".Node.listLevelSetting: object expected");
-            message.listLevelSetting = $root.ProtoListLevelSetting.fromObject(object.listLevelSetting);
-        }
         if (object.paragraph != null) {
             if (typeof object.paragraph !== "object")
                 throw TypeError(".Node.paragraph: object expected");
@@ -23786,6 +23809,11 @@ $root.Node = (function() {
             object.listSetting = $root.ProtoListSetting.toObject(message.listSetting, options);
             if (options.oneofs)
                 object.object = "listSetting";
+        }
+        if (message.colorDef != null && message.hasOwnProperty("colorDef")) {
+            object.colorDef = $root.ProtoColorDef.toObject(message.colorDef, options);
+            if (options.oneofs)
+                object.object = "colorDef";
         }
         if (message.brick != null && message.hasOwnProperty("brick")) {
             object.brick = $root.ProtoBrick.toObject(message.brick, options);
@@ -23911,11 +23939,6 @@ $root.Node = (function() {
             object.namedString = $root.ProtoNamedString.toObject(message.namedString, options);
             if (options.oneofs)
                 object.object = "namedString";
-        }
-        if (message.listLevelSetting != null && message.hasOwnProperty("listLevelSetting")) {
-            object.listLevelSetting = $root.ProtoListLevelSetting.toObject(message.listLevelSetting, options);
-            if (options.oneofs)
-                object.object = "listLevelSetting";
         }
         if (message.paragraph != null && message.hasOwnProperty("paragraph")) {
             object.paragraph = $root.ProtoParagraph.toObject(message.paragraph, options);
@@ -24063,6 +24086,7 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_TABLE_ROW=13 DOCUMENT_ELEMENT_TABLE_ROW value
  * @property {number} DOCUMENT_ELEMENT_TEMPLATE=15 DOCUMENT_ELEMENT_TEMPLATE value
  * @property {number} DOCUMENT_ELEMENT_TEXT=16 DOCUMENT_ELEMENT_TEXT value
+ * @property {number} DOCUMENT_ELEMENT_COLOR_DEF=19 DOCUMENT_ELEMENT_COLOR_DEF value
  * @property {number} DOCUMENT_ELEMENT_IMAGE=30 DOCUMENT_ELEMENT_IMAGE value
  * @property {number} DOCUMENT_ELEMENT_NAMED_STRING=34 DOCUMENT_ELEMENT_NAMED_STRING value
  * @property {number} DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP=35 DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP value
@@ -24113,6 +24137,7 @@ $root.NodeType = (function() {
     values[valuesById[13] = "DOCUMENT_ELEMENT_TABLE_ROW"] = 13;
     values[valuesById[15] = "DOCUMENT_ELEMENT_TEMPLATE"] = 15;
     values[valuesById[16] = "DOCUMENT_ELEMENT_TEXT"] = 16;
+    values[valuesById[19] = "DOCUMENT_ELEMENT_COLOR_DEF"] = 19;
     values[valuesById[30] = "DOCUMENT_ELEMENT_IMAGE"] = 30;
     values[valuesById[34] = "DOCUMENT_ELEMENT_NAMED_STRING"] = 34;
     values[valuesById[35] = "DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP"] = 35;
@@ -31111,6 +31136,214 @@ $root.ProtoRuleBoundaries = (function() {
     };
 
     return ProtoRuleBoundaries;
+})();
+
+$root.ProtoColorDef = (function() {
+
+    /**
+     * Properties of a ProtoColorDef.
+     * @name IProtoColorDef
+     * @interface IProtoColorDef
+     * @property {IProtoColor|null} [color] ProtoColorDef color
+     */
+
+    /**
+     * Constructs a new ProtoColorDef.
+     * @name ProtoColorDef
+     * @classdesc Represents a ProtoColorDef.
+     * @implements IProtoColorDef
+     * @constructor
+     * @param {IProtoColorDef=} [properties] Properties to set
+     */
+    function ProtoColorDef(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoColorDef color.
+     * @member {IProtoColor|null|undefined} color
+     * @memberof ProtoColorDef
+     * @instance
+     */
+    ProtoColorDef.prototype.color = null;
+
+    /**
+     * Creates a new ProtoColorDef instance using the specified properties.
+     * @function create
+     * @memberof ProtoColorDef
+     * @static
+     * @param {IProtoColorDef=} [properties] Properties to set
+     * @returns {ProtoColorDef} ProtoColorDef instance
+     */
+    ProtoColorDef.create = function create(properties) {
+        return new ProtoColorDef(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoColorDef message. Does not implicitly {@link ProtoColorDef.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoColorDef
+     * @static
+     * @param {IProtoColorDef} message ProtoColorDef message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoColorDef.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.color != null && Object.hasOwnProperty.call(message, "color"))
+            $root.ProtoColor.encode(message.color, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoColorDef message, length delimited. Does not implicitly {@link ProtoColorDef.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoColorDef
+     * @static
+     * @param {IProtoColorDef} message ProtoColorDef message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoColorDef.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoColorDef message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoColorDef
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoColorDef} ProtoColorDef
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoColorDef.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoColorDef();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.color = $root.ProtoColor.decode(reader, reader.uint32());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoColorDef message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoColorDef
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoColorDef} ProtoColorDef
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoColorDef.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoColorDef message.
+     * @function verify
+     * @memberof ProtoColorDef
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoColorDef.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.color != null && message.hasOwnProperty("color")) {
+            var error = $root.ProtoColor.verify(message.color);
+            if (error)
+                return "color." + error;
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoColorDef message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoColorDef
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoColorDef} ProtoColorDef
+     */
+    ProtoColorDef.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoColorDef)
+            return object;
+        var message = new $root.ProtoColorDef();
+        if (object.color != null) {
+            if (typeof object.color !== "object")
+                throw TypeError(".ProtoColorDef.color: object expected");
+            message.color = $root.ProtoColor.fromObject(object.color);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoColorDef message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoColorDef
+     * @static
+     * @param {ProtoColorDef} message ProtoColorDef
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoColorDef.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults)
+            object.color = null;
+        if (message.color != null && message.hasOwnProperty("color"))
+            object.color = $root.ProtoColor.toObject(message.color, options);
+        return object;
+    };
+
+    /**
+     * Converts this ProtoColorDef to JSON.
+     * @function toJSON
+     * @memberof ProtoColorDef
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoColorDef.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoColorDef
+     * @function getTypeUrl
+     * @memberof ProtoColorDef
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoColorDef.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoColorDef";
+    };
+
+    return ProtoColorDef;
 })();
 
 module.exports = $root;

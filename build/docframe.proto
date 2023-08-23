@@ -574,6 +574,7 @@ ProtoDocumentElement parent = 2;
 ProtoTableCellSettings settings = 3;
 ProtoBoxedUint32 cellConfigNumber = 4;
 ProtoBoxedUint32 index = 5;
+bool mergedLeft = 6;
 }
 
 message ProtoTableCellConfig {
