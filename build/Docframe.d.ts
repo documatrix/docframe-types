@@ -7116,6 +7116,9 @@ export interface IProtoTableCell {
 
     /** ProtoTableCell index */
     index?: (IProtoBoxedUint32|null);
+
+    /** ProtoTableCell mergedLeft */
+    mergedLeft?: (boolean|null);
 }
 
 /** Represents a ProtoTableCell. */
@@ -7141,6 +7144,9 @@ export class ProtoTableCell implements IProtoTableCell {
 
     /** ProtoTableCell index. */
     public index?: (IProtoBoxedUint32|null);
+
+    /** ProtoTableCell mergedLeft. */
+    public mergedLeft: boolean;
 
     /**
      * Creates a new ProtoTableCell instance using the specified properties.
@@ -8318,6 +8324,9 @@ export interface INode {
     /** Node listSetting */
     listSetting?: (IProtoListSetting|null);
 
+    /** Node colorDef */
+    colorDef?: (IProtoColorDef|null);
+
     /** Node brick */
     brick?: (IProtoBrick|null);
 
@@ -8393,9 +8402,6 @@ export interface INode {
     /** Node namedString */
     namedString?: (IProtoNamedString|null);
 
-    /** Node listLevelSetting */
-    listLevelSetting?: (IProtoListLevelSetting|null);
-
     /** Node paragraph */
     paragraph?: (IProtoParagraph|null);
 
@@ -8468,6 +8474,9 @@ export class Node implements INode {
 
     /** Node listSetting. */
     public listSetting?: (IProtoListSetting|null);
+
+    /** Node colorDef. */
+    public colorDef?: (IProtoColorDef|null);
 
     /** Node brick. */
     public brick?: (IProtoBrick|null);
@@ -8544,9 +8553,6 @@ export class Node implements INode {
     /** Node namedString. */
     public namedString?: (IProtoNamedString|null);
 
-    /** Node listLevelSetting. */
-    public listLevelSetting?: (IProtoListLevelSetting|null);
-
     /** Node paragraph. */
     public paragraph?: (IProtoParagraph|null);
 
@@ -8605,7 +8611,7 @@ export class Node implements INode {
     public rule?: (IProtoRule|null);
 
     /** Node object. */
-    public object?: ("listSetting"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"listLevelSetting"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -8702,6 +8708,7 @@ export enum NodeType {
     DOCUMENT_ELEMENT_TABLE_ROW = 13,
     DOCUMENT_ELEMENT_TEMPLATE = 15,
     DOCUMENT_ELEMENT_TEXT = 16,
+    DOCUMENT_ELEMENT_COLOR_DEF = 19,
     DOCUMENT_ELEMENT_IMAGE = 30,
     DOCUMENT_ELEMENT_NAMED_STRING = 34,
     DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP = 35,
@@ -11327,6 +11334,103 @@ export class ProtoRuleBoundaries implements IProtoRuleBoundaries {
 
     /**
      * Gets the default type url for ProtoRuleBoundaries
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoColorDef. */
+export interface IProtoColorDef {
+
+    /** ProtoColorDef color */
+    color?: (IProtoColor|null);
+}
+
+/** Represents a ProtoColorDef. */
+export class ProtoColorDef implements IProtoColorDef {
+
+    /**
+     * Constructs a new ProtoColorDef.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoColorDef);
+
+    /** ProtoColorDef color. */
+    public color?: (IProtoColor|null);
+
+    /**
+     * Creates a new ProtoColorDef instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoColorDef instance
+     */
+    public static create(properties?: IProtoColorDef): ProtoColorDef;
+
+    /**
+     * Encodes the specified ProtoColorDef message. Does not implicitly {@link ProtoColorDef.verify|verify} messages.
+     * @param message ProtoColorDef message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoColorDef, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoColorDef message, length delimited. Does not implicitly {@link ProtoColorDef.verify|verify} messages.
+     * @param message ProtoColorDef message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoColorDef, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoColorDef message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoColorDef
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoColorDef;
+
+    /**
+     * Decodes a ProtoColorDef message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoColorDef
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoColorDef;
+
+    /**
+     * Verifies a ProtoColorDef message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoColorDef message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoColorDef
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoColorDef;
+
+    /**
+     * Creates a plain object from a ProtoColorDef message. Also converts values to other types if specified.
+     * @param message ProtoColorDef
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoColorDef, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoColorDef to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoColorDef
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

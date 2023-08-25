@@ -114,6 +114,8 @@ message ProtoTableCell {
   ProtoTableCellSettings settings = 3;
   ProtoBoxedUint32 cellConfigNumber = 4;
   ProtoBoxedUint32 index = 5;
+  // Indicates if this table cell should merged with the left table cell.
+  bool mergedLeft = 6;
 }
 
 message ProtoTableCellConfig {
