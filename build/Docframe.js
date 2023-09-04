@@ -25566,6 +25566,7 @@ $root.ProtoVariable = (function() {
      * @property {string|null} [path] ProtoVariable path
      * @property {string|null} [content] ProtoVariable content
      * @property {string|null} [formatUuid] ProtoVariable formatUuid
+     * @property {ProtoVariableSpecialType|null} [specialType] ProtoVariable specialType
      */
 
     /**
@@ -25616,6 +25617,14 @@ $root.ProtoVariable = (function() {
     ProtoVariable.prototype.formatUuid = "";
 
     /**
+     * ProtoVariable specialType.
+     * @member {ProtoVariableSpecialType} specialType
+     * @memberof ProtoVariable
+     * @instance
+     */
+    ProtoVariable.prototype.specialType = 0;
+
+    /**
      * Creates a new ProtoVariable instance using the specified properties.
      * @function create
      * @memberof ProtoVariable
@@ -25647,6 +25656,8 @@ $root.ProtoVariable = (function() {
             writer.uint32(/* id 3, wireType 2 =*/26).string(message.content);
         if (message.formatUuid != null && Object.hasOwnProperty.call(message, "formatUuid"))
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.formatUuid);
+        if (message.specialType != null && Object.hasOwnProperty.call(message, "specialType"))
+            writer.uint32(/* id 5, wireType 0 =*/40).int32(message.specialType);
         return writer;
     };
 
@@ -25695,6 +25706,10 @@ $root.ProtoVariable = (function() {
                 }
             case 4: {
                     message.formatUuid = reader.string();
+                    break;
+                }
+            case 5: {
+                    message.specialType = reader.int32();
                     break;
                 }
             default:
@@ -25746,6 +25761,22 @@ $root.ProtoVariable = (function() {
         if (message.formatUuid != null && message.hasOwnProperty("formatUuid"))
             if (!$util.isString(message.formatUuid))
                 return "formatUuid: string expected";
+        if (message.specialType != null && message.hasOwnProperty("specialType"))
+            switch (message.specialType) {
+            default:
+                return "specialType: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                break;
+            }
         return null;
     };
 
@@ -25772,6 +25803,54 @@ $root.ProtoVariable = (function() {
             message.content = String(object.content);
         if (object.formatUuid != null)
             message.formatUuid = String(object.formatUuid);
+        switch (object.specialType) {
+        default:
+            if (typeof object.specialType === "number") {
+                message.specialType = object.specialType;
+                break;
+            }
+            break;
+        case "NOT_SPECIAL":
+        case 0:
+            message.specialType = 0;
+            break;
+        case "TABLE_NUMBER":
+        case 1:
+            message.specialType = 1;
+            break;
+        case "DOC_PAGE_COUNT":
+        case 2:
+            message.specialType = 2;
+            break;
+        case "DOC_CUR_PAGE":
+        case 3:
+            message.specialType = 3;
+            break;
+        case "CUR_PAGE":
+        case 4:
+            message.specialType = 4;
+            break;
+        case "PAGE_COUNT":
+        case 5:
+            message.specialType = 5;
+            break;
+        case "PREV_PAGE":
+        case 6:
+            message.specialType = 6;
+            break;
+        case "SECTION_PAGE":
+        case 7:
+            message.specialType = 7;
+            break;
+        case "UPDATED_AT":
+        case 8:
+            message.specialType = 8;
+            break;
+        case "GENERATED_AT":
+        case 9:
+            message.specialType = 9;
+            break;
+        }
         return message;
     };
 
@@ -25793,6 +25872,7 @@ $root.ProtoVariable = (function() {
             object.path = "";
             object.content = "";
             object.formatUuid = "";
+            object.specialType = options.enums === String ? "NOT_SPECIAL" : 0;
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -25802,6 +25882,8 @@ $root.ProtoVariable = (function() {
             object.content = message.content;
         if (message.formatUuid != null && message.hasOwnProperty("formatUuid"))
             object.formatUuid = message.formatUuid;
+        if (message.specialType != null && message.hasOwnProperty("specialType"))
+            object.specialType = options.enums === String ? $root.ProtoVariableSpecialType[message.specialType] === undefined ? message.specialType : $root.ProtoVariableSpecialType[message.specialType] : message.specialType;
         return object;
     };
 
@@ -25832,6 +25914,36 @@ $root.ProtoVariable = (function() {
     };
 
     return ProtoVariable;
+})();
+
+/**
+ * ProtoVariableSpecialType enum.
+ * @name ProtoVariableSpecialType
+ * @enum {number}
+ * @property {number} NOT_SPECIAL=0 NOT_SPECIAL value
+ * @property {number} TABLE_NUMBER=1 TABLE_NUMBER value
+ * @property {number} DOC_PAGE_COUNT=2 DOC_PAGE_COUNT value
+ * @property {number} DOC_CUR_PAGE=3 DOC_CUR_PAGE value
+ * @property {number} CUR_PAGE=4 CUR_PAGE value
+ * @property {number} PAGE_COUNT=5 PAGE_COUNT value
+ * @property {number} PREV_PAGE=6 PREV_PAGE value
+ * @property {number} SECTION_PAGE=7 SECTION_PAGE value
+ * @property {number} UPDATED_AT=8 UPDATED_AT value
+ * @property {number} GENERATED_AT=9 GENERATED_AT value
+ */
+$root.ProtoVariableSpecialType = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "NOT_SPECIAL"] = 0;
+    values[valuesById[1] = "TABLE_NUMBER"] = 1;
+    values[valuesById[2] = "DOC_PAGE_COUNT"] = 2;
+    values[valuesById[3] = "DOC_CUR_PAGE"] = 3;
+    values[valuesById[4] = "CUR_PAGE"] = 4;
+    values[valuesById[5] = "PAGE_COUNT"] = 5;
+    values[valuesById[6] = "PREV_PAGE"] = 6;
+    values[valuesById[7] = "SECTION_PAGE"] = 7;
+    values[valuesById[8] = "UPDATED_AT"] = 8;
+    values[valuesById[9] = "GENERATED_AT"] = 9;
+    return values;
 })();
 
 $root.ProtoFormatted = (function() {
