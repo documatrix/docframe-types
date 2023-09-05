@@ -9198,6 +9198,9 @@ export interface IProtoVariable {
 
     /** ProtoVariable formatUuid */
     formatUuid?: (string|null);
+
+    /** ProtoVariable specialType */
+    specialType?: (ProtoVariableSpecialType|null);
 }
 
 /** Represents a ProtoVariable. */
@@ -9220,6 +9223,9 @@ export class ProtoVariable implements IProtoVariable {
 
     /** ProtoVariable formatUuid. */
     public formatUuid: string;
+
+    /** ProtoVariable specialType. */
+    public specialType: ProtoVariableSpecialType;
 
     /**
      * Creates a new ProtoVariable instance using the specified properties.
@@ -9297,6 +9303,20 @@ export class ProtoVariable implements IProtoVariable {
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** ProtoVariableSpecialType enum. */
+export enum ProtoVariableSpecialType {
+    NOT_SPECIAL = 0,
+    TABLE_NUMBER = 1,
+    DOC_PAGE_COUNT = 2,
+    DOC_CUR_PAGE = 3,
+    CUR_PAGE = 4,
+    PAGE_COUNT = 5,
+    PREV_PAGE = 6,
+    SECTION_PAGE = 7,
+    UPDATED_AT = 8,
+    GENERATED_AT = 9
 }
 
 /** Properties of a ProtoFormatted. */
