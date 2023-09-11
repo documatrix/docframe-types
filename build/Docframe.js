@@ -28181,17 +28181,19 @@ $root.ProtoPageMode = (function() {
  * ProtoPageOrientation enum.
  * @name ProtoPageOrientation
  * @enum {number}
- * @property {number} PORTRAIT=0 PORTRAIT value
- * @property {number} LANDSCAPE=1 LANDSCAPE value
- * @property {number} INVERSE_PORTRAIT=2 INVERSE_PORTRAIT value
- * @property {number} INVERSE_LANDSCAPE=3 INVERSE_LANDSCAPE value
+ * @property {number} UNSET=0 UNSET value
+ * @property {number} PORTRAIT=1 PORTRAIT value
+ * @property {number} LANDSCAPE=2 LANDSCAPE value
+ * @property {number} INVERSE_PORTRAIT=3 INVERSE_PORTRAIT value
+ * @property {number} INVERSE_LANDSCAPE=4 INVERSE_LANDSCAPE value
  */
 $root.ProtoPageOrientation = (function() {
     var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "PORTRAIT"] = 0;
-    values[valuesById[1] = "LANDSCAPE"] = 1;
-    values[valuesById[2] = "INVERSE_PORTRAIT"] = 2;
-    values[valuesById[3] = "INVERSE_LANDSCAPE"] = 3;
+    values[valuesById[0] = "UNSET"] = 0;
+    values[valuesById[1] = "PORTRAIT"] = 1;
+    values[valuesById[2] = "LANDSCAPE"] = 2;
+    values[valuesById[3] = "INVERSE_PORTRAIT"] = 3;
+    values[valuesById[4] = "INVERSE_LANDSCAPE"] = 4;
     return values;
 })();
 
@@ -28394,6 +28396,7 @@ $root.ProtoNewPage = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         return null;
@@ -28442,21 +28445,25 @@ $root.ProtoNewPage = (function() {
                 break;
             }
             break;
-        case "PORTRAIT":
+        case "UNSET":
         case 0:
             message.pageOrientation = 0;
             break;
-        case "LANDSCAPE":
+        case "PORTRAIT":
         case 1:
             message.pageOrientation = 1;
             break;
-        case "INVERSE_PORTRAIT":
+        case "LANDSCAPE":
         case 2:
             message.pageOrientation = 2;
             break;
-        case "INVERSE_LANDSCAPE":
+        case "INVERSE_PORTRAIT":
         case 3:
             message.pageOrientation = 3;
+            break;
+        case "INVERSE_LANDSCAPE":
+        case 4:
+            message.pageOrientation = 4;
             break;
         }
         return message;
@@ -28479,7 +28486,7 @@ $root.ProtoNewPage = (function() {
             object.paperTray = 0;
             object.paperCount = 0;
             object.pageMode = options.enums === String ? "NEXT_PAGE" : 0;
-            object.pageOrientation = options.enums === String ? "PORTRAIT" : 0;
+            object.pageOrientation = options.enums === String ? "UNSET" : 0;
         }
         if (message.paperTray != null && message.hasOwnProperty("paperTray"))
             object.paperTray = message.paperTray;
