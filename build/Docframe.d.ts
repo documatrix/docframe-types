@@ -10279,10 +10279,11 @@ export enum ProtoPageMode {
 
 /** ProtoPageOrientation enum. */
 export enum ProtoPageOrientation {
-    PORTRAIT = 0,
-    LANDSCAPE = 1,
-    INVERSE_PORTRAIT = 2,
-    INVERSE_LANDSCAPE = 3
+    UNSET = 0,
+    PORTRAIT = 1,
+    LANDSCAPE = 2,
+    INVERSE_PORTRAIT = 3,
+    INVERSE_LANDSCAPE = 4
 }
 
 /** Properties of a ProtoNewPage. */
