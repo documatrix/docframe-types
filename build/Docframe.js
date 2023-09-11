@@ -28177,6 +28177,24 @@ $root.ProtoPageMode = (function() {
     return values;
 })();
 
+/**
+ * ProtoPageOrientation enum.
+ * @name ProtoPageOrientation
+ * @enum {number}
+ * @property {number} PORTRAIT=0 PORTRAIT value
+ * @property {number} LANDSCAPE=1 LANDSCAPE value
+ * @property {number} INVERSE_PORTRAIT=2 INVERSE_PORTRAIT value
+ * @property {number} INVERSE_LANDSCAPE=3 INVERSE_LANDSCAPE value
+ */
+$root.ProtoPageOrientation = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "PORTRAIT"] = 0;
+    values[valuesById[1] = "LANDSCAPE"] = 1;
+    values[valuesById[2] = "INVERSE_PORTRAIT"] = 2;
+    values[valuesById[3] = "INVERSE_LANDSCAPE"] = 3;
+    return values;
+})();
+
 $root.ProtoNewPage = (function() {
 
     /**
@@ -28186,6 +28204,7 @@ $root.ProtoNewPage = (function() {
      * @property {number|null} [paperTray] ProtoNewPage paperTray
      * @property {number|null} [paperCount] ProtoNewPage paperCount
      * @property {ProtoPageMode|null} [pageMode] ProtoNewPage pageMode
+     * @property {ProtoPageOrientation|null} [pageOrientation] ProtoNewPage pageOrientation
      */
 
     /**
@@ -28228,6 +28247,14 @@ $root.ProtoNewPage = (function() {
     ProtoNewPage.prototype.pageMode = 0;
 
     /**
+     * ProtoNewPage pageOrientation.
+     * @member {ProtoPageOrientation} pageOrientation
+     * @memberof ProtoNewPage
+     * @instance
+     */
+    ProtoNewPage.prototype.pageOrientation = 0;
+
+    /**
      * Creates a new ProtoNewPage instance using the specified properties.
      * @function create
      * @memberof ProtoNewPage
@@ -28257,6 +28284,8 @@ $root.ProtoNewPage = (function() {
             writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.paperCount);
         if (message.pageMode != null && Object.hasOwnProperty.call(message, "pageMode"))
             writer.uint32(/* id 3, wireType 0 =*/24).int32(message.pageMode);
+        if (message.pageOrientation != null && Object.hasOwnProperty.call(message, "pageOrientation"))
+            writer.uint32(/* id 4, wireType 0 =*/32).int32(message.pageOrientation);
         return writer;
     };
 
@@ -28301,6 +28330,10 @@ $root.ProtoNewPage = (function() {
                 }
             case 3: {
                     message.pageMode = reader.int32();
+                    break;
+                }
+            case 4: {
+                    message.pageOrientation = reader.int32();
                     break;
                 }
             default:
@@ -28353,6 +28386,16 @@ $root.ProtoNewPage = (function() {
             case 2:
                 break;
             }
+        if (message.pageOrientation != null && message.hasOwnProperty("pageOrientation"))
+            switch (message.pageOrientation) {
+            default:
+                return "pageOrientation: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                break;
+            }
         return null;
     };
 
@@ -28392,6 +28435,30 @@ $root.ProtoNewPage = (function() {
             message.pageMode = 2;
             break;
         }
+        switch (object.pageOrientation) {
+        default:
+            if (typeof object.pageOrientation === "number") {
+                message.pageOrientation = object.pageOrientation;
+                break;
+            }
+            break;
+        case "PORTRAIT":
+        case 0:
+            message.pageOrientation = 0;
+            break;
+        case "LANDSCAPE":
+        case 1:
+            message.pageOrientation = 1;
+            break;
+        case "INVERSE_PORTRAIT":
+        case 2:
+            message.pageOrientation = 2;
+            break;
+        case "INVERSE_LANDSCAPE":
+        case 3:
+            message.pageOrientation = 3;
+            break;
+        }
         return message;
     };
 
@@ -28412,6 +28479,7 @@ $root.ProtoNewPage = (function() {
             object.paperTray = 0;
             object.paperCount = 0;
             object.pageMode = options.enums === String ? "NEXT_PAGE" : 0;
+            object.pageOrientation = options.enums === String ? "PORTRAIT" : 0;
         }
         if (message.paperTray != null && message.hasOwnProperty("paperTray"))
             object.paperTray = message.paperTray;
@@ -28419,6 +28487,8 @@ $root.ProtoNewPage = (function() {
             object.paperCount = message.paperCount;
         if (message.pageMode != null && message.hasOwnProperty("pageMode"))
             object.pageMode = options.enums === String ? $root.ProtoPageMode[message.pageMode] === undefined ? message.pageMode : $root.ProtoPageMode[message.pageMode] : message.pageMode;
+        if (message.pageOrientation != null && message.hasOwnProperty("pageOrientation"))
+            object.pageOrientation = options.enums === String ? $root.ProtoPageOrientation[message.pageOrientation] === undefined ? message.pageOrientation : $root.ProtoPageOrientation[message.pageOrientation] : message.pageOrientation;
         return object;
     };
 
