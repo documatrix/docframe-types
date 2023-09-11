@@ -10277,6 +10277,14 @@ export enum ProtoPageMode {
     NEXT_VERSO_PAGE = 2
 }
 
+/** ProtoPageOrientation enum. */
+export enum ProtoPageOrientation {
+    PORTRAIT = 0,
+    LANDSCAPE = 1,
+    INVERSE_PORTRAIT = 2,
+    INVERSE_LANDSCAPE = 3
+}
+
 /** Properties of a ProtoNewPage. */
 export interface IProtoNewPage {
 
@@ -10288,6 +10296,9 @@ export interface IProtoNewPage {
 
     /** ProtoNewPage pageMode */
     pageMode?: (ProtoPageMode|null);
+
+    /** ProtoNewPage pageOrientation */
+    pageOrientation?: (ProtoPageOrientation|null);
 }
 
 /** Represents a ProtoNewPage. */
@@ -10307,6 +10318,9 @@ export class ProtoNewPage implements IProtoNewPage {
 
     /** ProtoNewPage pageMode. */
     public pageMode: ProtoPageMode;
+
+    /** ProtoNewPage pageOrientation. */
+    public pageOrientation: ProtoPageOrientation;
 
     /**
      * Creates a new ProtoNewPage instance using the specified properties.

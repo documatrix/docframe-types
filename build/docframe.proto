@@ -865,10 +865,18 @@ NEXT_RECTO_PAGE = 1;
 NEXT_VERSO_PAGE = 2;
 }
 
+enum ProtoPageOrientation {
+PORTRAIT = 0;
+LANDSCAPE = 1;
+INVERSE_PORTRAIT = 2;
+INVERSE_LANDSCAPE = 3;
+}
+
 message ProtoNewPage {
 uint32 paperTray = 1;
 uint32 paperCount = 2;
 ProtoPageMode pageMode = 3;
+ProtoPageOrientation pageOrientation = 4;
 }
 message ProtoIndentation {
 repeated ProtoDocumentElement _children = 1;

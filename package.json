@@ -1,6 +1,6 @@
 {
   "name": "docframe-types",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "docframe-types contains type definitions for creating documents (e. g. using Deuterium)",
   "keywords": [
     "formatting",
