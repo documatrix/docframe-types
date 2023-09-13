@@ -19455,6 +19455,7 @@ $root.ProtoTableCellSettings = (function() {
      * @property {IProtoSideBorders|null} [border] ProtoTableCellSettings border
      * @property {IProtoSideMeasures|null} [margin] ProtoTableCellSettings margin
      * @property {number|null} [rotation] ProtoTableCellSettings rotation
+     * @property {IProtoBoxedString|null} [string] ProtoTableCellSettings string
      */
 
     /**
@@ -19537,6 +19538,14 @@ $root.ProtoTableCellSettings = (function() {
     ProtoTableCellSettings.prototype.rotation = 0;
 
     /**
+     * ProtoTableCellSettings string.
+     * @member {IProtoBoxedString|null|undefined} string
+     * @memberof ProtoTableCellSettings
+     * @instance
+     */
+    ProtoTableCellSettings.prototype.string = null;
+
+    /**
      * Creates a new ProtoTableCellSettings instance using the specified properties.
      * @function create
      * @memberof ProtoTableCellSettings
@@ -19576,6 +19585,8 @@ $root.ProtoTableCellSettings = (function() {
             $root.ProtoSideMeasures.encode(message.margin, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
         if (message.rotation != null && Object.hasOwnProperty.call(message, "rotation"))
             writer.uint32(/* id 8, wireType 1 =*/65).double(message.rotation);
+        if (message.string != null && Object.hasOwnProperty.call(message, "string"))
+            $root.ProtoBoxedString.encode(message.string, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
         return writer;
     };
 
@@ -19640,6 +19651,10 @@ $root.ProtoTableCellSettings = (function() {
                 }
             case 8: {
                     message.rotation = reader.double();
+                    break;
+                }
+            case 9: {
+                    message.string = $root.ProtoBoxedString.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -19715,6 +19730,11 @@ $root.ProtoTableCellSettings = (function() {
         if (message.rotation != null && message.hasOwnProperty("rotation"))
             if (typeof message.rotation !== "number")
                 return "rotation: number expected";
+        if (message.string != null && message.hasOwnProperty("string")) {
+            var error = $root.ProtoBoxedString.verify(message.string);
+            if (error)
+                return "string." + error;
+        }
         return null;
     };
 
@@ -19767,6 +19787,11 @@ $root.ProtoTableCellSettings = (function() {
         }
         if (object.rotation != null)
             message.rotation = Number(object.rotation);
+        if (object.string != null) {
+            if (typeof object.string !== "object")
+                throw TypeError(".ProtoTableCellSettings.string: object expected");
+            message.string = $root.ProtoBoxedString.fromObject(object.string);
+        }
         return message;
     };
 
@@ -19792,6 +19817,7 @@ $root.ProtoTableCellSettings = (function() {
             object.border = null;
             object.margin = null;
             object.rotation = 0;
+            object.string = null;
         }
         if (message.width != null && message.hasOwnProperty("width"))
             object.width = $root.ProtoMeasure.toObject(message.width, options);
@@ -19809,6 +19835,8 @@ $root.ProtoTableCellSettings = (function() {
             object.margin = $root.ProtoSideMeasures.toObject(message.margin, options);
         if (message.rotation != null && message.hasOwnProperty("rotation"))
             object.rotation = options.json && !isFinite(message.rotation) ? String(message.rotation) : message.rotation;
+        if (message.string != null && message.hasOwnProperty("string"))
+            object.string = $root.ProtoBoxedString.toObject(message.string, options);
         return object;
     };
 

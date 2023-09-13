@@ -594,6 +594,7 @@ ProtoSideMeasures padding = 5;
 ProtoSideBorders border = 6;
 ProtoSideMeasures margin = 7;
 double rotation = 8;
+ProtoBoxedString string = 9;
 }
 message ProtoText {
 ProtoDocumentElement parent = 1;
