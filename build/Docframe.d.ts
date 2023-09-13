@@ -7367,6 +7367,9 @@ export interface IProtoTableCellSettings {
 
     /** ProtoTableCellSettings rotation */
     rotation?: (number|null);
+
+    /** ProtoTableCellSettings defaultParagraphFormat */
+    defaultParagraphFormat?: (IProtoBoxedString|null);
 }
 
 /** Represents a ProtoTableCellSettings. */
@@ -7401,6 +7404,9 @@ export class ProtoTableCellSettings implements IProtoTableCellSettings {
 
     /** ProtoTableCellSettings rotation. */
     public rotation: number;
+
+    /** ProtoTableCellSettings defaultParagraphFormat. */
+    public defaultParagraphFormat?: (IProtoBoxedString|null);
 
     /**
      * Creates a new ProtoTableCellSettings instance using the specified properties.
