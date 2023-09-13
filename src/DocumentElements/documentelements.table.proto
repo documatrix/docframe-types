@@ -138,10 +138,8 @@ message ProtoTableCellSettings {
   ProtoSideBorders border = 6;
   ProtoSideMeasures margin = 7;
   double rotation = 8;
-  /*
-   * If defaultParagraphFormat is not null, it contains the name of
-   * a paragraph format, which should be used as default paragraph format
-   * for content in a table cell using these settings.
-   */
+  // If defaultParagraphFormat is not null, it contains the name of
+  // a paragraph format, which should be used as default paragraph format
+  // for content in a table cell using these settings.
   ProtoBoxedString defaultParagraphFormat = 9;
 }
