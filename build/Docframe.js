@@ -19540,7 +19540,7 @@ $root.ProtoTableCellSettings = (function() {
      * @property {IProtoSideMeasures|null} [padding] ProtoTableCellSettings padding
      * @property {IProtoSideBorders|null} [border] ProtoTableCellSettings border
      * @property {IProtoSideMeasures|null} [margin] ProtoTableCellSettings margin
-     * @property {number|null} [rotation] ProtoTableCellSettings rotation
+     * @property {IProtoBoxedDouble|null} [rotation] ProtoTableCellSettings rotation
      * @property {IProtoBoxedString|null} [defaultParagraphFormat] ProtoTableCellSettings defaultParagraphFormat
      */
 
@@ -19617,11 +19617,11 @@ $root.ProtoTableCellSettings = (function() {
 
     /**
      * ProtoTableCellSettings rotation.
-     * @member {number} rotation
+     * @member {IProtoBoxedDouble|null|undefined} rotation
      * @memberof ProtoTableCellSettings
      * @instance
      */
-    ProtoTableCellSettings.prototype.rotation = 0;
+    ProtoTableCellSettings.prototype.rotation = null;
 
     /**
      * ProtoTableCellSettings defaultParagraphFormat.
@@ -19670,7 +19670,7 @@ $root.ProtoTableCellSettings = (function() {
         if (message.margin != null && Object.hasOwnProperty.call(message, "margin"))
             $root.ProtoSideMeasures.encode(message.margin, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
         if (message.rotation != null && Object.hasOwnProperty.call(message, "rotation"))
-            writer.uint32(/* id 8, wireType 1 =*/65).double(message.rotation);
+            $root.ProtoBoxedDouble.encode(message.rotation, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
         if (message.defaultParagraphFormat != null && Object.hasOwnProperty.call(message, "defaultParagraphFormat"))
             $root.ProtoBoxedString.encode(message.defaultParagraphFormat, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
         return writer;
@@ -19736,7 +19736,7 @@ $root.ProtoTableCellSettings = (function() {
                     break;
                 }
             case 8: {
-                    message.rotation = reader.double();
+                    message.rotation = $root.ProtoBoxedDouble.decode(reader, reader.uint32());
                     break;
                 }
             case 9: {
@@ -19813,9 +19813,11 @@ $root.ProtoTableCellSettings = (function() {
             if (error)
                 return "margin." + error;
         }
-        if (message.rotation != null && message.hasOwnProperty("rotation"))
-            if (typeof message.rotation !== "number")
-                return "rotation: number expected";
+        if (message.rotation != null && message.hasOwnProperty("rotation")) {
+            var error = $root.ProtoBoxedDouble.verify(message.rotation);
+            if (error)
+                return "rotation." + error;
+        }
         if (message.defaultParagraphFormat != null && message.hasOwnProperty("defaultParagraphFormat")) {
             var error = $root.ProtoBoxedString.verify(message.defaultParagraphFormat);
             if (error)
@@ -19871,8 +19873,11 @@ $root.ProtoTableCellSettings = (function() {
                 throw TypeError(".ProtoTableCellSettings.margin: object expected");
             message.margin = $root.ProtoSideMeasures.fromObject(object.margin);
         }
-        if (object.rotation != null)
-            message.rotation = Number(object.rotation);
+        if (object.rotation != null) {
+            if (typeof object.rotation !== "object")
+                throw TypeError(".ProtoTableCellSettings.rotation: object expected");
+            message.rotation = $root.ProtoBoxedDouble.fromObject(object.rotation);
+        }
         if (object.defaultParagraphFormat != null) {
             if (typeof object.defaultParagraphFormat !== "object")
                 throw TypeError(".ProtoTableCellSettings.defaultParagraphFormat: object expected");
@@ -19902,7 +19907,7 @@ $root.ProtoTableCellSettings = (function() {
             object.padding = null;
             object.border = null;
             object.margin = null;
-            object.rotation = 0;
+            object.rotation = null;
             object.defaultParagraphFormat = null;
         }
         if (message.width != null && message.hasOwnProperty("width"))
@@ -19920,7 +19925,7 @@ $root.ProtoTableCellSettings = (function() {
         if (message.margin != null && message.hasOwnProperty("margin"))
             object.margin = $root.ProtoSideMeasures.toObject(message.margin, options);
         if (message.rotation != null && message.hasOwnProperty("rotation"))
-            object.rotation = options.json && !isFinite(message.rotation) ? String(message.rotation) : message.rotation;
+            object.rotation = $root.ProtoBoxedDouble.toObject(message.rotation, options);
         if (message.defaultParagraphFormat != null && message.hasOwnProperty("defaultParagraphFormat"))
             object.defaultParagraphFormat = $root.ProtoBoxedString.toObject(message.defaultParagraphFormat, options);
         return object;

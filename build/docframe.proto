@@ -596,7 +596,7 @@ ProtoColor backgroundColor = 4;
 ProtoSideMeasures padding = 5;
 ProtoSideBorders border = 6;
 ProtoSideMeasures margin = 7;
-double rotation = 8;
+ProtoBoxedDouble rotation = 8;
 ProtoBoxedString defaultParagraphFormat = 9;
 }
 

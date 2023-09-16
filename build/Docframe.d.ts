@@ -7384,7 +7384,7 @@ export interface IProtoTableCellSettings {
     margin?: (IProtoSideMeasures|null);
 
     /** ProtoTableCellSettings rotation */
-    rotation?: (number|null);
+    rotation?: (IProtoBoxedDouble|null);
 
     /** ProtoTableCellSettings defaultParagraphFormat */
     defaultParagraphFormat?: (IProtoBoxedString|null);
@@ -7421,7 +7421,7 @@ export class ProtoTableCellSettings implements IProtoTableCellSettings {
     public margin?: (IProtoSideMeasures|null);
 
     /** ProtoTableCellSettings rotation. */
-    public rotation: number;
+    public rotation?: (IProtoBoxedDouble|null);
 
     /** ProtoTableCellSettings defaultParagraphFormat. */
     public defaultParagraphFormat?: (IProtoBoxedString|null);
