@@ -26,6 +26,7 @@ message ProtoTableSettings {
   ProtoBoxedBool leftMeasure = 2;
   ProtoMeasure width = 3;
   ProtoBoxedUint32 repeatHeader = 4;
+  ProtoTableWS ws = 5;
 }
 
 
@@ -64,6 +65,7 @@ message ProtoTableContentGroupConfig {
 message ProtoTableContentGroupSettings {
   ProtoBoxedTableContentGroupType contentGroupType = 1;
   repeated ProtoColor backgroundColors = 2;
+  ProtoTableWS ws = 3;
 }
 
 
@@ -91,6 +93,7 @@ message ProtoTableRowConfig {
 // go-gen:ignore
 message ProtoTableRowSettings {
   ProtoMeasure minHeight = 1;
+  ProtoTableWS ws = 2;
 }
 
 enum ProtoTableCellType {
@@ -142,4 +145,11 @@ message ProtoTableCellSettings {
   // a paragraph format, which should be used as default paragraph format
   // for content in a table cell using these settings.
   ProtoBoxedString defaultParagraphFormat = 9;
+}
+
+// go-gen:ignore
+message ProtoTableWS {
+  uint32 minLinesBefore = 1;
+  uint32 minLinesAfter = 2;
+  uint32 priority = 3;
 }

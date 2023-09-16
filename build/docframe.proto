@@ -500,6 +500,7 @@ ProtoMeasure xOffset = 1;
 ProtoBoxedBool leftMeasure = 2;
 ProtoMeasure width = 3;
 ProtoBoxedUint32 repeatHeader = 4;
+ProtoTableWS ws = 5;
 }
 
 
@@ -532,6 +533,7 @@ string configName = 3;
 message ProtoTableContentGroupSettings {
 ProtoBoxedTableContentGroupType contentGroupType = 1;
 repeated ProtoColor backgroundColors = 2;
+ProtoTableWS ws = 3;
 }
 
 
@@ -554,6 +556,7 @@ string rowFooter = 5;
 
 message ProtoTableRowSettings {
 ProtoMeasure minHeight = 1;
+ProtoTableWS ws = 2;
 }
 
 enum ProtoTableCellType {
@@ -595,6 +598,12 @@ ProtoSideBorders border = 6;
 ProtoSideMeasures margin = 7;
 double rotation = 8;
 ProtoBoxedString defaultParagraphFormat = 9;
+}
+
+message ProtoTableWS {
+uint32 minLinesBefore = 1;
+uint32 minLinesAfter = 2;
+uint32 priority = 3;
 }
 message ProtoText {
 ProtoDocumentElement parent = 1;

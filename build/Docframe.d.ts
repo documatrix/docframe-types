@@ -6123,6 +6123,9 @@ export interface IProtoTableSettings {
 
     /** ProtoTableSettings repeatHeader */
     repeatHeader?: (IProtoBoxedUint32|null);
+
+    /** ProtoTableSettings ws */
+    ws?: (IProtoTableWS|null);
 }
 
 /** Represents a ProtoTableSettings. */
@@ -6145,6 +6148,9 @@ export class ProtoTableSettings implements IProtoTableSettings {
 
     /** ProtoTableSettings repeatHeader. */
     public repeatHeader?: (IProtoBoxedUint32|null);
+
+    /** ProtoTableSettings ws. */
+    public ws?: (IProtoTableWS|null);
 
     /**
      * Creates a new ProtoTableSettings instance using the specified properties.
@@ -6561,6 +6567,9 @@ export interface IProtoTableContentGroupSettings {
 
     /** ProtoTableContentGroupSettings backgroundColors */
     backgroundColors?: (IProtoColor[]|null);
+
+    /** ProtoTableContentGroupSettings ws */
+    ws?: (IProtoTableWS|null);
 }
 
 /** Represents a ProtoTableContentGroupSettings. */
@@ -6577,6 +6586,9 @@ export class ProtoTableContentGroupSettings implements IProtoTableContentGroupSe
 
     /** ProtoTableContentGroupSettings backgroundColors. */
     public backgroundColors: IProtoColor[];
+
+    /** ProtoTableContentGroupSettings ws. */
+    public ws?: (IProtoTableWS|null);
 
     /**
      * Creates a new ProtoTableContentGroupSettings instance using the specified properties.
@@ -6897,6 +6909,9 @@ export interface IProtoTableRowSettings {
 
     /** ProtoTableRowSettings minHeight */
     minHeight?: (IProtoMeasure|null);
+
+    /** ProtoTableRowSettings ws */
+    ws?: (IProtoTableWS|null);
 }
 
 /** Represents a ProtoTableRowSettings. */
@@ -6910,6 +6925,9 @@ export class ProtoTableRowSettings implements IProtoTableRowSettings {
 
     /** ProtoTableRowSettings minHeight. */
     public minHeight?: (IProtoMeasure|null);
+
+    /** ProtoTableRowSettings ws. */
+    public ws?: (IProtoTableWS|null);
 
     /**
      * Creates a new ProtoTableRowSettings instance using the specified properties.
@@ -7480,6 +7498,115 @@ export class ProtoTableCellSettings implements IProtoTableCellSettings {
 
     /**
      * Gets the default type url for ProtoTableCellSettings
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoTableWS. */
+export interface IProtoTableWS {
+
+    /** ProtoTableWS minLinesBefore */
+    minLinesBefore?: (number|null);
+
+    /** ProtoTableWS minLinesAfter */
+    minLinesAfter?: (number|null);
+
+    /** ProtoTableWS priority */
+    priority?: (number|null);
+}
+
+/** Represents a ProtoTableWS. */
+export class ProtoTableWS implements IProtoTableWS {
+
+    /**
+     * Constructs a new ProtoTableWS.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoTableWS);
+
+    /** ProtoTableWS minLinesBefore. */
+    public minLinesBefore: number;
+
+    /** ProtoTableWS minLinesAfter. */
+    public minLinesAfter: number;
+
+    /** ProtoTableWS priority. */
+    public priority: number;
+
+    /**
+     * Creates a new ProtoTableWS instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoTableWS instance
+     */
+    public static create(properties?: IProtoTableWS): ProtoTableWS;
+
+    /**
+     * Encodes the specified ProtoTableWS message. Does not implicitly {@link ProtoTableWS.verify|verify} messages.
+     * @param message ProtoTableWS message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoTableWS, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoTableWS message, length delimited. Does not implicitly {@link ProtoTableWS.verify|verify} messages.
+     * @param message ProtoTableWS message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoTableWS, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoTableWS message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoTableWS
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoTableWS;
+
+    /**
+     * Decodes a ProtoTableWS message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoTableWS
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoTableWS;
+
+    /**
+     * Verifies a ProtoTableWS message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoTableWS message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoTableWS
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoTableWS;
+
+    /**
+     * Creates a plain object from a ProtoTableWS message. Also converts values to other types if specified.
+     * @param message ProtoTableWS
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoTableWS, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoTableWS to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoTableWS
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

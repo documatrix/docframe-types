@@ -16349,6 +16349,7 @@ $root.ProtoTableSettings = (function() {
      * @property {IProtoBoxedBool|null} [leftMeasure] ProtoTableSettings leftMeasure
      * @property {IProtoMeasure|null} [width] ProtoTableSettings width
      * @property {IProtoBoxedUint32|null} [repeatHeader] ProtoTableSettings repeatHeader
+     * @property {IProtoTableWS|null} [ws] ProtoTableSettings ws
      */
 
     /**
@@ -16399,6 +16400,14 @@ $root.ProtoTableSettings = (function() {
     ProtoTableSettings.prototype.repeatHeader = null;
 
     /**
+     * ProtoTableSettings ws.
+     * @member {IProtoTableWS|null|undefined} ws
+     * @memberof ProtoTableSettings
+     * @instance
+     */
+    ProtoTableSettings.prototype.ws = null;
+
+    /**
      * Creates a new ProtoTableSettings instance using the specified properties.
      * @function create
      * @memberof ProtoTableSettings
@@ -16430,6 +16439,8 @@ $root.ProtoTableSettings = (function() {
             $root.ProtoMeasure.encode(message.width, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
         if (message.repeatHeader != null && Object.hasOwnProperty.call(message, "repeatHeader"))
             $root.ProtoBoxedUint32.encode(message.repeatHeader, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+        if (message.ws != null && Object.hasOwnProperty.call(message, "ws"))
+            $root.ProtoTableWS.encode(message.ws, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
         return writer;
     };
 
@@ -16478,6 +16489,10 @@ $root.ProtoTableSettings = (function() {
                 }
             case 4: {
                     message.repeatHeader = $root.ProtoBoxedUint32.decode(reader, reader.uint32());
+                    break;
+                }
+            case 5: {
+                    message.ws = $root.ProtoTableWS.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -16535,6 +16550,11 @@ $root.ProtoTableSettings = (function() {
             if (error)
                 return "repeatHeader." + error;
         }
+        if (message.ws != null && message.hasOwnProperty("ws")) {
+            var error = $root.ProtoTableWS.verify(message.ws);
+            if (error)
+                return "ws." + error;
+        }
         return null;
     };
 
@@ -16570,6 +16590,11 @@ $root.ProtoTableSettings = (function() {
                 throw TypeError(".ProtoTableSettings.repeatHeader: object expected");
             message.repeatHeader = $root.ProtoBoxedUint32.fromObject(object.repeatHeader);
         }
+        if (object.ws != null) {
+            if (typeof object.ws !== "object")
+                throw TypeError(".ProtoTableSettings.ws: object expected");
+            message.ws = $root.ProtoTableWS.fromObject(object.ws);
+        }
         return message;
     };
 
@@ -16591,6 +16616,7 @@ $root.ProtoTableSettings = (function() {
             object.leftMeasure = null;
             object.width = null;
             object.repeatHeader = null;
+            object.ws = null;
         }
         if (message.xOffset != null && message.hasOwnProperty("xOffset"))
             object.xOffset = $root.ProtoMeasure.toObject(message.xOffset, options);
@@ -16600,6 +16626,8 @@ $root.ProtoTableSettings = (function() {
             object.width = $root.ProtoMeasure.toObject(message.width, options);
         if (message.repeatHeader != null && message.hasOwnProperty("repeatHeader"))
             object.repeatHeader = $root.ProtoBoxedUint32.toObject(message.repeatHeader, options);
+        if (message.ws != null && message.hasOwnProperty("ws"))
+            object.ws = $root.ProtoTableWS.toObject(message.ws, options);
         return object;
     };
 
@@ -17456,6 +17484,7 @@ $root.ProtoTableContentGroupSettings = (function() {
      * @interface IProtoTableContentGroupSettings
      * @property {IProtoBoxedTableContentGroupType|null} [contentGroupType] ProtoTableContentGroupSettings contentGroupType
      * @property {Array.<IProtoColor>|null} [backgroundColors] ProtoTableContentGroupSettings backgroundColors
+     * @property {IProtoTableWS|null} [ws] ProtoTableContentGroupSettings ws
      */
 
     /**
@@ -17491,6 +17520,14 @@ $root.ProtoTableContentGroupSettings = (function() {
     ProtoTableContentGroupSettings.prototype.backgroundColors = $util.emptyArray;
 
     /**
+     * ProtoTableContentGroupSettings ws.
+     * @member {IProtoTableWS|null|undefined} ws
+     * @memberof ProtoTableContentGroupSettings
+     * @instance
+     */
+    ProtoTableContentGroupSettings.prototype.ws = null;
+
+    /**
      * Creates a new ProtoTableContentGroupSettings instance using the specified properties.
      * @function create
      * @memberof ProtoTableContentGroupSettings
@@ -17519,6 +17556,8 @@ $root.ProtoTableContentGroupSettings = (function() {
         if (message.backgroundColors != null && message.backgroundColors.length)
             for (var i = 0; i < message.backgroundColors.length; ++i)
                 $root.ProtoColor.encode(message.backgroundColors[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.ws != null && Object.hasOwnProperty.call(message, "ws"))
+            $root.ProtoTableWS.encode(message.ws, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
         return writer;
     };
 
@@ -17561,6 +17600,10 @@ $root.ProtoTableContentGroupSettings = (function() {
                     if (!(message.backgroundColors && message.backgroundColors.length))
                         message.backgroundColors = [];
                     message.backgroundColors.push($root.ProtoColor.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 3: {
+                    message.ws = $root.ProtoTableWS.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -17612,6 +17655,11 @@ $root.ProtoTableContentGroupSettings = (function() {
                     return "backgroundColors." + error;
             }
         }
+        if (message.ws != null && message.hasOwnProperty("ws")) {
+            var error = $root.ProtoTableWS.verify(message.ws);
+            if (error)
+                return "ws." + error;
+        }
         return null;
     };
 
@@ -17642,6 +17690,11 @@ $root.ProtoTableContentGroupSettings = (function() {
                 message.backgroundColors[i] = $root.ProtoColor.fromObject(object.backgroundColors[i]);
             }
         }
+        if (object.ws != null) {
+            if (typeof object.ws !== "object")
+                throw TypeError(".ProtoTableContentGroupSettings.ws: object expected");
+            message.ws = $root.ProtoTableWS.fromObject(object.ws);
+        }
         return message;
     };
 
@@ -17660,8 +17713,10 @@ $root.ProtoTableContentGroupSettings = (function() {
         var object = {};
         if (options.arrays || options.defaults)
             object.backgroundColors = [];
-        if (options.defaults)
+        if (options.defaults) {
             object.contentGroupType = null;
+            object.ws = null;
+        }
         if (message.contentGroupType != null && message.hasOwnProperty("contentGroupType"))
             object.contentGroupType = $root.ProtoBoxedTableContentGroupType.toObject(message.contentGroupType, options);
         if (message.backgroundColors && message.backgroundColors.length) {
@@ -17669,6 +17724,8 @@ $root.ProtoTableContentGroupSettings = (function() {
             for (var j = 0; j < message.backgroundColors.length; ++j)
                 object.backgroundColors[j] = $root.ProtoColor.toObject(message.backgroundColors[j], options);
         }
+        if (message.ws != null && message.hasOwnProperty("ws"))
+            object.ws = $root.ProtoTableWS.toObject(message.ws, options);
         return object;
     };
 
@@ -18324,6 +18381,7 @@ $root.ProtoTableRowSettings = (function() {
      * @name IProtoTableRowSettings
      * @interface IProtoTableRowSettings
      * @property {IProtoMeasure|null} [minHeight] ProtoTableRowSettings minHeight
+     * @property {IProtoTableWS|null} [ws] ProtoTableRowSettings ws
      */
 
     /**
@@ -18348,6 +18406,14 @@ $root.ProtoTableRowSettings = (function() {
      * @instance
      */
     ProtoTableRowSettings.prototype.minHeight = null;
+
+    /**
+     * ProtoTableRowSettings ws.
+     * @member {IProtoTableWS|null|undefined} ws
+     * @memberof ProtoTableRowSettings
+     * @instance
+     */
+    ProtoTableRowSettings.prototype.ws = null;
 
     /**
      * Creates a new ProtoTableRowSettings instance using the specified properties.
@@ -18375,6 +18441,8 @@ $root.ProtoTableRowSettings = (function() {
             writer = $Writer.create();
         if (message.minHeight != null && Object.hasOwnProperty.call(message, "minHeight"))
             $root.ProtoMeasure.encode(message.minHeight, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.ws != null && Object.hasOwnProperty.call(message, "ws"))
+            $root.ProtoTableWS.encode(message.ws, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
         return writer;
     };
 
@@ -18411,6 +18479,10 @@ $root.ProtoTableRowSettings = (function() {
             switch (tag >>> 3) {
             case 1: {
                     message.minHeight = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.ws = $root.ProtoTableWS.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -18453,6 +18525,11 @@ $root.ProtoTableRowSettings = (function() {
             if (error)
                 return "minHeight." + error;
         }
+        if (message.ws != null && message.hasOwnProperty("ws")) {
+            var error = $root.ProtoTableWS.verify(message.ws);
+            if (error)
+                return "ws." + error;
+        }
         return null;
     };
 
@@ -18473,6 +18550,11 @@ $root.ProtoTableRowSettings = (function() {
                 throw TypeError(".ProtoTableRowSettings.minHeight: object expected");
             message.minHeight = $root.ProtoMeasure.fromObject(object.minHeight);
         }
+        if (object.ws != null) {
+            if (typeof object.ws !== "object")
+                throw TypeError(".ProtoTableRowSettings.ws: object expected");
+            message.ws = $root.ProtoTableWS.fromObject(object.ws);
+        }
         return message;
     };
 
@@ -18489,10 +18571,14 @@ $root.ProtoTableRowSettings = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.defaults)
+        if (options.defaults) {
             object.minHeight = null;
+            object.ws = null;
+        }
         if (message.minHeight != null && message.hasOwnProperty("minHeight"))
             object.minHeight = $root.ProtoMeasure.toObject(message.minHeight, options);
+        if (message.ws != null && message.hasOwnProperty("ws"))
+            object.ws = $root.ProtoTableWS.toObject(message.ws, options);
         return object;
     };
 
@@ -19867,6 +19953,256 @@ $root.ProtoTableCellSettings = (function() {
     };
 
     return ProtoTableCellSettings;
+})();
+
+$root.ProtoTableWS = (function() {
+
+    /**
+     * Properties of a ProtoTableWS.
+     * @name IProtoTableWS
+     * @interface IProtoTableWS
+     * @property {number|null} [minLinesBefore] ProtoTableWS minLinesBefore
+     * @property {number|null} [minLinesAfter] ProtoTableWS minLinesAfter
+     * @property {number|null} [priority] ProtoTableWS priority
+     */
+
+    /**
+     * Constructs a new ProtoTableWS.
+     * @name ProtoTableWS
+     * @classdesc Represents a ProtoTableWS.
+     * @implements IProtoTableWS
+     * @constructor
+     * @param {IProtoTableWS=} [properties] Properties to set
+     */
+    function ProtoTableWS(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoTableWS minLinesBefore.
+     * @member {number} minLinesBefore
+     * @memberof ProtoTableWS
+     * @instance
+     */
+    ProtoTableWS.prototype.minLinesBefore = 0;
+
+    /**
+     * ProtoTableWS minLinesAfter.
+     * @member {number} minLinesAfter
+     * @memberof ProtoTableWS
+     * @instance
+     */
+    ProtoTableWS.prototype.minLinesAfter = 0;
+
+    /**
+     * ProtoTableWS priority.
+     * @member {number} priority
+     * @memberof ProtoTableWS
+     * @instance
+     */
+    ProtoTableWS.prototype.priority = 0;
+
+    /**
+     * Creates a new ProtoTableWS instance using the specified properties.
+     * @function create
+     * @memberof ProtoTableWS
+     * @static
+     * @param {IProtoTableWS=} [properties] Properties to set
+     * @returns {ProtoTableWS} ProtoTableWS instance
+     */
+    ProtoTableWS.create = function create(properties) {
+        return new ProtoTableWS(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoTableWS message. Does not implicitly {@link ProtoTableWS.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoTableWS
+     * @static
+     * @param {IProtoTableWS} message ProtoTableWS message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoTableWS.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.minLinesBefore != null && Object.hasOwnProperty.call(message, "minLinesBefore"))
+            writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.minLinesBefore);
+        if (message.minLinesAfter != null && Object.hasOwnProperty.call(message, "minLinesAfter"))
+            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.minLinesAfter);
+        if (message.priority != null && Object.hasOwnProperty.call(message, "priority"))
+            writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.priority);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoTableWS message, length delimited. Does not implicitly {@link ProtoTableWS.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoTableWS
+     * @static
+     * @param {IProtoTableWS} message ProtoTableWS message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoTableWS.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoTableWS message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoTableWS
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoTableWS} ProtoTableWS
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoTableWS.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableWS();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.minLinesBefore = reader.uint32();
+                    break;
+                }
+            case 2: {
+                    message.minLinesAfter = reader.uint32();
+                    break;
+                }
+            case 3: {
+                    message.priority = reader.uint32();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoTableWS message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoTableWS
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoTableWS} ProtoTableWS
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoTableWS.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoTableWS message.
+     * @function verify
+     * @memberof ProtoTableWS
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoTableWS.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.minLinesBefore != null && message.hasOwnProperty("minLinesBefore"))
+            if (!$util.isInteger(message.minLinesBefore))
+                return "minLinesBefore: integer expected";
+        if (message.minLinesAfter != null && message.hasOwnProperty("minLinesAfter"))
+            if (!$util.isInteger(message.minLinesAfter))
+                return "minLinesAfter: integer expected";
+        if (message.priority != null && message.hasOwnProperty("priority"))
+            if (!$util.isInteger(message.priority))
+                return "priority: integer expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoTableWS message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoTableWS
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoTableWS} ProtoTableWS
+     */
+    ProtoTableWS.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoTableWS)
+            return object;
+        var message = new $root.ProtoTableWS();
+        if (object.minLinesBefore != null)
+            message.minLinesBefore = object.minLinesBefore >>> 0;
+        if (object.minLinesAfter != null)
+            message.minLinesAfter = object.minLinesAfter >>> 0;
+        if (object.priority != null)
+            message.priority = object.priority >>> 0;
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoTableWS message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoTableWS
+     * @static
+     * @param {ProtoTableWS} message ProtoTableWS
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoTableWS.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.minLinesBefore = 0;
+            object.minLinesAfter = 0;
+            object.priority = 0;
+        }
+        if (message.minLinesBefore != null && message.hasOwnProperty("minLinesBefore"))
+            object.minLinesBefore = message.minLinesBefore;
+        if (message.minLinesAfter != null && message.hasOwnProperty("minLinesAfter"))
+            object.minLinesAfter = message.minLinesAfter;
+        if (message.priority != null && message.hasOwnProperty("priority"))
+            object.priority = message.priority;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoTableWS to JSON.
+     * @function toJSON
+     * @memberof ProtoTableWS
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoTableWS.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoTableWS
+     * @function getTypeUrl
+     * @memberof ProtoTableWS
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoTableWS.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoTableWS";
+    };
+
+    return ProtoTableWS;
 })();
 
 $root.ProtoText = (function() {
