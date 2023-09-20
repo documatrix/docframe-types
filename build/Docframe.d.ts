@@ -8932,6 +8932,9 @@ export interface IProtoImage {
 
     /** ProtoImage referencePoint */
     referencePoint?: (ProtoImageReferencePoint|null);
+
+    /** ProtoImage hyperlink */
+    hyperlink?: (string|null);
 }
 
 /** Represents a ProtoImage. */
@@ -8996,6 +8999,9 @@ export class ProtoImage implements IProtoImage {
 
     /** ProtoImage referencePoint. */
     public referencePoint: ProtoImageReferencePoint;
+
+    /** ProtoImage hyperlink. */
+    public hyperlink: string;
 
     /**
      * Creates a new ProtoImage instance using the specified properties.
