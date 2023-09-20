@@ -24566,6 +24566,7 @@ $root.ProtoImage = (function() {
      * @property {IProtoAdvancedIllustrationArea|null} [aia] ProtoImage aia
      * @property {string|null} [uuid] ProtoImage uuid
      * @property {ProtoImageReferencePoint|null} [referencePoint] ProtoImage referencePoint
+     * @property {string|null} [hyperlink] ProtoImage hyperlink
      */
 
     /**
@@ -24728,6 +24729,14 @@ $root.ProtoImage = (function() {
     ProtoImage.prototype.referencePoint = 0;
 
     /**
+     * ProtoImage hyperlink.
+     * @member {string} hyperlink
+     * @memberof ProtoImage
+     * @instance
+     */
+    ProtoImage.prototype.hyperlink = "";
+
+    /**
      * Creates a new ProtoImage instance using the specified properties.
      * @function create
      * @memberof ProtoImage
@@ -24787,6 +24796,8 @@ $root.ProtoImage = (function() {
             writer.uint32(/* id 17, wireType 2 =*/138).string(message.uuid);
         if (message.referencePoint != null && Object.hasOwnProperty.call(message, "referencePoint"))
             writer.uint32(/* id 18, wireType 0 =*/144).int32(message.referencePoint);
+        if (message.hyperlink != null && Object.hasOwnProperty.call(message, "hyperlink"))
+            writer.uint32(/* id 19, wireType 2 =*/154).string(message.hyperlink);
         return writer;
     };
 
@@ -24891,6 +24902,10 @@ $root.ProtoImage = (function() {
                 }
             case 18: {
                     message.referencePoint = reader.int32();
+                    break;
+                }
+            case 19: {
+                    message.hyperlink = reader.string();
                     break;
                 }
             default:
@@ -25013,6 +25028,9 @@ $root.ProtoImage = (function() {
             case 5:
                 break;
             }
+        if (message.hyperlink != null && message.hasOwnProperty("hyperlink"))
+            if (!$util.isString(message.hyperlink))
+                return "hyperlink: string expected";
         return null;
     };
 
@@ -25127,6 +25145,8 @@ $root.ProtoImage = (function() {
             message.referencePoint = 5;
             break;
         }
+        if (object.hyperlink != null)
+            message.hyperlink = String(object.hyperlink);
         return message;
     };
 
@@ -25162,6 +25182,7 @@ $root.ProtoImage = (function() {
             object.aia = null;
             object.uuid = "";
             object.referencePoint = options.enums === String ? "REF_POINT_DO_NOT_USE_AT_ALL" : 0;
+            object.hyperlink = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -25199,6 +25220,8 @@ $root.ProtoImage = (function() {
             object.uuid = message.uuid;
         if (message.referencePoint != null && message.hasOwnProperty("referencePoint"))
             object.referencePoint = options.enums === String ? $root.ProtoImageReferencePoint[message.referencePoint] === undefined ? message.referencePoint : $root.ProtoImageReferencePoint[message.referencePoint] : message.referencePoint;
+        if (message.hyperlink != null && message.hasOwnProperty("hyperlink"))
+            object.hyperlink = message.hyperlink;
         return object;
     };
 

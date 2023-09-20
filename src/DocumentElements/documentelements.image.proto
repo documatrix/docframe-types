@@ -20,4 +20,5 @@ message ProtoImage {
   ProtoAdvancedIllustrationArea aia = 16;
   string uuid = 17;
   ProtoImageReferencePoint referencePoint = 18;
+  string hyperlink = 19;
 }
