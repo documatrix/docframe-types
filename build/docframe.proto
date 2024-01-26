@@ -464,6 +464,7 @@ message ProtoSpaceVertically {
 ProtoDocumentElement parent = 1;
 
 ProtoMeasure space = 2;
+repeated string comChannelUUIDs = 3;
 }
 message ProtoSpan {
 repeated ProtoDocumentElement _children = 1;
@@ -486,6 +487,7 @@ string configName = 4;
 
 Node carryOver = 5;
 Node subTotal = 6;
+repeated string comChannelUUIDs = 7;
 }
 
 message ProtoTableConfig {
