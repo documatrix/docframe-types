@@ -5633,6 +5633,9 @@ export interface IProtoSpaceVertically {
 
     /** ProtoSpaceVertically space */
     space?: (IProtoMeasure|null);
+
+    /** ProtoSpaceVertically comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoSpaceVertically. */
@@ -5649,6 +5652,9 @@ export class ProtoSpaceVertically implements IProtoSpaceVertically {
 
     /** ProtoSpaceVertically space. */
     public space?: (IProtoMeasure|null);
+
+    /** ProtoSpaceVertically comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoSpaceVertically instance using the specified properties.
@@ -5893,6 +5899,9 @@ export interface IProtoTable {
 
     /** ProtoTable subTotal */
     subTotal?: (INode|null);
+
+    /** ProtoTable comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoTable. */
@@ -5921,6 +5930,9 @@ export class ProtoTable implements IProtoTable {
 
     /** ProtoTable subTotal. */
     public subTotal?: (INode|null);
+
+    /** ProtoTable comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoTable instance using the specified properties.
@@ -8873,7 +8885,8 @@ export enum NodeType {
     DOCUMENT_ELEMENT_SUB_TOTAL = 64,
     DOCUMENT_ELEMENT_LOOP = 65,
     DOCUMENT_ELEMENT_LOOP_ENTRY = 66,
-    DOCUMENT_ELEMENT_RULE = 67
+    DOCUMENT_ELEMENT_RULE = 67,
+    DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 68
 }
 
 /** Properties of a ProtoImage. */
