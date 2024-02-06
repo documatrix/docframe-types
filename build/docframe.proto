@@ -580,6 +580,7 @@ ProtoTableCellSettings settings = 3;
 ProtoBoxedUint32 cellConfigNumber = 4;
 ProtoBoxedUint32 index = 5;
 bool mergedLeft = 6;
+bool mergedUp = 7;
 }
 
 message ProtoTableCellConfig {

@@ -7149,6 +7149,9 @@ export interface IProtoTableCell {
 
     /** ProtoTableCell mergedLeft */
     mergedLeft?: (boolean|null);
+
+    /** ProtoTableCell mergedUp */
+    mergedUp?: (boolean|null);
 }
 
 /** Represents a ProtoTableCell. */
@@ -7177,6 +7180,9 @@ export class ProtoTableCell implements IProtoTableCell {
 
     /** ProtoTableCell mergedLeft. */
     public mergedLeft: boolean;
+
+    /** ProtoTableCell mergedUp. */
+    public mergedUp: boolean;
 
     /**
      * Creates a new ProtoTableCell instance using the specified properties.
