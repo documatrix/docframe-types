@@ -18970,6 +18970,7 @@ $root.ProtoTableCell = (function() {
      * @property {IProtoBoxedUint32|null} [cellConfigNumber] ProtoTableCell cellConfigNumber
      * @property {IProtoBoxedUint32|null} [index] ProtoTableCell index
      * @property {boolean|null} [mergedLeft] ProtoTableCell mergedLeft
+     * @property {boolean|null} [mergedUp] ProtoTableCell mergedUp
      */
 
     /**
@@ -19037,6 +19038,14 @@ $root.ProtoTableCell = (function() {
     ProtoTableCell.prototype.mergedLeft = false;
 
     /**
+     * ProtoTableCell mergedUp.
+     * @member {boolean} mergedUp
+     * @memberof ProtoTableCell
+     * @instance
+     */
+    ProtoTableCell.prototype.mergedUp = false;
+
+    /**
      * Creates a new ProtoTableCell instance using the specified properties.
      * @function create
      * @memberof ProtoTableCell
@@ -19073,6 +19082,8 @@ $root.ProtoTableCell = (function() {
             $root.ProtoBoxedUint32.encode(message.index, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
         if (message.mergedLeft != null && Object.hasOwnProperty.call(message, "mergedLeft"))
             writer.uint32(/* id 6, wireType 0 =*/48).bool(message.mergedLeft);
+        if (message.mergedUp != null && Object.hasOwnProperty.call(message, "mergedUp"))
+            writer.uint32(/* id 7, wireType 0 =*/56).bool(message.mergedUp);
         return writer;
     };
 
@@ -19131,6 +19142,10 @@ $root.ProtoTableCell = (function() {
                 }
             case 6: {
                     message.mergedLeft = reader.bool();
+                    break;
+                }
+            case 7: {
+                    message.mergedUp = reader.bool();
                     break;
                 }
             default:
@@ -19200,6 +19215,9 @@ $root.ProtoTableCell = (function() {
         if (message.mergedLeft != null && message.hasOwnProperty("mergedLeft"))
             if (typeof message.mergedLeft !== "boolean")
                 return "mergedLeft: boolean expected";
+        if (message.mergedUp != null && message.hasOwnProperty("mergedUp"))
+            if (typeof message.mergedUp !== "boolean")
+                return "mergedUp: boolean expected";
         return null;
     };
 
@@ -19247,6 +19265,8 @@ $root.ProtoTableCell = (function() {
         }
         if (object.mergedLeft != null)
             message.mergedLeft = Boolean(object.mergedLeft);
+        if (object.mergedUp != null)
+            message.mergedUp = Boolean(object.mergedUp);
         return message;
     };
 
@@ -19271,6 +19291,7 @@ $root.ProtoTableCell = (function() {
             object.cellConfigNumber = null;
             object.index = null;
             object.mergedLeft = false;
+            object.mergedUp = false;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -19287,6 +19308,8 @@ $root.ProtoTableCell = (function() {
             object.index = $root.ProtoBoxedUint32.toObject(message.index, options);
         if (message.mergedLeft != null && message.hasOwnProperty("mergedLeft"))
             object.mergedLeft = message.mergedLeft;
+        if (message.mergedUp != null && message.hasOwnProperty("mergedUp"))
+            object.mergedUp = message.mergedUp;
         return object;
     };
 

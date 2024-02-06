@@ -120,6 +120,8 @@ message ProtoTableCell {
   ProtoBoxedUint32 index = 5;
   // Indicates if this table cell should merged with the left table cell.
   bool mergedLeft = 6;
+  // Indicates if this table cell should be merged with the cell above.
+  bool mergedUp = 7;
 }
 
 message ProtoTableCellConfig {
