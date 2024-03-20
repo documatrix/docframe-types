@@ -7144,9 +7144,6 @@ export interface IProtoTableCell {
     /** ProtoTableCell cellConfigNumber */
     cellConfigNumber?: (IProtoBoxedUint32|null);
 
-    /** ProtoTableCell index */
-    index?: (IProtoBoxedUint32|null);
-
     /** ProtoTableCell mergedLeft */
     mergedLeft?: (boolean|null);
 
@@ -7174,9 +7171,6 @@ export class ProtoTableCell implements IProtoTableCell {
 
     /** ProtoTableCell cellConfigNumber. */
     public cellConfigNumber?: (IProtoBoxedUint32|null);
-
-    /** ProtoTableCell index. */
-    public index?: (IProtoBoxedUint32|null);
 
     /** ProtoTableCell mergedLeft. */
     public mergedLeft: boolean;
