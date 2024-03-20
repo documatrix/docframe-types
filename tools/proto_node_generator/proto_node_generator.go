@@ -39,14 +39,14 @@ func main() {
 		os.Exit(1)
 	}
 
-	err := workDir(*protoDocumentElementDir, *destinationDir, "DOCUMENT_ELEMENT")
+	err := workDir(*protoDocumentElementDir, *destinationDir)
 	if err != nil {
 		logrus.Errorf("Error processing directory %s: %s", *protoDocumentElementDir, err.Error())
 		os.Exit(1)
 	}
 }
 
-func workDir(dir string, destinationDir string, nodeTypePrefix string) error {
+func workDir(dir string, destinationDir string) error {
 	entries, err := os.ReadDir(dir)
 	if err != nil {
 		return fmt.Errorf("error reading docframe proto files: %w", err)
@@ -60,7 +60,7 @@ func workDir(dir string, destinationDir string, nodeTypePrefix string) error {
 
 		if strings.HasSuffix(fileName, ".proto") {
 			goFile := strings.ReplaceAll(fileName, ".proto", "_generated.go")
-			err = generateFromProto(filepath.Join(dir, fileName), filepath.Join(destinationDir, goFile), nodeTypePrefix)
+			err = generateFromProto(filepath.Join(dir, fileName), filepath.Join(destinationDir, goFile))
 			if err != nil {
 				return fmt.Errorf("error generating Go file out of %q: %w", fileName, err)
 			}
@@ -101,7 +101,7 @@ type ElementData struct {
 	TypeName       string
 }
 
-func generateFromProto(protoFile string, goFile string, nodeTypePrefix string) error {
+func generateFromProto(protoFile string, goFile string) error {
 	proto, err := os.Open(protoFile)
 	if err != nil {
 		return fmt.Errorf("error opening %q for reading: %w", protoFile, err)
