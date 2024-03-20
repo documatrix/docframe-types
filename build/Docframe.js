@@ -18968,7 +18968,6 @@ $root.ProtoTableCell = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoTableCell parent
      * @property {IProtoTableCellSettings|null} [settings] ProtoTableCell settings
      * @property {IProtoBoxedUint32|null} [cellConfigNumber] ProtoTableCell cellConfigNumber
-     * @property {IProtoBoxedUint32|null} [index] ProtoTableCell index
      * @property {boolean|null} [mergedLeft] ProtoTableCell mergedLeft
      * @property {boolean|null} [mergedUp] ProtoTableCell mergedUp
      */
@@ -19022,14 +19021,6 @@ $root.ProtoTableCell = (function() {
     ProtoTableCell.prototype.cellConfigNumber = null;
 
     /**
-     * ProtoTableCell index.
-     * @member {IProtoBoxedUint32|null|undefined} index
-     * @memberof ProtoTableCell
-     * @instance
-     */
-    ProtoTableCell.prototype.index = null;
-
-    /**
      * ProtoTableCell mergedLeft.
      * @member {boolean} mergedLeft
      * @memberof ProtoTableCell
@@ -19078,12 +19069,10 @@ $root.ProtoTableCell = (function() {
             $root.ProtoTableCellSettings.encode(message.settings, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
         if (message.cellConfigNumber != null && Object.hasOwnProperty.call(message, "cellConfigNumber"))
             $root.ProtoBoxedUint32.encode(message.cellConfigNumber, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-        if (message.index != null && Object.hasOwnProperty.call(message, "index"))
-            $root.ProtoBoxedUint32.encode(message.index, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
         if (message.mergedLeft != null && Object.hasOwnProperty.call(message, "mergedLeft"))
-            writer.uint32(/* id 6, wireType 0 =*/48).bool(message.mergedLeft);
+            writer.uint32(/* id 5, wireType 0 =*/40).bool(message.mergedLeft);
         if (message.mergedUp != null && Object.hasOwnProperty.call(message, "mergedUp"))
-            writer.uint32(/* id 7, wireType 0 =*/56).bool(message.mergedUp);
+            writer.uint32(/* id 6, wireType 0 =*/48).bool(message.mergedUp);
         return writer;
     };
 
@@ -19137,14 +19126,10 @@ $root.ProtoTableCell = (function() {
                     break;
                 }
             case 5: {
-                    message.index = $root.ProtoBoxedUint32.decode(reader, reader.uint32());
-                    break;
-                }
-            case 6: {
                     message.mergedLeft = reader.bool();
                     break;
                 }
-            case 7: {
+            case 6: {
                     message.mergedUp = reader.bool();
                     break;
                 }
@@ -19207,11 +19192,6 @@ $root.ProtoTableCell = (function() {
             if (error)
                 return "cellConfigNumber." + error;
         }
-        if (message.index != null && message.hasOwnProperty("index")) {
-            var error = $root.ProtoBoxedUint32.verify(message.index);
-            if (error)
-                return "index." + error;
-        }
         if (message.mergedLeft != null && message.hasOwnProperty("mergedLeft"))
             if (typeof message.mergedLeft !== "boolean")
                 return "mergedLeft: boolean expected";
@@ -19258,11 +19238,6 @@ $root.ProtoTableCell = (function() {
                 throw TypeError(".ProtoTableCell.cellConfigNumber: object expected");
             message.cellConfigNumber = $root.ProtoBoxedUint32.fromObject(object.cellConfigNumber);
         }
-        if (object.index != null) {
-            if (typeof object.index !== "object")
-                throw TypeError(".ProtoTableCell.index: object expected");
-            message.index = $root.ProtoBoxedUint32.fromObject(object.index);
-        }
         if (object.mergedLeft != null)
             message.mergedLeft = Boolean(object.mergedLeft);
         if (object.mergedUp != null)
@@ -19289,7 +19264,6 @@ $root.ProtoTableCell = (function() {
             object.parent = null;
             object.settings = null;
             object.cellConfigNumber = null;
-            object.index = null;
             object.mergedLeft = false;
             object.mergedUp = false;
         }
@@ -19304,8 +19278,6 @@ $root.ProtoTableCell = (function() {
             object.settings = $root.ProtoTableCellSettings.toObject(message.settings, options);
         if (message.cellConfigNumber != null && message.hasOwnProperty("cellConfigNumber"))
             object.cellConfigNumber = $root.ProtoBoxedUint32.toObject(message.cellConfigNumber, options);
-        if (message.index != null && message.hasOwnProperty("index"))
-            object.index = $root.ProtoBoxedUint32.toObject(message.index, options);
         if (message.mergedLeft != null && message.hasOwnProperty("mergedLeft"))
             object.mergedLeft = message.mergedLeft;
         if (message.mergedUp != null && message.hasOwnProperty("mergedUp"))
