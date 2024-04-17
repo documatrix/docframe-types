@@ -1,0 +1,6 @@
+message ProtoLayout {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+
+  string name = 2;
+}

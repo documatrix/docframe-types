@@ -75,6 +75,7 @@ declare -a FileArray=(
   "src/DocumentElements/documentelements.ws_area.proto"
   "src/DocumentElements/documentelements.rule.proto"
   "src/DocumentElements/documentelements.color_def.proto"
+  "src/DocumentElements/documentelements.layout.proto"
 )
 
 for file in ${FileArray[@]}; do

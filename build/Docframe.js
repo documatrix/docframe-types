@@ -22745,6 +22745,7 @@ $root.Node = (function() {
      * @property {IProtoLoop|null} [loop] Node loop
      * @property {IProtoLoopEntry|null} [loopEntry] Node loopEntry
      * @property {IProtoRule|null} [rule] Node rule
+     * @property {IProtoLayout|null} [layout] Node layout
      */
 
     /**
@@ -23139,17 +23140,25 @@ $root.Node = (function() {
      */
     Node.prototype.rule = null;
 
+    /**
+     * Node layout.
+     * @member {IProtoLayout|null|undefined} layout
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.layout = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -23272,6 +23281,8 @@ $root.Node = (function() {
             $root.ProtoLoopEntry.encode(message.loopEntry, writer.uint32(/* id 61, wireType 2 =*/490).fork()).ldelim();
         if (message.rule != null && Object.hasOwnProperty.call(message, "rule"))
             $root.ProtoRule.encode(message.rule, writer.uint32(/* id 62, wireType 2 =*/498).fork()).ldelim();
+        if (message.layout != null && Object.hasOwnProperty.call(message, "layout"))
+            $root.ProtoLayout.encode(message.layout, writer.uint32(/* id 63, wireType 2 =*/506).fork()).ldelim();
         return writer;
     };
 
@@ -23494,6 +23505,10 @@ $root.Node = (function() {
                 }
             case 62: {
                     message.rule = $root.ProtoRule.decode(reader, reader.uint32());
+                    break;
+                }
+            case 63: {
+                    message.layout = $root.ProtoLayout.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -23999,6 +24014,16 @@ $root.Node = (function() {
                     return "rule." + error;
             }
         }
+        if (message.layout != null && message.hasOwnProperty("layout")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoLayout.verify(message.layout);
+                if (error)
+                    return "layout." + error;
+            }
+        }
         return null;
     };
 
@@ -24254,6 +24279,11 @@ $root.Node = (function() {
                 throw TypeError(".Node.rule: object expected");
             message.rule = $root.ProtoRule.fromObject(object.rule);
         }
+        if (object.layout != null) {
+            if (typeof object.layout !== "object")
+                throw TypeError(".Node.layout: object expected");
+            message.layout = $root.ProtoLayout.fromObject(object.layout);
+        }
         return message;
     };
 
@@ -24507,6 +24537,11 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "rule";
         }
+        if (message.layout != null && message.hasOwnProperty("layout")) {
+            object.layout = $root.ProtoLayout.toObject(message.layout, options);
+            if (options.oneofs)
+                object.object = "layout";
+        }
         return object;
     };
 
@@ -24592,6 +24627,7 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_LOOP_ENTRY=66 DOCUMENT_ELEMENT_LOOP_ENTRY value
  * @property {number} DOCUMENT_ELEMENT_RULE=67 DOCUMENT_ELEMENT_RULE value
  * @property {number} DOCUMENT_ELEMENT_LIST_LEVEL_SETTING=68 DOCUMENT_ELEMENT_LIST_LEVEL_SETTING value
+ * @property {number} DOCUMENT_ELEMENT_LAYOUT=69 DOCUMENT_ELEMENT_LAYOUT value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -24644,6 +24680,7 @@ $root.NodeType = (function() {
     values[valuesById[66] = "DOCUMENT_ELEMENT_LOOP_ENTRY"] = 66;
     values[valuesById[67] = "DOCUMENT_ELEMENT_RULE"] = 67;
     values[valuesById[68] = "DOCUMENT_ELEMENT_LIST_LEVEL_SETTING"] = 68;
+    values[valuesById[69] = "DOCUMENT_ELEMENT_LAYOUT"] = 69;
     return values;
 })();
 
@@ -32030,6 +32067,238 @@ $root.ProtoColorDef = (function() {
     };
 
     return ProtoColorDef;
+})();
+
+$root.ProtoLayout = (function() {
+
+    /**
+     * Properties of a ProtoLayout.
+     * @name IProtoLayout
+     * @interface IProtoLayout
+     * @property {IProtoDocumentElement|null} [parent] ProtoLayout parent
+     * @property {string|null} [name] ProtoLayout name
+     */
+
+    /**
+     * Constructs a new ProtoLayout.
+     * @name ProtoLayout
+     * @classdesc Represents a ProtoLayout.
+     * @implements IProtoLayout
+     * @constructor
+     * @param {IProtoLayout=} [properties] Properties to set
+     */
+    function ProtoLayout(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoLayout parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoLayout
+     * @instance
+     */
+    ProtoLayout.prototype.parent = null;
+
+    /**
+     * ProtoLayout name.
+     * @member {string} name
+     * @memberof ProtoLayout
+     * @instance
+     */
+    ProtoLayout.prototype.name = "";
+
+    /**
+     * Creates a new ProtoLayout instance using the specified properties.
+     * @function create
+     * @memberof ProtoLayout
+     * @static
+     * @param {IProtoLayout=} [properties] Properties to set
+     * @returns {ProtoLayout} ProtoLayout instance
+     */
+    ProtoLayout.create = function create(properties) {
+        return new ProtoLayout(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoLayout message. Does not implicitly {@link ProtoLayout.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoLayout
+     * @static
+     * @param {IProtoLayout} message ProtoLayout message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoLayout.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoLayout message, length delimited. Does not implicitly {@link ProtoLayout.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoLayout
+     * @static
+     * @param {IProtoLayout} message ProtoLayout message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoLayout.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoLayout message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoLayout
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoLayout} ProtoLayout
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoLayout.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoLayout();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.name = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoLayout message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoLayout
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoLayout} ProtoLayout
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoLayout.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoLayout message.
+     * @function verify
+     * @memberof ProtoLayout
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoLayout.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoLayout message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoLayout
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoLayout} ProtoLayout
+     */
+    ProtoLayout.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoLayout)
+            return object;
+        var message = new $root.ProtoLayout();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoLayout.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.name != null)
+            message.name = String(object.name);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoLayout message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoLayout
+     * @static
+     * @param {ProtoLayout} message ProtoLayout
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoLayout.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.parent = null;
+            object.name = "";
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoLayout to JSON.
+     * @function toJSON
+     * @memberof ProtoLayout
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoLayout.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoLayout
+     * @function getTypeUrl
+     * @memberof ProtoLayout
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoLayout.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoLayout";
+    };
+
+    return ProtoLayout;
 })();
 
 module.exports = $root;
