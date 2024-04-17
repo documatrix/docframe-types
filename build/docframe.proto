@@ -710,6 +710,7 @@ ProtoSubTotal sub_total = 59;
 ProtoLoop loop = 60;
 ProtoLoopEntry loop_entry = 61;
 ProtoRule rule = 62;
+ProtoLayout layout = 63;
 }
 }
 
@@ -763,6 +764,7 @@ DOCUMENT_ELEMENT_LOOP = 65;
 DOCUMENT_ELEMENT_LOOP_ENTRY = 66;
 DOCUMENT_ELEMENT_RULE = 67;
 DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 68;
+DOCUMENT_ELEMENT_LAYOUT = 69;
 }
 message ProtoImage {
 ProtoDocumentElement parent = 1;
@@ -969,4 +971,9 @@ ProtoMeasure end = 2;
 }
 message ProtoColorDef {
 ProtoColor color = 1;
+}
+message ProtoLayout {
+ProtoDocumentElement parent = 1;
+
+string name = 2;
 }
