@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+message ProtoWsArea {
+  repeated string com_channel_uuids = 1;
+}

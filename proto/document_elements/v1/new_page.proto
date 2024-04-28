@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+enum ProtoPageMode {
+  PROTO_PAGE_MODE_NEXT_PAGE = 0;
+  PROTO_PAGE_MODE_NEXT_RECTO_PAGE = 1;
+  PROTO_PAGE_MODE_NEXT_VERSO_PAGE = 2;
+}
+
+enum ProtoPageOrientation {
+  PROTO_PAGE_ORIENTATION_UNSET = 0;
+  PROTO_PAGE_ORIENTATION_PORTRAIT = 1;
+  PROTO_PAGE_ORIENTATION_LANDSCAPE = 2;
+  PROTO_PAGE_ORIENTATION_INVERSE_PORTRAIT = 3;
+  PROTO_PAGE_ORIENTATION_INVERSE_LANDSCAPE = 4;
+}
+
+message ProtoNewPage {
+  uint32 paper_tray = 1;
+  uint32 paper_count = 2;
+  ProtoPageMode page_mode = 3;
+  ProtoPageOrientation page_orientation = 4;
+}

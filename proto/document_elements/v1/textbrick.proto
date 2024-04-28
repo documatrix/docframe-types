@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+message ProtoTextBrick {
+  string uuid = 1;
+  uint64 id = 2;
+  repeated string com_channel_uuids = 3;
+  bool editable = 4;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "box/v1/bool.proto";
+import "box/v1/double.proto";
+import "utils/v1/advanced_illustration_area.proto";
+import "utils/v1/image_settings.proto";
+import "utils/v1/measure.proto";
+
+message ProtoImage {
+  string alt = 1;
+  string name = 2;
+  string src = 3;
+  string filename = 4;
+  box.v1.ProtoBoxedDouble scale = 6;
+  box.v1.ProtoBoxedDouble column_ccale = 7;
+  utils.v1.ProtoBoxedMeasure width = 8;
+  utils.v1.ProtoBoxedMeasure height = 9;
+  utils.v1.ProtoBoxedMeasure x = 10;
+  utils.v1.ProtoBoxedMeasure y = 11;
+  box.v1.ProtoBoxedBool position_absolute = 12;
+  double rotation = 13;
+  utils.v1.ProtoFlipSettings flip_settings = 14;
+  utils.v1.ProtoCropSettings crop_settings = 15;
+  utils.v1.ProtoAdvancedIllustrationArea aia = 16;
+  string uuid = 17;
+  utils.v1.ProtoImageReferencePoint reference_point = 18;
+  string hyperlink = 19;
+}

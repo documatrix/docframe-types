@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package utils.v1;
+
+import "utils/v1/measure.proto";
+
+enum ProtoAdvancedIllustrationAreaTextFlowType {
+  PROTO_ADVANCED_ILLUSTRATION_AREA_TEXT_FLOW_TYPE_DO_NOT_USE_AT_ALL = 0;
+  PROTO_ADVANCED_ILLUSTRATION_AREA_TEXT_FLOW_TYPE_AROUND = 1;
+  PROTO_ADVANCED_ILLUSTRATION_AREA_TEXT_FLOW_TYPE_NO_FLOW = 2;
+  PROTO_ADVANCED_ILLUSTRATION_AREA_TEXT_FLOW_TYPE_FOREGROUND = 3;
+  PROTO_ADVANCED_ILLUSTRATION_AREA_TEXT_FLOW_TYPE_BACKGROUND = 4;
+}
+
+message ProtoBoxedAdvancedIllustrationAreaTextFlowType {
+  ProtoAdvancedIllustrationAreaTextFlowType value = 1;
+  bool is_null = 2;
+}
+
+message ProtoAdvancedIllustrationArea {
+  ProtoBoxedAdvancedIllustrationAreaTextFlowType text_flow = 1;
+  ProtoSideMeasures margin = 2;
+}

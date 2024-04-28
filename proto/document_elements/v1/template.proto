@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+message ProtoTemplate {
+  // Maps DCT intern name to DCD intern name of the current template.
+  // This mapping might change while traversing the template tree and entering a new subtemplate.
+  map<string, string> container_mapping = 3;
+  repeated string com_channel_uuids = 4;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package utils.v1;
+
+enum ProtoMeasureType {
+  PROTO_MEASURE_TYPE_PT = 0;
+  PROTO_MEASURE_TYPE_CM = 1;
+  PROTO_MEASURE_TYPE_MM = 2;
+  PROTO_MEASURE_TYPE_IN = 3;
+  PROTO_MEASURE_TYPE_PERCENT = 4;
+  PROTO_MEASURE_TYPE_PX = 5;
+}
+// ProtoMeasureType is not allowed to be not set => not boxed
+
+message ProtoMeasure {
+  double value = 1;
+  ProtoMeasureType mtype = 2;
+}
+
+message ProtoBoxedMeasure {
+  ProtoMeasure value = 1;
+  bool is_null = 2;
+}
+
+message ProtoSideMeasures {
+  ProtoMeasure top = 1;
+  ProtoMeasure right = 2;
+  ProtoMeasure bottom = 3;
+  ProtoMeasure left = 4;
+}

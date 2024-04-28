@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+message ProtoBrickReference {
+  // comparable with BricksTemplates::BRICK
+  string intern_name = 1;
+  uint32 version = 2;
+}

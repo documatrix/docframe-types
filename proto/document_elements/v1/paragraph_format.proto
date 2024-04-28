@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "box/v1/bool.proto";
+import "box/v1/int32.proto";
+import "box/v1/string.proto";
+import "document_elements/v1/list_setting.proto";
+import "utils/v1/align.proto";
+import "utils/v1/color.proto";
+import "utils/v1/font.proto";
+import "utils/v1/measure.proto";
+import "utils/v1/spb_mode.proto";
+import "utils/v1/strikethrough_spec.proto";
+import "utils/v1/underline_spec.proto";
+
+message ProtoParagraphFormat {
+  box.v1.ProtoSimpleBoxedString base_format = 1;
+  box.v1.ProtoBoxedString name = 2;
+  box.v1.ProtoBoxedBool default = 3;
+  utils.v1.ProtoBoxedFont font = 4;
+  box.v1.ProtoBoxedBool bold = 5;
+  box.v1.ProtoBoxedBool italic = 6;
+  utils.v1.ProtoBoxedColor font_color = 7;
+  utils.v1.ProtoBoxedUnderlineSpec underline = 8;
+  utils.v1.ProtoBoxedMeasure font_size = 9;
+  utils.v1.ProtoBoxedMeasure character_width = 10;
+  utils.v1.ProtoBoxedMeasure character_spacing = 11;
+  utils.v1.ProtoBoxedMeasure line_feed = 12;
+  utils.v1.ProtoBoxedHorizontalAlignment alignment = 13;
+  utils.v1.ProtoBoxedMeasure indention_width = 14;
+  box.v1.ProtoBoxedInt32 indention_level = 15;
+  utils.v1.ProtoBoxedMeasure space_above = 16;
+  utils.v1.ProtoBoxedMeasure space_below = 17;
+  box.v1.ProtoBoxedInt32 widow_setting = 18;
+  box.v1.ProtoBoxedInt32 orphan_setting = 19;
+  box.v1.ProtoBoxedInt32 widow_priority = 20;
+  utils.v1.ProtoBoxedStrikethroughSpec strikethrough = 21;
+  utils.v1.ProtoBoxedSPBMode superscript_subscript = 22;
+  utils.v1.ProtoBoxedColor background_color = 23;
+  ProtoBoxedListSetting list_setting = 24;
+  box.v1.ProtoBoxedBool hyphenation = 25;
+  box.v1.ProtoBoxedString pre_named_string = 26;
+  box.v1.ProtoBoxedString post_named_string = 27;
+  box.v1.ProtoBoxedString semantic_type = 28;
+}

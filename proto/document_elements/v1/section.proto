@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "utils/v1/column_settings.proto";
+import "utils/v1/measure.proto";
+
+message ProtoSection {
+  utils.v1.ProtoMeasure page_width = 1;
+  utils.v1.ProtoMeasure page_depth = 2;
+  utils.v1.ProtoColumnSettings column_settings = 3;
+}

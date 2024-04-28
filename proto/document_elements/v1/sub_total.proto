@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "utils/v1/measure.proto";
+
+enum ProtoSubTotalPosition {
+  PROTO_SUB_TOTAL_POSITION_ABOVE_FOOTER = 0;
+  PROTO_SUB_TOTAL_POSITION_BELOW_CONTENT = 1;
+}
+
+message ProtoSubTotal {
+  bool apply_immediate = 1;
+  ProtoSubTotalPosition position = 2;
+  utils.v1.ProtoMeasure height = 3;
+  repeated string com_channel_uuids = 4;
+}
+

@@ -1,9 +1,0 @@
-
-
-
-message ProtoCDef {
-  ProtoColumnSettings columSettings = 1;
-  ProtoBoxedBool applyToHeaderFooter = 2;
-  ProtoBoxedBool applyImmediate = 3;
-  string Uuid = 4;
-}

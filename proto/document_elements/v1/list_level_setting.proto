@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "box/v1/bool.proto";
+import "box/v1/uint32.proto";
+import "utils/v1/color.proto";
+import "utils/v1/font.proto";
+
+enum ProtoNumberType {
+  PROTO_NUMBER_TYPE_ARABIC = 0;
+  PROTO_NUMBER_TYPE_ROM_UPPERCASE = 1;
+  PROTO_NUMBER_TYPE_ROM_LOWERCASE = 2;
+  PROTO_NUMBER_TYPE_LETTER_UPPERCASE = 3;
+  PROTO_NUMBER_TYPE_LETTER_LOWERCASE = 4;
+}
+
+enum ProtoListLevelSettingType {
+  PROTO_LIST_LEVEL_SETTING_TYPE_UNNUMBERED = 0;
+  PROTO_LIST_LEVEL_SETTING_TYPE_NUMERIC = 1;
+  PROTO_LIST_LEVEL_SETTING_TYPE_IMAGE = 2;
+}
+
+// go-gen:ignore
+message ProtoListLevelSetting {
+  string list_setting_name = 1;
+  box.v1.ProtoBoxedUint32 font_size = 2;
+  ProtoListLevelSettingType type = 3;
+  int32 level = 4;
+  string prefix = 5;
+  string suffix = 6;
+  utils.v1.ProtoFont fix_font_family = 7;
+  bool fix_bold = 8;
+  bool fix_italic = 9;
+  int32 indention_width = 10;
+  utils.v1.ProtoColor color = 11;
+}
+
+// go-gen:ignore
+message ProtoImageListLevelSetting {
+  ProtoListLevelSetting list_level_setting = 1;
+
+  string image_name = 2;
+}
+
+// go-gen:ignore
+message ProtoTextListLevelSetting {
+  ProtoListLevelSetting list_level_setting = 1;
+
+  utils.v1.ProtoFont font_family = 2;
+  box.v1.ProtoBoxedBool bold = 3;
+  box.v1.ProtoBoxedBool italic = 4;
+}
+
+// go-gen:ignore
+message ProtoNumberedListLevelSetting {
+  ProtoTextListLevelSetting text_list_level_setting = 1;
+
+  ProtoNumberType number_type = 2;
+}
+
+// go-gen:ignore
+message ProtoUnnumberedListLevelSetting {
+  ProtoTextListLevelSetting text_list_level_setting = 1;
+
+  string character = 2;
+}
+
+// go-gen:ignore
+message ProtoAnyListLevelSetting {
+  oneof list_level_setting {
+    ProtoImageListLevelSetting image_list_level_setting = 1;
+    ProtoNumberedListLevelSetting numbered_list_level_setting = 2;
+    ProtoUnnumberedListLevelSetting unnumbered_list_level_setting = 3;
+  }
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "utils/v1/underline_spec.proto";
+
+message ProtoUlConfig {
+  utils.v1.ProtoUnderlineMode mode = 1;
+  string uuid = 2;
+}

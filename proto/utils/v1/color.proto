@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package utils.v1;
+
+import "box/v1/string.proto";
+
+enum ProtoColorType {
+  PROTO_COLOR_TYPE_DUMMY_COLOR_TYPE = 0; // dummy is needed here, because otherwise protoc command produces error
+  PROTO_COLOR_TYPE_RGB = 3;
+  PROTO_COLOR_TYPE_CMYK = 4;
+}
+
+// ProtoColorType is not allowed to be not set => not boxed
+
+// Use ProtoColor both for ProtoRGBColor
+// and ProtoCMYKColor. Inheritance is not
+// supported by protobuf and this is the
+// easiest and fastest way found.
+message ProtoColor {
+  box.v1.ProtoBoxedString name = 1;
+  ProtoColorType type = 2; // set to RGB or CMYK
+  int32 r = 3;
+  int32 g = 4;
+  int32 b = 5;
+  int32 c = 6;
+  int32 m = 7;
+  int32 y = 8;
+  int32 k = 9;
+}
+
+message ProtoBoxedColor {
+  ProtoColor value = 1;
+  bool is_null = 2;
+}
+
+message ProtoRGBColor {
+  // extends Color
+  box.v1.ProtoBoxedString name = 1;
+  ProtoColorType type = 2; // set to RGB
+  // extends Color
+
+  int32 r = 3;
+  int32 g = 4;
+  int32 b = 5;
+}
+
+message ProtoCMYKColor {
+  // extends Color
+  box.v1.ProtoBoxedString name = 1;
+  ProtoColorType type = 2; // set to CMYK
+  // extends Color
+
+  int32 c = 3;
+  int32 m = 4;
+  int32 y = 5;
+  int32 k = 6;
+}

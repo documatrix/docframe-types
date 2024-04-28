@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package utils.v1;
+
+import "utils/v1/measure.proto";
+
+message ProtoCropSettings {
+  ProtoBoxedMeasure x = 1;
+  ProtoBoxedMeasure y = 2;
+  ProtoBoxedMeasure width = 3;
+  ProtoBoxedMeasure height = 4;
+}
+
+message ProtoFlipSettings {
+  bool x = 1;
+  bool y = 2;
+}
+
+enum ProtoImageReferencePoint {
+  PROTO_IMAGE_REFERENCE_POINT_DO_NOT_USE_AT_ALL = 0;
+  PROTO_IMAGE_REFERENCE_POINT_BOTTOM_LEFT = 1;
+  PROTO_IMAGE_REFERENCE_POINT_TOP_LEFT = 2;
+  PROTO_IMAGE_REFERENCE_POINT_CENTER = 3;
+  PROTO_IMAGE_REFERENCE_POINT_BOTTOM_RIGHT = 4;
+  PROTO_IMAGE_REFERENCE_POINT_TOP_RIGHT = 5;
+}

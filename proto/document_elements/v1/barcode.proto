@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "utils/v1/barcode_type.proto";
+import "utils/v1/measure.proto";
+import "utils/v1/image_settings.proto";
+
+message ProtoBarcode {
+  // like BrickBody::Brick
+  utils.v1.ProtoBarcodeType type = 1;
+  utils.v1.ProtoMeasure x = 2;
+  utils.v1.ProtoMeasure y = 3;
+  utils.v1.ProtoImageReferencePoint reference_point = 4;
+  // Rotation in degrees, counter-clockwise
+  float rotation = 5;
+  utils.v1.ProtoMeasure width = 6;
+  utils.v1.ProtoMeasure height = 7;
+  utils.v1.ProtoMeasure padding = 8;
+  string data = 9;
+  bool position_absolute = 10;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "utils/v1/measure.proto";
+
+message ProtoPtConfig {
+  utils.v1.ProtoBoxedMeasure height = 1;
+  utils.v1.ProtoBoxedMeasure line_feed = 2;
+  utils.v1.ProtoBoxedMeasure character_width = 3;
+  utils.v1.ProtoBoxedMeasure space_width = 4;
+  string uuid = 5;
+}
