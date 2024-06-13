@@ -9498,6 +9498,9 @@ export interface IProtoFormatted {
 
     /** ProtoFormatted htmlContent */
     htmlContent?: (string|null);
+
+    /** ProtoFormatted comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoFormatted. */
@@ -9520,6 +9523,9 @@ export class ProtoFormatted implements IProtoFormatted {
 
     /** ProtoFormatted htmlContent. */
     public htmlContent: string;
+
+    /** ProtoFormatted comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoFormatted instance using the specified properties.
