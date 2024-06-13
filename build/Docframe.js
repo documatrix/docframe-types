@@ -26490,6 +26490,7 @@ $root.ProtoFormatted = (function() {
      * @property {boolean|null} [dteditorSyntax] ProtoFormatted dteditorSyntax
      * @property {string|null} [doctypeContent] ProtoFormatted doctypeContent
      * @property {string|null} [htmlContent] ProtoFormatted htmlContent
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoFormatted comChannelUUIDs
      */
 
     /**
@@ -26501,6 +26502,7 @@ $root.ProtoFormatted = (function() {
      * @param {IProtoFormatted=} [properties] Properties to set
      */
     function ProtoFormatted(properties) {
+        this.comChannelUUIDs = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -26540,6 +26542,14 @@ $root.ProtoFormatted = (function() {
     ProtoFormatted.prototype.htmlContent = "";
 
     /**
+     * ProtoFormatted comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoFormatted
+     * @instance
+     */
+    ProtoFormatted.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
      * Creates a new ProtoFormatted instance using the specified properties.
      * @function create
      * @memberof ProtoFormatted
@@ -26571,6 +26581,9 @@ $root.ProtoFormatted = (function() {
             writer.uint32(/* id 3, wireType 2 =*/26).string(message.doctypeContent);
         if (message.htmlContent != null && Object.hasOwnProperty.call(message, "htmlContent"))
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.htmlContent);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.comChannelUUIDs[i]);
         return writer;
     };
 
@@ -26619,6 +26632,12 @@ $root.ProtoFormatted = (function() {
                 }
             case 4: {
                     message.htmlContent = reader.string();
+                    break;
+                }
+            case 5: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
                     break;
                 }
             default:
@@ -26670,6 +26689,13 @@ $root.ProtoFormatted = (function() {
         if (message.htmlContent != null && message.hasOwnProperty("htmlContent"))
             if (!$util.isString(message.htmlContent))
                 return "htmlContent: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
         return null;
     };
 
@@ -26696,6 +26722,13 @@ $root.ProtoFormatted = (function() {
             message.doctypeContent = String(object.doctypeContent);
         if (object.htmlContent != null)
             message.htmlContent = String(object.htmlContent);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoFormatted.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
         return message;
     };
 
@@ -26712,6 +26745,8 @@ $root.ProtoFormatted = (function() {
         if (!options)
             options = {};
         var object = {};
+        if (options.arrays || options.defaults)
+            object.comChannelUUIDs = [];
         if (options.defaults) {
             object.parent = null;
             object.dteditorSyntax = false;
@@ -26726,6 +26761,11 @@ $root.ProtoFormatted = (function() {
             object.doctypeContent = message.doctypeContent;
         if (message.htmlContent != null && message.hasOwnProperty("htmlContent"))
             object.htmlContent = message.htmlContent;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
         return object;
     };
 
