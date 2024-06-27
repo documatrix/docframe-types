@@ -8,4 +8,5 @@ message ProtoTemplate {
   // This mapping might change while traversing the template tree and entering a new subtemplate.
   map<string, string> containerMapping = 3;
   repeated string comChannelUUIDs = 4;
+  string uuid = 5;
 }
