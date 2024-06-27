@@ -8135,6 +8135,9 @@ export interface IProtoTemplate {
 
     /** ProtoTemplate comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoTemplate uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoTemplate. */
@@ -8157,6 +8160,9 @@ export class ProtoTemplate implements IProtoTemplate {
 
     /** ProtoTemplate comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoTemplate uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoTemplate instance using the specified properties.

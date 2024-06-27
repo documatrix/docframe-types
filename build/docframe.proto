@@ -645,6 +645,7 @@ ProtoDocumentElement parent = 2;
 
 map<string, string> containerMapping = 3;
 repeated string comChannelUUIDs = 4;
+string uuid = 5;
 }
 message ProtoHeader {
 repeated ProtoDocumentElement _children = 1;
