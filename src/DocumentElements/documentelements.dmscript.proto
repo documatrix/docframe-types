@@ -1,0 +1,6 @@
+message ProtoDmScript {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+
+  string content = 2;
+}

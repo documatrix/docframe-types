@@ -712,6 +712,8 @@ ProtoLoopEntry loop_entry = 61;
 ProtoRule rule = 62;
 ProtoLayout layout = 63;
 ProtoAdvancedIllustrationArea advanced_illustration_area = 64;
+ProtoDoctypeScript doctypeScript = 65;
+ProtoDmScript dmScript = 66;
 }
 }
 
@@ -767,6 +769,8 @@ DOCUMENT_ELEMENT_RULE = 67;
 DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 68;
 DOCUMENT_ELEMENT_LAYOUT = 69;
 DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70;
+DOCUMENT_ELEMENT_DOCTYPESCRIPT = 71;
+DOCUMENT_ELEMENT_DMSCRIPT = 72;
 }
 message ProtoImage {
 ProtoDocumentElement parent = 1;
@@ -993,4 +997,21 @@ ProtoMeasure y = 8;
 ProtoAdvancedIllustrationAreaTextFlowType textFlow = 9;
 float rotation = 10;
 repeated string comChannelUUIDs = 11;
+
+}
+enum ProtoDoctypeOutputMode {
+DOCTYPE = 0;
+JSON = 1;
+}
+
+message ProtoDoctypeScript {
+ProtoDocumentElement parent = 1;
+
+string content = 2;
+ProtoDoctypeOutputMode outputMode = 3;
+}
+message ProtoDmScript {
+ProtoDocumentElement parent = 1;
+
+string content = 2;
 }
