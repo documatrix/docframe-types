@@ -51,6 +51,8 @@ message Node {
     ProtoLayout layout = 63;
     ProtoAdvancedIllustrationArea advanced_illustration_area = 64;
     ProtoAdjustHorizontally adjust_horizontally = 65;
+    ProtoDoctypeScript doctypeScript = 66;
+    ProtoDmScript dmScript = 67;
   }
 }
 
@@ -107,4 +109,6 @@ enum NodeType {
   DOCUMENT_ELEMENT_LAYOUT = 69;
   DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70;
   DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71;
+  DOCUMENT_ELEMENT_DOCTYPESCRIPT = 72;
+  DOCUMENT_ELEMENT_DMSCRIPT = 73;
 }

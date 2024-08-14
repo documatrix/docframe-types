@@ -8618,6 +8618,12 @@ export interface INode {
 
     /** Node adjustHorizontally */
     adjustHorizontally?: (IProtoAdjustHorizontally|null);
+
+    /** Node doctypeScript */
+    doctypeScript?: (IProtoDoctypeScript|null);
+
+    /** Node dmScript */
+    dmScript?: (IProtoDmScript|null);
 }
 
 /** Represents a Node. */
@@ -8779,8 +8785,14 @@ export class Node implements INode {
     /** Node adjustHorizontally. */
     public adjustHorizontally?: (IProtoAdjustHorizontally|null);
 
+    /** Node doctypeScript. */
+    public doctypeScript?: (IProtoDoctypeScript|null);
+
+    /** Node dmScript. */
+    public dmScript?: (IProtoDmScript|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -8913,7 +8925,9 @@ export enum NodeType {
     DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 68,
     DOCUMENT_ELEMENT_LAYOUT = 69,
     DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70,
-    DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71
+    DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71,
+    DOCUMENT_ELEMENT_DOCTYPESCRIPT = 72,
+    DOCUMENT_ELEMENT_DMSCRIPT = 73
 }
 
 /** Properties of a ProtoImage. */
@@ -12026,6 +12040,224 @@ export class ProtoAdjustHorizontally implements IProtoAdjustHorizontally {
 
     /**
      * Gets the default type url for ProtoAdjustHorizontally
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** ProtoDoctypeOutputMode enum. */
+export enum ProtoDoctypeOutputMode {
+    DOCTYPE = 0,
+    JSON = 1
+}
+
+/** Properties of a ProtoDoctypeScript. */
+export interface IProtoDoctypeScript {
+
+    /** ProtoDoctypeScript parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoDoctypeScript content */
+    content?: (string|null);
+
+    /** ProtoDoctypeScript outputMode */
+    outputMode?: (ProtoDoctypeOutputMode|null);
+}
+
+/** Represents a ProtoDoctypeScript. */
+export class ProtoDoctypeScript implements IProtoDoctypeScript {
+
+    /**
+     * Constructs a new ProtoDoctypeScript.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoDoctypeScript);
+
+    /** ProtoDoctypeScript parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoDoctypeScript content. */
+    public content: string;
+
+    /** ProtoDoctypeScript outputMode. */
+    public outputMode: ProtoDoctypeOutputMode;
+
+    /**
+     * Creates a new ProtoDoctypeScript instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoDoctypeScript instance
+     */
+    public static create(properties?: IProtoDoctypeScript): ProtoDoctypeScript;
+
+    /**
+     * Encodes the specified ProtoDoctypeScript message. Does not implicitly {@link ProtoDoctypeScript.verify|verify} messages.
+     * @param message ProtoDoctypeScript message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoDoctypeScript, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoDoctypeScript message, length delimited. Does not implicitly {@link ProtoDoctypeScript.verify|verify} messages.
+     * @param message ProtoDoctypeScript message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoDoctypeScript, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoDoctypeScript message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoDoctypeScript
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoDoctypeScript;
+
+    /**
+     * Decodes a ProtoDoctypeScript message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoDoctypeScript
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoDoctypeScript;
+
+    /**
+     * Verifies a ProtoDoctypeScript message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoDoctypeScript message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoDoctypeScript
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoDoctypeScript;
+
+    /**
+     * Creates a plain object from a ProtoDoctypeScript message. Also converts values to other types if specified.
+     * @param message ProtoDoctypeScript
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoDoctypeScript, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoDoctypeScript to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoDoctypeScript
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoDmScript. */
+export interface IProtoDmScript {
+
+    /** ProtoDmScript parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoDmScript content */
+    content?: (string|null);
+}
+
+/** Represents a ProtoDmScript. */
+export class ProtoDmScript implements IProtoDmScript {
+
+    /**
+     * Constructs a new ProtoDmScript.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoDmScript);
+
+    /** ProtoDmScript parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoDmScript content. */
+    public content: string;
+
+    /**
+     * Creates a new ProtoDmScript instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoDmScript instance
+     */
+    public static create(properties?: IProtoDmScript): ProtoDmScript;
+
+    /**
+     * Encodes the specified ProtoDmScript message. Does not implicitly {@link ProtoDmScript.verify|verify} messages.
+     * @param message ProtoDmScript message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoDmScript, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoDmScript message, length delimited. Does not implicitly {@link ProtoDmScript.verify|verify} messages.
+     * @param message ProtoDmScript message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoDmScript, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoDmScript message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoDmScript
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoDmScript;
+
+    /**
+     * Decodes a ProtoDmScript message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoDmScript
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoDmScript;
+
+    /**
+     * Verifies a ProtoDmScript message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoDmScript message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoDmScript
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoDmScript;
+
+    /**
+     * Creates a plain object from a ProtoDmScript message. Also converts values to other types if specified.
+     * @param message ProtoDmScript
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoDmScript, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoDmScript to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoDmScript
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

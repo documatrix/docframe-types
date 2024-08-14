@@ -78,6 +78,8 @@ declare -a FileArray=(
   "src/DocumentElements/documentelements.layout.proto"
   "src/DocumentElements/documentelements.advanced_illustration_area.proto"
   "src/DocumentElements/documentelements.adjust_horizontally.proto"
+  "src/DocumentElements/documentelements.doctype_script.proto"
+  "src/DocumentElements/documentelements.dmscript.proto"
 )
 
 for file in ${FileArray[@]}; do

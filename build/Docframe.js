@@ -22744,6 +22744,8 @@ $root.Node = (function() {
      * @property {IProtoLayout|null} [layout] Node layout
      * @property {IProtoAdvancedIllustrationArea|null} [advancedIllustrationArea] Node advancedIllustrationArea
      * @property {IProtoAdjustHorizontally|null} [adjustHorizontally] Node adjustHorizontally
+     * @property {IProtoDoctypeScript|null} [doctypeScript] Node doctypeScript
+     * @property {IProtoDmScript|null} [dmScript] Node dmScript
      */
 
     /**
@@ -23162,17 +23164,33 @@ $root.Node = (function() {
      */
     Node.prototype.adjustHorizontally = null;
 
+    /**
+     * Node doctypeScript.
+     * @member {IProtoDoctypeScript|null|undefined} doctypeScript
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.doctypeScript = null;
+
+    /**
+     * Node dmScript.
+     * @member {IProtoDmScript|null|undefined} dmScript
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.dmScript = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -23301,6 +23319,10 @@ $root.Node = (function() {
             $root.ProtoAdvancedIllustrationArea.encode(message.advancedIllustrationArea, writer.uint32(/* id 64, wireType 2 =*/514).fork()).ldelim();
         if (message.adjustHorizontally != null && Object.hasOwnProperty.call(message, "adjustHorizontally"))
             $root.ProtoAdjustHorizontally.encode(message.adjustHorizontally, writer.uint32(/* id 65, wireType 2 =*/522).fork()).ldelim();
+        if (message.doctypeScript != null && Object.hasOwnProperty.call(message, "doctypeScript"))
+            $root.ProtoDoctypeScript.encode(message.doctypeScript, writer.uint32(/* id 66, wireType 2 =*/530).fork()).ldelim();
+        if (message.dmScript != null && Object.hasOwnProperty.call(message, "dmScript"))
+            $root.ProtoDmScript.encode(message.dmScript, writer.uint32(/* id 67, wireType 2 =*/538).fork()).ldelim();
         return writer;
     };
 
@@ -23535,6 +23557,14 @@ $root.Node = (function() {
                 }
             case 65: {
                     message.adjustHorizontally = $root.ProtoAdjustHorizontally.decode(reader, reader.uint32());
+                    break;
+                }
+            case 66: {
+                    message.doctypeScript = $root.ProtoDoctypeScript.decode(reader, reader.uint32());
+                    break;
+                }
+            case 67: {
+                    message.dmScript = $root.ProtoDmScript.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -24070,6 +24100,26 @@ $root.Node = (function() {
                     return "adjustHorizontally." + error;
             }
         }
+        if (message.doctypeScript != null && message.hasOwnProperty("doctypeScript")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoDoctypeScript.verify(message.doctypeScript);
+                if (error)
+                    return "doctypeScript." + error;
+            }
+        }
+        if (message.dmScript != null && message.hasOwnProperty("dmScript")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoDmScript.verify(message.dmScript);
+                if (error)
+                    return "dmScript." + error;
+            }
+        }
         return null;
     };
 
@@ -24340,6 +24390,16 @@ $root.Node = (function() {
                 throw TypeError(".Node.adjustHorizontally: object expected");
             message.adjustHorizontally = $root.ProtoAdjustHorizontally.fromObject(object.adjustHorizontally);
         }
+        if (object.doctypeScript != null) {
+            if (typeof object.doctypeScript !== "object")
+                throw TypeError(".Node.doctypeScript: object expected");
+            message.doctypeScript = $root.ProtoDoctypeScript.fromObject(object.doctypeScript);
+        }
+        if (object.dmScript != null) {
+            if (typeof object.dmScript !== "object")
+                throw TypeError(".Node.dmScript: object expected");
+            message.dmScript = $root.ProtoDmScript.fromObject(object.dmScript);
+        }
         return message;
     };
 
@@ -24608,6 +24668,16 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "adjustHorizontally";
         }
+        if (message.doctypeScript != null && message.hasOwnProperty("doctypeScript")) {
+            object.doctypeScript = $root.ProtoDoctypeScript.toObject(message.doctypeScript, options);
+            if (options.oneofs)
+                object.object = "doctypeScript";
+        }
+        if (message.dmScript != null && message.hasOwnProperty("dmScript")) {
+            object.dmScript = $root.ProtoDmScript.toObject(message.dmScript, options);
+            if (options.oneofs)
+                object.object = "dmScript";
+        }
         return object;
     };
 
@@ -24696,6 +24766,8 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_LAYOUT=69 DOCUMENT_ELEMENT_LAYOUT value
  * @property {number} DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA=70 DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA value
  * @property {number} DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY=71 DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY value
+ * @property {number} DOCUMENT_ELEMENT_DOCTYPESCRIPT=72 DOCUMENT_ELEMENT_DOCTYPESCRIPT value
+ * @property {number} DOCUMENT_ELEMENT_DMSCRIPT=73 DOCUMENT_ELEMENT_DMSCRIPT value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -24751,6 +24823,8 @@ $root.NodeType = (function() {
     values[valuesById[69] = "DOCUMENT_ELEMENT_LAYOUT"] = 69;
     values[valuesById[70] = "DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA"] = 70;
     values[valuesById[71] = "DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY"] = 71;
+    values[valuesById[72] = "DOCUMENT_ELEMENT_DOCTYPESCRIPT"] = 72;
+    values[valuesById[73] = "DOCUMENT_ELEMENT_DMSCRIPT"] = 73;
     return values;
 })();
 
@@ -33251,6 +33325,526 @@ $root.ProtoAdjustHorizontally = (function() {
     };
 
     return ProtoAdjustHorizontally;
+})();
+
+/**
+ * ProtoDoctypeOutputMode enum.
+ * @name ProtoDoctypeOutputMode
+ * @enum {number}
+ * @property {number} DOCTYPE=0 DOCTYPE value
+ * @property {number} JSON=1 JSON value
+ */
+$root.ProtoDoctypeOutputMode = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "DOCTYPE"] = 0;
+    values[valuesById[1] = "JSON"] = 1;
+    return values;
+})();
+
+$root.ProtoDoctypeScript = (function() {
+
+    /**
+     * Properties of a ProtoDoctypeScript.
+     * @name IProtoDoctypeScript
+     * @interface IProtoDoctypeScript
+     * @property {IProtoDocumentElement|null} [parent] ProtoDoctypeScript parent
+     * @property {string|null} [content] ProtoDoctypeScript content
+     * @property {ProtoDoctypeOutputMode|null} [outputMode] ProtoDoctypeScript outputMode
+     */
+
+    /**
+     * Constructs a new ProtoDoctypeScript.
+     * @name ProtoDoctypeScript
+     * @classdesc Represents a ProtoDoctypeScript.
+     * @implements IProtoDoctypeScript
+     * @constructor
+     * @param {IProtoDoctypeScript=} [properties] Properties to set
+     */
+    function ProtoDoctypeScript(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoDoctypeScript parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoDoctypeScript
+     * @instance
+     */
+    ProtoDoctypeScript.prototype.parent = null;
+
+    /**
+     * ProtoDoctypeScript content.
+     * @member {string} content
+     * @memberof ProtoDoctypeScript
+     * @instance
+     */
+    ProtoDoctypeScript.prototype.content = "";
+
+    /**
+     * ProtoDoctypeScript outputMode.
+     * @member {ProtoDoctypeOutputMode} outputMode
+     * @memberof ProtoDoctypeScript
+     * @instance
+     */
+    ProtoDoctypeScript.prototype.outputMode = 0;
+
+    /**
+     * Creates a new ProtoDoctypeScript instance using the specified properties.
+     * @function create
+     * @memberof ProtoDoctypeScript
+     * @static
+     * @param {IProtoDoctypeScript=} [properties] Properties to set
+     * @returns {ProtoDoctypeScript} ProtoDoctypeScript instance
+     */
+    ProtoDoctypeScript.create = function create(properties) {
+        return new ProtoDoctypeScript(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoDoctypeScript message. Does not implicitly {@link ProtoDoctypeScript.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoDoctypeScript
+     * @static
+     * @param {IProtoDoctypeScript} message ProtoDoctypeScript message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoDoctypeScript.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.content != null && Object.hasOwnProperty.call(message, "content"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.content);
+        if (message.outputMode != null && Object.hasOwnProperty.call(message, "outputMode"))
+            writer.uint32(/* id 3, wireType 0 =*/24).int32(message.outputMode);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoDoctypeScript message, length delimited. Does not implicitly {@link ProtoDoctypeScript.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoDoctypeScript
+     * @static
+     * @param {IProtoDoctypeScript} message ProtoDoctypeScript message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoDoctypeScript.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoDoctypeScript message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoDoctypeScript
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoDoctypeScript} ProtoDoctypeScript
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoDoctypeScript.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoDoctypeScript();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.content = reader.string();
+                    break;
+                }
+            case 3: {
+                    message.outputMode = reader.int32();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoDoctypeScript message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoDoctypeScript
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoDoctypeScript} ProtoDoctypeScript
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoDoctypeScript.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoDoctypeScript message.
+     * @function verify
+     * @memberof ProtoDoctypeScript
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoDoctypeScript.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.content != null && message.hasOwnProperty("content"))
+            if (!$util.isString(message.content))
+                return "content: string expected";
+        if (message.outputMode != null && message.hasOwnProperty("outputMode"))
+            switch (message.outputMode) {
+            default:
+                return "outputMode: enum value expected";
+            case 0:
+            case 1:
+                break;
+            }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoDoctypeScript message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoDoctypeScript
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoDoctypeScript} ProtoDoctypeScript
+     */
+    ProtoDoctypeScript.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoDoctypeScript)
+            return object;
+        var message = new $root.ProtoDoctypeScript();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoDoctypeScript.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.content != null)
+            message.content = String(object.content);
+        switch (object.outputMode) {
+        default:
+            if (typeof object.outputMode === "number") {
+                message.outputMode = object.outputMode;
+                break;
+            }
+            break;
+        case "DOCTYPE":
+        case 0:
+            message.outputMode = 0;
+            break;
+        case "JSON":
+        case 1:
+            message.outputMode = 1;
+            break;
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoDoctypeScript message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoDoctypeScript
+     * @static
+     * @param {ProtoDoctypeScript} message ProtoDoctypeScript
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoDoctypeScript.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.parent = null;
+            object.content = "";
+            object.outputMode = options.enums === String ? "DOCTYPE" : 0;
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.content != null && message.hasOwnProperty("content"))
+            object.content = message.content;
+        if (message.outputMode != null && message.hasOwnProperty("outputMode"))
+            object.outputMode = options.enums === String ? $root.ProtoDoctypeOutputMode[message.outputMode] === undefined ? message.outputMode : $root.ProtoDoctypeOutputMode[message.outputMode] : message.outputMode;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoDoctypeScript to JSON.
+     * @function toJSON
+     * @memberof ProtoDoctypeScript
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoDoctypeScript.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoDoctypeScript
+     * @function getTypeUrl
+     * @memberof ProtoDoctypeScript
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoDoctypeScript.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoDoctypeScript";
+    };
+
+    return ProtoDoctypeScript;
+})();
+
+$root.ProtoDmScript = (function() {
+
+    /**
+     * Properties of a ProtoDmScript.
+     * @name IProtoDmScript
+     * @interface IProtoDmScript
+     * @property {IProtoDocumentElement|null} [parent] ProtoDmScript parent
+     * @property {string|null} [content] ProtoDmScript content
+     */
+
+    /**
+     * Constructs a new ProtoDmScript.
+     * @name ProtoDmScript
+     * @classdesc Represents a ProtoDmScript.
+     * @implements IProtoDmScript
+     * @constructor
+     * @param {IProtoDmScript=} [properties] Properties to set
+     */
+    function ProtoDmScript(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoDmScript parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoDmScript
+     * @instance
+     */
+    ProtoDmScript.prototype.parent = null;
+
+    /**
+     * ProtoDmScript content.
+     * @member {string} content
+     * @memberof ProtoDmScript
+     * @instance
+     */
+    ProtoDmScript.prototype.content = "";
+
+    /**
+     * Creates a new ProtoDmScript instance using the specified properties.
+     * @function create
+     * @memberof ProtoDmScript
+     * @static
+     * @param {IProtoDmScript=} [properties] Properties to set
+     * @returns {ProtoDmScript} ProtoDmScript instance
+     */
+    ProtoDmScript.create = function create(properties) {
+        return new ProtoDmScript(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoDmScript message. Does not implicitly {@link ProtoDmScript.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoDmScript
+     * @static
+     * @param {IProtoDmScript} message ProtoDmScript message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoDmScript.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.content != null && Object.hasOwnProperty.call(message, "content"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.content);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoDmScript message, length delimited. Does not implicitly {@link ProtoDmScript.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoDmScript
+     * @static
+     * @param {IProtoDmScript} message ProtoDmScript message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoDmScript.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoDmScript message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoDmScript
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoDmScript} ProtoDmScript
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoDmScript.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoDmScript();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.content = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoDmScript message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoDmScript
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoDmScript} ProtoDmScript
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoDmScript.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoDmScript message.
+     * @function verify
+     * @memberof ProtoDmScript
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoDmScript.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.content != null && message.hasOwnProperty("content"))
+            if (!$util.isString(message.content))
+                return "content: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoDmScript message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoDmScript
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoDmScript} ProtoDmScript
+     */
+    ProtoDmScript.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoDmScript)
+            return object;
+        var message = new $root.ProtoDmScript();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoDmScript.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.content != null)
+            message.content = String(object.content);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoDmScript message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoDmScript
+     * @static
+     * @param {ProtoDmScript} message ProtoDmScript
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoDmScript.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.parent = null;
+            object.content = "";
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.content != null && message.hasOwnProperty("content"))
+            object.content = message.content;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoDmScript to JSON.
+     * @function toJSON
+     * @memberof ProtoDmScript
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoDmScript.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoDmScript
+     * @function getTypeUrl
+     * @memberof ProtoDmScript
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoDmScript.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoDmScript";
+    };
+
+    return ProtoDmScript;
 })();
 
 module.exports = $root;
