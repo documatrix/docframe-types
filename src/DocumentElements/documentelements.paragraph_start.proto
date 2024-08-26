@@ -1,0 +1,4 @@
+message ProtoParagraphStart {
+  ProtoParagraphFormat format = 1;
+  ProtoParagraphFormat overwrite = 2;
+}

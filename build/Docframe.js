@@ -22742,6 +22742,7 @@ $root.Node = (function() {
      * @property {IProtoLoopEntry|null} [loopEntry] Node loopEntry
      * @property {IProtoRule|null} [rule] Node rule
      * @property {IProtoLayout|null} [layout] Node layout
+     * @property {IProtoParagraphStart|null} [paragraphStart] Node paragraphStart
      */
 
     /**
@@ -23144,17 +23145,25 @@ $root.Node = (function() {
      */
     Node.prototype.layout = null;
 
+    /**
+     * Node paragraphStart.
+     * @member {IProtoParagraphStart|null|undefined} paragraphStart
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.paragraphStart = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"paragraphStart"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "paragraphStart"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -23279,6 +23288,8 @@ $root.Node = (function() {
             $root.ProtoRule.encode(message.rule, writer.uint32(/* id 62, wireType 2 =*/498).fork()).ldelim();
         if (message.layout != null && Object.hasOwnProperty.call(message, "layout"))
             $root.ProtoLayout.encode(message.layout, writer.uint32(/* id 63, wireType 2 =*/506).fork()).ldelim();
+        if (message.paragraphStart != null && Object.hasOwnProperty.call(message, "paragraphStart"))
+            $root.ProtoParagraphStart.encode(message.paragraphStart, writer.uint32(/* id 64, wireType 2 =*/514).fork()).ldelim();
         return writer;
     };
 
@@ -23505,6 +23516,10 @@ $root.Node = (function() {
                 }
             case 63: {
                     message.layout = $root.ProtoLayout.decode(reader, reader.uint32());
+                    break;
+                }
+            case 64: {
+                    message.paragraphStart = $root.ProtoParagraphStart.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -24020,6 +24035,16 @@ $root.Node = (function() {
                     return "layout." + error;
             }
         }
+        if (message.paragraphStart != null && message.hasOwnProperty("paragraphStart")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoParagraphStart.verify(message.paragraphStart);
+                if (error)
+                    return "paragraphStart." + error;
+            }
+        }
         return null;
     };
 
@@ -24280,6 +24305,11 @@ $root.Node = (function() {
                 throw TypeError(".Node.layout: object expected");
             message.layout = $root.ProtoLayout.fromObject(object.layout);
         }
+        if (object.paragraphStart != null) {
+            if (typeof object.paragraphStart !== "object")
+                throw TypeError(".Node.paragraphStart: object expected");
+            message.paragraphStart = $root.ProtoParagraphStart.fromObject(object.paragraphStart);
+        }
         return message;
     };
 
@@ -24538,6 +24568,11 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "layout";
         }
+        if (message.paragraphStart != null && message.hasOwnProperty("paragraphStart")) {
+            object.paragraphStart = $root.ProtoParagraphStart.toObject(message.paragraphStart, options);
+            if (options.oneofs)
+                object.object = "paragraphStart";
+        }
         return object;
     };
 
@@ -24624,6 +24659,7 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_RULE=67 DOCUMENT_ELEMENT_RULE value
  * @property {number} DOCUMENT_ELEMENT_LIST_LEVEL_SETTING=68 DOCUMENT_ELEMENT_LIST_LEVEL_SETTING value
  * @property {number} DOCUMENT_ELEMENT_LAYOUT=69 DOCUMENT_ELEMENT_LAYOUT value
+ * @property {number} DOCUMENT_ELEMENT_PARAGRAPH_START=70 DOCUMENT_ELEMENT_PARAGRAPH_START value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -24677,6 +24713,7 @@ $root.NodeType = (function() {
     values[valuesById[67] = "DOCUMENT_ELEMENT_RULE"] = 67;
     values[valuesById[68] = "DOCUMENT_ELEMENT_LIST_LEVEL_SETTING"] = 68;
     values[valuesById[69] = "DOCUMENT_ELEMENT_LAYOUT"] = 69;
+    values[valuesById[70] = "DOCUMENT_ELEMENT_PARAGRAPH_START"] = 70;
     return values;
 })();
 
@@ -32335,6 +32372,243 @@ $root.ProtoLayout = (function() {
     };
 
     return ProtoLayout;
+})();
+
+$root.ProtoParagraphStart = (function() {
+
+    /**
+     * Properties of a ProtoParagraphStart.
+     * @name IProtoParagraphStart
+     * @interface IProtoParagraphStart
+     * @property {IProtoParagraphFormat|null} [format] ProtoParagraphStart format
+     * @property {IProtoParagraphFormat|null} [overwrite] ProtoParagraphStart overwrite
+     */
+
+    /**
+     * Constructs a new ProtoParagraphStart.
+     * @name ProtoParagraphStart
+     * @classdesc Represents a ProtoParagraphStart.
+     * @implements IProtoParagraphStart
+     * @constructor
+     * @param {IProtoParagraphStart=} [properties] Properties to set
+     */
+    function ProtoParagraphStart(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoParagraphStart format.
+     * @member {IProtoParagraphFormat|null|undefined} format
+     * @memberof ProtoParagraphStart
+     * @instance
+     */
+    ProtoParagraphStart.prototype.format = null;
+
+    /**
+     * ProtoParagraphStart overwrite.
+     * @member {IProtoParagraphFormat|null|undefined} overwrite
+     * @memberof ProtoParagraphStart
+     * @instance
+     */
+    ProtoParagraphStart.prototype.overwrite = null;
+
+    /**
+     * Creates a new ProtoParagraphStart instance using the specified properties.
+     * @function create
+     * @memberof ProtoParagraphStart
+     * @static
+     * @param {IProtoParagraphStart=} [properties] Properties to set
+     * @returns {ProtoParagraphStart} ProtoParagraphStart instance
+     */
+    ProtoParagraphStart.create = function create(properties) {
+        return new ProtoParagraphStart(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoParagraphStart message. Does not implicitly {@link ProtoParagraphStart.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoParagraphStart
+     * @static
+     * @param {IProtoParagraphStart} message ProtoParagraphStart message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoParagraphStart.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.format != null && Object.hasOwnProperty.call(message, "format"))
+            $root.ProtoParagraphFormat.encode(message.format, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.overwrite != null && Object.hasOwnProperty.call(message, "overwrite"))
+            $root.ProtoParagraphFormat.encode(message.overwrite, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoParagraphStart message, length delimited. Does not implicitly {@link ProtoParagraphStart.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoParagraphStart
+     * @static
+     * @param {IProtoParagraphStart} message ProtoParagraphStart message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoParagraphStart.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoParagraphStart message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoParagraphStart
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoParagraphStart} ProtoParagraphStart
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoParagraphStart.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoParagraphStart();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.format = $root.ProtoParagraphFormat.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.overwrite = $root.ProtoParagraphFormat.decode(reader, reader.uint32());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoParagraphStart message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoParagraphStart
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoParagraphStart} ProtoParagraphStart
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoParagraphStart.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoParagraphStart message.
+     * @function verify
+     * @memberof ProtoParagraphStart
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoParagraphStart.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.format != null && message.hasOwnProperty("format")) {
+            var error = $root.ProtoParagraphFormat.verify(message.format);
+            if (error)
+                return "format." + error;
+        }
+        if (message.overwrite != null && message.hasOwnProperty("overwrite")) {
+            var error = $root.ProtoParagraphFormat.verify(message.overwrite);
+            if (error)
+                return "overwrite." + error;
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoParagraphStart message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoParagraphStart
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoParagraphStart} ProtoParagraphStart
+     */
+    ProtoParagraphStart.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoParagraphStart)
+            return object;
+        var message = new $root.ProtoParagraphStart();
+        if (object.format != null) {
+            if (typeof object.format !== "object")
+                throw TypeError(".ProtoParagraphStart.format: object expected");
+            message.format = $root.ProtoParagraphFormat.fromObject(object.format);
+        }
+        if (object.overwrite != null) {
+            if (typeof object.overwrite !== "object")
+                throw TypeError(".ProtoParagraphStart.overwrite: object expected");
+            message.overwrite = $root.ProtoParagraphFormat.fromObject(object.overwrite);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoParagraphStart message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoParagraphStart
+     * @static
+     * @param {ProtoParagraphStart} message ProtoParagraphStart
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoParagraphStart.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.format = null;
+            object.overwrite = null;
+        }
+        if (message.format != null && message.hasOwnProperty("format"))
+            object.format = $root.ProtoParagraphFormat.toObject(message.format, options);
+        if (message.overwrite != null && message.hasOwnProperty("overwrite"))
+            object.overwrite = $root.ProtoParagraphFormat.toObject(message.overwrite, options);
+        return object;
+    };
+
+    /**
+     * Converts this ProtoParagraphStart to JSON.
+     * @function toJSON
+     * @memberof ProtoParagraphStart
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoParagraphStart.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoParagraphStart
+     * @function getTypeUrl
+     * @memberof ProtoParagraphStart
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoParagraphStart.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoParagraphStart";
+    };
+
+    return ProtoParagraphStart;
 })();
 
 module.exports = $root;

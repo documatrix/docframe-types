@@ -8612,6 +8612,9 @@ export interface INode {
 
     /** Node layout */
     layout?: (IProtoLayout|null);
+
+    /** Node paragraphStart */
+    paragraphStart?: (IProtoParagraphStart|null);
 }
 
 /** Represents a Node. */
@@ -8767,8 +8770,11 @@ export class Node implements INode {
     /** Node layout. */
     public layout?: (IProtoLayout|null);
 
+    /** Node paragraphStart. */
+    public paragraphStart?: (IProtoParagraphStart|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"paragraphStart");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -8899,7 +8905,8 @@ export enum NodeType {
     DOCUMENT_ELEMENT_LOOP_ENTRY = 66,
     DOCUMENT_ELEMENT_RULE = 67,
     DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 68,
-    DOCUMENT_ELEMENT_LAYOUT = 69
+    DOCUMENT_ELEMENT_LAYOUT = 69,
+    DOCUMENT_ELEMENT_PARAGRAPH_START = 70
 }
 
 /** Properties of a ProtoImage. */
@@ -11740,6 +11747,109 @@ export class ProtoLayout implements IProtoLayout {
 
     /**
      * Gets the default type url for ProtoLayout
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoParagraphStart. */
+export interface IProtoParagraphStart {
+
+    /** ProtoParagraphStart format */
+    format?: (IProtoParagraphFormat|null);
+
+    /** ProtoParagraphStart overwrite */
+    overwrite?: (IProtoParagraphFormat|null);
+}
+
+/** Represents a ProtoParagraphStart. */
+export class ProtoParagraphStart implements IProtoParagraphStart {
+
+    /**
+     * Constructs a new ProtoParagraphStart.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoParagraphStart);
+
+    /** ProtoParagraphStart format. */
+    public format?: (IProtoParagraphFormat|null);
+
+    /** ProtoParagraphStart overwrite. */
+    public overwrite?: (IProtoParagraphFormat|null);
+
+    /**
+     * Creates a new ProtoParagraphStart instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoParagraphStart instance
+     */
+    public static create(properties?: IProtoParagraphStart): ProtoParagraphStart;
+
+    /**
+     * Encodes the specified ProtoParagraphStart message. Does not implicitly {@link ProtoParagraphStart.verify|verify} messages.
+     * @param message ProtoParagraphStart message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoParagraphStart, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoParagraphStart message, length delimited. Does not implicitly {@link ProtoParagraphStart.verify|verify} messages.
+     * @param message ProtoParagraphStart message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoParagraphStart, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoParagraphStart message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoParagraphStart
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoParagraphStart;
+
+    /**
+     * Decodes a ProtoParagraphStart message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoParagraphStart
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoParagraphStart;
+
+    /**
+     * Verifies a ProtoParagraphStart message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoParagraphStart message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoParagraphStart
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoParagraphStart;
+
+    /**
+     * Creates a plain object from a ProtoParagraphStart message. Also converts values to other types if specified.
+     * @param message ProtoParagraphStart
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoParagraphStart, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoParagraphStart to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoParagraphStart
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
