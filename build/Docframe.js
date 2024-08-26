@@ -22742,6 +22742,7 @@ $root.Node = (function() {
      * @property {IProtoLoopEntry|null} [loopEntry] Node loopEntry
      * @property {IProtoRule|null} [rule] Node rule
      * @property {IProtoLayout|null} [layout] Node layout
+     * @property {IProtoAdvancedIllustrationArea|null} [advancedIllustrationArea] Node advancedIllustrationArea
      */
 
     /**
@@ -23144,17 +23145,25 @@ $root.Node = (function() {
      */
     Node.prototype.layout = null;
 
+    /**
+     * Node advancedIllustrationArea.
+     * @member {IProtoAdvancedIllustrationArea|null|undefined} advancedIllustrationArea
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.advancedIllustrationArea = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -23279,6 +23288,8 @@ $root.Node = (function() {
             $root.ProtoRule.encode(message.rule, writer.uint32(/* id 62, wireType 2 =*/498).fork()).ldelim();
         if (message.layout != null && Object.hasOwnProperty.call(message, "layout"))
             $root.ProtoLayout.encode(message.layout, writer.uint32(/* id 63, wireType 2 =*/506).fork()).ldelim();
+        if (message.advancedIllustrationArea != null && Object.hasOwnProperty.call(message, "advancedIllustrationArea"))
+            $root.ProtoAdvancedIllustrationArea.encode(message.advancedIllustrationArea, writer.uint32(/* id 64, wireType 2 =*/514).fork()).ldelim();
         return writer;
     };
 
@@ -23505,6 +23516,10 @@ $root.Node = (function() {
                 }
             case 63: {
                     message.layout = $root.ProtoLayout.decode(reader, reader.uint32());
+                    break;
+                }
+            case 64: {
+                    message.advancedIllustrationArea = $root.ProtoAdvancedIllustrationArea.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -24020,6 +24035,16 @@ $root.Node = (function() {
                     return "layout." + error;
             }
         }
+        if (message.advancedIllustrationArea != null && message.hasOwnProperty("advancedIllustrationArea")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoAdvancedIllustrationArea.verify(message.advancedIllustrationArea);
+                if (error)
+                    return "advancedIllustrationArea." + error;
+            }
+        }
         return null;
     };
 
@@ -24280,6 +24305,11 @@ $root.Node = (function() {
                 throw TypeError(".Node.layout: object expected");
             message.layout = $root.ProtoLayout.fromObject(object.layout);
         }
+        if (object.advancedIllustrationArea != null) {
+            if (typeof object.advancedIllustrationArea !== "object")
+                throw TypeError(".Node.advancedIllustrationArea: object expected");
+            message.advancedIllustrationArea = $root.ProtoAdvancedIllustrationArea.fromObject(object.advancedIllustrationArea);
+        }
         return message;
     };
 
@@ -24537,6 +24567,11 @@ $root.Node = (function() {
             object.layout = $root.ProtoLayout.toObject(message.layout, options);
             if (options.oneofs)
                 object.object = "layout";
+        }
+        if (message.advancedIllustrationArea != null && message.hasOwnProperty("advancedIllustrationArea")) {
+            object.advancedIllustrationArea = $root.ProtoAdvancedIllustrationArea.toObject(message.advancedIllustrationArea, options);
+            if (options.oneofs)
+                object.object = "advancedIllustrationArea";
         }
         return object;
     };

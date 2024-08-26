@@ -711,6 +711,7 @@ ProtoLoop loop = 60;
 ProtoLoopEntry loop_entry = 61;
 ProtoRule rule = 62;
 ProtoLayout layout = 63;
+ProtoAdvancedIllustrationArea advanced_illustration_area = 64;
 }
 }
 
