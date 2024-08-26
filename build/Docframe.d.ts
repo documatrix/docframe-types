@@ -11781,7 +11781,7 @@ export interface IProtoAdvancedIllustrationArea {
     y?: (IProtoMeasure|null);
 
     /** ProtoAdvancedIllustrationArea textFlow */
-    textFlow?: (IProtoBoxedAdvancedIllustrationAreaTextFlowType|null);
+    textFlow?: (ProtoAdvancedIllustrationAreaTextFlowType|null);
 
     /** ProtoAdvancedIllustrationArea rotation */
     rotation?: (number|null);
@@ -11824,7 +11824,7 @@ export class ProtoAdvancedIllustrationArea implements IProtoAdvancedIllustration
     public y?: (IProtoMeasure|null);
 
     /** ProtoAdvancedIllustrationArea textFlow. */
-    public textFlow?: (IProtoBoxedAdvancedIllustrationAreaTextFlowType|null);
+    public textFlow: ProtoAdvancedIllustrationAreaTextFlowType;
 
     /** ProtoAdvancedIllustrationArea rotation. */
     public rotation: number;

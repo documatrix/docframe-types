@@ -10,7 +10,7 @@ message ProtoAdvancedIllustrationArea {
   ProtoMeasure height = 6;
   ProtoMeasure x = 7;
   ProtoMeasure y = 8;
-  ProtoBoxedAdvancedIllustrationAreaTextFlowType textFlow = 9;
+  ProtoAdvancedIllustrationAreaTextFlowType textFlow = 9;
   float rotation = 10;
   repeated string comChannelUUIDs = 11;
 }

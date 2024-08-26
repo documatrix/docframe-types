@@ -32388,7 +32388,7 @@ $root.ProtoAdvancedIllustrationArea = (function() {
      * @property {IProtoMeasure|null} [height] ProtoAdvancedIllustrationArea height
      * @property {IProtoMeasure|null} [x] ProtoAdvancedIllustrationArea x
      * @property {IProtoMeasure|null} [y] ProtoAdvancedIllustrationArea y
-     * @property {IProtoBoxedAdvancedIllustrationAreaTextFlowType|null} [textFlow] ProtoAdvancedIllustrationArea textFlow
+     * @property {ProtoAdvancedIllustrationAreaTextFlowType|null} [textFlow] ProtoAdvancedIllustrationArea textFlow
      * @property {number|null} [rotation] ProtoAdvancedIllustrationArea rotation
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoAdvancedIllustrationArea comChannelUUIDs
      */
@@ -32476,11 +32476,11 @@ $root.ProtoAdvancedIllustrationArea = (function() {
 
     /**
      * ProtoAdvancedIllustrationArea textFlow.
-     * @member {IProtoBoxedAdvancedIllustrationAreaTextFlowType|null|undefined} textFlow
+     * @member {ProtoAdvancedIllustrationAreaTextFlowType} textFlow
      * @memberof ProtoAdvancedIllustrationArea
      * @instance
      */
-    ProtoAdvancedIllustrationArea.prototype.textFlow = null;
+    ProtoAdvancedIllustrationArea.prototype.textFlow = 0;
 
     /**
      * ProtoAdvancedIllustrationArea rotation.
@@ -32540,7 +32540,7 @@ $root.ProtoAdvancedIllustrationArea = (function() {
         if (message.y != null && Object.hasOwnProperty.call(message, "y"))
             $root.ProtoMeasure.encode(message.y, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
         if (message.textFlow != null && Object.hasOwnProperty.call(message, "textFlow"))
-            $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType.encode(message.textFlow, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+            writer.uint32(/* id 9, wireType 0 =*/72).int32(message.textFlow);
         if (message.rotation != null && Object.hasOwnProperty.call(message, "rotation"))
             writer.uint32(/* id 10, wireType 5 =*/85).float(message.rotation);
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
@@ -32615,7 +32615,7 @@ $root.ProtoAdvancedIllustrationArea = (function() {
                     break;
                 }
             case 9: {
-                    message.textFlow = $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType.decode(reader, reader.uint32());
+                    message.textFlow = reader.int32();
                     break;
                 }
             case 10: {
@@ -32703,11 +32703,17 @@ $root.ProtoAdvancedIllustrationArea = (function() {
             if (error)
                 return "y." + error;
         }
-        if (message.textFlow != null && message.hasOwnProperty("textFlow")) {
-            var error = $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType.verify(message.textFlow);
-            if (error)
-                return "textFlow." + error;
-        }
+        if (message.textFlow != null && message.hasOwnProperty("textFlow"))
+            switch (message.textFlow) {
+            default:
+                return "textFlow: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
         if (message.rotation != null && message.hasOwnProperty("rotation"))
             if (typeof message.rotation !== "number")
                 return "rotation: number expected";
@@ -32772,10 +32778,33 @@ $root.ProtoAdvancedIllustrationArea = (function() {
                 throw TypeError(".ProtoAdvancedIllustrationArea.y: object expected");
             message.y = $root.ProtoMeasure.fromObject(object.y);
         }
-        if (object.textFlow != null) {
-            if (typeof object.textFlow !== "object")
-                throw TypeError(".ProtoAdvancedIllustrationArea.textFlow: object expected");
-            message.textFlow = $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType.fromObject(object.textFlow);
+        switch (object.textFlow) {
+        default:
+            if (typeof object.textFlow === "number") {
+                message.textFlow = object.textFlow;
+                break;
+            }
+            break;
+        case "DO_NOT_USE_AT_ALL":
+        case 0:
+            message.textFlow = 0;
+            break;
+        case "AROUND":
+        case 1:
+            message.textFlow = 1;
+            break;
+        case "NO_FLOW":
+        case 2:
+            message.textFlow = 2;
+            break;
+        case "FOREGROUND":
+        case 3:
+            message.textFlow = 3;
+            break;
+        case "BACKGROUND":
+        case 4:
+            message.textFlow = 4;
+            break;
         }
         if (object.rotation != null)
             message.rotation = Number(object.rotation);
@@ -32814,7 +32843,7 @@ $root.ProtoAdvancedIllustrationArea = (function() {
             object.height = null;
             object.x = null;
             object.y = null;
-            object.textFlow = null;
+            object.textFlow = options.enums === String ? "DO_NOT_USE_AT_ALL" : 0;
             object.rotation = 0;
         }
         if (message._children && message._children.length) {
@@ -32837,7 +32866,7 @@ $root.ProtoAdvancedIllustrationArea = (function() {
         if (message.y != null && message.hasOwnProperty("y"))
             object.y = $root.ProtoMeasure.toObject(message.y, options);
         if (message.textFlow != null && message.hasOwnProperty("textFlow"))
-            object.textFlow = $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType.toObject(message.textFlow, options);
+            object.textFlow = options.enums === String ? $root.ProtoAdvancedIllustrationAreaTextFlowType[message.textFlow] === undefined ? message.textFlow : $root.ProtoAdvancedIllustrationAreaTextFlowType[message.textFlow] : message.textFlow;
         if (message.rotation != null && message.hasOwnProperty("rotation"))
             object.rotation = options.json && !isFinite(message.rotation) ? String(message.rotation) : message.rotation;
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
