@@ -11,7 +11,7 @@ message ProtoBoxedAdvancedIllustrationAreaTextFlowType {
   bool isNull = 2;
 }
 
-message ProtoAdvancedIllustrationArea {
+message ProtoAdvancedIllustrationAreaImageSettings {
   ProtoBoxedAdvancedIllustrationAreaTextFlowType textFlow = 1;
   ProtoSideMeasures margin = 2;
 }

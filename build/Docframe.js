@@ -3187,25 +3187,25 @@ $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType = (function() {
     return ProtoBoxedAdvancedIllustrationAreaTextFlowType;
 })();
 
-$root.ProtoAdvancedIllustrationArea = (function() {
+$root.ProtoAdvancedIllustrationAreaImageSettings = (function() {
 
     /**
-     * Properties of a ProtoAdvancedIllustrationArea.
-     * @name IProtoAdvancedIllustrationArea
-     * @interface IProtoAdvancedIllustrationArea
-     * @property {IProtoBoxedAdvancedIllustrationAreaTextFlowType|null} [textFlow] ProtoAdvancedIllustrationArea textFlow
-     * @property {IProtoSideMeasures|null} [margin] ProtoAdvancedIllustrationArea margin
+     * Properties of a ProtoAdvancedIllustrationAreaImageSettings.
+     * @name IProtoAdvancedIllustrationAreaImageSettings
+     * @interface IProtoAdvancedIllustrationAreaImageSettings
+     * @property {IProtoBoxedAdvancedIllustrationAreaTextFlowType|null} [textFlow] ProtoAdvancedIllustrationAreaImageSettings textFlow
+     * @property {IProtoSideMeasures|null} [margin] ProtoAdvancedIllustrationAreaImageSettings margin
      */
 
     /**
-     * Constructs a new ProtoAdvancedIllustrationArea.
-     * @name ProtoAdvancedIllustrationArea
-     * @classdesc Represents a ProtoAdvancedIllustrationArea.
-     * @implements IProtoAdvancedIllustrationArea
+     * Constructs a new ProtoAdvancedIllustrationAreaImageSettings.
+     * @name ProtoAdvancedIllustrationAreaImageSettings
+     * @classdesc Represents a ProtoAdvancedIllustrationAreaImageSettings.
+     * @implements IProtoAdvancedIllustrationAreaImageSettings
      * @constructor
-     * @param {IProtoAdvancedIllustrationArea=} [properties] Properties to set
+     * @param {IProtoAdvancedIllustrationAreaImageSettings=} [properties] Properties to set
      */
-    function ProtoAdvancedIllustrationArea(properties) {
+    function ProtoAdvancedIllustrationAreaImageSettings(properties) {
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -3213,43 +3213,43 @@ $root.ProtoAdvancedIllustrationArea = (function() {
     }
 
     /**
-     * ProtoAdvancedIllustrationArea textFlow.
+     * ProtoAdvancedIllustrationAreaImageSettings textFlow.
      * @member {IProtoBoxedAdvancedIllustrationAreaTextFlowType|null|undefined} textFlow
-     * @memberof ProtoAdvancedIllustrationArea
+     * @memberof ProtoAdvancedIllustrationAreaImageSettings
      * @instance
      */
-    ProtoAdvancedIllustrationArea.prototype.textFlow = null;
+    ProtoAdvancedIllustrationAreaImageSettings.prototype.textFlow = null;
 
     /**
-     * ProtoAdvancedIllustrationArea margin.
+     * ProtoAdvancedIllustrationAreaImageSettings margin.
      * @member {IProtoSideMeasures|null|undefined} margin
-     * @memberof ProtoAdvancedIllustrationArea
+     * @memberof ProtoAdvancedIllustrationAreaImageSettings
      * @instance
      */
-    ProtoAdvancedIllustrationArea.prototype.margin = null;
+    ProtoAdvancedIllustrationAreaImageSettings.prototype.margin = null;
 
     /**
-     * Creates a new ProtoAdvancedIllustrationArea instance using the specified properties.
+     * Creates a new ProtoAdvancedIllustrationAreaImageSettings instance using the specified properties.
      * @function create
-     * @memberof ProtoAdvancedIllustrationArea
+     * @memberof ProtoAdvancedIllustrationAreaImageSettings
      * @static
-     * @param {IProtoAdvancedIllustrationArea=} [properties] Properties to set
-     * @returns {ProtoAdvancedIllustrationArea} ProtoAdvancedIllustrationArea instance
+     * @param {IProtoAdvancedIllustrationAreaImageSettings=} [properties] Properties to set
+     * @returns {ProtoAdvancedIllustrationAreaImageSettings} ProtoAdvancedIllustrationAreaImageSettings instance
      */
-    ProtoAdvancedIllustrationArea.create = function create(properties) {
-        return new ProtoAdvancedIllustrationArea(properties);
+    ProtoAdvancedIllustrationAreaImageSettings.create = function create(properties) {
+        return new ProtoAdvancedIllustrationAreaImageSettings(properties);
     };
 
     /**
-     * Encodes the specified ProtoAdvancedIllustrationArea message. Does not implicitly {@link ProtoAdvancedIllustrationArea.verify|verify} messages.
+     * Encodes the specified ProtoAdvancedIllustrationAreaImageSettings message. Does not implicitly {@link ProtoAdvancedIllustrationAreaImageSettings.verify|verify} messages.
      * @function encode
-     * @memberof ProtoAdvancedIllustrationArea
+     * @memberof ProtoAdvancedIllustrationAreaImageSettings
      * @static
-     * @param {IProtoAdvancedIllustrationArea} message ProtoAdvancedIllustrationArea message or plain object to encode
+     * @param {IProtoAdvancedIllustrationAreaImageSettings} message ProtoAdvancedIllustrationAreaImageSettings message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    ProtoAdvancedIllustrationArea.encode = function encode(message, writer) {
+    ProtoAdvancedIllustrationAreaImageSettings.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
         if (message.textFlow != null && Object.hasOwnProperty.call(message, "textFlow"))
@@ -3260,33 +3260,33 @@ $root.ProtoAdvancedIllustrationArea = (function() {
     };
 
     /**
-     * Encodes the specified ProtoAdvancedIllustrationArea message, length delimited. Does not implicitly {@link ProtoAdvancedIllustrationArea.verify|verify} messages.
+     * Encodes the specified ProtoAdvancedIllustrationAreaImageSettings message, length delimited. Does not implicitly {@link ProtoAdvancedIllustrationAreaImageSettings.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof ProtoAdvancedIllustrationArea
+     * @memberof ProtoAdvancedIllustrationAreaImageSettings
      * @static
-     * @param {IProtoAdvancedIllustrationArea} message ProtoAdvancedIllustrationArea message or plain object to encode
+     * @param {IProtoAdvancedIllustrationAreaImageSettings} message ProtoAdvancedIllustrationAreaImageSettings message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    ProtoAdvancedIllustrationArea.encodeDelimited = function encodeDelimited(message, writer) {
+    ProtoAdvancedIllustrationAreaImageSettings.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a ProtoAdvancedIllustrationArea message from the specified reader or buffer.
+     * Decodes a ProtoAdvancedIllustrationAreaImageSettings message from the specified reader or buffer.
      * @function decode
-     * @memberof ProtoAdvancedIllustrationArea
+     * @memberof ProtoAdvancedIllustrationAreaImageSettings
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {ProtoAdvancedIllustrationArea} ProtoAdvancedIllustrationArea
+     * @returns {ProtoAdvancedIllustrationAreaImageSettings} ProtoAdvancedIllustrationAreaImageSettings
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoAdvancedIllustrationArea.decode = function decode(reader, length) {
+    ProtoAdvancedIllustrationAreaImageSettings.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoAdvancedIllustrationArea();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoAdvancedIllustrationAreaImageSettings();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3307,30 +3307,30 @@ $root.ProtoAdvancedIllustrationArea = (function() {
     };
 
     /**
-     * Decodes a ProtoAdvancedIllustrationArea message from the specified reader or buffer, length delimited.
+     * Decodes a ProtoAdvancedIllustrationAreaImageSettings message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof ProtoAdvancedIllustrationArea
+     * @memberof ProtoAdvancedIllustrationAreaImageSettings
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {ProtoAdvancedIllustrationArea} ProtoAdvancedIllustrationArea
+     * @returns {ProtoAdvancedIllustrationAreaImageSettings} ProtoAdvancedIllustrationAreaImageSettings
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoAdvancedIllustrationArea.decodeDelimited = function decodeDelimited(reader) {
+    ProtoAdvancedIllustrationAreaImageSettings.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a ProtoAdvancedIllustrationArea message.
+     * Verifies a ProtoAdvancedIllustrationAreaImageSettings message.
      * @function verify
-     * @memberof ProtoAdvancedIllustrationArea
+     * @memberof ProtoAdvancedIllustrationAreaImageSettings
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    ProtoAdvancedIllustrationArea.verify = function verify(message) {
+    ProtoAdvancedIllustrationAreaImageSettings.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
         if (message.textFlow != null && message.hasOwnProperty("textFlow")) {
@@ -3347,40 +3347,40 @@ $root.ProtoAdvancedIllustrationArea = (function() {
     };
 
     /**
-     * Creates a ProtoAdvancedIllustrationArea message from a plain object. Also converts values to their respective internal types.
+     * Creates a ProtoAdvancedIllustrationAreaImageSettings message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof ProtoAdvancedIllustrationArea
+     * @memberof ProtoAdvancedIllustrationAreaImageSettings
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {ProtoAdvancedIllustrationArea} ProtoAdvancedIllustrationArea
+     * @returns {ProtoAdvancedIllustrationAreaImageSettings} ProtoAdvancedIllustrationAreaImageSettings
      */
-    ProtoAdvancedIllustrationArea.fromObject = function fromObject(object) {
-        if (object instanceof $root.ProtoAdvancedIllustrationArea)
+    ProtoAdvancedIllustrationAreaImageSettings.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoAdvancedIllustrationAreaImageSettings)
             return object;
-        var message = new $root.ProtoAdvancedIllustrationArea();
+        var message = new $root.ProtoAdvancedIllustrationAreaImageSettings();
         if (object.textFlow != null) {
             if (typeof object.textFlow !== "object")
-                throw TypeError(".ProtoAdvancedIllustrationArea.textFlow: object expected");
+                throw TypeError(".ProtoAdvancedIllustrationAreaImageSettings.textFlow: object expected");
             message.textFlow = $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType.fromObject(object.textFlow);
         }
         if (object.margin != null) {
             if (typeof object.margin !== "object")
-                throw TypeError(".ProtoAdvancedIllustrationArea.margin: object expected");
+                throw TypeError(".ProtoAdvancedIllustrationAreaImageSettings.margin: object expected");
             message.margin = $root.ProtoSideMeasures.fromObject(object.margin);
         }
         return message;
     };
 
     /**
-     * Creates a plain object from a ProtoAdvancedIllustrationArea message. Also converts values to other types if specified.
+     * Creates a plain object from a ProtoAdvancedIllustrationAreaImageSettings message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof ProtoAdvancedIllustrationArea
+     * @memberof ProtoAdvancedIllustrationAreaImageSettings
      * @static
-     * @param {ProtoAdvancedIllustrationArea} message ProtoAdvancedIllustrationArea
+     * @param {ProtoAdvancedIllustrationAreaImageSettings} message ProtoAdvancedIllustrationAreaImageSettings
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    ProtoAdvancedIllustrationArea.toObject = function toObject(message, options) {
+    ProtoAdvancedIllustrationAreaImageSettings.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
@@ -3396,32 +3396,32 @@ $root.ProtoAdvancedIllustrationArea = (function() {
     };
 
     /**
-     * Converts this ProtoAdvancedIllustrationArea to JSON.
+     * Converts this ProtoAdvancedIllustrationAreaImageSettings to JSON.
      * @function toJSON
-     * @memberof ProtoAdvancedIllustrationArea
+     * @memberof ProtoAdvancedIllustrationAreaImageSettings
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    ProtoAdvancedIllustrationArea.prototype.toJSON = function toJSON() {
+    ProtoAdvancedIllustrationAreaImageSettings.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
     /**
-     * Gets the default type url for ProtoAdvancedIllustrationArea
+     * Gets the default type url for ProtoAdvancedIllustrationAreaImageSettings
      * @function getTypeUrl
-     * @memberof ProtoAdvancedIllustrationArea
+     * @memberof ProtoAdvancedIllustrationAreaImageSettings
      * @static
      * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns {string} The default type url
      */
-    ProtoAdvancedIllustrationArea.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+    ProtoAdvancedIllustrationAreaImageSettings.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
         if (typeUrlPrefix === undefined) {
             typeUrlPrefix = "type.googleapis.com";
         }
-        return typeUrlPrefix + "/ProtoAdvancedIllustrationArea";
+        return typeUrlPrefix + "/ProtoAdvancedIllustrationAreaImageSettings";
     };
 
-    return ProtoAdvancedIllustrationArea;
+    return ProtoAdvancedIllustrationAreaImageSettings;
 })();
 
 $root.ProtoFont = (function() {
@@ -24624,6 +24624,7 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_RULE=67 DOCUMENT_ELEMENT_RULE value
  * @property {number} DOCUMENT_ELEMENT_LIST_LEVEL_SETTING=68 DOCUMENT_ELEMENT_LIST_LEVEL_SETTING value
  * @property {number} DOCUMENT_ELEMENT_LAYOUT=69 DOCUMENT_ELEMENT_LAYOUT value
+ * @property {number} DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA=70 DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -24677,6 +24678,7 @@ $root.NodeType = (function() {
     values[valuesById[67] = "DOCUMENT_ELEMENT_RULE"] = 67;
     values[valuesById[68] = "DOCUMENT_ELEMENT_LIST_LEVEL_SETTING"] = 68;
     values[valuesById[69] = "DOCUMENT_ELEMENT_LAYOUT"] = 69;
+    values[valuesById[70] = "DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA"] = 70;
     return values;
 })();
 
@@ -24701,7 +24703,7 @@ $root.ProtoImage = (function() {
      * @property {number|null} [rotation] ProtoImage rotation
      * @property {IProtoFlipSettings|null} [flipSettings] ProtoImage flipSettings
      * @property {IProtoCropSettings|null} [cropSettings] ProtoImage cropSettings
-     * @property {IProtoAdvancedIllustrationArea|null} [aia] ProtoImage aia
+     * @property {IProtoAdvancedIllustrationAreaImageSettings|null} [aia] ProtoImage aia
      * @property {string|null} [uuid] ProtoImage uuid
      * @property {ProtoImageReferencePoint|null} [referencePoint] ProtoImage referencePoint
      * @property {string|null} [hyperlink] ProtoImage hyperlink
@@ -24844,7 +24846,7 @@ $root.ProtoImage = (function() {
 
     /**
      * ProtoImage aia.
-     * @member {IProtoAdvancedIllustrationArea|null|undefined} aia
+     * @member {IProtoAdvancedIllustrationAreaImageSettings|null|undefined} aia
      * @memberof ProtoImage
      * @instance
      */
@@ -24929,7 +24931,7 @@ $root.ProtoImage = (function() {
         if (message.cropSettings != null && Object.hasOwnProperty.call(message, "cropSettings"))
             $root.ProtoCropSettings.encode(message.cropSettings, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
         if (message.aia != null && Object.hasOwnProperty.call(message, "aia"))
-            $root.ProtoAdvancedIllustrationArea.encode(message.aia, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+            $root.ProtoAdvancedIllustrationAreaImageSettings.encode(message.aia, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 17, wireType 2 =*/138).string(message.uuid);
         if (message.referencePoint != null && Object.hasOwnProperty.call(message, "referencePoint"))
@@ -25031,7 +25033,7 @@ $root.ProtoImage = (function() {
                     break;
                 }
             case 16: {
-                    message.aia = $root.ProtoAdvancedIllustrationArea.decode(reader, reader.uint32());
+                    message.aia = $root.ProtoAdvancedIllustrationAreaImageSettings.decode(reader, reader.uint32());
                     break;
                 }
             case 17: {
@@ -25147,7 +25149,7 @@ $root.ProtoImage = (function() {
                 return "cropSettings." + error;
         }
         if (message.aia != null && message.hasOwnProperty("aia")) {
-            var error = $root.ProtoAdvancedIllustrationArea.verify(message.aia);
+            var error = $root.ProtoAdvancedIllustrationAreaImageSettings.verify(message.aia);
             if (error)
                 return "aia." + error;
         }
@@ -25247,7 +25249,7 @@ $root.ProtoImage = (function() {
         if (object.aia != null) {
             if (typeof object.aia !== "object")
                 throw TypeError(".ProtoImage.aia: object expected");
-            message.aia = $root.ProtoAdvancedIllustrationArea.fromObject(object.aia);
+            message.aia = $root.ProtoAdvancedIllustrationAreaImageSettings.fromObject(object.aia);
         }
         if (object.uuid != null)
             message.uuid = String(object.uuid);
@@ -25353,7 +25355,7 @@ $root.ProtoImage = (function() {
         if (message.cropSettings != null && message.hasOwnProperty("cropSettings"))
             object.cropSettings = $root.ProtoCropSettings.toObject(message.cropSettings, options);
         if (message.aia != null && message.hasOwnProperty("aia"))
-            object.aia = $root.ProtoAdvancedIllustrationArea.toObject(message.aia, options);
+            object.aia = $root.ProtoAdvancedIllustrationAreaImageSettings.toObject(message.aia, options);
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
         if (message.referencePoint != null && message.hasOwnProperty("referencePoint"))
@@ -32335,6 +32337,509 @@ $root.ProtoLayout = (function() {
     };
 
     return ProtoLayout;
+})();
+
+$root.ProtoAdvancedIllustrationArea = (function() {
+
+    /**
+     * Properties of a ProtoAdvancedIllustrationArea.
+     * @name IProtoAdvancedIllustrationArea
+     * @interface IProtoAdvancedIllustrationArea
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoAdvancedIllustrationArea _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoAdvancedIllustrationArea parent
+     * @property {string|null} [uuid] ProtoAdvancedIllustrationArea uuid
+     * @property {boolean|null} [absolute] ProtoAdvancedIllustrationArea absolute
+     * @property {IProtoMeasure|null} [width] ProtoAdvancedIllustrationArea width
+     * @property {IProtoMeasure|null} [height] ProtoAdvancedIllustrationArea height
+     * @property {IProtoMeasure|null} [x] ProtoAdvancedIllustrationArea x
+     * @property {IProtoMeasure|null} [y] ProtoAdvancedIllustrationArea y
+     * @property {IProtoBoxedAdvancedIllustrationAreaTextFlowType|null} [textFlow] ProtoAdvancedIllustrationArea textFlow
+     * @property {number|null} [rotation] ProtoAdvancedIllustrationArea rotation
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoAdvancedIllustrationArea comChannelUUIDs
+     */
+
+    /**
+     * Constructs a new ProtoAdvancedIllustrationArea.
+     * @name ProtoAdvancedIllustrationArea
+     * @classdesc Represents a ProtoAdvancedIllustrationArea.
+     * @implements IProtoAdvancedIllustrationArea
+     * @constructor
+     * @param {IProtoAdvancedIllustrationArea=} [properties] Properties to set
+     */
+    function ProtoAdvancedIllustrationArea(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoAdvancedIllustrationArea _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     */
+    ProtoAdvancedIllustrationArea.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoAdvancedIllustrationArea parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     */
+    ProtoAdvancedIllustrationArea.prototype.parent = null;
+
+    /**
+     * ProtoAdvancedIllustrationArea uuid.
+     * @member {string} uuid
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     */
+    ProtoAdvancedIllustrationArea.prototype.uuid = "";
+
+    /**
+     * ProtoAdvancedIllustrationArea absolute.
+     * @member {boolean} absolute
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     */
+    ProtoAdvancedIllustrationArea.prototype.absolute = false;
+
+    /**
+     * ProtoAdvancedIllustrationArea width.
+     * @member {IProtoMeasure|null|undefined} width
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     */
+    ProtoAdvancedIllustrationArea.prototype.width = null;
+
+    /**
+     * ProtoAdvancedIllustrationArea height.
+     * @member {IProtoMeasure|null|undefined} height
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     */
+    ProtoAdvancedIllustrationArea.prototype.height = null;
+
+    /**
+     * ProtoAdvancedIllustrationArea x.
+     * @member {IProtoMeasure|null|undefined} x
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     */
+    ProtoAdvancedIllustrationArea.prototype.x = null;
+
+    /**
+     * ProtoAdvancedIllustrationArea y.
+     * @member {IProtoMeasure|null|undefined} y
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     */
+    ProtoAdvancedIllustrationArea.prototype.y = null;
+
+    /**
+     * ProtoAdvancedIllustrationArea textFlow.
+     * @member {IProtoBoxedAdvancedIllustrationAreaTextFlowType|null|undefined} textFlow
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     */
+    ProtoAdvancedIllustrationArea.prototype.textFlow = null;
+
+    /**
+     * ProtoAdvancedIllustrationArea rotation.
+     * @member {number} rotation
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     */
+    ProtoAdvancedIllustrationArea.prototype.rotation = 0;
+
+    /**
+     * ProtoAdvancedIllustrationArea comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     */
+    ProtoAdvancedIllustrationArea.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoAdvancedIllustrationArea instance using the specified properties.
+     * @function create
+     * @memberof ProtoAdvancedIllustrationArea
+     * @static
+     * @param {IProtoAdvancedIllustrationArea=} [properties] Properties to set
+     * @returns {ProtoAdvancedIllustrationArea} ProtoAdvancedIllustrationArea instance
+     */
+    ProtoAdvancedIllustrationArea.create = function create(properties) {
+        return new ProtoAdvancedIllustrationArea(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoAdvancedIllustrationArea message. Does not implicitly {@link ProtoAdvancedIllustrationArea.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoAdvancedIllustrationArea
+     * @static
+     * @param {IProtoAdvancedIllustrationArea} message ProtoAdvancedIllustrationArea message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoAdvancedIllustrationArea.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
+        if (message.absolute != null && Object.hasOwnProperty.call(message, "absolute"))
+            writer.uint32(/* id 4, wireType 0 =*/32).bool(message.absolute);
+        if (message.width != null && Object.hasOwnProperty.call(message, "width"))
+            $root.ProtoMeasure.encode(message.width, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+        if (message.height != null && Object.hasOwnProperty.call(message, "height"))
+            $root.ProtoMeasure.encode(message.height, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+        if (message.x != null && Object.hasOwnProperty.call(message, "x"))
+            $root.ProtoMeasure.encode(message.x, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+        if (message.y != null && Object.hasOwnProperty.call(message, "y"))
+            $root.ProtoMeasure.encode(message.y, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+        if (message.textFlow != null && Object.hasOwnProperty.call(message, "textFlow"))
+            $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType.encode(message.textFlow, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+        if (message.rotation != null && Object.hasOwnProperty.call(message, "rotation"))
+            writer.uint32(/* id 10, wireType 5 =*/85).float(message.rotation);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 11, wireType 2 =*/90).string(message.comChannelUUIDs[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoAdvancedIllustrationArea message, length delimited. Does not implicitly {@link ProtoAdvancedIllustrationArea.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoAdvancedIllustrationArea
+     * @static
+     * @param {IProtoAdvancedIllustrationArea} message ProtoAdvancedIllustrationArea message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoAdvancedIllustrationArea.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoAdvancedIllustrationArea message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoAdvancedIllustrationArea
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoAdvancedIllustrationArea} ProtoAdvancedIllustrationArea
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoAdvancedIllustrationArea.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoAdvancedIllustrationArea();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 2: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.uuid = reader.string();
+                    break;
+                }
+            case 4: {
+                    message.absolute = reader.bool();
+                    break;
+                }
+            case 5: {
+                    message.width = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 6: {
+                    message.height = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 7: {
+                    message.x = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 8: {
+                    message.y = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 9: {
+                    message.textFlow = $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType.decode(reader, reader.uint32());
+                    break;
+                }
+            case 10: {
+                    message.rotation = reader.float();
+                    break;
+                }
+            case 11: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoAdvancedIllustrationArea message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoAdvancedIllustrationArea
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoAdvancedIllustrationArea} ProtoAdvancedIllustrationArea
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoAdvancedIllustrationArea.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoAdvancedIllustrationArea message.
+     * @function verify
+     * @memberof ProtoAdvancedIllustrationArea
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoAdvancedIllustrationArea.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i]);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.absolute != null && message.hasOwnProperty("absolute"))
+            if (typeof message.absolute !== "boolean")
+                return "absolute: boolean expected";
+        if (message.width != null && message.hasOwnProperty("width")) {
+            var error = $root.ProtoMeasure.verify(message.width);
+            if (error)
+                return "width." + error;
+        }
+        if (message.height != null && message.hasOwnProperty("height")) {
+            var error = $root.ProtoMeasure.verify(message.height);
+            if (error)
+                return "height." + error;
+        }
+        if (message.x != null && message.hasOwnProperty("x")) {
+            var error = $root.ProtoMeasure.verify(message.x);
+            if (error)
+                return "x." + error;
+        }
+        if (message.y != null && message.hasOwnProperty("y")) {
+            var error = $root.ProtoMeasure.verify(message.y);
+            if (error)
+                return "y." + error;
+        }
+        if (message.textFlow != null && message.hasOwnProperty("textFlow")) {
+            var error = $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType.verify(message.textFlow);
+            if (error)
+                return "textFlow." + error;
+        }
+        if (message.rotation != null && message.hasOwnProperty("rotation"))
+            if (typeof message.rotation !== "number")
+                return "rotation: number expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoAdvancedIllustrationArea message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoAdvancedIllustrationArea
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoAdvancedIllustrationArea} ProtoAdvancedIllustrationArea
+     */
+    ProtoAdvancedIllustrationArea.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoAdvancedIllustrationArea)
+            return object;
+        var message = new $root.ProtoAdvancedIllustrationArea();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoAdvancedIllustrationArea._children: array expected");
+            message._children = [];
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoAdvancedIllustrationArea._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i]);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoAdvancedIllustrationArea.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
+        if (object.absolute != null)
+            message.absolute = Boolean(object.absolute);
+        if (object.width != null) {
+            if (typeof object.width !== "object")
+                throw TypeError(".ProtoAdvancedIllustrationArea.width: object expected");
+            message.width = $root.ProtoMeasure.fromObject(object.width);
+        }
+        if (object.height != null) {
+            if (typeof object.height !== "object")
+                throw TypeError(".ProtoAdvancedIllustrationArea.height: object expected");
+            message.height = $root.ProtoMeasure.fromObject(object.height);
+        }
+        if (object.x != null) {
+            if (typeof object.x !== "object")
+                throw TypeError(".ProtoAdvancedIllustrationArea.x: object expected");
+            message.x = $root.ProtoMeasure.fromObject(object.x);
+        }
+        if (object.y != null) {
+            if (typeof object.y !== "object")
+                throw TypeError(".ProtoAdvancedIllustrationArea.y: object expected");
+            message.y = $root.ProtoMeasure.fromObject(object.y);
+        }
+        if (object.textFlow != null) {
+            if (typeof object.textFlow !== "object")
+                throw TypeError(".ProtoAdvancedIllustrationArea.textFlow: object expected");
+            message.textFlow = $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType.fromObject(object.textFlow);
+        }
+        if (object.rotation != null)
+            message.rotation = Number(object.rotation);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoAdvancedIllustrationArea.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoAdvancedIllustrationArea message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoAdvancedIllustrationArea
+     * @static
+     * @param {ProtoAdvancedIllustrationArea} message ProtoAdvancedIllustrationArea
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoAdvancedIllustrationArea.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+        }
+        if (options.defaults) {
+            object.parent = null;
+            object.uuid = "";
+            object.absolute = false;
+            object.width = null;
+            object.height = null;
+            object.x = null;
+            object.y = null;
+            object.textFlow = null;
+            object.rotation = 0;
+        }
+        if (message._children && message._children.length) {
+            object._children = [];
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.absolute != null && message.hasOwnProperty("absolute"))
+            object.absolute = message.absolute;
+        if (message.width != null && message.hasOwnProperty("width"))
+            object.width = $root.ProtoMeasure.toObject(message.width, options);
+        if (message.height != null && message.hasOwnProperty("height"))
+            object.height = $root.ProtoMeasure.toObject(message.height, options);
+        if (message.x != null && message.hasOwnProperty("x"))
+            object.x = $root.ProtoMeasure.toObject(message.x, options);
+        if (message.y != null && message.hasOwnProperty("y"))
+            object.y = $root.ProtoMeasure.toObject(message.y, options);
+        if (message.textFlow != null && message.hasOwnProperty("textFlow"))
+            object.textFlow = $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType.toObject(message.textFlow, options);
+        if (message.rotation != null && message.hasOwnProperty("rotation"))
+            object.rotation = options.json && !isFinite(message.rotation) ? String(message.rotation) : message.rotation;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoAdvancedIllustrationArea to JSON.
+     * @function toJSON
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoAdvancedIllustrationArea.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoAdvancedIllustrationArea
+     * @function getTypeUrl
+     * @memberof ProtoAdvancedIllustrationArea
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoAdvancedIllustrationArea.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoAdvancedIllustrationArea";
+    };
+
+    return ProtoAdvancedIllustrationArea;
 })();
 
 module.exports = $root;
