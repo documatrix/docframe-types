@@ -1309,103 +1309,103 @@ export class ProtoBoxedAdvancedIllustrationAreaTextFlowType implements IProtoBox
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-/** Properties of a ProtoAdvancedIllustrationArea. */
-export interface IProtoAdvancedIllustrationArea {
+/** Properties of a ProtoAdvancedIllustrationAreaImageSettings. */
+export interface IProtoAdvancedIllustrationAreaImageSettings {
 
-    /** ProtoAdvancedIllustrationArea textFlow */
+    /** ProtoAdvancedIllustrationAreaImageSettings textFlow */
     textFlow?: (IProtoBoxedAdvancedIllustrationAreaTextFlowType|null);
 
-    /** ProtoAdvancedIllustrationArea margin */
+    /** ProtoAdvancedIllustrationAreaImageSettings margin */
     margin?: (IProtoSideMeasures|null);
 }
 
-/** Represents a ProtoAdvancedIllustrationArea. */
-export class ProtoAdvancedIllustrationArea implements IProtoAdvancedIllustrationArea {
+/** Represents a ProtoAdvancedIllustrationAreaImageSettings. */
+export class ProtoAdvancedIllustrationAreaImageSettings implements IProtoAdvancedIllustrationAreaImageSettings {
 
     /**
-     * Constructs a new ProtoAdvancedIllustrationArea.
+     * Constructs a new ProtoAdvancedIllustrationAreaImageSettings.
      * @param [properties] Properties to set
      */
-    constructor(properties?: IProtoAdvancedIllustrationArea);
+    constructor(properties?: IProtoAdvancedIllustrationAreaImageSettings);
 
-    /** ProtoAdvancedIllustrationArea textFlow. */
+    /** ProtoAdvancedIllustrationAreaImageSettings textFlow. */
     public textFlow?: (IProtoBoxedAdvancedIllustrationAreaTextFlowType|null);
 
-    /** ProtoAdvancedIllustrationArea margin. */
+    /** ProtoAdvancedIllustrationAreaImageSettings margin. */
     public margin?: (IProtoSideMeasures|null);
 
     /**
-     * Creates a new ProtoAdvancedIllustrationArea instance using the specified properties.
+     * Creates a new ProtoAdvancedIllustrationAreaImageSettings instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns ProtoAdvancedIllustrationArea instance
+     * @returns ProtoAdvancedIllustrationAreaImageSettings instance
      */
-    public static create(properties?: IProtoAdvancedIllustrationArea): ProtoAdvancedIllustrationArea;
+    public static create(properties?: IProtoAdvancedIllustrationAreaImageSettings): ProtoAdvancedIllustrationAreaImageSettings;
 
     /**
-     * Encodes the specified ProtoAdvancedIllustrationArea message. Does not implicitly {@link ProtoAdvancedIllustrationArea.verify|verify} messages.
-     * @param message ProtoAdvancedIllustrationArea message or plain object to encode
+     * Encodes the specified ProtoAdvancedIllustrationAreaImageSettings message. Does not implicitly {@link ProtoAdvancedIllustrationAreaImageSettings.verify|verify} messages.
+     * @param message ProtoAdvancedIllustrationAreaImageSettings message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: IProtoAdvancedIllustrationArea, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IProtoAdvancedIllustrationAreaImageSettings, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified ProtoAdvancedIllustrationArea message, length delimited. Does not implicitly {@link ProtoAdvancedIllustrationArea.verify|verify} messages.
-     * @param message ProtoAdvancedIllustrationArea message or plain object to encode
+     * Encodes the specified ProtoAdvancedIllustrationAreaImageSettings message, length delimited. Does not implicitly {@link ProtoAdvancedIllustrationAreaImageSettings.verify|verify} messages.
+     * @param message ProtoAdvancedIllustrationAreaImageSettings message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: IProtoAdvancedIllustrationArea, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IProtoAdvancedIllustrationAreaImageSettings, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a ProtoAdvancedIllustrationArea message from the specified reader or buffer.
+     * Decodes a ProtoAdvancedIllustrationAreaImageSettings message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns ProtoAdvancedIllustrationArea
+     * @returns ProtoAdvancedIllustrationAreaImageSettings
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoAdvancedIllustrationArea;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoAdvancedIllustrationAreaImageSettings;
 
     /**
-     * Decodes a ProtoAdvancedIllustrationArea message from the specified reader or buffer, length delimited.
+     * Decodes a ProtoAdvancedIllustrationAreaImageSettings message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns ProtoAdvancedIllustrationArea
+     * @returns ProtoAdvancedIllustrationAreaImageSettings
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoAdvancedIllustrationArea;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoAdvancedIllustrationAreaImageSettings;
 
     /**
-     * Verifies a ProtoAdvancedIllustrationArea message.
+     * Verifies a ProtoAdvancedIllustrationAreaImageSettings message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a ProtoAdvancedIllustrationArea message from a plain object. Also converts values to their respective internal types.
+     * Creates a ProtoAdvancedIllustrationAreaImageSettings message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns ProtoAdvancedIllustrationArea
+     * @returns ProtoAdvancedIllustrationAreaImageSettings
      */
-    public static fromObject(object: { [k: string]: any }): ProtoAdvancedIllustrationArea;
+    public static fromObject(object: { [k: string]: any }): ProtoAdvancedIllustrationAreaImageSettings;
 
     /**
-     * Creates a plain object from a ProtoAdvancedIllustrationArea message. Also converts values to other types if specified.
-     * @param message ProtoAdvancedIllustrationArea
+     * Creates a plain object from a ProtoAdvancedIllustrationAreaImageSettings message. Also converts values to other types if specified.
+     * @param message ProtoAdvancedIllustrationAreaImageSettings
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: ProtoAdvancedIllustrationArea, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: ProtoAdvancedIllustrationAreaImageSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this ProtoAdvancedIllustrationArea to JSON.
+     * Converts this ProtoAdvancedIllustrationAreaImageSettings to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoAdvancedIllustrationArea
+     * Gets the default type url for ProtoAdvancedIllustrationAreaImageSettings
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
@@ -8612,6 +8612,9 @@ export interface INode {
 
     /** Node layout */
     layout?: (IProtoLayout|null);
+
+    /** Node advancedIllustrationArea */
+    advancedIllustrationArea?: (IProtoAdvancedIllustrationArea|null);
 }
 
 /** Represents a Node. */
@@ -8767,8 +8770,11 @@ export class Node implements INode {
     /** Node layout. */
     public layout?: (IProtoLayout|null);
 
+    /** Node advancedIllustrationArea. */
+    public advancedIllustrationArea?: (IProtoAdvancedIllustrationArea|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -8899,7 +8905,8 @@ export enum NodeType {
     DOCUMENT_ELEMENT_LOOP_ENTRY = 66,
     DOCUMENT_ELEMENT_RULE = 67,
     DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 68,
-    DOCUMENT_ELEMENT_LAYOUT = 69
+    DOCUMENT_ELEMENT_LAYOUT = 69,
+    DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70
 }
 
 /** Properties of a ProtoImage. */
@@ -8951,7 +8958,7 @@ export interface IProtoImage {
     cropSettings?: (IProtoCropSettings|null);
 
     /** ProtoImage aia */
-    aia?: (IProtoAdvancedIllustrationArea|null);
+    aia?: (IProtoAdvancedIllustrationAreaImageSettings|null);
 
     /** ProtoImage uuid */
     uuid?: (string|null);
@@ -9018,7 +9025,7 @@ export class ProtoImage implements IProtoImage {
     public cropSettings?: (IProtoCropSettings|null);
 
     /** ProtoImage aia. */
-    public aia?: (IProtoAdvancedIllustrationArea|null);
+    public aia?: (IProtoAdvancedIllustrationAreaImageSettings|null);
 
     /** ProtoImage uuid. */
     public uuid: string;
@@ -11740,6 +11747,163 @@ export class ProtoLayout implements IProtoLayout {
 
     /**
      * Gets the default type url for ProtoLayout
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoAdvancedIllustrationArea. */
+export interface IProtoAdvancedIllustrationArea {
+
+    /** ProtoAdvancedIllustrationArea _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoAdvancedIllustrationArea parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoAdvancedIllustrationArea uuid */
+    uuid?: (string|null);
+
+    /** ProtoAdvancedIllustrationArea absolute */
+    absolute?: (boolean|null);
+
+    /** ProtoAdvancedIllustrationArea width */
+    width?: (IProtoMeasure|null);
+
+    /** ProtoAdvancedIllustrationArea height */
+    height?: (IProtoMeasure|null);
+
+    /** ProtoAdvancedIllustrationArea x */
+    x?: (IProtoMeasure|null);
+
+    /** ProtoAdvancedIllustrationArea y */
+    y?: (IProtoMeasure|null);
+
+    /** ProtoAdvancedIllustrationArea textFlow */
+    textFlow?: (ProtoAdvancedIllustrationAreaTextFlowType|null);
+
+    /** ProtoAdvancedIllustrationArea rotation */
+    rotation?: (number|null);
+
+    /** ProtoAdvancedIllustrationArea comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoAdvancedIllustrationArea. */
+export class ProtoAdvancedIllustrationArea implements IProtoAdvancedIllustrationArea {
+
+    /**
+     * Constructs a new ProtoAdvancedIllustrationArea.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoAdvancedIllustrationArea);
+
+    /** ProtoAdvancedIllustrationArea _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoAdvancedIllustrationArea parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoAdvancedIllustrationArea uuid. */
+    public uuid: string;
+
+    /** ProtoAdvancedIllustrationArea absolute. */
+    public absolute: boolean;
+
+    /** ProtoAdvancedIllustrationArea width. */
+    public width?: (IProtoMeasure|null);
+
+    /** ProtoAdvancedIllustrationArea height. */
+    public height?: (IProtoMeasure|null);
+
+    /** ProtoAdvancedIllustrationArea x. */
+    public x?: (IProtoMeasure|null);
+
+    /** ProtoAdvancedIllustrationArea y. */
+    public y?: (IProtoMeasure|null);
+
+    /** ProtoAdvancedIllustrationArea textFlow. */
+    public textFlow: ProtoAdvancedIllustrationAreaTextFlowType;
+
+    /** ProtoAdvancedIllustrationArea rotation. */
+    public rotation: number;
+
+    /** ProtoAdvancedIllustrationArea comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoAdvancedIllustrationArea instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoAdvancedIllustrationArea instance
+     */
+    public static create(properties?: IProtoAdvancedIllustrationArea): ProtoAdvancedIllustrationArea;
+
+    /**
+     * Encodes the specified ProtoAdvancedIllustrationArea message. Does not implicitly {@link ProtoAdvancedIllustrationArea.verify|verify} messages.
+     * @param message ProtoAdvancedIllustrationArea message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoAdvancedIllustrationArea, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoAdvancedIllustrationArea message, length delimited. Does not implicitly {@link ProtoAdvancedIllustrationArea.verify|verify} messages.
+     * @param message ProtoAdvancedIllustrationArea message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoAdvancedIllustrationArea, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoAdvancedIllustrationArea message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoAdvancedIllustrationArea
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoAdvancedIllustrationArea;
+
+    /**
+     * Decodes a ProtoAdvancedIllustrationArea message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoAdvancedIllustrationArea
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoAdvancedIllustrationArea;
+
+    /**
+     * Verifies a ProtoAdvancedIllustrationArea message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoAdvancedIllustrationArea message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoAdvancedIllustrationArea
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoAdvancedIllustrationArea;
+
+    /**
+     * Creates a plain object from a ProtoAdvancedIllustrationArea message. Also converts values to other types if specified.
+     * @param message ProtoAdvancedIllustrationArea
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoAdvancedIllustrationArea, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoAdvancedIllustrationArea to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoAdvancedIllustrationArea
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

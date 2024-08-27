@@ -97,7 +97,7 @@ ProtoAdvancedIllustrationAreaTextFlowType value = 1;
 bool isNull = 2;
 }
 
-message ProtoAdvancedIllustrationArea {
+message ProtoAdvancedIllustrationAreaImageSettings {
 ProtoBoxedAdvancedIllustrationAreaTextFlowType textFlow = 1;
 ProtoSideMeasures margin = 2;
 }
@@ -711,6 +711,7 @@ ProtoLoop loop = 60;
 ProtoLoopEntry loop_entry = 61;
 ProtoRule rule = 62;
 ProtoLayout layout = 63;
+ProtoAdvancedIllustrationArea advanced_illustration_area = 64;
 }
 }
 
@@ -765,6 +766,7 @@ DOCUMENT_ELEMENT_LOOP_ENTRY = 66;
 DOCUMENT_ELEMENT_RULE = 67;
 DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 68;
 DOCUMENT_ELEMENT_LAYOUT = 69;
+DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70;
 }
 message ProtoImage {
 ProtoDocumentElement parent = 1;
@@ -783,7 +785,7 @@ ProtoBoxedBool positionAbsolute = 12;
 double rotation = 13;
 ProtoFlipSettings flipSettings = 14;
 ProtoCropSettings cropSettings = 15;
-ProtoAdvancedIllustrationArea aia = 16;
+ProtoAdvancedIllustrationAreaImageSettings aia = 16;
 string uuid = 17;
 ProtoImageReferencePoint referencePoint = 18;
 string hyperlink = 19;
@@ -977,4 +979,18 @@ message ProtoLayout {
 ProtoDocumentElement parent = 1;
 
 string name = 2;
+}
+message ProtoAdvancedIllustrationArea {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+string uuid = 3;
+bool absolute = 4;
+ProtoMeasure width = 5;
+ProtoMeasure height = 6;
+ProtoMeasure x = 7;
+ProtoMeasure y = 8;
+ProtoAdvancedIllustrationAreaTextFlowType textFlow = 9;
+float rotation = 10;
+repeated string comChannelUUIDs = 11;
 }

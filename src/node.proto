@@ -49,6 +49,7 @@ message Node {
     ProtoLoopEntry loop_entry = 61;
     ProtoRule rule = 62;
     ProtoLayout layout = 63;
+    ProtoAdvancedIllustrationArea advanced_illustration_area = 64;
   }
 }
 
@@ -103,4 +104,5 @@ enum NodeType {
   DOCUMENT_ELEMENT_RULE = 67;
   DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 68;
   DOCUMENT_ELEMENT_LAYOUT = 69;
+  DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70;
 }

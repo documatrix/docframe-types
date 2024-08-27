@@ -21,7 +21,7 @@ declare -a FileArray=(
   "src/Util/util.strikethrough_spec.proto"
   "src/Util/util.text.proto"
   "src/Util/util.measure.proto"
-  "src/Util/util.advanced_illustration_area.proto"
+  "src/Util/util.advanced_illustration_area_image_settings.proto"
   "src/Util/util.font.proto"
   "src/Util/util.color.proto"
   "src/Util/util.align.proto"
@@ -76,6 +76,7 @@ declare -a FileArray=(
   "src/DocumentElements/documentelements.rule.proto"
   "src/DocumentElements/documentelements.color_def.proto"
   "src/DocumentElements/documentelements.layout.proto"
+  "src/DocumentElements/documentelements.advanced_illustration_area.proto"
 )
 
 for file in ${FileArray[@]}; do

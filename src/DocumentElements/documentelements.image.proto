@@ -17,7 +17,7 @@ message ProtoImage {
   double rotation = 13;
   ProtoFlipSettings flipSettings = 14;
   ProtoCropSettings cropSettings = 15;
-  ProtoAdvancedIllustrationArea aia = 16;
+  ProtoAdvancedIllustrationAreaImageSettings aia = 16;
   string uuid = 17;
   ProtoImageReferencePoint referencePoint = 18;
   string hyperlink = 19;
