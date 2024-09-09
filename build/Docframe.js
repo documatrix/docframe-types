@@ -23309,9 +23309,9 @@ $root.Node = (function() {
         if (message.advancedIllustrationArea != null && Object.hasOwnProperty.call(message, "advancedIllustrationArea"))
             $root.ProtoAdvancedIllustrationArea.encode(message.advancedIllustrationArea, writer.uint32(/* id 64, wireType 2 =*/514).fork()).ldelim();
         if (message.doctypeScript != null && Object.hasOwnProperty.call(message, "doctypeScript"))
-            $root.ProtoDoctypeScript.encode(message.doctypeScript, writer.uint32(/* id 64, wireType 2 =*/514).fork()).ldelim();
+            $root.ProtoDoctypeScript.encode(message.doctypeScript, writer.uint32(/* id 65, wireType 2 =*/522).fork()).ldelim();
         if (message.dmScript != null && Object.hasOwnProperty.call(message, "dmScript"))
-            $root.ProtoDmScript.encode(message.dmScript, writer.uint32(/* id 65, wireType 2 =*/522).fork()).ldelim();
+            $root.ProtoDmScript.encode(message.dmScript, writer.uint32(/* id 66, wireType 2 =*/530).fork()).ldelim();
         return writer;
     };
 
