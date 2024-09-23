@@ -50,6 +50,7 @@ message Node {
     ProtoRule rule = 62;
     ProtoLayout layout = 63;
     ProtoAdvancedIllustrationArea advanced_illustration_area = 64;
+    ProtoAdjustHorizontally adjust_horizontally = 65;
   }
 }
 
@@ -105,4 +106,5 @@ enum NodeType {
   DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 68;
   DOCUMENT_ELEMENT_LAYOUT = 69;
   DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70;
+  DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71;
 }

@@ -22743,6 +22743,7 @@ $root.Node = (function() {
      * @property {IProtoRule|null} [rule] Node rule
      * @property {IProtoLayout|null} [layout] Node layout
      * @property {IProtoAdvancedIllustrationArea|null} [advancedIllustrationArea] Node advancedIllustrationArea
+     * @property {IProtoAdjustHorizontally|null} [adjustHorizontally] Node adjustHorizontally
      */
 
     /**
@@ -23153,17 +23154,25 @@ $root.Node = (function() {
      */
     Node.prototype.advancedIllustrationArea = null;
 
+    /**
+     * Node adjustHorizontally.
+     * @member {IProtoAdjustHorizontally|null|undefined} adjustHorizontally
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.adjustHorizontally = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -23290,6 +23299,8 @@ $root.Node = (function() {
             $root.ProtoLayout.encode(message.layout, writer.uint32(/* id 63, wireType 2 =*/506).fork()).ldelim();
         if (message.advancedIllustrationArea != null && Object.hasOwnProperty.call(message, "advancedIllustrationArea"))
             $root.ProtoAdvancedIllustrationArea.encode(message.advancedIllustrationArea, writer.uint32(/* id 64, wireType 2 =*/514).fork()).ldelim();
+        if (message.adjustHorizontally != null && Object.hasOwnProperty.call(message, "adjustHorizontally"))
+            $root.ProtoAdjustHorizontally.encode(message.adjustHorizontally, writer.uint32(/* id 65, wireType 2 =*/522).fork()).ldelim();
         return writer;
     };
 
@@ -23520,6 +23531,10 @@ $root.Node = (function() {
                 }
             case 64: {
                     message.advancedIllustrationArea = $root.ProtoAdvancedIllustrationArea.decode(reader, reader.uint32());
+                    break;
+                }
+            case 65: {
+                    message.adjustHorizontally = $root.ProtoAdjustHorizontally.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -24045,6 +24060,16 @@ $root.Node = (function() {
                     return "advancedIllustrationArea." + error;
             }
         }
+        if (message.adjustHorizontally != null && message.hasOwnProperty("adjustHorizontally")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoAdjustHorizontally.verify(message.adjustHorizontally);
+                if (error)
+                    return "adjustHorizontally." + error;
+            }
+        }
         return null;
     };
 
@@ -24310,6 +24335,11 @@ $root.Node = (function() {
                 throw TypeError(".Node.advancedIllustrationArea: object expected");
             message.advancedIllustrationArea = $root.ProtoAdvancedIllustrationArea.fromObject(object.advancedIllustrationArea);
         }
+        if (object.adjustHorizontally != null) {
+            if (typeof object.adjustHorizontally !== "object")
+                throw TypeError(".Node.adjustHorizontally: object expected");
+            message.adjustHorizontally = $root.ProtoAdjustHorizontally.fromObject(object.adjustHorizontally);
+        }
         return message;
     };
 
@@ -24573,6 +24603,11 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "advancedIllustrationArea";
         }
+        if (message.adjustHorizontally != null && message.hasOwnProperty("adjustHorizontally")) {
+            object.adjustHorizontally = $root.ProtoAdjustHorizontally.toObject(message.adjustHorizontally, options);
+            if (options.oneofs)
+                object.object = "adjustHorizontally";
+        }
         return object;
     };
 
@@ -24660,6 +24695,7 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_LIST_LEVEL_SETTING=68 DOCUMENT_ELEMENT_LIST_LEVEL_SETTING value
  * @property {number} DOCUMENT_ELEMENT_LAYOUT=69 DOCUMENT_ELEMENT_LAYOUT value
  * @property {number} DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA=70 DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA value
+ * @property {number} DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY=71 DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -24714,6 +24750,7 @@ $root.NodeType = (function() {
     values[valuesById[68] = "DOCUMENT_ELEMENT_LIST_LEVEL_SETTING"] = 68;
     values[valuesById[69] = "DOCUMENT_ELEMENT_LAYOUT"] = 69;
     values[valuesById[70] = "DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA"] = 70;
+    values[valuesById[71] = "DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY"] = 71;
     return values;
 })();
 
@@ -32904,6 +32941,316 @@ $root.ProtoAdvancedIllustrationArea = (function() {
     };
 
     return ProtoAdvancedIllustrationArea;
+})();
+
+$root.ProtoAdjustHorizontally = (function() {
+
+    /**
+     * Properties of a ProtoAdjustHorizontally.
+     * @name IProtoAdjustHorizontally
+     * @interface IProtoAdjustHorizontally
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoAdjustHorizontally _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoAdjustHorizontally parent
+     * @property {IProtoMeasure|null} [minFontSize] ProtoAdjustHorizontally minFontSize
+     * @property {IProtoMeasure|null} [maxFontSize] ProtoAdjustHorizontally maxFontSize
+     */
+
+    /**
+     * Constructs a new ProtoAdjustHorizontally.
+     * @name ProtoAdjustHorizontally
+     * @classdesc Represents a ProtoAdjustHorizontally.
+     * @implements IProtoAdjustHorizontally
+     * @constructor
+     * @param {IProtoAdjustHorizontally=} [properties] Properties to set
+     */
+    function ProtoAdjustHorizontally(properties) {
+        this._children = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoAdjustHorizontally _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoAdjustHorizontally
+     * @instance
+     */
+    ProtoAdjustHorizontally.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoAdjustHorizontally parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoAdjustHorizontally
+     * @instance
+     */
+    ProtoAdjustHorizontally.prototype.parent = null;
+
+    /**
+     * ProtoAdjustHorizontally minFontSize.
+     * @member {IProtoMeasure|null|undefined} minFontSize
+     * @memberof ProtoAdjustHorizontally
+     * @instance
+     */
+    ProtoAdjustHorizontally.prototype.minFontSize = null;
+
+    /**
+     * ProtoAdjustHorizontally maxFontSize.
+     * @member {IProtoMeasure|null|undefined} maxFontSize
+     * @memberof ProtoAdjustHorizontally
+     * @instance
+     */
+    ProtoAdjustHorizontally.prototype.maxFontSize = null;
+
+    /**
+     * Creates a new ProtoAdjustHorizontally instance using the specified properties.
+     * @function create
+     * @memberof ProtoAdjustHorizontally
+     * @static
+     * @param {IProtoAdjustHorizontally=} [properties] Properties to set
+     * @returns {ProtoAdjustHorizontally} ProtoAdjustHorizontally instance
+     */
+    ProtoAdjustHorizontally.create = function create(properties) {
+        return new ProtoAdjustHorizontally(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoAdjustHorizontally message. Does not implicitly {@link ProtoAdjustHorizontally.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoAdjustHorizontally
+     * @static
+     * @param {IProtoAdjustHorizontally} message ProtoAdjustHorizontally message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoAdjustHorizontally.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.minFontSize != null && Object.hasOwnProperty.call(message, "minFontSize"))
+            $root.ProtoMeasure.encode(message.minFontSize, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+        if (message.maxFontSize != null && Object.hasOwnProperty.call(message, "maxFontSize"))
+            $root.ProtoMeasure.encode(message.maxFontSize, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoAdjustHorizontally message, length delimited. Does not implicitly {@link ProtoAdjustHorizontally.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoAdjustHorizontally
+     * @static
+     * @param {IProtoAdjustHorizontally} message ProtoAdjustHorizontally message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoAdjustHorizontally.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoAdjustHorizontally message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoAdjustHorizontally
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoAdjustHorizontally} ProtoAdjustHorizontally
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoAdjustHorizontally.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoAdjustHorizontally();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 2: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.minFontSize = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 4: {
+                    message.maxFontSize = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoAdjustHorizontally message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoAdjustHorizontally
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoAdjustHorizontally} ProtoAdjustHorizontally
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoAdjustHorizontally.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoAdjustHorizontally message.
+     * @function verify
+     * @memberof ProtoAdjustHorizontally
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoAdjustHorizontally.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i]);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.minFontSize != null && message.hasOwnProperty("minFontSize")) {
+            var error = $root.ProtoMeasure.verify(message.minFontSize);
+            if (error)
+                return "minFontSize." + error;
+        }
+        if (message.maxFontSize != null && message.hasOwnProperty("maxFontSize")) {
+            var error = $root.ProtoMeasure.verify(message.maxFontSize);
+            if (error)
+                return "maxFontSize." + error;
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoAdjustHorizontally message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoAdjustHorizontally
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoAdjustHorizontally} ProtoAdjustHorizontally
+     */
+    ProtoAdjustHorizontally.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoAdjustHorizontally)
+            return object;
+        var message = new $root.ProtoAdjustHorizontally();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoAdjustHorizontally._children: array expected");
+            message._children = [];
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoAdjustHorizontally._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i]);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoAdjustHorizontally.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.minFontSize != null) {
+            if (typeof object.minFontSize !== "object")
+                throw TypeError(".ProtoAdjustHorizontally.minFontSize: object expected");
+            message.minFontSize = $root.ProtoMeasure.fromObject(object.minFontSize);
+        }
+        if (object.maxFontSize != null) {
+            if (typeof object.maxFontSize !== "object")
+                throw TypeError(".ProtoAdjustHorizontally.maxFontSize: object expected");
+            message.maxFontSize = $root.ProtoMeasure.fromObject(object.maxFontSize);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoAdjustHorizontally message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoAdjustHorizontally
+     * @static
+     * @param {ProtoAdjustHorizontally} message ProtoAdjustHorizontally
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoAdjustHorizontally.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object._children = [];
+        if (options.defaults) {
+            object.parent = null;
+            object.minFontSize = null;
+            object.maxFontSize = null;
+        }
+        if (message._children && message._children.length) {
+            object._children = [];
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.minFontSize != null && message.hasOwnProperty("minFontSize"))
+            object.minFontSize = $root.ProtoMeasure.toObject(message.minFontSize, options);
+        if (message.maxFontSize != null && message.hasOwnProperty("maxFontSize"))
+            object.maxFontSize = $root.ProtoMeasure.toObject(message.maxFontSize, options);
+        return object;
+    };
+
+    /**
+     * Converts this ProtoAdjustHorizontally to JSON.
+     * @function toJSON
+     * @memberof ProtoAdjustHorizontally
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoAdjustHorizontally.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoAdjustHorizontally
+     * @function getTypeUrl
+     * @memberof ProtoAdjustHorizontally
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoAdjustHorizontally.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoAdjustHorizontally";
+    };
+
+    return ProtoAdjustHorizontally;
 })();
 
 module.exports = $root;

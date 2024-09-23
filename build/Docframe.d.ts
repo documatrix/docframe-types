@@ -8615,6 +8615,9 @@ export interface INode {
 
     /** Node advancedIllustrationArea */
     advancedIllustrationArea?: (IProtoAdvancedIllustrationArea|null);
+
+    /** Node adjustHorizontally */
+    adjustHorizontally?: (IProtoAdjustHorizontally|null);
 }
 
 /** Represents a Node. */
@@ -8773,8 +8776,11 @@ export class Node implements INode {
     /** Node advancedIllustrationArea. */
     public advancedIllustrationArea?: (IProtoAdvancedIllustrationArea|null);
 
+    /** Node adjustHorizontally. */
+    public adjustHorizontally?: (IProtoAdjustHorizontally|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -8906,7 +8912,8 @@ export enum NodeType {
     DOCUMENT_ELEMENT_RULE = 67,
     DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 68,
     DOCUMENT_ELEMENT_LAYOUT = 69,
-    DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70
+    DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70,
+    DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71
 }
 
 /** Properties of a ProtoImage. */
@@ -11904,6 +11911,121 @@ export class ProtoAdvancedIllustrationArea implements IProtoAdvancedIllustration
 
     /**
      * Gets the default type url for ProtoAdvancedIllustrationArea
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoAdjustHorizontally. */
+export interface IProtoAdjustHorizontally {
+
+    /** ProtoAdjustHorizontally _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoAdjustHorizontally parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoAdjustHorizontally minFontSize */
+    minFontSize?: (IProtoMeasure|null);
+
+    /** ProtoAdjustHorizontally maxFontSize */
+    maxFontSize?: (IProtoMeasure|null);
+}
+
+/** Represents a ProtoAdjustHorizontally. */
+export class ProtoAdjustHorizontally implements IProtoAdjustHorizontally {
+
+    /**
+     * Constructs a new ProtoAdjustHorizontally.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoAdjustHorizontally);
+
+    /** ProtoAdjustHorizontally _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoAdjustHorizontally parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoAdjustHorizontally minFontSize. */
+    public minFontSize?: (IProtoMeasure|null);
+
+    /** ProtoAdjustHorizontally maxFontSize. */
+    public maxFontSize?: (IProtoMeasure|null);
+
+    /**
+     * Creates a new ProtoAdjustHorizontally instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoAdjustHorizontally instance
+     */
+    public static create(properties?: IProtoAdjustHorizontally): ProtoAdjustHorizontally;
+
+    /**
+     * Encodes the specified ProtoAdjustHorizontally message. Does not implicitly {@link ProtoAdjustHorizontally.verify|verify} messages.
+     * @param message ProtoAdjustHorizontally message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoAdjustHorizontally, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoAdjustHorizontally message, length delimited. Does not implicitly {@link ProtoAdjustHorizontally.verify|verify} messages.
+     * @param message ProtoAdjustHorizontally message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoAdjustHorizontally, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoAdjustHorizontally message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoAdjustHorizontally
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoAdjustHorizontally;
+
+    /**
+     * Decodes a ProtoAdjustHorizontally message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoAdjustHorizontally
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoAdjustHorizontally;
+
+    /**
+     * Verifies a ProtoAdjustHorizontally message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoAdjustHorizontally message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoAdjustHorizontally
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoAdjustHorizontally;
+
+    /**
+     * Creates a plain object from a ProtoAdjustHorizontally message. Also converts values to other types if specified.
+     * @param message ProtoAdjustHorizontally
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoAdjustHorizontally, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoAdjustHorizontally to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoAdjustHorizontally
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

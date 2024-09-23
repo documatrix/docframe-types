@@ -1,0 +1,9 @@
+message ProtoAdjustHorizontally {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  ProtoMeasure minFontSize = 3;
+  ProtoMeasure maxFontSize = 4;
+}

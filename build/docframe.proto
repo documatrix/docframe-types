@@ -712,6 +712,7 @@ ProtoLoopEntry loop_entry = 61;
 ProtoRule rule = 62;
 ProtoLayout layout = 63;
 ProtoAdvancedIllustrationArea advanced_illustration_area = 64;
+ProtoAdjustHorizontally adjust_horizontally = 65;
 }
 }
 
@@ -767,6 +768,7 @@ DOCUMENT_ELEMENT_RULE = 67;
 DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 68;
 DOCUMENT_ELEMENT_LAYOUT = 69;
 DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70;
+DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71;
 }
 message ProtoImage {
 ProtoDocumentElement parent = 1;
@@ -993,4 +995,11 @@ ProtoMeasure y = 8;
 ProtoAdvancedIllustrationAreaTextFlowType textFlow = 9;
 float rotation = 10;
 repeated string comChannelUUIDs = 11;
+}
+message ProtoAdjustHorizontally {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+ProtoMeasure minFontSize = 3;
+ProtoMeasure maxFontSize = 4;
 }
