@@ -713,6 +713,8 @@ ProtoRule rule = 62;
 ProtoLayout layout = 63;
 ProtoAdvancedIllustrationArea advanced_illustration_area = 64;
 ProtoAdjustHorizontally adjust_horizontally = 65;
+ProtoDoctypeScript doctypeScript = 66;
+ProtoDmScript dmScript = 67;
 }
 }
 
@@ -769,6 +771,8 @@ DOCUMENT_ELEMENT_LIST_LEVEL_SETTING = 68;
 DOCUMENT_ELEMENT_LAYOUT = 69;
 DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70;
 DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71;
+DOCUMENT_ELEMENT_DOCTYPESCRIPT = 72;
+DOCUMENT_ELEMENT_DMSCRIPT = 73;
 }
 message ProtoImage {
 ProtoDocumentElement parent = 1;
@@ -1002,4 +1006,20 @@ ProtoDocumentElement parent = 2;
 
 ProtoMeasure minFontSize = 3;
 ProtoMeasure maxFontSize = 4;
+}
+enum ProtoDoctypeOutputMode {
+DOCTYPE = 0;
+JSON = 1;
+}
+
+message ProtoDoctypeScript {
+ProtoDocumentElement parent = 1;
+
+string content = 2;
+ProtoDoctypeOutputMode outputMode = 3;
+}
+message ProtoDmScript {
+ProtoDocumentElement parent = 1;
+
+string content = 2;
 }

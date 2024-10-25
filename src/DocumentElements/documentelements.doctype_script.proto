@@ -1,0 +1,14 @@
+enum ProtoDoctypeOutputMode {
+  DOCTYPE = 0;
+  JSON = 1;
+}
+
+// These elements are actually script snippets (usually dmSCRIPT), whichs result (String) is used
+// as docTYPE code.
+message ProtoDoctypeScript {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+
+  string content = 2;
+  ProtoDoctypeOutputMode outputMode = 3;
+}
