@@ -12048,8 +12048,9 @@ export class ProtoAdjustHorizontally implements IProtoAdjustHorizontally {
 
 /** ProtoDoctypeOutputMode enum. */
 export enum ProtoDoctypeOutputMode {
-    DOCTYPE = 0,
-    JSON = 1
+    DOCTYPE_OUTPUT_MODE_NOT_SET = 0,
+    DOCTYPE = 1,
+    JSON = 2
 }
 
 /** Properties of a ProtoDoctypeScript. */
