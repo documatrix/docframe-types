@@ -1,6 +1,7 @@
 enum ProtoDoctypeOutputMode {
-  DOCTYPE = 0;
-  JSON = 1;
+  DOCTYPE_OUTPUT_MODE_NOT_SET = 0;
+  DOCTYPE = 1;
+  JSON = 2;
 }
 
 // These elements are actually script snippets (usually dmSCRIPT), whichs result (String) is used

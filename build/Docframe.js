@@ -33331,13 +33331,15 @@ $root.ProtoAdjustHorizontally = (function() {
  * ProtoDoctypeOutputMode enum.
  * @name ProtoDoctypeOutputMode
  * @enum {number}
- * @property {number} DOCTYPE=0 DOCTYPE value
- * @property {number} JSON=1 JSON value
+ * @property {number} DOCTYPE_OUTPUT_MODE_NOT_SET=0 DOCTYPE_OUTPUT_MODE_NOT_SET value
+ * @property {number} DOCTYPE=1 DOCTYPE value
+ * @property {number} JSON=2 JSON value
  */
 $root.ProtoDoctypeOutputMode = (function() {
     var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "DOCTYPE"] = 0;
-    values[valuesById[1] = "JSON"] = 1;
+    values[valuesById[0] = "DOCTYPE_OUTPUT_MODE_NOT_SET"] = 0;
+    values[valuesById[1] = "DOCTYPE"] = 1;
+    values[valuesById[2] = "JSON"] = 2;
     return values;
 })();
 
@@ -33516,6 +33518,7 @@ $root.ProtoDoctypeScript = (function() {
                 return "outputMode: enum value expected";
             case 0:
             case 1:
+            case 2:
                 break;
             }
         return null;
@@ -33547,13 +33550,17 @@ $root.ProtoDoctypeScript = (function() {
                 break;
             }
             break;
-        case "DOCTYPE":
+        case "DOCTYPE_OUTPUT_MODE_NOT_SET":
         case 0:
             message.outputMode = 0;
             break;
-        case "JSON":
+        case "DOCTYPE":
         case 1:
             message.outputMode = 1;
+            break;
+        case "JSON":
+        case 2:
+            message.outputMode = 2;
             break;
         }
         return message;
@@ -33575,7 +33582,7 @@ $root.ProtoDoctypeScript = (function() {
         if (options.defaults) {
             object.parent = null;
             object.content = "";
-            object.outputMode = options.enums === String ? "DOCTYPE" : 0;
+            object.outputMode = options.enums === String ? "DOCTYPE_OUTPUT_MODE_NOT_SET" : 0;
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
