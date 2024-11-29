@@ -24766,8 +24766,8 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_LAYOUT=69 DOCUMENT_ELEMENT_LAYOUT value
  * @property {number} DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA=70 DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA value
  * @property {number} DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY=71 DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY value
- * @property {number} DOCUMENT_ELEMENT_DOCTYPESCRIPT=72 DOCUMENT_ELEMENT_DOCTYPESCRIPT value
- * @property {number} DOCUMENT_ELEMENT_DMSCRIPT=73 DOCUMENT_ELEMENT_DMSCRIPT value
+ * @property {number} DOCUMENT_ELEMENT_DOCTYPE_SCRIPT=72 DOCUMENT_ELEMENT_DOCTYPE_SCRIPT value
+ * @property {number} DOCUMENT_ELEMENT_DM_SCRIPT=73 DOCUMENT_ELEMENT_DM_SCRIPT value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -24823,8 +24823,8 @@ $root.NodeType = (function() {
     values[valuesById[69] = "DOCUMENT_ELEMENT_LAYOUT"] = 69;
     values[valuesById[70] = "DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA"] = 70;
     values[valuesById[71] = "DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY"] = 71;
-    values[valuesById[72] = "DOCUMENT_ELEMENT_DOCTYPESCRIPT"] = 72;
-    values[valuesById[73] = "DOCUMENT_ELEMENT_DMSCRIPT"] = 73;
+    values[valuesById[72] = "DOCUMENT_ELEMENT_DOCTYPE_SCRIPT"] = 72;
+    values[valuesById[73] = "DOCUMENT_ELEMENT_DM_SCRIPT"] = 73;
     return values;
 })();
 
