@@ -9,4 +9,11 @@ message ProtoTemplate {
   map<string, string> containerMapping = 3;
   repeated string comChannelUUIDs = 4;
   string uuid = 5;
+  ColumnBalancing columnBalancing = 6;
+}
+
+enum ColumnBalancing {
+  NO_BALANCING = 0;
+  BALANCING = 1;
+  BALANCING_INHERITED = 2;
 }

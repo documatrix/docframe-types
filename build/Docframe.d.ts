@@ -5895,10 +5895,10 @@ export interface IProtoTable {
     configName?: (string|null);
 
     /** ProtoTable carryOver */
-    carryOver?: (INode|null);
+    carryOver?: (IProtoCarryOver|null);
 
     /** ProtoTable subTotal */
-    subTotal?: (INode|null);
+    subTotal?: (IProtoSubTotal|null);
 
     /** ProtoTable comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
@@ -5926,10 +5926,10 @@ export class ProtoTable implements IProtoTable {
     public configName: string;
 
     /** ProtoTable carryOver. */
-    public carryOver?: (INode|null);
+    public carryOver?: (IProtoCarryOver|null);
 
     /** ProtoTable subTotal. */
-    public subTotal?: (INode|null);
+    public subTotal?: (IProtoSubTotal|null);
 
     /** ProtoTable comChannelUUIDs. */
     public comChannelUUIDs: string[];
@@ -8132,6 +8132,9 @@ export interface IProtoTemplate {
 
     /** ProtoTemplate uuid */
     uuid?: (string|null);
+
+    /** ProtoTemplate columnBalancing */
+    columnBalancing?: (ColumnBalancing|null);
 }
 
 /** Represents a ProtoTemplate. */
@@ -8157,6 +8160,9 @@ export class ProtoTemplate implements IProtoTemplate {
 
     /** ProtoTemplate uuid. */
     public uuid: string;
+
+    /** ProtoTemplate columnBalancing. */
+    public columnBalancing: ColumnBalancing;
 
     /**
      * Creates a new ProtoTemplate instance using the specified properties.
@@ -8234,6 +8240,13 @@ export class ProtoTemplate implements IProtoTemplate {
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** ColumnBalancing enum. */
+export enum ColumnBalancing {
+    NO_BALANCING = 0,
+    BALANCING = 1,
+    BALANCING_INHERITED = 2
 }
 
 /** Properties of a ProtoHeader. */
