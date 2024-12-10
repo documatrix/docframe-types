@@ -485,8 +485,8 @@ ProtoDocumentElement parent = 2;
 ProtoTableSettings settings = 3;
 string configName = 4;
 
-Node carryOver = 5;
-Node subTotal = 6;
+ProtoCarryOver carryOver = 5;
+ProtoSubTotal subTotal = 6;
 repeated string comChannelUUIDs = 7;
 }
 
@@ -645,6 +645,13 @@ ProtoDocumentElement parent = 2;
 map<string, string> containerMapping = 3;
 repeated string comChannelUUIDs = 4;
 string uuid = 5;
+ColumnBalancing columnBalancing = 6;
+}
+
+enum ColumnBalancing {
+NO_BALANCING = 0;
+BALANCING = 1;
+BALANCING_INHERITED = 2;
 }
 message ProtoHeader {
 repeated ProtoDocumentElement _children = 1;
