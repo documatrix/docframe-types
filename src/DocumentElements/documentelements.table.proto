@@ -7,8 +7,8 @@ message ProtoTable {
   ProtoTableSettings settings = 3;
   string configName = 4;
 
-  Node carryOver = 5;
-  Node subTotal = 6;
+  ProtoCarryOver carryOver = 5;
+  ProtoSubTotal subTotal = 6;
   repeated string comChannelUUIDs = 7;
 }
 

@@ -1,6 +1,6 @@
 module github.com/documatrix/docframe-types
 
-go 1.23.1
+go 1.23.4
 
 require (
 	github.com/iancoleman/strcase v0.2.0
