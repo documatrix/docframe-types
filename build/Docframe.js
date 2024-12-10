@@ -15768,8 +15768,8 @@ $root.ProtoTable = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoTable parent
      * @property {IProtoTableSettings|null} [settings] ProtoTable settings
      * @property {string|null} [configName] ProtoTable configName
-     * @property {IProtoCarryOver|null} [carryOver] ProtoTable carryOver
-     * @property {IProtoSubTotal|null} [subTotal] ProtoTable subTotal
+     * @property {INode|null} [carryOver] ProtoTable carryOver
+     * @property {INode|null} [subTotal] ProtoTable subTotal
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTable comChannelUUIDs
      */
 
@@ -15824,7 +15824,7 @@ $root.ProtoTable = (function() {
 
     /**
      * ProtoTable carryOver.
-     * @member {IProtoCarryOver|null|undefined} carryOver
+     * @member {INode|null|undefined} carryOver
      * @memberof ProtoTable
      * @instance
      */
@@ -15832,7 +15832,7 @@ $root.ProtoTable = (function() {
 
     /**
      * ProtoTable subTotal.
-     * @member {IProtoSubTotal|null|undefined} subTotal
+     * @member {INode|null|undefined} subTotal
      * @memberof ProtoTable
      * @instance
      */
@@ -15880,9 +15880,9 @@ $root.ProtoTable = (function() {
         if (message.configName != null && Object.hasOwnProperty.call(message, "configName"))
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.configName);
         if (message.carryOver != null && Object.hasOwnProperty.call(message, "carryOver"))
-            $root.ProtoCarryOver.encode(message.carryOver, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+            $root.Node.encode(message.carryOver, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
         if (message.subTotal != null && Object.hasOwnProperty.call(message, "subTotal"))
-            $root.ProtoSubTotal.encode(message.subTotal, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+            $root.Node.encode(message.subTotal, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 7, wireType 2 =*/58).string(message.comChannelUUIDs[i]);
@@ -15939,11 +15939,11 @@ $root.ProtoTable = (function() {
                     break;
                 }
             case 5: {
-                    message.carryOver = $root.ProtoCarryOver.decode(reader, reader.uint32());
+                    message.carryOver = $root.Node.decode(reader, reader.uint32());
                     break;
                 }
             case 6: {
-                    message.subTotal = $root.ProtoSubTotal.decode(reader, reader.uint32());
+                    message.subTotal = $root.Node.decode(reader, reader.uint32());
                     break;
                 }
             case 7: {
@@ -16010,12 +16010,12 @@ $root.ProtoTable = (function() {
             if (!$util.isString(message.configName))
                 return "configName: string expected";
         if (message.carryOver != null && message.hasOwnProperty("carryOver")) {
-            var error = $root.ProtoCarryOver.verify(message.carryOver);
+            var error = $root.Node.verify(message.carryOver);
             if (error)
                 return "carryOver." + error;
         }
         if (message.subTotal != null && message.hasOwnProperty("subTotal")) {
-            var error = $root.ProtoSubTotal.verify(message.subTotal);
+            var error = $root.Node.verify(message.subTotal);
             if (error)
                 return "subTotal." + error;
         }
@@ -16066,12 +16066,12 @@ $root.ProtoTable = (function() {
         if (object.carryOver != null) {
             if (typeof object.carryOver !== "object")
                 throw TypeError(".ProtoTable.carryOver: object expected");
-            message.carryOver = $root.ProtoCarryOver.fromObject(object.carryOver);
+            message.carryOver = $root.Node.fromObject(object.carryOver);
         }
         if (object.subTotal != null) {
             if (typeof object.subTotal !== "object")
                 throw TypeError(".ProtoTable.subTotal: object expected");
-            message.subTotal = $root.ProtoSubTotal.fromObject(object.subTotal);
+            message.subTotal = $root.Node.fromObject(object.subTotal);
         }
         if (object.comChannelUUIDs) {
             if (!Array.isArray(object.comChannelUUIDs))
@@ -16119,9 +16119,9 @@ $root.ProtoTable = (function() {
         if (message.configName != null && message.hasOwnProperty("configName"))
             object.configName = message.configName;
         if (message.carryOver != null && message.hasOwnProperty("carryOver"))
-            object.carryOver = $root.ProtoCarryOver.toObject(message.carryOver, options);
+            object.carryOver = $root.Node.toObject(message.carryOver, options);
         if (message.subTotal != null && message.hasOwnProperty("subTotal"))
-            object.subTotal = $root.ProtoSubTotal.toObject(message.subTotal, options);
+            object.subTotal = $root.Node.toObject(message.subTotal, options);
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
             object.comChannelUUIDs = [];
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
