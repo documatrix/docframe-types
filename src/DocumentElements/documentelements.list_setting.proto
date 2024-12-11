@@ -6,6 +6,7 @@ message ProtoListSetting {
   string name = 2;
   repeated ProtoListLevelSetting listLevelSettings = 3;
   ProtoListLevelSetting defaultListLevelSetting = 4;
+  repeated string comChannelUUIDs = 5;
 }
 
 // go-gen:ignore

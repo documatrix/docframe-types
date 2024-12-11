@@ -17,4 +17,5 @@ message ProtoNewPage {
   uint32  paperCount = 2;
   ProtoPageMode pageMode = 3;
   ProtoPageOrientation pageOrientation = 4;
+  repeated string comChannelUUIDs = 5;
 }

@@ -1,4 +1,5 @@
 
 message ProtoApplyPtConfig {
   string ptConfigUuid = 1;
+  repeated string comChannelUUIDs = 2;
 }

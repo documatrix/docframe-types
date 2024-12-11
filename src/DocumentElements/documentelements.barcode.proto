@@ -11,4 +11,5 @@ message ProtoBarcode {
   ProtoMeasure padding = 8;
   string data = 9;
   bool positionAbsolute = 10;
+  repeated string comChannelUUIDs = 11;
 }

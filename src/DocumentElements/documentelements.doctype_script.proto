@@ -12,4 +12,5 @@ message ProtoDoctypeScript {
 
   string content = 2;
   ProtoDoctypeOutputMode outputMode = 3;
+  repeated string comChannelUUIDs = 4;
 }

@@ -11,4 +11,5 @@ message ProtoSpan {
   ProtoBoxedBool superscript = 7;
   ProtoBoxedBool underline = 8;
   ProtoBoxedBool strikethrough = 9;
+  repeated string comChannelUUIDs = 10;
 }

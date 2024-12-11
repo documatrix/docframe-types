@@ -2,4 +2,5 @@
 message ProtoUlConfig {
   ProtoUnderlineMode mode = 1;
   string Uuid = 2;
+  repeated string comChannelUUIDs = 3;
 }

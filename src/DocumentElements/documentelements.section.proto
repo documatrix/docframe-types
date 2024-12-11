@@ -7,4 +7,5 @@ message ProtoSection {
   ProtoMeasure pageWidth = 3;
   ProtoMeasure pageDepth = 4;
   ProtoColumnSettings columnSettings = 5;
+  repeated string comChannelUUIDs = 6;
 }

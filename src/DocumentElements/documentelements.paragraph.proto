@@ -6,4 +6,5 @@ message ProtoParagraph {
 
   ProtoParagraphFormat format = 3;
   ProtoParagraphFormat overwrite = 4;
+  repeated string comChannelUUIDs = 5;
 }
