@@ -3,4 +3,5 @@ message ProtoDmScript {
   ProtoDocumentElement parent = 1;
 
   string content = 2;
+  repeated string comChannelUUIDs = 3;
 }

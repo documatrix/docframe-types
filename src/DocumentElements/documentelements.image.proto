@@ -21,4 +21,5 @@ message ProtoImage {
   string uuid = 17;
   ProtoImageReferencePoint referencePoint = 18;
   string hyperlink = 19;
+  repeated string comChannelUUIDs = 20;
 }

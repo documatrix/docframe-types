@@ -2363,6 +2363,9 @@ export interface IProtoLinebreak {
 
     /** ProtoLinebreak parent */
     parent?: (IProtoDocumentElement|null);
+
+    /** ProtoLinebreak comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoLinebreak. */
@@ -2376,6 +2379,9 @@ export class ProtoLinebreak implements IProtoLinebreak {
 
     /** ProtoLinebreak parent. */
     public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoLinebreak comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoLinebreak instance using the specified properties.
@@ -3596,6 +3602,9 @@ export interface IProtoDocumentElement {
 
     /** ProtoDocumentElement parent */
     parent?: (IProtoDocumentElement|null);
+
+    /** ProtoDocumentElement comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoDocumentElement. */
@@ -3609,6 +3618,9 @@ export class ProtoDocumentElement implements IProtoDocumentElement {
 
     /** ProtoDocumentElement parent. */
     public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoDocumentElement comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoDocumentElement instance using the specified properties.
@@ -3696,6 +3708,9 @@ export interface IProtoBranchDocumentElement {
 
     /** ProtoBranchDocumentElement parent */
     parent?: (IProtoDocumentElement|null);
+
+    /** ProtoBranchDocumentElement comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoBranchDocumentElement. */
@@ -3712,6 +3727,9 @@ export class ProtoBranchDocumentElement implements IProtoBranchDocumentElement {
 
     /** ProtoBranchDocumentElement parent. */
     public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoBranchDocumentElement comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoBranchDocumentElement instance using the specified properties.
@@ -3799,6 +3817,9 @@ export interface IProtoLink {
 
     /** ProtoLink url */
     url?: (string|null);
+
+    /** ProtoLink comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoLink. */
@@ -3815,6 +3836,9 @@ export class ProtoLink implements IProtoLink {
 
     /** ProtoLink url. */
     public url: string;
+
+    /** ProtoLink comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoLink instance using the specified properties.
@@ -4817,6 +4841,9 @@ export interface IProtoListSetting {
 
     /** ProtoListSetting defaultListLevelSetting */
     defaultListLevelSetting?: (IProtoListLevelSetting|null);
+
+    /** ProtoListSetting comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoListSetting. */
@@ -4839,6 +4866,9 @@ export class ProtoListSetting implements IProtoListSetting {
 
     /** ProtoListSetting defaultListLevelSetting. */
     public defaultListLevelSetting?: (IProtoListLevelSetting|null);
+
+    /** ProtoListSetting comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoListSetting instance using the specified properties.
@@ -5032,6 +5062,9 @@ export interface IProtoNamedString {
 
     /** ProtoNamedString name */
     name?: (string|null);
+
+    /** ProtoNamedString comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoNamedString. */
@@ -5051,6 +5084,9 @@ export class ProtoNamedString implements IProtoNamedString {
 
     /** ProtoNamedString name. */
     public name: string;
+
+    /** ProtoNamedString comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoNamedString instance using the specified properties.
@@ -5144,6 +5180,9 @@ export interface IProtoParagraph {
 
     /** ProtoParagraph overwrite */
     overwrite?: (IProtoParagraphFormat|null);
+
+    /** ProtoParagraph comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoParagraph. */
@@ -5166,6 +5205,9 @@ export class ProtoParagraph implements IProtoParagraph {
 
     /** ProtoParagraph overwrite. */
     public overwrite?: (IProtoParagraphFormat|null);
+
+    /** ProtoParagraph comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoParagraph instance using the specified properties.
@@ -5331,6 +5373,9 @@ export interface IProtoParagraphFormat {
 
     /** ProtoParagraphFormat semanticType */
     semanticType?: (IProtoBoxedString|null);
+
+    /** ProtoParagraphFormat comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoParagraphFormat. */
@@ -5425,6 +5470,9 @@ export class ProtoParagraphFormat implements IProtoParagraphFormat {
 
     /** ProtoParagraphFormat semanticType. */
     public semanticType?: (IProtoBoxedString|null);
+
+    /** ProtoParagraphFormat comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoParagraphFormat instance using the specified properties.
@@ -5521,6 +5569,9 @@ export interface IProtoSection {
 
     /** ProtoSection columnSettings */
     columnSettings?: (IProtoColumnSettings|null);
+
+    /** ProtoSection comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoSection. */
@@ -5546,6 +5597,9 @@ export class ProtoSection implements IProtoSection {
 
     /** ProtoSection columnSettings. */
     public columnSettings?: (IProtoColumnSettings|null);
+
+    /** ProtoSection comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoSection instance using the specified properties.
@@ -5763,6 +5817,9 @@ export interface IProtoSpan {
 
     /** ProtoSpan strikethrough */
     strikethrough?: (IProtoBoxedBool|null);
+
+    /** ProtoSpan comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoSpan. */
@@ -5800,6 +5857,9 @@ export class ProtoSpan implements IProtoSpan {
 
     /** ProtoSpan strikethrough. */
     public strikethrough?: (IProtoBoxedBool|null);
+
+    /** ProtoSpan comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoSpan instance using the specified properties.
@@ -6023,6 +6083,9 @@ export interface IProtoTableConfig {
 
     /** ProtoTableConfig configName */
     configName?: (string|null);
+
+    /** ProtoTableConfig comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoTableConfig. */
@@ -6042,6 +6105,9 @@ export class ProtoTableConfig implements IProtoTableConfig {
 
     /** ProtoTableConfig configName. */
     public configName: string;
+
+    /** ProtoTableConfig comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoTableConfig instance using the specified properties.
@@ -6364,6 +6430,9 @@ export interface IProtoTableContentGroup {
 
     /** ProtoTableContentGroup settings */
     settings?: (IProtoTableContentGroupSettings|null);
+
+    /** ProtoTableContentGroup comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoTableContentGroup. */
@@ -6383,6 +6452,9 @@ export class ProtoTableContentGroup implements IProtoTableContentGroup {
 
     /** ProtoTableContentGroup settings. */
     public settings?: (IProtoTableContentGroupSettings|null);
+
+    /** ProtoTableContentGroup comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoTableContentGroup instance using the specified properties.
@@ -6473,6 +6545,9 @@ export interface IProtoTableContentGroupConfig {
 
     /** ProtoTableContentGroupConfig configName */
     configName?: (string|null);
+
+    /** ProtoTableContentGroupConfig comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoTableContentGroupConfig. */
@@ -6492,6 +6567,9 @@ export class ProtoTableContentGroupConfig implements IProtoTableContentGroupConf
 
     /** ProtoTableContentGroupConfig configName. */
     public configName: string;
+
+    /** ProtoTableContentGroupConfig comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoTableContentGroupConfig instance using the specified properties.
@@ -6694,6 +6772,9 @@ export interface IProtoTableRow {
 
     /** ProtoTableRow rowConfigNumber */
     rowConfigNumber?: (IProtoBoxedUint32|null);
+
+    /** ProtoTableRow comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoTableRow. */
@@ -6716,6 +6797,9 @@ export class ProtoTableRow implements IProtoTableRow {
 
     /** ProtoTableRow rowConfigNumber. */
     public rowConfigNumber?: (IProtoBoxedUint32|null);
+
+    /** ProtoTableRow comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoTableRow instance using the specified properties.
@@ -6812,6 +6896,9 @@ export interface IProtoTableRowConfig {
 
     /** ProtoTableRowConfig rowFooter */
     rowFooter?: (string|null);
+
+    /** ProtoTableRowConfig comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoTableRowConfig. */
@@ -6837,6 +6924,9 @@ export class ProtoTableRowConfig implements IProtoTableRowConfig {
 
     /** ProtoTableRowConfig rowFooter. */
     public rowFooter: string;
+
+    /** ProtoTableRowConfig comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoTableRowConfig instance using the specified properties.
@@ -7149,6 +7239,9 @@ export interface IProtoTableCell {
 
     /** ProtoTableCell mergedUp */
     mergedUp?: (boolean|null);
+
+    /** ProtoTableCell comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoTableCell. */
@@ -7177,6 +7270,9 @@ export class ProtoTableCell implements IProtoTableCell {
 
     /** ProtoTableCell mergedUp. */
     public mergedUp: boolean;
+
+    /** ProtoTableCell comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoTableCell instance using the specified properties.
@@ -7270,6 +7366,9 @@ export interface IProtoTableCellConfig {
 
     /** ProtoTableCellConfig cellType */
     cellType?: (IProtoBoxedTableCellType|null);
+
+    /** ProtoTableCellConfig comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoTableCellConfig. */
@@ -7292,6 +7391,9 @@ export class ProtoTableCellConfig implements IProtoTableCellConfig {
 
     /** ProtoTableCellConfig cellType. */
     public cellType?: (IProtoBoxedTableCellType|null);
+
+    /** ProtoTableCellConfig comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoTableCellConfig instance using the specified properties.
@@ -7633,6 +7735,9 @@ export interface IProtoText {
 
     /** ProtoText content */
     content?: (string|null);
+
+    /** ProtoText comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoText. */
@@ -7649,6 +7754,9 @@ export class ProtoText implements IProtoText {
 
     /** ProtoText content. */
     public content: string;
+
+    /** ProtoText comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoText instance using the specified properties.
@@ -7760,6 +7868,9 @@ export interface IProtoBarcode {
 
     /** ProtoBarcode positionAbsolute */
     positionAbsolute?: (boolean|null);
+
+    /** ProtoBarcode comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoBarcode. */
@@ -7800,6 +7911,9 @@ export class ProtoBarcode implements IProtoBarcode {
 
     /** ProtoBarcode positionAbsolute. */
     public positionAbsolute: boolean;
+
+    /** ProtoBarcode comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoBarcode instance using the specified properties.
@@ -7887,6 +8001,9 @@ export interface IProtoBrickReference {
 
     /** ProtoBrickReference version */
     version?: (number|null);
+
+    /** ProtoBrickReference comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoBrickReference. */
@@ -7903,6 +8020,9 @@ export class ProtoBrickReference implements IProtoBrickReference {
 
     /** ProtoBrickReference version. */
     public version: number;
+
+    /** ProtoBrickReference comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoBrickReference instance using the specified properties.
@@ -9008,6 +9128,9 @@ export interface IProtoImage {
 
     /** ProtoImage hyperlink */
     hyperlink?: (string|null);
+
+    /** ProtoImage comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoImage. */
@@ -9075,6 +9198,9 @@ export class ProtoImage implements IProtoImage {
 
     /** ProtoImage hyperlink. */
     public hyperlink: string;
+
+    /** ProtoImage comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoImage instance using the specified properties.
@@ -9422,6 +9548,9 @@ export interface IProtoVariable {
 
     /** ProtoVariable uuid */
     uuid?: (string|null);
+
+    /** ProtoVariable comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoVariable. */
@@ -9450,6 +9579,9 @@ export class ProtoVariable implements IProtoVariable {
 
     /** ProtoVariable uuid. */
     public uuid: string;
+
+    /** ProtoVariable comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoVariable instance using the specified properties.
@@ -9669,6 +9801,9 @@ export interface IProtoApplyProtoCDef {
 
     /** ProtoApplyProtoCDef cDefUuid */
     cDefUuid?: (string|null);
+
+    /** ProtoApplyProtoCDef comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoApplyProtoCDef. */
@@ -9682,6 +9817,9 @@ export class ProtoApplyProtoCDef implements IProtoApplyProtoCDef {
 
     /** ProtoApplyProtoCDef cDefUuid. */
     public cDefUuid: string;
+
+    /** ProtoApplyProtoCDef comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoApplyProtoCDef instance using the specified properties.
@@ -9766,6 +9904,9 @@ export interface IProtoApplyProtoPDef {
 
     /** ProtoApplyProtoPDef pDefUuid */
     pDefUuid?: (string|null);
+
+    /** ProtoApplyProtoPDef comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoApplyProtoPDef. */
@@ -9779,6 +9920,9 @@ export class ProtoApplyProtoPDef implements IProtoApplyProtoPDef {
 
     /** ProtoApplyProtoPDef pDefUuid. */
     public pDefUuid: string;
+
+    /** ProtoApplyProtoPDef comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoApplyProtoPDef instance using the specified properties.
@@ -9863,6 +10007,9 @@ export interface IProtoApplyPtConfig {
 
     /** ProtoApplyPtConfig ptConfigUuid */
     ptConfigUuid?: (string|null);
+
+    /** ProtoApplyPtConfig comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoApplyPtConfig. */
@@ -9876,6 +10023,9 @@ export class ProtoApplyPtConfig implements IProtoApplyPtConfig {
 
     /** ProtoApplyPtConfig ptConfigUuid. */
     public ptConfigUuid: string;
+
+    /** ProtoApplyPtConfig comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoApplyPtConfig instance using the specified properties.
@@ -9960,6 +10110,9 @@ export interface IProtoApplyUlConfig {
 
     /** ProtoApplyUlConfig ulConfigUuid */
     ulConfigUuid?: (string|null);
+
+    /** ProtoApplyUlConfig comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoApplyUlConfig. */
@@ -9973,6 +10126,9 @@ export class ProtoApplyUlConfig implements IProtoApplyUlConfig {
 
     /** ProtoApplyUlConfig ulConfigUuid. */
     public ulConfigUuid: string;
+
+    /** ProtoApplyUlConfig comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoApplyUlConfig instance using the specified properties.
@@ -10066,6 +10222,9 @@ export interface IProtoCDef {
 
     /** ProtoCDef Uuid */
     Uuid?: (string|null);
+
+    /** ProtoCDef comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoCDef. */
@@ -10088,6 +10247,9 @@ export class ProtoCDef implements IProtoCDef {
 
     /** ProtoCDef Uuid. */
     public Uuid: string;
+
+    /** ProtoCDef comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoCDef instance using the specified properties.
@@ -10178,6 +10340,9 @@ export interface IProtoPDef {
 
     /** ProtoPDef Uuid */
     Uuid?: (string|null);
+
+    /** ProtoPDef comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoPDef. */
@@ -10197,6 +10362,9 @@ export class ProtoPDef implements IProtoPDef {
 
     /** ProtoPDef Uuid. */
     public Uuid: string;
+
+    /** ProtoPDef comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoPDef instance using the specified properties.
@@ -10293,6 +10461,9 @@ export interface IProtoPtConfig {
 
     /** ProtoPtConfig Uuid */
     Uuid?: (string|null);
+
+    /** ProtoPtConfig comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoPtConfig. */
@@ -10318,6 +10489,9 @@ export class ProtoPtConfig implements IProtoPtConfig {
 
     /** ProtoPtConfig Uuid. */
     public Uuid: string;
+
+    /** ProtoPtConfig comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoPtConfig instance using the specified properties.
@@ -10405,6 +10579,9 @@ export interface IProtoUlConfig {
 
     /** ProtoUlConfig Uuid */
     Uuid?: (string|null);
+
+    /** ProtoUlConfig comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoUlConfig. */
@@ -10421,6 +10598,9 @@ export class ProtoUlConfig implements IProtoUlConfig {
 
     /** ProtoUlConfig Uuid. */
     public Uuid: string;
+
+    /** ProtoUlConfig comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoUlConfig instance using the specified properties.
@@ -10530,6 +10710,9 @@ export interface IProtoNewPage {
 
     /** ProtoNewPage pageOrientation */
     pageOrientation?: (ProtoPageOrientation|null);
+
+    /** ProtoNewPage comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoNewPage. */
@@ -10552,6 +10735,9 @@ export class ProtoNewPage implements IProtoNewPage {
 
     /** ProtoNewPage pageOrientation. */
     public pageOrientation: ProtoPageOrientation;
+
+    /** ProtoNewPage comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoNewPage instance using the specified properties.
@@ -10884,6 +11070,9 @@ export interface IProtoLoopEntry {
 
     /** ProtoLoopEntry uuid */
     uuid?: (string|null);
+
+    /** ProtoLoopEntry comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoLoopEntry. */
@@ -10909,6 +11098,9 @@ export class ProtoLoopEntry implements IProtoLoopEntry {
 
     /** ProtoLoopEntry uuid. */
     public uuid: string;
+
+    /** ProtoLoopEntry comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoLoopEntry instance using the specified properties.
@@ -11380,6 +11572,9 @@ export interface IProtoRule {
 
     /** ProtoRule boundaries */
     boundaries?: (IProtoRuleBoundaries|null);
+
+    /** ProtoRule comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoRule. */
@@ -11417,6 +11612,9 @@ export class ProtoRule implements IProtoRule {
 
     /** ProtoRule boundaries. */
     public boundaries?: (IProtoRuleBoundaries|null);
+
+    /** ProtoRule comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoRule instance using the specified properties.
@@ -11610,6 +11808,9 @@ export interface IProtoColorDef {
 
     /** ProtoColorDef color */
     color?: (IProtoColor|null);
+
+    /** ProtoColorDef comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoColorDef. */
@@ -11623,6 +11824,9 @@ export class ProtoColorDef implements IProtoColorDef {
 
     /** ProtoColorDef color. */
     public color?: (IProtoColor|null);
+
+    /** ProtoColorDef comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoColorDef instance using the specified properties.
@@ -11710,6 +11914,9 @@ export interface IProtoLayout {
 
     /** ProtoLayout name */
     name?: (string|null);
+
+    /** ProtoLayout comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoLayout. */
@@ -11726,6 +11933,9 @@ export class ProtoLayout implements IProtoLayout {
 
     /** ProtoLayout name. */
     public name: string;
+
+    /** ProtoLayout comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoLayout instance using the specified properties.
@@ -11976,6 +12186,9 @@ export interface IProtoAdjustHorizontally {
 
     /** ProtoAdjustHorizontally maxFontSize */
     maxFontSize?: (IProtoMeasure|null);
+
+    /** ProtoAdjustHorizontally comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoAdjustHorizontally. */
@@ -11998,6 +12211,9 @@ export class ProtoAdjustHorizontally implements IProtoAdjustHorizontally {
 
     /** ProtoAdjustHorizontally maxFontSize. */
     public maxFontSize?: (IProtoMeasure|null);
+
+    /** ProtoAdjustHorizontally comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoAdjustHorizontally instance using the specified properties.
@@ -12095,6 +12311,9 @@ export interface IProtoDoctypeScript {
 
     /** ProtoDoctypeScript outputMode */
     outputMode?: (ProtoDoctypeOutputMode|null);
+
+    /** ProtoDoctypeScript comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoDoctypeScript. */
@@ -12114,6 +12333,9 @@ export class ProtoDoctypeScript implements IProtoDoctypeScript {
 
     /** ProtoDoctypeScript outputMode. */
     public outputMode: ProtoDoctypeOutputMode;
+
+    /** ProtoDoctypeScript comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoDoctypeScript instance using the specified properties.
@@ -12201,6 +12423,9 @@ export interface IProtoDmScript {
 
     /** ProtoDmScript content */
     content?: (string|null);
+
+    /** ProtoDmScript comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoDmScript. */
@@ -12217,6 +12442,9 @@ export class ProtoDmScript implements IProtoDmScript {
 
     /** ProtoDmScript content. */
     public content: string;
+
+    /** ProtoDmScript comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoDmScript instance using the specified properties.

@@ -5,4 +5,5 @@ message ProtoNamedString {
   // extends BranchDocumentElement
 
   string name = 3;
+  repeated string comChannelUUIDs = 4;
 }

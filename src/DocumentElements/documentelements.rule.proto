@@ -18,6 +18,7 @@ message ProtoRule {
   // Both boundaries can be independently set to be either an absolute value e.g. PT or a relative value e.g. %.
   // If the rule is a normal rule, this field is ignored.
   ProtoRuleBoundaries boundaries = 9;
+  repeated string comChannelUUIDs = 10;
 }
 
 enum ProtoRuleMode {
