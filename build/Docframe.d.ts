@@ -8135,6 +8135,9 @@ export interface IProtoTemplate {
 
     /** ProtoTemplate columnBalancing */
     columnBalancing?: (ColumnBalancing|null);
+
+    /** ProtoTemplate semanticType */
+    semanticType?: (IProtoBoxedString|null);
 }
 
 /** Represents a ProtoTemplate. */
@@ -8163,6 +8166,9 @@ export class ProtoTemplate implements IProtoTemplate {
 
     /** ProtoTemplate columnBalancing. */
     public columnBalancing: ColumnBalancing;
+
+    /** ProtoTemplate semanticType. */
+    public semanticType?: (IProtoBoxedString|null);
 
     /**
      * Creates a new ProtoTemplate instance using the specified properties.
@@ -9162,6 +9168,9 @@ export interface IProtoDirectory {
 
     /** ProtoDirectory comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoDirectory semanticType */
+    semanticType?: (IProtoBoxedString|null);
 }
 
 /** Represents a ProtoDirectory. */
@@ -9184,6 +9193,9 @@ export class ProtoDirectory implements IProtoDirectory {
 
     /** ProtoDirectory comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoDirectory semanticType. */
+    public semanticType?: (IProtoBoxedString|null);
 
     /**
      * Creates a new ProtoDirectory instance using the specified properties.

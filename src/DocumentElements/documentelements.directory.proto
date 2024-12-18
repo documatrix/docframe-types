@@ -6,4 +6,5 @@ message ProtoDirectory {
 
   string uuid = 3;
   repeated string comChannelUUIDs = 4;
+  ProtoBoxedString semanticType = 5;
 }
