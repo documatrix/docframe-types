@@ -21690,6 +21690,7 @@ $root.ProtoTemplate = (function() {
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTemplate comChannelUUIDs
      * @property {string|null} [uuid] ProtoTemplate uuid
      * @property {ColumnBalancing|null} [columnBalancing] ProtoTemplate columnBalancing
+     * @property {IProtoBoxedString|null} [semanticType] ProtoTemplate semanticType
      */
 
     /**
@@ -21759,6 +21760,14 @@ $root.ProtoTemplate = (function() {
     ProtoTemplate.prototype.columnBalancing = 0;
 
     /**
+     * ProtoTemplate semanticType.
+     * @member {IProtoBoxedString|null|undefined} semanticType
+     * @memberof ProtoTemplate
+     * @instance
+     */
+    ProtoTemplate.prototype.semanticType = null;
+
+    /**
      * Creates a new ProtoTemplate instance using the specified properties.
      * @function create
      * @memberof ProtoTemplate
@@ -21797,6 +21806,8 @@ $root.ProtoTemplate = (function() {
             writer.uint32(/* id 5, wireType 2 =*/42).string(message.uuid);
         if (message.columnBalancing != null && Object.hasOwnProperty.call(message, "columnBalancing"))
             writer.uint32(/* id 6, wireType 0 =*/48).int32(message.columnBalancing);
+        if (message.semanticType != null && Object.hasOwnProperty.call(message, "semanticType"))
+            $root.ProtoBoxedString.encode(message.semanticType, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
         return writer;
     };
 
@@ -21878,6 +21889,10 @@ $root.ProtoTemplate = (function() {
                     message.columnBalancing = reader.int32();
                     break;
                 }
+            case 7: {
+                    message.semanticType = $root.ProtoBoxedString.decode(reader, reader.uint32());
+                    break;
+                }
             default:
                 reader.skipType(tag & 7);
                 break;
@@ -21954,6 +21969,11 @@ $root.ProtoTemplate = (function() {
             case 2:
                 break;
             }
+        if (message.semanticType != null && message.hasOwnProperty("semanticType")) {
+            var error = $root.ProtoBoxedString.verify(message.semanticType);
+            if (error)
+                return "semanticType." + error;
+        }
         return null;
     };
 
@@ -22020,6 +22040,11 @@ $root.ProtoTemplate = (function() {
             message.columnBalancing = 2;
             break;
         }
+        if (object.semanticType != null) {
+            if (typeof object.semanticType !== "object")
+                throw TypeError(".ProtoTemplate.semanticType: object expected");
+            message.semanticType = $root.ProtoBoxedString.fromObject(object.semanticType);
+        }
         return message;
     };
 
@@ -22046,6 +22071,7 @@ $root.ProtoTemplate = (function() {
             object.parent = null;
             object.uuid = "";
             object.columnBalancing = options.enums === String ? "NO_BALANCING" : 0;
+            object.semanticType = null;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -22069,6 +22095,8 @@ $root.ProtoTemplate = (function() {
             object.uuid = message.uuid;
         if (message.columnBalancing != null && message.hasOwnProperty("columnBalancing"))
             object.columnBalancing = options.enums === String ? $root.ColumnBalancing[message.columnBalancing] === undefined ? message.columnBalancing : $root.ColumnBalancing[message.columnBalancing] : message.columnBalancing;
+        if (message.semanticType != null && message.hasOwnProperty("semanticType"))
+            object.semanticType = $root.ProtoBoxedString.toObject(message.semanticType, options);
         return object;
     };
 
@@ -25613,6 +25641,7 @@ $root.ProtoDirectory = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoDirectory parent
      * @property {string|null} [uuid] ProtoDirectory uuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoDirectory comChannelUUIDs
+     * @property {IProtoBoxedString|null} [semanticType] ProtoDirectory semanticType
      */
 
     /**
@@ -25665,6 +25694,14 @@ $root.ProtoDirectory = (function() {
     ProtoDirectory.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoDirectory semanticType.
+     * @member {IProtoBoxedString|null|undefined} semanticType
+     * @memberof ProtoDirectory
+     * @instance
+     */
+    ProtoDirectory.prototype.semanticType = null;
+
+    /**
      * Creates a new ProtoDirectory instance using the specified properties.
      * @function create
      * @memberof ProtoDirectory
@@ -25698,6 +25735,8 @@ $root.ProtoDirectory = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.semanticType != null && Object.hasOwnProperty.call(message, "semanticType"))
+            $root.ProtoBoxedString.encode(message.semanticType, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
         return writer;
     };
 
@@ -25750,6 +25789,10 @@ $root.ProtoDirectory = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 5: {
+                    message.semanticType = $root.ProtoBoxedString.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -25811,6 +25854,11 @@ $root.ProtoDirectory = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.semanticType != null && message.hasOwnProperty("semanticType")) {
+            var error = $root.ProtoBoxedString.verify(message.semanticType);
+            if (error)
+                return "semanticType." + error;
+        }
         return null;
     };
 
@@ -25850,6 +25898,11 @@ $root.ProtoDirectory = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.semanticType != null) {
+            if (typeof object.semanticType !== "object")
+                throw TypeError(".ProtoDirectory.semanticType: object expected");
+            message.semanticType = $root.ProtoBoxedString.fromObject(object.semanticType);
+        }
         return message;
     };
 
@@ -25873,6 +25926,7 @@ $root.ProtoDirectory = (function() {
         if (options.defaults) {
             object.parent = null;
             object.uuid = "";
+            object.semanticType = null;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -25888,6 +25942,8 @@ $root.ProtoDirectory = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.semanticType != null && message.hasOwnProperty("semanticType"))
+            object.semanticType = $root.ProtoBoxedString.toObject(message.semanticType, options);
         return object;
     };
 

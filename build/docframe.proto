@@ -646,6 +646,7 @@ map<string, string> containerMapping = 3;
 repeated string comChannelUUIDs = 4;
 string uuid = 5;
 ColumnBalancing columnBalancing = 6;
+ProtoBoxedString semanticType = 7;
 }
 
 enum ColumnBalancing {
@@ -809,6 +810,7 @@ ProtoDocumentElement parent = 2;
 
 string uuid = 3;
 repeated string comChannelUUIDs = 4;
+ProtoBoxedString semanticType = 5;
 }
 message ProtoTextBrick {
 repeated ProtoDocumentElement _children = 1;
