@@ -9419,6 +9419,9 @@ export interface IProtoVariable {
 
     /** ProtoVariable specialType */
     specialType?: (ProtoVariableSpecialType|null);
+
+    /** ProtoVariable uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoVariable. */
@@ -9444,6 +9447,9 @@ export class ProtoVariable implements IProtoVariable {
 
     /** ProtoVariable specialType. */
     public specialType: ProtoVariableSpecialType;
+
+    /** ProtoVariable uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoVariable instance using the specified properties.
