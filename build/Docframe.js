@@ -26364,6 +26364,7 @@ $root.ProtoVariable = (function() {
      * @property {string|null} [content] ProtoVariable content
      * @property {string|null} [formatUuid] ProtoVariable formatUuid
      * @property {ProtoVariableSpecialType|null} [specialType] ProtoVariable specialType
+     * @property {string|null} [uuid] ProtoVariable uuid
      */
 
     /**
@@ -26422,6 +26423,14 @@ $root.ProtoVariable = (function() {
     ProtoVariable.prototype.specialType = 0;
 
     /**
+     * ProtoVariable uuid.
+     * @member {string} uuid
+     * @memberof ProtoVariable
+     * @instance
+     */
+    ProtoVariable.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoVariable instance using the specified properties.
      * @function create
      * @memberof ProtoVariable
@@ -26455,6 +26464,8 @@ $root.ProtoVariable = (function() {
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.formatUuid);
         if (message.specialType != null && Object.hasOwnProperty.call(message, "specialType"))
             writer.uint32(/* id 5, wireType 0 =*/40).int32(message.specialType);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.uuid);
         return writer;
     };
 
@@ -26507,6 +26518,10 @@ $root.ProtoVariable = (function() {
                 }
             case 5: {
                     message.specialType = reader.int32();
+                    break;
+                }
+            case 6: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -26574,6 +26589,9 @@ $root.ProtoVariable = (function() {
             case 9:
                 break;
             }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -26648,6 +26666,8 @@ $root.ProtoVariable = (function() {
             message.specialType = 9;
             break;
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -26670,6 +26690,7 @@ $root.ProtoVariable = (function() {
             object.content = "";
             object.formatUuid = "";
             object.specialType = options.enums === String ? "NOT_SPECIAL" : 0;
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -26681,6 +26702,8 @@ $root.ProtoVariable = (function() {
             object.formatUuid = message.formatUuid;
         if (message.specialType != null && message.hasOwnProperty("specialType"))
             object.specialType = options.enums === String ? $root.ProtoVariableSpecialType[message.specialType] === undefined ? message.specialType : $root.ProtoVariableSpecialType[message.specialType] : message.specialType;
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 

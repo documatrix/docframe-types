@@ -6,6 +6,7 @@ message ProtoVariable {
   string content = 3; // Should this be optional or "empty string"
   string formatUuid = 4;
   ProtoVariableSpecialType specialType = 5;
+  string uuid = 6;
 }
 
 enum ProtoVariableSpecialType {
