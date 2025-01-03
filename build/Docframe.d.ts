@@ -5895,10 +5895,10 @@ export interface IProtoTable {
     configName?: (string|null);
 
     /** ProtoTable carryOver */
-    carryOver?: (IProtoCarryOver|null);
+    carryOver?: (INode|null);
 
     /** ProtoTable subTotal */
-    subTotal?: (IProtoSubTotal|null);
+    subTotal?: (INode|null);
 
     /** ProtoTable comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
@@ -5926,10 +5926,10 @@ export class ProtoTable implements IProtoTable {
     public configName: string;
 
     /** ProtoTable carryOver. */
-    public carryOver?: (IProtoCarryOver|null);
+    public carryOver?: (INode|null);
 
     /** ProtoTable subTotal. */
-    public subTotal?: (IProtoSubTotal|null);
+    public subTotal?: (INode|null);
 
     /** ProtoTable comChannelUUIDs. */
     public comChannelUUIDs: string[];
