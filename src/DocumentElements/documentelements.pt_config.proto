@@ -5,4 +5,5 @@ message ProtoPtConfig {
   ProtoBoxedMeasure characterWidth = 3;
   ProtoBoxedMeasure spaceWidth = 4;
   string Uuid = 5;
+  repeated string comChannelUUIDs = 6;
 }

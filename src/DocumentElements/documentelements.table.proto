@@ -19,6 +19,7 @@ message ProtoTableConfig {
 
   ProtoTableSettings settings = 2;
   string configName = 3;
+  repeated string comChannelUUIDs = 4;
 }
 
 // go-gen:ignore
@@ -51,6 +52,7 @@ message ProtoTableContentGroup {
   // extends BranchDocumentElement
 
   ProtoTableContentGroupSettings settings = 3;
+  repeated string comChannelUUIDs = 4;
 }
 
 message ProtoTableContentGroupConfig {
@@ -60,6 +62,7 @@ message ProtoTableContentGroupConfig {
 
   ProtoTableContentGroupSettings settings = 2;
   string configName = 3;
+  repeated string comChannelUUIDs = 4;
 }
 
 // go-gen:ignore
@@ -78,6 +81,7 @@ message ProtoTableRow {
 
   ProtoTableRowSettings settings = 3;
   ProtoBoxedUint32 rowConfigNumber = 4;
+  repeated string comChannelUUIDs = 5;
 }
 
 message ProtoTableRowConfig {
@@ -89,6 +93,7 @@ message ProtoTableRowConfig {
   string configName = 3;
   string rowHeader = 4;
   string rowFooter = 5;
+  repeated string comChannelUUIDs = 6;
 }
 
 // go-gen:ignore
@@ -121,6 +126,7 @@ message ProtoTableCell {
   bool mergedLeft = 5;
   // Indicates if this table cell should be merged with the cell above.
   bool mergedUp = 6;
+  repeated string comChannelUUIDs = 7;
 }
 
 message ProtoTableCellConfig {
@@ -131,6 +137,7 @@ message ProtoTableCellConfig {
   ProtoTableCellSettings settings = 2;
   string configName = 3;
   ProtoBoxedTableCellType cellType = 4;
+  repeated string comChannelUUIDs = 5;
 }
 
 // go-gen:ignore

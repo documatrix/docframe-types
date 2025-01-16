@@ -7,6 +7,7 @@ message ProtoVariable {
   string formatUuid = 4;
   ProtoVariableSpecialType specialType = 5;
   string uuid = 6;
+  repeated string comChannelUUIDs = 7;
 }
 
 enum ProtoVariableSpecialType {
