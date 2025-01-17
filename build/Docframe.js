@@ -8996,17 +8996,19 @@ $root.ProtoImageReferencePoint = (function() {
  * ProtoSemanticType enum.
  * @name ProtoSemanticType
  * @enum {number}
- * @property {number} SEMANTIC_TYPE_PART=0 SEMANTIC_TYPE_PART value
- * @property {number} SEMANTIC_TYPE_ART=1 SEMANTIC_TYPE_ART value
- * @property {number} SEMANTIC_TYPE_SECT=2 SEMANTIC_TYPE_SECT value
- * @property {number} SEMANTIC_TYPE_DIV=3 SEMANTIC_TYPE_DIV value
+ * @property {number} SEMANTIC_TYPE_NONE=0 SEMANTIC_TYPE_NONE value
+ * @property {number} SEMANTIC_TYPE_PART=1 SEMANTIC_TYPE_PART value
+ * @property {number} SEMANTIC_TYPE_ART=2 SEMANTIC_TYPE_ART value
+ * @property {number} SEMANTIC_TYPE_SECT=3 SEMANTIC_TYPE_SECT value
+ * @property {number} SEMANTIC_TYPE_DIV=4 SEMANTIC_TYPE_DIV value
  */
 $root.ProtoSemanticType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "SEMANTIC_TYPE_PART"] = 0;
-    values[valuesById[1] = "SEMANTIC_TYPE_ART"] = 1;
-    values[valuesById[2] = "SEMANTIC_TYPE_SECT"] = 2;
-    values[valuesById[3] = "SEMANTIC_TYPE_DIV"] = 3;
+    values[valuesById[0] = "SEMANTIC_TYPE_NONE"] = 0;
+    values[valuesById[1] = "SEMANTIC_TYPE_PART"] = 1;
+    values[valuesById[2] = "SEMANTIC_TYPE_ART"] = 2;
+    values[valuesById[3] = "SEMANTIC_TYPE_SECT"] = 3;
+    values[valuesById[4] = "SEMANTIC_TYPE_DIV"] = 4;
     return values;
 })();
 
@@ -22795,6 +22797,7 @@ $root.ProtoTemplate = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         return null;
@@ -22870,21 +22873,25 @@ $root.ProtoTemplate = (function() {
                 break;
             }
             break;
-        case "SEMANTIC_TYPE_PART":
+        case "SEMANTIC_TYPE_NONE":
         case 0:
             message.semanticType = 0;
             break;
-        case "SEMANTIC_TYPE_ART":
+        case "SEMANTIC_TYPE_PART":
         case 1:
             message.semanticType = 1;
             break;
-        case "SEMANTIC_TYPE_SECT":
+        case "SEMANTIC_TYPE_ART":
         case 2:
             message.semanticType = 2;
             break;
-        case "SEMANTIC_TYPE_DIV":
+        case "SEMANTIC_TYPE_SECT":
         case 3:
             message.semanticType = 3;
+            break;
+        case "SEMANTIC_TYPE_DIV":
+        case 4:
+            message.semanticType = 4;
             break;
         }
         return message;
@@ -22913,7 +22920,7 @@ $root.ProtoTemplate = (function() {
             object.parent = null;
             object.uuid = "";
             object.columnBalancing = options.enums === String ? "NO_BALANCING" : 0;
-            object.semanticType = options.enums === String ? "SEMANTIC_TYPE_PART" : 0;
+            object.semanticType = options.enums === String ? "SEMANTIC_TYPE_NONE" : 0;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -26744,6 +26751,7 @@ $root.ProtoDirectory = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         return null;
@@ -26792,21 +26800,25 @@ $root.ProtoDirectory = (function() {
                 break;
             }
             break;
-        case "SEMANTIC_TYPE_PART":
+        case "SEMANTIC_TYPE_NONE":
         case 0:
             message.semanticType = 0;
             break;
-        case "SEMANTIC_TYPE_ART":
+        case "SEMANTIC_TYPE_PART":
         case 1:
             message.semanticType = 1;
             break;
-        case "SEMANTIC_TYPE_SECT":
+        case "SEMANTIC_TYPE_ART":
         case 2:
             message.semanticType = 2;
             break;
-        case "SEMANTIC_TYPE_DIV":
+        case "SEMANTIC_TYPE_SECT":
         case 3:
             message.semanticType = 3;
+            break;
+        case "SEMANTIC_TYPE_DIV":
+        case 4:
+            message.semanticType = 4;
             break;
         }
         return message;
@@ -26832,7 +26844,7 @@ $root.ProtoDirectory = (function() {
         if (options.defaults) {
             object.parent = null;
             object.uuid = "";
-            object.semanticType = options.enums === String ? "SEMANTIC_TYPE_PART" : 0;
+            object.semanticType = options.enums === String ? "SEMANTIC_TYPE_NONE" : 0;
         }
         if (message._children && message._children.length) {
             object._children = [];

@@ -3599,10 +3599,11 @@ export enum ProtoImageReferencePoint {
 
 /** ProtoSemanticType enum. */
 export enum ProtoSemanticType {
-    SEMANTIC_TYPE_PART = 0,
-    SEMANTIC_TYPE_ART = 1,
-    SEMANTIC_TYPE_SECT = 2,
-    SEMANTIC_TYPE_DIV = 3
+    SEMANTIC_TYPE_NONE = 0,
+    SEMANTIC_TYPE_PART = 1,
+    SEMANTIC_TYPE_ART = 2,
+    SEMANTIC_TYPE_SECT = 3,
+    SEMANTIC_TYPE_DIV = 4
 }
 
 /** Properties of a ProtoDocumentElement. */
