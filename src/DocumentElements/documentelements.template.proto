@@ -10,7 +10,7 @@ message ProtoTemplate {
   repeated string comChannelUUIDs = 4;
   string uuid = 5;
   ColumnBalancing columnBalancing = 6;
-  ProtoBoxedString semanticType = 7;
+  ProtoSemanticType semanticType = 7;
 }
 
 enum ColumnBalancing {
