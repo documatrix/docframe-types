@@ -275,6 +275,12 @@ REF_POINT_CENTER = 3;
 REF_POINT_BOTTOM_RIGHT = 4;
 REF_POINT_TOP_RIGHT = 5;
 }
+enum ProtoSemanticType {
+SEMANTIC_TYPE_PART = 0;
+SEMANTIC_TYPE_ART = 1;
+SEMANTIC_TYPE_SECT = 2;
+SEMANTIC_TYPE_DIV = 3;
+}
 message ProtoDocumentElement {
 ProtoDocumentElement parent = 1;
 repeated string comChannelUUIDs = 2;
@@ -666,7 +672,7 @@ map<string, string> containerMapping = 3;
 repeated string comChannelUUIDs = 4;
 string uuid = 5;
 ColumnBalancing columnBalancing = 6;
-ProtoBoxedString semanticType = 7;
+ProtoSemanticType semanticType = 7;
 }
 
 enum ColumnBalancing {
@@ -831,7 +837,7 @@ ProtoDocumentElement parent = 2;
 
 string uuid = 3;
 repeated string comChannelUUIDs = 4;
-ProtoBoxedString semanticType = 5;
+ProtoSemanticType semanticType = 5;
 }
 message ProtoTextBrick {
 repeated ProtoDocumentElement _children = 1;

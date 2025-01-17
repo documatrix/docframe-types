@@ -8992,6 +8992,24 @@ $root.ProtoImageReferencePoint = (function() {
     return values;
 })();
 
+/**
+ * ProtoSemanticType enum.
+ * @name ProtoSemanticType
+ * @enum {number}
+ * @property {number} SEMANTIC_TYPE_PART=0 SEMANTIC_TYPE_PART value
+ * @property {number} SEMANTIC_TYPE_ART=1 SEMANTIC_TYPE_ART value
+ * @property {number} SEMANTIC_TYPE_SECT=2 SEMANTIC_TYPE_SECT value
+ * @property {number} SEMANTIC_TYPE_DIV=3 SEMANTIC_TYPE_DIV value
+ */
+$root.ProtoSemanticType = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "SEMANTIC_TYPE_PART"] = 0;
+    values[valuesById[1] = "SEMANTIC_TYPE_ART"] = 1;
+    values[valuesById[2] = "SEMANTIC_TYPE_SECT"] = 2;
+    values[valuesById[3] = "SEMANTIC_TYPE_DIV"] = 3;
+    return values;
+})();
+
 $root.ProtoDocumentElement = (function() {
 
     /**
@@ -22490,7 +22508,7 @@ $root.ProtoTemplate = (function() {
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTemplate comChannelUUIDs
      * @property {string|null} [uuid] ProtoTemplate uuid
      * @property {ColumnBalancing|null} [columnBalancing] ProtoTemplate columnBalancing
-     * @property {IProtoBoxedString|null} [semanticType] ProtoTemplate semanticType
+     * @property {ProtoSemanticType|null} [semanticType] ProtoTemplate semanticType
      */
 
     /**
@@ -22561,11 +22579,11 @@ $root.ProtoTemplate = (function() {
 
     /**
      * ProtoTemplate semanticType.
-     * @member {IProtoBoxedString|null|undefined} semanticType
+     * @member {ProtoSemanticType} semanticType
      * @memberof ProtoTemplate
      * @instance
      */
-    ProtoTemplate.prototype.semanticType = null;
+    ProtoTemplate.prototype.semanticType = 0;
 
     /**
      * Creates a new ProtoTemplate instance using the specified properties.
@@ -22607,7 +22625,7 @@ $root.ProtoTemplate = (function() {
         if (message.columnBalancing != null && Object.hasOwnProperty.call(message, "columnBalancing"))
             writer.uint32(/* id 6, wireType 0 =*/48).int32(message.columnBalancing);
         if (message.semanticType != null && Object.hasOwnProperty.call(message, "semanticType"))
-            $root.ProtoBoxedString.encode(message.semanticType, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+            writer.uint32(/* id 7, wireType 0 =*/56).int32(message.semanticType);
         return writer;
     };
 
@@ -22690,7 +22708,7 @@ $root.ProtoTemplate = (function() {
                     break;
                 }
             case 7: {
-                    message.semanticType = $root.ProtoBoxedString.decode(reader, reader.uint32());
+                    message.semanticType = reader.int32();
                     break;
                 }
             default:
@@ -22769,11 +22787,16 @@ $root.ProtoTemplate = (function() {
             case 2:
                 break;
             }
-        if (message.semanticType != null && message.hasOwnProperty("semanticType")) {
-            var error = $root.ProtoBoxedString.verify(message.semanticType);
-            if (error)
-                return "semanticType." + error;
-        }
+        if (message.semanticType != null && message.hasOwnProperty("semanticType"))
+            switch (message.semanticType) {
+            default:
+                return "semanticType: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                break;
+            }
         return null;
     };
 
@@ -22840,10 +22863,29 @@ $root.ProtoTemplate = (function() {
             message.columnBalancing = 2;
             break;
         }
-        if (object.semanticType != null) {
-            if (typeof object.semanticType !== "object")
-                throw TypeError(".ProtoTemplate.semanticType: object expected");
-            message.semanticType = $root.ProtoBoxedString.fromObject(object.semanticType);
+        switch (object.semanticType) {
+        default:
+            if (typeof object.semanticType === "number") {
+                message.semanticType = object.semanticType;
+                break;
+            }
+            break;
+        case "SEMANTIC_TYPE_PART":
+        case 0:
+            message.semanticType = 0;
+            break;
+        case "SEMANTIC_TYPE_ART":
+        case 1:
+            message.semanticType = 1;
+            break;
+        case "SEMANTIC_TYPE_SECT":
+        case 2:
+            message.semanticType = 2;
+            break;
+        case "SEMANTIC_TYPE_DIV":
+        case 3:
+            message.semanticType = 3;
+            break;
         }
         return message;
     };
@@ -22871,7 +22913,7 @@ $root.ProtoTemplate = (function() {
             object.parent = null;
             object.uuid = "";
             object.columnBalancing = options.enums === String ? "NO_BALANCING" : 0;
-            object.semanticType = null;
+            object.semanticType = options.enums === String ? "SEMANTIC_TYPE_PART" : 0;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -22896,7 +22938,7 @@ $root.ProtoTemplate = (function() {
         if (message.columnBalancing != null && message.hasOwnProperty("columnBalancing"))
             object.columnBalancing = options.enums === String ? $root.ColumnBalancing[message.columnBalancing] === undefined ? message.columnBalancing : $root.ColumnBalancing[message.columnBalancing] : message.columnBalancing;
         if (message.semanticType != null && message.hasOwnProperty("semanticType"))
-            object.semanticType = $root.ProtoBoxedString.toObject(message.semanticType, options);
+            object.semanticType = options.enums === String ? $root.ProtoSemanticType[message.semanticType] === undefined ? message.semanticType : $root.ProtoSemanticType[message.semanticType] : message.semanticType;
         return object;
     };
 
@@ -26481,7 +26523,7 @@ $root.ProtoDirectory = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoDirectory parent
      * @property {string|null} [uuid] ProtoDirectory uuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoDirectory comChannelUUIDs
-     * @property {IProtoBoxedString|null} [semanticType] ProtoDirectory semanticType
+     * @property {ProtoSemanticType|null} [semanticType] ProtoDirectory semanticType
      */
 
     /**
@@ -26535,11 +26577,11 @@ $root.ProtoDirectory = (function() {
 
     /**
      * ProtoDirectory semanticType.
-     * @member {IProtoBoxedString|null|undefined} semanticType
+     * @member {ProtoSemanticType} semanticType
      * @memberof ProtoDirectory
      * @instance
      */
-    ProtoDirectory.prototype.semanticType = null;
+    ProtoDirectory.prototype.semanticType = 0;
 
     /**
      * Creates a new ProtoDirectory instance using the specified properties.
@@ -26576,7 +26618,7 @@ $root.ProtoDirectory = (function() {
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
         if (message.semanticType != null && Object.hasOwnProperty.call(message, "semanticType"))
-            $root.ProtoBoxedString.encode(message.semanticType, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+            writer.uint32(/* id 5, wireType 0 =*/40).int32(message.semanticType);
         return writer;
     };
 
@@ -26632,7 +26674,7 @@ $root.ProtoDirectory = (function() {
                     break;
                 }
             case 5: {
-                    message.semanticType = $root.ProtoBoxedString.decode(reader, reader.uint32());
+                    message.semanticType = reader.int32();
                     break;
                 }
             default:
@@ -26694,11 +26736,16 @@ $root.ProtoDirectory = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
-        if (message.semanticType != null && message.hasOwnProperty("semanticType")) {
-            var error = $root.ProtoBoxedString.verify(message.semanticType);
-            if (error)
-                return "semanticType." + error;
-        }
+        if (message.semanticType != null && message.hasOwnProperty("semanticType"))
+            switch (message.semanticType) {
+            default:
+                return "semanticType: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                break;
+            }
         return null;
     };
 
@@ -26738,10 +26785,29 @@ $root.ProtoDirectory = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
-        if (object.semanticType != null) {
-            if (typeof object.semanticType !== "object")
-                throw TypeError(".ProtoDirectory.semanticType: object expected");
-            message.semanticType = $root.ProtoBoxedString.fromObject(object.semanticType);
+        switch (object.semanticType) {
+        default:
+            if (typeof object.semanticType === "number") {
+                message.semanticType = object.semanticType;
+                break;
+            }
+            break;
+        case "SEMANTIC_TYPE_PART":
+        case 0:
+            message.semanticType = 0;
+            break;
+        case "SEMANTIC_TYPE_ART":
+        case 1:
+            message.semanticType = 1;
+            break;
+        case "SEMANTIC_TYPE_SECT":
+        case 2:
+            message.semanticType = 2;
+            break;
+        case "SEMANTIC_TYPE_DIV":
+        case 3:
+            message.semanticType = 3;
+            break;
         }
         return message;
     };
@@ -26766,7 +26832,7 @@ $root.ProtoDirectory = (function() {
         if (options.defaults) {
             object.parent = null;
             object.uuid = "";
-            object.semanticType = null;
+            object.semanticType = options.enums === String ? "SEMANTIC_TYPE_PART" : 0;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -26783,7 +26849,7 @@ $root.ProtoDirectory = (function() {
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
         if (message.semanticType != null && message.hasOwnProperty("semanticType"))
-            object.semanticType = $root.ProtoBoxedString.toObject(message.semanticType, options);
+            object.semanticType = options.enums === String ? $root.ProtoSemanticType[message.semanticType] === undefined ? message.semanticType : $root.ProtoSemanticType[message.semanticType] : message.semanticType;
         return object;
     };
 

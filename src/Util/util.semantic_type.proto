@@ -1,0 +1,6 @@
+enum ProtoSemanticType {
+  SEMANTIC_TYPE_PART = 0;
+  SEMANTIC_TYPE_ART = 1;
+  SEMANTIC_TYPE_SECT = 2;
+  SEMANTIC_TYPE_DIV = 3;
+}

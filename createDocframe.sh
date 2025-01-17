@@ -33,6 +33,7 @@ declare -a FileArray=(
   "src/Util/util.html_parser.proto"
   "src/Util/util.underline_spec.proto"
   "src/Util/util.image_settings.proto"
+  "src/Util/util.semantic_type.proto"
   "src/DocumentElements/documentelements.document_element.proto"
   "src/DocumentElements/documentelements.branch_document_element.proto"
   "src/DocumentElements/documentelements.link.proto"

@@ -3597,6 +3597,14 @@ export enum ProtoImageReferencePoint {
     REF_POINT_TOP_RIGHT = 5
 }
 
+/** ProtoSemanticType enum. */
+export enum ProtoSemanticType {
+    SEMANTIC_TYPE_PART = 0,
+    SEMANTIC_TYPE_ART = 1,
+    SEMANTIC_TYPE_SECT = 2,
+    SEMANTIC_TYPE_DIV = 3
+}
+
 /** Properties of a ProtoDocumentElement. */
 export interface IProtoDocumentElement {
 
@@ -8257,7 +8265,7 @@ export interface IProtoTemplate {
     columnBalancing?: (ColumnBalancing|null);
 
     /** ProtoTemplate semanticType */
-    semanticType?: (IProtoBoxedString|null);
+    semanticType?: (ProtoSemanticType|null);
 }
 
 /** Represents a ProtoTemplate. */
@@ -8288,7 +8296,7 @@ export class ProtoTemplate implements IProtoTemplate {
     public columnBalancing: ColumnBalancing;
 
     /** ProtoTemplate semanticType. */
-    public semanticType?: (IProtoBoxedString|null);
+    public semanticType: ProtoSemanticType;
 
     /**
      * Creates a new ProtoTemplate instance using the specified properties.
@@ -9296,7 +9304,7 @@ export interface IProtoDirectory {
     comChannelUUIDs?: (string[]|null);
 
     /** ProtoDirectory semanticType */
-    semanticType?: (IProtoBoxedString|null);
+    semanticType?: (ProtoSemanticType|null);
 }
 
 /** Represents a ProtoDirectory. */
@@ -9321,7 +9329,7 @@ export class ProtoDirectory implements IProtoDirectory {
     public comChannelUUIDs: string[];
 
     /** ProtoDirectory semanticType. */
-    public semanticType?: (IProtoBoxedString|null);
+    public semanticType: ProtoSemanticType;
 
     /**
      * Creates a new ProtoDirectory instance using the specified properties.
