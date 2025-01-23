@@ -22786,7 +22786,6 @@ $root.ProtoTemplate = (function() {
                 return "columnBalancing: enum value expected";
             case 0:
             case 1:
-            case 2:
                 break;
             }
         if (message.semanticType != null && message.hasOwnProperty("semanticType"))
@@ -22860,10 +22859,6 @@ $root.ProtoTemplate = (function() {
         case "BALANCING":
         case 1:
             message.columnBalancing = 1;
-            break;
-        case "BALANCING_INHERITED":
-        case 2:
-            message.columnBalancing = 2;
             break;
         }
         switch (object.semanticType) {
@@ -22984,13 +22979,11 @@ $root.ProtoTemplate = (function() {
  * @enum {number}
  * @property {number} NO_BALANCING=0 NO_BALANCING value
  * @property {number} BALANCING=1 BALANCING value
- * @property {number} BALANCING_INHERITED=2 BALANCING_INHERITED value
  */
 $root.ColumnBalancing = (function() {
     var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "NO_BALANCING"] = 0;
     values[valuesById[1] = "BALANCING"] = 1;
-    values[valuesById[2] = "BALANCING_INHERITED"] = 2;
     return values;
 })();
 

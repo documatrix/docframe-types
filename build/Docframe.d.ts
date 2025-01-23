@@ -8380,8 +8380,7 @@ export class ProtoTemplate implements IProtoTemplate {
 /** ColumnBalancing enum. */
 export enum ColumnBalancing {
     NO_BALANCING = 0,
-    BALANCING = 1,
-    BALANCING_INHERITED = 2
+    BALANCING = 1
 }
 
 /** Properties of a ProtoHeader. */
