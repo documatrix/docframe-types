@@ -679,7 +679,6 @@ ProtoSemanticType semanticType = 7;
 enum ColumnBalancing {
 NO_BALANCING = 0;
 BALANCING = 1;
-BALANCING_INHERITED = 2;
 }
 message ProtoHeader {
 repeated ProtoDocumentElement _children = 1;
