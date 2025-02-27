@@ -5570,14 +5570,11 @@ export interface IProtoSection {
     /** ProtoSection parent */
     parent?: (IProtoDocumentElement|null);
 
-    /** ProtoSection pageWidth */
-    pageWidth?: (IProtoMeasure|null);
+    /** ProtoSection Uuid */
+    Uuid?: (string|null);
 
-    /** ProtoSection pageDepth */
-    pageDepth?: (IProtoMeasure|null);
-
-    /** ProtoSection columnSettings */
-    columnSettings?: (IProtoColumnSettings|null);
+    /** ProtoSection cDefUuid */
+    cDefUuid?: (string|null);
 
     /** ProtoSection comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
@@ -5598,14 +5595,11 @@ export class ProtoSection implements IProtoSection {
     /** ProtoSection parent. */
     public parent?: (IProtoDocumentElement|null);
 
-    /** ProtoSection pageWidth. */
-    public pageWidth?: (IProtoMeasure|null);
+    /** ProtoSection Uuid. */
+    public Uuid: string;
 
-    /** ProtoSection pageDepth. */
-    public pageDepth?: (IProtoMeasure|null);
-
-    /** ProtoSection columnSettings. */
-    public columnSettings?: (IProtoColumnSettings|null);
+    /** ProtoSection cDefUuid. */
+    public cDefUuid: string;
 
     /** ProtoSection comChannelUUIDs. */
     public comChannelUUIDs: string[];
