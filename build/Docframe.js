@@ -15041,9 +15041,8 @@ $root.ProtoSection = (function() {
      * @interface IProtoSection
      * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoSection _children
      * @property {IProtoDocumentElement|null} [parent] ProtoSection parent
-     * @property {IProtoMeasure|null} [pageWidth] ProtoSection pageWidth
-     * @property {IProtoMeasure|null} [pageDepth] ProtoSection pageDepth
-     * @property {IProtoColumnSettings|null} [columnSettings] ProtoSection columnSettings
+     * @property {string|null} [Uuid] ProtoSection Uuid
+     * @property {string|null} [cDefUuid] ProtoSection cDefUuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoSection comChannelUUIDs
      */
 
@@ -15081,28 +15080,20 @@ $root.ProtoSection = (function() {
     ProtoSection.prototype.parent = null;
 
     /**
-     * ProtoSection pageWidth.
-     * @member {IProtoMeasure|null|undefined} pageWidth
+     * ProtoSection Uuid.
+     * @member {string} Uuid
      * @memberof ProtoSection
      * @instance
      */
-    ProtoSection.prototype.pageWidth = null;
+    ProtoSection.prototype.Uuid = "";
 
     /**
-     * ProtoSection pageDepth.
-     * @member {IProtoMeasure|null|undefined} pageDepth
+     * ProtoSection cDefUuid.
+     * @member {string} cDefUuid
      * @memberof ProtoSection
      * @instance
      */
-    ProtoSection.prototype.pageDepth = null;
-
-    /**
-     * ProtoSection columnSettings.
-     * @member {IProtoColumnSettings|null|undefined} columnSettings
-     * @memberof ProtoSection
-     * @instance
-     */
-    ProtoSection.prototype.columnSettings = null;
+    ProtoSection.prototype.cDefUuid = "";
 
     /**
      * ProtoSection comChannelUUIDs.
@@ -15141,15 +15132,13 @@ $root.ProtoSection = (function() {
                 $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.pageWidth != null && Object.hasOwnProperty.call(message, "pageWidth"))
-            $root.ProtoMeasure.encode(message.pageWidth, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-        if (message.pageDepth != null && Object.hasOwnProperty.call(message, "pageDepth"))
-            $root.ProtoMeasure.encode(message.pageDepth, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-        if (message.columnSettings != null && Object.hasOwnProperty.call(message, "columnSettings"))
-            $root.ProtoColumnSettings.encode(message.columnSettings, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+        if (message.Uuid != null && Object.hasOwnProperty.call(message, "Uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.Uuid);
+        if (message.cDefUuid != null && Object.hasOwnProperty.call(message, "cDefUuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.cDefUuid);
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                writer.uint32(/* id 6, wireType 2 =*/50).string(message.comChannelUUIDs[i]);
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.comChannelUUIDs[i]);
         return writer;
     };
 
@@ -15195,18 +15184,14 @@ $root.ProtoSection = (function() {
                     break;
                 }
             case 3: {
-                    message.pageWidth = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    message.Uuid = reader.string();
                     break;
                 }
             case 4: {
-                    message.pageDepth = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    message.cDefUuid = reader.string();
                     break;
                 }
             case 5: {
-                    message.columnSettings = $root.ProtoColumnSettings.decode(reader, reader.uint32());
-                    break;
-                }
-            case 6: {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
@@ -15261,21 +15246,12 @@ $root.ProtoSection = (function() {
             if (error)
                 return "parent." + error;
         }
-        if (message.pageWidth != null && message.hasOwnProperty("pageWidth")) {
-            var error = $root.ProtoMeasure.verify(message.pageWidth);
-            if (error)
-                return "pageWidth." + error;
-        }
-        if (message.pageDepth != null && message.hasOwnProperty("pageDepth")) {
-            var error = $root.ProtoMeasure.verify(message.pageDepth);
-            if (error)
-                return "pageDepth." + error;
-        }
-        if (message.columnSettings != null && message.hasOwnProperty("columnSettings")) {
-            var error = $root.ProtoColumnSettings.verify(message.columnSettings);
-            if (error)
-                return "columnSettings." + error;
-        }
+        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
+            if (!$util.isString(message.Uuid))
+                return "Uuid: string expected";
+        if (message.cDefUuid != null && message.hasOwnProperty("cDefUuid"))
+            if (!$util.isString(message.cDefUuid))
+                return "cDefUuid: string expected";
         if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
             if (!Array.isArray(message.comChannelUUIDs))
                 return "comChannelUUIDs: array expected";
@@ -15313,21 +15289,10 @@ $root.ProtoSection = (function() {
                 throw TypeError(".ProtoSection.parent: object expected");
             message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
         }
-        if (object.pageWidth != null) {
-            if (typeof object.pageWidth !== "object")
-                throw TypeError(".ProtoSection.pageWidth: object expected");
-            message.pageWidth = $root.ProtoMeasure.fromObject(object.pageWidth);
-        }
-        if (object.pageDepth != null) {
-            if (typeof object.pageDepth !== "object")
-                throw TypeError(".ProtoSection.pageDepth: object expected");
-            message.pageDepth = $root.ProtoMeasure.fromObject(object.pageDepth);
-        }
-        if (object.columnSettings != null) {
-            if (typeof object.columnSettings !== "object")
-                throw TypeError(".ProtoSection.columnSettings: object expected");
-            message.columnSettings = $root.ProtoColumnSettings.fromObject(object.columnSettings);
-        }
+        if (object.Uuid != null)
+            message.Uuid = String(object.Uuid);
+        if (object.cDefUuid != null)
+            message.cDefUuid = String(object.cDefUuid);
         if (object.comChannelUUIDs) {
             if (!Array.isArray(object.comChannelUUIDs))
                 throw TypeError(".ProtoSection.comChannelUUIDs: array expected");
@@ -15357,9 +15322,8 @@ $root.ProtoSection = (function() {
         }
         if (options.defaults) {
             object.parent = null;
-            object.pageWidth = null;
-            object.pageDepth = null;
-            object.columnSettings = null;
+            object.Uuid = "";
+            object.cDefUuid = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -15368,12 +15332,10 @@ $root.ProtoSection = (function() {
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
-        if (message.pageWidth != null && message.hasOwnProperty("pageWidth"))
-            object.pageWidth = $root.ProtoMeasure.toObject(message.pageWidth, options);
-        if (message.pageDepth != null && message.hasOwnProperty("pageDepth"))
-            object.pageDepth = $root.ProtoMeasure.toObject(message.pageDepth, options);
-        if (message.columnSettings != null && message.hasOwnProperty("columnSettings"))
-            object.columnSettings = $root.ProtoColumnSettings.toObject(message.columnSettings, options);
+        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
+            object.Uuid = message.Uuid;
+        if (message.cDefUuid != null && message.hasOwnProperty("cDefUuid"))
+            object.cDefUuid = message.cDefUuid;
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
             object.comChannelUUIDs = [];
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
