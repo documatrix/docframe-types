@@ -9,7 +9,14 @@ message ProtoBarcode {
   ProtoMeasure width = 6;
   ProtoMeasure height = 7;
   ProtoMeasure padding = 8;
+  // keeps the evaluated code
   string data = 9;
   bool positionAbsolute = 10;
   repeated string comChannelUUIDs = 11;
+  string uuid = 12;
+  // keeps the original code, which gives us the possibility to re-evaluate it and save it in data
+  // it will be empty if the barcode type is SwissQR
+  string code = 13;
+  // will only be set if the barcode type is SwissQR
+  ProtoSwissQRData swissQRData = 14;
 }

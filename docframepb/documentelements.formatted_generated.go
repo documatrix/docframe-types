@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (ProtoFormatted *ProtoFormatted) ToNode(children ...Message) *Node {
+func (Formatted *ProtoFormatted) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (ProtoFormatted *ProtoFormatted) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_Formatted{
-			Formatted: ProtoFormatted,
+			Formatted: Formatted,
 		},
 		Children: nodeChildren,
 	}

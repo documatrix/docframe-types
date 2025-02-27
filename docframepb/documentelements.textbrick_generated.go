@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (ProtoTextBrick *ProtoTextBrick) ToNode(children ...Message) *Node {
+func (TextBrick *ProtoTextBrick) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (ProtoTextBrick *ProtoTextBrick) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_TextBrick{
-			TextBrick: ProtoTextBrick,
+			TextBrick: TextBrick,
 		},
 		Children: nodeChildren,
 	}

@@ -1,0 +1,8 @@
+message ProtoDynamicTemplate {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  string uuid = 2;
+
+  string script = 3;
+  repeated string comChannelUUIDs = 4;
+}

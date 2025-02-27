@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (ProtoCarryOver *ProtoCarryOver) ToNode(children ...Message) *Node {
+func (CarryOver *ProtoCarryOver) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (ProtoCarryOver *ProtoCarryOver) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_CarryOver{
-			CarryOver: ProtoCarryOver,
+			CarryOver: CarryOver,
 		},
 		Children: nodeChildren,
 	}

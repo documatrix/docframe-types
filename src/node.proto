@@ -55,6 +55,19 @@ message Node {
     ProtoAdjustHorizontally adjust_horizontally = 65;
     ProtoDoctypeScript doctypeScript = 66;
     ProtoDmScript dmScript = 67;
+    ProtoDynamicTemplate dynamic_template = 68;
+    ProtoSelection selection = 69;
+    ProtoSelectionEntry selection_entry = 70;
+    ProtoCondition condition = 71;
+    ProtoPageCondition page_condition = 72;
+    ProtoLocale locale = 73;
+    ProtoTag tag = 74;
+    ProtoParagraphSetDefault paragraph_set_default = 75;
+    ProtoInputFieldText input_field_text = 76;
+    ProtoInputFieldDate input_field_date = 77;
+    ProtoInputFieldCheckbox input_field_checkbox = 78;
+    ProtoInputFieldLabel input_field_label = 79;
+    ProtoInputFieldDropdown input_field_dropdown = 80;
   }
 }
 
@@ -113,4 +126,17 @@ enum NodeType {
   DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71;
   DOCUMENT_ELEMENT_DOCTYPE_SCRIPT = 72;
   DOCUMENT_ELEMENT_DM_SCRIPT = 73;
+  DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74;
+  DOCUMENT_ELEMENT_SELECTION = 75;
+  DOCUMENT_ELEMENT_SELECTION_ENTRY = 76;
+  DOCUMENT_ELEMENT_CONDITION = 77;
+  DOCUMENT_ELEMENT_PAGE_CONDITION= 78;
+  DOCUMENT_ELEMENT_LOCALE = 79;
+  DOCUMENT_ELEMENT_TAG = 80;
+  DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT = 81;
+  DOCUMENT_ELEMENT_INPUT_FIELD_TEXT = 82;
+  DOCUMENT_ELEMENT_INPUT_FIELD_DATE = 83;
+  DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX = 84;
+  DOCUMENT_ELEMENT_INPUT_FIELD_LABEL = 85;
+  DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN = 86;
 }

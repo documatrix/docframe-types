@@ -25,7 +25,7 @@ declare -a FileArray=(
   "src/Util/util.font.proto"
   "src/Util/util.color.proto"
   "src/Util/util.align.proto"
-  "src/Util/util.barcode_type.proto"
+  "src/Util/util.barcode.proto"
   "src/DocumentElements/documentelements.linebreak.proto"
   "src/Util/util.border.proto"
   "src/Util/util.column_settings.proto"
@@ -34,6 +34,7 @@ declare -a FileArray=(
   "src/Util/util.underline_spec.proto"
   "src/Util/util.image_settings.proto"
   "src/Util/util.semantic_type.proto"
+  "src/Util/util.input_field.proto"
   "src/DocumentElements/documentelements.document_element.proto"
   "src/DocumentElements/documentelements.branch_document_element.proto"
   "src/DocumentElements/documentelements.link.proto"
@@ -81,6 +82,15 @@ declare -a FileArray=(
   "src/DocumentElements/documentelements.adjust_horizontally.proto"
   "src/DocumentElements/documentelements.doctype_script.proto"
   "src/DocumentElements/documentelements.dmscript.proto"
+  "src/DocumentElements/documentelements.dynamic_template.proto"
+  "src/DocumentElements/documentelements.selection.proto"
+  "src/DocumentElements/documentelements.selection_entry.proto"
+  "src/DocumentElements/documentelements.condition.proto"
+  "src/DocumentElements/documentelements.page_condition.proto"
+  "src/DocumentElements/documentelements.locale.proto"
+  "src/DocumentElements/documentelements.tag.proto"
+  "src/DocumentElements/documentelements.paragraph_set_default.proto"
+  "src/DocumentElements/documentelements.input_field.proto"
 )
 
 for file in ${FileArray[@]}; do
@@ -107,4 +117,3 @@ MSYS_NO_PATHCONV=1 protoc --csharp_out=build --go_out=. --go_opt=Mbuild/docframe
 pushd docframepb
 go generate .
 popd
-

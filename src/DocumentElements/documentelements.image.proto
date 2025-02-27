@@ -1,3 +1,27 @@
+enum ProtoImageScaleType { 
+  IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
+  IMAGE_SCALE_TYPE_RELATIVE = 1;
+  IMAGE_SCALE_TYPE_ABSOLUT = 2;
+  IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN = 3;
+}
+
+enum ProtoImageUAMode{
+  IMAGE_UA_MODE_DO_NOT_USE_AT_ALL = 0;
+  IMAGE_UA_MODE_INHERITED = 1;
+  IMAGE_UA_MODE_SIMPLE = 2;
+  IMAGE_UA_MODE_ADVANCED = 3;
+
+}
+
+enum ProtoImageContentType{
+IMAGE_CONTENT_UUID_REFFERENCE_INLINE = 0;
+IMAGE_CONTENT_UUID_REFFERENCE_LOCAL = 1;
+IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL = 2;
+IMAGE_CONTENT_DMSCRIPT = 3;
+IMAGE_CONTENT_IMAGE_DATA = 4;
+}
+
+
 message ProtoImage {
   //extends DocumentElement
   ProtoDocumentElement parent = 1;
@@ -22,4 +46,11 @@ message ProtoImage {
   ProtoImageReferencePoint referencePoint = 18;
   string hyperlink = 19;
   repeated string comChannelUUIDs = 20;
+  ProtoImageContentType imageContentType = 21;
+  string imageContent = 22;  
+  ProtoImageScaleType scaleType = 23; 
+  ProtoImageUAMode UAMode = 24;
+  string UADescription = 25;
+  ProtoBoxedBool leftBorderIsLeftMeasure = 26;
 }
+

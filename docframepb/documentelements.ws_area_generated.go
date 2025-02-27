@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (ProtoWsArea *ProtoWsArea) ToNode(children ...Message) *Node {
+func (WsArea *ProtoWsArea) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (ProtoWsArea *ProtoWsArea) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_WsArea{
-			WsArea: ProtoWsArea,
+			WsArea: WsArea,
 		},
 		Children: nodeChildren,
 	}

@@ -1,0 +1,32 @@
+message ProtoOption {
+    string key = 1;
+    string value = 2;
+}
+
+enum PDFPrintingBehavior {
+    INPUT = 0;
+    TEXT = 1;
+    INHERIT = 2;
+}
+
+message ProtoBaseInputField {
+    string name = 1;
+    bool meta = 2;
+    //
+    // If value is not null, the value of value should be used as field value.
+    //
+    ProtoBoxedString value = 3;
+    string formatUUID = 4;
+    string dataTypeUUID = 5;
+    string onChangeCode = 6;
+    string placeholder = 7;
+    //
+    // if bindDefaultValue is true, the result of the defaultValueCode evaluation will not be copied to the value field, but re-evaluated for every
+    // time the input field is rendered.
+    // if bindDefaultValue is false, the defaultValueCode will be evaluated once and the result will be copied to the value field.
+    //
+    bool bindDefaultValue = 8;
+    string defaultValueCode = 9;
+
+    bool readonly = 10;
+}

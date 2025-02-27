@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (ProtoAdjustHorizontally *ProtoAdjustHorizontally) ToNode(children ...Message) *Node {
+func (AdjustHorizontally *ProtoAdjustHorizontally) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (ProtoAdjustHorizontally *ProtoAdjustHorizontally) ToNode(children ...Messa
 
 	node := &Node{
 		Object: &Node_AdjustHorizontally{
-			AdjustHorizontally: ProtoAdjustHorizontally,
+			AdjustHorizontally: AdjustHorizontally,
 		},
 		Children: nodeChildren,
 	}
