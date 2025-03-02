@@ -1,3 +1,9 @@
+enum ProtoHeaderMode { 
+  HEADER_MODE_APPEND = 0;
+  HEADER_MODE_EXTEND = 1;
+  HEADER_MODE_REPLACE = 2;
+}
+
 message ProtoHeader {
   // extends BranchDocumentElement
   repeated ProtoDocumentElement _children = 1;
@@ -6,4 +12,5 @@ message ProtoHeader {
 
   string uuid = 3;
   repeated string comChannelUUIDs = 4;
+  ProtoHeaderMode mode = 5;
 }

@@ -8377,6 +8377,13 @@ export enum ColumnBalancing {
     BALANCING = 1
 }
 
+/** ProtoHeaderMode enum. */
+export enum ProtoHeaderMode {
+    HEADER_MODE_APPEND = 0,
+    HEADER_MODE_EXTEND = 1,
+    HEADER_MODE_REPLACE = 2
+}
+
 /** Properties of a ProtoHeader. */
 export interface IProtoHeader {
 
@@ -8391,6 +8398,9 @@ export interface IProtoHeader {
 
     /** ProtoHeader comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoHeader mode */
+    mode?: (ProtoHeaderMode|null);
 }
 
 /** Represents a ProtoHeader. */
@@ -8413,6 +8423,9 @@ export class ProtoHeader implements IProtoHeader {
 
     /** ProtoHeader comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoHeader mode. */
+    public mode: ProtoHeaderMode;
 
     /**
      * Creates a new ProtoHeader instance using the specified properties.
@@ -8492,6 +8505,13 @@ export class ProtoHeader implements IProtoHeader {
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
+/** ProtoFooterMode enum. */
+export enum ProtoFooterMode {
+    FOOTER_MODE_APPEND = 0,
+    FOOTER_MODE_EXTEND = 1,
+    FOOTER_MODE_REPLACE = 2
+}
+
 /** Properties of a ProtoFooter. */
 export interface IProtoFooter {
 
@@ -8506,6 +8526,9 @@ export interface IProtoFooter {
 
     /** ProtoFooter comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoFooter mode */
+    mode?: (ProtoFooterMode|null);
 }
 
 /** Represents a ProtoFooter. */
@@ -8528,6 +8551,9 @@ export class ProtoFooter implements IProtoFooter {
 
     /** ProtoFooter comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoFooter mode. */
+    public mode: ProtoFooterMode;
 
     /**
      * Creates a new ProtoFooter instance using the specified properties.

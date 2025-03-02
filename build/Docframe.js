@@ -22949,6 +22949,22 @@ $root.ColumnBalancing = (function() {
     return values;
 })();
 
+/**
+ * ProtoHeaderMode enum.
+ * @name ProtoHeaderMode
+ * @enum {number}
+ * @property {number} HEADER_MODE_APPEND=0 HEADER_MODE_APPEND value
+ * @property {number} HEADER_MODE_EXTEND=1 HEADER_MODE_EXTEND value
+ * @property {number} HEADER_MODE_REPLACE=2 HEADER_MODE_REPLACE value
+ */
+$root.ProtoHeaderMode = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "HEADER_MODE_APPEND"] = 0;
+    values[valuesById[1] = "HEADER_MODE_EXTEND"] = 1;
+    values[valuesById[2] = "HEADER_MODE_REPLACE"] = 2;
+    return values;
+})();
+
 $root.ProtoHeader = (function() {
 
     /**
@@ -22959,6 +22975,7 @@ $root.ProtoHeader = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoHeader parent
      * @property {string|null} [uuid] ProtoHeader uuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoHeader comChannelUUIDs
+     * @property {ProtoHeaderMode|null} [mode] ProtoHeader mode
      */
 
     /**
@@ -23011,6 +23028,14 @@ $root.ProtoHeader = (function() {
     ProtoHeader.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoHeader mode.
+     * @member {ProtoHeaderMode} mode
+     * @memberof ProtoHeader
+     * @instance
+     */
+    ProtoHeader.prototype.mode = 0;
+
+    /**
      * Creates a new ProtoHeader instance using the specified properties.
      * @function create
      * @memberof ProtoHeader
@@ -23044,6 +23069,8 @@ $root.ProtoHeader = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.mode != null && Object.hasOwnProperty.call(message, "mode"))
+            writer.uint32(/* id 5, wireType 0 =*/40).int32(message.mode);
         return writer;
     };
 
@@ -23096,6 +23123,10 @@ $root.ProtoHeader = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 5: {
+                    message.mode = reader.int32();
                     break;
                 }
             default:
@@ -23157,6 +23188,15 @@ $root.ProtoHeader = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.mode != null && message.hasOwnProperty("mode"))
+            switch (message.mode) {
+            default:
+                return "mode: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+                break;
+            }
         return null;
     };
 
@@ -23196,6 +23236,26 @@ $root.ProtoHeader = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        switch (object.mode) {
+        default:
+            if (typeof object.mode === "number") {
+                message.mode = object.mode;
+                break;
+            }
+            break;
+        case "HEADER_MODE_APPEND":
+        case 0:
+            message.mode = 0;
+            break;
+        case "HEADER_MODE_EXTEND":
+        case 1:
+            message.mode = 1;
+            break;
+        case "HEADER_MODE_REPLACE":
+        case 2:
+            message.mode = 2;
+            break;
+        }
         return message;
     };
 
@@ -23219,6 +23279,7 @@ $root.ProtoHeader = (function() {
         if (options.defaults) {
             object.parent = null;
             object.uuid = "";
+            object.mode = options.enums === String ? "HEADER_MODE_APPEND" : 0;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -23234,6 +23295,8 @@ $root.ProtoHeader = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.mode != null && message.hasOwnProperty("mode"))
+            object.mode = options.enums === String ? $root.ProtoHeaderMode[message.mode] === undefined ? message.mode : $root.ProtoHeaderMode[message.mode] : message.mode;
         return object;
     };
 
@@ -23266,6 +23329,22 @@ $root.ProtoHeader = (function() {
     return ProtoHeader;
 })();
 
+/**
+ * ProtoFooterMode enum.
+ * @name ProtoFooterMode
+ * @enum {number}
+ * @property {number} FOOTER_MODE_APPEND=0 FOOTER_MODE_APPEND value
+ * @property {number} FOOTER_MODE_EXTEND=1 FOOTER_MODE_EXTEND value
+ * @property {number} FOOTER_MODE_REPLACE=2 FOOTER_MODE_REPLACE value
+ */
+$root.ProtoFooterMode = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "FOOTER_MODE_APPEND"] = 0;
+    values[valuesById[1] = "FOOTER_MODE_EXTEND"] = 1;
+    values[valuesById[2] = "FOOTER_MODE_REPLACE"] = 2;
+    return values;
+})();
+
 $root.ProtoFooter = (function() {
 
     /**
@@ -23276,6 +23355,7 @@ $root.ProtoFooter = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoFooter parent
      * @property {string|null} [uuid] ProtoFooter uuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoFooter comChannelUUIDs
+     * @property {ProtoFooterMode|null} [mode] ProtoFooter mode
      */
 
     /**
@@ -23328,6 +23408,14 @@ $root.ProtoFooter = (function() {
     ProtoFooter.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoFooter mode.
+     * @member {ProtoFooterMode} mode
+     * @memberof ProtoFooter
+     * @instance
+     */
+    ProtoFooter.prototype.mode = 0;
+
+    /**
      * Creates a new ProtoFooter instance using the specified properties.
      * @function create
      * @memberof ProtoFooter
@@ -23361,6 +23449,8 @@ $root.ProtoFooter = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.mode != null && Object.hasOwnProperty.call(message, "mode"))
+            writer.uint32(/* id 5, wireType 0 =*/40).int32(message.mode);
         return writer;
     };
 
@@ -23413,6 +23503,10 @@ $root.ProtoFooter = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 5: {
+                    message.mode = reader.int32();
                     break;
                 }
             default:
@@ -23474,6 +23568,15 @@ $root.ProtoFooter = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.mode != null && message.hasOwnProperty("mode"))
+            switch (message.mode) {
+            default:
+                return "mode: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+                break;
+            }
         return null;
     };
 
@@ -23513,6 +23616,26 @@ $root.ProtoFooter = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        switch (object.mode) {
+        default:
+            if (typeof object.mode === "number") {
+                message.mode = object.mode;
+                break;
+            }
+            break;
+        case "FOOTER_MODE_APPEND":
+        case 0:
+            message.mode = 0;
+            break;
+        case "FOOTER_MODE_EXTEND":
+        case 1:
+            message.mode = 1;
+            break;
+        case "FOOTER_MODE_REPLACE":
+        case 2:
+            message.mode = 2;
+            break;
+        }
         return message;
     };
 
@@ -23536,6 +23659,7 @@ $root.ProtoFooter = (function() {
         if (options.defaults) {
             object.parent = null;
             object.uuid = "";
+            object.mode = options.enums === String ? "FOOTER_MODE_APPEND" : 0;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -23551,6 +23675,8 @@ $root.ProtoFooter = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.mode != null && message.hasOwnProperty("mode"))
+            object.mode = options.enums === String ? $root.ProtoFooterMode[message.mode] === undefined ? message.mode : $root.ProtoFooterMode[message.mode] : message.mode;
         return object;
     };
 

@@ -1,3 +1,9 @@
+enum ProtoFooterMode { 
+  FOOTER_MODE_APPEND = 0;
+  FOOTER_MODE_EXTEND = 1;
+  FOOTER_MODE_REPLACE = 2;
+}
+
 message ProtoFooter {
   // extends BranchDocumentElement
   repeated ProtoDocumentElement _children = 1;
@@ -6,4 +12,5 @@ message ProtoFooter {
 
   string uuid = 3;
   repeated string comChannelUUIDs = 4;
+  ProtoFooterMode mode = 5;
 }
