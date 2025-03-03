@@ -2,6 +2,7 @@ enum ProtoHeaderMode {
   HEADER_MODE_APPEND = 0;
   HEADER_MODE_EXTEND = 1;
   HEADER_MODE_REPLACE = 2;
+  HEADER_MODE_APPEND_INITIAL = 3;
 }
 
 message ProtoHeader {

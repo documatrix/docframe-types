@@ -22956,12 +22956,14 @@ $root.ColumnBalancing = (function() {
  * @property {number} HEADER_MODE_APPEND=0 HEADER_MODE_APPEND value
  * @property {number} HEADER_MODE_EXTEND=1 HEADER_MODE_EXTEND value
  * @property {number} HEADER_MODE_REPLACE=2 HEADER_MODE_REPLACE value
+ * @property {number} HEADER_MODE_APPEND_INITIAL=3 HEADER_MODE_APPEND_INITIAL value
  */
 $root.ProtoHeaderMode = (function() {
     var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "HEADER_MODE_APPEND"] = 0;
     values[valuesById[1] = "HEADER_MODE_EXTEND"] = 1;
     values[valuesById[2] = "HEADER_MODE_REPLACE"] = 2;
+    values[valuesById[3] = "HEADER_MODE_APPEND_INITIAL"] = 3;
     return values;
 })();
 
@@ -23195,6 +23197,7 @@ $root.ProtoHeader = (function() {
             case 0:
             case 1:
             case 2:
+            case 3:
                 break;
             }
         return null;
@@ -23254,6 +23257,10 @@ $root.ProtoHeader = (function() {
         case "HEADER_MODE_REPLACE":
         case 2:
             message.mode = 2;
+            break;
+        case "HEADER_MODE_APPEND_INITIAL":
+        case 3:
+            message.mode = 3;
             break;
         }
         return message;
@@ -23336,12 +23343,14 @@ $root.ProtoHeader = (function() {
  * @property {number} FOOTER_MODE_APPEND=0 FOOTER_MODE_APPEND value
  * @property {number} FOOTER_MODE_EXTEND=1 FOOTER_MODE_EXTEND value
  * @property {number} FOOTER_MODE_REPLACE=2 FOOTER_MODE_REPLACE value
+ * @property {number} FOOTER_MODE_APPEND_INITIAL=3 FOOTER_MODE_APPEND_INITIAL value
  */
 $root.ProtoFooterMode = (function() {
     var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "FOOTER_MODE_APPEND"] = 0;
     values[valuesById[1] = "FOOTER_MODE_EXTEND"] = 1;
     values[valuesById[2] = "FOOTER_MODE_REPLACE"] = 2;
+    values[valuesById[3] = "FOOTER_MODE_APPEND_INITIAL"] = 3;
     return values;
 })();
 
@@ -23575,6 +23584,7 @@ $root.ProtoFooter = (function() {
             case 0:
             case 1:
             case 2:
+            case 3:
                 break;
             }
         return null;
@@ -23634,6 +23644,10 @@ $root.ProtoFooter = (function() {
         case "FOOTER_MODE_REPLACE":
         case 2:
             message.mode = 2;
+            break;
+        case "FOOTER_MODE_APPEND_INITIAL":
+        case 3:
+            message.mode = 3;
             break;
         }
         return message;
