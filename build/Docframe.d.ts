@@ -8379,10 +8379,10 @@ export enum ColumnBalancing {
 
 /** ProtoHeaderMode enum. */
 export enum ProtoHeaderMode {
-    HEADER_MODE_APPEND = 0,
-    HEADER_MODE_EXTEND = 1,
-    HEADER_MODE_REPLACE = 2,
-    HEADER_MODE_APPEND_INITIAL = 3
+    HEADER_MODE_APPEND_INITIAL = 0,
+    HEADER_MODE_APPEND = 1,
+    HEADER_MODE_EXTEND = 2,
+    HEADER_MODE_REPLACE = 3
 }
 
 /** Properties of a ProtoHeader. */
@@ -8508,10 +8508,10 @@ export class ProtoHeader implements IProtoHeader {
 
 /** ProtoFooterMode enum. */
 export enum ProtoFooterMode {
-    FOOTER_MODE_APPEND = 0,
-    FOOTER_MODE_EXTEND = 1,
-    FOOTER_MODE_REPLACE = 2,
-    FOOTER_MODE_APPEND_INITIAL = 3
+    FOOTER_MODE_APPEND_INITIAL = 0,
+    FOOTER_MODE_APPEND = 1,
+    FOOTER_MODE_EXTEND = 2,
+    FOOTER_MODE_REPLACE = 3
 }
 
 /** Properties of a ProtoFooter. */

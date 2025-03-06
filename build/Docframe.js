@@ -22953,17 +22953,17 @@ $root.ColumnBalancing = (function() {
  * ProtoHeaderMode enum.
  * @name ProtoHeaderMode
  * @enum {number}
- * @property {number} HEADER_MODE_APPEND=0 HEADER_MODE_APPEND value
- * @property {number} HEADER_MODE_EXTEND=1 HEADER_MODE_EXTEND value
- * @property {number} HEADER_MODE_REPLACE=2 HEADER_MODE_REPLACE value
- * @property {number} HEADER_MODE_APPEND_INITIAL=3 HEADER_MODE_APPEND_INITIAL value
+ * @property {number} HEADER_MODE_APPEND_INITIAL=0 HEADER_MODE_APPEND_INITIAL value
+ * @property {number} HEADER_MODE_APPEND=1 HEADER_MODE_APPEND value
+ * @property {number} HEADER_MODE_EXTEND=2 HEADER_MODE_EXTEND value
+ * @property {number} HEADER_MODE_REPLACE=3 HEADER_MODE_REPLACE value
  */
 $root.ProtoHeaderMode = (function() {
     var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "HEADER_MODE_APPEND"] = 0;
-    values[valuesById[1] = "HEADER_MODE_EXTEND"] = 1;
-    values[valuesById[2] = "HEADER_MODE_REPLACE"] = 2;
-    values[valuesById[3] = "HEADER_MODE_APPEND_INITIAL"] = 3;
+    values[valuesById[0] = "HEADER_MODE_APPEND_INITIAL"] = 0;
+    values[valuesById[1] = "HEADER_MODE_APPEND"] = 1;
+    values[valuesById[2] = "HEADER_MODE_EXTEND"] = 2;
+    values[valuesById[3] = "HEADER_MODE_REPLACE"] = 3;
     return values;
 })();
 
@@ -23246,19 +23246,19 @@ $root.ProtoHeader = (function() {
                 break;
             }
             break;
-        case "HEADER_MODE_APPEND":
+        case "HEADER_MODE_APPEND_INITIAL":
         case 0:
             message.mode = 0;
             break;
-        case "HEADER_MODE_EXTEND":
+        case "HEADER_MODE_APPEND":
         case 1:
             message.mode = 1;
             break;
-        case "HEADER_MODE_REPLACE":
+        case "HEADER_MODE_EXTEND":
         case 2:
             message.mode = 2;
             break;
-        case "HEADER_MODE_APPEND_INITIAL":
+        case "HEADER_MODE_REPLACE":
         case 3:
             message.mode = 3;
             break;
@@ -23286,7 +23286,7 @@ $root.ProtoHeader = (function() {
         if (options.defaults) {
             object.parent = null;
             object.uuid = "";
-            object.mode = options.enums === String ? "HEADER_MODE_APPEND" : 0;
+            object.mode = options.enums === String ? "HEADER_MODE_APPEND_INITIAL" : 0;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -23340,17 +23340,17 @@ $root.ProtoHeader = (function() {
  * ProtoFooterMode enum.
  * @name ProtoFooterMode
  * @enum {number}
- * @property {number} FOOTER_MODE_APPEND=0 FOOTER_MODE_APPEND value
- * @property {number} FOOTER_MODE_EXTEND=1 FOOTER_MODE_EXTEND value
- * @property {number} FOOTER_MODE_REPLACE=2 FOOTER_MODE_REPLACE value
- * @property {number} FOOTER_MODE_APPEND_INITIAL=3 FOOTER_MODE_APPEND_INITIAL value
+ * @property {number} FOOTER_MODE_APPEND_INITIAL=0 FOOTER_MODE_APPEND_INITIAL value
+ * @property {number} FOOTER_MODE_APPEND=1 FOOTER_MODE_APPEND value
+ * @property {number} FOOTER_MODE_EXTEND=2 FOOTER_MODE_EXTEND value
+ * @property {number} FOOTER_MODE_REPLACE=3 FOOTER_MODE_REPLACE value
  */
 $root.ProtoFooterMode = (function() {
     var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "FOOTER_MODE_APPEND"] = 0;
-    values[valuesById[1] = "FOOTER_MODE_EXTEND"] = 1;
-    values[valuesById[2] = "FOOTER_MODE_REPLACE"] = 2;
-    values[valuesById[3] = "FOOTER_MODE_APPEND_INITIAL"] = 3;
+    values[valuesById[0] = "FOOTER_MODE_APPEND_INITIAL"] = 0;
+    values[valuesById[1] = "FOOTER_MODE_APPEND"] = 1;
+    values[valuesById[2] = "FOOTER_MODE_EXTEND"] = 2;
+    values[valuesById[3] = "FOOTER_MODE_REPLACE"] = 3;
     return values;
 })();
 
@@ -23633,19 +23633,19 @@ $root.ProtoFooter = (function() {
                 break;
             }
             break;
-        case "FOOTER_MODE_APPEND":
+        case "FOOTER_MODE_APPEND_INITIAL":
         case 0:
             message.mode = 0;
             break;
-        case "FOOTER_MODE_EXTEND":
+        case "FOOTER_MODE_APPEND":
         case 1:
             message.mode = 1;
             break;
-        case "FOOTER_MODE_REPLACE":
+        case "FOOTER_MODE_EXTEND":
         case 2:
             message.mode = 2;
             break;
-        case "FOOTER_MODE_APPEND_INITIAL":
+        case "FOOTER_MODE_REPLACE":
         case 3:
             message.mode = 3;
             break;
@@ -23673,7 +23673,7 @@ $root.ProtoFooter = (function() {
         if (options.defaults) {
             object.parent = null;
             object.uuid = "";
-            object.mode = options.enums === String ? "FOOTER_MODE_APPEND" : 0;
+            object.mode = options.enums === String ? "FOOTER_MODE_APPEND_INITIAL" : 0;
         }
         if (message._children && message._children.length) {
             object._children = [];
