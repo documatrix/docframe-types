@@ -22468,11 +22468,11 @@ $root.ProtoTemplate = (function() {
      * @interface IProtoTemplate
      * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoTemplate _children
      * @property {IProtoDocumentElement|null} [parent] ProtoTemplate parent
-     * @property {Object.<string,string>|null} [containerMapping] ProtoTemplate containerMapping
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTemplate comChannelUUIDs
      * @property {string|null} [uuid] ProtoTemplate uuid
      * @property {ColumnBalancing|null} [columnBalancing] ProtoTemplate columnBalancing
      * @property {ProtoSemanticType|null} [semanticType] ProtoTemplate semanticType
+     * @property {string|null} [templateUuid] ProtoTemplate templateUuid
      */
 
     /**
@@ -22485,7 +22485,6 @@ $root.ProtoTemplate = (function() {
      */
     function ProtoTemplate(properties) {
         this._children = [];
-        this.containerMapping = {};
         this.comChannelUUIDs = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -22508,14 +22507,6 @@ $root.ProtoTemplate = (function() {
      * @instance
      */
     ProtoTemplate.prototype.parent = null;
-
-    /**
-     * ProtoTemplate containerMapping.
-     * @member {Object.<string,string>} containerMapping
-     * @memberof ProtoTemplate
-     * @instance
-     */
-    ProtoTemplate.prototype.containerMapping = $util.emptyObject;
 
     /**
      * ProtoTemplate comChannelUUIDs.
@@ -22550,6 +22541,14 @@ $root.ProtoTemplate = (function() {
     ProtoTemplate.prototype.semanticType = 0;
 
     /**
+     * ProtoTemplate templateUuid.
+     * @member {string} templateUuid
+     * @memberof ProtoTemplate
+     * @instance
+     */
+    ProtoTemplate.prototype.templateUuid = "";
+
+    /**
      * Creates a new ProtoTemplate instance using the specified properties.
      * @function create
      * @memberof ProtoTemplate
@@ -22578,18 +22577,17 @@ $root.ProtoTemplate = (function() {
                 $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.containerMapping != null && Object.hasOwnProperty.call(message, "containerMapping"))
-            for (var keys = Object.keys(message.containerMapping), i = 0; i < keys.length; ++i)
-                writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.containerMapping[keys[i]]).ldelim();
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
-            writer.uint32(/* id 5, wireType 2 =*/42).string(message.uuid);
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         if (message.columnBalancing != null && Object.hasOwnProperty.call(message, "columnBalancing"))
-            writer.uint32(/* id 6, wireType 0 =*/48).int32(message.columnBalancing);
+            writer.uint32(/* id 5, wireType 0 =*/40).int32(message.columnBalancing);
         if (message.semanticType != null && Object.hasOwnProperty.call(message, "semanticType"))
-            writer.uint32(/* id 7, wireType 0 =*/56).int32(message.semanticType);
+            writer.uint32(/* id 6, wireType 0 =*/48).int32(message.semanticType);
+        if (message.templateUuid != null && Object.hasOwnProperty.call(message, "templateUuid"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.templateUuid);
         return writer;
     };
 
@@ -22620,7 +22618,7 @@ $root.ProtoTemplate = (function() {
     ProtoTemplate.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTemplate(), key, value;
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTemplate();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -22635,44 +22633,25 @@ $root.ProtoTemplate = (function() {
                     break;
                 }
             case 3: {
-                    if (message.containerMapping === $util.emptyObject)
-                        message.containerMapping = {};
-                    var end2 = reader.uint32() + reader.pos;
-                    key = "";
-                    value = "";
-                    while (reader.pos < end2) {
-                        var tag2 = reader.uint32();
-                        switch (tag2 >>> 3) {
-                        case 1:
-                            key = reader.string();
-                            break;
-                        case 2:
-                            value = reader.string();
-                            break;
-                        default:
-                            reader.skipType(tag2 & 7);
-                            break;
-                        }
-                    }
-                    message.containerMapping[key] = value;
-                    break;
-                }
-            case 4: {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
                     break;
                 }
-            case 5: {
+            case 4: {
                     message.uuid = reader.string();
                     break;
                 }
-            case 6: {
+            case 5: {
                     message.columnBalancing = reader.int32();
                     break;
                 }
-            case 7: {
+            case 6: {
                     message.semanticType = reader.int32();
+                    break;
+                }
+            case 7: {
+                    message.templateUuid = reader.string();
                     break;
                 }
             default:
@@ -22724,14 +22703,6 @@ $root.ProtoTemplate = (function() {
             if (error)
                 return "parent." + error;
         }
-        if (message.containerMapping != null && message.hasOwnProperty("containerMapping")) {
-            if (!$util.isObject(message.containerMapping))
-                return "containerMapping: object expected";
-            var key = Object.keys(message.containerMapping);
-            for (var i = 0; i < key.length; ++i)
-                if (!$util.isString(message.containerMapping[key[i]]))
-                    return "containerMapping: string{k:string} expected";
-        }
         if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
             if (!Array.isArray(message.comChannelUUIDs))
                 return "comChannelUUIDs: array expected";
@@ -22761,6 +22732,9 @@ $root.ProtoTemplate = (function() {
             case 4:
                 break;
             }
+        if (message.templateUuid != null && message.hasOwnProperty("templateUuid"))
+            if (!$util.isString(message.templateUuid))
+                return "templateUuid: string expected";
         return null;
     };
 
@@ -22790,13 +22764,6 @@ $root.ProtoTemplate = (function() {
             if (typeof object.parent !== "object")
                 throw TypeError(".ProtoTemplate.parent: object expected");
             message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
-        }
-        if (object.containerMapping) {
-            if (typeof object.containerMapping !== "object")
-                throw TypeError(".ProtoTemplate.containerMapping: object expected");
-            message.containerMapping = {};
-            for (var keys = Object.keys(object.containerMapping), i = 0; i < keys.length; ++i)
-                message.containerMapping[keys[i]] = String(object.containerMapping[keys[i]]);
         }
         if (object.comChannelUUIDs) {
             if (!Array.isArray(object.comChannelUUIDs))
@@ -22851,6 +22818,8 @@ $root.ProtoTemplate = (function() {
             message.semanticType = 4;
             break;
         }
+        if (object.templateUuid != null)
+            message.templateUuid = String(object.templateUuid);
         return message;
     };
 
@@ -22871,13 +22840,12 @@ $root.ProtoTemplate = (function() {
             object._children = [];
             object.comChannelUUIDs = [];
         }
-        if (options.objects || options.defaults)
-            object.containerMapping = {};
         if (options.defaults) {
             object.parent = null;
             object.uuid = "";
             object.columnBalancing = options.enums === String ? "NO_BALANCING" : 0;
             object.semanticType = options.enums === String ? "SEMANTIC_TYPE_NONE" : 0;
+            object.templateUuid = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -22886,12 +22854,6 @@ $root.ProtoTemplate = (function() {
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
-        var keys2;
-        if (message.containerMapping && (keys2 = Object.keys(message.containerMapping)).length) {
-            object.containerMapping = {};
-            for (var j = 0; j < keys2.length; ++j)
-                object.containerMapping[keys2[j]] = message.containerMapping[keys2[j]];
-        }
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
             object.comChannelUUIDs = [];
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
@@ -22903,6 +22865,8 @@ $root.ProtoTemplate = (function() {
             object.columnBalancing = options.enums === String ? $root.ColumnBalancing[message.columnBalancing] === undefined ? message.columnBalancing : $root.ColumnBalancing[message.columnBalancing] : message.columnBalancing;
         if (message.semanticType != null && message.hasOwnProperty("semanticType"))
             object.semanticType = options.enums === String ? $root.ProtoSemanticType[message.semanticType] === undefined ? message.semanticType : $root.ProtoSemanticType[message.semanticType] : message.semanticType;
+        if (message.templateUuid != null && message.hasOwnProperty("templateUuid"))
+            object.templateUuid = message.templateUuid;
         return object;
     };
 

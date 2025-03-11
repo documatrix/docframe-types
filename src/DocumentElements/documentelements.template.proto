@@ -4,13 +4,11 @@ message ProtoTemplate {
   ProtoDocumentElement parent = 2;
   // extends BranchDocumentElement
 
-  // Maps DCT intern name to DCD intern name of the current template.
-  // This mapping might change while traversing the template tree and entering a new subtemplate.
-  map<string, string> containerMapping = 3;
-  repeated string comChannelUUIDs = 4;
-  string uuid = 5;
-  ColumnBalancing columnBalancing = 6;
-  ProtoSemanticType semanticType = 7;
+  repeated string comChannelUUIDs = 3;
+  string uuid = 4;
+  ColumnBalancing columnBalancing = 5;
+  ProtoSemanticType semanticType = 6;
+  string templateUuid = 7;
 }
 
 enum ColumnBalancing {

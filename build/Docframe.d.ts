@@ -8247,9 +8247,6 @@ export interface IProtoTemplate {
     /** ProtoTemplate parent */
     parent?: (IProtoDocumentElement|null);
 
-    /** ProtoTemplate containerMapping */
-    containerMapping?: ({ [k: string]: string }|null);
-
     /** ProtoTemplate comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
 
@@ -8261,6 +8258,9 @@ export interface IProtoTemplate {
 
     /** ProtoTemplate semanticType */
     semanticType?: (ProtoSemanticType|null);
+
+    /** ProtoTemplate templateUuid */
+    templateUuid?: (string|null);
 }
 
 /** Represents a ProtoTemplate. */
@@ -8278,9 +8278,6 @@ export class ProtoTemplate implements IProtoTemplate {
     /** ProtoTemplate parent. */
     public parent?: (IProtoDocumentElement|null);
 
-    /** ProtoTemplate containerMapping. */
-    public containerMapping: { [k: string]: string };
-
     /** ProtoTemplate comChannelUUIDs. */
     public comChannelUUIDs: string[];
 
@@ -8292,6 +8289,9 @@ export class ProtoTemplate implements IProtoTemplate {
 
     /** ProtoTemplate semanticType. */
     public semanticType: ProtoSemanticType;
+
+    /** ProtoTemplate templateUuid. */
+    public templateUuid: string;
 
     /**
      * Creates a new ProtoTemplate instance using the specified properties.
