@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "document_elements/v1/list_level_setting.proto";
+
+message ProtoListSetting {
+  string name = 1;
+
+  repeated ProtoAnyListLevelSetting list_level_settings = 2;
+  ProtoAnyListLevelSetting default_list_level_setting = 3;
+  repeated string com_channel_uuids = 4;
+}
+
+// go-gen:ignore
+message ProtoBoxedListSetting {
+  ProtoListSetting value = 1;
+  bool is_null = 2;
+}

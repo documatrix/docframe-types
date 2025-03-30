@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "box/v1/string.proto";
+import "document_elements/v1/paragraph_format.proto";
+
+message ProtoParagraph {
+  box.v1.ProtoSimpleBoxedString format = 1;
+  ProtoParagraphFormat overwrite = 2;
+  repeated string com_channel_uuids = 3;
+}

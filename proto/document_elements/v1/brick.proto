@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+message ProtoBrick {
+  // like BrickBody::Brick
+  uint64 id = 1;
+  string intern_name = 2;
+  string uuid = 3;
+  bool editable = 4;
+  repeated string com_channel_uuids = 5;
+}

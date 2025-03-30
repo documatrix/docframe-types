@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "utils/v1/semantic_type.proto";
+
+message ProtoDirectory {
+  string uuid = 1;
+  repeated string com_channel_uuids = 2;
+  utils.v1.ProtoSemanticType semantic_type = 3;
+}

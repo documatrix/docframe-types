@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "utils/v1/measure.proto";
+
+message ProtoPDef {
+  utils.v1.ProtoBoxedMeasure page_width = 1;
+  utils.v1.ProtoBoxedMeasure page_depth = 2;
+  string uuid = 3;
+  repeated string com_channel_uuids = 4;
+}

@@ -21,9 +21,6 @@
     "node": ">= 8.9.0"
   },
   "main": "build/Docframe.js",
-  "devDependencies": {
-    "protobufjs-cli": "^1.1.0"
-  },
   "scripts": {
     "commit": "npm run-script build && npm version patch && npm publish && git push",
     "build": "bash createDocframe.sh",
@@ -32,7 +29,6 @@
   "author": "DocuMatrix <office@documatrix.com>",
   "license": "MIT",
   "dependencies": {
-    "long": "^5.2.1",
-    "protobufjs": "^7.2.1"
+    "long": "^5.2.1"
   }
 }

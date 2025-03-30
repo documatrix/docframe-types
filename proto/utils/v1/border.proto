@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package utils.v1;
+
+import "utils/v1/color.proto";
+import "utils/v1/measure.proto";
+
+message ProtoBorder {
+  ProtoMeasure weight = 1;
+  ProtoColor color = 2;
+}
+
+message ProtoSideBorders {
+  ProtoBorder top = 1;
+  ProtoBorder right = 2;
+  ProtoBorder bottom = 3;
+  ProtoBorder left = 4;
+}

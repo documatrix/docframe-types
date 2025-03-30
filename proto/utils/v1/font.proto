@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package utils.v1;
+
+message ProtoFont {
+  int32 id = 1;
+  string name = 2;
+}
+
+message ProtoBoxedFont {
+  ProtoFont value = 1;
+  bool is_null = 2;
+}

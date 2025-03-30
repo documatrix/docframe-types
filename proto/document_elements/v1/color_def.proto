@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "utils/v1/color.proto";
+
+message ProtoColorDef {
+  utils.v1.ProtoColor color = 1;
+  repeated string com_channel_uuids = 2;
+}

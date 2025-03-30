@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "utils/v1/semantic_type.proto";
+
+message ProtoTemplate {
+  // Maps DCT intern name to DCD intern name of the current template.
+  // This mapping might change while traversing the template tree and entering a new subtemplate.
+  map<string, string> container_mapping = 3;
+  repeated string com_channel_uuids = 4;
+  string uuid = 5;
+  ColumnBalancing column_balancing = 6;
+  utils.v1.ProtoSemanticType semantic_type = 7;
+}
+
+enum ColumnBalancing {
+  NO_BALANCING = 0;
+  BALANCING = 1;
+}

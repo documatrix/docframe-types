@@ -4,5 +4,5 @@ package box.v1;
 
 message ProtoBoxedUint32 {
   uint32 value = 1;
-  bool isNull = 2;
+  bool is_null = 2;
 }

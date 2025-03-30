@@ -4,5 +4,9 @@ package box.v1;
 
 message ProtoBoxedString {
   string value = 1;
-  bool isNull = 2;
+  bool is_null = 2;
+}
+
+message ProtoSimpleBoxedString {
+  string value = 1;
 }

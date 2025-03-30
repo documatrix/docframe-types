@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+message ProtoVariable {
+  string path = 1;
+  string content = 2; // Should this be optional or "empty string"
+  string format_uuid = 3;
+  ProtoVariableSpecialType special_type = 4;
+  string uuid = 5;
+  repeated string com_channel_uuids = 6;
+}
+
+enum ProtoVariableSpecialType {
+  PROTO_VARIABLE_SPECIAL_TYPE_NOT_SPECIAL = 0;
+  PROTO_VARIABLE_SPECIAL_TYPE_TABLE_NUMBER = 1;
+  PROTO_VARIABLE_SPECIAL_TYPE_DOC_PAGE_COUNT = 2;
+  PROTO_VARIABLE_SPECIAL_TYPE_DOC_CUR_PAGE = 3;
+  PROTO_VARIABLE_SPECIAL_TYPE_CUR_PAGE = 4;
+  PROTO_VARIABLE_SPECIAL_TYPE_PAGE_COUNT = 5;
+  PROTO_VARIABLE_SPECIAL_TYPE_PREV_PAGE = 6;
+  PROTO_VARIABLE_SPECIAL_TYPE_SECTION_PAGE = 7;
+  PROTO_VARIABLE_SPECIAL_TYPE_UPDATED_AT = 8;
+  PROTO_VARIABLE_SPECIAL_TYPE_GENERATED_AT = 9;
+}

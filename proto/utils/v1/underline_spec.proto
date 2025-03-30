@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package utils.v1;
+
+import "utils/v1/color.proto";
+import "utils/v1/measure.proto";
+import "utils/v1/rule_style.proto";
+
+enum ProtoUnderlineMode {
+  PROTO_UNDERLINE_MODE_DUMMY_UNDERLINE_MODE = 0; // dummy is needed here, because otherwise protoc command produces error
+  PROTO_UNDERLINE_MODE_WORDS_NO_BLANKS = 1;
+  PROTO_UNDERLINE_MODE_WORDS_AND_BLANKS = 2;
+  PROTO_UNDERLINE_MODE_CHARACTERS_NO_BLANKS = 3;
+  PROTO_UNDERLINE_MODE_CHARACTERS_AND_BLANKS = 4;
+}
+
+message ProtoUnderlineSpec {
+  ProtoMeasure weight = 1;
+  ProtoUnderlineMode mode = 2;
+  ProtoColor color = 3;
+  int32 offset_em = 4;
+  ProtoRuleStyle style = 5;
+}
+
+message ProtoBoxedUnderlineSpec {
+  ProtoUnderlineSpec value = 1;
+  bool is_null = 2;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "box/v1/bool.proto";
+import "utils/v1/column_settings.proto";
+
+message ProtoCDef {
+  utils.v1.ProtoColumnSettings colum_settings = 1;
+  box.v1.ProtoBoxedBool apply_to_header_footer = 2;
+  box.v1.ProtoBoxedBool apply_immediate = 3;
+  string uuid = 4;
+  repeated string com_channel_uuids = 5;
+}

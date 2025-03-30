@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+enum ProtoDoctypeOutputMode {
+  DOCTYPE_OUTPUT_MODE_NOT_SET = 0;
+  DOCTYPE = 1;
+  JSON = 2;
+}
+
+// These elements are actually script snippets (usually dmSCRIPT), whichs result (String) is used
+// as docTYPE code.
+message ProtoDoctypeScript {
+  string content = 1;
+  ProtoDoctypeOutputMode output_mode = 2;
+  repeated string com_channel_uuids = 3;
+}

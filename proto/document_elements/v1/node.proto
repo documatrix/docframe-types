@@ -1,0 +1,175 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "document_elements/v1/adjust_horizontally.proto";
+import "document_elements/v1/advanced_illustration_area.proto";
+import "document_elements/v1/apply_cdef.proto";
+import "document_elements/v1/apply_pdef.proto";
+import "document_elements/v1/apply_ul_config.proto";
+import "document_elements/v1/apply_pt_config.proto";
+import "document_elements/v1/barcode.proto";
+import "document_elements/v1/brick.proto";
+import "document_elements/v1/brick_reference.proto";
+import "document_elements/v1/carry_over.proto";
+import "document_elements/v1/cdef.proto";
+import "document_elements/v1/color_def.proto";
+import "document_elements/v1/directory.proto";
+import "document_elements/v1/dm_script.proto";
+import "document_elements/v1/doctype_script.proto";
+import "document_elements/v1/footer.proto";
+import "document_elements/v1/formatted.proto";
+import "document_elements/v1/header.proto";
+import "document_elements/v1/image.proto";
+import "document_elements/v1/indentation.proto";
+import "document_elements/v1/layout.proto";
+import "document_elements/v1/linebreak.proto";
+import "document_elements/v1/link.proto";
+import "document_elements/v1/list_setting.proto";
+import "document_elements/v1/loop.proto";
+import "document_elements/v1/loop_entry.proto";
+import "document_elements/v1/named_string.proto";
+import "document_elements/v1/new_page.proto";
+import "document_elements/v1/paragraph.proto";
+import "document_elements/v1/paragraph_format.proto";
+import "document_elements/v1/pdef.proto";
+import "document_elements/v1/pt_config.proto";
+import "document_elements/v1/rule.proto";
+import "document_elements/v1/section.proto";
+import "document_elements/v1/space_vertically.proto";
+import "document_elements/v1/span.proto";
+import "document_elements/v1/sub_total.proto";
+import "document_elements/v1/table.proto";
+import "document_elements/v1/template.proto";
+import "document_elements/v1/text.proto";
+import "document_elements/v1/textbrick.proto";
+import "document_elements/v1/ul_config.proto";
+import "document_elements/v1/variable.proto";
+import "document_elements/v1/ws_area.proto";
+
+message Node {
+  repeated Node children = 1;
+
+  repeated string com_channel_uuids = 2;
+
+  oneof object {
+    ProtoListSetting list_setting = 10;
+    ProtoColorDef color_def = 11;
+    ProtoBrick brick = 12;
+    ProtoTemplate template = 13;
+    ProtoFormatted formatted = 14;
+    ProtoImage image = 15;
+    ProtoParagraphFormat paragraph_format = 16;
+    ProtoTextBrick text_brick = 17;
+    ProtoText text = 18;
+    ProtoLinebreak linebreak = 19;
+    ProtoSpaceVertically space_vertically = 20;
+    ProtoFooter footer = 21;
+    ProtoHeader header = 22;
+    ProtoTable table = 23;
+    ProtoTableRow table_row = 24;
+    ProtoTableCell table_cell = 25;
+    ProtoCDef c_def = 26;
+    ProtoPDef p_def = 27;
+    ProtoApplyProtoCDef apply_c_def = 28;
+    ProtoApplyProtoPDef apply_p_def = 29;
+    ProtoApplyPtConfig apply_pt_config = 30;
+    ProtoApplyUlConfig apply_ul_config = 31;
+    ProtoPtConfig pt_config = 32;
+    ProtoUlConfig ul_config = 33;
+    ProtoNewPage new_page = 34;
+    ProtoVariable variable = 35;
+    ProtoNamedString named_string = 36;
+    ProtoParagraph paragraph = 37;
+    ProtoSection section = 38;
+    ProtoSpan span = 39;
+    ProtoLink link = 40;
+    ProtoDirectory directory = 41;
+    ProtoTableContentGroup table_content_group = 42;
+    ProtoTableConfig table_config = 43;
+    ProtoTableCellConfig table_cell_config = 44;
+    ProtoTableRowConfig table_row_config = 45;
+    ProtoTableContentGroupConfig table_content_group_config = 46;
+    ProtoBrickReference brick_reference = 47;
+    ProtoIndentation indentation = 48;
+    ProtoBarcode barcode = 49;
+    ProtoWsArea ws_area = 50;
+    ProtoCarryOver carry_over = 51;
+    ProtoSubTotal sub_total = 52;
+    ProtoLoop loop = 53;
+    ProtoLoopEntry loop_entry = 54;
+    ProtoRule rule = 55;
+    ProtoLayout layout = 56;
+    ProtoAdvancedIllustrationArea advanced_illustration_area = 57;
+    ProtoAdjustHorizontally adjust_horizontally = 58;
+    ProtoDoctypeScript doctypeScript = 59;
+    ProtoDmScript dmScript = 60;
+  }
+}
+
+enum DocumentElementType {
+  DOCUMENT_ELEMENT_TYPE_BRANCH_DOCUMENT_ELEMENT = 0;
+  DOCUMENT_ELEMENT_TYPE_BRICK_REFERENCE = 1;
+  DOCUMENT_ELEMENT_TYPE_BRICK = 2;
+  DOCUMENT_ELEMENT_TYPE_DOCUMENT_ELEMENT = 3;
+  DOCUMENT_ELEMENT_TYPE_LINEBREAK = 4;
+  DOCUMENT_ELEMENT_TYPE_LIST_SETTING = 6;
+  DOCUMENT_ELEMENT_TYPE_PARAGRAPH_FORMAT = 7;
+  DOCUMENT_ELEMENT_TYPE_PARAGRAPH = 8;
+  DOCUMENT_ELEMENT_TYPE_SECTION = 9;
+  DOCUMENT_ELEMENT_TYPE_SPAN = 10;
+  DOCUMENT_ELEMENT_TYPE_TABLE = 11;
+  DOCUMENT_ELEMENT_TYPE_TABLE_CELL = 12;
+  DOCUMENT_ELEMENT_TYPE_TABLE_ROW = 13;
+  DOCUMENT_ELEMENT_TYPE_TEMPLATE = 15;
+  DOCUMENT_ELEMENT_TYPE_TEXT = 16;
+  DOCUMENT_ELEMENT_TYPE_COLOR_DEF = 19;
+  DOCUMENT_ELEMENT_TYPE_IMAGE = 30;
+  DOCUMENT_ELEMENT_TYPE_NAMED_STRING = 34;
+  DOCUMENT_ELEMENT_TYPE_TABLE_CONTENT_GROUP = 35;
+  DOCUMENT_ELEMENT_TYPE_TABLE_CONFIG = 36;
+  DOCUMENT_ELEMENT_TYPE_TABLE_CELL_CONFIG = 37;
+  DOCUMENT_ELEMENT_TYPE_TABLE_ROW_CONFIG = 38;
+  DOCUMENT_ELEMENT_TYPE_TABLE_CONTENT_GROUP_CONFIG = 39;
+  DOCUMENT_ELEMENT_TYPE_LINK = 40;
+  DOCUMENT_ELEMENT_TYPE_DIRECTORY = 41;
+  DOCUMENT_ELEMENT_TYPE_TEXT_BRICK = 42;
+  DOCUMENT_ELEMENT_TYPE_VARIABLE = 44;
+  DOCUMENT_ELEMENT_TYPE_SPACE_VERTICALLY = 45;
+  DOCUMENT_ELEMENT_TYPE_FORMATTED = 46;
+  DOCUMENT_ELEMENT_TYPE_APPLY_C_DEF = 47;
+  DOCUMENT_ELEMENT_TYPE_APPLY_P_DEF = 48;
+  DOCUMENT_ELEMENT_TYPE_APPLY_PT_CONFIG = 49;
+  DOCUMENT_ELEMENT_TYPE_APPLY_UL_CONFIG = 50;
+  DOCUMENT_ELEMENT_TYPE_C_DEF = 51;
+  DOCUMENT_ELEMENT_TYPE_P_DEF = 52;
+  DOCUMENT_ELEMENT_TYPE_PT_CONFIG = 53;
+  DOCUMENT_ELEMENT_TYPE_UL_CONFIG = 54;
+  DOCUMENT_ELEMENT_TYPE_NEW_PAGE = 55;
+  DOCUMENT_ELEMENT_TYPE_HEADER = 56;
+  DOCUMENT_ELEMENT_TYPE_FOOTER = 57;
+  DOCUMENT_ELEMENT_TYPE_INDENTATION = 60;
+  DOCUMENT_ELEMENT_TYPE_BARCODE = 61;
+  DOCUMENT_ELEMENT_TYPE_WS_AREA = 62;
+  DOCUMENT_ELEMENT_TYPE_CARRY_OVER = 63;
+  DOCUMENT_ELEMENT_TYPE_SUB_TOTAL = 64;
+  DOCUMENT_ELEMENT_TYPE_LOOP = 65;
+  DOCUMENT_ELEMENT_TYPE_LOOP_ENTRY = 66;
+  DOCUMENT_ELEMENT_TYPE_RULE = 67;
+  DOCUMENT_ELEMENT_TYPE_LIST_LEVEL_SETTING = 68;
+  DOCUMENT_ELEMENT_TYPE_LAYOUT = 69;
+  DOCUMENT_ELEMENT_TYPE_ADVANCED_ILLUSTRATION_AREA = 70;
+  DOCUMENT_ELEMENT_TYPE_ADJUST_HORIZONTALLY = 71;
+  DOCUMENT_ELEMENT_TYPE_DOCTYPE_SCRIPT = 72;
+  DOCUMENT_ELEMENT_TYPE_DM_SCRIPT = 73;
+}
+
+
+message ProtoTable {
+  ProtoTableSettings settings = 1;
+  string config_name = 2;
+
+  Node carry_over = 3;
+  Node sub_total = 4;
+  repeated string com_channel_uuids = 5;
+}

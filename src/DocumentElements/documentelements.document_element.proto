@@ -1,4 +1,0 @@
-message ProtoDocumentElement {
-  ProtoDocumentElement parent = 1;
-  repeated string comChannelUUIDs = 2;
-}

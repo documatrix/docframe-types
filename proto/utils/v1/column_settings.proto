@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package utils.v1;
+
+import "utils/v1/measure.proto";
+
+enum ProtoPositionMode {
+  PROTO_POSITION_MODE_CENTER = 0;
+  PROTO_POSITION_MODE_LEFT = 1;
+  PROTO_POSITION_MODE_FOLIO = 2;
+  PROTO_POSITION_MODE_RIGHT = 3;
+  PROTO_POSITION_MODE_REVERSE_FOLIO = 4;
+}
+
+message ProtoBoxedPositionMode {
+  ProtoPositionMode value = 1;
+  bool is_null = 2;
+}
+
+message ProtoColumnSettings {
+  ProtoBoxedMeasure width = 1;
+  ProtoBoxedMeasure inter_column_space = 2;
+  ProtoBoxedMeasure position_offset = 3;
+  ProtoPositionMode position_mode = 4;
+  ProtoBoxedMeasure outside_margin = 5;
+}

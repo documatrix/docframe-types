@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package utils.v1;
+
+enum ProtoSPBMode {
+  PROTO_SPB_MODE_NONE = 0;
+  PROTO_SPB_MODE_SUPERSCRIPT = 1;
+  PROTO_SPB_MODE_SUBSCRIPT = 2;
+}
+
+message ProtoBoxedSPBMode {
+  ProtoSPBMode value = 1;
+  bool is_null = 2;
+}
