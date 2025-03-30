@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+message ProtoApplyProtoPDef {
+  string pdef_uuid = 1;
+  repeated string com_channel_uuids = 2;
+}

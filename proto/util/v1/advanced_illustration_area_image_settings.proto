@@ -1,3 +1,7 @@
+syntax = "proto3";
+
+package util.v1;
+
 enum ProtoAdvancedIllustrationAreaTextFlowType {
   DO_NOT_USE_AT_ALL = 0;
   AROUND = 1;

@@ -1,3 +1,7 @@
+syntax = "proto3";
+
+package box.v1;
+
 message ProtoBoxedUint32 {
   uint32 value = 1;
   bool isNull = 2;

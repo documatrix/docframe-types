@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "utils/v1/measure.proto";
+
+message ProtoAdjustHorizontally {
+  utils.v1.ProtoMeasure min_font_size = 1;
+  utils.v1.ProtoMeasure max_font_size = 2;
+  repeated string com_channel_uuids = 3;
+}

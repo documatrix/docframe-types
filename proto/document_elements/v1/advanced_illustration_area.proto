@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package document_elements.v1;
+
+import "utils/v1/measure.proto";
+import "util/v1/advanced_illustration_area_image_settings.proto";
+
+message ProtoAdvancedIllustrationArea {
+  string uuid = 1;
+  bool absolute = 2;
+  utils.v1.ProtoMeasure width = 3;
+  utils.v1.ProtoMeasure height = 4;
+  utils.v1.ProtoMeasure x = 5;
+  utils.v1.ProtoMeasure y = 6;
+  util.v1.ProtoAdvancedIllustrationAreaTextFlowType text_flow = 7;
+  float rotation = 8;
+  repeated string com_channel_uuids = 9;
+}
