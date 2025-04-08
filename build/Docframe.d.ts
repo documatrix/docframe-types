@@ -9161,6 +9161,9 @@ export interface IProtoImage {
 
     /** ProtoImage comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoImage uuidImageContent */
+    uuidImageContent?: (string|null);
 }
 
 /** Represents a ProtoImage. */
@@ -9231,6 +9234,9 @@ export class ProtoImage implements IProtoImage {
 
     /** ProtoImage comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoImage uuidImageContent. */
+    public uuidImageContent: string;
 
     /**
      * Creates a new ProtoImage instance using the specified properties.

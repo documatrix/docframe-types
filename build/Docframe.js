@@ -25853,6 +25853,7 @@ $root.ProtoImage = (function() {
      * @property {ProtoImageReferencePoint|null} [referencePoint] ProtoImage referencePoint
      * @property {string|null} [hyperlink] ProtoImage hyperlink
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoImage comChannelUUIDs
+     * @property {string|null} [uuidImageContent] ProtoImage uuidImageContent
      */
 
     /**
@@ -26032,6 +26033,14 @@ $root.ProtoImage = (function() {
     ProtoImage.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoImage uuidImageContent.
+     * @member {string} uuidImageContent
+     * @memberof ProtoImage
+     * @instance
+     */
+    ProtoImage.prototype.uuidImageContent = "";
+
+    /**
      * Creates a new ProtoImage instance using the specified properties.
      * @function create
      * @memberof ProtoImage
@@ -26096,6 +26105,8 @@ $root.ProtoImage = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 20, wireType 2 =*/162).string(message.comChannelUUIDs[i]);
+        if (message.uuidImageContent != null && Object.hasOwnProperty.call(message, "uuidImageContent"))
+            writer.uint32(/* id 21, wireType 2 =*/170).string(message.uuidImageContent);
         return writer;
     };
 
@@ -26210,6 +26221,10 @@ $root.ProtoImage = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 21: {
+                    message.uuidImageContent = reader.string();
                     break;
                 }
             default:
@@ -26342,6 +26357,9 @@ $root.ProtoImage = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuidImageContent != null && message.hasOwnProperty("uuidImageContent"))
+            if (!$util.isString(message.uuidImageContent))
+                return "uuidImageContent: string expected";
         return null;
     };
 
@@ -26465,6 +26483,8 @@ $root.ProtoImage = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuidImageContent != null)
+            message.uuidImageContent = String(object.uuidImageContent);
         return message;
     };
 
@@ -26503,6 +26523,7 @@ $root.ProtoImage = (function() {
             object.uuid = "";
             object.referencePoint = options.enums === String ? "REF_POINT_DO_NOT_USE_AT_ALL" : 0;
             object.hyperlink = "";
+            object.uuidImageContent = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -26547,6 +26568,8 @@ $root.ProtoImage = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuidImageContent != null && message.hasOwnProperty("uuidImageContent"))
+            object.uuidImageContent = message.uuidImageContent;
         return object;
     };
 

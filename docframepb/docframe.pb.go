@@ -7791,6 +7791,7 @@ type ProtoImage struct {
 	ReferencePoint   ProtoImageReferencePoint                    `protobuf:"varint,18,opt,name=referencePoint,proto3,enum=ProtoImageReferencePoint" json:"referencePoint,omitempty"`
 	Hyperlink        string                                      `protobuf:"bytes,19,opt,name=hyperlink,proto3" json:"hyperlink,omitempty"`
 	ComChannelUUIDs  []string                                    `protobuf:"bytes,20,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	UuidImageContent string                                      `protobuf:"bytes,21,opt,name=uuidImageContent,proto3" json:"uuidImageContent,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -7963,6 +7964,13 @@ func (x *ProtoImage) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoImage) GetUuidImageContent() string {
+	if x != nil {
+		return x.UuidImageContent
+	}
+	return ""
 }
 
 type ProtoDirectory struct {
@@ -9924,6 +9932,9 @@ func (x *ProtoDmScript) GetComChannelUUIDs() []string {
 var File_build_docframe_proto protoreflect.FileDescriptor
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6f6bf85 (Add uuidImageContent)
 const file_build_docframe_proto_rawDesc = "" +
 	"\n" +
 	"\x14build/docframe.proto\">\n" +
@@ -10230,6 +10241,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0epreNamedString\x18\x1a \x01(\v2\x11.ProtoBoxedStringR\x0epreNamedString\x12;\n" +
 	"\x0fpostNamedString\x18\x1b \x01(\v2\x11.ProtoBoxedStringR\x0fpostNamedString\x125\n" +
 	"\fsemanticType\x18\x1c \x01(\v2\x11.ProtoBoxedStringR\fsemanticType\x12(\n" +
+<<<<<<< HEAD
 	"\x0fcomChannelUUIDs\x18\x1d \x03(\tR\x0fcomChannelUUIDs\"\xb3\x02\n" +
 	"\fProtoSection\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
@@ -10238,6 +10250,15 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\tpageDepth\x18\x04 \x01(\v2\r.ProtoMeasureR\tpageDepth\x12<\n" +
 	"\x0ecolumnSettings\x18\x05 \x01(\v2\x14.ProtoColumnSettingsR\x0ecolumnSettings\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\"\x94\x01\n" +
+=======
+	"\x0fcomChannelUUIDs\x18\x1d \x03(\tR\x0fcomChannelUUIDs\"\xcb\x01\n" +
+	"\fProtoSection\x122\n" +
+	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
+	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
+	"\x04Uuid\x18\x03 \x01(\tR\x04Uuid\x12\x1a\n" +
+	"\bcDefUuid\x18\x04 \x01(\tR\bcDefUuid\x12(\n" +
+	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\x94\x01\n" +
+>>>>>>> 6f6bf85 (Add uuidImageContent)
 	"\x14ProtoSpaceVertically\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12#\n" +
 	"\x05space\x18\x02 \x01(\v2\r.ProtoMeasureR\x05space\x12(\n" +
@@ -10383,6 +10404,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"internName\x12\x12\n" +
 	"\x04uuid\x18\x05 \x01(\tR\x04uuid\x12\x1a\n" +
 	"\beditable\x18\x06 \x01(\bR\beditable\x12(\n" +
+<<<<<<< HEAD
 	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\"\xbb\x03\n" +
 	"\rProtoTemplate\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
@@ -10395,16 +10417,37 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x15ContainerMappingEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xae\x01\n" +
+=======
+	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\"\xc8\x02\n" +
+	"\rProtoTemplate\x122\n" +
+	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
+	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x04 \x01(\tR\x04uuid\x12:\n" +
+	"\x0fcolumnBalancing\x18\x05 \x01(\x0e2\x10.ColumnBalancingR\x0fcolumnBalancing\x126\n" +
+	"\fsemanticType\x18\x06 \x01(\x0e2\x12.ProtoSemanticTypeR\fsemanticType\x12\"\n" +
+	"\ftemplateUuid\x18\a \x01(\tR\ftemplateUuid\"\xd4\x01\n" +
+>>>>>>> 6f6bf85 (Add uuidImageContent)
 	"\vProtoHeader\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12(\n" +
+<<<<<<< HEAD
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\"\xae\x01\n" +
+=======
+	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12$\n" +
+	"\x04mode\x18\x05 \x01(\x0e2\x10.ProtoHeaderModeR\x04mode\"\xd4\x01\n" +
+>>>>>>> 6f6bf85 (Add uuidImageContent)
 	"\vProtoFooter\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12(\n" +
+<<<<<<< HEAD
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\"\xe5\x14\n" +
+=======
+	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12$\n" +
+	"\x04mode\x18\x05 \x01(\x0e2\x10.ProtoFooterModeR\x04mode\"\xe5\x14\n" +
+>>>>>>> 6f6bf85 (Add uuidImageContent)
 	"\x04Node\x12!\n" +
 	"\bchildren\x18\x01 \x03(\v2\x05.NodeR\bchildren\x126\n" +
 	"\flist_setting\x18\x02 \x01(\v2\x11.ProtoListSettingH\x00R\vlistSetting\x12,\n" +
@@ -10470,7 +10513,11 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x13adjust_horizontally\x18A \x01(\v2\x18.ProtoAdjustHorizontallyH\x00R\x12adjustHorizontally\x12;\n" +
 	"\rdoctypeScript\x18B \x01(\v2\x13.ProtoDoctypeScriptH\x00R\rdoctypeScript\x12,\n" +
 	"\bdmScript\x18C \x01(\v2\x0e.ProtoDmScriptH\x00R\bdmScriptB\b\n" +
+<<<<<<< HEAD
 	"\x06object\"\xae\x06\n" +
+=======
+	"\x06object\"\xda\x06\n" +
+>>>>>>> 6f6bf85 (Add uuidImageContent)
 	"\n" +
 	"ProtoImage\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x10\n" +
@@ -10493,7 +10540,12 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x04uuid\x18\x11 \x01(\tR\x04uuid\x12A\n" +
 	"\x0ereferencePoint\x18\x12 \x01(\x0e2\x19.ProtoImageReferencePointR\x0ereferencePoint\x12\x1c\n" +
 	"\thyperlink\x18\x13 \x01(\tR\thyperlink\x12(\n" +
+<<<<<<< HEAD
 	"\x0fcomChannelUUIDs\x18\x14 \x03(\tR\x0fcomChannelUUIDs\"\xe9\x01\n" +
+=======
+	"\x0fcomChannelUUIDs\x18\x14 \x03(\tR\x0fcomChannelUUIDs\x12*\n" +
+	"\x10uuidImageContent\x18\x15 \x01(\tR\x10uuidImageContent\"\xe9\x01\n" +
+>>>>>>> 6f6bf85 (Add uuidImageContent)
 	"\x0eProtoDirectory\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
@@ -10761,10 +10813,17 @@ const file_build_docframe_proto_rawDesc = "" +
 	"UNNUMBERED\x10\x00\x12\v\n" +
 	"\aNUMERIC\x10\x01\x12\t\n" +
 	"\x05IMAGE\x10\x02*N\n" +
+<<<<<<< HEAD
 	"\x1aProtoTableContentGroupType\x12\n" +
 	"\n" +
 	"\x06HEADER\x10\x00\x12\b\n" +
 	"\x04BODY\x10\x01\x12\n" +
+=======
+	"\x1aProtoTableContentGroupType\x12\b\n" +
+	"\x04BODY\x10\x00\x12\n" +
+	"\n" +
+	"\x06HEADER\x10\x01\x12\n" +
+>>>>>>> 6f6bf85 (Add uuidImageContent)
 	"\n" +
 	"\x06FOOTER\x10\x02\x12\x0e\n" +
 	"\n" +
@@ -10775,7 +10834,21 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x15TABLE_CELL_ROW_FOOTER\x10\x02*2\n" +
 	"\x0fColumnBalancing\x12\x10\n" +
 	"\fNO_BALANCING\x10\x00\x12\r\n" +
+<<<<<<< HEAD
 	"\tBALANCING\x10\x01*\xa6\x0e\n" +
+=======
+	"\tBALANCING\x10\x01*z\n" +
+	"\x0fProtoHeaderMode\x12\x1e\n" +
+	"\x1aHEADER_MODE_APPEND_INITIAL\x10\x00\x12\x16\n" +
+	"\x12HEADER_MODE_APPEND\x10\x01\x12\x16\n" +
+	"\x12HEADER_MODE_EXTEND\x10\x02\x12\x17\n" +
+	"\x13HEADER_MODE_REPLACE\x10\x03*z\n" +
+	"\x0fProtoFooterMode\x12\x1e\n" +
+	"\x1aFOOTER_MODE_APPEND_INITIAL\x10\x00\x12\x16\n" +
+	"\x12FOOTER_MODE_APPEND\x10\x01\x12\x16\n" +
+	"\x12FOOTER_MODE_EXTEND\x10\x02\x12\x17\n" +
+	"\x13FOOTER_MODE_REPLACE\x10\x03*\xa6\x0e\n" +
+>>>>>>> 6f6bf85 (Add uuidImageContent)
 	"\bNodeType\x12,\n" +
 	"(DOCUMENT_ELEMENT_BRANCH_DOCUMENT_ELEMENT\x10\x00\x12$\n" +
 	" DOCUMENT_ELEMENT_BRICK_REFERENCE\x10\x01\x12\x1a\n" +
@@ -10866,6 +10939,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x1bDOCTYPE_OUTPUT_MODE_NOT_SET\x10\x00\x12\v\n" +
 	"\aDOCTYPE\x10\x01\x12\b\n" +
 	"\x04JSON\x10\x02b\x06proto3"
+<<<<<<< HEAD
 =======
 var file_build_docframe_proto_rawDesc = string([]byte{
 	0x0a, 0x14, 0x62, 0x75, 0x69, 0x6c, 0x64, 0x2f, 0x64, 0x6f, 0x63, 0x66, 0x72, 0x61, 0x6d, 0x65,
@@ -12679,6 +12753,8 @@ var file_build_docframe_proto_rawDesc = string([]byte{
 	0x04, 0x4a, 0x53, 0x4f, 0x4e, 0x10, 0x02, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 >>>>>>> d97ef07 (Add UUID to section)
+=======
+>>>>>>> 6f6bf85 (Add uuidImageContent)
 
 var (
 	file_build_docframe_proto_rawDescOnce sync.Once
