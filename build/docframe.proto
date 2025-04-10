@@ -765,6 +765,7 @@ ProtoAdvancedIllustrationArea advanced_illustration_area = 64;
 ProtoAdjustHorizontally adjust_horizontally = 65;
 ProtoDoctypeScript doctypeScript = 66;
 ProtoDmScript dmScript = 67;
+ProtoDynamicTemplate dynamic_template = 68;
 }
 }
 
@@ -823,6 +824,7 @@ DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70;
 DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71;
 DOCUMENT_ELEMENT_DOCTYPE_SCRIPT = 72;
 DOCUMENT_ELEMENT_DM_SCRIPT = 73;
+DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74;
 }
 message ProtoImage {
 ProtoDocumentElement parent = 1;
@@ -1094,4 +1096,11 @@ ProtoDocumentElement parent = 1;
 
 string content = 2;
 repeated string comChannelUUIDs = 3;
+}
+message ProtoDynamicTemplate {
+ProtoDocumentElement parent = 1;
+string uuid = 2;
+
+string script = 3;
+repeated string comChannelUUIDs = 4;
 }

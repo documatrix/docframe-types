@@ -8793,6 +8793,9 @@ export interface INode {
 
     /** Node dmScript */
     dmScript?: (IProtoDmScript|null);
+
+    /** Node dynamicTemplate */
+    dynamicTemplate?: (IProtoDynamicTemplate|null);
 }
 
 /** Represents a Node. */
@@ -8960,8 +8963,11 @@ export class Node implements INode {
     /** Node dmScript. */
     public dmScript?: (IProtoDmScript|null);
 
+    /** Node dynamicTemplate. */
+    public dynamicTemplate?: (IProtoDynamicTemplate|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -9096,7 +9102,8 @@ export enum NodeType {
     DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70,
     DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71,
     DOCUMENT_ELEMENT_DOCTYPE_SCRIPT = 72,
-    DOCUMENT_ELEMENT_DM_SCRIPT = 73
+    DOCUMENT_ELEMENT_DM_SCRIPT = 73,
+    DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74
 }
 
 /** Properties of a ProtoImage. */
@@ -12554,6 +12561,121 @@ export class ProtoDmScript implements IProtoDmScript {
 
     /**
      * Gets the default type url for ProtoDmScript
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoDynamicTemplate. */
+export interface IProtoDynamicTemplate {
+
+    /** ProtoDynamicTemplate parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoDynamicTemplate uuid */
+    uuid?: (string|null);
+
+    /** ProtoDynamicTemplate script */
+    script?: (string|null);
+
+    /** ProtoDynamicTemplate comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoDynamicTemplate. */
+export class ProtoDynamicTemplate implements IProtoDynamicTemplate {
+
+    /**
+     * Constructs a new ProtoDynamicTemplate.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoDynamicTemplate);
+
+    /** ProtoDynamicTemplate parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoDynamicTemplate uuid. */
+    public uuid: string;
+
+    /** ProtoDynamicTemplate script. */
+    public script: string;
+
+    /** ProtoDynamicTemplate comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoDynamicTemplate instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoDynamicTemplate instance
+     */
+    public static create(properties?: IProtoDynamicTemplate): ProtoDynamicTemplate;
+
+    /**
+     * Encodes the specified ProtoDynamicTemplate message. Does not implicitly {@link ProtoDynamicTemplate.verify|verify} messages.
+     * @param message ProtoDynamicTemplate message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoDynamicTemplate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoDynamicTemplate message, length delimited. Does not implicitly {@link ProtoDynamicTemplate.verify|verify} messages.
+     * @param message ProtoDynamicTemplate message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoDynamicTemplate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoDynamicTemplate message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoDynamicTemplate
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoDynamicTemplate;
+
+    /**
+     * Decodes a ProtoDynamicTemplate message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoDynamicTemplate
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoDynamicTemplate;
+
+    /**
+     * Verifies a ProtoDynamicTemplate message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoDynamicTemplate message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoDynamicTemplate
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoDynamicTemplate;
+
+    /**
+     * Creates a plain object from a ProtoDynamicTemplate message. Also converts values to other types if specified.
+     * @param message ProtoDynamicTemplate
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoDynamicTemplate, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoDynamicTemplate to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoDynamicTemplate
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

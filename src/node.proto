@@ -53,6 +53,7 @@ message Node {
     ProtoAdjustHorizontally adjust_horizontally = 65;
     ProtoDoctypeScript doctypeScript = 66;
     ProtoDmScript dmScript = 67;
+    ProtoDynamicTemplate dynamic_template = 68;
   }
 }
 
@@ -111,4 +112,5 @@ enum NodeType {
   DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71;
   DOCUMENT_ELEMENT_DOCTYPE_SCRIPT = 72;
   DOCUMENT_ELEMENT_DM_SCRIPT = 73;
+  DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74;
 }

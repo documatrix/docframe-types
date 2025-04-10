@@ -23745,6 +23745,7 @@ $root.Node = (function() {
      * @property {IProtoAdjustHorizontally|null} [adjustHorizontally] Node adjustHorizontally
      * @property {IProtoDoctypeScript|null} [doctypeScript] Node doctypeScript
      * @property {IProtoDmScript|null} [dmScript] Node dmScript
+     * @property {IProtoDynamicTemplate|null} [dynamicTemplate] Node dynamicTemplate
      */
 
     /**
@@ -24179,17 +24180,25 @@ $root.Node = (function() {
      */
     Node.prototype.dmScript = null;
 
+    /**
+     * Node dynamicTemplate.
+     * @member {IProtoDynamicTemplate|null|undefined} dynamicTemplate
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.dynamicTemplate = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -24322,6 +24331,8 @@ $root.Node = (function() {
             $root.ProtoDoctypeScript.encode(message.doctypeScript, writer.uint32(/* id 66, wireType 2 =*/530).fork()).ldelim();
         if (message.dmScript != null && Object.hasOwnProperty.call(message, "dmScript"))
             $root.ProtoDmScript.encode(message.dmScript, writer.uint32(/* id 67, wireType 2 =*/538).fork()).ldelim();
+        if (message.dynamicTemplate != null && Object.hasOwnProperty.call(message, "dynamicTemplate"))
+            $root.ProtoDynamicTemplate.encode(message.dynamicTemplate, writer.uint32(/* id 68, wireType 2 =*/546).fork()).ldelim();
         return writer;
     };
 
@@ -24564,6 +24575,10 @@ $root.Node = (function() {
                 }
             case 67: {
                     message.dmScript = $root.ProtoDmScript.decode(reader, reader.uint32());
+                    break;
+                }
+            case 68: {
+                    message.dynamicTemplate = $root.ProtoDynamicTemplate.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -25119,6 +25134,16 @@ $root.Node = (function() {
                     return "dmScript." + error;
             }
         }
+        if (message.dynamicTemplate != null && message.hasOwnProperty("dynamicTemplate")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoDynamicTemplate.verify(message.dynamicTemplate);
+                if (error)
+                    return "dynamicTemplate." + error;
+            }
+        }
         return null;
     };
 
@@ -25399,6 +25424,11 @@ $root.Node = (function() {
                 throw TypeError(".Node.dmScript: object expected");
             message.dmScript = $root.ProtoDmScript.fromObject(object.dmScript);
         }
+        if (object.dynamicTemplate != null) {
+            if (typeof object.dynamicTemplate !== "object")
+                throw TypeError(".Node.dynamicTemplate: object expected");
+            message.dynamicTemplate = $root.ProtoDynamicTemplate.fromObject(object.dynamicTemplate);
+        }
         return message;
     };
 
@@ -25677,6 +25707,11 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "dmScript";
         }
+        if (message.dynamicTemplate != null && message.hasOwnProperty("dynamicTemplate")) {
+            object.dynamicTemplate = $root.ProtoDynamicTemplate.toObject(message.dynamicTemplate, options);
+            if (options.oneofs)
+                object.object = "dynamicTemplate";
+        }
         return object;
     };
 
@@ -25767,6 +25802,7 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY=71 DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY value
  * @property {number} DOCUMENT_ELEMENT_DOCTYPE_SCRIPT=72 DOCUMENT_ELEMENT_DOCTYPE_SCRIPT value
  * @property {number} DOCUMENT_ELEMENT_DM_SCRIPT=73 DOCUMENT_ELEMENT_DM_SCRIPT value
+ * @property {number} DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE=74 DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -25824,6 +25860,7 @@ $root.NodeType = (function() {
     values[valuesById[71] = "DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY"] = 71;
     values[valuesById[72] = "DOCUMENT_ELEMENT_DOCTYPE_SCRIPT"] = 72;
     values[valuesById[73] = "DOCUMENT_ELEMENT_DM_SCRIPT"] = 73;
+    values[valuesById[74] = "DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE"] = 74;
     return values;
 })();
 
@@ -35674,6 +35711,301 @@ $root.ProtoDmScript = (function() {
     };
 
     return ProtoDmScript;
+})();
+
+$root.ProtoDynamicTemplate = (function() {
+
+    /**
+     * Properties of a ProtoDynamicTemplate.
+     * @name IProtoDynamicTemplate
+     * @interface IProtoDynamicTemplate
+     * @property {IProtoDocumentElement|null} [parent] ProtoDynamicTemplate parent
+     * @property {string|null} [uuid] ProtoDynamicTemplate uuid
+     * @property {string|null} [script] ProtoDynamicTemplate script
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoDynamicTemplate comChannelUUIDs
+     */
+
+    /**
+     * Constructs a new ProtoDynamicTemplate.
+     * @name ProtoDynamicTemplate
+     * @classdesc Represents a ProtoDynamicTemplate.
+     * @implements IProtoDynamicTemplate
+     * @constructor
+     * @param {IProtoDynamicTemplate=} [properties] Properties to set
+     */
+    function ProtoDynamicTemplate(properties) {
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoDynamicTemplate parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoDynamicTemplate
+     * @instance
+     */
+    ProtoDynamicTemplate.prototype.parent = null;
+
+    /**
+     * ProtoDynamicTemplate uuid.
+     * @member {string} uuid
+     * @memberof ProtoDynamicTemplate
+     * @instance
+     */
+    ProtoDynamicTemplate.prototype.uuid = "";
+
+    /**
+     * ProtoDynamicTemplate script.
+     * @member {string} script
+     * @memberof ProtoDynamicTemplate
+     * @instance
+     */
+    ProtoDynamicTemplate.prototype.script = "";
+
+    /**
+     * ProtoDynamicTemplate comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoDynamicTemplate
+     * @instance
+     */
+    ProtoDynamicTemplate.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoDynamicTemplate instance using the specified properties.
+     * @function create
+     * @memberof ProtoDynamicTemplate
+     * @static
+     * @param {IProtoDynamicTemplate=} [properties] Properties to set
+     * @returns {ProtoDynamicTemplate} ProtoDynamicTemplate instance
+     */
+    ProtoDynamicTemplate.create = function create(properties) {
+        return new ProtoDynamicTemplate(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoDynamicTemplate message. Does not implicitly {@link ProtoDynamicTemplate.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoDynamicTemplate
+     * @static
+     * @param {IProtoDynamicTemplate} message ProtoDynamicTemplate message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoDynamicTemplate.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.uuid);
+        if (message.script != null && Object.hasOwnProperty.call(message, "script"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.script);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoDynamicTemplate message, length delimited. Does not implicitly {@link ProtoDynamicTemplate.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoDynamicTemplate
+     * @static
+     * @param {IProtoDynamicTemplate} message ProtoDynamicTemplate message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoDynamicTemplate.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoDynamicTemplate message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoDynamicTemplate
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoDynamicTemplate} ProtoDynamicTemplate
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoDynamicTemplate.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoDynamicTemplate();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.uuid = reader.string();
+                    break;
+                }
+            case 3: {
+                    message.script = reader.string();
+                    break;
+                }
+            case 4: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoDynamicTemplate message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoDynamicTemplate
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoDynamicTemplate} ProtoDynamicTemplate
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoDynamicTemplate.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoDynamicTemplate message.
+     * @function verify
+     * @memberof ProtoDynamicTemplate
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoDynamicTemplate.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.script != null && message.hasOwnProperty("script"))
+            if (!$util.isString(message.script))
+                return "script: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoDynamicTemplate message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoDynamicTemplate
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoDynamicTemplate} ProtoDynamicTemplate
+     */
+    ProtoDynamicTemplate.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoDynamicTemplate)
+            return object;
+        var message = new $root.ProtoDynamicTemplate();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoDynamicTemplate.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
+        if (object.script != null)
+            message.script = String(object.script);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoDynamicTemplate.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoDynamicTemplate message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoDynamicTemplate
+     * @static
+     * @param {ProtoDynamicTemplate} message ProtoDynamicTemplate
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoDynamicTemplate.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.comChannelUUIDs = [];
+        if (options.defaults) {
+            object.parent = null;
+            object.uuid = "";
+            object.script = "";
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.script != null && message.hasOwnProperty("script"))
+            object.script = message.script;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoDynamicTemplate to JSON.
+     * @function toJSON
+     * @memberof ProtoDynamicTemplate
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoDynamicTemplate.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoDynamicTemplate
+     * @function getTypeUrl
+     * @memberof ProtoDynamicTemplate
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoDynamicTemplate.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoDynamicTemplate";
+    };
+
+    return ProtoDynamicTemplate;
 })();
 
 module.exports = $root;

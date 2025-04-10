@@ -1123,6 +1123,7 @@ const (
 	NodeType_DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY        NodeType = 71
 	NodeType_DOCUMENT_ELEMENT_DOCTYPE_SCRIPT             NodeType = 72
 	NodeType_DOCUMENT_ELEMENT_DM_SCRIPT                  NodeType = 73
+	NodeType_DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE           NodeType = 74
 )
 
 // Enum value maps for NodeType.
@@ -1182,6 +1183,7 @@ var (
 		71: "DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY",
 		72: "DOCUMENT_ELEMENT_DOCTYPE_SCRIPT",
 		73: "DOCUMENT_ELEMENT_DM_SCRIPT",
+		74: "DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE",
 	}
 	NodeType_value = map[string]int32{
 		"DOCUMENT_ELEMENT_BRANCH_DOCUMENT_ELEMENT":    0,
@@ -1238,6 +1240,7 @@ var (
 		"DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY":        71,
 		"DOCUMENT_ELEMENT_DOCTYPE_SCRIPT":             72,
 		"DOCUMENT_ELEMENT_DM_SCRIPT":                  73,
+		"DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE":           74,
 	}
 )
 
@@ -6951,6 +6954,7 @@ type Node struct {
 	//	*Node_AdjustHorizontally
 	//	*Node_DoctypeScript
 	//	*Node_DmScript
+	//	*Node_DynamicTemplate
 	Object        isNode_Object `protobuf_oneof:"object"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -7459,6 +7463,15 @@ func (x *Node) GetDmScript() *ProtoDmScript {
 	return nil
 }
 
+func (x *Node) GetDynamicTemplate() *ProtoDynamicTemplate {
+	if x != nil {
+		if x, ok := x.Object.(*Node_DynamicTemplate); ok {
+			return x.DynamicTemplate
+		}
+	}
+	return nil
+}
+
 type isNode_Object interface {
 	isNode_Object()
 }
@@ -7667,6 +7680,10 @@ type Node_DmScript struct {
 	DmScript *ProtoDmScript `protobuf:"bytes,67,opt,name=dmScript,proto3,oneof"`
 }
 
+type Node_DynamicTemplate struct {
+	DynamicTemplate *ProtoDynamicTemplate `protobuf:"bytes,68,opt,name=dynamic_template,json=dynamicTemplate,proto3,oneof"`
+}
+
 func (*Node_ListSetting) isNode_Object() {}
 
 func (*Node_ColorDef) isNode_Object() {}
@@ -7768,6 +7785,8 @@ func (*Node_AdjustHorizontally) isNode_Object() {}
 func (*Node_DoctypeScript) isNode_Object() {}
 
 func (*Node_DmScript) isNode_Object() {}
+
+func (*Node_DynamicTemplate) isNode_Object() {}
 
 type ProtoImage struct {
 	state            protoimpl.MessageState                      `protogen:"open.v1"`
@@ -9929,6 +9948,74 @@ func (x *ProtoDmScript) GetComChannelUUIDs() []string {
 	return nil
 }
 
+type ProtoDynamicTemplate struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	Uuid            string                 `protobuf:"bytes,2,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Script          string                 `protobuf:"bytes,3,opt,name=script,proto3" json:"script,omitempty"`
+	ComChannelUUIDs []string               `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ProtoDynamicTemplate) Reset() {
+	*x = ProtoDynamicTemplate{}
+	mi := &file_build_docframe_proto_msgTypes[99]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProtoDynamicTemplate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProtoDynamicTemplate) ProtoMessage() {}
+
+func (x *ProtoDynamicTemplate) ProtoReflect() protoreflect.Message {
+	mi := &file_build_docframe_proto_msgTypes[99]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProtoDynamicTemplate.ProtoReflect.Descriptor instead.
+func (*ProtoDynamicTemplate) Descriptor() ([]byte, []int) {
+	return file_build_docframe_proto_rawDescGZIP(), []int{99}
+}
+
+func (x *ProtoDynamicTemplate) GetParent() *ProtoDocumentElement {
+	if x != nil {
+		return x.Parent
+	}
+	return nil
+}
+
+func (x *ProtoDynamicTemplate) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
+func (x *ProtoDynamicTemplate) GetScript() string {
+	if x != nil {
+		return x.Script
+	}
+	return ""
+}
+
+func (x *ProtoDynamicTemplate) GetComChannelUUIDs() []string {
+	if x != nil {
+		return x.ComChannelUUIDs
+	}
+	return nil
+}
+
 var File_build_docframe_proto protoreflect.FileDescriptor
 
 <<<<<<< HEAD
@@ -10446,8 +10533,12 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\"\xe5\x14\n" +
 =======
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12$\n" +
+<<<<<<< HEAD
 	"\x04mode\x18\x05 \x01(\x0e2\x10.ProtoFooterModeR\x04mode\"\xe5\x14\n" +
 >>>>>>> 6f6bf85 (Add uuidImageContent)
+=======
+	"\x04mode\x18\x05 \x01(\x0e2\x10.ProtoFooterModeR\x04mode\"\xa9\x15\n" +
+>>>>>>> 0aa3216 (Add dynamic template)
 	"\x04Node\x12!\n" +
 	"\bchildren\x18\x01 \x03(\v2\x05.NodeR\bchildren\x126\n" +
 	"\flist_setting\x18\x02 \x01(\v2\x11.ProtoListSettingH\x00R\vlistSetting\x12,\n" +
@@ -10512,10 +10603,15 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x1aadvanced_illustration_area\x18@ \x01(\v2\x1e.ProtoAdvancedIllustrationAreaH\x00R\x18advancedIllustrationArea\x12K\n" +
 	"\x13adjust_horizontally\x18A \x01(\v2\x18.ProtoAdjustHorizontallyH\x00R\x12adjustHorizontally\x12;\n" +
 	"\rdoctypeScript\x18B \x01(\v2\x13.ProtoDoctypeScriptH\x00R\rdoctypeScript\x12,\n" +
+<<<<<<< HEAD
 	"\bdmScript\x18C \x01(\v2\x0e.ProtoDmScriptH\x00R\bdmScriptB\b\n" +
 <<<<<<< HEAD
 	"\x06object\"\xae\x06\n" +
 =======
+=======
+	"\bdmScript\x18C \x01(\v2\x0e.ProtoDmScriptH\x00R\bdmScript\x12B\n" +
+	"\x10dynamic_template\x18D \x01(\v2\x15.ProtoDynamicTemplateH\x00R\x0fdynamicTemplateB\b\n" +
+>>>>>>> 0aa3216 (Add dynamic template)
 	"\x06object\"\xda\x06\n" +
 >>>>>>> 6f6bf85 (Add uuidImageContent)
 	"\n" +
@@ -10707,7 +10803,12 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\rProtoDmScript\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x18\n" +
 	"\acontent\x18\x02 \x01(\tR\acontent\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs*8\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\x9b\x01\n" +
+	"\x14ProtoDynamicTemplate\x12-\n" +
+	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
+	"\x04uuid\x18\x02 \x01(\tR\x04uuid\x12\x16\n" +
+	"\x06script\x18\x03 \x01(\tR\x06script\x12(\n" +
+	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs*8\n" +
 	"\fProtoSPBMode\x12\b\n" +
 	"\x04NONE\x10\x00\x12\x0f\n" +
 	"\vSUPERSCRIPT\x10\x01\x12\r\n" +
@@ -10847,8 +10948,12 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x1aFOOTER_MODE_APPEND_INITIAL\x10\x00\x12\x16\n" +
 	"\x12FOOTER_MODE_APPEND\x10\x01\x12\x16\n" +
 	"\x12FOOTER_MODE_EXTEND\x10\x02\x12\x17\n" +
+<<<<<<< HEAD
 	"\x13FOOTER_MODE_REPLACE\x10\x03*\xa6\x0e\n" +
 >>>>>>> 6f6bf85 (Add uuidImageContent)
+=======
+	"\x13FOOTER_MODE_REPLACE\x10\x03*\xcd\x0e\n" +
+>>>>>>> 0aa3216 (Add dynamic template)
 	"\bNodeType\x12,\n" +
 	"(DOCUMENT_ELEMENT_BRANCH_DOCUMENT_ELEMENT\x10\x00\x12$\n" +
 	" DOCUMENT_ELEMENT_BRICK_REFERENCE\x10\x01\x12\x1a\n" +
@@ -10904,7 +11009,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"+DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA\x10F\x12(\n" +
 	"$DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY\x10G\x12#\n" +
 	"\x1fDOCUMENT_ELEMENT_DOCTYPE_SCRIPT\x10H\x12\x1e\n" +
-	"\x1aDOCUMENT_ELEMENT_DM_SCRIPT\x10I*\xc4\x01\n" +
+	"\x1aDOCUMENT_ELEMENT_DM_SCRIPT\x10I\x12%\n" +
+	"!DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE\x10J*\xc4\x01\n" +
 	"\x18ProtoVariableSpecialType\x12\x0f\n" +
 	"\vNOT_SPECIAL\x10\x00\x12\x10\n" +
 	"\fTABLE_NUMBER\x10\x01\x12\x12\n" +
@@ -12769,7 +12875,7 @@ func file_build_docframe_proto_rawDescGZIP() []byte {
 }
 
 var file_build_docframe_proto_enumTypes = make([]protoimpl.EnumInfo, 26)
-var file_build_docframe_proto_msgTypes = make([]protoimpl.MessageInfo, 99)
+var file_build_docframe_proto_msgTypes = make([]protoimpl.MessageInfo, 100)
 var file_build_docframe_proto_goTypes = []any{
 	(ProtoSPBMode)(0),                                      // 0: ProtoSPBMode
 	(ProtoRuleStyle)(0),                                    // 1: ProtoRuleStyle
@@ -12896,6 +13002,7 @@ var file_build_docframe_proto_goTypes = []any{
 	(*ProtoAdjustHorizontally)(nil),                        // 122: ProtoAdjustHorizontally
 	(*ProtoDoctypeScript)(nil),                             // 123: ProtoDoctypeScript
 	(*ProtoDmScript)(nil),                                  // 124: ProtoDmScript
+	(*ProtoDynamicTemplate)(nil),                           // 125: ProtoDynamicTemplate
 }
 var file_build_docframe_proto_depIdxs = []int32{
 	0,   // 0: ProtoBoxedSPBMode.value:type_name -> ProtoSPBMode
@@ -13159,85 +13266,87 @@ var file_build_docframe_proto_depIdxs = []int32{
 	122, // 258: Node.adjust_horizontally:type_name -> ProtoAdjustHorizontally
 	123, // 259: Node.doctypeScript:type_name -> ProtoDoctypeScript
 	124, // 260: Node.dmScript:type_name -> ProtoDmScript
-	58,  // 261: ProtoImage.parent:type_name -> ProtoDocumentElement
-	27,  // 262: ProtoImage.scale:type_name -> ProtoBoxedDouble
-	27,  // 263: ProtoImage.columnScale:type_name -> ProtoBoxedDouble
-	35,  // 264: ProtoImage.width:type_name -> ProtoBoxedMeasure
-	35,  // 265: ProtoImage.height:type_name -> ProtoBoxedMeasure
-	35,  // 266: ProtoImage.x:type_name -> ProtoBoxedMeasure
-	35,  // 267: ProtoImage.y:type_name -> ProtoBoxedMeasure
-	26,  // 268: ProtoImage.positionAbsolute:type_name -> ProtoBoxedBool
-	57,  // 269: ProtoImage.flipSettings:type_name -> ProtoFlipSettings
-	56,  // 270: ProtoImage.cropSettings:type_name -> ProtoCropSettings
-	38,  // 271: ProtoImage.aia:type_name -> ProtoAdvancedIllustrationAreaImageSettings
-	10,  // 272: ProtoImage.referencePoint:type_name -> ProtoImageReferencePoint
-	58,  // 273: ProtoDirectory._children:type_name -> ProtoDocumentElement
-	58,  // 274: ProtoDirectory.parent:type_name -> ProtoDocumentElement
-	11,  // 275: ProtoDirectory.semanticType:type_name -> ProtoSemanticType
-	58,  // 276: ProtoTextBrick._children:type_name -> ProtoDocumentElement
-	58,  // 277: ProtoTextBrick.parent:type_name -> ProtoDocumentElement
-	58,  // 278: ProtoVariable.parent:type_name -> ProtoDocumentElement
-	20,  // 279: ProtoVariable.specialType:type_name -> ProtoVariableSpecialType
-	58,  // 280: ProtoFormatted.parent:type_name -> ProtoDocumentElement
-	51,  // 281: ProtoCDef.columSettings:type_name -> ProtoColumnSettings
-	26,  // 282: ProtoCDef.applyToHeaderFooter:type_name -> ProtoBoxedBool
-	26,  // 283: ProtoCDef.applyImmediate:type_name -> ProtoBoxedBool
-	35,  // 284: ProtoPDef.pageWidth:type_name -> ProtoBoxedMeasure
-	35,  // 285: ProtoPDef.pageDepth:type_name -> ProtoBoxedMeasure
-	35,  // 286: ProtoPtConfig.height:type_name -> ProtoBoxedMeasure
-	35,  // 287: ProtoPtConfig.lineFeed:type_name -> ProtoBoxedMeasure
-	35,  // 288: ProtoPtConfig.characterWidth:type_name -> ProtoBoxedMeasure
-	35,  // 289: ProtoPtConfig.spaceWidth:type_name -> ProtoBoxedMeasure
-	9,   // 290: ProtoUlConfig.mode:type_name -> ProtoUnderlineMode
-	21,  // 291: ProtoNewPage.pageMode:type_name -> ProtoPageMode
-	22,  // 292: ProtoNewPage.pageOrientation:type_name -> ProtoPageOrientation
-	58,  // 293: ProtoIndentation._children:type_name -> ProtoDocumentElement
-	58,  // 294: ProtoIndentation.parent:type_name -> ProtoDocumentElement
-	35,  // 295: ProtoIndentation.left:type_name -> ProtoBoxedMeasure
-	35,  // 296: ProtoIndentation.right:type_name -> ProtoBoxedMeasure
-	58,  // 297: ProtoCarryOver._children:type_name -> ProtoDocumentElement
-	58,  // 298: ProtoCarryOver.parent:type_name -> ProtoDocumentElement
-	58,  // 299: ProtoLoopEntry._children:type_name -> ProtoDocumentElement
-	58,  // 300: ProtoLoopEntry.parent:type_name -> ProtoDocumentElement
-	58,  // 301: ProtoLoop._children:type_name -> ProtoDocumentElement
-	58,  // 302: ProtoLoop.parent:type_name -> ProtoDocumentElement
-	58,  // 303: ProtoSubTotal._children:type_name -> ProtoDocumentElement
-	58,  // 304: ProtoSubTotal.parent:type_name -> ProtoDocumentElement
-	23,  // 305: ProtoSubTotal.position:type_name -> ProtoSubTotalPosition
-	34,  // 306: ProtoSubTotal.height:type_name -> ProtoMeasure
-	58,  // 307: ProtoWsArea._children:type_name -> ProtoDocumentElement
-	58,  // 308: ProtoWsArea.parent:type_name -> ProtoDocumentElement
-	34,  // 309: ProtoRule.xOffset:type_name -> ProtoMeasure
-	34,  // 310: ProtoRule.yOffset:type_name -> ProtoMeasure
-	34,  // 311: ProtoRule.width:type_name -> ProtoMeasure
-	34,  // 312: ProtoRule.thickness:type_name -> ProtoMeasure
-	41,  // 313: ProtoRule.color:type_name -> ProtoColor
-	1,   // 314: ProtoRule.style:type_name -> ProtoRuleStyle
-	24,  // 315: ProtoRule.mode:type_name -> ProtoRuleMode
-	118, // 316: ProtoRule.boundaries:type_name -> ProtoRuleBoundaries
-	34,  // 317: ProtoRuleBoundaries.start:type_name -> ProtoMeasure
-	34,  // 318: ProtoRuleBoundaries.end:type_name -> ProtoMeasure
-	41,  // 319: ProtoColorDef.color:type_name -> ProtoColor
-	58,  // 320: ProtoLayout.parent:type_name -> ProtoDocumentElement
-	58,  // 321: ProtoAdvancedIllustrationArea._children:type_name -> ProtoDocumentElement
-	58,  // 322: ProtoAdvancedIllustrationArea.parent:type_name -> ProtoDocumentElement
-	34,  // 323: ProtoAdvancedIllustrationArea.width:type_name -> ProtoMeasure
-	34,  // 324: ProtoAdvancedIllustrationArea.height:type_name -> ProtoMeasure
-	34,  // 325: ProtoAdvancedIllustrationArea.x:type_name -> ProtoMeasure
-	34,  // 326: ProtoAdvancedIllustrationArea.y:type_name -> ProtoMeasure
-	3,   // 327: ProtoAdvancedIllustrationArea.textFlow:type_name -> ProtoAdvancedIllustrationAreaTextFlowType
-	58,  // 328: ProtoAdjustHorizontally._children:type_name -> ProtoDocumentElement
-	58,  // 329: ProtoAdjustHorizontally.parent:type_name -> ProtoDocumentElement
-	34,  // 330: ProtoAdjustHorizontally.minFontSize:type_name -> ProtoMeasure
-	34,  // 331: ProtoAdjustHorizontally.maxFontSize:type_name -> ProtoMeasure
-	58,  // 332: ProtoDoctypeScript.parent:type_name -> ProtoDocumentElement
-	25,  // 333: ProtoDoctypeScript.outputMode:type_name -> ProtoDoctypeOutputMode
-	58,  // 334: ProtoDmScript.parent:type_name -> ProtoDocumentElement
-	335, // [335:335] is the sub-list for method output_type
-	335, // [335:335] is the sub-list for method input_type
-	335, // [335:335] is the sub-list for extension type_name
-	335, // [335:335] is the sub-list for extension extendee
-	0,   // [0:335] is the sub-list for field type_name
+	125, // 261: Node.dynamic_template:type_name -> ProtoDynamicTemplate
+	58,  // 262: ProtoImage.parent:type_name -> ProtoDocumentElement
+	27,  // 263: ProtoImage.scale:type_name -> ProtoBoxedDouble
+	27,  // 264: ProtoImage.columnScale:type_name -> ProtoBoxedDouble
+	35,  // 265: ProtoImage.width:type_name -> ProtoBoxedMeasure
+	35,  // 266: ProtoImage.height:type_name -> ProtoBoxedMeasure
+	35,  // 267: ProtoImage.x:type_name -> ProtoBoxedMeasure
+	35,  // 268: ProtoImage.y:type_name -> ProtoBoxedMeasure
+	26,  // 269: ProtoImage.positionAbsolute:type_name -> ProtoBoxedBool
+	57,  // 270: ProtoImage.flipSettings:type_name -> ProtoFlipSettings
+	56,  // 271: ProtoImage.cropSettings:type_name -> ProtoCropSettings
+	38,  // 272: ProtoImage.aia:type_name -> ProtoAdvancedIllustrationAreaImageSettings
+	10,  // 273: ProtoImage.referencePoint:type_name -> ProtoImageReferencePoint
+	58,  // 274: ProtoDirectory._children:type_name -> ProtoDocumentElement
+	58,  // 275: ProtoDirectory.parent:type_name -> ProtoDocumentElement
+	11,  // 276: ProtoDirectory.semanticType:type_name -> ProtoSemanticType
+	58,  // 277: ProtoTextBrick._children:type_name -> ProtoDocumentElement
+	58,  // 278: ProtoTextBrick.parent:type_name -> ProtoDocumentElement
+	58,  // 279: ProtoVariable.parent:type_name -> ProtoDocumentElement
+	20,  // 280: ProtoVariable.specialType:type_name -> ProtoVariableSpecialType
+	58,  // 281: ProtoFormatted.parent:type_name -> ProtoDocumentElement
+	51,  // 282: ProtoCDef.columSettings:type_name -> ProtoColumnSettings
+	26,  // 283: ProtoCDef.applyToHeaderFooter:type_name -> ProtoBoxedBool
+	26,  // 284: ProtoCDef.applyImmediate:type_name -> ProtoBoxedBool
+	35,  // 285: ProtoPDef.pageWidth:type_name -> ProtoBoxedMeasure
+	35,  // 286: ProtoPDef.pageDepth:type_name -> ProtoBoxedMeasure
+	35,  // 287: ProtoPtConfig.height:type_name -> ProtoBoxedMeasure
+	35,  // 288: ProtoPtConfig.lineFeed:type_name -> ProtoBoxedMeasure
+	35,  // 289: ProtoPtConfig.characterWidth:type_name -> ProtoBoxedMeasure
+	35,  // 290: ProtoPtConfig.spaceWidth:type_name -> ProtoBoxedMeasure
+	9,   // 291: ProtoUlConfig.mode:type_name -> ProtoUnderlineMode
+	21,  // 292: ProtoNewPage.pageMode:type_name -> ProtoPageMode
+	22,  // 293: ProtoNewPage.pageOrientation:type_name -> ProtoPageOrientation
+	58,  // 294: ProtoIndentation._children:type_name -> ProtoDocumentElement
+	58,  // 295: ProtoIndentation.parent:type_name -> ProtoDocumentElement
+	35,  // 296: ProtoIndentation.left:type_name -> ProtoBoxedMeasure
+	35,  // 297: ProtoIndentation.right:type_name -> ProtoBoxedMeasure
+	58,  // 298: ProtoCarryOver._children:type_name -> ProtoDocumentElement
+	58,  // 299: ProtoCarryOver.parent:type_name -> ProtoDocumentElement
+	58,  // 300: ProtoLoopEntry._children:type_name -> ProtoDocumentElement
+	58,  // 301: ProtoLoopEntry.parent:type_name -> ProtoDocumentElement
+	58,  // 302: ProtoLoop._children:type_name -> ProtoDocumentElement
+	58,  // 303: ProtoLoop.parent:type_name -> ProtoDocumentElement
+	58,  // 304: ProtoSubTotal._children:type_name -> ProtoDocumentElement
+	58,  // 305: ProtoSubTotal.parent:type_name -> ProtoDocumentElement
+	23,  // 306: ProtoSubTotal.position:type_name -> ProtoSubTotalPosition
+	34,  // 307: ProtoSubTotal.height:type_name -> ProtoMeasure
+	58,  // 308: ProtoWsArea._children:type_name -> ProtoDocumentElement
+	58,  // 309: ProtoWsArea.parent:type_name -> ProtoDocumentElement
+	34,  // 310: ProtoRule.xOffset:type_name -> ProtoMeasure
+	34,  // 311: ProtoRule.yOffset:type_name -> ProtoMeasure
+	34,  // 312: ProtoRule.width:type_name -> ProtoMeasure
+	34,  // 313: ProtoRule.thickness:type_name -> ProtoMeasure
+	41,  // 314: ProtoRule.color:type_name -> ProtoColor
+	1,   // 315: ProtoRule.style:type_name -> ProtoRuleStyle
+	24,  // 316: ProtoRule.mode:type_name -> ProtoRuleMode
+	118, // 317: ProtoRule.boundaries:type_name -> ProtoRuleBoundaries
+	34,  // 318: ProtoRuleBoundaries.start:type_name -> ProtoMeasure
+	34,  // 319: ProtoRuleBoundaries.end:type_name -> ProtoMeasure
+	41,  // 320: ProtoColorDef.color:type_name -> ProtoColor
+	58,  // 321: ProtoLayout.parent:type_name -> ProtoDocumentElement
+	58,  // 322: ProtoAdvancedIllustrationArea._children:type_name -> ProtoDocumentElement
+	58,  // 323: ProtoAdvancedIllustrationArea.parent:type_name -> ProtoDocumentElement
+	34,  // 324: ProtoAdvancedIllustrationArea.width:type_name -> ProtoMeasure
+	34,  // 325: ProtoAdvancedIllustrationArea.height:type_name -> ProtoMeasure
+	34,  // 326: ProtoAdvancedIllustrationArea.x:type_name -> ProtoMeasure
+	34,  // 327: ProtoAdvancedIllustrationArea.y:type_name -> ProtoMeasure
+	3,   // 328: ProtoAdvancedIllustrationArea.textFlow:type_name -> ProtoAdvancedIllustrationAreaTextFlowType
+	58,  // 329: ProtoAdjustHorizontally._children:type_name -> ProtoDocumentElement
+	58,  // 330: ProtoAdjustHorizontally.parent:type_name -> ProtoDocumentElement
+	34,  // 331: ProtoAdjustHorizontally.minFontSize:type_name -> ProtoMeasure
+	34,  // 332: ProtoAdjustHorizontally.maxFontSize:type_name -> ProtoMeasure
+	58,  // 333: ProtoDoctypeScript.parent:type_name -> ProtoDocumentElement
+	25,  // 334: ProtoDoctypeScript.outputMode:type_name -> ProtoDoctypeOutputMode
+	58,  // 335: ProtoDmScript.parent:type_name -> ProtoDocumentElement
+	58,  // 336: ProtoDynamicTemplate.parent:type_name -> ProtoDocumentElement
+	337, // [337:337] is the sub-list for method output_type
+	337, // [337:337] is the sub-list for method input_type
+	337, // [337:337] is the sub-list for extension type_name
+	337, // [337:337] is the sub-list for extension extendee
+	0,   // [0:337] is the sub-list for field type_name
 }
 
 func init() { file_build_docframe_proto_init() }
@@ -13297,6 +13406,7 @@ func file_build_docframe_proto_init() {
 		(*Node_AdjustHorizontally)(nil),
 		(*Node_DoctypeScript)(nil),
 		(*Node_DmScript)(nil),
+		(*Node_DynamicTemplate)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -13304,7 +13414,7 @@ func file_build_docframe_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_build_docframe_proto_rawDesc), len(file_build_docframe_proto_rawDesc)),
 			NumEnums:      26,
-			NumMessages:   99,
+			NumMessages:   100,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
