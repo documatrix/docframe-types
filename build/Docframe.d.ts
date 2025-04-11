@@ -9106,6 +9106,14 @@ export enum NodeType {
     DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74
 }
 
+/** ProtoImageScaleType enum. */
+export enum ProtoImageScaleType {
+    IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0,
+    IMAGE_SCALE_TYPE_RELATIVE = 1,
+    IMAGE_SCALE_TYPE_ABSOLUT = 2,
+    IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN = 3
+}
+
 /** Properties of a ProtoImage. */
 export interface IProtoImage {
 
@@ -9171,6 +9179,18 @@ export interface IProtoImage {
 
     /** ProtoImage uuidImageContent */
     uuidImageContent?: (string|null);
+
+    /** ProtoImage scaleType */
+    scaleType?: (ProtoImageScaleType|null);
+
+    /** ProtoImage leftBorderIsLeftMeasure */
+    leftBorderIsLeftMeasure?: (boolean|null);
+
+    /** ProtoImage UAInherited */
+    UAInherited?: (boolean|null);
+
+    /** ProtoImage UADescription */
+    UADescription?: (string|null);
 }
 
 /** Represents a ProtoImage. */
@@ -9244,6 +9264,18 @@ export class ProtoImage implements IProtoImage {
 
     /** ProtoImage uuidImageContent. */
     public uuidImageContent: string;
+
+    /** ProtoImage scaleType. */
+    public scaleType: ProtoImageScaleType;
+
+    /** ProtoImage leftBorderIsLeftMeasure. */
+    public leftBorderIsLeftMeasure: boolean;
+
+    /** ProtoImage UAInherited. */
+    public UAInherited: boolean;
+
+    /** ProtoImage UADescription. */
+    public UADescription: string;
 
     /**
      * Creates a new ProtoImage instance using the specified properties.

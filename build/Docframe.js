@@ -25864,6 +25864,24 @@ $root.NodeType = (function() {
     return values;
 })();
 
+/**
+ * ProtoImageScaleType enum.
+ * @name ProtoImageScaleType
+ * @enum {number}
+ * @property {number} IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL=0 IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL value
+ * @property {number} IMAGE_SCALE_TYPE_RELATIVE=1 IMAGE_SCALE_TYPE_RELATIVE value
+ * @property {number} IMAGE_SCALE_TYPE_ABSOLUT=2 IMAGE_SCALE_TYPE_ABSOLUT value
+ * @property {number} IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN=3 IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN value
+ */
+$root.ProtoImageScaleType = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL"] = 0;
+    values[valuesById[1] = "IMAGE_SCALE_TYPE_RELATIVE"] = 1;
+    values[valuesById[2] = "IMAGE_SCALE_TYPE_ABSOLUT"] = 2;
+    values[valuesById[3] = "IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN"] = 3;
+    return values;
+})();
+
 $root.ProtoImage = (function() {
 
     /**
@@ -25891,6 +25909,10 @@ $root.ProtoImage = (function() {
      * @property {string|null} [hyperlink] ProtoImage hyperlink
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoImage comChannelUUIDs
      * @property {string|null} [uuidImageContent] ProtoImage uuidImageContent
+     * @property {ProtoImageScaleType|null} [scaleType] ProtoImage scaleType
+     * @property {boolean|null} [leftBorderIsLeftMeasure] ProtoImage leftBorderIsLeftMeasure
+     * @property {boolean|null} [UAInherited] ProtoImage UAInherited
+     * @property {string|null} [UADescription] ProtoImage UADescription
      */
 
     /**
@@ -26078,6 +26100,38 @@ $root.ProtoImage = (function() {
     ProtoImage.prototype.uuidImageContent = "";
 
     /**
+     * ProtoImage scaleType.
+     * @member {ProtoImageScaleType} scaleType
+     * @memberof ProtoImage
+     * @instance
+     */
+    ProtoImage.prototype.scaleType = 0;
+
+    /**
+     * ProtoImage leftBorderIsLeftMeasure.
+     * @member {boolean} leftBorderIsLeftMeasure
+     * @memberof ProtoImage
+     * @instance
+     */
+    ProtoImage.prototype.leftBorderIsLeftMeasure = false;
+
+    /**
+     * ProtoImage UAInherited.
+     * @member {boolean} UAInherited
+     * @memberof ProtoImage
+     * @instance
+     */
+    ProtoImage.prototype.UAInherited = false;
+
+    /**
+     * ProtoImage UADescription.
+     * @member {string} UADescription
+     * @memberof ProtoImage
+     * @instance
+     */
+    ProtoImage.prototype.UADescription = "";
+
+    /**
      * Creates a new ProtoImage instance using the specified properties.
      * @function create
      * @memberof ProtoImage
@@ -26144,6 +26198,14 @@ $root.ProtoImage = (function() {
                 writer.uint32(/* id 20, wireType 2 =*/162).string(message.comChannelUUIDs[i]);
         if (message.uuidImageContent != null && Object.hasOwnProperty.call(message, "uuidImageContent"))
             writer.uint32(/* id 21, wireType 2 =*/170).string(message.uuidImageContent);
+        if (message.scaleType != null && Object.hasOwnProperty.call(message, "scaleType"))
+            writer.uint32(/* id 22, wireType 0 =*/176).int32(message.scaleType);
+        if (message.leftBorderIsLeftMeasure != null && Object.hasOwnProperty.call(message, "leftBorderIsLeftMeasure"))
+            writer.uint32(/* id 23, wireType 0 =*/184).bool(message.leftBorderIsLeftMeasure);
+        if (message.UAInherited != null && Object.hasOwnProperty.call(message, "UAInherited"))
+            writer.uint32(/* id 24, wireType 0 =*/192).bool(message.UAInherited);
+        if (message.UADescription != null && Object.hasOwnProperty.call(message, "UADescription"))
+            writer.uint32(/* id 25, wireType 2 =*/202).string(message.UADescription);
         return writer;
     };
 
@@ -26262,6 +26324,22 @@ $root.ProtoImage = (function() {
                 }
             case 21: {
                     message.uuidImageContent = reader.string();
+                    break;
+                }
+            case 22: {
+                    message.scaleType = reader.int32();
+                    break;
+                }
+            case 23: {
+                    message.leftBorderIsLeftMeasure = reader.bool();
+                    break;
+                }
+            case 24: {
+                    message.UAInherited = reader.bool();
+                    break;
+                }
+            case 25: {
+                    message.UADescription = reader.string();
                     break;
                 }
             default:
@@ -26397,6 +26475,25 @@ $root.ProtoImage = (function() {
         if (message.uuidImageContent != null && message.hasOwnProperty("uuidImageContent"))
             if (!$util.isString(message.uuidImageContent))
                 return "uuidImageContent: string expected";
+        if (message.scaleType != null && message.hasOwnProperty("scaleType"))
+            switch (message.scaleType) {
+            default:
+                return "scaleType: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                break;
+            }
+        if (message.leftBorderIsLeftMeasure != null && message.hasOwnProperty("leftBorderIsLeftMeasure"))
+            if (typeof message.leftBorderIsLeftMeasure !== "boolean")
+                return "leftBorderIsLeftMeasure: boolean expected";
+        if (message.UAInherited != null && message.hasOwnProperty("UAInherited"))
+            if (typeof message.UAInherited !== "boolean")
+                return "UAInherited: boolean expected";
+        if (message.UADescription != null && message.hasOwnProperty("UADescription"))
+            if (!$util.isString(message.UADescription))
+                return "UADescription: string expected";
         return null;
     };
 
@@ -26522,6 +26619,36 @@ $root.ProtoImage = (function() {
         }
         if (object.uuidImageContent != null)
             message.uuidImageContent = String(object.uuidImageContent);
+        switch (object.scaleType) {
+        default:
+            if (typeof object.scaleType === "number") {
+                message.scaleType = object.scaleType;
+                break;
+            }
+            break;
+        case "IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL":
+        case 0:
+            message.scaleType = 0;
+            break;
+        case "IMAGE_SCALE_TYPE_RELATIVE":
+        case 1:
+            message.scaleType = 1;
+            break;
+        case "IMAGE_SCALE_TYPE_ABSOLUT":
+        case 2:
+            message.scaleType = 2;
+            break;
+        case "IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN":
+        case 3:
+            message.scaleType = 3;
+            break;
+        }
+        if (object.leftBorderIsLeftMeasure != null)
+            message.leftBorderIsLeftMeasure = Boolean(object.leftBorderIsLeftMeasure);
+        if (object.UAInherited != null)
+            message.UAInherited = Boolean(object.UAInherited);
+        if (object.UADescription != null)
+            message.UADescription = String(object.UADescription);
         return message;
     };
 
@@ -26561,6 +26688,10 @@ $root.ProtoImage = (function() {
             object.referencePoint = options.enums === String ? "REF_POINT_DO_NOT_USE_AT_ALL" : 0;
             object.hyperlink = "";
             object.uuidImageContent = "";
+            object.scaleType = options.enums === String ? "IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL" : 0;
+            object.leftBorderIsLeftMeasure = false;
+            object.UAInherited = false;
+            object.UADescription = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -26607,6 +26738,14 @@ $root.ProtoImage = (function() {
         }
         if (message.uuidImageContent != null && message.hasOwnProperty("uuidImageContent"))
             object.uuidImageContent = message.uuidImageContent;
+        if (message.scaleType != null && message.hasOwnProperty("scaleType"))
+            object.scaleType = options.enums === String ? $root.ProtoImageScaleType[message.scaleType] === undefined ? message.scaleType : $root.ProtoImageScaleType[message.scaleType] : message.scaleType;
+        if (message.leftBorderIsLeftMeasure != null && message.hasOwnProperty("leftBorderIsLeftMeasure"))
+            object.leftBorderIsLeftMeasure = message.leftBorderIsLeftMeasure;
+        if (message.UAInherited != null && message.hasOwnProperty("UAInherited"))
+            object.UAInherited = message.UAInherited;
+        if (message.UADescription != null && message.hasOwnProperty("UADescription"))
+            object.UADescription = message.UADescription;
         return object;
     };
 
