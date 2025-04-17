@@ -25882,6 +25882,24 @@ $root.ProtoImageScaleType = (function() {
     return values;
 })();
 
+/**
+ * ProtoImageUAMode enum.
+ * @name ProtoImageUAMode
+ * @enum {number}
+ * @property {number} IMAGE_UA_MODE_DO_NOT_USE_AT_ALL=0 IMAGE_UA_MODE_DO_NOT_USE_AT_ALL value
+ * @property {number} IMAGE_UA_MODE_INHERITED=1 IMAGE_UA_MODE_INHERITED value
+ * @property {number} IMAGE_UA_MODE_SIMPLE=2 IMAGE_UA_MODE_SIMPLE value
+ * @property {number} IMAGE_UA_MODE_ADVANCED=3 IMAGE_UA_MODE_ADVANCED value
+ */
+$root.ProtoImageUAMode = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "IMAGE_UA_MODE_DO_NOT_USE_AT_ALL"] = 0;
+    values[valuesById[1] = "IMAGE_UA_MODE_INHERITED"] = 1;
+    values[valuesById[2] = "IMAGE_UA_MODE_SIMPLE"] = 2;
+    values[valuesById[3] = "IMAGE_UA_MODE_ADVANCED"] = 3;
+    return values;
+})();
+
 $root.ProtoImage = (function() {
 
     /**
@@ -25911,7 +25929,7 @@ $root.ProtoImage = (function() {
      * @property {string|null} [uuidImageContent] ProtoImage uuidImageContent
      * @property {ProtoImageScaleType|null} [scaleType] ProtoImage scaleType
      * @property {boolean|null} [leftBorderIsLeftMeasure] ProtoImage leftBorderIsLeftMeasure
-     * @property {boolean|null} [UAInherited] ProtoImage UAInherited
+     * @property {ProtoImageUAMode|null} [UAMode] ProtoImage UAMode
      * @property {string|null} [UADescription] ProtoImage UADescription
      */
 
@@ -26116,12 +26134,12 @@ $root.ProtoImage = (function() {
     ProtoImage.prototype.leftBorderIsLeftMeasure = false;
 
     /**
-     * ProtoImage UAInherited.
-     * @member {boolean} UAInherited
+     * ProtoImage UAMode.
+     * @member {ProtoImageUAMode} UAMode
      * @memberof ProtoImage
      * @instance
      */
-    ProtoImage.prototype.UAInherited = false;
+    ProtoImage.prototype.UAMode = 0;
 
     /**
      * ProtoImage UADescription.
@@ -26202,8 +26220,8 @@ $root.ProtoImage = (function() {
             writer.uint32(/* id 22, wireType 0 =*/176).int32(message.scaleType);
         if (message.leftBorderIsLeftMeasure != null && Object.hasOwnProperty.call(message, "leftBorderIsLeftMeasure"))
             writer.uint32(/* id 23, wireType 0 =*/184).bool(message.leftBorderIsLeftMeasure);
-        if (message.UAInherited != null && Object.hasOwnProperty.call(message, "UAInherited"))
-            writer.uint32(/* id 24, wireType 0 =*/192).bool(message.UAInherited);
+        if (message.UAMode != null && Object.hasOwnProperty.call(message, "UAMode"))
+            writer.uint32(/* id 24, wireType 0 =*/192).int32(message.UAMode);
         if (message.UADescription != null && Object.hasOwnProperty.call(message, "UADescription"))
             writer.uint32(/* id 25, wireType 2 =*/202).string(message.UADescription);
         return writer;
@@ -26335,7 +26353,7 @@ $root.ProtoImage = (function() {
                     break;
                 }
             case 24: {
-                    message.UAInherited = reader.bool();
+                    message.UAMode = reader.int32();
                     break;
                 }
             case 25: {
@@ -26488,9 +26506,16 @@ $root.ProtoImage = (function() {
         if (message.leftBorderIsLeftMeasure != null && message.hasOwnProperty("leftBorderIsLeftMeasure"))
             if (typeof message.leftBorderIsLeftMeasure !== "boolean")
                 return "leftBorderIsLeftMeasure: boolean expected";
-        if (message.UAInherited != null && message.hasOwnProperty("UAInherited"))
-            if (typeof message.UAInherited !== "boolean")
-                return "UAInherited: boolean expected";
+        if (message.UAMode != null && message.hasOwnProperty("UAMode"))
+            switch (message.UAMode) {
+            default:
+                return "UAMode: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                break;
+            }
         if (message.UADescription != null && message.hasOwnProperty("UADescription"))
             if (!$util.isString(message.UADescription))
                 return "UADescription: string expected";
@@ -26645,8 +26670,30 @@ $root.ProtoImage = (function() {
         }
         if (object.leftBorderIsLeftMeasure != null)
             message.leftBorderIsLeftMeasure = Boolean(object.leftBorderIsLeftMeasure);
-        if (object.UAInherited != null)
-            message.UAInherited = Boolean(object.UAInherited);
+        switch (object.UAMode) {
+        default:
+            if (typeof object.UAMode === "number") {
+                message.UAMode = object.UAMode;
+                break;
+            }
+            break;
+        case "IMAGE_UA_MODE_DO_NOT_USE_AT_ALL":
+        case 0:
+            message.UAMode = 0;
+            break;
+        case "IMAGE_UA_MODE_INHERITED":
+        case 1:
+            message.UAMode = 1;
+            break;
+        case "IMAGE_UA_MODE_SIMPLE":
+        case 2:
+            message.UAMode = 2;
+            break;
+        case "IMAGE_UA_MODE_ADVANCED":
+        case 3:
+            message.UAMode = 3;
+            break;
+        }
         if (object.UADescription != null)
             message.UADescription = String(object.UADescription);
         return message;
@@ -26690,7 +26737,7 @@ $root.ProtoImage = (function() {
             object.uuidImageContent = "";
             object.scaleType = options.enums === String ? "IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL" : 0;
             object.leftBorderIsLeftMeasure = false;
-            object.UAInherited = false;
+            object.UAMode = options.enums === String ? "IMAGE_UA_MODE_DO_NOT_USE_AT_ALL" : 0;
             object.UADescription = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
@@ -26742,8 +26789,8 @@ $root.ProtoImage = (function() {
             object.scaleType = options.enums === String ? $root.ProtoImageScaleType[message.scaleType] === undefined ? message.scaleType : $root.ProtoImageScaleType[message.scaleType] : message.scaleType;
         if (message.leftBorderIsLeftMeasure != null && message.hasOwnProperty("leftBorderIsLeftMeasure"))
             object.leftBorderIsLeftMeasure = message.leftBorderIsLeftMeasure;
-        if (message.UAInherited != null && message.hasOwnProperty("UAInherited"))
-            object.UAInherited = message.UAInherited;
+        if (message.UAMode != null && message.hasOwnProperty("UAMode"))
+            object.UAMode = options.enums === String ? $root.ProtoImageUAMode[message.UAMode] === undefined ? message.UAMode : $root.ProtoImageUAMode[message.UAMode] : message.UAMode;
         if (message.UADescription != null && message.hasOwnProperty("UADescription"))
             object.UADescription = message.UADescription;
         return object;

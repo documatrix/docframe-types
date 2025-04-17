@@ -9114,6 +9114,14 @@ export enum ProtoImageScaleType {
     IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN = 3
 }
 
+/** ProtoImageUAMode enum. */
+export enum ProtoImageUAMode {
+    IMAGE_UA_MODE_DO_NOT_USE_AT_ALL = 0,
+    IMAGE_UA_MODE_INHERITED = 1,
+    IMAGE_UA_MODE_SIMPLE = 2,
+    IMAGE_UA_MODE_ADVANCED = 3
+}
+
 /** Properties of a ProtoImage. */
 export interface IProtoImage {
 
@@ -9186,8 +9194,8 @@ export interface IProtoImage {
     /** ProtoImage leftBorderIsLeftMeasure */
     leftBorderIsLeftMeasure?: (boolean|null);
 
-    /** ProtoImage UAInherited */
-    UAInherited?: (boolean|null);
+    /** ProtoImage UAMode */
+    UAMode?: (ProtoImageUAMode|null);
 
     /** ProtoImage UADescription */
     UADescription?: (string|null);
@@ -9271,8 +9279,8 @@ export class ProtoImage implements IProtoImage {
     /** ProtoImage leftBorderIsLeftMeasure. */
     public leftBorderIsLeftMeasure: boolean;
 
-    /** ProtoImage UAInherited. */
-    public UAInherited: boolean;
+    /** ProtoImage UAMode. */
+    public UAMode: ProtoImageUAMode;
 
     /** ProtoImage UADescription. */
     public UADescription: string;
