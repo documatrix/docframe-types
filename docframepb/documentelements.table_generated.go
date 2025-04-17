@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (ProtoTable *ProtoTable) ToNode(children ...Message) *Node {
+func (Table *ProtoTable) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (ProtoTable *ProtoTable) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_Table{
-			Table: ProtoTable,
+			Table: Table,
 		},
 		Children: nodeChildren,
 	}
@@ -19,7 +19,7 @@ func (ProtoTable *ProtoTable) ToNode(children ...Message) *Node {
 	return node
 }
 
-func (ProtoTableConfig *ProtoTableConfig) ToNode(children ...Message) *Node {
+func (TableConfig *ProtoTableConfig) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -27,7 +27,7 @@ func (ProtoTableConfig *ProtoTableConfig) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_TableConfig{
-			TableConfig: ProtoTableConfig,
+			TableConfig: TableConfig,
 		},
 		Children: nodeChildren,
 	}
@@ -35,7 +35,7 @@ func (ProtoTableConfig *ProtoTableConfig) ToNode(children ...Message) *Node {
 	return node
 }
 
-func (ProtoTableContentGroup *ProtoTableContentGroup) ToNode(children ...Message) *Node {
+func (TableContentGroup *ProtoTableContentGroup) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -43,7 +43,7 @@ func (ProtoTableContentGroup *ProtoTableContentGroup) ToNode(children ...Message
 
 	node := &Node{
 		Object: &Node_TableContentGroup{
-			TableContentGroup: ProtoTableContentGroup,
+			TableContentGroup: TableContentGroup,
 		},
 		Children: nodeChildren,
 	}
@@ -51,7 +51,7 @@ func (ProtoTableContentGroup *ProtoTableContentGroup) ToNode(children ...Message
 	return node
 }
 
-func (ProtoTableContentGroupConfig *ProtoTableContentGroupConfig) ToNode(children ...Message) *Node {
+func (TableContentGroupConfig *ProtoTableContentGroupConfig) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -59,7 +59,7 @@ func (ProtoTableContentGroupConfig *ProtoTableContentGroupConfig) ToNode(childre
 
 	node := &Node{
 		Object: &Node_TableContentGroupConfig{
-			TableContentGroupConfig: ProtoTableContentGroupConfig,
+			TableContentGroupConfig: TableContentGroupConfig,
 		},
 		Children: nodeChildren,
 	}
@@ -67,7 +67,7 @@ func (ProtoTableContentGroupConfig *ProtoTableContentGroupConfig) ToNode(childre
 	return node
 }
 
-func (ProtoTableRow *ProtoTableRow) ToNode(children ...Message) *Node {
+func (TableRow *ProtoTableRow) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -75,7 +75,7 @@ func (ProtoTableRow *ProtoTableRow) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_TableRow{
-			TableRow: ProtoTableRow,
+			TableRow: TableRow,
 		},
 		Children: nodeChildren,
 	}
@@ -83,7 +83,7 @@ func (ProtoTableRow *ProtoTableRow) ToNode(children ...Message) *Node {
 	return node
 }
 
-func (ProtoTableRowConfig *ProtoTableRowConfig) ToNode(children ...Message) *Node {
+func (TableRowConfig *ProtoTableRowConfig) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -91,7 +91,7 @@ func (ProtoTableRowConfig *ProtoTableRowConfig) ToNode(children ...Message) *Nod
 
 	node := &Node{
 		Object: &Node_TableRowConfig{
-			TableRowConfig: ProtoTableRowConfig,
+			TableRowConfig: TableRowConfig,
 		},
 		Children: nodeChildren,
 	}
@@ -99,7 +99,7 @@ func (ProtoTableRowConfig *ProtoTableRowConfig) ToNode(children ...Message) *Nod
 	return node
 }
 
-func (ProtoTableCell *ProtoTableCell) ToNode(children ...Message) *Node {
+func (TableCell *ProtoTableCell) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -107,7 +107,7 @@ func (ProtoTableCell *ProtoTableCell) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_TableCell{
-			TableCell: ProtoTableCell,
+			TableCell: TableCell,
 		},
 		Children: nodeChildren,
 	}
@@ -115,7 +115,7 @@ func (ProtoTableCell *ProtoTableCell) ToNode(children ...Message) *Node {
 	return node
 }
 
-func (ProtoTableCellConfig *ProtoTableCellConfig) ToNode(children ...Message) *Node {
+func (TableCellConfig *ProtoTableCellConfig) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -123,7 +123,7 @@ func (ProtoTableCellConfig *ProtoTableCellConfig) ToNode(children ...Message) *N
 
 	node := &Node{
 		Object: &Node_TableCellConfig{
-			TableCellConfig: ProtoTableCellConfig,
+			TableCellConfig: TableCellConfig,
 		},
 		Children: nodeChildren,
 	}

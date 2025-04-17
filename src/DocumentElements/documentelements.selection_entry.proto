@@ -1,0 +1,11 @@
+message ProtoSelectionEntry {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+  string name = 5;
+  bool selected = 6;
+}

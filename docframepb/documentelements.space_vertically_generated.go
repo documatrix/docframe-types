@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (ProtoSpaceVertically *ProtoSpaceVertically) ToNode(children ...Message) *Node {
+func (SpaceVertically *ProtoSpaceVertically) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (ProtoSpaceVertically *ProtoSpaceVertically) ToNode(children ...Message) *N
 
 	node := &Node{
 		Object: &Node_SpaceVertically{
-			SpaceVertically: ProtoSpaceVertically,
+			SpaceVertically: SpaceVertically,
 		},
 		Children: nodeChildren,
 	}

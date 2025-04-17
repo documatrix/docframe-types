@@ -54,6 +54,8 @@ message Node {
     ProtoDoctypeScript doctypeScript = 66;
     ProtoDmScript dmScript = 67;
     ProtoDynamicTemplate dynamic_template = 68;
+    ProtoSelection selection = 69;
+    ProtoSelectionEntry selection_entry = 70;
   }
 }
 
@@ -113,4 +115,6 @@ enum NodeType {
   DOCUMENT_ELEMENT_DOCTYPE_SCRIPT = 72;
   DOCUMENT_ELEMENT_DM_SCRIPT = 73;
   DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74;
+  DOCUMENT_ELEMENT_SELECTION = 75;
+  DOCUMENT_ELEMENT_SELECTION_ENTRY = 76;
 }

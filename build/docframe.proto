@@ -766,6 +766,8 @@ ProtoAdjustHorizontally adjust_horizontally = 65;
 ProtoDoctypeScript doctypeScript = 66;
 ProtoDmScript dmScript = 67;
 ProtoDynamicTemplate dynamic_template = 68;
+ProtoSelection selection = 69;
+ProtoSelectionEntry selection_entry = 70;
 }
 }
 
@@ -825,6 +827,8 @@ DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71;
 DOCUMENT_ELEMENT_DOCTYPE_SCRIPT = 72;
 DOCUMENT_ELEMENT_DM_SCRIPT = 73;
 DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74;
+DOCUMENT_ELEMENT_SELECTION = 75;
+DOCUMENT_ELEMENT_SELECTION_ENTRY = 76;
 }
 enum ProtoImageScaleType {
 IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
@@ -1124,4 +1128,22 @@ string uuid = 2;
 
 string script = 3;
 repeated string comChannelUUIDs = 4;
+}
+message ProtoSelection {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+string uuid = 3;
+repeated string comChannelUUIDs = 4;
+string name = 5;
+bool multi = 6;
+}
+message ProtoSelectionEntry {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+string uuid = 3;
+repeated string comChannelUUIDs = 4;
+string name = 5;
+bool selected = 6;
 }

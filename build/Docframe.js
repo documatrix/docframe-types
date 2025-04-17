@@ -23746,6 +23746,8 @@ $root.Node = (function() {
      * @property {IProtoDoctypeScript|null} [doctypeScript] Node doctypeScript
      * @property {IProtoDmScript|null} [dmScript] Node dmScript
      * @property {IProtoDynamicTemplate|null} [dynamicTemplate] Node dynamicTemplate
+     * @property {IProtoSelection|null} [selection] Node selection
+     * @property {IProtoSelectionEntry|null} [selectionEntry] Node selectionEntry
      */
 
     /**
@@ -24188,17 +24190,33 @@ $root.Node = (function() {
      */
     Node.prototype.dynamicTemplate = null;
 
+    /**
+     * Node selection.
+     * @member {IProtoSelection|null|undefined} selection
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.selection = null;
+
+    /**
+     * Node selectionEntry.
+     * @member {IProtoSelectionEntry|null|undefined} selectionEntry
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.selectionEntry = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -24333,6 +24351,10 @@ $root.Node = (function() {
             $root.ProtoDmScript.encode(message.dmScript, writer.uint32(/* id 67, wireType 2 =*/538).fork()).ldelim();
         if (message.dynamicTemplate != null && Object.hasOwnProperty.call(message, "dynamicTemplate"))
             $root.ProtoDynamicTemplate.encode(message.dynamicTemplate, writer.uint32(/* id 68, wireType 2 =*/546).fork()).ldelim();
+        if (message.selection != null && Object.hasOwnProperty.call(message, "selection"))
+            $root.ProtoSelection.encode(message.selection, writer.uint32(/* id 69, wireType 2 =*/554).fork()).ldelim();
+        if (message.selectionEntry != null && Object.hasOwnProperty.call(message, "selectionEntry"))
+            $root.ProtoSelectionEntry.encode(message.selectionEntry, writer.uint32(/* id 70, wireType 2 =*/562).fork()).ldelim();
         return writer;
     };
 
@@ -24579,6 +24601,14 @@ $root.Node = (function() {
                 }
             case 68: {
                     message.dynamicTemplate = $root.ProtoDynamicTemplate.decode(reader, reader.uint32());
+                    break;
+                }
+            case 69: {
+                    message.selection = $root.ProtoSelection.decode(reader, reader.uint32());
+                    break;
+                }
+            case 70: {
+                    message.selectionEntry = $root.ProtoSelectionEntry.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -25144,6 +25174,26 @@ $root.Node = (function() {
                     return "dynamicTemplate." + error;
             }
         }
+        if (message.selection != null && message.hasOwnProperty("selection")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoSelection.verify(message.selection);
+                if (error)
+                    return "selection." + error;
+            }
+        }
+        if (message.selectionEntry != null && message.hasOwnProperty("selectionEntry")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoSelectionEntry.verify(message.selectionEntry);
+                if (error)
+                    return "selectionEntry." + error;
+            }
+        }
         return null;
     };
 
@@ -25429,6 +25479,16 @@ $root.Node = (function() {
                 throw TypeError(".Node.dynamicTemplate: object expected");
             message.dynamicTemplate = $root.ProtoDynamicTemplate.fromObject(object.dynamicTemplate);
         }
+        if (object.selection != null) {
+            if (typeof object.selection !== "object")
+                throw TypeError(".Node.selection: object expected");
+            message.selection = $root.ProtoSelection.fromObject(object.selection);
+        }
+        if (object.selectionEntry != null) {
+            if (typeof object.selectionEntry !== "object")
+                throw TypeError(".Node.selectionEntry: object expected");
+            message.selectionEntry = $root.ProtoSelectionEntry.fromObject(object.selectionEntry);
+        }
         return message;
     };
 
@@ -25712,6 +25772,16 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "dynamicTemplate";
         }
+        if (message.selection != null && message.hasOwnProperty("selection")) {
+            object.selection = $root.ProtoSelection.toObject(message.selection, options);
+            if (options.oneofs)
+                object.object = "selection";
+        }
+        if (message.selectionEntry != null && message.hasOwnProperty("selectionEntry")) {
+            object.selectionEntry = $root.ProtoSelectionEntry.toObject(message.selectionEntry, options);
+            if (options.oneofs)
+                object.object = "selectionEntry";
+        }
         return object;
     };
 
@@ -25803,6 +25873,8 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_DOCTYPE_SCRIPT=72 DOCUMENT_ELEMENT_DOCTYPE_SCRIPT value
  * @property {number} DOCUMENT_ELEMENT_DM_SCRIPT=73 DOCUMENT_ELEMENT_DM_SCRIPT value
  * @property {number} DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE=74 DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE value
+ * @property {number} DOCUMENT_ELEMENT_SELECTION=75 DOCUMENT_ELEMENT_SELECTION value
+ * @property {number} DOCUMENT_ELEMENT_SELECTION_ENTRY=76 DOCUMENT_ELEMENT_SELECTION_ENTRY value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -25861,6 +25933,8 @@ $root.NodeType = (function() {
     values[valuesById[72] = "DOCUMENT_ELEMENT_DOCTYPE_SCRIPT"] = 72;
     values[valuesById[73] = "DOCUMENT_ELEMENT_DM_SCRIPT"] = 73;
     values[valuesById[74] = "DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE"] = 74;
+    values[valuesById[75] = "DOCUMENT_ELEMENT_SELECTION"] = 75;
+    values[valuesById[76] = "DOCUMENT_ELEMENT_SELECTION_ENTRY"] = 76;
     return values;
 })();
 
@@ -36192,6 +36266,732 @@ $root.ProtoDynamicTemplate = (function() {
     };
 
     return ProtoDynamicTemplate;
+})();
+
+$root.ProtoSelection = (function() {
+
+    /**
+     * Properties of a ProtoSelection.
+     * @name IProtoSelection
+     * @interface IProtoSelection
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoSelection _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoSelection parent
+     * @property {string|null} [uuid] ProtoSelection uuid
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoSelection comChannelUUIDs
+     * @property {string|null} [name] ProtoSelection name
+     * @property {boolean|null} [multi] ProtoSelection multi
+     */
+
+    /**
+     * Constructs a new ProtoSelection.
+     * @name ProtoSelection
+     * @classdesc Represents a ProtoSelection.
+     * @implements IProtoSelection
+     * @constructor
+     * @param {IProtoSelection=} [properties] Properties to set
+     */
+    function ProtoSelection(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoSelection _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoSelection
+     * @instance
+     */
+    ProtoSelection.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoSelection parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoSelection
+     * @instance
+     */
+    ProtoSelection.prototype.parent = null;
+
+    /**
+     * ProtoSelection uuid.
+     * @member {string} uuid
+     * @memberof ProtoSelection
+     * @instance
+     */
+    ProtoSelection.prototype.uuid = "";
+
+    /**
+     * ProtoSelection comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoSelection
+     * @instance
+     */
+    ProtoSelection.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * ProtoSelection name.
+     * @member {string} name
+     * @memberof ProtoSelection
+     * @instance
+     */
+    ProtoSelection.prototype.name = "";
+
+    /**
+     * ProtoSelection multi.
+     * @member {boolean} multi
+     * @memberof ProtoSelection
+     * @instance
+     */
+    ProtoSelection.prototype.multi = false;
+
+    /**
+     * Creates a new ProtoSelection instance using the specified properties.
+     * @function create
+     * @memberof ProtoSelection
+     * @static
+     * @param {IProtoSelection=} [properties] Properties to set
+     * @returns {ProtoSelection} ProtoSelection instance
+     */
+    ProtoSelection.create = function create(properties) {
+        return new ProtoSelection(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoSelection message. Does not implicitly {@link ProtoSelection.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoSelection
+     * @static
+     * @param {IProtoSelection} message ProtoSelection message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSelection.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.name);
+        if (message.multi != null && Object.hasOwnProperty.call(message, "multi"))
+            writer.uint32(/* id 6, wireType 0 =*/48).bool(message.multi);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoSelection message, length delimited. Does not implicitly {@link ProtoSelection.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoSelection
+     * @static
+     * @param {IProtoSelection} message ProtoSelection message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSelection.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoSelection message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoSelection
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoSelection} ProtoSelection
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSelection.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSelection();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 2: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.uuid = reader.string();
+                    break;
+                }
+            case 4: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 5: {
+                    message.name = reader.string();
+                    break;
+                }
+            case 6: {
+                    message.multi = reader.bool();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoSelection message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoSelection
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoSelection} ProtoSelection
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSelection.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoSelection message.
+     * @function verify
+     * @memberof ProtoSelection
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoSelection.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i]);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
+        if (message.multi != null && message.hasOwnProperty("multi"))
+            if (typeof message.multi !== "boolean")
+                return "multi: boolean expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoSelection message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoSelection
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoSelection} ProtoSelection
+     */
+    ProtoSelection.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoSelection)
+            return object;
+        var message = new $root.ProtoSelection();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoSelection._children: array expected");
+            message._children = [];
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoSelection._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i]);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoSelection.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoSelection.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        if (object.name != null)
+            message.name = String(object.name);
+        if (object.multi != null)
+            message.multi = Boolean(object.multi);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoSelection message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoSelection
+     * @static
+     * @param {ProtoSelection} message ProtoSelection
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoSelection.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+        }
+        if (options.defaults) {
+            object.parent = null;
+            object.uuid = "";
+            object.name = "";
+            object.multi = false;
+        }
+        if (message._children && message._children.length) {
+            object._children = [];
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
+        if (message.multi != null && message.hasOwnProperty("multi"))
+            object.multi = message.multi;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoSelection to JSON.
+     * @function toJSON
+     * @memberof ProtoSelection
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoSelection.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoSelection
+     * @function getTypeUrl
+     * @memberof ProtoSelection
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoSelection.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoSelection";
+    };
+
+    return ProtoSelection;
+})();
+
+$root.ProtoSelectionEntry = (function() {
+
+    /**
+     * Properties of a ProtoSelectionEntry.
+     * @name IProtoSelectionEntry
+     * @interface IProtoSelectionEntry
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoSelectionEntry _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoSelectionEntry parent
+     * @property {string|null} [uuid] ProtoSelectionEntry uuid
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoSelectionEntry comChannelUUIDs
+     * @property {string|null} [name] ProtoSelectionEntry name
+     * @property {boolean|null} [selected] ProtoSelectionEntry selected
+     */
+
+    /**
+     * Constructs a new ProtoSelectionEntry.
+     * @name ProtoSelectionEntry
+     * @classdesc Represents a ProtoSelectionEntry.
+     * @implements IProtoSelectionEntry
+     * @constructor
+     * @param {IProtoSelectionEntry=} [properties] Properties to set
+     */
+    function ProtoSelectionEntry(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoSelectionEntry _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoSelectionEntry
+     * @instance
+     */
+    ProtoSelectionEntry.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoSelectionEntry parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoSelectionEntry
+     * @instance
+     */
+    ProtoSelectionEntry.prototype.parent = null;
+
+    /**
+     * ProtoSelectionEntry uuid.
+     * @member {string} uuid
+     * @memberof ProtoSelectionEntry
+     * @instance
+     */
+    ProtoSelectionEntry.prototype.uuid = "";
+
+    /**
+     * ProtoSelectionEntry comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoSelectionEntry
+     * @instance
+     */
+    ProtoSelectionEntry.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * ProtoSelectionEntry name.
+     * @member {string} name
+     * @memberof ProtoSelectionEntry
+     * @instance
+     */
+    ProtoSelectionEntry.prototype.name = "";
+
+    /**
+     * ProtoSelectionEntry selected.
+     * @member {boolean} selected
+     * @memberof ProtoSelectionEntry
+     * @instance
+     */
+    ProtoSelectionEntry.prototype.selected = false;
+
+    /**
+     * Creates a new ProtoSelectionEntry instance using the specified properties.
+     * @function create
+     * @memberof ProtoSelectionEntry
+     * @static
+     * @param {IProtoSelectionEntry=} [properties] Properties to set
+     * @returns {ProtoSelectionEntry} ProtoSelectionEntry instance
+     */
+    ProtoSelectionEntry.create = function create(properties) {
+        return new ProtoSelectionEntry(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoSelectionEntry message. Does not implicitly {@link ProtoSelectionEntry.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoSelectionEntry
+     * @static
+     * @param {IProtoSelectionEntry} message ProtoSelectionEntry message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSelectionEntry.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.name);
+        if (message.selected != null && Object.hasOwnProperty.call(message, "selected"))
+            writer.uint32(/* id 6, wireType 0 =*/48).bool(message.selected);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoSelectionEntry message, length delimited. Does not implicitly {@link ProtoSelectionEntry.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoSelectionEntry
+     * @static
+     * @param {IProtoSelectionEntry} message ProtoSelectionEntry message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSelectionEntry.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoSelectionEntry message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoSelectionEntry
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoSelectionEntry} ProtoSelectionEntry
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSelectionEntry.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSelectionEntry();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 2: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.uuid = reader.string();
+                    break;
+                }
+            case 4: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 5: {
+                    message.name = reader.string();
+                    break;
+                }
+            case 6: {
+                    message.selected = reader.bool();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoSelectionEntry message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoSelectionEntry
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoSelectionEntry} ProtoSelectionEntry
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSelectionEntry.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoSelectionEntry message.
+     * @function verify
+     * @memberof ProtoSelectionEntry
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoSelectionEntry.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i]);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
+        if (message.selected != null && message.hasOwnProperty("selected"))
+            if (typeof message.selected !== "boolean")
+                return "selected: boolean expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoSelectionEntry message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoSelectionEntry
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoSelectionEntry} ProtoSelectionEntry
+     */
+    ProtoSelectionEntry.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoSelectionEntry)
+            return object;
+        var message = new $root.ProtoSelectionEntry();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoSelectionEntry._children: array expected");
+            message._children = [];
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoSelectionEntry._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i]);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoSelectionEntry.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoSelectionEntry.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        if (object.name != null)
+            message.name = String(object.name);
+        if (object.selected != null)
+            message.selected = Boolean(object.selected);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoSelectionEntry message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoSelectionEntry
+     * @static
+     * @param {ProtoSelectionEntry} message ProtoSelectionEntry
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoSelectionEntry.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+        }
+        if (options.defaults) {
+            object.parent = null;
+            object.uuid = "";
+            object.name = "";
+            object.selected = false;
+        }
+        if (message._children && message._children.length) {
+            object._children = [];
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
+        if (message.selected != null && message.hasOwnProperty("selected"))
+            object.selected = message.selected;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoSelectionEntry to JSON.
+     * @function toJSON
+     * @memberof ProtoSelectionEntry
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoSelectionEntry.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoSelectionEntry
+     * @function getTypeUrl
+     * @memberof ProtoSelectionEntry
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoSelectionEntry.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoSelectionEntry";
+    };
+
+    return ProtoSelectionEntry;
 })();
 
 module.exports = $root;

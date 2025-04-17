@@ -8796,6 +8796,12 @@ export interface INode {
 
     /** Node dynamicTemplate */
     dynamicTemplate?: (IProtoDynamicTemplate|null);
+
+    /** Node selection */
+    selection?: (IProtoSelection|null);
+
+    /** Node selectionEntry */
+    selectionEntry?: (IProtoSelectionEntry|null);
 }
 
 /** Represents a Node. */
@@ -8966,8 +8972,14 @@ export class Node implements INode {
     /** Node dynamicTemplate. */
     public dynamicTemplate?: (IProtoDynamicTemplate|null);
 
+    /** Node selection. */
+    public selection?: (IProtoSelection|null);
+
+    /** Node selectionEntry. */
+    public selectionEntry?: (IProtoSelectionEntry|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -9103,7 +9115,9 @@ export enum NodeType {
     DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71,
     DOCUMENT_ELEMENT_DOCTYPE_SCRIPT = 72,
     DOCUMENT_ELEMENT_DM_SCRIPT = 73,
-    DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74
+    DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74,
+    DOCUMENT_ELEMENT_SELECTION = 75,
+    DOCUMENT_ELEMENT_SELECTION_ENTRY = 76
 }
 
 /** ProtoImageScaleType enum. */
@@ -12716,6 +12730,260 @@ export class ProtoDynamicTemplate implements IProtoDynamicTemplate {
 
     /**
      * Gets the default type url for ProtoDynamicTemplate
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoSelection. */
+export interface IProtoSelection {
+
+    /** ProtoSelection _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoSelection parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSelection uuid */
+    uuid?: (string|null);
+
+    /** ProtoSelection comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoSelection name */
+    name?: (string|null);
+
+    /** ProtoSelection multi */
+    multi?: (boolean|null);
+}
+
+/** Represents a ProtoSelection. */
+export class ProtoSelection implements IProtoSelection {
+
+    /**
+     * Constructs a new ProtoSelection.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSelection);
+
+    /** ProtoSelection _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoSelection parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSelection uuid. */
+    public uuid: string;
+
+    /** ProtoSelection comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoSelection name. */
+    public name: string;
+
+    /** ProtoSelection multi. */
+    public multi: boolean;
+
+    /**
+     * Creates a new ProtoSelection instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSelection instance
+     */
+    public static create(properties?: IProtoSelection): ProtoSelection;
+
+    /**
+     * Encodes the specified ProtoSelection message. Does not implicitly {@link ProtoSelection.verify|verify} messages.
+     * @param message ProtoSelection message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSelection, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSelection message, length delimited. Does not implicitly {@link ProtoSelection.verify|verify} messages.
+     * @param message ProtoSelection message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSelection, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSelection message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSelection
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSelection;
+
+    /**
+     * Decodes a ProtoSelection message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSelection
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSelection;
+
+    /**
+     * Verifies a ProtoSelection message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSelection message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSelection
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSelection;
+
+    /**
+     * Creates a plain object from a ProtoSelection message. Also converts values to other types if specified.
+     * @param message ProtoSelection
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSelection, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSelection to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoSelection
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoSelectionEntry. */
+export interface IProtoSelectionEntry {
+
+    /** ProtoSelectionEntry _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoSelectionEntry parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSelectionEntry uuid */
+    uuid?: (string|null);
+
+    /** ProtoSelectionEntry comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoSelectionEntry name */
+    name?: (string|null);
+
+    /** ProtoSelectionEntry selected */
+    selected?: (boolean|null);
+}
+
+/** Represents a ProtoSelectionEntry. */
+export class ProtoSelectionEntry implements IProtoSelectionEntry {
+
+    /**
+     * Constructs a new ProtoSelectionEntry.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSelectionEntry);
+
+    /** ProtoSelectionEntry _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoSelectionEntry parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSelectionEntry uuid. */
+    public uuid: string;
+
+    /** ProtoSelectionEntry comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoSelectionEntry name. */
+    public name: string;
+
+    /** ProtoSelectionEntry selected. */
+    public selected: boolean;
+
+    /**
+     * Creates a new ProtoSelectionEntry instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSelectionEntry instance
+     */
+    public static create(properties?: IProtoSelectionEntry): ProtoSelectionEntry;
+
+    /**
+     * Encodes the specified ProtoSelectionEntry message. Does not implicitly {@link ProtoSelectionEntry.verify|verify} messages.
+     * @param message ProtoSelectionEntry message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSelectionEntry, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSelectionEntry message, length delimited. Does not implicitly {@link ProtoSelectionEntry.verify|verify} messages.
+     * @param message ProtoSelectionEntry message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSelectionEntry, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSelectionEntry message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSelectionEntry
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSelectionEntry;
+
+    /**
+     * Decodes a ProtoSelectionEntry message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSelectionEntry
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSelectionEntry;
+
+    /**
+     * Verifies a ProtoSelectionEntry message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSelectionEntry message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSelectionEntry
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSelectionEntry;
+
+    /**
+     * Creates a plain object from a ProtoSelectionEntry message. Also converts values to other types if specified.
+     * @param message ProtoSelectionEntry
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSelectionEntry, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSelectionEntry to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoSelectionEntry
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

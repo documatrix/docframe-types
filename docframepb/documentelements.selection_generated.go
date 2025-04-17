@@ -3,15 +3,15 @@
 package docframepb
 
 
-func (TextBrick *ProtoTextBrick) ToNode(children ...Message) *Node {
+func (Selection *ProtoSelection) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
 	}
 
 	node := &Node{
-		Object: &Node_TextBrick{
-			TextBrick: TextBrick,
+		Object: &Node_Selection{
+			Selection: Selection,
 		},
 		Children: nodeChildren,
 	}
