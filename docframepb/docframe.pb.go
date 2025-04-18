@@ -10197,7 +10197,10 @@ type ProtoSelection struct {
 	Uuid            string                  `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	Name            string                  `protobuf:"bytes,5,opt,name=name,proto3" json:"name,omitempty"`
-	Multi           bool                    `protobuf:"varint,6,opt,name=multi,proto3" json:"multi,omitempty"`
+	Description     string                  `protobuf:"bytes,6,opt,name=description,proto3" json:"description,omitempty"`
+	Multi           bool                    `protobuf:"varint,7,opt,name=multi,proto3" json:"multi,omitempty"`
+	Min             uint64                  `protobuf:"varint,8,opt,name=min,proto3" json:"min,omitempty"`
+	Max             uint64                  `protobuf:"varint,9,opt,name=max,proto3" json:"max,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -10267,11 +10270,32 @@ func (x *ProtoSelection) GetName() string {
 	return ""
 }
 
+func (x *ProtoSelection) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
 func (x *ProtoSelection) GetMulti() bool {
 	if x != nil {
 		return x.Multi
 	}
 	return false
+}
+
+func (x *ProtoSelection) GetMin() uint64 {
+	if x != nil {
+		return x.Min
+	}
+	return 0
+}
+
+func (x *ProtoSelection) GetMax() uint64 {
+	if x != nil {
+		return x.Max
+	}
+	return 0
 }
 
 type ProtoSelectionEntry struct {
@@ -10280,7 +10304,7 @@ type ProtoSelectionEntry struct {
 	Parent          *ProtoDocumentElement   `protobuf:"bytes,2,opt,name=parent,proto3" json:"parent,omitempty"`
 	Uuid            string                  `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	Name            string                  `protobuf:"bytes,5,opt,name=name,proto3" json:"name,omitempty"`
+	Description     string                  `protobuf:"bytes,5,opt,name=description,proto3" json:"description,omitempty"`
 	Selected        bool                    `protobuf:"varint,6,opt,name=selected,proto3" json:"selected,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
@@ -10344,9 +10368,9 @@ func (x *ProtoSelectionEntry) GetComChannelUUIDs() []string {
 	return nil
 }
 
-func (x *ProtoSelectionEntry) GetName() string {
+func (x *ProtoSelectionEntry) GetDescription() string {
 	if x != nil {
-		return x.Name
+		return x.Description
 	}
 	return ""
 }
@@ -11176,20 +11200,23 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04uuid\x18\x02 \x01(\tR\x04uuid\x12\x16\n" +
 	"\x06script\x18\x03 \x01(\tR\x06script\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\"\xdb\x01\n" +
+	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\"\xa1\x02\n" +
 	"\x0eProtoSelection\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04name\x18\x05 \x01(\tR\x04name\x12\x14\n" +
-	"\x05multi\x18\x06 \x01(\bR\x05multi\"\xe6\x01\n" +
+	"\x04name\x18\x05 \x01(\tR\x04name\x12 \n" +
+	"\vdescription\x18\x06 \x01(\tR\vdescription\x12\x14\n" +
+	"\x05multi\x18\a \x01(\bR\x05multi\x12\x10\n" +
+	"\x03min\x18\b \x01(\x04R\x03min\x12\x10\n" +
+	"\x03max\x18\t \x01(\x04R\x03max\"\xf4\x01\n" +
 	"\x13ProtoSelectionEntry\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04name\x18\x05 \x01(\tR\x04name\x12\x1a\n" +
+	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12 \n" +
+	"\vdescription\x18\x05 \x01(\tR\vdescription\x12\x1a\n" +
 	"\bselected\x18\x06 \x01(\bR\bselected*8\n" +
 	"\fProtoSPBMode\x12\b\n" +
 	"\x04NONE\x10\x00\x12\x0f\n" +

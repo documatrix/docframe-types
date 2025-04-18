@@ -6,6 +6,6 @@ message ProtoSelectionEntry {
 
   string uuid = 3;
   repeated string comChannelUUIDs = 4;
-  string name = 5;
+  string description = 5;
   bool selected = 6;
 }

@@ -36279,7 +36279,10 @@ $root.ProtoSelection = (function() {
      * @property {string|null} [uuid] ProtoSelection uuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoSelection comChannelUUIDs
      * @property {string|null} [name] ProtoSelection name
+     * @property {string|null} [description] ProtoSelection description
      * @property {boolean|null} [multi] ProtoSelection multi
+     * @property {number|Long|null} [min] ProtoSelection min
+     * @property {number|Long|null} [max] ProtoSelection max
      */
 
     /**
@@ -36340,12 +36343,36 @@ $root.ProtoSelection = (function() {
     ProtoSelection.prototype.name = "";
 
     /**
+     * ProtoSelection description.
+     * @member {string} description
+     * @memberof ProtoSelection
+     * @instance
+     */
+    ProtoSelection.prototype.description = "";
+
+    /**
      * ProtoSelection multi.
      * @member {boolean} multi
      * @memberof ProtoSelection
      * @instance
      */
     ProtoSelection.prototype.multi = false;
+
+    /**
+     * ProtoSelection min.
+     * @member {number|Long} min
+     * @memberof ProtoSelection
+     * @instance
+     */
+    ProtoSelection.prototype.min = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
+
+    /**
+     * ProtoSelection max.
+     * @member {number|Long} max
+     * @memberof ProtoSelection
+     * @instance
+     */
+    ProtoSelection.prototype.max = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
 
     /**
      * Creates a new ProtoSelection instance using the specified properties.
@@ -36383,8 +36410,14 @@ $root.ProtoSelection = (function() {
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
         if (message.name != null && Object.hasOwnProperty.call(message, "name"))
             writer.uint32(/* id 5, wireType 2 =*/42).string(message.name);
+        if (message.description != null && Object.hasOwnProperty.call(message, "description"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.description);
         if (message.multi != null && Object.hasOwnProperty.call(message, "multi"))
-            writer.uint32(/* id 6, wireType 0 =*/48).bool(message.multi);
+            writer.uint32(/* id 7, wireType 0 =*/56).bool(message.multi);
+        if (message.min != null && Object.hasOwnProperty.call(message, "min"))
+            writer.uint32(/* id 8, wireType 0 =*/64).uint64(message.min);
+        if (message.max != null && Object.hasOwnProperty.call(message, "max"))
+            writer.uint32(/* id 9, wireType 0 =*/72).uint64(message.max);
         return writer;
     };
 
@@ -36444,7 +36477,19 @@ $root.ProtoSelection = (function() {
                     break;
                 }
             case 6: {
+                    message.description = reader.string();
+                    break;
+                }
+            case 7: {
                     message.multi = reader.bool();
+                    break;
+                }
+            case 8: {
+                    message.min = reader.uint64();
+                    break;
+                }
+            case 9: {
+                    message.max = reader.uint64();
                     break;
                 }
             default:
@@ -36509,9 +36554,18 @@ $root.ProtoSelection = (function() {
         if (message.name != null && message.hasOwnProperty("name"))
             if (!$util.isString(message.name))
                 return "name: string expected";
+        if (message.description != null && message.hasOwnProperty("description"))
+            if (!$util.isString(message.description))
+                return "description: string expected";
         if (message.multi != null && message.hasOwnProperty("multi"))
             if (typeof message.multi !== "boolean")
                 return "multi: boolean expected";
+        if (message.min != null && message.hasOwnProperty("min"))
+            if (!$util.isInteger(message.min) && !(message.min && $util.isInteger(message.min.low) && $util.isInteger(message.min.high)))
+                return "min: integer|Long expected";
+        if (message.max != null && message.hasOwnProperty("max"))
+            if (!$util.isInteger(message.max) && !(message.max && $util.isInteger(message.max.low) && $util.isInteger(message.max.high)))
+                return "max: integer|Long expected";
         return null;
     };
 
@@ -36553,8 +36607,28 @@ $root.ProtoSelection = (function() {
         }
         if (object.name != null)
             message.name = String(object.name);
+        if (object.description != null)
+            message.description = String(object.description);
         if (object.multi != null)
             message.multi = Boolean(object.multi);
+        if (object.min != null)
+            if ($util.Long)
+                (message.min = $util.Long.fromValue(object.min)).unsigned = true;
+            else if (typeof object.min === "string")
+                message.min = parseInt(object.min, 10);
+            else if (typeof object.min === "number")
+                message.min = object.min;
+            else if (typeof object.min === "object")
+                message.min = new $util.LongBits(object.min.low >>> 0, object.min.high >>> 0).toNumber(true);
+        if (object.max != null)
+            if ($util.Long)
+                (message.max = $util.Long.fromValue(object.max)).unsigned = true;
+            else if (typeof object.max === "string")
+                message.max = parseInt(object.max, 10);
+            else if (typeof object.max === "number")
+                message.max = object.max;
+            else if (typeof object.max === "object")
+                message.max = new $util.LongBits(object.max.low >>> 0, object.max.high >>> 0).toNumber(true);
         return message;
     };
 
@@ -36579,7 +36653,18 @@ $root.ProtoSelection = (function() {
             object.parent = null;
             object.uuid = "";
             object.name = "";
+            object.description = "";
             object.multi = false;
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.min = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.min = options.longs === String ? "0" : 0;
+            if ($util.Long) {
+                var long = new $util.Long(0, 0, true);
+                object.max = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+            } else
+                object.max = options.longs === String ? "0" : 0;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -36597,8 +36682,20 @@ $root.ProtoSelection = (function() {
         }
         if (message.name != null && message.hasOwnProperty("name"))
             object.name = message.name;
+        if (message.description != null && message.hasOwnProperty("description"))
+            object.description = message.description;
         if (message.multi != null && message.hasOwnProperty("multi"))
             object.multi = message.multi;
+        if (message.min != null && message.hasOwnProperty("min"))
+            if (typeof message.min === "number")
+                object.min = options.longs === String ? String(message.min) : message.min;
+            else
+                object.min = options.longs === String ? $util.Long.prototype.toString.call(message.min) : options.longs === Number ? new $util.LongBits(message.min.low >>> 0, message.min.high >>> 0).toNumber(true) : message.min;
+        if (message.max != null && message.hasOwnProperty("max"))
+            if (typeof message.max === "number")
+                object.max = options.longs === String ? String(message.max) : message.max;
+            else
+                object.max = options.longs === String ? $util.Long.prototype.toString.call(message.max) : options.longs === Number ? new $util.LongBits(message.max.low >>> 0, message.max.high >>> 0).toNumber(true) : message.max;
         return object;
     };
 
@@ -36641,7 +36738,7 @@ $root.ProtoSelectionEntry = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoSelectionEntry parent
      * @property {string|null} [uuid] ProtoSelectionEntry uuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoSelectionEntry comChannelUUIDs
-     * @property {string|null} [name] ProtoSelectionEntry name
+     * @property {string|null} [description] ProtoSelectionEntry description
      * @property {boolean|null} [selected] ProtoSelectionEntry selected
      */
 
@@ -36695,12 +36792,12 @@ $root.ProtoSelectionEntry = (function() {
     ProtoSelectionEntry.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
-     * ProtoSelectionEntry name.
-     * @member {string} name
+     * ProtoSelectionEntry description.
+     * @member {string} description
      * @memberof ProtoSelectionEntry
      * @instance
      */
-    ProtoSelectionEntry.prototype.name = "";
+    ProtoSelectionEntry.prototype.description = "";
 
     /**
      * ProtoSelectionEntry selected.
@@ -36744,8 +36841,8 @@ $root.ProtoSelectionEntry = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
-        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
-            writer.uint32(/* id 5, wireType 2 =*/42).string(message.name);
+        if (message.description != null && Object.hasOwnProperty.call(message, "description"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.description);
         if (message.selected != null && Object.hasOwnProperty.call(message, "selected"))
             writer.uint32(/* id 6, wireType 0 =*/48).bool(message.selected);
         return writer;
@@ -36803,7 +36900,7 @@ $root.ProtoSelectionEntry = (function() {
                     break;
                 }
             case 5: {
-                    message.name = reader.string();
+                    message.description = reader.string();
                     break;
                 }
             case 6: {
@@ -36869,9 +36966,9 @@ $root.ProtoSelectionEntry = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
-        if (message.name != null && message.hasOwnProperty("name"))
-            if (!$util.isString(message.name))
-                return "name: string expected";
+        if (message.description != null && message.hasOwnProperty("description"))
+            if (!$util.isString(message.description))
+                return "description: string expected";
         if (message.selected != null && message.hasOwnProperty("selected"))
             if (typeof message.selected !== "boolean")
                 return "selected: boolean expected";
@@ -36914,8 +37011,8 @@ $root.ProtoSelectionEntry = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
-        if (object.name != null)
-            message.name = String(object.name);
+        if (object.description != null)
+            message.description = String(object.description);
         if (object.selected != null)
             message.selected = Boolean(object.selected);
         return message;
@@ -36941,7 +37038,7 @@ $root.ProtoSelectionEntry = (function() {
         if (options.defaults) {
             object.parent = null;
             object.uuid = "";
-            object.name = "";
+            object.description = "";
             object.selected = false;
         }
         if (message._children && message._children.length) {
@@ -36958,8 +37055,8 @@ $root.ProtoSelectionEntry = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
-        if (message.name != null && message.hasOwnProperty("name"))
-            object.name = message.name;
+        if (message.description != null && message.hasOwnProperty("description"))
+            object.description = message.description;
         if (message.selected != null && message.hasOwnProperty("selected"))
             object.selected = message.selected;
         return object;
