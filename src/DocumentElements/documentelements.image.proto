@@ -40,8 +40,7 @@ message ProtoImage {
   repeated string comChannelUUIDs = 20;
   string uuidImageContent = 21;
   ProtoImageScaleType scaleType = 22; 
-  bool leftBorderIsLeftMeasure = 23;
-  ProtoImageUAMode UAMode = 24;
-  string UADescription = 25;
+  ProtoImageUAMode UAMode = 23;
+  string UADescription = 24;
 }
 

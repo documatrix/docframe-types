@@ -7931,34 +7931,33 @@ func (*Node_Selection) isNode_Object() {}
 func (*Node_SelectionEntry) isNode_Object() {}
 
 type ProtoImage struct {
-	state                   protoimpl.MessageState                      `protogen:"open.v1"`
-	Parent                  *ProtoDocumentElement                       `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	Alt                     string                                      `protobuf:"bytes,2,opt,name=alt,proto3" json:"alt,omitempty"`
-	Name                    string                                      `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Src                     string                                      `protobuf:"bytes,4,opt,name=src,proto3" json:"src,omitempty"`
-	Filename                string                                      `protobuf:"bytes,5,opt,name=filename,proto3" json:"filename,omitempty"`
-	Scale                   *ProtoBoxedDouble                           `protobuf:"bytes,6,opt,name=scale,proto3" json:"scale,omitempty"`
-	ColumnScale             *ProtoBoxedDouble                           `protobuf:"bytes,7,opt,name=columnScale,proto3" json:"columnScale,omitempty"`
-	Width                   *ProtoBoxedMeasure                          `protobuf:"bytes,8,opt,name=width,proto3" json:"width,omitempty"`
-	Height                  *ProtoBoxedMeasure                          `protobuf:"bytes,9,opt,name=height,proto3" json:"height,omitempty"`
-	X                       *ProtoBoxedMeasure                          `protobuf:"bytes,10,opt,name=x,proto3" json:"x,omitempty"`
-	Y                       *ProtoBoxedMeasure                          `protobuf:"bytes,11,opt,name=y,proto3" json:"y,omitempty"`
-	PositionAbsolute        *ProtoBoxedBool                             `protobuf:"bytes,12,opt,name=positionAbsolute,proto3" json:"positionAbsolute,omitempty"`
-	Rotation                float64                                     `protobuf:"fixed64,13,opt,name=rotation,proto3" json:"rotation,omitempty"`
-	FlipSettings            *ProtoFlipSettings                          `protobuf:"bytes,14,opt,name=flipSettings,proto3" json:"flipSettings,omitempty"`
-	CropSettings            *ProtoCropSettings                          `protobuf:"bytes,15,opt,name=cropSettings,proto3" json:"cropSettings,omitempty"`
-	Aia                     *ProtoAdvancedIllustrationAreaImageSettings `protobuf:"bytes,16,opt,name=aia,proto3" json:"aia,omitempty"`
-	Uuid                    string                                      `protobuf:"bytes,17,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	ReferencePoint          ProtoImageReferencePoint                    `protobuf:"varint,18,opt,name=referencePoint,proto3,enum=ProtoImageReferencePoint" json:"referencePoint,omitempty"`
-	Hyperlink               string                                      `protobuf:"bytes,19,opt,name=hyperlink,proto3" json:"hyperlink,omitempty"`
-	ComChannelUUIDs         []string                                    `protobuf:"bytes,20,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	UuidImageContent        string                                      `protobuf:"bytes,21,opt,name=uuidImageContent,proto3" json:"uuidImageContent,omitempty"`
-	ScaleType               ProtoImageScaleType                         `protobuf:"varint,22,opt,name=scaleType,proto3,enum=ProtoImageScaleType" json:"scaleType,omitempty"`
-	LeftBorderIsLeftMeasure bool                                        `protobuf:"varint,23,opt,name=leftBorderIsLeftMeasure,proto3" json:"leftBorderIsLeftMeasure,omitempty"`
-	UAMode                  ProtoImageUAMode                            `protobuf:"varint,24,opt,name=UAMode,proto3,enum=ProtoImageUAMode" json:"UAMode,omitempty"`
-	UADescription           string                                      `protobuf:"bytes,25,opt,name=UADescription,proto3" json:"UADescription,omitempty"`
-	unknownFields           protoimpl.UnknownFields
-	sizeCache               protoimpl.SizeCache
+	state            protoimpl.MessageState                      `protogen:"open.v1"`
+	Parent           *ProtoDocumentElement                       `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	Alt              string                                      `protobuf:"bytes,2,opt,name=alt,proto3" json:"alt,omitempty"`
+	Name             string                                      `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Src              string                                      `protobuf:"bytes,4,opt,name=src,proto3" json:"src,omitempty"`
+	Filename         string                                      `protobuf:"bytes,5,opt,name=filename,proto3" json:"filename,omitempty"`
+	Scale            *ProtoBoxedDouble                           `protobuf:"bytes,6,opt,name=scale,proto3" json:"scale,omitempty"`
+	ColumnScale      *ProtoBoxedDouble                           `protobuf:"bytes,7,opt,name=columnScale,proto3" json:"columnScale,omitempty"`
+	Width            *ProtoBoxedMeasure                          `protobuf:"bytes,8,opt,name=width,proto3" json:"width,omitempty"`
+	Height           *ProtoBoxedMeasure                          `protobuf:"bytes,9,opt,name=height,proto3" json:"height,omitempty"`
+	X                *ProtoBoxedMeasure                          `protobuf:"bytes,10,opt,name=x,proto3" json:"x,omitempty"`
+	Y                *ProtoBoxedMeasure                          `protobuf:"bytes,11,opt,name=y,proto3" json:"y,omitempty"`
+	PositionAbsolute *ProtoBoxedBool                             `protobuf:"bytes,12,opt,name=positionAbsolute,proto3" json:"positionAbsolute,omitempty"`
+	Rotation         float64                                     `protobuf:"fixed64,13,opt,name=rotation,proto3" json:"rotation,omitempty"`
+	FlipSettings     *ProtoFlipSettings                          `protobuf:"bytes,14,opt,name=flipSettings,proto3" json:"flipSettings,omitempty"`
+	CropSettings     *ProtoCropSettings                          `protobuf:"bytes,15,opt,name=cropSettings,proto3" json:"cropSettings,omitempty"`
+	Aia              *ProtoAdvancedIllustrationAreaImageSettings `protobuf:"bytes,16,opt,name=aia,proto3" json:"aia,omitempty"`
+	Uuid             string                                      `protobuf:"bytes,17,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	ReferencePoint   ProtoImageReferencePoint                    `protobuf:"varint,18,opt,name=referencePoint,proto3,enum=ProtoImageReferencePoint" json:"referencePoint,omitempty"`
+	Hyperlink        string                                      `protobuf:"bytes,19,opt,name=hyperlink,proto3" json:"hyperlink,omitempty"`
+	ComChannelUUIDs  []string                                    `protobuf:"bytes,20,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	UuidImageContent string                                      `protobuf:"bytes,21,opt,name=uuidImageContent,proto3" json:"uuidImageContent,omitempty"`
+	ScaleType        ProtoImageScaleType                         `protobuf:"varint,22,opt,name=scaleType,proto3,enum=ProtoImageScaleType" json:"scaleType,omitempty"`
+	UAMode           ProtoImageUAMode                            `protobuf:"varint,23,opt,name=UAMode,proto3,enum=ProtoImageUAMode" json:"UAMode,omitempty"`
+	UADescription    string                                      `protobuf:"bytes,24,opt,name=UADescription,proto3" json:"UADescription,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *ProtoImage) Reset() {
@@ -8143,13 +8142,6 @@ func (x *ProtoImage) GetScaleType() ProtoImageScaleType {
 		return x.ScaleType
 	}
 	return ProtoImageScaleType_IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL
-}
-
-func (x *ProtoImage) GetLeftBorderIsLeftMeasure() bool {
-	if x != nil {
-		return x.LeftBorderIsLeftMeasure
-	}
-	return false
 }
 
 func (x *ProtoImage) GetUAMode() ProtoImageUAMode {
@@ -10995,9 +10987,13 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x10dynamic_template\x18D \x01(\v2\x15.ProtoDynamicTemplateH\x00R\x0fdynamicTemplate\x12/\n" +
 	"\tselection\x18E \x01(\v2\x0f.ProtoSelectionH\x00R\tselection\x12?\n" +
 	"\x0fselection_entry\x18F \x01(\v2\x14.ProtoSelectionEntryH\x00R\x0eselectionEntryB\b\n" +
+<<<<<<< HEAD
 >>>>>>> 891bc44 (Implemented section and section entry)
 	"\x06object\"\x99\b\n" +
 >>>>>>> b057839 (ProtoImageUAMode)
+=======
+	"\x06object\"\xdf\a\n" +
+>>>>>>> 35c31d3 (Remove left border from image)
 	"\n" +
 	"ProtoImage\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x10\n" +
@@ -11029,11 +11025,17 @@ const file_build_docframe_proto_rawDesc = "" +
 >>>>>>> 6f6bf85 (Add uuidImageContent)
 =======
 	"\x10uuidImageContent\x18\x15 \x01(\tR\x10uuidImageContent\x122\n" +
+<<<<<<< HEAD
 	"\tscaleType\x18\x16 \x01(\x0e2\x14.ProtoImageScaleTypeR\tscaleType\x128\n" +
 	"\x17leftBorderIsLeftMeasure\x18\x17 \x01(\bR\x17leftBorderIsLeftMeasure\x12)\n" +
 	"\x06UAMode\x18\x18 \x01(\x0e2\x11.ProtoImageUAModeR\x06UAMode\x12$\n" +
 	"\rUADescription\x18\x19 \x01(\tR\rUADescription\"\xe9\x01\n" +
 >>>>>>> 180c21a (extend Image)
+=======
+	"\tscaleType\x18\x16 \x01(\x0e2\x14.ProtoImageScaleTypeR\tscaleType\x12)\n" +
+	"\x06UAMode\x18\x17 \x01(\x0e2\x11.ProtoImageUAModeR\x06UAMode\x12$\n" +
+	"\rUADescription\x18\x18 \x01(\tR\rUADescription\"\xe9\x01\n" +
+>>>>>>> 35c31d3 (Remove left border from image)
 	"\x0eProtoDirectory\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +

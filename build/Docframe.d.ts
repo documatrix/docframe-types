@@ -9205,9 +9205,6 @@ export interface IProtoImage {
     /** ProtoImage scaleType */
     scaleType?: (ProtoImageScaleType|null);
 
-    /** ProtoImage leftBorderIsLeftMeasure */
-    leftBorderIsLeftMeasure?: (boolean|null);
-
     /** ProtoImage UAMode */
     UAMode?: (ProtoImageUAMode|null);
 
@@ -9289,9 +9286,6 @@ export class ProtoImage implements IProtoImage {
 
     /** ProtoImage scaleType. */
     public scaleType: ProtoImageScaleType;
-
-    /** ProtoImage leftBorderIsLeftMeasure. */
-    public leftBorderIsLeftMeasure: boolean;
 
     /** ProtoImage UAMode. */
     public UAMode: ProtoImageUAMode;

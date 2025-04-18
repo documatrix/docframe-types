@@ -26002,7 +26002,6 @@ $root.ProtoImage = (function() {
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoImage comChannelUUIDs
      * @property {string|null} [uuidImageContent] ProtoImage uuidImageContent
      * @property {ProtoImageScaleType|null} [scaleType] ProtoImage scaleType
-     * @property {boolean|null} [leftBorderIsLeftMeasure] ProtoImage leftBorderIsLeftMeasure
      * @property {ProtoImageUAMode|null} [UAMode] ProtoImage UAMode
      * @property {string|null} [UADescription] ProtoImage UADescription
      */
@@ -26200,14 +26199,6 @@ $root.ProtoImage = (function() {
     ProtoImage.prototype.scaleType = 0;
 
     /**
-     * ProtoImage leftBorderIsLeftMeasure.
-     * @member {boolean} leftBorderIsLeftMeasure
-     * @memberof ProtoImage
-     * @instance
-     */
-    ProtoImage.prototype.leftBorderIsLeftMeasure = false;
-
-    /**
      * ProtoImage UAMode.
      * @member {ProtoImageUAMode} UAMode
      * @memberof ProtoImage
@@ -26292,12 +26283,10 @@ $root.ProtoImage = (function() {
             writer.uint32(/* id 21, wireType 2 =*/170).string(message.uuidImageContent);
         if (message.scaleType != null && Object.hasOwnProperty.call(message, "scaleType"))
             writer.uint32(/* id 22, wireType 0 =*/176).int32(message.scaleType);
-        if (message.leftBorderIsLeftMeasure != null && Object.hasOwnProperty.call(message, "leftBorderIsLeftMeasure"))
-            writer.uint32(/* id 23, wireType 0 =*/184).bool(message.leftBorderIsLeftMeasure);
         if (message.UAMode != null && Object.hasOwnProperty.call(message, "UAMode"))
-            writer.uint32(/* id 24, wireType 0 =*/192).int32(message.UAMode);
+            writer.uint32(/* id 23, wireType 0 =*/184).int32(message.UAMode);
         if (message.UADescription != null && Object.hasOwnProperty.call(message, "UADescription"))
-            writer.uint32(/* id 25, wireType 2 =*/202).string(message.UADescription);
+            writer.uint32(/* id 24, wireType 2 =*/194).string(message.UADescription);
         return writer;
     };
 
@@ -26423,14 +26412,10 @@ $root.ProtoImage = (function() {
                     break;
                 }
             case 23: {
-                    message.leftBorderIsLeftMeasure = reader.bool();
-                    break;
-                }
-            case 24: {
                     message.UAMode = reader.int32();
                     break;
                 }
-            case 25: {
+            case 24: {
                     message.UADescription = reader.string();
                     break;
                 }
@@ -26577,9 +26562,6 @@ $root.ProtoImage = (function() {
             case 3:
                 break;
             }
-        if (message.leftBorderIsLeftMeasure != null && message.hasOwnProperty("leftBorderIsLeftMeasure"))
-            if (typeof message.leftBorderIsLeftMeasure !== "boolean")
-                return "leftBorderIsLeftMeasure: boolean expected";
         if (message.UAMode != null && message.hasOwnProperty("UAMode"))
             switch (message.UAMode) {
             default:
@@ -26742,8 +26724,6 @@ $root.ProtoImage = (function() {
             message.scaleType = 3;
             break;
         }
-        if (object.leftBorderIsLeftMeasure != null)
-            message.leftBorderIsLeftMeasure = Boolean(object.leftBorderIsLeftMeasure);
         switch (object.UAMode) {
         default:
             if (typeof object.UAMode === "number") {
@@ -26810,7 +26790,6 @@ $root.ProtoImage = (function() {
             object.hyperlink = "";
             object.uuidImageContent = "";
             object.scaleType = options.enums === String ? "IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL" : 0;
-            object.leftBorderIsLeftMeasure = false;
             object.UAMode = options.enums === String ? "IMAGE_UA_MODE_DO_NOT_USE_AT_ALL" : 0;
             object.UADescription = "";
         }
@@ -26861,8 +26840,6 @@ $root.ProtoImage = (function() {
             object.uuidImageContent = message.uuidImageContent;
         if (message.scaleType != null && message.hasOwnProperty("scaleType"))
             object.scaleType = options.enums === String ? $root.ProtoImageScaleType[message.scaleType] === undefined ? message.scaleType : $root.ProtoImageScaleType[message.scaleType] : message.scaleType;
-        if (message.leftBorderIsLeftMeasure != null && message.hasOwnProperty("leftBorderIsLeftMeasure"))
-            object.leftBorderIsLeftMeasure = message.leftBorderIsLeftMeasure;
         if (message.UAMode != null && message.hasOwnProperty("UAMode"))
             object.UAMode = options.enums === String ? $root.ProtoImageUAMode[message.UAMode] === undefined ? message.UAMode : $root.ProtoImageUAMode[message.UAMode] : message.UAMode;
         if (message.UADescription != null && message.hasOwnProperty("UADescription"))
