@@ -25974,6 +25974,24 @@ $root.ProtoImageUAMode = (function() {
     return values;
 })();
 
+/**
+ * ProtoImageContentType enum.
+ * @name ProtoImageContentType
+ * @enum {number}
+ * @property {number} IMAGE_CONTENT_DO_NOT_USE_AT_ALL=0 IMAGE_CONTENT_DO_NOT_USE_AT_ALL value
+ * @property {number} IMAGE_CONTENT_UUID_REFFERENCE=1 IMAGE_CONTENT_UUID_REFFERENCE value
+ * @property {number} IMAGE_CONTENT_DMSCRIPT=2 IMAGE_CONTENT_DMSCRIPT value
+ * @property {number} IMAGE_CONTENT_IMAGE_DATA=3 IMAGE_CONTENT_IMAGE_DATA value
+ */
+$root.ProtoImageContentType = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "IMAGE_CONTENT_DO_NOT_USE_AT_ALL"] = 0;
+    values[valuesById[1] = "IMAGE_CONTENT_UUID_REFFERENCE"] = 1;
+    values[valuesById[2] = "IMAGE_CONTENT_DMSCRIPT"] = 2;
+    values[valuesById[3] = "IMAGE_CONTENT_IMAGE_DATA"] = 3;
+    return values;
+})();
+
 $root.ProtoImage = (function() {
 
     /**
@@ -26000,7 +26018,8 @@ $root.ProtoImage = (function() {
      * @property {ProtoImageReferencePoint|null} [referencePoint] ProtoImage referencePoint
      * @property {string|null} [hyperlink] ProtoImage hyperlink
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoImage comChannelUUIDs
-     * @property {string|null} [uuidImageContent] ProtoImage uuidImageContent
+     * @property {ProtoImageContentType|null} [imageContentType] ProtoImage imageContentType
+     * @property {string|null} [imageContent] ProtoImage imageContent
      * @property {ProtoImageScaleType|null} [scaleType] ProtoImage scaleType
      * @property {ProtoImageUAMode|null} [UAMode] ProtoImage UAMode
      * @property {string|null} [UADescription] ProtoImage UADescription
@@ -26183,12 +26202,20 @@ $root.ProtoImage = (function() {
     ProtoImage.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
-     * ProtoImage uuidImageContent.
-     * @member {string} uuidImageContent
+     * ProtoImage imageContentType.
+     * @member {ProtoImageContentType} imageContentType
      * @memberof ProtoImage
      * @instance
      */
-    ProtoImage.prototype.uuidImageContent = "";
+    ProtoImage.prototype.imageContentType = 0;
+
+    /**
+     * ProtoImage imageContent.
+     * @member {string} imageContent
+     * @memberof ProtoImage
+     * @instance
+     */
+    ProtoImage.prototype.imageContent = "";
 
     /**
      * ProtoImage scaleType.
@@ -26279,14 +26306,16 @@ $root.ProtoImage = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 20, wireType 2 =*/162).string(message.comChannelUUIDs[i]);
-        if (message.uuidImageContent != null && Object.hasOwnProperty.call(message, "uuidImageContent"))
-            writer.uint32(/* id 21, wireType 2 =*/170).string(message.uuidImageContent);
+        if (message.imageContentType != null && Object.hasOwnProperty.call(message, "imageContentType"))
+            writer.uint32(/* id 21, wireType 0 =*/168).int32(message.imageContentType);
+        if (message.imageContent != null && Object.hasOwnProperty.call(message, "imageContent"))
+            writer.uint32(/* id 22, wireType 2 =*/178).string(message.imageContent);
         if (message.scaleType != null && Object.hasOwnProperty.call(message, "scaleType"))
-            writer.uint32(/* id 22, wireType 0 =*/176).int32(message.scaleType);
+            writer.uint32(/* id 23, wireType 0 =*/184).int32(message.scaleType);
         if (message.UAMode != null && Object.hasOwnProperty.call(message, "UAMode"))
-            writer.uint32(/* id 23, wireType 0 =*/184).int32(message.UAMode);
+            writer.uint32(/* id 24, wireType 0 =*/192).int32(message.UAMode);
         if (message.UADescription != null && Object.hasOwnProperty.call(message, "UADescription"))
-            writer.uint32(/* id 24, wireType 2 =*/194).string(message.UADescription);
+            writer.uint32(/* id 25, wireType 2 =*/202).string(message.UADescription);
         return writer;
     };
 
@@ -26404,18 +26433,22 @@ $root.ProtoImage = (function() {
                     break;
                 }
             case 21: {
-                    message.uuidImageContent = reader.string();
+                    message.imageContentType = reader.int32();
                     break;
                 }
             case 22: {
-                    message.scaleType = reader.int32();
+                    message.imageContent = reader.string();
                     break;
                 }
             case 23: {
-                    message.UAMode = reader.int32();
+                    message.scaleType = reader.int32();
                     break;
                 }
             case 24: {
+                    message.UAMode = reader.int32();
+                    break;
+                }
+            case 25: {
                     message.UADescription = reader.string();
                     break;
                 }
@@ -26549,9 +26582,19 @@ $root.ProtoImage = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
-        if (message.uuidImageContent != null && message.hasOwnProperty("uuidImageContent"))
-            if (!$util.isString(message.uuidImageContent))
-                return "uuidImageContent: string expected";
+        if (message.imageContentType != null && message.hasOwnProperty("imageContentType"))
+            switch (message.imageContentType) {
+            default:
+                return "imageContentType: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                break;
+            }
+        if (message.imageContent != null && message.hasOwnProperty("imageContent"))
+            if (!$util.isString(message.imageContent))
+                return "imageContent: string expected";
         if (message.scaleType != null && message.hasOwnProperty("scaleType"))
             switch (message.scaleType) {
             default:
@@ -26698,8 +26741,32 @@ $root.ProtoImage = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
-        if (object.uuidImageContent != null)
-            message.uuidImageContent = String(object.uuidImageContent);
+        switch (object.imageContentType) {
+        default:
+            if (typeof object.imageContentType === "number") {
+                message.imageContentType = object.imageContentType;
+                break;
+            }
+            break;
+        case "IMAGE_CONTENT_DO_NOT_USE_AT_ALL":
+        case 0:
+            message.imageContentType = 0;
+            break;
+        case "IMAGE_CONTENT_UUID_REFFERENCE":
+        case 1:
+            message.imageContentType = 1;
+            break;
+        case "IMAGE_CONTENT_DMSCRIPT":
+        case 2:
+            message.imageContentType = 2;
+            break;
+        case "IMAGE_CONTENT_IMAGE_DATA":
+        case 3:
+            message.imageContentType = 3;
+            break;
+        }
+        if (object.imageContent != null)
+            message.imageContent = String(object.imageContent);
         switch (object.scaleType) {
         default:
             if (typeof object.scaleType === "number") {
@@ -26788,7 +26855,8 @@ $root.ProtoImage = (function() {
             object.uuid = "";
             object.referencePoint = options.enums === String ? "REF_POINT_DO_NOT_USE_AT_ALL" : 0;
             object.hyperlink = "";
-            object.uuidImageContent = "";
+            object.imageContentType = options.enums === String ? "IMAGE_CONTENT_DO_NOT_USE_AT_ALL" : 0;
+            object.imageContent = "";
             object.scaleType = options.enums === String ? "IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL" : 0;
             object.UAMode = options.enums === String ? "IMAGE_UA_MODE_DO_NOT_USE_AT_ALL" : 0;
             object.UADescription = "";
@@ -26836,8 +26904,10 @@ $root.ProtoImage = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
-        if (message.uuidImageContent != null && message.hasOwnProperty("uuidImageContent"))
-            object.uuidImageContent = message.uuidImageContent;
+        if (message.imageContentType != null && message.hasOwnProperty("imageContentType"))
+            object.imageContentType = options.enums === String ? $root.ProtoImageContentType[message.imageContentType] === undefined ? message.imageContentType : $root.ProtoImageContentType[message.imageContentType] : message.imageContentType;
+        if (message.imageContent != null && message.hasOwnProperty("imageContent"))
+            object.imageContent = message.imageContent;
         if (message.scaleType != null && message.hasOwnProperty("scaleType"))
             object.scaleType = options.enums === String ? $root.ProtoImageScaleType[message.scaleType] === undefined ? message.scaleType : $root.ProtoImageScaleType[message.scaleType] : message.scaleType;
         if (message.UAMode != null && message.hasOwnProperty("UAMode"))

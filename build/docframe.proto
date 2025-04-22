@@ -845,6 +845,13 @@ IMAGE_UA_MODE_ADVANCED = 3;
 
 }
 
+enum ProtoImageContentType{
+IMAGE_CONTENT_DO_NOT_USE_AT_ALL = 0;
+IMAGE_CONTENT_UUID_REFFERENCE = 1;
+IMAGE_CONTENT_DMSCRIPT = 2;
+IMAGE_CONTENT_IMAGE_DATA = 3;
+}
+
 
 message ProtoImage {
 ProtoDocumentElement parent = 1;
@@ -868,10 +875,11 @@ string uuid = 17;
 ProtoImageReferencePoint referencePoint = 18;
 string hyperlink = 19;
 repeated string comChannelUUIDs = 20;
-string uuidImageContent = 21;
-ProtoImageScaleType scaleType = 22;
-ProtoImageUAMode UAMode = 23;
-string UADescription = 24;
+ProtoImageContentType imageContentType = 21;
+string imageContent = 22;
+ProtoImageScaleType scaleType = 23;
+ProtoImageUAMode UAMode = 24;
+string UADescription = 25;
 }
 
 message ProtoDirectory {

@@ -9136,6 +9136,14 @@ export enum ProtoImageUAMode {
     IMAGE_UA_MODE_ADVANCED = 3
 }
 
+/** ProtoImageContentType enum. */
+export enum ProtoImageContentType {
+    IMAGE_CONTENT_DO_NOT_USE_AT_ALL = 0,
+    IMAGE_CONTENT_UUID_REFFERENCE = 1,
+    IMAGE_CONTENT_DMSCRIPT = 2,
+    IMAGE_CONTENT_IMAGE_DATA = 3
+}
+
 /** Properties of a ProtoImage. */
 export interface IProtoImage {
 
@@ -9199,8 +9207,11 @@ export interface IProtoImage {
     /** ProtoImage comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
 
-    /** ProtoImage uuidImageContent */
-    uuidImageContent?: (string|null);
+    /** ProtoImage imageContentType */
+    imageContentType?: (ProtoImageContentType|null);
+
+    /** ProtoImage imageContent */
+    imageContent?: (string|null);
 
     /** ProtoImage scaleType */
     scaleType?: (ProtoImageScaleType|null);
@@ -9281,8 +9292,11 @@ export class ProtoImage implements IProtoImage {
     /** ProtoImage comChannelUUIDs. */
     public comChannelUUIDs: string[];
 
-    /** ProtoImage uuidImageContent. */
-    public uuidImageContent: string;
+    /** ProtoImage imageContentType. */
+    public imageContentType: ProtoImageContentType;
+
+    /** ProtoImage imageContent. */
+    public imageContent: string;
 
     /** ProtoImage scaleType. */
     public scaleType: ProtoImageScaleType;
