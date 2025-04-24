@@ -33,8 +33,8 @@ message ProtoTableSettings {
 
 
 enum ProtoTableContentGroupType {
-  BODY = 0;
-  HEADER = 1;
+  HEADER = 0;
+  BODY = 1;
   FOOTER = 2;
   SUB_HEADER = 3;
 }

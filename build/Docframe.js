@@ -17204,15 +17204,15 @@ $root.ProtoTableSettings = (function() {
  * ProtoTableContentGroupType enum.
  * @name ProtoTableContentGroupType
  * @enum {number}
- * @property {number} BODY=0 BODY value
- * @property {number} HEADER=1 HEADER value
+ * @property {number} HEADER=0 HEADER value
+ * @property {number} BODY=1 BODY value
  * @property {number} FOOTER=2 FOOTER value
  * @property {number} SUB_HEADER=3 SUB_HEADER value
  */
 $root.ProtoTableContentGroupType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "BODY"] = 0;
-    values[valuesById[1] = "HEADER"] = 1;
+    values[valuesById[0] = "HEADER"] = 0;
+    values[valuesById[1] = "BODY"] = 1;
     values[valuesById[2] = "FOOTER"] = 2;
     values[valuesById[3] = "SUB_HEADER"] = 3;
     return values;
@@ -17399,11 +17399,11 @@ $root.ProtoBoxedTableContentGroupType = (function() {
                 break;
             }
             break;
-        case "BODY":
+        case "HEADER":
         case 0:
             message.value = 0;
             break;
-        case "HEADER":
+        case "BODY":
         case 1:
             message.value = 1;
             break;
@@ -17435,7 +17435,7 @@ $root.ProtoBoxedTableContentGroupType = (function() {
             options = {};
         var object = {};
         if (options.defaults) {
-            object.value = options.enums === String ? "BODY" : 0;
+            object.value = options.enums === String ? "HEADER" : 0;
             object.isNull = false;
         }
         if (message.value != null && message.hasOwnProperty("value"))
