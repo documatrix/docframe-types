@@ -6319,8 +6319,8 @@ export class ProtoTableSettings implements IProtoTableSettings {
 
 /** ProtoTableContentGroupType enum. */
 export enum ProtoTableContentGroupType {
-    BODY = 0,
-    HEADER = 1,
+    HEADER = 0,
+    BODY = 1,
     FOOTER = 2,
     SUB_HEADER = 3
 }
