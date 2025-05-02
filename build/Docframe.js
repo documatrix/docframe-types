@@ -21236,6 +21236,7 @@ $root.ProtoBarcode = (function() {
      * @property {string|null} [data] ProtoBarcode data
      * @property {boolean|null} [positionAbsolute] ProtoBarcode positionAbsolute
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoBarcode comChannelUUIDs
+     * @property {string|null} [uuid] ProtoBarcode uuid
      */
 
     /**
@@ -21343,6 +21344,14 @@ $root.ProtoBarcode = (function() {
     ProtoBarcode.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoBarcode uuid.
+     * @member {string} uuid
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoBarcode instance using the specified properties.
      * @function create
      * @memberof ProtoBarcode
@@ -21389,6 +21398,8 @@ $root.ProtoBarcode = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 11, wireType 2 =*/90).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 12, wireType 2 =*/98).string(message.uuid);
         return writer;
     };
 
@@ -21467,6 +21478,10 @@ $root.ProtoBarcode = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 12: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -21573,6 +21588,9 @@ $root.ProtoBarcode = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -21706,6 +21724,8 @@ $root.ProtoBarcode = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -21735,6 +21755,7 @@ $root.ProtoBarcode = (function() {
             object.padding = null;
             object.data = "";
             object.positionAbsolute = false;
+            object.uuid = "";
         }
         if (message.type != null && message.hasOwnProperty("type"))
             object.type = options.enums === String ? $root.ProtoBarcodeType[message.type] === undefined ? message.type : $root.ProtoBarcodeType[message.type] : message.type;
@@ -21761,6 +21782,8 @@ $root.ProtoBarcode = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 

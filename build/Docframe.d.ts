@@ -7874,6 +7874,9 @@ export interface IProtoBarcode {
 
     /** ProtoBarcode comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoBarcode uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoBarcode. */
@@ -7917,6 +7920,9 @@ export class ProtoBarcode implements IProtoBarcode {
 
     /** ProtoBarcode comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoBarcode uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoBarcode instance using the specified properties.
