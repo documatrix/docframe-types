@@ -12765,11 +12765,11 @@ export interface IProtoSelection {
     /** ProtoSelection comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
 
+    /** ProtoSelection internalName */
+    internalName?: (string|null);
+
     /** ProtoSelection name */
     name?: (string|null);
-
-    /** ProtoSelection description */
-    description?: (string|null);
 
     /** ProtoSelection multi */
     multi?: (boolean|null);
@@ -12802,11 +12802,11 @@ export class ProtoSelection implements IProtoSelection {
     /** ProtoSelection comChannelUUIDs. */
     public comChannelUUIDs: string[];
 
+    /** ProtoSelection internalName. */
+    public internalName: string;
+
     /** ProtoSelection name. */
     public name: string;
-
-    /** ProtoSelection description. */
-    public description: string;
 
     /** ProtoSelection multi. */
     public multi: boolean;
@@ -12910,8 +12910,8 @@ export interface IProtoSelectionEntry {
     /** ProtoSelectionEntry comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
 
-    /** ProtoSelectionEntry description */
-    description?: (string|null);
+    /** ProtoSelectionEntry name */
+    name?: (string|null);
 
     /** ProtoSelectionEntry selected */
     selected?: (boolean|null);
@@ -12938,8 +12938,8 @@ export class ProtoSelectionEntry implements IProtoSelectionEntry {
     /** ProtoSelectionEntry comChannelUUIDs. */
     public comChannelUUIDs: string[];
 
-    /** ProtoSelectionEntry description. */
-    public description: string;
+    /** ProtoSelectionEntry name. */
+    public name: string;
 
     /** ProtoSelectionEntry selected. */
     public selected: boolean;
