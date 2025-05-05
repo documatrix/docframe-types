@@ -36808,6 +36808,7 @@ $root.ProtoSelectionEntry = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoSelectionEntry parent
      * @property {string|null} [uuid] ProtoSelectionEntry uuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoSelectionEntry comChannelUUIDs
+     * @property {string|null} [internalName] ProtoSelectionEntry internalName
      * @property {string|null} [name] ProtoSelectionEntry name
      * @property {boolean|null} [selected] ProtoSelectionEntry selected
      */
@@ -36862,6 +36863,14 @@ $root.ProtoSelectionEntry = (function() {
     ProtoSelectionEntry.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoSelectionEntry internalName.
+     * @member {string} internalName
+     * @memberof ProtoSelectionEntry
+     * @instance
+     */
+    ProtoSelectionEntry.prototype.internalName = "";
+
+    /**
      * ProtoSelectionEntry name.
      * @member {string} name
      * @memberof ProtoSelectionEntry
@@ -36911,10 +36920,12 @@ $root.ProtoSelectionEntry = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.internalName != null && Object.hasOwnProperty.call(message, "internalName"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.internalName);
         if (message.name != null && Object.hasOwnProperty.call(message, "name"))
-            writer.uint32(/* id 5, wireType 2 =*/42).string(message.name);
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.name);
         if (message.selected != null && Object.hasOwnProperty.call(message, "selected"))
-            writer.uint32(/* id 6, wireType 0 =*/48).bool(message.selected);
+            writer.uint32(/* id 7, wireType 0 =*/56).bool(message.selected);
         return writer;
     };
 
@@ -36970,10 +36981,14 @@ $root.ProtoSelectionEntry = (function() {
                     break;
                 }
             case 5: {
-                    message.name = reader.string();
+                    message.internalName = reader.string();
                     break;
                 }
             case 6: {
+                    message.name = reader.string();
+                    break;
+                }
+            case 7: {
                     message.selected = reader.bool();
                     break;
                 }
@@ -37036,6 +37051,9 @@ $root.ProtoSelectionEntry = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.internalName != null && message.hasOwnProperty("internalName"))
+            if (!$util.isString(message.internalName))
+                return "internalName: string expected";
         if (message.name != null && message.hasOwnProperty("name"))
             if (!$util.isString(message.name))
                 return "name: string expected";
@@ -37081,6 +37099,8 @@ $root.ProtoSelectionEntry = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.internalName != null)
+            message.internalName = String(object.internalName);
         if (object.name != null)
             message.name = String(object.name);
         if (object.selected != null)
@@ -37108,6 +37128,7 @@ $root.ProtoSelectionEntry = (function() {
         if (options.defaults) {
             object.parent = null;
             object.uuid = "";
+            object.internalName = "";
             object.name = "";
             object.selected = false;
         }
@@ -37125,6 +37146,8 @@ $root.ProtoSelectionEntry = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.internalName != null && message.hasOwnProperty("internalName"))
+            object.internalName = message.internalName;
         if (message.name != null && message.hasOwnProperty("name"))
             object.name = message.name;
         if (message.selected != null && message.hasOwnProperty("selected"))

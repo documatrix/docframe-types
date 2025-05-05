@@ -12910,6 +12910,9 @@ export interface IProtoSelectionEntry {
     /** ProtoSelectionEntry comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
 
+    /** ProtoSelectionEntry internalName */
+    internalName?: (string|null);
+
     /** ProtoSelectionEntry name */
     name?: (string|null);
 
@@ -12937,6 +12940,9 @@ export class ProtoSelectionEntry implements IProtoSelectionEntry {
 
     /** ProtoSelectionEntry comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoSelectionEntry internalName. */
+    public internalName: string;
 
     /** ProtoSelectionEntry name. */
     public name: string;

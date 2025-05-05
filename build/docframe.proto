@@ -1155,6 +1155,7 @@ ProtoDocumentElement parent = 2;
 
 string uuid = 3;
 repeated string comChannelUUIDs = 4;
-string name = 5;
-bool selected = 6;
+string internal_name = 5;
+string name = 6;
+bool selected = 7;
 }
