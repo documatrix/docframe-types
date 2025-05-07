@@ -35462,6 +35462,7 @@ $root.ProtoDoctypeScript = (function() {
      * @property {string|null} [content] ProtoDoctypeScript content
      * @property {ProtoDoctypeOutputMode|null} [outputMode] ProtoDoctypeScript outputMode
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoDoctypeScript comChannelUUIDs
+     * @property {string|null} [uuid] ProtoDoctypeScript uuid
      */
 
     /**
@@ -35513,6 +35514,14 @@ $root.ProtoDoctypeScript = (function() {
     ProtoDoctypeScript.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoDoctypeScript uuid.
+     * @member {string} uuid
+     * @memberof ProtoDoctypeScript
+     * @instance
+     */
+    ProtoDoctypeScript.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoDoctypeScript instance using the specified properties.
      * @function create
      * @memberof ProtoDoctypeScript
@@ -35545,6 +35554,8 @@ $root.ProtoDoctypeScript = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.uuid);
         return writer;
     };
 
@@ -35595,6 +35606,10 @@ $root.ProtoDoctypeScript = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 5: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -35656,6 +35671,9 @@ $root.ProtoDoctypeScript = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -35705,6 +35723,8 @@ $root.ProtoDoctypeScript = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -35727,6 +35747,7 @@ $root.ProtoDoctypeScript = (function() {
             object.parent = null;
             object.content = "";
             object.outputMode = options.enums === String ? "DOCTYPE_OUTPUT_MODE_NOT_SET" : 0;
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -35739,6 +35760,8 @@ $root.ProtoDoctypeScript = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 

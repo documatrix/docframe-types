@@ -12425,6 +12425,9 @@ export interface IProtoDoctypeScript {
 
     /** ProtoDoctypeScript comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoDoctypeScript uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoDoctypeScript. */
@@ -12447,6 +12450,9 @@ export class ProtoDoctypeScript implements IProtoDoctypeScript {
 
     /** ProtoDoctypeScript comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoDoctypeScript uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoDoctypeScript instance using the specified properties.
