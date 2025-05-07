@@ -12537,6 +12537,9 @@ export interface IProtoDmScript {
 
     /** ProtoDmScript comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoDmScript uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoDmScript. */
@@ -12556,6 +12559,9 @@ export class ProtoDmScript implements IProtoDmScript {
 
     /** ProtoDmScript comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoDmScript uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoDmScript instance using the specified properties.

@@ -35780,6 +35780,7 @@ $root.ProtoDmScript = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoDmScript parent
      * @property {string|null} [content] ProtoDmScript content
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoDmScript comChannelUUIDs
+     * @property {string|null} [uuid] ProtoDmScript uuid
      */
 
     /**
@@ -35823,6 +35824,14 @@ $root.ProtoDmScript = (function() {
     ProtoDmScript.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoDmScript uuid.
+     * @member {string} uuid
+     * @memberof ProtoDmScript
+     * @instance
+     */
+    ProtoDmScript.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoDmScript instance using the specified properties.
      * @function create
      * @memberof ProtoDmScript
@@ -35853,6 +35862,8 @@ $root.ProtoDmScript = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         return writer;
     };
 
@@ -35899,6 +35910,10 @@ $root.ProtoDmScript = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -35951,6 +35966,9 @@ $root.ProtoDmScript = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -35980,6 +35998,8 @@ $root.ProtoDmScript = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -36001,6 +36021,7 @@ $root.ProtoDmScript = (function() {
         if (options.defaults) {
             object.parent = null;
             object.content = "";
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -36011,6 +36032,8 @@ $root.ProtoDmScript = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 

@@ -1129,6 +1129,7 @@ ProtoDocumentElement parent = 1;
 
 string content = 2;
 repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }
 message ProtoDynamicTemplate {
 ProtoDocumentElement parent = 1;
