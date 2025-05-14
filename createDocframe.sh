@@ -25,7 +25,7 @@ declare -a FileArray=(
   "src/Util/util.font.proto"
   "src/Util/util.color.proto"
   "src/Util/util.align.proto"
-  "src/Util/util.barcode_type.proto"
+  "src/Util/util.barcode.proto"
   "src/DocumentElements/documentelements.linebreak.proto"
   "src/Util/util.border.proto"
   "src/Util/util.column_settings.proto"

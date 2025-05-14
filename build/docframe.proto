@@ -188,6 +188,38 @@ CODE39 = 7;
 SWISSQR = 8;
 AZTEC = 9;
 }
+
+message ProtoSwissQRCreditor {
+string address_type = 1;
+string name = 2;
+string postal_code = 3;
+string town = 4;
+string country = 5;
+string street_or_address_line_1 = 6;
+string building_number_or_address_line_2 = 7;
+string iban = 8;
+string amount = 9;
+string currency = 10;
+}
+
+message ProtoSwissQRDebitor {
+string address_type = 1;
+string name = 2;
+string postal_code = 3;
+string town = 4;
+string country = 5;
+string street_or_address_line_1 = 6;
+string building_number_or_address_line_2 = 7;
+string payment_reference_type = 8;
+string payment_reference = 9;
+string unstructured_reference = 10;
+string bill_information = 11;
+}
+
+message ProtoSwissQRData {
+ProtoSwissQRCreditor creditor = 1;
+ProtoSwissQRDebitor debitor = 2;
+}
 message ProtoLinebreak {
 ProtoDocumentElement parent = 1;
 repeated string comChannelUUIDs = 2;
@@ -931,7 +963,8 @@ ProtoDocumentElement parent = 1;
 bool dteditorSyntax = 2;
 string doctypeContent = 3;
 string htmlContent = 4;
-repeated string comChannelUUIDs = 5;
+string textContent = 5;
+repeated string comChannelUUIDs = 6;
 }
 
 message ProtoApplyProtoCDef {
@@ -1126,8 +1159,6 @@ string content = 2;
 ProtoDoctypeOutputMode outputMode = 3;
 repeated string comChannelUUIDs = 4;
 string uuid = 5;
-string htmlContent = 6;
-string textContent = 7;
 }
 message ProtoDmScript {
 ProtoDocumentElement parent = 1;
