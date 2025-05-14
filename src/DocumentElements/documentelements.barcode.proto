@@ -1,35 +1,3 @@
-message ProtoSwissQRCreditor {
-  string address_type = 1;
-  string name = 2;
-  string postal_code = 3;
-  string town = 4;
-  string country = 5;
-  string street_or_address_line_1 = 6;
-  string building_number_or_address_line_2 = 7;
-  string iban = 8;
-  string amount = 9;
-  string currency = 10;
-}
-
-message ProtoSwissQRDebitor {
-  string address_type = 1;
-  string name = 2;
-  string postal_code = 3;
-  string town = 4;
-  string country = 5;
-  string street_or_address_line_1 = 6;
-  string building_number_or_address_line_2 = 7;
-  string payment_reference_type = 8;
-  string payment_reference = 9;
-  string unstructured_reference = 10;
-  string bill_information = 11;
-}
-
-message ProtoSwissQRData {
-  ProtoSwissQRCreditor creditor = 1;
-  ProtoSwissQRDebitor debitor = 2;
-}
-
 message ProtoBarcode {
   // like BrickBody::Brick
   ProtoBarcodeType type = 1;

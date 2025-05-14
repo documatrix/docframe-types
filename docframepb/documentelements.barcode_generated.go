@@ -3,54 +3,6 @@
 package docframepb
 
 
-func (SwissQRCreditor *ProtoSwissQRCreditor) ToNode(children ...Message) *Node {
-	nodeChildren := make([]*Node, len(children))
-	for i, c := range children {
-		nodeChildren[i] = c.ToNode()
-	}
-
-	node := &Node{
-		Object: &Node_SwissQRCreditor{
-			SwissQRCreditor: SwissQRCreditor,
-		},
-		Children: nodeChildren,
-	}
-
-	return node
-}
-
-func (SwissQRDebitor *ProtoSwissQRDebitor) ToNode(children ...Message) *Node {
-	nodeChildren := make([]*Node, len(children))
-	for i, c := range children {
-		nodeChildren[i] = c.ToNode()
-	}
-
-	node := &Node{
-		Object: &Node_SwissQRDebitor{
-			SwissQRDebitor: SwissQRDebitor,
-		},
-		Children: nodeChildren,
-	}
-
-	return node
-}
-
-func (SwissQRData *ProtoSwissQRData) ToNode(children ...Message) *Node {
-	nodeChildren := make([]*Node, len(children))
-	for i, c := range children {
-		nodeChildren[i] = c.ToNode()
-	}
-
-	node := &Node{
-		Object: &Node_SwissQRData{
-			SwissQRData: SwissQRData,
-		},
-		Children: nodeChildren,
-	}
-
-	return node
-}
-
 func (Barcode *ProtoBarcode) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
