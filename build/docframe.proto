@@ -1158,6 +1158,8 @@ string content = 2;
 ProtoDoctypeOutputMode outputMode = 3;
 repeated string comChannelUUIDs = 4;
 string uuid = 5;
+string htmlContent = 6;
+string textContent = 7;
 }
 message ProtoDmScript {
 ProtoDocumentElement parent = 1;

@@ -36596,6 +36596,8 @@ $root.ProtoDoctypeScript = (function() {
      * @property {ProtoDoctypeOutputMode|null} [outputMode] ProtoDoctypeScript outputMode
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoDoctypeScript comChannelUUIDs
      * @property {string|null} [uuid] ProtoDoctypeScript uuid
+     * @property {string|null} [htmlContent] ProtoDoctypeScript htmlContent
+     * @property {string|null} [textContent] ProtoDoctypeScript textContent
      */
 
     /**
@@ -36655,6 +36657,22 @@ $root.ProtoDoctypeScript = (function() {
     ProtoDoctypeScript.prototype.uuid = "";
 
     /**
+     * ProtoDoctypeScript htmlContent.
+     * @member {string} htmlContent
+     * @memberof ProtoDoctypeScript
+     * @instance
+     */
+    ProtoDoctypeScript.prototype.htmlContent = "";
+
+    /**
+     * ProtoDoctypeScript textContent.
+     * @member {string} textContent
+     * @memberof ProtoDoctypeScript
+     * @instance
+     */
+    ProtoDoctypeScript.prototype.textContent = "";
+
+    /**
      * Creates a new ProtoDoctypeScript instance using the specified properties.
      * @function create
      * @memberof ProtoDoctypeScript
@@ -36689,6 +36707,10 @@ $root.ProtoDoctypeScript = (function() {
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 5, wireType 2 =*/42).string(message.uuid);
+        if (message.htmlContent != null && Object.hasOwnProperty.call(message, "htmlContent"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.htmlContent);
+        if (message.textContent != null && Object.hasOwnProperty.call(message, "textContent"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.textContent);
         return writer;
     };
 
@@ -36743,6 +36765,14 @@ $root.ProtoDoctypeScript = (function() {
                 }
             case 5: {
                     message.uuid = reader.string();
+                    break;
+                }
+            case 6: {
+                    message.htmlContent = reader.string();
+                    break;
+                }
+            case 7: {
+                    message.textContent = reader.string();
                     break;
                 }
             default:
@@ -36807,6 +36837,12 @@ $root.ProtoDoctypeScript = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
+        if (message.htmlContent != null && message.hasOwnProperty("htmlContent"))
+            if (!$util.isString(message.htmlContent))
+                return "htmlContent: string expected";
+        if (message.textContent != null && message.hasOwnProperty("textContent"))
+            if (!$util.isString(message.textContent))
+                return "textContent: string expected";
         return null;
     };
 
@@ -36858,6 +36894,10 @@ $root.ProtoDoctypeScript = (function() {
         }
         if (object.uuid != null)
             message.uuid = String(object.uuid);
+        if (object.htmlContent != null)
+            message.htmlContent = String(object.htmlContent);
+        if (object.textContent != null)
+            message.textContent = String(object.textContent);
         return message;
     };
 
@@ -36881,6 +36921,8 @@ $root.ProtoDoctypeScript = (function() {
             object.content = "";
             object.outputMode = options.enums === String ? "DOCTYPE_OUTPUT_MODE_NOT_SET" : 0;
             object.uuid = "";
+            object.htmlContent = "";
+            object.textContent = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -36895,6 +36937,10 @@ $root.ProtoDoctypeScript = (function() {
         }
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
+        if (message.htmlContent != null && message.hasOwnProperty("htmlContent"))
+            object.htmlContent = message.htmlContent;
+        if (message.textContent != null && message.hasOwnProperty("textContent"))
+            object.textContent = message.textContent;
         return object;
     };
 

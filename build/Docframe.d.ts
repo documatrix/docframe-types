@@ -12851,6 +12851,12 @@ export interface IProtoDoctypeScript {
 
     /** ProtoDoctypeScript uuid */
     uuid?: (string|null);
+
+    /** ProtoDoctypeScript htmlContent */
+    htmlContent?: (string|null);
+
+    /** ProtoDoctypeScript textContent */
+    textContent?: (string|null);
 }
 
 /** Represents a ProtoDoctypeScript. */
@@ -12876,6 +12882,12 @@ export class ProtoDoctypeScript implements IProtoDoctypeScript {
 
     /** ProtoDoctypeScript uuid. */
     public uuid: string;
+
+    /** ProtoDoctypeScript htmlContent. */
+    public htmlContent: string;
+
+    /** ProtoDoctypeScript textContent. */
+    public textContent: string;
 
     /**
      * Creates a new ProtoDoctypeScript instance using the specified properties.
