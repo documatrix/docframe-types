@@ -7839,6 +7839,417 @@ export class ProtoText implements IProtoText {
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
+/** Properties of a ProtoSwissQRCreditor. */
+export interface IProtoSwissQRCreditor {
+
+    /** ProtoSwissQRCreditor addressType */
+    addressType?: (string|null);
+
+    /** ProtoSwissQRCreditor name */
+    name?: (string|null);
+
+    /** ProtoSwissQRCreditor postalCode */
+    postalCode?: (string|null);
+
+    /** ProtoSwissQRCreditor town */
+    town?: (string|null);
+
+    /** ProtoSwissQRCreditor country */
+    country?: (string|null);
+
+    /** ProtoSwissQRCreditor streetOrAddressLine_1 */
+    streetOrAddressLine_1?: (string|null);
+
+    /** ProtoSwissQRCreditor buildingNumberOrAddressLine_2 */
+    buildingNumberOrAddressLine_2?: (string|null);
+
+    /** ProtoSwissQRCreditor iban */
+    iban?: (string|null);
+
+    /** ProtoSwissQRCreditor amount */
+    amount?: (string|null);
+
+    /** ProtoSwissQRCreditor currency */
+    currency?: (string|null);
+}
+
+/** Represents a ProtoSwissQRCreditor. */
+export class ProtoSwissQRCreditor implements IProtoSwissQRCreditor {
+
+    /**
+     * Constructs a new ProtoSwissQRCreditor.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSwissQRCreditor);
+
+    /** ProtoSwissQRCreditor addressType. */
+    public addressType: string;
+
+    /** ProtoSwissQRCreditor name. */
+    public name: string;
+
+    /** ProtoSwissQRCreditor postalCode. */
+    public postalCode: string;
+
+    /** ProtoSwissQRCreditor town. */
+    public town: string;
+
+    /** ProtoSwissQRCreditor country. */
+    public country: string;
+
+    /** ProtoSwissQRCreditor streetOrAddressLine_1. */
+    public streetOrAddressLine_1: string;
+
+    /** ProtoSwissQRCreditor buildingNumberOrAddressLine_2. */
+    public buildingNumberOrAddressLine_2: string;
+
+    /** ProtoSwissQRCreditor iban. */
+    public iban: string;
+
+    /** ProtoSwissQRCreditor amount. */
+    public amount: string;
+
+    /** ProtoSwissQRCreditor currency. */
+    public currency: string;
+
+    /**
+     * Creates a new ProtoSwissQRCreditor instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSwissQRCreditor instance
+     */
+    public static create(properties?: IProtoSwissQRCreditor): ProtoSwissQRCreditor;
+
+    /**
+     * Encodes the specified ProtoSwissQRCreditor message. Does not implicitly {@link ProtoSwissQRCreditor.verify|verify} messages.
+     * @param message ProtoSwissQRCreditor message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSwissQRCreditor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSwissQRCreditor message, length delimited. Does not implicitly {@link ProtoSwissQRCreditor.verify|verify} messages.
+     * @param message ProtoSwissQRCreditor message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSwissQRCreditor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSwissQRCreditor message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSwissQRCreditor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSwissQRCreditor;
+
+    /**
+     * Decodes a ProtoSwissQRCreditor message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSwissQRCreditor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSwissQRCreditor;
+
+    /**
+     * Verifies a ProtoSwissQRCreditor message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSwissQRCreditor message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSwissQRCreditor
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSwissQRCreditor;
+
+    /**
+     * Creates a plain object from a ProtoSwissQRCreditor message. Also converts values to other types if specified.
+     * @param message ProtoSwissQRCreditor
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSwissQRCreditor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSwissQRCreditor to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoSwissQRCreditor
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoSwissQRDebitor. */
+export interface IProtoSwissQRDebitor {
+
+    /** ProtoSwissQRDebitor addressType */
+    addressType?: (string|null);
+
+    /** ProtoSwissQRDebitor name */
+    name?: (string|null);
+
+    /** ProtoSwissQRDebitor postalCode */
+    postalCode?: (string|null);
+
+    /** ProtoSwissQRDebitor town */
+    town?: (string|null);
+
+    /** ProtoSwissQRDebitor country */
+    country?: (string|null);
+
+    /** ProtoSwissQRDebitor streetOrAddressLine_1 */
+    streetOrAddressLine_1?: (string|null);
+
+    /** ProtoSwissQRDebitor buildingNumberOrAddressLine_2 */
+    buildingNumberOrAddressLine_2?: (string|null);
+
+    /** ProtoSwissQRDebitor paymentReferenceType */
+    paymentReferenceType?: (string|null);
+
+    /** ProtoSwissQRDebitor paymentReference */
+    paymentReference?: (string|null);
+
+    /** ProtoSwissQRDebitor unstructuredReference */
+    unstructuredReference?: (string|null);
+
+    /** ProtoSwissQRDebitor billInformation */
+    billInformation?: (string|null);
+}
+
+/** Represents a ProtoSwissQRDebitor. */
+export class ProtoSwissQRDebitor implements IProtoSwissQRDebitor {
+
+    /**
+     * Constructs a new ProtoSwissQRDebitor.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSwissQRDebitor);
+
+    /** ProtoSwissQRDebitor addressType. */
+    public addressType: string;
+
+    /** ProtoSwissQRDebitor name. */
+    public name: string;
+
+    /** ProtoSwissQRDebitor postalCode. */
+    public postalCode: string;
+
+    /** ProtoSwissQRDebitor town. */
+    public town: string;
+
+    /** ProtoSwissQRDebitor country. */
+    public country: string;
+
+    /** ProtoSwissQRDebitor streetOrAddressLine_1. */
+    public streetOrAddressLine_1: string;
+
+    /** ProtoSwissQRDebitor buildingNumberOrAddressLine_2. */
+    public buildingNumberOrAddressLine_2: string;
+
+    /** ProtoSwissQRDebitor paymentReferenceType. */
+    public paymentReferenceType: string;
+
+    /** ProtoSwissQRDebitor paymentReference. */
+    public paymentReference: string;
+
+    /** ProtoSwissQRDebitor unstructuredReference. */
+    public unstructuredReference: string;
+
+    /** ProtoSwissQRDebitor billInformation. */
+    public billInformation: string;
+
+    /**
+     * Creates a new ProtoSwissQRDebitor instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSwissQRDebitor instance
+     */
+    public static create(properties?: IProtoSwissQRDebitor): ProtoSwissQRDebitor;
+
+    /**
+     * Encodes the specified ProtoSwissQRDebitor message. Does not implicitly {@link ProtoSwissQRDebitor.verify|verify} messages.
+     * @param message ProtoSwissQRDebitor message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSwissQRDebitor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSwissQRDebitor message, length delimited. Does not implicitly {@link ProtoSwissQRDebitor.verify|verify} messages.
+     * @param message ProtoSwissQRDebitor message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSwissQRDebitor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSwissQRDebitor message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSwissQRDebitor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSwissQRDebitor;
+
+    /**
+     * Decodes a ProtoSwissQRDebitor message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSwissQRDebitor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSwissQRDebitor;
+
+    /**
+     * Verifies a ProtoSwissQRDebitor message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSwissQRDebitor message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSwissQRDebitor
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSwissQRDebitor;
+
+    /**
+     * Creates a plain object from a ProtoSwissQRDebitor message. Also converts values to other types if specified.
+     * @param message ProtoSwissQRDebitor
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSwissQRDebitor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSwissQRDebitor to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoSwissQRDebitor
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoSwissQRData. */
+export interface IProtoSwissQRData {
+
+    /** ProtoSwissQRData creditor */
+    creditor?: (IProtoSwissQRCreditor|null);
+
+    /** ProtoSwissQRData debitor */
+    debitor?: (IProtoSwissQRDebitor|null);
+}
+
+/** Represents a ProtoSwissQRData. */
+export class ProtoSwissQRData implements IProtoSwissQRData {
+
+    /**
+     * Constructs a new ProtoSwissQRData.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSwissQRData);
+
+    /** ProtoSwissQRData creditor. */
+    public creditor?: (IProtoSwissQRCreditor|null);
+
+    /** ProtoSwissQRData debitor. */
+    public debitor?: (IProtoSwissQRDebitor|null);
+
+    /**
+     * Creates a new ProtoSwissQRData instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSwissQRData instance
+     */
+    public static create(properties?: IProtoSwissQRData): ProtoSwissQRData;
+
+    /**
+     * Encodes the specified ProtoSwissQRData message. Does not implicitly {@link ProtoSwissQRData.verify|verify} messages.
+     * @param message ProtoSwissQRData message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSwissQRData, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSwissQRData message, length delimited. Does not implicitly {@link ProtoSwissQRData.verify|verify} messages.
+     * @param message ProtoSwissQRData message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSwissQRData, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSwissQRData message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSwissQRData
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSwissQRData;
+
+    /**
+     * Decodes a ProtoSwissQRData message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSwissQRData
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSwissQRData;
+
+    /**
+     * Verifies a ProtoSwissQRData message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSwissQRData message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSwissQRData
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSwissQRData;
+
+    /**
+     * Creates a plain object from a ProtoSwissQRData message. Also converts values to other types if specified.
+     * @param message ProtoSwissQRData
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSwissQRData, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSwissQRData to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoSwissQRData
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
 /** Properties of a ProtoBarcode. */
 export interface IProtoBarcode {
 
@@ -7877,6 +8288,12 @@ export interface IProtoBarcode {
 
     /** ProtoBarcode uuid */
     uuid?: (string|null);
+
+    /** ProtoBarcode code */
+    code?: (string|null);
+
+    /** ProtoBarcode swissQRData */
+    swissQRData?: (IProtoSwissQRData|null);
 }
 
 /** Represents a ProtoBarcode. */
@@ -7923,6 +8340,12 @@ export class ProtoBarcode implements IProtoBarcode {
 
     /** ProtoBarcode uuid. */
     public uuid: string;
+
+    /** ProtoBarcode code. */
+    public code: string;
+
+    /** ProtoBarcode swissQRData. */
+    public swissQRData?: (IProtoSwissQRData|null);
 
     /**
      * Creates a new ProtoBarcode instance using the specified properties.

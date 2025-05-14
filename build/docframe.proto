@@ -637,6 +637,38 @@ ProtoDocumentElement parent = 1;
 string content = 2;
 repeated string comChannelUUIDs = 3;
 }
+message ProtoSwissQRCreditor {
+string address_type = 1;
+string name = 2;
+string postal_code = 3;
+string town = 4;
+string country = 5;
+string street_or_address_line_1 = 6;
+string building_number_or_address_line_2 = 7;
+string iban = 8;
+string amount = 9;
+string currency = 10;
+}
+
+message ProtoSwissQRDebitor {
+string address_type = 1;
+string name = 2;
+string postal_code = 3;
+string town = 4;
+string country = 5;
+string street_or_address_line_1 = 6;
+string building_number_or_address_line_2 = 7;
+string payment_reference_type = 8;
+string payment_reference = 9;
+string unstructured_reference = 10;
+string bill_information = 11;
+}
+
+message ProtoSwissQRData {
+ProtoSwissQRCreditor creditor = 1;
+ProtoSwissQRDebitor debitor = 2;
+}
+
 message ProtoBarcode {
 ProtoBarcodeType type = 1;
 ProtoMeasure x = 2;
@@ -650,6 +682,8 @@ string data = 9;
 bool positionAbsolute = 10;
 repeated string comChannelUUIDs = 11;
 string uuid = 12;
+string code = 13;
+ProtoSwissQRData swissQRData = 14;
 }
 message ProtoBrickReference {
 string internName = 1;

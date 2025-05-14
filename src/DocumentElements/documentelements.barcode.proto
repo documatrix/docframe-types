@@ -1,3 +1,35 @@
+message ProtoSwissQRCreditor {
+  string address_type = 1;
+  string name = 2;
+  string postal_code = 3;
+  string town = 4;
+  string country = 5;
+  string street_or_address_line_1 = 6;
+  string building_number_or_address_line_2 = 7;
+  string iban = 8;
+  string amount = 9;
+  string currency = 10;
+}
+
+message ProtoSwissQRDebitor {
+  string address_type = 1;
+  string name = 2;
+  string postal_code = 3;
+  string town = 4;
+  string country = 5;
+  string street_or_address_line_1 = 6;
+  string building_number_or_address_line_2 = 7;
+  string payment_reference_type = 8;
+  string payment_reference = 9;
+  string unstructured_reference = 10;
+  string bill_information = 11;
+}
+
+message ProtoSwissQRData {
+  ProtoSwissQRCreditor creditor = 1;
+  ProtoSwissQRDebitor debitor = 2;
+}
+
 message ProtoBarcode {
   // like BrickBody::Brick
   ProtoBarcodeType type = 1;
@@ -9,8 +41,14 @@ message ProtoBarcode {
   ProtoMeasure width = 6;
   ProtoMeasure height = 7;
   ProtoMeasure padding = 8;
+  // keeps the evaluated code
   string data = 9;
   bool positionAbsolute = 10;
   repeated string comChannelUUIDs = 11;
   string uuid = 12;
+  // keeps the original code, which gives us the possibility to re-evaluate it and save it in data
+  // it will be empty if the barcode type is SwissQR
+  string code = 13;
+  // will only be set if the barcode type is SwissQR
+  ProtoSwissQRData swissQRData = 14;
 }

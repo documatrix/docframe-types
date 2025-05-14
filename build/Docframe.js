@@ -21219,6 +21219,1088 @@ $root.ProtoText = (function() {
     return ProtoText;
 })();
 
+$root.ProtoSwissQRCreditor = (function() {
+
+    /**
+     * Properties of a ProtoSwissQRCreditor.
+     * @name IProtoSwissQRCreditor
+     * @interface IProtoSwissQRCreditor
+     * @property {string|null} [addressType] ProtoSwissQRCreditor addressType
+     * @property {string|null} [name] ProtoSwissQRCreditor name
+     * @property {string|null} [postalCode] ProtoSwissQRCreditor postalCode
+     * @property {string|null} [town] ProtoSwissQRCreditor town
+     * @property {string|null} [country] ProtoSwissQRCreditor country
+     * @property {string|null} [streetOrAddressLine_1] ProtoSwissQRCreditor streetOrAddressLine_1
+     * @property {string|null} [buildingNumberOrAddressLine_2] ProtoSwissQRCreditor buildingNumberOrAddressLine_2
+     * @property {string|null} [iban] ProtoSwissQRCreditor iban
+     * @property {string|null} [amount] ProtoSwissQRCreditor amount
+     * @property {string|null} [currency] ProtoSwissQRCreditor currency
+     */
+
+    /**
+     * Constructs a new ProtoSwissQRCreditor.
+     * @name ProtoSwissQRCreditor
+     * @classdesc Represents a ProtoSwissQRCreditor.
+     * @implements IProtoSwissQRCreditor
+     * @constructor
+     * @param {IProtoSwissQRCreditor=} [properties] Properties to set
+     */
+    function ProtoSwissQRCreditor(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoSwissQRCreditor addressType.
+     * @member {string} addressType
+     * @memberof ProtoSwissQRCreditor
+     * @instance
+     */
+    ProtoSwissQRCreditor.prototype.addressType = "";
+
+    /**
+     * ProtoSwissQRCreditor name.
+     * @member {string} name
+     * @memberof ProtoSwissQRCreditor
+     * @instance
+     */
+    ProtoSwissQRCreditor.prototype.name = "";
+
+    /**
+     * ProtoSwissQRCreditor postalCode.
+     * @member {string} postalCode
+     * @memberof ProtoSwissQRCreditor
+     * @instance
+     */
+    ProtoSwissQRCreditor.prototype.postalCode = "";
+
+    /**
+     * ProtoSwissQRCreditor town.
+     * @member {string} town
+     * @memberof ProtoSwissQRCreditor
+     * @instance
+     */
+    ProtoSwissQRCreditor.prototype.town = "";
+
+    /**
+     * ProtoSwissQRCreditor country.
+     * @member {string} country
+     * @memberof ProtoSwissQRCreditor
+     * @instance
+     */
+    ProtoSwissQRCreditor.prototype.country = "";
+
+    /**
+     * ProtoSwissQRCreditor streetOrAddressLine_1.
+     * @member {string} streetOrAddressLine_1
+     * @memberof ProtoSwissQRCreditor
+     * @instance
+     */
+    ProtoSwissQRCreditor.prototype.streetOrAddressLine_1 = "";
+
+    /**
+     * ProtoSwissQRCreditor buildingNumberOrAddressLine_2.
+     * @member {string} buildingNumberOrAddressLine_2
+     * @memberof ProtoSwissQRCreditor
+     * @instance
+     */
+    ProtoSwissQRCreditor.prototype.buildingNumberOrAddressLine_2 = "";
+
+    /**
+     * ProtoSwissQRCreditor iban.
+     * @member {string} iban
+     * @memberof ProtoSwissQRCreditor
+     * @instance
+     */
+    ProtoSwissQRCreditor.prototype.iban = "";
+
+    /**
+     * ProtoSwissQRCreditor amount.
+     * @member {string} amount
+     * @memberof ProtoSwissQRCreditor
+     * @instance
+     */
+    ProtoSwissQRCreditor.prototype.amount = "";
+
+    /**
+     * ProtoSwissQRCreditor currency.
+     * @member {string} currency
+     * @memberof ProtoSwissQRCreditor
+     * @instance
+     */
+    ProtoSwissQRCreditor.prototype.currency = "";
+
+    /**
+     * Creates a new ProtoSwissQRCreditor instance using the specified properties.
+     * @function create
+     * @memberof ProtoSwissQRCreditor
+     * @static
+     * @param {IProtoSwissQRCreditor=} [properties] Properties to set
+     * @returns {ProtoSwissQRCreditor} ProtoSwissQRCreditor instance
+     */
+    ProtoSwissQRCreditor.create = function create(properties) {
+        return new ProtoSwissQRCreditor(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoSwissQRCreditor message. Does not implicitly {@link ProtoSwissQRCreditor.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoSwissQRCreditor
+     * @static
+     * @param {IProtoSwissQRCreditor} message ProtoSwissQRCreditor message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSwissQRCreditor.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.addressType != null && Object.hasOwnProperty.call(message, "addressType"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.addressType);
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+        if (message.postalCode != null && Object.hasOwnProperty.call(message, "postalCode"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.postalCode);
+        if (message.town != null && Object.hasOwnProperty.call(message, "town"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.town);
+        if (message.country != null && Object.hasOwnProperty.call(message, "country"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.country);
+        if (message.streetOrAddressLine_1 != null && Object.hasOwnProperty.call(message, "streetOrAddressLine_1"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.streetOrAddressLine_1);
+        if (message.buildingNumberOrAddressLine_2 != null && Object.hasOwnProperty.call(message, "buildingNumberOrAddressLine_2"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.buildingNumberOrAddressLine_2);
+        if (message.iban != null && Object.hasOwnProperty.call(message, "iban"))
+            writer.uint32(/* id 8, wireType 2 =*/66).string(message.iban);
+        if (message.amount != null && Object.hasOwnProperty.call(message, "amount"))
+            writer.uint32(/* id 9, wireType 2 =*/74).string(message.amount);
+        if (message.currency != null && Object.hasOwnProperty.call(message, "currency"))
+            writer.uint32(/* id 10, wireType 2 =*/82).string(message.currency);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoSwissQRCreditor message, length delimited. Does not implicitly {@link ProtoSwissQRCreditor.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoSwissQRCreditor
+     * @static
+     * @param {IProtoSwissQRCreditor} message ProtoSwissQRCreditor message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSwissQRCreditor.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoSwissQRCreditor message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoSwissQRCreditor
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoSwissQRCreditor} ProtoSwissQRCreditor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSwissQRCreditor.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSwissQRCreditor();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.addressType = reader.string();
+                    break;
+                }
+            case 2: {
+                    message.name = reader.string();
+                    break;
+                }
+            case 3: {
+                    message.postalCode = reader.string();
+                    break;
+                }
+            case 4: {
+                    message.town = reader.string();
+                    break;
+                }
+            case 5: {
+                    message.country = reader.string();
+                    break;
+                }
+            case 6: {
+                    message.streetOrAddressLine_1 = reader.string();
+                    break;
+                }
+            case 7: {
+                    message.buildingNumberOrAddressLine_2 = reader.string();
+                    break;
+                }
+            case 8: {
+                    message.iban = reader.string();
+                    break;
+                }
+            case 9: {
+                    message.amount = reader.string();
+                    break;
+                }
+            case 10: {
+                    message.currency = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoSwissQRCreditor message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoSwissQRCreditor
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoSwissQRCreditor} ProtoSwissQRCreditor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSwissQRCreditor.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoSwissQRCreditor message.
+     * @function verify
+     * @memberof ProtoSwissQRCreditor
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoSwissQRCreditor.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.addressType != null && message.hasOwnProperty("addressType"))
+            if (!$util.isString(message.addressType))
+                return "addressType: string expected";
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
+        if (message.postalCode != null && message.hasOwnProperty("postalCode"))
+            if (!$util.isString(message.postalCode))
+                return "postalCode: string expected";
+        if (message.town != null && message.hasOwnProperty("town"))
+            if (!$util.isString(message.town))
+                return "town: string expected";
+        if (message.country != null && message.hasOwnProperty("country"))
+            if (!$util.isString(message.country))
+                return "country: string expected";
+        if (message.streetOrAddressLine_1 != null && message.hasOwnProperty("streetOrAddressLine_1"))
+            if (!$util.isString(message.streetOrAddressLine_1))
+                return "streetOrAddressLine_1: string expected";
+        if (message.buildingNumberOrAddressLine_2 != null && message.hasOwnProperty("buildingNumberOrAddressLine_2"))
+            if (!$util.isString(message.buildingNumberOrAddressLine_2))
+                return "buildingNumberOrAddressLine_2: string expected";
+        if (message.iban != null && message.hasOwnProperty("iban"))
+            if (!$util.isString(message.iban))
+                return "iban: string expected";
+        if (message.amount != null && message.hasOwnProperty("amount"))
+            if (!$util.isString(message.amount))
+                return "amount: string expected";
+        if (message.currency != null && message.hasOwnProperty("currency"))
+            if (!$util.isString(message.currency))
+                return "currency: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoSwissQRCreditor message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoSwissQRCreditor
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoSwissQRCreditor} ProtoSwissQRCreditor
+     */
+    ProtoSwissQRCreditor.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoSwissQRCreditor)
+            return object;
+        var message = new $root.ProtoSwissQRCreditor();
+        if (object.addressType != null)
+            message.addressType = String(object.addressType);
+        if (object.name != null)
+            message.name = String(object.name);
+        if (object.postalCode != null)
+            message.postalCode = String(object.postalCode);
+        if (object.town != null)
+            message.town = String(object.town);
+        if (object.country != null)
+            message.country = String(object.country);
+        if (object.streetOrAddressLine_1 != null)
+            message.streetOrAddressLine_1 = String(object.streetOrAddressLine_1);
+        if (object.buildingNumberOrAddressLine_2 != null)
+            message.buildingNumberOrAddressLine_2 = String(object.buildingNumberOrAddressLine_2);
+        if (object.iban != null)
+            message.iban = String(object.iban);
+        if (object.amount != null)
+            message.amount = String(object.amount);
+        if (object.currency != null)
+            message.currency = String(object.currency);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoSwissQRCreditor message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoSwissQRCreditor
+     * @static
+     * @param {ProtoSwissQRCreditor} message ProtoSwissQRCreditor
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoSwissQRCreditor.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.addressType = "";
+            object.name = "";
+            object.postalCode = "";
+            object.town = "";
+            object.country = "";
+            object.streetOrAddressLine_1 = "";
+            object.buildingNumberOrAddressLine_2 = "";
+            object.iban = "";
+            object.amount = "";
+            object.currency = "";
+        }
+        if (message.addressType != null && message.hasOwnProperty("addressType"))
+            object.addressType = message.addressType;
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
+        if (message.postalCode != null && message.hasOwnProperty("postalCode"))
+            object.postalCode = message.postalCode;
+        if (message.town != null && message.hasOwnProperty("town"))
+            object.town = message.town;
+        if (message.country != null && message.hasOwnProperty("country"))
+            object.country = message.country;
+        if (message.streetOrAddressLine_1 != null && message.hasOwnProperty("streetOrAddressLine_1"))
+            object.streetOrAddressLine_1 = message.streetOrAddressLine_1;
+        if (message.buildingNumberOrAddressLine_2 != null && message.hasOwnProperty("buildingNumberOrAddressLine_2"))
+            object.buildingNumberOrAddressLine_2 = message.buildingNumberOrAddressLine_2;
+        if (message.iban != null && message.hasOwnProperty("iban"))
+            object.iban = message.iban;
+        if (message.amount != null && message.hasOwnProperty("amount"))
+            object.amount = message.amount;
+        if (message.currency != null && message.hasOwnProperty("currency"))
+            object.currency = message.currency;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoSwissQRCreditor to JSON.
+     * @function toJSON
+     * @memberof ProtoSwissQRCreditor
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoSwissQRCreditor.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoSwissQRCreditor
+     * @function getTypeUrl
+     * @memberof ProtoSwissQRCreditor
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoSwissQRCreditor.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoSwissQRCreditor";
+    };
+
+    return ProtoSwissQRCreditor;
+})();
+
+$root.ProtoSwissQRDebitor = (function() {
+
+    /**
+     * Properties of a ProtoSwissQRDebitor.
+     * @name IProtoSwissQRDebitor
+     * @interface IProtoSwissQRDebitor
+     * @property {string|null} [addressType] ProtoSwissQRDebitor addressType
+     * @property {string|null} [name] ProtoSwissQRDebitor name
+     * @property {string|null} [postalCode] ProtoSwissQRDebitor postalCode
+     * @property {string|null} [town] ProtoSwissQRDebitor town
+     * @property {string|null} [country] ProtoSwissQRDebitor country
+     * @property {string|null} [streetOrAddressLine_1] ProtoSwissQRDebitor streetOrAddressLine_1
+     * @property {string|null} [buildingNumberOrAddressLine_2] ProtoSwissQRDebitor buildingNumberOrAddressLine_2
+     * @property {string|null} [paymentReferenceType] ProtoSwissQRDebitor paymentReferenceType
+     * @property {string|null} [paymentReference] ProtoSwissQRDebitor paymentReference
+     * @property {string|null} [unstructuredReference] ProtoSwissQRDebitor unstructuredReference
+     * @property {string|null} [billInformation] ProtoSwissQRDebitor billInformation
+     */
+
+    /**
+     * Constructs a new ProtoSwissQRDebitor.
+     * @name ProtoSwissQRDebitor
+     * @classdesc Represents a ProtoSwissQRDebitor.
+     * @implements IProtoSwissQRDebitor
+     * @constructor
+     * @param {IProtoSwissQRDebitor=} [properties] Properties to set
+     */
+    function ProtoSwissQRDebitor(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoSwissQRDebitor addressType.
+     * @member {string} addressType
+     * @memberof ProtoSwissQRDebitor
+     * @instance
+     */
+    ProtoSwissQRDebitor.prototype.addressType = "";
+
+    /**
+     * ProtoSwissQRDebitor name.
+     * @member {string} name
+     * @memberof ProtoSwissQRDebitor
+     * @instance
+     */
+    ProtoSwissQRDebitor.prototype.name = "";
+
+    /**
+     * ProtoSwissQRDebitor postalCode.
+     * @member {string} postalCode
+     * @memberof ProtoSwissQRDebitor
+     * @instance
+     */
+    ProtoSwissQRDebitor.prototype.postalCode = "";
+
+    /**
+     * ProtoSwissQRDebitor town.
+     * @member {string} town
+     * @memberof ProtoSwissQRDebitor
+     * @instance
+     */
+    ProtoSwissQRDebitor.prototype.town = "";
+
+    /**
+     * ProtoSwissQRDebitor country.
+     * @member {string} country
+     * @memberof ProtoSwissQRDebitor
+     * @instance
+     */
+    ProtoSwissQRDebitor.prototype.country = "";
+
+    /**
+     * ProtoSwissQRDebitor streetOrAddressLine_1.
+     * @member {string} streetOrAddressLine_1
+     * @memberof ProtoSwissQRDebitor
+     * @instance
+     */
+    ProtoSwissQRDebitor.prototype.streetOrAddressLine_1 = "";
+
+    /**
+     * ProtoSwissQRDebitor buildingNumberOrAddressLine_2.
+     * @member {string} buildingNumberOrAddressLine_2
+     * @memberof ProtoSwissQRDebitor
+     * @instance
+     */
+    ProtoSwissQRDebitor.prototype.buildingNumberOrAddressLine_2 = "";
+
+    /**
+     * ProtoSwissQRDebitor paymentReferenceType.
+     * @member {string} paymentReferenceType
+     * @memberof ProtoSwissQRDebitor
+     * @instance
+     */
+    ProtoSwissQRDebitor.prototype.paymentReferenceType = "";
+
+    /**
+     * ProtoSwissQRDebitor paymentReference.
+     * @member {string} paymentReference
+     * @memberof ProtoSwissQRDebitor
+     * @instance
+     */
+    ProtoSwissQRDebitor.prototype.paymentReference = "";
+
+    /**
+     * ProtoSwissQRDebitor unstructuredReference.
+     * @member {string} unstructuredReference
+     * @memberof ProtoSwissQRDebitor
+     * @instance
+     */
+    ProtoSwissQRDebitor.prototype.unstructuredReference = "";
+
+    /**
+     * ProtoSwissQRDebitor billInformation.
+     * @member {string} billInformation
+     * @memberof ProtoSwissQRDebitor
+     * @instance
+     */
+    ProtoSwissQRDebitor.prototype.billInformation = "";
+
+    /**
+     * Creates a new ProtoSwissQRDebitor instance using the specified properties.
+     * @function create
+     * @memberof ProtoSwissQRDebitor
+     * @static
+     * @param {IProtoSwissQRDebitor=} [properties] Properties to set
+     * @returns {ProtoSwissQRDebitor} ProtoSwissQRDebitor instance
+     */
+    ProtoSwissQRDebitor.create = function create(properties) {
+        return new ProtoSwissQRDebitor(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoSwissQRDebitor message. Does not implicitly {@link ProtoSwissQRDebitor.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoSwissQRDebitor
+     * @static
+     * @param {IProtoSwissQRDebitor} message ProtoSwissQRDebitor message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSwissQRDebitor.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.addressType != null && Object.hasOwnProperty.call(message, "addressType"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.addressType);
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+        if (message.postalCode != null && Object.hasOwnProperty.call(message, "postalCode"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.postalCode);
+        if (message.town != null && Object.hasOwnProperty.call(message, "town"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.town);
+        if (message.country != null && Object.hasOwnProperty.call(message, "country"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.country);
+        if (message.streetOrAddressLine_1 != null && Object.hasOwnProperty.call(message, "streetOrAddressLine_1"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.streetOrAddressLine_1);
+        if (message.buildingNumberOrAddressLine_2 != null && Object.hasOwnProperty.call(message, "buildingNumberOrAddressLine_2"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.buildingNumberOrAddressLine_2);
+        if (message.paymentReferenceType != null && Object.hasOwnProperty.call(message, "paymentReferenceType"))
+            writer.uint32(/* id 8, wireType 2 =*/66).string(message.paymentReferenceType);
+        if (message.paymentReference != null && Object.hasOwnProperty.call(message, "paymentReference"))
+            writer.uint32(/* id 9, wireType 2 =*/74).string(message.paymentReference);
+        if (message.unstructuredReference != null && Object.hasOwnProperty.call(message, "unstructuredReference"))
+            writer.uint32(/* id 10, wireType 2 =*/82).string(message.unstructuredReference);
+        if (message.billInformation != null && Object.hasOwnProperty.call(message, "billInformation"))
+            writer.uint32(/* id 11, wireType 2 =*/90).string(message.billInformation);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoSwissQRDebitor message, length delimited. Does not implicitly {@link ProtoSwissQRDebitor.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoSwissQRDebitor
+     * @static
+     * @param {IProtoSwissQRDebitor} message ProtoSwissQRDebitor message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSwissQRDebitor.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoSwissQRDebitor message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoSwissQRDebitor
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoSwissQRDebitor} ProtoSwissQRDebitor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSwissQRDebitor.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSwissQRDebitor();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.addressType = reader.string();
+                    break;
+                }
+            case 2: {
+                    message.name = reader.string();
+                    break;
+                }
+            case 3: {
+                    message.postalCode = reader.string();
+                    break;
+                }
+            case 4: {
+                    message.town = reader.string();
+                    break;
+                }
+            case 5: {
+                    message.country = reader.string();
+                    break;
+                }
+            case 6: {
+                    message.streetOrAddressLine_1 = reader.string();
+                    break;
+                }
+            case 7: {
+                    message.buildingNumberOrAddressLine_2 = reader.string();
+                    break;
+                }
+            case 8: {
+                    message.paymentReferenceType = reader.string();
+                    break;
+                }
+            case 9: {
+                    message.paymentReference = reader.string();
+                    break;
+                }
+            case 10: {
+                    message.unstructuredReference = reader.string();
+                    break;
+                }
+            case 11: {
+                    message.billInformation = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoSwissQRDebitor message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoSwissQRDebitor
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoSwissQRDebitor} ProtoSwissQRDebitor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSwissQRDebitor.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoSwissQRDebitor message.
+     * @function verify
+     * @memberof ProtoSwissQRDebitor
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoSwissQRDebitor.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.addressType != null && message.hasOwnProperty("addressType"))
+            if (!$util.isString(message.addressType))
+                return "addressType: string expected";
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
+        if (message.postalCode != null && message.hasOwnProperty("postalCode"))
+            if (!$util.isString(message.postalCode))
+                return "postalCode: string expected";
+        if (message.town != null && message.hasOwnProperty("town"))
+            if (!$util.isString(message.town))
+                return "town: string expected";
+        if (message.country != null && message.hasOwnProperty("country"))
+            if (!$util.isString(message.country))
+                return "country: string expected";
+        if (message.streetOrAddressLine_1 != null && message.hasOwnProperty("streetOrAddressLine_1"))
+            if (!$util.isString(message.streetOrAddressLine_1))
+                return "streetOrAddressLine_1: string expected";
+        if (message.buildingNumberOrAddressLine_2 != null && message.hasOwnProperty("buildingNumberOrAddressLine_2"))
+            if (!$util.isString(message.buildingNumberOrAddressLine_2))
+                return "buildingNumberOrAddressLine_2: string expected";
+        if (message.paymentReferenceType != null && message.hasOwnProperty("paymentReferenceType"))
+            if (!$util.isString(message.paymentReferenceType))
+                return "paymentReferenceType: string expected";
+        if (message.paymentReference != null && message.hasOwnProperty("paymentReference"))
+            if (!$util.isString(message.paymentReference))
+                return "paymentReference: string expected";
+        if (message.unstructuredReference != null && message.hasOwnProperty("unstructuredReference"))
+            if (!$util.isString(message.unstructuredReference))
+                return "unstructuredReference: string expected";
+        if (message.billInformation != null && message.hasOwnProperty("billInformation"))
+            if (!$util.isString(message.billInformation))
+                return "billInformation: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoSwissQRDebitor message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoSwissQRDebitor
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoSwissQRDebitor} ProtoSwissQRDebitor
+     */
+    ProtoSwissQRDebitor.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoSwissQRDebitor)
+            return object;
+        var message = new $root.ProtoSwissQRDebitor();
+        if (object.addressType != null)
+            message.addressType = String(object.addressType);
+        if (object.name != null)
+            message.name = String(object.name);
+        if (object.postalCode != null)
+            message.postalCode = String(object.postalCode);
+        if (object.town != null)
+            message.town = String(object.town);
+        if (object.country != null)
+            message.country = String(object.country);
+        if (object.streetOrAddressLine_1 != null)
+            message.streetOrAddressLine_1 = String(object.streetOrAddressLine_1);
+        if (object.buildingNumberOrAddressLine_2 != null)
+            message.buildingNumberOrAddressLine_2 = String(object.buildingNumberOrAddressLine_2);
+        if (object.paymentReferenceType != null)
+            message.paymentReferenceType = String(object.paymentReferenceType);
+        if (object.paymentReference != null)
+            message.paymentReference = String(object.paymentReference);
+        if (object.unstructuredReference != null)
+            message.unstructuredReference = String(object.unstructuredReference);
+        if (object.billInformation != null)
+            message.billInformation = String(object.billInformation);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoSwissQRDebitor message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoSwissQRDebitor
+     * @static
+     * @param {ProtoSwissQRDebitor} message ProtoSwissQRDebitor
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoSwissQRDebitor.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.addressType = "";
+            object.name = "";
+            object.postalCode = "";
+            object.town = "";
+            object.country = "";
+            object.streetOrAddressLine_1 = "";
+            object.buildingNumberOrAddressLine_2 = "";
+            object.paymentReferenceType = "";
+            object.paymentReference = "";
+            object.unstructuredReference = "";
+            object.billInformation = "";
+        }
+        if (message.addressType != null && message.hasOwnProperty("addressType"))
+            object.addressType = message.addressType;
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
+        if (message.postalCode != null && message.hasOwnProperty("postalCode"))
+            object.postalCode = message.postalCode;
+        if (message.town != null && message.hasOwnProperty("town"))
+            object.town = message.town;
+        if (message.country != null && message.hasOwnProperty("country"))
+            object.country = message.country;
+        if (message.streetOrAddressLine_1 != null && message.hasOwnProperty("streetOrAddressLine_1"))
+            object.streetOrAddressLine_1 = message.streetOrAddressLine_1;
+        if (message.buildingNumberOrAddressLine_2 != null && message.hasOwnProperty("buildingNumberOrAddressLine_2"))
+            object.buildingNumberOrAddressLine_2 = message.buildingNumberOrAddressLine_2;
+        if (message.paymentReferenceType != null && message.hasOwnProperty("paymentReferenceType"))
+            object.paymentReferenceType = message.paymentReferenceType;
+        if (message.paymentReference != null && message.hasOwnProperty("paymentReference"))
+            object.paymentReference = message.paymentReference;
+        if (message.unstructuredReference != null && message.hasOwnProperty("unstructuredReference"))
+            object.unstructuredReference = message.unstructuredReference;
+        if (message.billInformation != null && message.hasOwnProperty("billInformation"))
+            object.billInformation = message.billInformation;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoSwissQRDebitor to JSON.
+     * @function toJSON
+     * @memberof ProtoSwissQRDebitor
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoSwissQRDebitor.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoSwissQRDebitor
+     * @function getTypeUrl
+     * @memberof ProtoSwissQRDebitor
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoSwissQRDebitor.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoSwissQRDebitor";
+    };
+
+    return ProtoSwissQRDebitor;
+})();
+
+$root.ProtoSwissQRData = (function() {
+
+    /**
+     * Properties of a ProtoSwissQRData.
+     * @name IProtoSwissQRData
+     * @interface IProtoSwissQRData
+     * @property {IProtoSwissQRCreditor|null} [creditor] ProtoSwissQRData creditor
+     * @property {IProtoSwissQRDebitor|null} [debitor] ProtoSwissQRData debitor
+     */
+
+    /**
+     * Constructs a new ProtoSwissQRData.
+     * @name ProtoSwissQRData
+     * @classdesc Represents a ProtoSwissQRData.
+     * @implements IProtoSwissQRData
+     * @constructor
+     * @param {IProtoSwissQRData=} [properties] Properties to set
+     */
+    function ProtoSwissQRData(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoSwissQRData creditor.
+     * @member {IProtoSwissQRCreditor|null|undefined} creditor
+     * @memberof ProtoSwissQRData
+     * @instance
+     */
+    ProtoSwissQRData.prototype.creditor = null;
+
+    /**
+     * ProtoSwissQRData debitor.
+     * @member {IProtoSwissQRDebitor|null|undefined} debitor
+     * @memberof ProtoSwissQRData
+     * @instance
+     */
+    ProtoSwissQRData.prototype.debitor = null;
+
+    /**
+     * Creates a new ProtoSwissQRData instance using the specified properties.
+     * @function create
+     * @memberof ProtoSwissQRData
+     * @static
+     * @param {IProtoSwissQRData=} [properties] Properties to set
+     * @returns {ProtoSwissQRData} ProtoSwissQRData instance
+     */
+    ProtoSwissQRData.create = function create(properties) {
+        return new ProtoSwissQRData(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoSwissQRData message. Does not implicitly {@link ProtoSwissQRData.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoSwissQRData
+     * @static
+     * @param {IProtoSwissQRData} message ProtoSwissQRData message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSwissQRData.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.creditor != null && Object.hasOwnProperty.call(message, "creditor"))
+            $root.ProtoSwissQRCreditor.encode(message.creditor, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.debitor != null && Object.hasOwnProperty.call(message, "debitor"))
+            $root.ProtoSwissQRDebitor.encode(message.debitor, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoSwissQRData message, length delimited. Does not implicitly {@link ProtoSwissQRData.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoSwissQRData
+     * @static
+     * @param {IProtoSwissQRData} message ProtoSwissQRData message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSwissQRData.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoSwissQRData message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoSwissQRData
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoSwissQRData} ProtoSwissQRData
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSwissQRData.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSwissQRData();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.creditor = $root.ProtoSwissQRCreditor.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.debitor = $root.ProtoSwissQRDebitor.decode(reader, reader.uint32());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoSwissQRData message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoSwissQRData
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoSwissQRData} ProtoSwissQRData
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSwissQRData.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoSwissQRData message.
+     * @function verify
+     * @memberof ProtoSwissQRData
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoSwissQRData.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.creditor != null && message.hasOwnProperty("creditor")) {
+            var error = $root.ProtoSwissQRCreditor.verify(message.creditor);
+            if (error)
+                return "creditor." + error;
+        }
+        if (message.debitor != null && message.hasOwnProperty("debitor")) {
+            var error = $root.ProtoSwissQRDebitor.verify(message.debitor);
+            if (error)
+                return "debitor." + error;
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoSwissQRData message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoSwissQRData
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoSwissQRData} ProtoSwissQRData
+     */
+    ProtoSwissQRData.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoSwissQRData)
+            return object;
+        var message = new $root.ProtoSwissQRData();
+        if (object.creditor != null) {
+            if (typeof object.creditor !== "object")
+                throw TypeError(".ProtoSwissQRData.creditor: object expected");
+            message.creditor = $root.ProtoSwissQRCreditor.fromObject(object.creditor);
+        }
+        if (object.debitor != null) {
+            if (typeof object.debitor !== "object")
+                throw TypeError(".ProtoSwissQRData.debitor: object expected");
+            message.debitor = $root.ProtoSwissQRDebitor.fromObject(object.debitor);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoSwissQRData message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoSwissQRData
+     * @static
+     * @param {ProtoSwissQRData} message ProtoSwissQRData
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoSwissQRData.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.creditor = null;
+            object.debitor = null;
+        }
+        if (message.creditor != null && message.hasOwnProperty("creditor"))
+            object.creditor = $root.ProtoSwissQRCreditor.toObject(message.creditor, options);
+        if (message.debitor != null && message.hasOwnProperty("debitor"))
+            object.debitor = $root.ProtoSwissQRDebitor.toObject(message.debitor, options);
+        return object;
+    };
+
+    /**
+     * Converts this ProtoSwissQRData to JSON.
+     * @function toJSON
+     * @memberof ProtoSwissQRData
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoSwissQRData.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoSwissQRData
+     * @function getTypeUrl
+     * @memberof ProtoSwissQRData
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoSwissQRData.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoSwissQRData";
+    };
+
+    return ProtoSwissQRData;
+})();
+
 $root.ProtoBarcode = (function() {
 
     /**
@@ -21237,6 +22319,8 @@ $root.ProtoBarcode = (function() {
      * @property {boolean|null} [positionAbsolute] ProtoBarcode positionAbsolute
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoBarcode comChannelUUIDs
      * @property {string|null} [uuid] ProtoBarcode uuid
+     * @property {string|null} [code] ProtoBarcode code
+     * @property {IProtoSwissQRData|null} [swissQRData] ProtoBarcode swissQRData
      */
 
     /**
@@ -21352,6 +22436,22 @@ $root.ProtoBarcode = (function() {
     ProtoBarcode.prototype.uuid = "";
 
     /**
+     * ProtoBarcode code.
+     * @member {string} code
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.code = "";
+
+    /**
+     * ProtoBarcode swissQRData.
+     * @member {IProtoSwissQRData|null|undefined} swissQRData
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.swissQRData = null;
+
+    /**
      * Creates a new ProtoBarcode instance using the specified properties.
      * @function create
      * @memberof ProtoBarcode
@@ -21400,6 +22500,10 @@ $root.ProtoBarcode = (function() {
                 writer.uint32(/* id 11, wireType 2 =*/90).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 12, wireType 2 =*/98).string(message.uuid);
+        if (message.code != null && Object.hasOwnProperty.call(message, "code"))
+            writer.uint32(/* id 13, wireType 2 =*/106).string(message.code);
+        if (message.swissQRData != null && Object.hasOwnProperty.call(message, "swissQRData"))
+            $root.ProtoSwissQRData.encode(message.swissQRData, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
         return writer;
     };
 
@@ -21482,6 +22586,14 @@ $root.ProtoBarcode = (function() {
                 }
             case 12: {
                     message.uuid = reader.string();
+                    break;
+                }
+            case 13: {
+                    message.code = reader.string();
+                    break;
+                }
+            case 14: {
+                    message.swissQRData = $root.ProtoSwissQRData.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -21591,6 +22703,14 @@ $root.ProtoBarcode = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
+        if (message.code != null && message.hasOwnProperty("code"))
+            if (!$util.isString(message.code))
+                return "code: string expected";
+        if (message.swissQRData != null && message.hasOwnProperty("swissQRData")) {
+            var error = $root.ProtoSwissQRData.verify(message.swissQRData);
+            if (error)
+                return "swissQRData." + error;
+        }
         return null;
     };
 
@@ -21726,6 +22846,13 @@ $root.ProtoBarcode = (function() {
         }
         if (object.uuid != null)
             message.uuid = String(object.uuid);
+        if (object.code != null)
+            message.code = String(object.code);
+        if (object.swissQRData != null) {
+            if (typeof object.swissQRData !== "object")
+                throw TypeError(".ProtoBarcode.swissQRData: object expected");
+            message.swissQRData = $root.ProtoSwissQRData.fromObject(object.swissQRData);
+        }
         return message;
     };
 
@@ -21756,6 +22883,8 @@ $root.ProtoBarcode = (function() {
             object.data = "";
             object.positionAbsolute = false;
             object.uuid = "";
+            object.code = "";
+            object.swissQRData = null;
         }
         if (message.type != null && message.hasOwnProperty("type"))
             object.type = options.enums === String ? $root.ProtoBarcodeType[message.type] === undefined ? message.type : $root.ProtoBarcodeType[message.type] : message.type;
@@ -21784,6 +22913,10 @@ $root.ProtoBarcode = (function() {
         }
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
+        if (message.code != null && message.hasOwnProperty("code"))
+            object.code = message.code;
+        if (message.swissQRData != null && message.hasOwnProperty("swissQRData"))
+            object.swissQRData = $root.ProtoSwissQRData.toObject(message.swissQRData, options);
         return object;
     };
 
