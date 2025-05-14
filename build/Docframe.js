@@ -29315,8 +29315,11 @@ $root.ProtoFormatted = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoFormatted parent
      * @property {boolean|null} [dteditorSyntax] ProtoFormatted dteditorSyntax
      * @property {string|null} [doctypeContent] ProtoFormatted doctypeContent
+     * @property {string|null} [doctypeCode] ProtoFormatted doctypeCode
      * @property {string|null} [htmlContent] ProtoFormatted htmlContent
+     * @property {string|null} [htmlCode] ProtoFormatted htmlCode
      * @property {string|null} [textContent] ProtoFormatted textContent
+     * @property {string|null} [textCode] ProtoFormatted textCode
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoFormatted comChannelUUIDs
      */
 
@@ -29361,6 +29364,14 @@ $root.ProtoFormatted = (function() {
     ProtoFormatted.prototype.doctypeContent = "";
 
     /**
+     * ProtoFormatted doctypeCode.
+     * @member {string} doctypeCode
+     * @memberof ProtoFormatted
+     * @instance
+     */
+    ProtoFormatted.prototype.doctypeCode = "";
+
+    /**
      * ProtoFormatted htmlContent.
      * @member {string} htmlContent
      * @memberof ProtoFormatted
@@ -29369,12 +29380,28 @@ $root.ProtoFormatted = (function() {
     ProtoFormatted.prototype.htmlContent = "";
 
     /**
+     * ProtoFormatted htmlCode.
+     * @member {string} htmlCode
+     * @memberof ProtoFormatted
+     * @instance
+     */
+    ProtoFormatted.prototype.htmlCode = "";
+
+    /**
      * ProtoFormatted textContent.
      * @member {string} textContent
      * @memberof ProtoFormatted
      * @instance
      */
     ProtoFormatted.prototype.textContent = "";
+
+    /**
+     * ProtoFormatted textCode.
+     * @member {string} textCode
+     * @memberof ProtoFormatted
+     * @instance
+     */
+    ProtoFormatted.prototype.textCode = "";
 
     /**
      * ProtoFormatted comChannelUUIDs.
@@ -29414,13 +29441,19 @@ $root.ProtoFormatted = (function() {
             writer.uint32(/* id 2, wireType 0 =*/16).bool(message.dteditorSyntax);
         if (message.doctypeContent != null && Object.hasOwnProperty.call(message, "doctypeContent"))
             writer.uint32(/* id 3, wireType 2 =*/26).string(message.doctypeContent);
+        if (message.doctypeCode != null && Object.hasOwnProperty.call(message, "doctypeCode"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.doctypeCode);
         if (message.htmlContent != null && Object.hasOwnProperty.call(message, "htmlContent"))
-            writer.uint32(/* id 4, wireType 2 =*/34).string(message.htmlContent);
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.htmlContent);
+        if (message.htmlCode != null && Object.hasOwnProperty.call(message, "htmlCode"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.htmlCode);
         if (message.textContent != null && Object.hasOwnProperty.call(message, "textContent"))
-            writer.uint32(/* id 5, wireType 2 =*/42).string(message.textContent);
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.textContent);
+        if (message.textCode != null && Object.hasOwnProperty.call(message, "textCode"))
+            writer.uint32(/* id 8, wireType 2 =*/66).string(message.textCode);
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                writer.uint32(/* id 6, wireType 2 =*/50).string(message.comChannelUUIDs[i]);
+                writer.uint32(/* id 9, wireType 2 =*/74).string(message.comChannelUUIDs[i]);
         return writer;
     };
 
@@ -29468,14 +29501,26 @@ $root.ProtoFormatted = (function() {
                     break;
                 }
             case 4: {
-                    message.htmlContent = reader.string();
+                    message.doctypeCode = reader.string();
                     break;
                 }
             case 5: {
-                    message.textContent = reader.string();
+                    message.htmlContent = reader.string();
                     break;
                 }
             case 6: {
+                    message.htmlCode = reader.string();
+                    break;
+                }
+            case 7: {
+                    message.textContent = reader.string();
+                    break;
+                }
+            case 8: {
+                    message.textCode = reader.string();
+                    break;
+                }
+            case 9: {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
@@ -29527,12 +29572,21 @@ $root.ProtoFormatted = (function() {
         if (message.doctypeContent != null && message.hasOwnProperty("doctypeContent"))
             if (!$util.isString(message.doctypeContent))
                 return "doctypeContent: string expected";
+        if (message.doctypeCode != null && message.hasOwnProperty("doctypeCode"))
+            if (!$util.isString(message.doctypeCode))
+                return "doctypeCode: string expected";
         if (message.htmlContent != null && message.hasOwnProperty("htmlContent"))
             if (!$util.isString(message.htmlContent))
                 return "htmlContent: string expected";
+        if (message.htmlCode != null && message.hasOwnProperty("htmlCode"))
+            if (!$util.isString(message.htmlCode))
+                return "htmlCode: string expected";
         if (message.textContent != null && message.hasOwnProperty("textContent"))
             if (!$util.isString(message.textContent))
                 return "textContent: string expected";
+        if (message.textCode != null && message.hasOwnProperty("textCode"))
+            if (!$util.isString(message.textCode))
+                return "textCode: string expected";
         if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
             if (!Array.isArray(message.comChannelUUIDs))
                 return "comChannelUUIDs: array expected";
@@ -29564,10 +29618,16 @@ $root.ProtoFormatted = (function() {
             message.dteditorSyntax = Boolean(object.dteditorSyntax);
         if (object.doctypeContent != null)
             message.doctypeContent = String(object.doctypeContent);
+        if (object.doctypeCode != null)
+            message.doctypeCode = String(object.doctypeCode);
         if (object.htmlContent != null)
             message.htmlContent = String(object.htmlContent);
+        if (object.htmlCode != null)
+            message.htmlCode = String(object.htmlCode);
         if (object.textContent != null)
             message.textContent = String(object.textContent);
+        if (object.textCode != null)
+            message.textCode = String(object.textCode);
         if (object.comChannelUUIDs) {
             if (!Array.isArray(object.comChannelUUIDs))
                 throw TypeError(".ProtoFormatted.comChannelUUIDs: array expected");
@@ -29597,8 +29657,11 @@ $root.ProtoFormatted = (function() {
             object.parent = null;
             object.dteditorSyntax = false;
             object.doctypeContent = "";
+            object.doctypeCode = "";
             object.htmlContent = "";
+            object.htmlCode = "";
             object.textContent = "";
+            object.textCode = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -29606,10 +29669,16 @@ $root.ProtoFormatted = (function() {
             object.dteditorSyntax = message.dteditorSyntax;
         if (message.doctypeContent != null && message.hasOwnProperty("doctypeContent"))
             object.doctypeContent = message.doctypeContent;
+        if (message.doctypeCode != null && message.hasOwnProperty("doctypeCode"))
+            object.doctypeCode = message.doctypeCode;
         if (message.htmlContent != null && message.hasOwnProperty("htmlContent"))
             object.htmlContent = message.htmlContent;
+        if (message.htmlCode != null && message.hasOwnProperty("htmlCode"))
+            object.htmlCode = message.htmlCode;
         if (message.textContent != null && message.hasOwnProperty("textContent"))
             object.textContent = message.textContent;
+        if (message.textCode != null && message.hasOwnProperty("textCode"))
+            object.textCode = message.textCode;
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
             object.comChannelUUIDs = [];
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)

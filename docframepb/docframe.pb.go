@@ -8791,9 +8791,12 @@ type ProtoFormatted struct {
 	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	DteditorSyntax  bool                   `protobuf:"varint,2,opt,name=dteditorSyntax,proto3" json:"dteditorSyntax,omitempty"`
 	DoctypeContent  string                 `protobuf:"bytes,3,opt,name=doctypeContent,proto3" json:"doctypeContent,omitempty"`
-	HtmlContent     string                 `protobuf:"bytes,4,opt,name=htmlContent,proto3" json:"htmlContent,omitempty"`
-	TextContent     string                 `protobuf:"bytes,5,opt,name=textContent,proto3" json:"textContent,omitempty"`
-	ComChannelUUIDs []string               `protobuf:"bytes,6,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	DoctypeCode     string                 `protobuf:"bytes,4,opt,name=doctypeCode,proto3" json:"doctypeCode,omitempty"`
+	HtmlContent     string                 `protobuf:"bytes,5,opt,name=htmlContent,proto3" json:"htmlContent,omitempty"`
+	HtmlCode        string                 `protobuf:"bytes,6,opt,name=htmlCode,proto3" json:"htmlCode,omitempty"`
+	TextContent     string                 `protobuf:"bytes,7,opt,name=textContent,proto3" json:"textContent,omitempty"`
+	TextCode        string                 `protobuf:"bytes,8,opt,name=textCode,proto3" json:"textCode,omitempty"`
+	ComChannelUUIDs []string               `protobuf:"bytes,9,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -8849,6 +8852,13 @@ func (x *ProtoFormatted) GetDoctypeContent() string {
 	return ""
 }
 
+func (x *ProtoFormatted) GetDoctypeCode() string {
+	if x != nil {
+		return x.DoctypeCode
+	}
+	return ""
+}
+
 func (x *ProtoFormatted) GetHtmlContent() string {
 	if x != nil {
 		return x.HtmlContent
@@ -8856,9 +8866,23 @@ func (x *ProtoFormatted) GetHtmlContent() string {
 	return ""
 }
 
+func (x *ProtoFormatted) GetHtmlCode() string {
+	if x != nil {
+		return x.HtmlCode
+	}
+	return ""
+}
+
 func (x *ProtoFormatted) GetTextContent() string {
 	if x != nil {
 		return x.TextContent
+	}
+	return ""
+}
+
+func (x *ProtoFormatted) GetTextCode() string {
+	if x != nil {
+		return x.TextCode
 	}
 	return ""
 }
@@ -11415,14 +11439,17 @@ const file_build_docframe_proto_rawDesc = "" +
 	"formatUuid\x12;\n" +
 	"\vspecialType\x18\x05 \x01(\x0e2\x19.ProtoVariableSpecialTypeR\vspecialType\x12\x12\n" +
 	"\x04uuid\x18\x06 \x01(\tR\x04uuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\"\xfd\x01\n" +
+	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\"\xd7\x02\n" +
 	"\x0eProtoFormatted\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12&\n" +
 	"\x0edteditorSyntax\x18\x02 \x01(\bR\x0edteditorSyntax\x12&\n" +
 	"\x0edoctypeContent\x18\x03 \x01(\tR\x0edoctypeContent\x12 \n" +
-	"\vhtmlContent\x18\x04 \x01(\tR\vhtmlContent\x12 \n" +
-	"\vtextContent\x18\x05 \x01(\tR\vtextContent\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\"[\n" +
+	"\vdoctypeCode\x18\x04 \x01(\tR\vdoctypeCode\x12 \n" +
+	"\vhtmlContent\x18\x05 \x01(\tR\vhtmlContent\x12\x1a\n" +
+	"\bhtmlCode\x18\x06 \x01(\tR\bhtmlCode\x12 \n" +
+	"\vtextContent\x18\a \x01(\tR\vtextContent\x12\x1a\n" +
+	"\btextCode\x18\b \x01(\tR\btextCode\x12(\n" +
+	"\x0fcomChannelUUIDs\x18\t \x03(\tR\x0fcomChannelUUIDs\"[\n" +
 	"\x13ProtoApplyProtoCDef\x12\x1a\n" +
 	"\bcDefUuid\x18\x01 \x01(\tR\bcDefUuid\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\"[\n" +

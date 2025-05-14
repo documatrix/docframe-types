@@ -10221,11 +10221,20 @@ export interface IProtoFormatted {
     /** ProtoFormatted doctypeContent */
     doctypeContent?: (string|null);
 
+    /** ProtoFormatted doctypeCode */
+    doctypeCode?: (string|null);
+
     /** ProtoFormatted htmlContent */
     htmlContent?: (string|null);
 
+    /** ProtoFormatted htmlCode */
+    htmlCode?: (string|null);
+
     /** ProtoFormatted textContent */
     textContent?: (string|null);
+
+    /** ProtoFormatted textCode */
+    textCode?: (string|null);
 
     /** ProtoFormatted comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
@@ -10249,11 +10258,20 @@ export class ProtoFormatted implements IProtoFormatted {
     /** ProtoFormatted doctypeContent. */
     public doctypeContent: string;
 
+    /** ProtoFormatted doctypeCode. */
+    public doctypeCode: string;
+
     /** ProtoFormatted htmlContent. */
     public htmlContent: string;
 
+    /** ProtoFormatted htmlCode. */
+    public htmlCode: string;
+
     /** ProtoFormatted textContent. */
     public textContent: string;
+
+    /** ProtoFormatted textCode. */
+    public textCode: string;
 
     /** ProtoFormatted comChannelUUIDs. */
     public comChannelUUIDs: string[];

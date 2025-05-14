@@ -962,9 +962,12 @@ ProtoDocumentElement parent = 1;
 
 bool dteditorSyntax = 2;
 string doctypeContent = 3;
-string htmlContent = 4;
-string textContent = 5;
-repeated string comChannelUUIDs = 6;
+string doctypeCode = 4;
+string htmlContent = 5;
+string htmlCode = 6;
+string textContent = 7;
+string textCode = 8;
+repeated string comChannelUUIDs = 9;
 }
 
 message ProtoApplyProtoCDef {
