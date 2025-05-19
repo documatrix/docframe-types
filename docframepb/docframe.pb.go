@@ -1384,28 +1384,28 @@ func (ProtoImageUAMode) EnumDescriptor() ([]byte, []int) {
 type ProtoImageContentType int32
 
 const (
-	ProtoImageContentType_IMAGE_CONTENT_DO_NOT_USE_AT_ALL        ProtoImageContentType = 0
-	ProtoImageContentType_IMAGE_CONTENT_UUID_REFFERENCE_TEMPLATE ProtoImageContentType = 1
-	ProtoImageContentType_IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL   ProtoImageContentType = 2
-	ProtoImageContentType_IMAGE_CONTENT_DMSCRIPT                 ProtoImageContentType = 3
-	ProtoImageContentType_IMAGE_CONTENT_IMAGE_DATA               ProtoImageContentType = 4
+	ProtoImageContentType_IMAGE_CONTENT_DO_NOT_USE_AT_ALL      ProtoImageContentType = 0
+	ProtoImageContentType_IMAGE_CONTENT_UUID_REFFERENCE_LOCAL  ProtoImageContentType = 1
+	ProtoImageContentType_IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL ProtoImageContentType = 2
+	ProtoImageContentType_IMAGE_CONTENT_DMSCRIPT               ProtoImageContentType = 3
+	ProtoImageContentType_IMAGE_CONTENT_IMAGE_DATA             ProtoImageContentType = 4
 )
 
 // Enum value maps for ProtoImageContentType.
 var (
 	ProtoImageContentType_name = map[int32]string{
 		0: "IMAGE_CONTENT_DO_NOT_USE_AT_ALL",
-		1: "IMAGE_CONTENT_UUID_REFFERENCE_TEMPLATE",
+		1: "IMAGE_CONTENT_UUID_REFFERENCE_LOCAL",
 		2: "IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL",
 		3: "IMAGE_CONTENT_DMSCRIPT",
 		4: "IMAGE_CONTENT_IMAGE_DATA",
 	}
 	ProtoImageContentType_value = map[string]int32{
-		"IMAGE_CONTENT_DO_NOT_USE_AT_ALL":        0,
-		"IMAGE_CONTENT_UUID_REFFERENCE_TEMPLATE": 1,
-		"IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL":   2,
-		"IMAGE_CONTENT_DMSCRIPT":                 3,
-		"IMAGE_CONTENT_IMAGE_DATA":               4,
+		"IMAGE_CONTENT_DO_NOT_USE_AT_ALL":      0,
+		"IMAGE_CONTENT_UUID_REFFERENCE_LOCAL":  1,
+		"IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL": 2,
+		"IMAGE_CONTENT_DMSCRIPT":               3,
+		"IMAGE_CONTENT_IMAGE_DATA":             4,
 	}
 )
 
@@ -11809,10 +11809,10 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x1fIMAGE_UA_MODE_DO_NOT_USE_AT_ALL\x10\x00\x12\x1b\n" +
 	"\x17IMAGE_UA_MODE_INHERITED\x10\x01\x12\x18\n" +
 	"\x14IMAGE_UA_MODE_SIMPLE\x10\x02\x12\x1a\n" +
-	"\x16IMAGE_UA_MODE_ADVANCED\x10\x03*\xcc\x01\n" +
+	"\x16IMAGE_UA_MODE_ADVANCED\x10\x03*\xc9\x01\n" +
 	"\x15ProtoImageContentType\x12#\n" +
-	"\x1fIMAGE_CONTENT_DO_NOT_USE_AT_ALL\x10\x00\x12*\n" +
-	"&IMAGE_CONTENT_UUID_REFFERENCE_TEMPLATE\x10\x01\x12(\n" +
+	"\x1fIMAGE_CONTENT_DO_NOT_USE_AT_ALL\x10\x00\x12'\n" +
+	"#IMAGE_CONTENT_UUID_REFFERENCE_LOCAL\x10\x01\x12(\n" +
 	"$IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL\x10\x02\x12\x1a\n" +
 	"\x16IMAGE_CONTENT_DMSCRIPT\x10\x03\x12\x1c\n" +
 	"\x18IMAGE_CONTENT_IMAGE_DATA\x10\x04*\xc4\x01\n" +

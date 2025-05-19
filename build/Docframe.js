@@ -27135,7 +27135,7 @@ $root.ProtoImageUAMode = (function() {
  * @name ProtoImageContentType
  * @enum {number}
  * @property {number} IMAGE_CONTENT_DO_NOT_USE_AT_ALL=0 IMAGE_CONTENT_DO_NOT_USE_AT_ALL value
- * @property {number} IMAGE_CONTENT_UUID_REFFERENCE_TEMPLATE=1 IMAGE_CONTENT_UUID_REFFERENCE_TEMPLATE value
+ * @property {number} IMAGE_CONTENT_UUID_REFFERENCE_LOCAL=1 IMAGE_CONTENT_UUID_REFFERENCE_LOCAL value
  * @property {number} IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL=2 IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL value
  * @property {number} IMAGE_CONTENT_DMSCRIPT=3 IMAGE_CONTENT_DMSCRIPT value
  * @property {number} IMAGE_CONTENT_IMAGE_DATA=4 IMAGE_CONTENT_IMAGE_DATA value
@@ -27143,7 +27143,7 @@ $root.ProtoImageUAMode = (function() {
 $root.ProtoImageContentType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "IMAGE_CONTENT_DO_NOT_USE_AT_ALL"] = 0;
-    values[valuesById[1] = "IMAGE_CONTENT_UUID_REFFERENCE_TEMPLATE"] = 1;
+    values[valuesById[1] = "IMAGE_CONTENT_UUID_REFFERENCE_LOCAL"] = 1;
     values[valuesById[2] = "IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL"] = 2;
     values[valuesById[3] = "IMAGE_CONTENT_DMSCRIPT"] = 3;
     values[valuesById[4] = "IMAGE_CONTENT_IMAGE_DATA"] = 4;
@@ -27911,7 +27911,7 @@ $root.ProtoImage = (function() {
         case 0:
             message.imageContentType = 0;
             break;
-        case "IMAGE_CONTENT_UUID_REFFERENCE_TEMPLATE":
+        case "IMAGE_CONTENT_UUID_REFFERENCE_LOCAL":
         case 1:
             message.imageContentType = 1;
             break;
