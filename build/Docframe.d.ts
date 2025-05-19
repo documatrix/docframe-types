@@ -9568,9 +9568,10 @@ export enum ProtoImageUAMode {
 /** ProtoImageContentType enum. */
 export enum ProtoImageContentType {
     IMAGE_CONTENT_DO_NOT_USE_AT_ALL = 0,
-    IMAGE_CONTENT_UUID_REFFERENCE = 1,
-    IMAGE_CONTENT_DMSCRIPT = 2,
-    IMAGE_CONTENT_IMAGE_DATA = 3
+    IMAGE_CONTENT_UUID_REFFERENCE_TEMPLATE = 1,
+    IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL = 2,
+    IMAGE_CONTENT_DMSCRIPT = 3,
+    IMAGE_CONTENT_IMAGE_DATA = 4
 }
 
 /** Properties of a ProtoImage. */
