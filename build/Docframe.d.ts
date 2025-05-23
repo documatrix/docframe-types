@@ -9231,6 +9231,9 @@ export interface INode {
 
     /** Node selectionEntry */
     selectionEntry?: (IProtoSelectionEntry|null);
+
+    /** Node condition */
+    condition?: (IProtoCondition|null);
 }
 
 /** Represents a Node. */
@@ -9407,8 +9410,11 @@ export class Node implements INode {
     /** Node selectionEntry. */
     public selectionEntry?: (IProtoSelectionEntry|null);
 
+    /** Node condition. */
+    public condition?: (IProtoCondition|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -9546,7 +9552,8 @@ export enum NodeType {
     DOCUMENT_ELEMENT_DM_SCRIPT = 73,
     DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74,
     DOCUMENT_ELEMENT_SELECTION = 75,
-    DOCUMENT_ELEMENT_SELECTION_ENTRY = 76
+    DOCUMENT_ELEMENT_SELECTION_ENTRY = 76,
+    DOCUMENT_ELEMENT_CONDITION = 77
 }
 
 /** ProtoImageScaleType enum. */
@@ -13482,6 +13489,139 @@ export class ProtoSelectionEntry implements IProtoSelectionEntry {
 
     /**
      * Gets the default type url for ProtoSelectionEntry
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoCondition. */
+export interface IProtoCondition {
+
+    /** ProtoCondition _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoCondition parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoCondition Uuid */
+    Uuid?: (string|null);
+
+    /** ProtoCondition comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoCondition code */
+    code?: (string|null);
+
+    /** ProtoCondition result */
+    result?: (boolean|null);
+
+    /** ProtoCondition regenerate */
+    regenerate?: (boolean|null);
+}
+
+/** Represents a ProtoCondition. */
+export class ProtoCondition implements IProtoCondition {
+
+    /**
+     * Constructs a new ProtoCondition.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoCondition);
+
+    /** ProtoCondition _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoCondition parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoCondition Uuid. */
+    public Uuid: string;
+
+    /** ProtoCondition comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoCondition code. */
+    public code: string;
+
+    /** ProtoCondition result. */
+    public result: boolean;
+
+    /** ProtoCondition regenerate. */
+    public regenerate: boolean;
+
+    /**
+     * Creates a new ProtoCondition instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoCondition instance
+     */
+    public static create(properties?: IProtoCondition): ProtoCondition;
+
+    /**
+     * Encodes the specified ProtoCondition message. Does not implicitly {@link ProtoCondition.verify|verify} messages.
+     * @param message ProtoCondition message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoCondition, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoCondition message, length delimited. Does not implicitly {@link ProtoCondition.verify|verify} messages.
+     * @param message ProtoCondition message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoCondition, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoCondition message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoCondition
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoCondition;
+
+    /**
+     * Decodes a ProtoCondition message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoCondition
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoCondition;
+
+    /**
+     * Verifies a ProtoCondition message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoCondition message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoCondition
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoCondition;
+
+    /**
+     * Creates a plain object from a ProtoCondition message. Also converts values to other types if specified.
+     * @param message ProtoCondition
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoCondition, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoCondition to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoCondition
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

@@ -803,6 +803,7 @@ ProtoDmScript dmScript = 67;
 ProtoDynamicTemplate dynamic_template = 68;
 ProtoSelection selection = 69;
 ProtoSelectionEntry selection_entry = 70;
+ProtoCondition condition = 71;
 }
 }
 
@@ -864,6 +865,7 @@ DOCUMENT_ELEMENT_DM_SCRIPT = 73;
 DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74;
 DOCUMENT_ELEMENT_SELECTION = 75;
 DOCUMENT_ELEMENT_SELECTION_ENTRY = 76;
+DOCUMENT_ELEMENT_CONDITION = 77;
 }
 enum ProtoImageScaleType {
 IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
@@ -1199,4 +1201,13 @@ repeated string comChannelUUIDs = 4;
 string internal_name = 5;
 string name = 6;
 bool selected = 7;
+}
+message ProtoCondition {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+string Uuid = 3;
+repeated string comChannelUUIDs = 4;
+string code = 5;
+bool result = 6;
+bool regenerate = 7;
 }
