@@ -9234,6 +9234,9 @@ export interface INode {
 
     /** Node condition */
     condition?: (IProtoCondition|null);
+
+    /** Node pageCondition */
+    pageCondition?: (IProtoPageCondition|null);
 }
 
 /** Represents a Node. */
@@ -9413,8 +9416,11 @@ export class Node implements INode {
     /** Node condition. */
     public condition?: (IProtoCondition|null);
 
+    /** Node pageCondition. */
+    public pageCondition?: (IProtoPageCondition|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -9553,7 +9559,8 @@ export enum NodeType {
     DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74,
     DOCUMENT_ELEMENT_SELECTION = 75,
     DOCUMENT_ELEMENT_SELECTION_ENTRY = 76,
-    DOCUMENT_ELEMENT_CONDITION = 77
+    DOCUMENT_ELEMENT_CONDITION = 77,
+    DOCUMENT_ELEMENT_PAGE_CONDITION = 78
 }
 
 /** ProtoImageScaleType enum. */
@@ -13623,6 +13630,127 @@ export class ProtoCondition implements IProtoCondition {
 
     /**
      * Gets the default type url for ProtoCondition
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoPageCondition. */
+export interface IProtoPageCondition {
+
+    /** ProtoPageCondition _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoPageCondition parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoPageCondition Uuid */
+    Uuid?: (string|null);
+
+    /** ProtoPageCondition comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoPageCondition code */
+    code?: (string|null);
+}
+
+/** Represents a ProtoPageCondition. */
+export class ProtoPageCondition implements IProtoPageCondition {
+
+    /**
+     * Constructs a new ProtoPageCondition.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoPageCondition);
+
+    /** ProtoPageCondition _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoPageCondition parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoPageCondition Uuid. */
+    public Uuid: string;
+
+    /** ProtoPageCondition comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoPageCondition code. */
+    public code: string;
+
+    /**
+     * Creates a new ProtoPageCondition instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoPageCondition instance
+     */
+    public static create(properties?: IProtoPageCondition): ProtoPageCondition;
+
+    /**
+     * Encodes the specified ProtoPageCondition message. Does not implicitly {@link ProtoPageCondition.verify|verify} messages.
+     * @param message ProtoPageCondition message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoPageCondition, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoPageCondition message, length delimited. Does not implicitly {@link ProtoPageCondition.verify|verify} messages.
+     * @param message ProtoPageCondition message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoPageCondition, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoPageCondition message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoPageCondition
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoPageCondition;
+
+    /**
+     * Decodes a ProtoPageCondition message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoPageCondition
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoPageCondition;
+
+    /**
+     * Verifies a ProtoPageCondition message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoPageCondition message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoPageCondition
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoPageCondition;
+
+    /**
+     * Creates a plain object from a ProtoPageCondition message. Also converts values to other types if specified.
+     * @param message ProtoPageCondition
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoPageCondition, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoPageCondition to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoPageCondition
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

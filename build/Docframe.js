@@ -24905,6 +24905,7 @@ $root.Node = (function() {
      * @property {IProtoSelection|null} [selection] Node selection
      * @property {IProtoSelectionEntry|null} [selectionEntry] Node selectionEntry
      * @property {IProtoCondition|null} [condition] Node condition
+     * @property {IProtoPageCondition|null} [pageCondition] Node pageCondition
      */
 
     /**
@@ -25371,17 +25372,25 @@ $root.Node = (function() {
      */
     Node.prototype.condition = null;
 
+    /**
+     * Node pageCondition.
+     * @member {IProtoPageCondition|null|undefined} pageCondition
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.pageCondition = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -25522,6 +25531,8 @@ $root.Node = (function() {
             $root.ProtoSelectionEntry.encode(message.selectionEntry, writer.uint32(/* id 70, wireType 2 =*/562).fork()).ldelim();
         if (message.condition != null && Object.hasOwnProperty.call(message, "condition"))
             $root.ProtoCondition.encode(message.condition, writer.uint32(/* id 71, wireType 2 =*/570).fork()).ldelim();
+        if (message.pageCondition != null && Object.hasOwnProperty.call(message, "pageCondition"))
+            $root.ProtoPageCondition.encode(message.pageCondition, writer.uint32(/* id 72, wireType 2 =*/578).fork()).ldelim();
         return writer;
     };
 
@@ -25780,6 +25791,10 @@ $root.Node = (function() {
                 }
             case 71: {
                     message.condition = $root.ProtoCondition.decode(reader, reader.uint32());
+                    break;
+                }
+            case 72: {
+                    message.pageCondition = $root.ProtoPageCondition.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -26375,6 +26390,16 @@ $root.Node = (function() {
                     return "condition." + error;
             }
         }
+        if (message.pageCondition != null && message.hasOwnProperty("pageCondition")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoPageCondition.verify(message.pageCondition);
+                if (error)
+                    return "pageCondition." + error;
+            }
+        }
         return null;
     };
 
@@ -26675,6 +26700,11 @@ $root.Node = (function() {
                 throw TypeError(".Node.condition: object expected");
             message.condition = $root.ProtoCondition.fromObject(object.condition);
         }
+        if (object.pageCondition != null) {
+            if (typeof object.pageCondition !== "object")
+                throw TypeError(".Node.pageCondition: object expected");
+            message.pageCondition = $root.ProtoPageCondition.fromObject(object.pageCondition);
+        }
         return message;
     };
 
@@ -26973,6 +27003,11 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "condition";
         }
+        if (message.pageCondition != null && message.hasOwnProperty("pageCondition")) {
+            object.pageCondition = $root.ProtoPageCondition.toObject(message.pageCondition, options);
+            if (options.oneofs)
+                object.object = "pageCondition";
+        }
         return object;
     };
 
@@ -27067,6 +27102,7 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_SELECTION=75 DOCUMENT_ELEMENT_SELECTION value
  * @property {number} DOCUMENT_ELEMENT_SELECTION_ENTRY=76 DOCUMENT_ELEMENT_SELECTION_ENTRY value
  * @property {number} DOCUMENT_ELEMENT_CONDITION=77 DOCUMENT_ELEMENT_CONDITION value
+ * @property {number} DOCUMENT_ELEMENT_PAGE_CONDITION=78 DOCUMENT_ELEMENT_PAGE_CONDITION value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -27128,6 +27164,7 @@ $root.NodeType = (function() {
     values[valuesById[75] = "DOCUMENT_ELEMENT_SELECTION"] = 75;
     values[valuesById[76] = "DOCUMENT_ELEMENT_SELECTION_ENTRY"] = 76;
     values[valuesById[77] = "DOCUMENT_ELEMENT_CONDITION"] = 77;
+    values[valuesById[78] = "DOCUMENT_ELEMENT_PAGE_CONDITION"] = 78;
     return values;
 })();
 
@@ -38890,6 +38927,346 @@ $root.ProtoCondition = (function() {
     };
 
     return ProtoCondition;
+})();
+
+$root.ProtoPageCondition = (function() {
+
+    /**
+     * Properties of a ProtoPageCondition.
+     * @name IProtoPageCondition
+     * @interface IProtoPageCondition
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoPageCondition _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoPageCondition parent
+     * @property {string|null} [Uuid] ProtoPageCondition Uuid
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoPageCondition comChannelUUIDs
+     * @property {string|null} [code] ProtoPageCondition code
+     */
+
+    /**
+     * Constructs a new ProtoPageCondition.
+     * @name ProtoPageCondition
+     * @classdesc Represents a ProtoPageCondition.
+     * @implements IProtoPageCondition
+     * @constructor
+     * @param {IProtoPageCondition=} [properties] Properties to set
+     */
+    function ProtoPageCondition(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoPageCondition _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoPageCondition
+     * @instance
+     */
+    ProtoPageCondition.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoPageCondition parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoPageCondition
+     * @instance
+     */
+    ProtoPageCondition.prototype.parent = null;
+
+    /**
+     * ProtoPageCondition Uuid.
+     * @member {string} Uuid
+     * @memberof ProtoPageCondition
+     * @instance
+     */
+    ProtoPageCondition.prototype.Uuid = "";
+
+    /**
+     * ProtoPageCondition comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoPageCondition
+     * @instance
+     */
+    ProtoPageCondition.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * ProtoPageCondition code.
+     * @member {string} code
+     * @memberof ProtoPageCondition
+     * @instance
+     */
+    ProtoPageCondition.prototype.code = "";
+
+    /**
+     * Creates a new ProtoPageCondition instance using the specified properties.
+     * @function create
+     * @memberof ProtoPageCondition
+     * @static
+     * @param {IProtoPageCondition=} [properties] Properties to set
+     * @returns {ProtoPageCondition} ProtoPageCondition instance
+     */
+    ProtoPageCondition.create = function create(properties) {
+        return new ProtoPageCondition(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoPageCondition message. Does not implicitly {@link ProtoPageCondition.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoPageCondition
+     * @static
+     * @param {IProtoPageCondition} message ProtoPageCondition message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoPageCondition.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.Uuid != null && Object.hasOwnProperty.call(message, "Uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.Uuid);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.code != null && Object.hasOwnProperty.call(message, "code"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.code);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoPageCondition message, length delimited. Does not implicitly {@link ProtoPageCondition.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoPageCondition
+     * @static
+     * @param {IProtoPageCondition} message ProtoPageCondition message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoPageCondition.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoPageCondition message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoPageCondition
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoPageCondition} ProtoPageCondition
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoPageCondition.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoPageCondition();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 2: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.Uuid = reader.string();
+                    break;
+                }
+            case 4: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 5: {
+                    message.code = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoPageCondition message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoPageCondition
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoPageCondition} ProtoPageCondition
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoPageCondition.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoPageCondition message.
+     * @function verify
+     * @memberof ProtoPageCondition
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoPageCondition.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i]);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
+            if (!$util.isString(message.Uuid))
+                return "Uuid: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        if (message.code != null && message.hasOwnProperty("code"))
+            if (!$util.isString(message.code))
+                return "code: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoPageCondition message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoPageCondition
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoPageCondition} ProtoPageCondition
+     */
+    ProtoPageCondition.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoPageCondition)
+            return object;
+        var message = new $root.ProtoPageCondition();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoPageCondition._children: array expected");
+            message._children = [];
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoPageCondition._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i]);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoPageCondition.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.Uuid != null)
+            message.Uuid = String(object.Uuid);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoPageCondition.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        if (object.code != null)
+            message.code = String(object.code);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoPageCondition message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoPageCondition
+     * @static
+     * @param {ProtoPageCondition} message ProtoPageCondition
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoPageCondition.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+        }
+        if (options.defaults) {
+            object.parent = null;
+            object.Uuid = "";
+            object.code = "";
+        }
+        if (message._children && message._children.length) {
+            object._children = [];
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
+            object.Uuid = message.Uuid;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        if (message.code != null && message.hasOwnProperty("code"))
+            object.code = message.code;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoPageCondition to JSON.
+     * @function toJSON
+     * @memberof ProtoPageCondition
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoPageCondition.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoPageCondition
+     * @function getTypeUrl
+     * @memberof ProtoPageCondition
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoPageCondition.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoPageCondition";
+    };
+
+    return ProtoPageCondition;
 })();
 
 module.exports = $root;

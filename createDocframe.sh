@@ -85,6 +85,7 @@ declare -a FileArray=(
   "src/DocumentElements/documentelements.selection.proto"
   "src/DocumentElements/documentelements.selection_entry.proto"
   "src/DocumentElements/documentelements.condition.proto"
+  "src/DocumentElements/documentelements.page_condition.proto"
 )
 
 for file in ${FileArray[@]}; do

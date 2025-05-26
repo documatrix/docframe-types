@@ -57,6 +57,7 @@ message Node {
     ProtoSelection selection = 69;
     ProtoSelectionEntry selection_entry = 70;
     ProtoCondition condition = 71;
+    ProtoPageCondition page_condition = 72;
   }
 }
 
@@ -119,4 +120,5 @@ enum NodeType {
   DOCUMENT_ELEMENT_SELECTION = 75;
   DOCUMENT_ELEMENT_SELECTION_ENTRY = 76;
   DOCUMENT_ELEMENT_CONDITION = 77;
+  DOCUMENT_ELEMENT_PAGE_CONDITION= 78;
 }
