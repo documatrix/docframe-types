@@ -27174,16 +27174,18 @@ $root.ProtoImageUAMode = (function() {
  * @property {number} IMAGE_CONTENT_DO_NOT_USE_AT_ALL=0 IMAGE_CONTENT_DO_NOT_USE_AT_ALL value
  * @property {number} IMAGE_CONTENT_UUID_REFFERENCE_LOCAL=1 IMAGE_CONTENT_UUID_REFFERENCE_LOCAL value
  * @property {number} IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL=2 IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL value
- * @property {number} IMAGE_CONTENT_DMSCRIPT=3 IMAGE_CONTENT_DMSCRIPT value
- * @property {number} IMAGE_CONTENT_IMAGE_DATA=4 IMAGE_CONTENT_IMAGE_DATA value
+ * @property {number} IMAGE_CONTENT_UUID_REFFERENCE_INLINE=3 IMAGE_CONTENT_UUID_REFFERENCE_INLINE value
+ * @property {number} IMAGE_CONTENT_DMSCRIPT=4 IMAGE_CONTENT_DMSCRIPT value
+ * @property {number} IMAGE_CONTENT_IMAGE_DATA=5 IMAGE_CONTENT_IMAGE_DATA value
  */
 $root.ProtoImageContentType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "IMAGE_CONTENT_DO_NOT_USE_AT_ALL"] = 0;
     values[valuesById[1] = "IMAGE_CONTENT_UUID_REFFERENCE_LOCAL"] = 1;
     values[valuesById[2] = "IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL"] = 2;
-    values[valuesById[3] = "IMAGE_CONTENT_DMSCRIPT"] = 3;
-    values[valuesById[4] = "IMAGE_CONTENT_IMAGE_DATA"] = 4;
+    values[valuesById[3] = "IMAGE_CONTENT_UUID_REFFERENCE_INLINE"] = 3;
+    values[valuesById[4] = "IMAGE_CONTENT_DMSCRIPT"] = 4;
+    values[valuesById[5] = "IMAGE_CONTENT_IMAGE_DATA"] = 5;
     return values;
 })();
 
@@ -27786,6 +27788,7 @@ $root.ProtoImage = (function() {
             case 2:
             case 3:
             case 4:
+            case 5:
                 break;
             }
         if (message.imageContent != null && message.hasOwnProperty("imageContent"))
@@ -27956,13 +27959,17 @@ $root.ProtoImage = (function() {
         case 2:
             message.imageContentType = 2;
             break;
-        case "IMAGE_CONTENT_DMSCRIPT":
+        case "IMAGE_CONTENT_UUID_REFFERENCE_INLINE":
         case 3:
             message.imageContentType = 3;
             break;
-        case "IMAGE_CONTENT_IMAGE_DATA":
+        case "IMAGE_CONTENT_DMSCRIPT":
         case 4:
             message.imageContentType = 4;
+            break;
+        case "IMAGE_CONTENT_IMAGE_DATA":
+        case 5:
+            message.imageContentType = 5;
             break;
         }
         if (object.imageContent != null)
