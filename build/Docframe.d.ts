@@ -9237,6 +9237,9 @@ export interface INode {
 
     /** Node pageCondition */
     pageCondition?: (IProtoPageCondition|null);
+
+    /** Node locale */
+    locale?: (IProtoLocale|null);
 }
 
 /** Represents a Node. */
@@ -9419,8 +9422,11 @@ export class Node implements INode {
     /** Node pageCondition. */
     public pageCondition?: (IProtoPageCondition|null);
 
+    /** Node locale. */
+    public locale?: (IProtoLocale|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -9560,7 +9566,8 @@ export enum NodeType {
     DOCUMENT_ELEMENT_SELECTION = 75,
     DOCUMENT_ELEMENT_SELECTION_ENTRY = 76,
     DOCUMENT_ELEMENT_CONDITION = 77,
-    DOCUMENT_ELEMENT_PAGE_CONDITION = 78
+    DOCUMENT_ELEMENT_PAGE_CONDITION = 78,
+    DOCUMENT_ELEMENT_LOCALE = 79
 }
 
 /** ProtoImageScaleType enum. */
@@ -13751,6 +13758,133 @@ export class ProtoPageCondition implements IProtoPageCondition {
 
     /**
      * Gets the default type url for ProtoPageCondition
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoLocale. */
+export interface IProtoLocale {
+
+    /** ProtoLocale _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoLocale parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoLocale Uuid */
+    Uuid?: (string|null);
+
+    /** ProtoLocale comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoLocale languageUUIDs */
+    languageUUIDs?: (string[]|null);
+
+    /** ProtoLocale regionUUIDs */
+    regionUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoLocale. */
+export class ProtoLocale implements IProtoLocale {
+
+    /**
+     * Constructs a new ProtoLocale.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoLocale);
+
+    /** ProtoLocale _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoLocale parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoLocale Uuid. */
+    public Uuid: string;
+
+    /** ProtoLocale comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoLocale languageUUIDs. */
+    public languageUUIDs: string[];
+
+    /** ProtoLocale regionUUIDs. */
+    public regionUUIDs: string[];
+
+    /**
+     * Creates a new ProtoLocale instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoLocale instance
+     */
+    public static create(properties?: IProtoLocale): ProtoLocale;
+
+    /**
+     * Encodes the specified ProtoLocale message. Does not implicitly {@link ProtoLocale.verify|verify} messages.
+     * @param message ProtoLocale message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoLocale, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoLocale message, length delimited. Does not implicitly {@link ProtoLocale.verify|verify} messages.
+     * @param message ProtoLocale message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoLocale, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoLocale message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoLocale
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoLocale;
+
+    /**
+     * Decodes a ProtoLocale message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoLocale
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoLocale;
+
+    /**
+     * Verifies a ProtoLocale message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoLocale message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoLocale
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoLocale;
+
+    /**
+     * Creates a plain object from a ProtoLocale message. Also converts values to other types if specified.
+     * @param message ProtoLocale
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoLocale, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoLocale to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoLocale
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

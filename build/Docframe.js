@@ -24906,6 +24906,7 @@ $root.Node = (function() {
      * @property {IProtoSelectionEntry|null} [selectionEntry] Node selectionEntry
      * @property {IProtoCondition|null} [condition] Node condition
      * @property {IProtoPageCondition|null} [pageCondition] Node pageCondition
+     * @property {IProtoLocale|null} [locale] Node locale
      */
 
     /**
@@ -25380,17 +25381,25 @@ $root.Node = (function() {
      */
     Node.prototype.pageCondition = null;
 
+    /**
+     * Node locale.
+     * @member {IProtoLocale|null|undefined} locale
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.locale = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition", "locale"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -25533,6 +25542,8 @@ $root.Node = (function() {
             $root.ProtoCondition.encode(message.condition, writer.uint32(/* id 71, wireType 2 =*/570).fork()).ldelim();
         if (message.pageCondition != null && Object.hasOwnProperty.call(message, "pageCondition"))
             $root.ProtoPageCondition.encode(message.pageCondition, writer.uint32(/* id 72, wireType 2 =*/578).fork()).ldelim();
+        if (message.locale != null && Object.hasOwnProperty.call(message, "locale"))
+            $root.ProtoLocale.encode(message.locale, writer.uint32(/* id 73, wireType 2 =*/586).fork()).ldelim();
         return writer;
     };
 
@@ -25795,6 +25806,10 @@ $root.Node = (function() {
                 }
             case 72: {
                     message.pageCondition = $root.ProtoPageCondition.decode(reader, reader.uint32());
+                    break;
+                }
+            case 73: {
+                    message.locale = $root.ProtoLocale.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -26400,6 +26415,16 @@ $root.Node = (function() {
                     return "pageCondition." + error;
             }
         }
+        if (message.locale != null && message.hasOwnProperty("locale")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoLocale.verify(message.locale);
+                if (error)
+                    return "locale." + error;
+            }
+        }
         return null;
     };
 
@@ -26705,6 +26730,11 @@ $root.Node = (function() {
                 throw TypeError(".Node.pageCondition: object expected");
             message.pageCondition = $root.ProtoPageCondition.fromObject(object.pageCondition);
         }
+        if (object.locale != null) {
+            if (typeof object.locale !== "object")
+                throw TypeError(".Node.locale: object expected");
+            message.locale = $root.ProtoLocale.fromObject(object.locale);
+        }
         return message;
     };
 
@@ -27008,6 +27038,11 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "pageCondition";
         }
+        if (message.locale != null && message.hasOwnProperty("locale")) {
+            object.locale = $root.ProtoLocale.toObject(message.locale, options);
+            if (options.oneofs)
+                object.object = "locale";
+        }
         return object;
     };
 
@@ -27103,6 +27138,7 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_SELECTION_ENTRY=76 DOCUMENT_ELEMENT_SELECTION_ENTRY value
  * @property {number} DOCUMENT_ELEMENT_CONDITION=77 DOCUMENT_ELEMENT_CONDITION value
  * @property {number} DOCUMENT_ELEMENT_PAGE_CONDITION=78 DOCUMENT_ELEMENT_PAGE_CONDITION value
+ * @property {number} DOCUMENT_ELEMENT_LOCALE=79 DOCUMENT_ELEMENT_LOCALE value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -27165,6 +27201,7 @@ $root.NodeType = (function() {
     values[valuesById[76] = "DOCUMENT_ELEMENT_SELECTION_ENTRY"] = 76;
     values[valuesById[77] = "DOCUMENT_ELEMENT_CONDITION"] = 77;
     values[valuesById[78] = "DOCUMENT_ELEMENT_PAGE_CONDITION"] = 78;
+    values[valuesById[79] = "DOCUMENT_ELEMENT_LOCALE"] = 79;
     return values;
 })();
 
@@ -39267,6 +39304,401 @@ $root.ProtoPageCondition = (function() {
     };
 
     return ProtoPageCondition;
+})();
+
+$root.ProtoLocale = (function() {
+
+    /**
+     * Properties of a ProtoLocale.
+     * @name IProtoLocale
+     * @interface IProtoLocale
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoLocale _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoLocale parent
+     * @property {string|null} [Uuid] ProtoLocale Uuid
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoLocale comChannelUUIDs
+     * @property {Array.<string>|null} [languageUUIDs] ProtoLocale languageUUIDs
+     * @property {Array.<string>|null} [regionUUIDs] ProtoLocale regionUUIDs
+     */
+
+    /**
+     * Constructs a new ProtoLocale.
+     * @name ProtoLocale
+     * @classdesc Represents a ProtoLocale.
+     * @implements IProtoLocale
+     * @constructor
+     * @param {IProtoLocale=} [properties] Properties to set
+     */
+    function ProtoLocale(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        this.languageUUIDs = [];
+        this.regionUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoLocale _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoLocale
+     * @instance
+     */
+    ProtoLocale.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoLocale parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoLocale
+     * @instance
+     */
+    ProtoLocale.prototype.parent = null;
+
+    /**
+     * ProtoLocale Uuid.
+     * @member {string} Uuid
+     * @memberof ProtoLocale
+     * @instance
+     */
+    ProtoLocale.prototype.Uuid = "";
+
+    /**
+     * ProtoLocale comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoLocale
+     * @instance
+     */
+    ProtoLocale.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * ProtoLocale languageUUIDs.
+     * @member {Array.<string>} languageUUIDs
+     * @memberof ProtoLocale
+     * @instance
+     */
+    ProtoLocale.prototype.languageUUIDs = $util.emptyArray;
+
+    /**
+     * ProtoLocale regionUUIDs.
+     * @member {Array.<string>} regionUUIDs
+     * @memberof ProtoLocale
+     * @instance
+     */
+    ProtoLocale.prototype.regionUUIDs = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoLocale instance using the specified properties.
+     * @function create
+     * @memberof ProtoLocale
+     * @static
+     * @param {IProtoLocale=} [properties] Properties to set
+     * @returns {ProtoLocale} ProtoLocale instance
+     */
+    ProtoLocale.create = function create(properties) {
+        return new ProtoLocale(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoLocale message. Does not implicitly {@link ProtoLocale.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoLocale
+     * @static
+     * @param {IProtoLocale} message ProtoLocale message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoLocale.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.Uuid != null && Object.hasOwnProperty.call(message, "Uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.Uuid);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.languageUUIDs != null && message.languageUUIDs.length)
+            for (var i = 0; i < message.languageUUIDs.length; ++i)
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.languageUUIDs[i]);
+        if (message.regionUUIDs != null && message.regionUUIDs.length)
+            for (var i = 0; i < message.regionUUIDs.length; ++i)
+                writer.uint32(/* id 6, wireType 2 =*/50).string(message.regionUUIDs[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoLocale message, length delimited. Does not implicitly {@link ProtoLocale.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoLocale
+     * @static
+     * @param {IProtoLocale} message ProtoLocale message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoLocale.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoLocale message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoLocale
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoLocale} ProtoLocale
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoLocale.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoLocale();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 2: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.Uuid = reader.string();
+                    break;
+                }
+            case 4: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 5: {
+                    if (!(message.languageUUIDs && message.languageUUIDs.length))
+                        message.languageUUIDs = [];
+                    message.languageUUIDs.push(reader.string());
+                    break;
+                }
+            case 6: {
+                    if (!(message.regionUUIDs && message.regionUUIDs.length))
+                        message.regionUUIDs = [];
+                    message.regionUUIDs.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoLocale message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoLocale
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoLocale} ProtoLocale
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoLocale.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoLocale message.
+     * @function verify
+     * @memberof ProtoLocale
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoLocale.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i]);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
+            if (!$util.isString(message.Uuid))
+                return "Uuid: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        if (message.languageUUIDs != null && message.hasOwnProperty("languageUUIDs")) {
+            if (!Array.isArray(message.languageUUIDs))
+                return "languageUUIDs: array expected";
+            for (var i = 0; i < message.languageUUIDs.length; ++i)
+                if (!$util.isString(message.languageUUIDs[i]))
+                    return "languageUUIDs: string[] expected";
+        }
+        if (message.regionUUIDs != null && message.hasOwnProperty("regionUUIDs")) {
+            if (!Array.isArray(message.regionUUIDs))
+                return "regionUUIDs: array expected";
+            for (var i = 0; i < message.regionUUIDs.length; ++i)
+                if (!$util.isString(message.regionUUIDs[i]))
+                    return "regionUUIDs: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoLocale message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoLocale
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoLocale} ProtoLocale
+     */
+    ProtoLocale.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoLocale)
+            return object;
+        var message = new $root.ProtoLocale();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoLocale._children: array expected");
+            message._children = [];
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoLocale._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i]);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoLocale.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.Uuid != null)
+            message.Uuid = String(object.Uuid);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoLocale.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        if (object.languageUUIDs) {
+            if (!Array.isArray(object.languageUUIDs))
+                throw TypeError(".ProtoLocale.languageUUIDs: array expected");
+            message.languageUUIDs = [];
+            for (var i = 0; i < object.languageUUIDs.length; ++i)
+                message.languageUUIDs[i] = String(object.languageUUIDs[i]);
+        }
+        if (object.regionUUIDs) {
+            if (!Array.isArray(object.regionUUIDs))
+                throw TypeError(".ProtoLocale.regionUUIDs: array expected");
+            message.regionUUIDs = [];
+            for (var i = 0; i < object.regionUUIDs.length; ++i)
+                message.regionUUIDs[i] = String(object.regionUUIDs[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoLocale message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoLocale
+     * @static
+     * @param {ProtoLocale} message ProtoLocale
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoLocale.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+            object.languageUUIDs = [];
+            object.regionUUIDs = [];
+        }
+        if (options.defaults) {
+            object.parent = null;
+            object.Uuid = "";
+        }
+        if (message._children && message._children.length) {
+            object._children = [];
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
+            object.Uuid = message.Uuid;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        if (message.languageUUIDs && message.languageUUIDs.length) {
+            object.languageUUIDs = [];
+            for (var j = 0; j < message.languageUUIDs.length; ++j)
+                object.languageUUIDs[j] = message.languageUUIDs[j];
+        }
+        if (message.regionUUIDs && message.regionUUIDs.length) {
+            object.regionUUIDs = [];
+            for (var j = 0; j < message.regionUUIDs.length; ++j)
+                object.regionUUIDs[j] = message.regionUUIDs[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoLocale to JSON.
+     * @function toJSON
+     * @memberof ProtoLocale
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoLocale.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoLocale
+     * @function getTypeUrl
+     * @memberof ProtoLocale
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoLocale.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoLocale";
+    };
+
+    return ProtoLocale;
 })();
 
 module.exports = $root;
