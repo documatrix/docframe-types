@@ -922,6 +922,7 @@ string imageContent = 22;
 ProtoImageScaleType scaleType = 23;
 ProtoImageUAMode UAMode = 24;
 string UADescription = 25;
+ProtoBoxedBool leftBorderIsLeftMeasure = 26;
 }
 
 message ProtoDirectory {

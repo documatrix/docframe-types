@@ -9672,6 +9672,9 @@ export interface IProtoImage {
 
     /** ProtoImage UADescription */
     UADescription?: (string|null);
+
+    /** ProtoImage leftBorderIsLeftMeasure */
+    leftBorderIsLeftMeasure?: (IProtoBoxedBool|null);
 }
 
 /** Represents a ProtoImage. */
@@ -9757,6 +9760,9 @@ export class ProtoImage implements IProtoImage {
 
     /** ProtoImage UADescription. */
     public UADescription: string;
+
+    /** ProtoImage leftBorderIsLeftMeasure. */
+    public leftBorderIsLeftMeasure?: (IProtoBoxedBool|null);
 
     /**
      * Creates a new ProtoImage instance using the specified properties.

@@ -27292,6 +27292,7 @@ $root.ProtoImage = (function() {
      * @property {ProtoImageScaleType|null} [scaleType] ProtoImage scaleType
      * @property {ProtoImageUAMode|null} [UAMode] ProtoImage UAMode
      * @property {string|null} [UADescription] ProtoImage UADescription
+     * @property {IProtoBoxedBool|null} [leftBorderIsLeftMeasure] ProtoImage leftBorderIsLeftMeasure
      */
 
     /**
@@ -27511,6 +27512,14 @@ $root.ProtoImage = (function() {
     ProtoImage.prototype.UADescription = "";
 
     /**
+     * ProtoImage leftBorderIsLeftMeasure.
+     * @member {IProtoBoxedBool|null|undefined} leftBorderIsLeftMeasure
+     * @memberof ProtoImage
+     * @instance
+     */
+    ProtoImage.prototype.leftBorderIsLeftMeasure = null;
+
+    /**
      * Creates a new ProtoImage instance using the specified properties.
      * @function create
      * @memberof ProtoImage
@@ -27585,6 +27594,8 @@ $root.ProtoImage = (function() {
             writer.uint32(/* id 24, wireType 0 =*/192).int32(message.UAMode);
         if (message.UADescription != null && Object.hasOwnProperty.call(message, "UADescription"))
             writer.uint32(/* id 25, wireType 2 =*/202).string(message.UADescription);
+        if (message.leftBorderIsLeftMeasure != null && Object.hasOwnProperty.call(message, "leftBorderIsLeftMeasure"))
+            $root.ProtoBoxedBool.encode(message.leftBorderIsLeftMeasure, writer.uint32(/* id 26, wireType 2 =*/210).fork()).ldelim();
         return writer;
     };
 
@@ -27719,6 +27730,10 @@ $root.ProtoImage = (function() {
                 }
             case 25: {
                     message.UADescription = reader.string();
+                    break;
+                }
+            case 26: {
+                    message.leftBorderIsLeftMeasure = $root.ProtoBoxedBool.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -27888,6 +27903,11 @@ $root.ProtoImage = (function() {
         if (message.UADescription != null && message.hasOwnProperty("UADescription"))
             if (!$util.isString(message.UADescription))
                 return "UADescription: string expected";
+        if (message.leftBorderIsLeftMeasure != null && message.hasOwnProperty("leftBorderIsLeftMeasure")) {
+            var error = $root.ProtoBoxedBool.verify(message.leftBorderIsLeftMeasure);
+            if (error)
+                return "leftBorderIsLeftMeasure." + error;
+        }
         return null;
     };
 
@@ -28091,6 +28111,11 @@ $root.ProtoImage = (function() {
         }
         if (object.UADescription != null)
             message.UADescription = String(object.UADescription);
+        if (object.leftBorderIsLeftMeasure != null) {
+            if (typeof object.leftBorderIsLeftMeasure !== "object")
+                throw TypeError(".ProtoImage.leftBorderIsLeftMeasure: object expected");
+            message.leftBorderIsLeftMeasure = $root.ProtoBoxedBool.fromObject(object.leftBorderIsLeftMeasure);
+        }
         return message;
     };
 
@@ -28134,6 +28159,7 @@ $root.ProtoImage = (function() {
             object.scaleType = options.enums === String ? "IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL" : 0;
             object.UAMode = options.enums === String ? "IMAGE_UA_MODE_DO_NOT_USE_AT_ALL" : 0;
             object.UADescription = "";
+            object.leftBorderIsLeftMeasure = null;
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -28188,6 +28214,8 @@ $root.ProtoImage = (function() {
             object.UAMode = options.enums === String ? $root.ProtoImageUAMode[message.UAMode] === undefined ? message.UAMode : $root.ProtoImageUAMode[message.UAMode] : message.UAMode;
         if (message.UADescription != null && message.hasOwnProperty("UADescription"))
             object.UADescription = message.UADescription;
+        if (message.leftBorderIsLeftMeasure != null && message.hasOwnProperty("leftBorderIsLeftMeasure"))
+            object.leftBorderIsLeftMeasure = $root.ProtoBoxedBool.toObject(message.leftBorderIsLeftMeasure, options);
         return object;
     };
 
