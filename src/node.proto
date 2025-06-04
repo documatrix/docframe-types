@@ -59,6 +59,7 @@ message Node {
     ProtoCondition condition = 71;
     ProtoPageCondition page_condition = 72;
     ProtoLocale locale = 73;
+    ProtoTag tag = 74;
   }
 }
 
@@ -123,4 +124,5 @@ enum NodeType {
   DOCUMENT_ELEMENT_CONDITION = 77;
   DOCUMENT_ELEMENT_PAGE_CONDITION= 78;
   DOCUMENT_ELEMENT_LOCALE = 79;
+  DOCUMENT_ELEMENT_TAG = 80;
 }

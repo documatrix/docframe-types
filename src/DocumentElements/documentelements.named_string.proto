@@ -6,4 +6,5 @@ message ProtoNamedString {
 
   string name = 3;
   repeated string comChannelUUIDs = 4;
+  string uuid = 5;
 }

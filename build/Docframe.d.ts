@@ -5485,6 +5485,9 @@ export interface IProtoNamedString {
 
     /** ProtoNamedString comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoNamedString uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoNamedString. */
@@ -5507,6 +5510,9 @@ export class ProtoNamedString implements IProtoNamedString {
 
     /** ProtoNamedString comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoNamedString uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoNamedString instance using the specified properties.
@@ -9240,6 +9246,9 @@ export interface INode {
 
     /** Node locale */
     locale?: (IProtoLocale|null);
+
+    /** Node tag */
+    tag?: (IProtoTag|null);
 }
 
 /** Represents a Node. */
@@ -9425,8 +9434,11 @@ export class Node implements INode {
     /** Node locale. */
     public locale?: (IProtoLocale|null);
 
+    /** Node tag. */
+    public tag?: (IProtoTag|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -9567,7 +9579,8 @@ export enum NodeType {
     DOCUMENT_ELEMENT_SELECTION_ENTRY = 76,
     DOCUMENT_ELEMENT_CONDITION = 77,
     DOCUMENT_ELEMENT_PAGE_CONDITION = 78,
-    DOCUMENT_ELEMENT_LOCALE = 79
+    DOCUMENT_ELEMENT_LOCALE = 79,
+    DOCUMENT_ELEMENT_TAG = 80
 }
 
 /** ProtoImageScaleType enum. */
@@ -13890,6 +13903,121 @@ export class ProtoLocale implements IProtoLocale {
 
     /**
      * Gets the default type url for ProtoLocale
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoTag. */
+export interface IProtoTag {
+
+    /** ProtoTag parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoTag name */
+    name?: (string|null);
+
+    /** ProtoTag comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoTag uuid */
+    uuid?: (string|null);
+}
+
+/** Represents a ProtoTag. */
+export class ProtoTag implements IProtoTag {
+
+    /**
+     * Constructs a new ProtoTag.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoTag);
+
+    /** ProtoTag parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoTag name. */
+    public name: string;
+
+    /** ProtoTag comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoTag uuid. */
+    public uuid: string;
+
+    /**
+     * Creates a new ProtoTag instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoTag instance
+     */
+    public static create(properties?: IProtoTag): ProtoTag;
+
+    /**
+     * Encodes the specified ProtoTag message. Does not implicitly {@link ProtoTag.verify|verify} messages.
+     * @param message ProtoTag message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoTag, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoTag message, length delimited. Does not implicitly {@link ProtoTag.verify|verify} messages.
+     * @param message ProtoTag message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoTag, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoTag message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoTag
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoTag;
+
+    /**
+     * Decodes a ProtoTag message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoTag
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoTag;
+
+    /**
+     * Verifies a ProtoTag message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoTag message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoTag
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoTag;
+
+    /**
+     * Creates a plain object from a ProtoTag message. Also converts values to other types if specified.
+     * @param message ProtoTag
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoTag, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoTag to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoTag
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

@@ -459,6 +459,7 @@ ProtoDocumentElement parent = 2;
 
 string name = 3;
 repeated string comChannelUUIDs = 4;
+string uuid = 5;
 }
 message ProtoParagraph {
 repeated ProtoDocumentElement _children = 1;
@@ -806,6 +807,7 @@ ProtoSelectionEntry selection_entry = 70;
 ProtoCondition condition = 71;
 ProtoPageCondition page_condition = 72;
 ProtoLocale locale = 73;
+ProtoTag tag = 74;
 }
 }
 
@@ -870,6 +872,7 @@ DOCUMENT_ELEMENT_SELECTION_ENTRY = 76;
 DOCUMENT_ELEMENT_CONDITION = 77;
 DOCUMENT_ELEMENT_PAGE_CONDITION= 78;
 DOCUMENT_ELEMENT_LOCALE = 79;
+DOCUMENT_ELEMENT_TAG = 80;
 }
 enum ProtoImageScaleType {
 IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
@@ -1230,4 +1233,11 @@ string Uuid = 3;
 repeated string comChannelUUIDs = 4;
 repeated string languageUUIDs = 5;
 repeated string regionUUIDs = 6;
+}
+message ProtoTag {
+ProtoDocumentElement parent = 1;
+
+string name = 2;
+repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }

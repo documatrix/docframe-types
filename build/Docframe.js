@@ -14453,6 +14453,7 @@ $root.ProtoNamedString = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoNamedString parent
      * @property {string|null} [name] ProtoNamedString name
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoNamedString comChannelUUIDs
+     * @property {string|null} [uuid] ProtoNamedString uuid
      */
 
     /**
@@ -14505,6 +14506,14 @@ $root.ProtoNamedString = (function() {
     ProtoNamedString.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoNamedString uuid.
+     * @member {string} uuid
+     * @memberof ProtoNamedString
+     * @instance
+     */
+    ProtoNamedString.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoNamedString instance using the specified properties.
      * @function create
      * @memberof ProtoNamedString
@@ -14538,6 +14547,8 @@ $root.ProtoNamedString = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.uuid);
         return writer;
     };
 
@@ -14590,6 +14601,10 @@ $root.ProtoNamedString = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 5: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -14651,6 +14666,9 @@ $root.ProtoNamedString = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -14690,6 +14708,8 @@ $root.ProtoNamedString = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -14713,6 +14733,7 @@ $root.ProtoNamedString = (function() {
         if (options.defaults) {
             object.parent = null;
             object.name = "";
+            object.uuid = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -14728,6 +14749,8 @@ $root.ProtoNamedString = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -24907,6 +24930,7 @@ $root.Node = (function() {
      * @property {IProtoCondition|null} [condition] Node condition
      * @property {IProtoPageCondition|null} [pageCondition] Node pageCondition
      * @property {IProtoLocale|null} [locale] Node locale
+     * @property {IProtoTag|null} [tag] Node tag
      */
 
     /**
@@ -25389,17 +25413,25 @@ $root.Node = (function() {
      */
     Node.prototype.locale = null;
 
+    /**
+     * Node tag.
+     * @member {IProtoTag|null|undefined} tag
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.tag = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition", "locale"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition", "locale", "tag"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -25544,6 +25576,8 @@ $root.Node = (function() {
             $root.ProtoPageCondition.encode(message.pageCondition, writer.uint32(/* id 72, wireType 2 =*/578).fork()).ldelim();
         if (message.locale != null && Object.hasOwnProperty.call(message, "locale"))
             $root.ProtoLocale.encode(message.locale, writer.uint32(/* id 73, wireType 2 =*/586).fork()).ldelim();
+        if (message.tag != null && Object.hasOwnProperty.call(message, "tag"))
+            $root.ProtoTag.encode(message.tag, writer.uint32(/* id 74, wireType 2 =*/594).fork()).ldelim();
         return writer;
     };
 
@@ -25810,6 +25844,10 @@ $root.Node = (function() {
                 }
             case 73: {
                     message.locale = $root.ProtoLocale.decode(reader, reader.uint32());
+                    break;
+                }
+            case 74: {
+                    message.tag = $root.ProtoTag.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -26425,6 +26463,16 @@ $root.Node = (function() {
                     return "locale." + error;
             }
         }
+        if (message.tag != null && message.hasOwnProperty("tag")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoTag.verify(message.tag);
+                if (error)
+                    return "tag." + error;
+            }
+        }
         return null;
     };
 
@@ -26735,6 +26783,11 @@ $root.Node = (function() {
                 throw TypeError(".Node.locale: object expected");
             message.locale = $root.ProtoLocale.fromObject(object.locale);
         }
+        if (object.tag != null) {
+            if (typeof object.tag !== "object")
+                throw TypeError(".Node.tag: object expected");
+            message.tag = $root.ProtoTag.fromObject(object.tag);
+        }
         return message;
     };
 
@@ -27043,6 +27096,11 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "locale";
         }
+        if (message.tag != null && message.hasOwnProperty("tag")) {
+            object.tag = $root.ProtoTag.toObject(message.tag, options);
+            if (options.oneofs)
+                object.object = "tag";
+        }
         return object;
     };
 
@@ -27139,6 +27197,7 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_CONDITION=77 DOCUMENT_ELEMENT_CONDITION value
  * @property {number} DOCUMENT_ELEMENT_PAGE_CONDITION=78 DOCUMENT_ELEMENT_PAGE_CONDITION value
  * @property {number} DOCUMENT_ELEMENT_LOCALE=79 DOCUMENT_ELEMENT_LOCALE value
+ * @property {number} DOCUMENT_ELEMENT_TAG=80 DOCUMENT_ELEMENT_TAG value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -27202,6 +27261,7 @@ $root.NodeType = (function() {
     values[valuesById[77] = "DOCUMENT_ELEMENT_CONDITION"] = 77;
     values[valuesById[78] = "DOCUMENT_ELEMENT_PAGE_CONDITION"] = 78;
     values[valuesById[79] = "DOCUMENT_ELEMENT_LOCALE"] = 79;
+    values[valuesById[80] = "DOCUMENT_ELEMENT_TAG"] = 80;
     return values;
 })();
 
@@ -39720,6 +39780,301 @@ $root.ProtoLocale = (function() {
     };
 
     return ProtoLocale;
+})();
+
+$root.ProtoTag = (function() {
+
+    /**
+     * Properties of a ProtoTag.
+     * @name IProtoTag
+     * @interface IProtoTag
+     * @property {IProtoDocumentElement|null} [parent] ProtoTag parent
+     * @property {string|null} [name] ProtoTag name
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoTag comChannelUUIDs
+     * @property {string|null} [uuid] ProtoTag uuid
+     */
+
+    /**
+     * Constructs a new ProtoTag.
+     * @name ProtoTag
+     * @classdesc Represents a ProtoTag.
+     * @implements IProtoTag
+     * @constructor
+     * @param {IProtoTag=} [properties] Properties to set
+     */
+    function ProtoTag(properties) {
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoTag parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoTag
+     * @instance
+     */
+    ProtoTag.prototype.parent = null;
+
+    /**
+     * ProtoTag name.
+     * @member {string} name
+     * @memberof ProtoTag
+     * @instance
+     */
+    ProtoTag.prototype.name = "";
+
+    /**
+     * ProtoTag comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoTag
+     * @instance
+     */
+    ProtoTag.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * ProtoTag uuid.
+     * @member {string} uuid
+     * @memberof ProtoTag
+     * @instance
+     */
+    ProtoTag.prototype.uuid = "";
+
+    /**
+     * Creates a new ProtoTag instance using the specified properties.
+     * @function create
+     * @memberof ProtoTag
+     * @static
+     * @param {IProtoTag=} [properties] Properties to set
+     * @returns {ProtoTag} ProtoTag instance
+     */
+    ProtoTag.create = function create(properties) {
+        return new ProtoTag(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoTag message. Does not implicitly {@link ProtoTag.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoTag
+     * @static
+     * @param {IProtoTag} message ProtoTag message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoTag.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoTag message, length delimited. Does not implicitly {@link ProtoTag.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoTag
+     * @static
+     * @param {IProtoTag} message ProtoTag message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoTag.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoTag message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoTag
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoTag} ProtoTag
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoTag.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTag();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.name = reader.string();
+                    break;
+                }
+            case 3: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoTag message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoTag
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoTag} ProtoTag
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoTag.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoTag message.
+     * @function verify
+     * @memberof ProtoTag
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoTag.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoTag message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoTag
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoTag} ProtoTag
+     */
+    ProtoTag.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoTag)
+            return object;
+        var message = new $root.ProtoTag();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoTag.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.name != null)
+            message.name = String(object.name);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoTag.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoTag message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoTag
+     * @static
+     * @param {ProtoTag} message ProtoTag
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoTag.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.comChannelUUIDs = [];
+        if (options.defaults) {
+            object.parent = null;
+            object.name = "";
+            object.uuid = "";
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoTag to JSON.
+     * @function toJSON
+     * @memberof ProtoTag
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoTag.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoTag
+     * @function getTypeUrl
+     * @memberof ProtoTag
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoTag.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoTag";
+    };
+
+    return ProtoTag;
 })();
 
 module.exports = $root;
