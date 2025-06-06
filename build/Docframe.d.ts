@@ -5488,6 +5488,15 @@ export interface IProtoNamedString {
 
     /** ProtoNamedString uuid */
     uuid?: (string|null);
+
+    /** ProtoNamedString description */
+    description?: (string|null);
+
+    /** ProtoNamedString nameCode */
+    nameCode?: (string|null);
+
+    /** ProtoNamedString codeMode */
+    codeMode?: (boolean|null);
 }
 
 /** Represents a ProtoNamedString. */
@@ -5513,6 +5522,15 @@ export class ProtoNamedString implements IProtoNamedString {
 
     /** ProtoNamedString uuid. */
     public uuid: string;
+
+    /** ProtoNamedString description. */
+    public description: string;
+
+    /** ProtoNamedString nameCode. */
+    public nameCode: string;
+
+    /** ProtoNamedString codeMode. */
+    public codeMode: boolean;
 
     /**
      * Creates a new ProtoNamedString instance using the specified properties.
@@ -13926,6 +13944,12 @@ export interface IProtoTag {
 
     /** ProtoTag params */
     params?: (string[]|null);
+
+    /** ProtoTag nameCode */
+    nameCode?: (string|null);
+
+    /** ProtoTag codeMode */
+    codeMode?: (boolean|null);
 }
 
 /** Represents a ProtoTag. */
@@ -13951,6 +13975,12 @@ export class ProtoTag implements IProtoTag {
 
     /** ProtoTag params. */
     public params: string[];
+
+    /** ProtoTag nameCode. */
+    public nameCode: string;
+
+    /** ProtoTag codeMode. */
+    public codeMode: boolean;
 
     /**
      * Creates a new ProtoTag instance using the specified properties.

@@ -5046,6 +5046,9 @@ type ProtoNamedString struct {
 	Name            string                  `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	Uuid            string                  `protobuf:"bytes,5,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Description     string                  `protobuf:"bytes,6,opt,name=description,proto3" json:"description,omitempty"`
+	NameCode        string                  `protobuf:"bytes,7,opt,name=nameCode,proto3" json:"nameCode,omitempty"`
+	CodeMode        bool                    `protobuf:"varint,8,opt,name=codeMode,proto3" json:"codeMode,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -5113,6 +5116,27 @@ func (x *ProtoNamedString) GetUuid() string {
 		return x.Uuid
 	}
 	return ""
+}
+
+func (x *ProtoNamedString) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *ProtoNamedString) GetNameCode() string {
+	if x != nil {
+		return x.NameCode
+	}
+	return ""
+}
+
+func (x *ProtoNamedString) GetCodeMode() bool {
+	if x != nil {
+		return x.CodeMode
+	}
+	return false
 }
 
 type ProtoParagraph struct {
@@ -11160,6 +11184,8 @@ type ProtoTag struct {
 	ComChannelUUIDs []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	Uuid            string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	Params          []string               `protobuf:"bytes,5,rep,name=params,proto3" json:"params,omitempty"`
+	NameCode        string                 `protobuf:"bytes,6,opt,name=nameCode,proto3" json:"nameCode,omitempty"`
+	CodeMode        bool                   `protobuf:"varint,7,opt,name=codeMode,proto3" json:"codeMode,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -11227,6 +11253,20 @@ func (x *ProtoTag) GetParams() []string {
 		return x.Params
 	}
 	return nil
+}
+
+func (x *ProtoTag) GetNameCode() string {
+	if x != nil {
+		return x.NameCode
+	}
+	return ""
+}
+
+func (x *ProtoTag) GetCodeMode() bool {
+	if x != nil {
+		return x.CodeMode
+	}
+	return false
 }
 
 var File_build_docframe_proto protoreflect.FileDescriptor
@@ -11519,13 +11559,16 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"X\n" +
 	"\x15ProtoBoxedListSetting\x12'\n" +
 	"\x05value\x18\x01 \x01(\v2\x11.ProtoListSettingR\x05value\x12\x16\n" +
-	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xc7\x01\n" +
+	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xa1\x02\n" +
 	"\x10ProtoNamedString\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04name\x18\x03 \x01(\tR\x04name\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\x05 \x01(\tR\x04uuid\"\x81\x02\n" +
+	"\x04uuid\x18\x05 \x01(\tR\x04uuid\x12 \n" +
+	"\vdescription\x18\x06 \x01(\tR\vdescription\x12\x1a\n" +
+	"\bnameCode\x18\a \x01(\tR\bnameCode\x12\x1a\n" +
+	"\bcodeMode\x18\b \x01(\bR\bcodeMode\"\x81\x02\n" +
 	"\x0eProtoParagraph\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12-\n" +
@@ -12059,13 +12102,15 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x04Uuid\x18\x03 \x01(\tR\x04Uuid\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12$\n" +
 	"\rlanguageUUIDs\x18\x05 \x03(\tR\rlanguageUUIDs\x12 \n" +
-	"\vregionUUIDs\x18\x06 \x03(\tR\vregionUUIDs\"\xa3\x01\n" +
+	"\vregionUUIDs\x18\x06 \x03(\tR\vregionUUIDs\"\xdb\x01\n" +
 	"\bProtoTag\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
 	"\x04uuid\x18\x04 \x01(\tR\x04uuid\x12\x16\n" +
-	"\x06params\x18\x05 \x03(\tR\x06params*8\n" +
+	"\x06params\x18\x05 \x03(\tR\x06params\x12\x1a\n" +
+	"\bnameCode\x18\x06 \x01(\tR\bnameCode\x12\x1a\n" +
+	"\bcodeMode\x18\a \x01(\bR\bcodeMode*8\n" +
 	"\fProtoSPBMode\x12\b\n" +
 	"\x04NONE\x10\x00\x12\x0f\n" +
 	"\vSUPERSCRIPT\x10\x01\x12\r\n" +

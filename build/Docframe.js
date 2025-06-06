@@ -14454,6 +14454,9 @@ $root.ProtoNamedString = (function() {
      * @property {string|null} [name] ProtoNamedString name
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoNamedString comChannelUUIDs
      * @property {string|null} [uuid] ProtoNamedString uuid
+     * @property {string|null} [description] ProtoNamedString description
+     * @property {string|null} [nameCode] ProtoNamedString nameCode
+     * @property {boolean|null} [codeMode] ProtoNamedString codeMode
      */
 
     /**
@@ -14514,6 +14517,30 @@ $root.ProtoNamedString = (function() {
     ProtoNamedString.prototype.uuid = "";
 
     /**
+     * ProtoNamedString description.
+     * @member {string} description
+     * @memberof ProtoNamedString
+     * @instance
+     */
+    ProtoNamedString.prototype.description = "";
+
+    /**
+     * ProtoNamedString nameCode.
+     * @member {string} nameCode
+     * @memberof ProtoNamedString
+     * @instance
+     */
+    ProtoNamedString.prototype.nameCode = "";
+
+    /**
+     * ProtoNamedString codeMode.
+     * @member {boolean} codeMode
+     * @memberof ProtoNamedString
+     * @instance
+     */
+    ProtoNamedString.prototype.codeMode = false;
+
+    /**
      * Creates a new ProtoNamedString instance using the specified properties.
      * @function create
      * @memberof ProtoNamedString
@@ -14549,6 +14576,12 @@ $root.ProtoNamedString = (function() {
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 5, wireType 2 =*/42).string(message.uuid);
+        if (message.description != null && Object.hasOwnProperty.call(message, "description"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.description);
+        if (message.nameCode != null && Object.hasOwnProperty.call(message, "nameCode"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.nameCode);
+        if (message.codeMode != null && Object.hasOwnProperty.call(message, "codeMode"))
+            writer.uint32(/* id 8, wireType 0 =*/64).bool(message.codeMode);
         return writer;
     };
 
@@ -14605,6 +14638,18 @@ $root.ProtoNamedString = (function() {
                 }
             case 5: {
                     message.uuid = reader.string();
+                    break;
+                }
+            case 6: {
+                    message.description = reader.string();
+                    break;
+                }
+            case 7: {
+                    message.nameCode = reader.string();
+                    break;
+                }
+            case 8: {
+                    message.codeMode = reader.bool();
                     break;
                 }
             default:
@@ -14669,6 +14714,15 @@ $root.ProtoNamedString = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
+        if (message.description != null && message.hasOwnProperty("description"))
+            if (!$util.isString(message.description))
+                return "description: string expected";
+        if (message.nameCode != null && message.hasOwnProperty("nameCode"))
+            if (!$util.isString(message.nameCode))
+                return "nameCode: string expected";
+        if (message.codeMode != null && message.hasOwnProperty("codeMode"))
+            if (typeof message.codeMode !== "boolean")
+                return "codeMode: boolean expected";
         return null;
     };
 
@@ -14710,6 +14764,12 @@ $root.ProtoNamedString = (function() {
         }
         if (object.uuid != null)
             message.uuid = String(object.uuid);
+        if (object.description != null)
+            message.description = String(object.description);
+        if (object.nameCode != null)
+            message.nameCode = String(object.nameCode);
+        if (object.codeMode != null)
+            message.codeMode = Boolean(object.codeMode);
         return message;
     };
 
@@ -14734,6 +14794,9 @@ $root.ProtoNamedString = (function() {
             object.parent = null;
             object.name = "";
             object.uuid = "";
+            object.description = "";
+            object.nameCode = "";
+            object.codeMode = false;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -14751,6 +14814,12 @@ $root.ProtoNamedString = (function() {
         }
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
+        if (message.description != null && message.hasOwnProperty("description"))
+            object.description = message.description;
+        if (message.nameCode != null && message.hasOwnProperty("nameCode"))
+            object.nameCode = message.nameCode;
+        if (message.codeMode != null && message.hasOwnProperty("codeMode"))
+            object.codeMode = message.codeMode;
         return object;
     };
 
@@ -39793,6 +39862,8 @@ $root.ProtoTag = (function() {
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTag comChannelUUIDs
      * @property {string|null} [uuid] ProtoTag uuid
      * @property {Array.<string>|null} [params] ProtoTag params
+     * @property {string|null} [nameCode] ProtoTag nameCode
+     * @property {boolean|null} [codeMode] ProtoTag codeMode
      */
 
     /**
@@ -39853,6 +39924,22 @@ $root.ProtoTag = (function() {
     ProtoTag.prototype.params = $util.emptyArray;
 
     /**
+     * ProtoTag nameCode.
+     * @member {string} nameCode
+     * @memberof ProtoTag
+     * @instance
+     */
+    ProtoTag.prototype.nameCode = "";
+
+    /**
+     * ProtoTag codeMode.
+     * @member {boolean} codeMode
+     * @memberof ProtoTag
+     * @instance
+     */
+    ProtoTag.prototype.codeMode = false;
+
+    /**
      * Creates a new ProtoTag instance using the specified properties.
      * @function create
      * @memberof ProtoTag
@@ -39888,6 +39975,10 @@ $root.ProtoTag = (function() {
         if (message.params != null && message.params.length)
             for (var i = 0; i < message.params.length; ++i)
                 writer.uint32(/* id 5, wireType 2 =*/42).string(message.params[i]);
+        if (message.nameCode != null && Object.hasOwnProperty.call(message, "nameCode"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.nameCode);
+        if (message.codeMode != null && Object.hasOwnProperty.call(message, "codeMode"))
+            writer.uint32(/* id 7, wireType 0 =*/56).bool(message.codeMode);
         return writer;
     };
 
@@ -39944,6 +40035,14 @@ $root.ProtoTag = (function() {
                     if (!(message.params && message.params.length))
                         message.params = [];
                     message.params.push(reader.string());
+                    break;
+                }
+            case 6: {
+                    message.nameCode = reader.string();
+                    break;
+                }
+            case 7: {
+                    message.codeMode = reader.bool();
                     break;
                 }
             default:
@@ -40006,6 +40105,12 @@ $root.ProtoTag = (function() {
                 if (!$util.isString(message.params[i]))
                     return "params: string[] expected";
         }
+        if (message.nameCode != null && message.hasOwnProperty("nameCode"))
+            if (!$util.isString(message.nameCode))
+                return "nameCode: string expected";
+        if (message.codeMode != null && message.hasOwnProperty("codeMode"))
+            if (typeof message.codeMode !== "boolean")
+                return "codeMode: boolean expected";
         return null;
     };
 
@@ -40044,6 +40149,10 @@ $root.ProtoTag = (function() {
             for (var i = 0; i < object.params.length; ++i)
                 message.params[i] = String(object.params[i]);
         }
+        if (object.nameCode != null)
+            message.nameCode = String(object.nameCode);
+        if (object.codeMode != null)
+            message.codeMode = Boolean(object.codeMode);
         return message;
     };
 
@@ -40068,6 +40177,8 @@ $root.ProtoTag = (function() {
             object.parent = null;
             object.name = "";
             object.uuid = "";
+            object.nameCode = "";
+            object.codeMode = false;
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -40085,6 +40196,10 @@ $root.ProtoTag = (function() {
             for (var j = 0; j < message.params.length; ++j)
                 object.params[j] = message.params[j];
         }
+        if (message.nameCode != null && message.hasOwnProperty("nameCode"))
+            object.nameCode = message.nameCode;
+        if (message.codeMode != null && message.hasOwnProperty("codeMode"))
+            object.codeMode = message.codeMode;
         return object;
     };
 
