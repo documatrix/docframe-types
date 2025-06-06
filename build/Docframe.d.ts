@@ -13923,6 +13923,9 @@ export interface IProtoTag {
 
     /** ProtoTag uuid */
     uuid?: (string|null);
+
+    /** ProtoTag params */
+    params?: (string[]|null);
 }
 
 /** Represents a ProtoTag. */
@@ -13945,6 +13948,9 @@ export class ProtoTag implements IProtoTag {
 
     /** ProtoTag uuid. */
     public uuid: string;
+
+    /** ProtoTag params. */
+    public params: string[];
 
     /**
      * Creates a new ProtoTag instance using the specified properties.

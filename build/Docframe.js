@@ -39792,6 +39792,7 @@ $root.ProtoTag = (function() {
      * @property {string|null} [name] ProtoTag name
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTag comChannelUUIDs
      * @property {string|null} [uuid] ProtoTag uuid
+     * @property {Array.<string>|null} [params] ProtoTag params
      */
 
     /**
@@ -39804,6 +39805,7 @@ $root.ProtoTag = (function() {
      */
     function ProtoTag(properties) {
         this.comChannelUUIDs = [];
+        this.params = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -39843,6 +39845,14 @@ $root.ProtoTag = (function() {
     ProtoTag.prototype.uuid = "";
 
     /**
+     * ProtoTag params.
+     * @member {Array.<string>} params
+     * @memberof ProtoTag
+     * @instance
+     */
+    ProtoTag.prototype.params = $util.emptyArray;
+
+    /**
      * Creates a new ProtoTag instance using the specified properties.
      * @function create
      * @memberof ProtoTag
@@ -39875,6 +39885,9 @@ $root.ProtoTag = (function() {
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
+        if (message.params != null && message.params.length)
+            for (var i = 0; i < message.params.length; ++i)
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.params[i]);
         return writer;
     };
 
@@ -39925,6 +39938,12 @@ $root.ProtoTag = (function() {
                 }
             case 4: {
                     message.uuid = reader.string();
+                    break;
+                }
+            case 5: {
+                    if (!(message.params && message.params.length))
+                        message.params = [];
+                    message.params.push(reader.string());
                     break;
                 }
             default:
@@ -39980,6 +39999,13 @@ $root.ProtoTag = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
+        if (message.params != null && message.hasOwnProperty("params")) {
+            if (!Array.isArray(message.params))
+                return "params: array expected";
+            for (var i = 0; i < message.params.length; ++i)
+                if (!$util.isString(message.params[i]))
+                    return "params: string[] expected";
+        }
         return null;
     };
 
@@ -40011,6 +40037,13 @@ $root.ProtoTag = (function() {
         }
         if (object.uuid != null)
             message.uuid = String(object.uuid);
+        if (object.params) {
+            if (!Array.isArray(object.params))
+                throw TypeError(".ProtoTag.params: array expected");
+            message.params = [];
+            for (var i = 0; i < object.params.length; ++i)
+                message.params[i] = String(object.params[i]);
+        }
         return message;
     };
 
@@ -40027,8 +40060,10 @@ $root.ProtoTag = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.arrays || options.defaults)
+        if (options.arrays || options.defaults) {
             object.comChannelUUIDs = [];
+            object.params = [];
+        }
         if (options.defaults) {
             object.parent = null;
             object.name = "";
@@ -40045,6 +40080,11 @@ $root.ProtoTag = (function() {
         }
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
+        if (message.params && message.params.length) {
+            object.params = [];
+            for (var j = 0; j < message.params.length; ++j)
+                object.params[j] = message.params[j];
+        }
         return object;
     };
 

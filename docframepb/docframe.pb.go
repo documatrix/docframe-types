@@ -11159,6 +11159,7 @@ type ProtoTag struct {
 	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	Uuid            string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Params          []string               `protobuf:"bytes,5,rep,name=params,proto3" json:"params,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -11219,6 +11220,13 @@ func (x *ProtoTag) GetUuid() string {
 		return x.Uuid
 	}
 	return ""
+}
+
+func (x *ProtoTag) GetParams() []string {
+	if x != nil {
+		return x.Params
+	}
+	return nil
 }
 
 var File_build_docframe_proto protoreflect.FileDescriptor
@@ -12051,12 +12059,13 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x04Uuid\x18\x03 \x01(\tR\x04Uuid\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12$\n" +
 	"\rlanguageUUIDs\x18\x05 \x03(\tR\rlanguageUUIDs\x12 \n" +
-	"\vregionUUIDs\x18\x06 \x03(\tR\vregionUUIDs\"\x8b\x01\n" +
+	"\vregionUUIDs\x18\x06 \x03(\tR\vregionUUIDs\"\xa3\x01\n" +
 	"\bProtoTag\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\x04 \x01(\tR\x04uuid*8\n" +
+	"\x04uuid\x18\x04 \x01(\tR\x04uuid\x12\x16\n" +
+	"\x06params\x18\x05 \x03(\tR\x06params*8\n" +
 	"\fProtoSPBMode\x12\b\n" +
 	"\x04NONE\x10\x00\x12\x0f\n" +
 	"\vSUPERSCRIPT\x10\x01\x12\r\n" +
