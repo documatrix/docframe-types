@@ -471,6 +471,8 @@ ProtoDocumentElement parent = 2;
 ProtoParagraphFormat format = 3;
 ProtoParagraphFormat overwrite = 4;
 repeated string comChannelUUIDs = 5;
+string paragraphFormatUUID = 6;
+string uuid = 7;
 }
 message ProtoParagraphFormat {
 ProtoParagraphFormat baseFormat = 1;
@@ -811,6 +813,7 @@ ProtoCondition condition = 71;
 ProtoPageCondition page_condition = 72;
 ProtoLocale locale = 73;
 ProtoTag tag = 74;
+ProtoParagraphSetDefault paragraph_set_default = 75;
 }
 }
 
@@ -876,6 +879,7 @@ DOCUMENT_ELEMENT_CONDITION = 77;
 DOCUMENT_ELEMENT_PAGE_CONDITION= 78;
 DOCUMENT_ELEMENT_LOCALE = 79;
 DOCUMENT_ELEMENT_TAG = 80;
+DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT = 81;
 }
 enum ProtoImageScaleType {
 IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
@@ -1246,4 +1250,12 @@ string uuid = 4;
 repeated string params = 5;
 string nameCode = 6;
 bool codeMode = 7;
+}
+message ProtoParagraphSetDefault {
+ProtoDocumentElement parent = 1;
+
+string name = 2;
+string paragraphFormatUUID = 3;
+string uuid = 4;
+repeated string comChannelUUIDs = 5;
 }

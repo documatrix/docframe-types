@@ -14863,6 +14863,8 @@ $root.ProtoParagraph = (function() {
      * @property {IProtoParagraphFormat|null} [format] ProtoParagraph format
      * @property {IProtoParagraphFormat|null} [overwrite] ProtoParagraph overwrite
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoParagraph comChannelUUIDs
+     * @property {string|null} [paragraphFormatUUID] ProtoParagraph paragraphFormatUUID
+     * @property {string|null} [uuid] ProtoParagraph uuid
      */
 
     /**
@@ -14923,6 +14925,22 @@ $root.ProtoParagraph = (function() {
     ProtoParagraph.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoParagraph paragraphFormatUUID.
+     * @member {string} paragraphFormatUUID
+     * @memberof ProtoParagraph
+     * @instance
+     */
+    ProtoParagraph.prototype.paragraphFormatUUID = "";
+
+    /**
+     * ProtoParagraph uuid.
+     * @member {string} uuid
+     * @memberof ProtoParagraph
+     * @instance
+     */
+    ProtoParagraph.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoParagraph instance using the specified properties.
      * @function create
      * @memberof ProtoParagraph
@@ -14958,6 +14976,10 @@ $root.ProtoParagraph = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 5, wireType 2 =*/42).string(message.comChannelUUIDs[i]);
+        if (message.paragraphFormatUUID != null && Object.hasOwnProperty.call(message, "paragraphFormatUUID"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.paragraphFormatUUID);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.uuid);
         return writer;
     };
 
@@ -15014,6 +15036,14 @@ $root.ProtoParagraph = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 6: {
+                    message.paragraphFormatUUID = reader.string();
+                    break;
+                }
+            case 7: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -15082,6 +15112,12 @@ $root.ProtoParagraph = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.paragraphFormatUUID != null && message.hasOwnProperty("paragraphFormatUUID"))
+            if (!$util.isString(message.paragraphFormatUUID))
+                return "paragraphFormatUUID: string expected";
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -15129,6 +15165,10 @@ $root.ProtoParagraph = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.paragraphFormatUUID != null)
+            message.paragraphFormatUUID = String(object.paragraphFormatUUID);
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -15153,6 +15193,8 @@ $root.ProtoParagraph = (function() {
             object.parent = null;
             object.format = null;
             object.overwrite = null;
+            object.paragraphFormatUUID = "";
+            object.uuid = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -15170,6 +15212,10 @@ $root.ProtoParagraph = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.paragraphFormatUUID != null && message.hasOwnProperty("paragraphFormatUUID"))
+            object.paragraphFormatUUID = message.paragraphFormatUUID;
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -25000,6 +25046,7 @@ $root.Node = (function() {
      * @property {IProtoPageCondition|null} [pageCondition] Node pageCondition
      * @property {IProtoLocale|null} [locale] Node locale
      * @property {IProtoTag|null} [tag] Node tag
+     * @property {IProtoParagraphSetDefault|null} [paragraphSetDefault] Node paragraphSetDefault
      */
 
     /**
@@ -25490,17 +25537,25 @@ $root.Node = (function() {
      */
     Node.prototype.tag = null;
 
+    /**
+     * Node paragraphSetDefault.
+     * @member {IProtoParagraphSetDefault|null|undefined} paragraphSetDefault
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.paragraphSetDefault = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition", "locale", "tag"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition", "locale", "tag", "paragraphSetDefault"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -25647,6 +25702,8 @@ $root.Node = (function() {
             $root.ProtoLocale.encode(message.locale, writer.uint32(/* id 73, wireType 2 =*/586).fork()).ldelim();
         if (message.tag != null && Object.hasOwnProperty.call(message, "tag"))
             $root.ProtoTag.encode(message.tag, writer.uint32(/* id 74, wireType 2 =*/594).fork()).ldelim();
+        if (message.paragraphSetDefault != null && Object.hasOwnProperty.call(message, "paragraphSetDefault"))
+            $root.ProtoParagraphSetDefault.encode(message.paragraphSetDefault, writer.uint32(/* id 75, wireType 2 =*/602).fork()).ldelim();
         return writer;
     };
 
@@ -25917,6 +25974,10 @@ $root.Node = (function() {
                 }
             case 74: {
                     message.tag = $root.ProtoTag.decode(reader, reader.uint32());
+                    break;
+                }
+            case 75: {
+                    message.paragraphSetDefault = $root.ProtoParagraphSetDefault.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -26542,6 +26603,16 @@ $root.Node = (function() {
                     return "tag." + error;
             }
         }
+        if (message.paragraphSetDefault != null && message.hasOwnProperty("paragraphSetDefault")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoParagraphSetDefault.verify(message.paragraphSetDefault);
+                if (error)
+                    return "paragraphSetDefault." + error;
+            }
+        }
         return null;
     };
 
@@ -26857,6 +26928,11 @@ $root.Node = (function() {
                 throw TypeError(".Node.tag: object expected");
             message.tag = $root.ProtoTag.fromObject(object.tag);
         }
+        if (object.paragraphSetDefault != null) {
+            if (typeof object.paragraphSetDefault !== "object")
+                throw TypeError(".Node.paragraphSetDefault: object expected");
+            message.paragraphSetDefault = $root.ProtoParagraphSetDefault.fromObject(object.paragraphSetDefault);
+        }
         return message;
     };
 
@@ -27170,6 +27246,11 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "tag";
         }
+        if (message.paragraphSetDefault != null && message.hasOwnProperty("paragraphSetDefault")) {
+            object.paragraphSetDefault = $root.ProtoParagraphSetDefault.toObject(message.paragraphSetDefault, options);
+            if (options.oneofs)
+                object.object = "paragraphSetDefault";
+        }
         return object;
     };
 
@@ -27267,6 +27348,7 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_PAGE_CONDITION=78 DOCUMENT_ELEMENT_PAGE_CONDITION value
  * @property {number} DOCUMENT_ELEMENT_LOCALE=79 DOCUMENT_ELEMENT_LOCALE value
  * @property {number} DOCUMENT_ELEMENT_TAG=80 DOCUMENT_ELEMENT_TAG value
+ * @property {number} DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT=81 DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -27331,6 +27413,7 @@ $root.NodeType = (function() {
     values[valuesById[78] = "DOCUMENT_ELEMENT_PAGE_CONDITION"] = 78;
     values[valuesById[79] = "DOCUMENT_ELEMENT_LOCALE"] = 79;
     values[valuesById[80] = "DOCUMENT_ELEMENT_TAG"] = 80;
+    values[valuesById[81] = "DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT"] = 81;
     return values;
 })();
 
@@ -40230,6 +40313,324 @@ $root.ProtoTag = (function() {
     };
 
     return ProtoTag;
+})();
+
+$root.ProtoParagraphSetDefault = (function() {
+
+    /**
+     * Properties of a ProtoParagraphSetDefault.
+     * @name IProtoParagraphSetDefault
+     * @interface IProtoParagraphSetDefault
+     * @property {IProtoDocumentElement|null} [parent] ProtoParagraphSetDefault parent
+     * @property {string|null} [name] ProtoParagraphSetDefault name
+     * @property {string|null} [paragraphFormatUUID] ProtoParagraphSetDefault paragraphFormatUUID
+     * @property {string|null} [uuid] ProtoParagraphSetDefault uuid
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoParagraphSetDefault comChannelUUIDs
+     */
+
+    /**
+     * Constructs a new ProtoParagraphSetDefault.
+     * @name ProtoParagraphSetDefault
+     * @classdesc Represents a ProtoParagraphSetDefault.
+     * @implements IProtoParagraphSetDefault
+     * @constructor
+     * @param {IProtoParagraphSetDefault=} [properties] Properties to set
+     */
+    function ProtoParagraphSetDefault(properties) {
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoParagraphSetDefault parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoParagraphSetDefault
+     * @instance
+     */
+    ProtoParagraphSetDefault.prototype.parent = null;
+
+    /**
+     * ProtoParagraphSetDefault name.
+     * @member {string} name
+     * @memberof ProtoParagraphSetDefault
+     * @instance
+     */
+    ProtoParagraphSetDefault.prototype.name = "";
+
+    /**
+     * ProtoParagraphSetDefault paragraphFormatUUID.
+     * @member {string} paragraphFormatUUID
+     * @memberof ProtoParagraphSetDefault
+     * @instance
+     */
+    ProtoParagraphSetDefault.prototype.paragraphFormatUUID = "";
+
+    /**
+     * ProtoParagraphSetDefault uuid.
+     * @member {string} uuid
+     * @memberof ProtoParagraphSetDefault
+     * @instance
+     */
+    ProtoParagraphSetDefault.prototype.uuid = "";
+
+    /**
+     * ProtoParagraphSetDefault comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoParagraphSetDefault
+     * @instance
+     */
+    ProtoParagraphSetDefault.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoParagraphSetDefault instance using the specified properties.
+     * @function create
+     * @memberof ProtoParagraphSetDefault
+     * @static
+     * @param {IProtoParagraphSetDefault=} [properties] Properties to set
+     * @returns {ProtoParagraphSetDefault} ProtoParagraphSetDefault instance
+     */
+    ProtoParagraphSetDefault.create = function create(properties) {
+        return new ProtoParagraphSetDefault(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoParagraphSetDefault message. Does not implicitly {@link ProtoParagraphSetDefault.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoParagraphSetDefault
+     * @static
+     * @param {IProtoParagraphSetDefault} message ProtoParagraphSetDefault message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoParagraphSetDefault.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+        if (message.paragraphFormatUUID != null && Object.hasOwnProperty.call(message, "paragraphFormatUUID"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.paragraphFormatUUID);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.comChannelUUIDs[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoParagraphSetDefault message, length delimited. Does not implicitly {@link ProtoParagraphSetDefault.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoParagraphSetDefault
+     * @static
+     * @param {IProtoParagraphSetDefault} message ProtoParagraphSetDefault message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoParagraphSetDefault.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoParagraphSetDefault message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoParagraphSetDefault
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoParagraphSetDefault} ProtoParagraphSetDefault
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoParagraphSetDefault.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoParagraphSetDefault();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.name = reader.string();
+                    break;
+                }
+            case 3: {
+                    message.paragraphFormatUUID = reader.string();
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
+                    break;
+                }
+            case 5: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoParagraphSetDefault message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoParagraphSetDefault
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoParagraphSetDefault} ProtoParagraphSetDefault
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoParagraphSetDefault.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoParagraphSetDefault message.
+     * @function verify
+     * @memberof ProtoParagraphSetDefault
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoParagraphSetDefault.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
+        if (message.paragraphFormatUUID != null && message.hasOwnProperty("paragraphFormatUUID"))
+            if (!$util.isString(message.paragraphFormatUUID))
+                return "paragraphFormatUUID: string expected";
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoParagraphSetDefault message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoParagraphSetDefault
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoParagraphSetDefault} ProtoParagraphSetDefault
+     */
+    ProtoParagraphSetDefault.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoParagraphSetDefault)
+            return object;
+        var message = new $root.ProtoParagraphSetDefault();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoParagraphSetDefault.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.name != null)
+            message.name = String(object.name);
+        if (object.paragraphFormatUUID != null)
+            message.paragraphFormatUUID = String(object.paragraphFormatUUID);
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoParagraphSetDefault.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoParagraphSetDefault message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoParagraphSetDefault
+     * @static
+     * @param {ProtoParagraphSetDefault} message ProtoParagraphSetDefault
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoParagraphSetDefault.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.comChannelUUIDs = [];
+        if (options.defaults) {
+            object.parent = null;
+            object.name = "";
+            object.paragraphFormatUUID = "";
+            object.uuid = "";
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
+        if (message.paragraphFormatUUID != null && message.hasOwnProperty("paragraphFormatUUID"))
+            object.paragraphFormatUUID = message.paragraphFormatUUID;
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoParagraphSetDefault to JSON.
+     * @function toJSON
+     * @memberof ProtoParagraphSetDefault
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoParagraphSetDefault.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoParagraphSetDefault
+     * @function getTypeUrl
+     * @memberof ProtoParagraphSetDefault
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoParagraphSetDefault.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoParagraphSetDefault";
+    };
+
+    return ProtoParagraphSetDefault;
 })();
 
 module.exports = $root;

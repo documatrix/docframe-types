@@ -5627,6 +5627,12 @@ export interface IProtoParagraph {
 
     /** ProtoParagraph comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoParagraph paragraphFormatUUID */
+    paragraphFormatUUID?: (string|null);
+
+    /** ProtoParagraph uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoParagraph. */
@@ -5652,6 +5658,12 @@ export class ProtoParagraph implements IProtoParagraph {
 
     /** ProtoParagraph comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoParagraph paragraphFormatUUID. */
+    public paragraphFormatUUID: string;
+
+    /** ProtoParagraph uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoParagraph instance using the specified properties.
@@ -9267,6 +9279,9 @@ export interface INode {
 
     /** Node tag */
     tag?: (IProtoTag|null);
+
+    /** Node paragraphSetDefault */
+    paragraphSetDefault?: (IProtoParagraphSetDefault|null);
 }
 
 /** Represents a Node. */
@@ -9455,8 +9470,11 @@ export class Node implements INode {
     /** Node tag. */
     public tag?: (IProtoTag|null);
 
+    /** Node paragraphSetDefault. */
+    public paragraphSetDefault?: (IProtoParagraphSetDefault|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -9598,7 +9616,8 @@ export enum NodeType {
     DOCUMENT_ELEMENT_CONDITION = 77,
     DOCUMENT_ELEMENT_PAGE_CONDITION = 78,
     DOCUMENT_ELEMENT_LOCALE = 79,
-    DOCUMENT_ELEMENT_TAG = 80
+    DOCUMENT_ELEMENT_TAG = 80,
+    DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT = 81
 }
 
 /** ProtoImageScaleType enum. */
@@ -14054,6 +14073,127 @@ export class ProtoTag implements IProtoTag {
 
     /**
      * Gets the default type url for ProtoTag
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoParagraphSetDefault. */
+export interface IProtoParagraphSetDefault {
+
+    /** ProtoParagraphSetDefault parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoParagraphSetDefault name */
+    name?: (string|null);
+
+    /** ProtoParagraphSetDefault paragraphFormatUUID */
+    paragraphFormatUUID?: (string|null);
+
+    /** ProtoParagraphSetDefault uuid */
+    uuid?: (string|null);
+
+    /** ProtoParagraphSetDefault comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoParagraphSetDefault. */
+export class ProtoParagraphSetDefault implements IProtoParagraphSetDefault {
+
+    /**
+     * Constructs a new ProtoParagraphSetDefault.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoParagraphSetDefault);
+
+    /** ProtoParagraphSetDefault parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoParagraphSetDefault name. */
+    public name: string;
+
+    /** ProtoParagraphSetDefault paragraphFormatUUID. */
+    public paragraphFormatUUID: string;
+
+    /** ProtoParagraphSetDefault uuid. */
+    public uuid: string;
+
+    /** ProtoParagraphSetDefault comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoParagraphSetDefault instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoParagraphSetDefault instance
+     */
+    public static create(properties?: IProtoParagraphSetDefault): ProtoParagraphSetDefault;
+
+    /**
+     * Encodes the specified ProtoParagraphSetDefault message. Does not implicitly {@link ProtoParagraphSetDefault.verify|verify} messages.
+     * @param message ProtoParagraphSetDefault message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoParagraphSetDefault, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoParagraphSetDefault message, length delimited. Does not implicitly {@link ProtoParagraphSetDefault.verify|verify} messages.
+     * @param message ProtoParagraphSetDefault message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoParagraphSetDefault, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoParagraphSetDefault message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoParagraphSetDefault
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoParagraphSetDefault;
+
+    /**
+     * Decodes a ProtoParagraphSetDefault message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoParagraphSetDefault
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoParagraphSetDefault;
+
+    /**
+     * Verifies a ProtoParagraphSetDefault message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoParagraphSetDefault message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoParagraphSetDefault
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoParagraphSetDefault;
+
+    /**
+     * Creates a plain object from a ProtoParagraphSetDefault message. Also converts values to other types if specified.
+     * @param message ProtoParagraphSetDefault
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoParagraphSetDefault, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoParagraphSetDefault to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoParagraphSetDefault
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
