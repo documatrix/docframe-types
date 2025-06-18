@@ -9912,6 +9912,9 @@ export interface IProtoDirectory {
 
     /** ProtoDirectory editable */
     editable?: (boolean|null);
+
+    /** ProtoDirectory name */
+    name?: (string|null);
 }
 
 /** Represents a ProtoDirectory. */
@@ -9940,6 +9943,9 @@ export class ProtoDirectory implements IProtoDirectory {
 
     /** ProtoDirectory editable. */
     public editable: boolean;
+
+    /** ProtoDirectory name. */
+    public name: string;
 
     /**
      * Creates a new ProtoDirectory instance using the specified properties.

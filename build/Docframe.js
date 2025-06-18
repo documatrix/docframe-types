@@ -28472,6 +28472,7 @@ $root.ProtoDirectory = (function() {
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoDirectory comChannelUUIDs
      * @property {ProtoSemanticType|null} [semanticType] ProtoDirectory semanticType
      * @property {boolean|null} [editable] ProtoDirectory editable
+     * @property {string|null} [name] ProtoDirectory name
      */
 
     /**
@@ -28540,6 +28541,14 @@ $root.ProtoDirectory = (function() {
     ProtoDirectory.prototype.editable = false;
 
     /**
+     * ProtoDirectory name.
+     * @member {string} name
+     * @memberof ProtoDirectory
+     * @instance
+     */
+    ProtoDirectory.prototype.name = "";
+
+    /**
      * Creates a new ProtoDirectory instance using the specified properties.
      * @function create
      * @memberof ProtoDirectory
@@ -28577,6 +28586,8 @@ $root.ProtoDirectory = (function() {
             writer.uint32(/* id 5, wireType 0 =*/40).int32(message.semanticType);
         if (message.editable != null && Object.hasOwnProperty.call(message, "editable"))
             writer.uint32(/* id 6, wireType 0 =*/48).bool(message.editable);
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.name);
         return writer;
     };
 
@@ -28637,6 +28648,10 @@ $root.ProtoDirectory = (function() {
                 }
             case 6: {
                     message.editable = reader.bool();
+                    break;
+                }
+            case 7: {
+                    message.name = reader.string();
                     break;
                 }
             default:
@@ -28712,6 +28727,9 @@ $root.ProtoDirectory = (function() {
         if (message.editable != null && message.hasOwnProperty("editable"))
             if (typeof message.editable !== "boolean")
                 return "editable: boolean expected";
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
         return null;
     };
 
@@ -28781,6 +28799,8 @@ $root.ProtoDirectory = (function() {
         }
         if (object.editable != null)
             message.editable = Boolean(object.editable);
+        if (object.name != null)
+            message.name = String(object.name);
         return message;
     };
 
@@ -28806,6 +28826,7 @@ $root.ProtoDirectory = (function() {
             object.uuid = "";
             object.semanticType = options.enums === String ? "SEMANTIC_TYPE_NONE" : 0;
             object.editable = false;
+            object.name = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -28825,6 +28846,8 @@ $root.ProtoDirectory = (function() {
             object.semanticType = options.enums === String ? $root.ProtoSemanticType[message.semanticType] === undefined ? message.semanticType : $root.ProtoSemanticType[message.semanticType] : message.semanticType;
         if (message.editable != null && message.hasOwnProperty("editable"))
             object.editable = message.editable;
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
         return object;
     };
 
