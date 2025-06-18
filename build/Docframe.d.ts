@@ -9909,6 +9909,9 @@ export interface IProtoDirectory {
 
     /** ProtoDirectory semanticType */
     semanticType?: (ProtoSemanticType|null);
+
+    /** ProtoDirectory editable */
+    editable?: (boolean|null);
 }
 
 /** Represents a ProtoDirectory. */
@@ -9934,6 +9937,9 @@ export class ProtoDirectory implements IProtoDirectory {
 
     /** ProtoDirectory semanticType. */
     public semanticType: ProtoSemanticType;
+
+    /** ProtoDirectory editable. */
+    public editable: boolean;
 
     /**
      * Creates a new ProtoDirectory instance using the specified properties.

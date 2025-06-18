@@ -8695,6 +8695,7 @@ type ProtoDirectory struct {
 	Uuid            string                  `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	SemanticType    ProtoSemanticType       `protobuf:"varint,5,opt,name=semanticType,proto3,enum=ProtoSemanticType" json:"semanticType,omitempty"`
+	Editable        bool                    `protobuf:"varint,6,opt,name=editable,proto3" json:"editable,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -8762,6 +8763,13 @@ func (x *ProtoDirectory) GetSemanticType() ProtoSemanticType {
 		return x.SemanticType
 	}
 	return ProtoSemanticType_SEMANTIC_TYPE_NONE
+}
+
+func (x *ProtoDirectory) GetEditable() bool {
+	if x != nil {
+		return x.Editable
+	}
+	return false
 }
 
 type ProtoTextBrick struct {
@@ -12002,13 +12010,14 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\tscaleType\x18\x17 \x01(\x0e2\x14.ProtoImageScaleTypeR\tscaleType\x12)\n" +
 	"\x06UAMode\x18\x18 \x01(\x0e2\x11.ProtoImageUAModeR\x06UAMode\x12$\n" +
 	"\rUADescription\x18\x19 \x01(\tR\rUADescription\x12I\n" +
-	"\x17leftBorderIsLeftMeasure\x18\x1a \x01(\v2\x0f.ProtoBoxedBoolR\x17leftBorderIsLeftMeasure\"\xe9\x01\n" +
+	"\x17leftBorderIsLeftMeasure\x18\x1a \x01(\v2\x0f.ProtoBoxedBoolR\x17leftBorderIsLeftMeasure\"\x85\x02\n" +
 	"\x0eProtoDirectory\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x126\n" +
-	"\fsemanticType\x18\x05 \x01(\x0e2\x12.ProtoSemanticTypeR\fsemanticType\"\xdd\x01\n" +
+	"\fsemanticType\x18\x05 \x01(\x0e2\x12.ProtoSemanticTypeR\fsemanticType\x12\x1a\n" +
+	"\beditable\x18\x06 \x01(\bR\beditable\"\xdd\x01\n" +
 	"\x0eProtoTextBrick\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +

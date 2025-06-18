@@ -942,6 +942,7 @@ ProtoDocumentElement parent = 2;
 string uuid = 3;
 repeated string comChannelUUIDs = 4;
 ProtoSemanticType semanticType = 5;
+bool editable = 6;
 }
 message ProtoTextBrick {
 repeated ProtoDocumentElement _children = 1;
