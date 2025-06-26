@@ -83,35 +83,3 @@ func (InputFieldDropdown *ProtoInputFieldDropdown) ToNode(children ...Message) *
 	return node
 }
 
-func (Option *ProtoOption) ToNode(children ...Message) *Node {
-	nodeChildren := make([]*Node, len(children))
-	for i, c := range children {
-		nodeChildren[i] = c.ToNode()
-	}
-
-	node := &Node{
-		Object: &Node_Option{
-			Option: Option,
-		},
-		Children: nodeChildren,
-	}
-
-	return node
-}
-
-func (BaseInputField *ProtoBaseInputField) ToNode(children ...Message) *Node {
-	nodeChildren := make([]*Node, len(children))
-	for i, c := range children {
-		nodeChildren[i] = c.ToNode()
-	}
-
-	node := &Node{
-		Object: &Node_BaseInputField{
-			BaseInputField: BaseInputField,
-		},
-		Children: nodeChildren,
-	}
-
-	return node
-}
-

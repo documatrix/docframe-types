@@ -314,6 +314,30 @@ SEMANTIC_TYPE_ART = 2;
 SEMANTIC_TYPE_SECT = 3;
 SEMANTIC_TYPE_DIV = 4;
 }
+message ProtoOption {
+string key = 1;
+string value = 2;
+}
+
+enum PDFPrintingBehavior {
+INPUT = 0;
+TEXT = 1;
+INHERIT = 2;
+}
+
+message ProtoBaseInputField {
+string name = 1;
+bool meta = 2;
+ProtoBoxedString value = 3;
+string formatUUID = 4;
+string dataTypeUUID = 5;
+string onChangeCode = 6;
+string placeholder = 7;
+bool bindDefaultValue = 8;
+string defaultValueCode = 9;
+
+bool readonly = 10;
+}
 message ProtoDocumentElement {
 ProtoDocumentElement parent = 1;
 repeated string comChannelUUIDs = 2;
@@ -1280,24 +1304,28 @@ ProtoBaseInputField base = 2;
 PDFPrintingBehavior pdf_printing_behavior = 3;
 ProtoBoxedMeasure pdf_size = 4;
 string pdf_form_name = 5;
+repeated string comChannelUUIDs = 6;
 }
 
 message ProtoInputFieldDate {
 ProtoDocumentElement parent = 1;
 
 ProtoBaseInputField base = 2;
+repeated string comChannelUUIDs = 3;
 }
 
 message ProtoInputFieldCheckbox {
 ProtoDocumentElement parent = 1;
 
 ProtoBaseInputField base = 2;
+repeated string comChannelUUIDs = 3;
 }
 
 message ProtoInputFieldLabel {
 ProtoDocumentElement parent = 1;
 
 ProtoBaseInputField base = 2;
+repeated string comChannelUUIDs = 3;
 }
 
 message ProtoInputFieldDropdown {
@@ -1312,30 +1340,6 @@ repeated ProtoOption options = 4;
 bool bindOptionsCode = 5;
 
 string optionsCode = 6;
+repeated string comChannelUUIDs = 7;
 }
 
-message ProtoOption {
-string key = 1;
-string value = 2;
-}
-
-enum PDFPrintingBehavior {
-INPUT = 0;
-TEXT = 1;
-INHERIT = 2;
-}
-
-message ProtoBaseInputField {
-string name = 1;
-repeated string comChannelUUIDs = 2;
-bool meta = 3;
-ProtoBoxedString value = 4;
-string formatUUID = 5;
-string dataTypeUUID = 6;
-string onChangeCode = 7;
-string placeholder = 8;
-bool bindDefaultValue = 9;
-string defaultValueCode = 10;
-
-bool readonly = 11;
-}

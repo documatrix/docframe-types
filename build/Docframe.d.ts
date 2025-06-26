@@ -4017,6 +4017,267 @@ export enum ProtoSemanticType {
     SEMANTIC_TYPE_DIV = 4
 }
 
+/** Properties of a ProtoOption. */
+export interface IProtoOption {
+
+    /** ProtoOption key */
+    key?: (string|null);
+
+    /** ProtoOption value */
+    value?: (string|null);
+}
+
+/** Represents a ProtoOption. */
+export class ProtoOption implements IProtoOption {
+
+    /**
+     * Constructs a new ProtoOption.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoOption);
+
+    /** ProtoOption key. */
+    public key: string;
+
+    /** ProtoOption value. */
+    public value: string;
+
+    /**
+     * Creates a new ProtoOption instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoOption instance
+     */
+    public static create(properties?: IProtoOption): ProtoOption;
+
+    /**
+     * Encodes the specified ProtoOption message. Does not implicitly {@link ProtoOption.verify|verify} messages.
+     * @param message ProtoOption message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoOption, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoOption message, length delimited. Does not implicitly {@link ProtoOption.verify|verify} messages.
+     * @param message ProtoOption message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoOption, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoOption message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoOption
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoOption;
+
+    /**
+     * Decodes a ProtoOption message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoOption
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoOption;
+
+    /**
+     * Verifies a ProtoOption message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoOption message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoOption
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoOption;
+
+    /**
+     * Creates a plain object from a ProtoOption message. Also converts values to other types if specified.
+     * @param message ProtoOption
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoOption, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoOption to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoOption
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** PDFPrintingBehavior enum. */
+export enum PDFPrintingBehavior {
+    INPUT = 0,
+    TEXT = 1,
+    INHERIT = 2
+}
+
+/** Properties of a ProtoBaseInputField. */
+export interface IProtoBaseInputField {
+
+    /** ProtoBaseInputField name */
+    name?: (string|null);
+
+    /** ProtoBaseInputField meta */
+    meta?: (boolean|null);
+
+    /** ProtoBaseInputField value */
+    value?: (IProtoBoxedString|null);
+
+    /** ProtoBaseInputField formatUUID */
+    formatUUID?: (string|null);
+
+    /** ProtoBaseInputField dataTypeUUID */
+    dataTypeUUID?: (string|null);
+
+    /** ProtoBaseInputField onChangeCode */
+    onChangeCode?: (string|null);
+
+    /** ProtoBaseInputField placeholder */
+    placeholder?: (string|null);
+
+    /** ProtoBaseInputField bindDefaultValue */
+    bindDefaultValue?: (boolean|null);
+
+    /** ProtoBaseInputField defaultValueCode */
+    defaultValueCode?: (string|null);
+
+    /** ProtoBaseInputField readonly */
+    readonly?: (boolean|null);
+}
+
+/** Represents a ProtoBaseInputField. */
+export class ProtoBaseInputField implements IProtoBaseInputField {
+
+    /**
+     * Constructs a new ProtoBaseInputField.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoBaseInputField);
+
+    /** ProtoBaseInputField name. */
+    public name: string;
+
+    /** ProtoBaseInputField meta. */
+    public meta: boolean;
+
+    /** ProtoBaseInputField value. */
+    public value?: (IProtoBoxedString|null);
+
+    /** ProtoBaseInputField formatUUID. */
+    public formatUUID: string;
+
+    /** ProtoBaseInputField dataTypeUUID. */
+    public dataTypeUUID: string;
+
+    /** ProtoBaseInputField onChangeCode. */
+    public onChangeCode: string;
+
+    /** ProtoBaseInputField placeholder. */
+    public placeholder: string;
+
+    /** ProtoBaseInputField bindDefaultValue. */
+    public bindDefaultValue: boolean;
+
+    /** ProtoBaseInputField defaultValueCode. */
+    public defaultValueCode: string;
+
+    /** ProtoBaseInputField readonly. */
+    public readonly: boolean;
+
+    /**
+     * Creates a new ProtoBaseInputField instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoBaseInputField instance
+     */
+    public static create(properties?: IProtoBaseInputField): ProtoBaseInputField;
+
+    /**
+     * Encodes the specified ProtoBaseInputField message. Does not implicitly {@link ProtoBaseInputField.verify|verify} messages.
+     * @param message ProtoBaseInputField message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoBaseInputField, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoBaseInputField message, length delimited. Does not implicitly {@link ProtoBaseInputField.verify|verify} messages.
+     * @param message ProtoBaseInputField message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoBaseInputField, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoBaseInputField message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoBaseInputField
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoBaseInputField;
+
+    /**
+     * Decodes a ProtoBaseInputField message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoBaseInputField
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoBaseInputField;
+
+    /**
+     * Verifies a ProtoBaseInputField message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoBaseInputField message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoBaseInputField
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoBaseInputField;
+
+    /**
+     * Creates a plain object from a ProtoBaseInputField message. Also converts values to other types if specified.
+     * @param message ProtoBaseInputField
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoBaseInputField, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoBaseInputField to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoBaseInputField
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
 /** Properties of a ProtoDocumentElement. */
 export interface IProtoDocumentElement {
 
@@ -14276,6 +14537,9 @@ export interface IProtoInputFieldText {
 
     /** ProtoInputFieldText pdfFormName */
     pdfFormName?: (string|null);
+
+    /** ProtoInputFieldText comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoInputFieldText. */
@@ -14301,6 +14565,9 @@ export class ProtoInputFieldText implements IProtoInputFieldText {
 
     /** ProtoInputFieldText pdfFormName. */
     public pdfFormName: string;
+
+    /** ProtoInputFieldText comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoInputFieldText instance using the specified properties.
@@ -14388,6 +14655,9 @@ export interface IProtoInputFieldDate {
 
     /** ProtoInputFieldDate base */
     base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldDate comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoInputFieldDate. */
@@ -14404,6 +14674,9 @@ export class ProtoInputFieldDate implements IProtoInputFieldDate {
 
     /** ProtoInputFieldDate base. */
     public base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldDate comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoInputFieldDate instance using the specified properties.
@@ -14491,6 +14764,9 @@ export interface IProtoInputFieldCheckbox {
 
     /** ProtoInputFieldCheckbox base */
     base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldCheckbox comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoInputFieldCheckbox. */
@@ -14507,6 +14783,9 @@ export class ProtoInputFieldCheckbox implements IProtoInputFieldCheckbox {
 
     /** ProtoInputFieldCheckbox base. */
     public base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldCheckbox comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoInputFieldCheckbox instance using the specified properties.
@@ -14594,6 +14873,9 @@ export interface IProtoInputFieldLabel {
 
     /** ProtoInputFieldLabel base */
     base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldLabel comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoInputFieldLabel. */
@@ -14610,6 +14892,9 @@ export class ProtoInputFieldLabel implements IProtoInputFieldLabel {
 
     /** ProtoInputFieldLabel base. */
     public base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldLabel comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoInputFieldLabel instance using the specified properties.
@@ -14709,6 +14994,9 @@ export interface IProtoInputFieldDropdown {
 
     /** ProtoInputFieldDropdown optionsCode */
     optionsCode?: (string|null);
+
+    /** ProtoInputFieldDropdown comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
 }
 
 /** Represents a ProtoInputFieldDropdown. */
@@ -14737,6 +15025,9 @@ export class ProtoInputFieldDropdown implements IProtoInputFieldDropdown {
 
     /** ProtoInputFieldDropdown optionsCode. */
     public optionsCode: string;
+
+    /** ProtoInputFieldDropdown comChannelUUIDs. */
+    public comChannelUUIDs: string[];
 
     /**
      * Creates a new ProtoInputFieldDropdown instance using the specified properties.
@@ -14810,273 +15101,6 @@ export class ProtoInputFieldDropdown implements IProtoInputFieldDropdown {
 
     /**
      * Gets the default type url for ProtoInputFieldDropdown
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
-     */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-/** Properties of a ProtoOption. */
-export interface IProtoOption {
-
-    /** ProtoOption key */
-    key?: (string|null);
-
-    /** ProtoOption value */
-    value?: (string|null);
-}
-
-/** Represents a ProtoOption. */
-export class ProtoOption implements IProtoOption {
-
-    /**
-     * Constructs a new ProtoOption.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: IProtoOption);
-
-    /** ProtoOption key. */
-    public key: string;
-
-    /** ProtoOption value. */
-    public value: string;
-
-    /**
-     * Creates a new ProtoOption instance using the specified properties.
-     * @param [properties] Properties to set
-     * @returns ProtoOption instance
-     */
-    public static create(properties?: IProtoOption): ProtoOption;
-
-    /**
-     * Encodes the specified ProtoOption message. Does not implicitly {@link ProtoOption.verify|verify} messages.
-     * @param message ProtoOption message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encode(message: IProtoOption, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Encodes the specified ProtoOption message, length delimited. Does not implicitly {@link ProtoOption.verify|verify} messages.
-     * @param message ProtoOption message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encodeDelimited(message: IProtoOption, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Decodes a ProtoOption message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns ProtoOption
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoOption;
-
-    /**
-     * Decodes a ProtoOption message from the specified reader or buffer, length delimited.
-     * @param reader Reader or buffer to decode from
-     * @returns ProtoOption
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoOption;
-
-    /**
-     * Verifies a ProtoOption message.
-     * @param message Plain object to verify
-     * @returns `null` if valid, otherwise the reason why it is not
-     */
-    public static verify(message: { [k: string]: any }): (string|null);
-
-    /**
-     * Creates a ProtoOption message from a plain object. Also converts values to their respective internal types.
-     * @param object Plain object
-     * @returns ProtoOption
-     */
-    public static fromObject(object: { [k: string]: any }): ProtoOption;
-
-    /**
-     * Creates a plain object from a ProtoOption message. Also converts values to other types if specified.
-     * @param message ProtoOption
-     * @param [options] Conversion options
-     * @returns Plain object
-     */
-    public static toObject(message: ProtoOption, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-    /**
-     * Converts this ProtoOption to JSON.
-     * @returns JSON object
-     */
-    public toJSON(): { [k: string]: any };
-
-    /**
-     * Gets the default type url for ProtoOption
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
-     */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-/** PDFPrintingBehavior enum. */
-export enum PDFPrintingBehavior {
-    INPUT = 0,
-    TEXT = 1,
-    INHERIT = 2
-}
-
-/** Properties of a ProtoBaseInputField. */
-export interface IProtoBaseInputField {
-
-    /** ProtoBaseInputField name */
-    name?: (string|null);
-
-    /** ProtoBaseInputField comChannelUUIDs */
-    comChannelUUIDs?: (string[]|null);
-
-    /** ProtoBaseInputField meta */
-    meta?: (boolean|null);
-
-    /** ProtoBaseInputField value */
-    value?: (IProtoBoxedString|null);
-
-    /** ProtoBaseInputField formatUUID */
-    formatUUID?: (string|null);
-
-    /** ProtoBaseInputField dataTypeUUID */
-    dataTypeUUID?: (string|null);
-
-    /** ProtoBaseInputField onChangeCode */
-    onChangeCode?: (string|null);
-
-    /** ProtoBaseInputField placeholder */
-    placeholder?: (string|null);
-
-    /** ProtoBaseInputField bindDefaultValue */
-    bindDefaultValue?: (boolean|null);
-
-    /** ProtoBaseInputField defaultValueCode */
-    defaultValueCode?: (string|null);
-
-    /** ProtoBaseInputField readonly */
-    readonly?: (boolean|null);
-}
-
-/** Represents a ProtoBaseInputField. */
-export class ProtoBaseInputField implements IProtoBaseInputField {
-
-    /**
-     * Constructs a new ProtoBaseInputField.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: IProtoBaseInputField);
-
-    /** ProtoBaseInputField name. */
-    public name: string;
-
-    /** ProtoBaseInputField comChannelUUIDs. */
-    public comChannelUUIDs: string[];
-
-    /** ProtoBaseInputField meta. */
-    public meta: boolean;
-
-    /** ProtoBaseInputField value. */
-    public value?: (IProtoBoxedString|null);
-
-    /** ProtoBaseInputField formatUUID. */
-    public formatUUID: string;
-
-    /** ProtoBaseInputField dataTypeUUID. */
-    public dataTypeUUID: string;
-
-    /** ProtoBaseInputField onChangeCode. */
-    public onChangeCode: string;
-
-    /** ProtoBaseInputField placeholder. */
-    public placeholder: string;
-
-    /** ProtoBaseInputField bindDefaultValue. */
-    public bindDefaultValue: boolean;
-
-    /** ProtoBaseInputField defaultValueCode. */
-    public defaultValueCode: string;
-
-    /** ProtoBaseInputField readonly. */
-    public readonly: boolean;
-
-    /**
-     * Creates a new ProtoBaseInputField instance using the specified properties.
-     * @param [properties] Properties to set
-     * @returns ProtoBaseInputField instance
-     */
-    public static create(properties?: IProtoBaseInputField): ProtoBaseInputField;
-
-    /**
-     * Encodes the specified ProtoBaseInputField message. Does not implicitly {@link ProtoBaseInputField.verify|verify} messages.
-     * @param message ProtoBaseInputField message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encode(message: IProtoBaseInputField, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Encodes the specified ProtoBaseInputField message, length delimited. Does not implicitly {@link ProtoBaseInputField.verify|verify} messages.
-     * @param message ProtoBaseInputField message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encodeDelimited(message: IProtoBaseInputField, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Decodes a ProtoBaseInputField message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns ProtoBaseInputField
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoBaseInputField;
-
-    /**
-     * Decodes a ProtoBaseInputField message from the specified reader or buffer, length delimited.
-     * @param reader Reader or buffer to decode from
-     * @returns ProtoBaseInputField
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoBaseInputField;
-
-    /**
-     * Verifies a ProtoBaseInputField message.
-     * @param message Plain object to verify
-     * @returns `null` if valid, otherwise the reason why it is not
-     */
-    public static verify(message: { [k: string]: any }): (string|null);
-
-    /**
-     * Creates a ProtoBaseInputField message from a plain object. Also converts values to their respective internal types.
-     * @param object Plain object
-     * @returns ProtoBaseInputField
-     */
-    public static fromObject(object: { [k: string]: any }): ProtoBaseInputField;
-
-    /**
-     * Creates a plain object from a ProtoBaseInputField message. Also converts values to other types if specified.
-     * @param message ProtoBaseInputField
-     * @param [options] Conversion options
-     * @returns Plain object
-     */
-    public static toObject(message: ProtoBaseInputField, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-    /**
-     * Converts this ProtoBaseInputField to JSON.
-     * @returns JSON object
-     */
-    public toJSON(): { [k: string]: any };
-
-    /**
-     * Gets the default type url for ProtoBaseInputField
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
