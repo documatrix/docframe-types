@@ -7,7 +7,7 @@ import type { Message } from "@bufbuild/protobuf";
 import type { ProtoMeasure } from "./measure_pb";
 import type { ProtoUnderlineMode } from "./underline_spec_pb";
 import type { ProtoColor } from "./color_pb";
-import type { ProtoRuleStyle } from "./rule_style_pb";
+import type { RuleStyle } from "./rule_style_pb";
 
 /**
  * Describes the file utils/v1/strikethrough_spec.proto.
@@ -39,9 +39,9 @@ export declare type ProtoStrikethroughSpec = Message<"utils.v1.ProtoStrikethroug
   offsetEm: number;
 
   /**
-   * @generated from field: utils.v1.ProtoRuleStyle style = 5;
+   * @generated from field: utils.v1.RuleStyle style = 5;
    */
-  style: ProtoRuleStyle;
+  style: RuleStyle;
 };
 
 /**

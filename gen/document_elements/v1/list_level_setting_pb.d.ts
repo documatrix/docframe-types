@@ -31,9 +31,9 @@ export declare type ProtoListLevelSetting = Message<"document_elements.v1.ProtoL
   fontSize?: ProtoBoxedUint32;
 
   /**
-   * @generated from field: document_elements.v1.ProtoListLevelSettingType type = 3;
+   * @generated from field: document_elements.v1.ListLevelSettingType type = 3;
    */
-  type: ProtoListLevelSettingType;
+  type: ListLevelSettingType;
 
   /**
    * @generated from field: int32 level = 4;
@@ -256,27 +256,27 @@ export enum ProtoNumberType {
 export declare const ProtoNumberTypeSchema: GenEnum<ProtoNumberType>;
 
 /**
- * @generated from enum document_elements.v1.ProtoListLevelSettingType
+ * @generated from enum document_elements.v1.ListLevelSettingType
  */
-export enum ProtoListLevelSettingType {
+export enum ListLevelSettingType {
   /**
-   * @generated from enum value: PROTO_LIST_LEVEL_SETTING_TYPE_UNNUMBERED = 0;
+   * @generated from enum value: LIST_LEVEL_SETTING_TYPE_UNNUMBERED = 0;
    */
   UNNUMBERED = 0,
 
   /**
-   * @generated from enum value: PROTO_LIST_LEVEL_SETTING_TYPE_NUMERIC = 1;
+   * @generated from enum value: LIST_LEVEL_SETTING_TYPE_NUMERIC = 1;
    */
   NUMERIC = 1,
 
   /**
-   * @generated from enum value: PROTO_LIST_LEVEL_SETTING_TYPE_IMAGE = 2;
+   * @generated from enum value: LIST_LEVEL_SETTING_TYPE_IMAGE = 2;
    */
   IMAGE = 2,
 }
 
 /**
- * Describes the enum document_elements.v1.ProtoListLevelSettingType.
+ * Describes the enum document_elements.v1.ListLevelSettingType.
  */
-export declare const ProtoListLevelSettingTypeSchema: GenEnum<ProtoListLevelSettingType>;
+export declare const ListLevelSettingTypeSchema: GenEnum<ListLevelSettingType>;
 

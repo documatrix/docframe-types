@@ -17,7 +17,7 @@ enum ProtoColorType {
 // supported by protobuf and this is the
 // easiest and fastest way found.
 message ProtoColor {
-  box.v1.ProtoBoxedString name = 1;
+  string name = 1;
   ProtoColorType type = 2; // set to RGB or CMYK
   int32 r = 3;
   int32 g = 4;

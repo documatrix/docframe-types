@@ -3,9 +3,9 @@ syntax = "proto3";
 package document_elements.v1;
 
 enum ProtoDoctypeOutputMode {
-  DOCTYPE_OUTPUT_MODE_NOT_SET = 0;
-  DOCTYPE = 1;
-  JSON = 2;
+  PROTO_DOCTYPE_OUTPUT_MODE_NOT_SET = 0;
+  PROTO_DOCTYPE_OUTPUT_MODE_DOCTYPE = 1;
+  PROTO_DOCTYPE_OUTPUT_MODE_JSON = 2;
 }
 
 // These elements are actually script snippets (usually dmSCRIPT), whichs result (String) is used

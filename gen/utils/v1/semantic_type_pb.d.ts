@@ -14,29 +14,29 @@ export declare const file_utils_v1_semantic_type: GenFile;
  */
 export enum ProtoSemanticType {
   /**
-   * @generated from enum value: SEMANTIC_TYPE_NONE = 0;
+   * @generated from enum value: PROTO_SEMANTIC_TYPE_NONE = 0;
    */
-  SEMANTIC_TYPE_NONE = 0,
+  NONE = 0,
 
   /**
-   * @generated from enum value: SEMANTIC_TYPE_PART = 1;
+   * @generated from enum value: PROTO_SEMANTIC_TYPE_PART = 1;
    */
-  SEMANTIC_TYPE_PART = 1,
+  PART = 1,
 
   /**
-   * @generated from enum value: SEMANTIC_TYPE_ART = 2;
+   * @generated from enum value: PROTO_SEMANTIC_TYPE_ART = 2;
    */
-  SEMANTIC_TYPE_ART = 2,
+  ART = 2,
 
   /**
-   * @generated from enum value: SEMANTIC_TYPE_SECT = 3;
+   * @generated from enum value: PROTO_SEMANTIC_TYPE_SECT = 3;
    */
-  SEMANTIC_TYPE_SECT = 3,
+  SECT = 3,
 
   /**
-   * @generated from enum value: SEMANTIC_TYPE_DIV = 4;
+   * @generated from enum value: PROTO_SEMANTIC_TYPE_DIV = 4;
    */
-  SEMANTIC_TYPE_DIV = 4,
+  DIV = 4,
 }
 
 /**

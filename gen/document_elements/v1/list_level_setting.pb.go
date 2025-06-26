@@ -78,69 +78,69 @@ func (ProtoNumberType) EnumDescriptor() ([]byte, []int) {
 	return file_document_elements_v1_list_level_setting_proto_rawDescGZIP(), []int{0}
 }
 
-type ProtoListLevelSettingType int32
+type ListLevelSettingType int32
 
 const (
-	ProtoListLevelSettingType_PROTO_LIST_LEVEL_SETTING_TYPE_UNNUMBERED ProtoListLevelSettingType = 0
-	ProtoListLevelSettingType_PROTO_LIST_LEVEL_SETTING_TYPE_NUMERIC    ProtoListLevelSettingType = 1
-	ProtoListLevelSettingType_PROTO_LIST_LEVEL_SETTING_TYPE_IMAGE      ProtoListLevelSettingType = 2
+	ListLevelSettingType_LIST_LEVEL_SETTING_TYPE_UNNUMBERED ListLevelSettingType = 0
+	ListLevelSettingType_LIST_LEVEL_SETTING_TYPE_NUMERIC    ListLevelSettingType = 1
+	ListLevelSettingType_LIST_LEVEL_SETTING_TYPE_IMAGE      ListLevelSettingType = 2
 )
 
-// Enum value maps for ProtoListLevelSettingType.
+// Enum value maps for ListLevelSettingType.
 var (
-	ProtoListLevelSettingType_name = map[int32]string{
-		0: "PROTO_LIST_LEVEL_SETTING_TYPE_UNNUMBERED",
-		1: "PROTO_LIST_LEVEL_SETTING_TYPE_NUMERIC",
-		2: "PROTO_LIST_LEVEL_SETTING_TYPE_IMAGE",
+	ListLevelSettingType_name = map[int32]string{
+		0: "LIST_LEVEL_SETTING_TYPE_UNNUMBERED",
+		1: "LIST_LEVEL_SETTING_TYPE_NUMERIC",
+		2: "LIST_LEVEL_SETTING_TYPE_IMAGE",
 	}
-	ProtoListLevelSettingType_value = map[string]int32{
-		"PROTO_LIST_LEVEL_SETTING_TYPE_UNNUMBERED": 0,
-		"PROTO_LIST_LEVEL_SETTING_TYPE_NUMERIC":    1,
-		"PROTO_LIST_LEVEL_SETTING_TYPE_IMAGE":      2,
+	ListLevelSettingType_value = map[string]int32{
+		"LIST_LEVEL_SETTING_TYPE_UNNUMBERED": 0,
+		"LIST_LEVEL_SETTING_TYPE_NUMERIC":    1,
+		"LIST_LEVEL_SETTING_TYPE_IMAGE":      2,
 	}
 )
 
-func (x ProtoListLevelSettingType) Enum() *ProtoListLevelSettingType {
-	p := new(ProtoListLevelSettingType)
+func (x ListLevelSettingType) Enum() *ListLevelSettingType {
+	p := new(ListLevelSettingType)
 	*p = x
 	return p
 }
 
-func (x ProtoListLevelSettingType) String() string {
+func (x ListLevelSettingType) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (ProtoListLevelSettingType) Descriptor() protoreflect.EnumDescriptor {
+func (ListLevelSettingType) Descriptor() protoreflect.EnumDescriptor {
 	return file_document_elements_v1_list_level_setting_proto_enumTypes[1].Descriptor()
 }
 
-func (ProtoListLevelSettingType) Type() protoreflect.EnumType {
+func (ListLevelSettingType) Type() protoreflect.EnumType {
 	return &file_document_elements_v1_list_level_setting_proto_enumTypes[1]
 }
 
-func (x ProtoListLevelSettingType) Number() protoreflect.EnumNumber {
+func (x ListLevelSettingType) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use ProtoListLevelSettingType.Descriptor instead.
-func (ProtoListLevelSettingType) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use ListLevelSettingType.Descriptor instead.
+func (ListLevelSettingType) EnumDescriptor() ([]byte, []int) {
 	return file_document_elements_v1_list_level_setting_proto_rawDescGZIP(), []int{1}
 }
 
 // go-gen:ignore
 type ProtoListLevelSetting struct {
-	state           protoimpl.MessageState    `protogen:"open.v1"`
-	ListSettingName string                    `protobuf:"bytes,1,opt,name=list_setting_name,json=listSettingName,proto3" json:"list_setting_name,omitempty"`
-	FontSize        *v1.ProtoBoxedUint32      `protobuf:"bytes,2,opt,name=font_size,json=fontSize,proto3" json:"font_size,omitempty"`
-	Type            ProtoListLevelSettingType `protobuf:"varint,3,opt,name=type,proto3,enum=document_elements.v1.ProtoListLevelSettingType" json:"type,omitempty"`
-	Level           int32                     `protobuf:"varint,4,opt,name=level,proto3" json:"level,omitempty"`
-	Prefix          string                    `protobuf:"bytes,5,opt,name=prefix,proto3" json:"prefix,omitempty"`
-	Suffix          string                    `protobuf:"bytes,6,opt,name=suffix,proto3" json:"suffix,omitempty"`
-	FixFontFamily   *v11.ProtoFont            `protobuf:"bytes,7,opt,name=fix_font_family,json=fixFontFamily,proto3" json:"fix_font_family,omitempty"`
-	FixBold         bool                      `protobuf:"varint,8,opt,name=fix_bold,json=fixBold,proto3" json:"fix_bold,omitempty"`
-	FixItalic       bool                      `protobuf:"varint,9,opt,name=fix_italic,json=fixItalic,proto3" json:"fix_italic,omitempty"`
-	IndentionWidth  int32                     `protobuf:"varint,10,opt,name=indention_width,json=indentionWidth,proto3" json:"indention_width,omitempty"`
-	Color           *v11.ProtoColor           `protobuf:"bytes,11,opt,name=color,proto3" json:"color,omitempty"`
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ListSettingName string                 `protobuf:"bytes,1,opt,name=list_setting_name,json=listSettingName,proto3" json:"list_setting_name,omitempty"`
+	FontSize        *v1.ProtoBoxedUint32   `protobuf:"bytes,2,opt,name=font_size,json=fontSize,proto3" json:"font_size,omitempty"`
+	Type            ListLevelSettingType   `protobuf:"varint,3,opt,name=type,proto3,enum=document_elements.v1.ListLevelSettingType" json:"type,omitempty"`
+	Level           int32                  `protobuf:"varint,4,opt,name=level,proto3" json:"level,omitempty"`
+	Prefix          string                 `protobuf:"bytes,5,opt,name=prefix,proto3" json:"prefix,omitempty"`
+	Suffix          string                 `protobuf:"bytes,6,opt,name=suffix,proto3" json:"suffix,omitempty"`
+	FixFontFamily   *v11.ProtoFont         `protobuf:"bytes,7,opt,name=fix_font_family,json=fixFontFamily,proto3" json:"fix_font_family,omitempty"`
+	FixBold         bool                   `protobuf:"varint,8,opt,name=fix_bold,json=fixBold,proto3" json:"fix_bold,omitempty"`
+	FixItalic       bool                   `protobuf:"varint,9,opt,name=fix_italic,json=fixItalic,proto3" json:"fix_italic,omitempty"`
+	IndentionWidth  int32                  `protobuf:"varint,10,opt,name=indention_width,json=indentionWidth,proto3" json:"indention_width,omitempty"`
+	Color           *v11.ProtoColor        `protobuf:"bytes,11,opt,name=color,proto3" json:"color,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -189,11 +189,11 @@ func (x *ProtoListLevelSetting) GetFontSize() *v1.ProtoBoxedUint32 {
 	return nil
 }
 
-func (x *ProtoListLevelSetting) GetType() ProtoListLevelSettingType {
+func (x *ProtoListLevelSetting) GetType() ListLevelSettingType {
 	if x != nil {
 		return x.Type
 	}
-	return ProtoListLevelSettingType_PROTO_LIST_LEVEL_SETTING_TYPE_UNNUMBERED
+	return ListLevelSettingType_LIST_LEVEL_SETTING_TYPE_UNNUMBERED
 }
 
 func (x *ProtoListLevelSetting) GetLevel() int32 {
@@ -586,11 +586,11 @@ var File_document_elements_v1_list_level_setting_proto protoreflect.FileDescript
 
 const file_document_elements_v1_list_level_setting_proto_rawDesc = "" +
 	"\n" +
-	"-document_elements/v1/list_level_setting.proto\x12\x14document_elements.v1\x1a\x11box/v1/bool.proto\x1a\x13box/v1/uint32.proto\x1a\x14utils/v1/color.proto\x1a\x13utils/v1/font.proto\"\xd1\x03\n" +
+	"-document_elements/v1/list_level_setting.proto\x12\x14document_elements.v1\x1a\x11box/v1/bool.proto\x1a\x13box/v1/uint32.proto\x1a\x14utils/v1/color.proto\x1a\x13utils/v1/font.proto\"\xcc\x03\n" +
 	"\x15ProtoListLevelSetting\x12*\n" +
 	"\x11list_setting_name\x18\x01 \x01(\tR\x0flistSettingName\x125\n" +
-	"\tfont_size\x18\x02 \x01(\v2\x18.box.v1.ProtoBoxedUint32R\bfontSize\x12C\n" +
-	"\x04type\x18\x03 \x01(\x0e2/.document_elements.v1.ProtoListLevelSettingTypeR\x04type\x12\x14\n" +
+	"\tfont_size\x18\x02 \x01(\v2\x18.box.v1.ProtoBoxedUint32R\bfontSize\x12>\n" +
+	"\x04type\x18\x03 \x01(\x0e2*.document_elements.v1.ListLevelSettingTypeR\x04type\x12\x14\n" +
 	"\x05level\x18\x04 \x01(\x05R\x05level\x12\x16\n" +
 	"\x06prefix\x18\x05 \x01(\tR\x06prefix\x12\x16\n" +
 	"\x06suffix\x18\x06 \x01(\tR\x06suffix\x12;\n" +
@@ -628,11 +628,11 @@ const file_document_elements_v1_list_level_setting_proto_rawDesc = "" +
 	"\x1fPROTO_NUMBER_TYPE_ROM_UPPERCASE\x10\x01\x12#\n" +
 	"\x1fPROTO_NUMBER_TYPE_ROM_LOWERCASE\x10\x02\x12&\n" +
 	"\"PROTO_NUMBER_TYPE_LETTER_UPPERCASE\x10\x03\x12&\n" +
-	"\"PROTO_NUMBER_TYPE_LETTER_LOWERCASE\x10\x04*\x9d\x01\n" +
-	"\x19ProtoListLevelSettingType\x12,\n" +
-	"(PROTO_LIST_LEVEL_SETTING_TYPE_UNNUMBERED\x10\x00\x12)\n" +
-	"%PROTO_LIST_LEVEL_SETTING_TYPE_NUMERIC\x10\x01\x12'\n" +
-	"#PROTO_LIST_LEVEL_SETTING_TYPE_IMAGE\x10\x02B\xf1\x01\n" +
+	"\"PROTO_NUMBER_TYPE_LETTER_LOWERCASE\x10\x04*\x86\x01\n" +
+	"\x14ListLevelSettingType\x12&\n" +
+	"\"LIST_LEVEL_SETTING_TYPE_UNNUMBERED\x10\x00\x12#\n" +
+	"\x1fLIST_LEVEL_SETTING_TYPE_NUMERIC\x10\x01\x12!\n" +
+	"\x1dLIST_LEVEL_SETTING_TYPE_IMAGE\x10\x02B\xf1\x01\n" +
 	"\x18com.document_elements.v1B\x15ListLevelSettingProtoP\x01ZQgithub.com/documatrix/docframe-types/gen/document_elements/v1;document_elementsv1\xa2\x02\x03DXX\xaa\x02\x13DocumentElements.V1\xca\x02\x13DocumentElements\\V1\xe2\x02\x1fDocumentElements\\V1\\GPBMetadata\xea\x02\x14DocumentElements::V1b\x06proto3"
 
 var (
@@ -651,7 +651,7 @@ var file_document_elements_v1_list_level_setting_proto_enumTypes = make([]protoi
 var file_document_elements_v1_list_level_setting_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_document_elements_v1_list_level_setting_proto_goTypes = []any{
 	(ProtoNumberType)(0),                    // 0: document_elements.v1.ProtoNumberType
-	(ProtoListLevelSettingType)(0),          // 1: document_elements.v1.ProtoListLevelSettingType
+	(ListLevelSettingType)(0),               // 1: document_elements.v1.ListLevelSettingType
 	(*ProtoListLevelSetting)(nil),           // 2: document_elements.v1.ProtoListLevelSetting
 	(*ProtoImageListLevelSetting)(nil),      // 3: document_elements.v1.ProtoImageListLevelSetting
 	(*ProtoTextListLevelSetting)(nil),       // 4: document_elements.v1.ProtoTextListLevelSetting
@@ -665,7 +665,7 @@ var file_document_elements_v1_list_level_setting_proto_goTypes = []any{
 }
 var file_document_elements_v1_list_level_setting_proto_depIdxs = []int32{
 	8,  // 0: document_elements.v1.ProtoListLevelSetting.font_size:type_name -> box.v1.ProtoBoxedUint32
-	1,  // 1: document_elements.v1.ProtoListLevelSetting.type:type_name -> document_elements.v1.ProtoListLevelSettingType
+	1,  // 1: document_elements.v1.ProtoListLevelSetting.type:type_name -> document_elements.v1.ListLevelSettingType
 	9,  // 2: document_elements.v1.ProtoListLevelSetting.fix_font_family:type_name -> utils.v1.ProtoFont
 	10, // 3: document_elements.v1.ProtoListLevelSetting.color:type_name -> utils.v1.ProtoColor
 	2,  // 4: document_elements.v1.ProtoImageListLevelSetting.list_level_setting:type_name -> document_elements.v1.ProtoListLevelSetting

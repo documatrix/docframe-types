@@ -6,7 +6,7 @@ import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1"
 import type { Message } from "@bufbuild/protobuf";
 import type { ProtoMeasure } from "../../utils/v1/measure_pb";
 import type { ProtoColor } from "../../utils/v1/color_pb";
-import type { ProtoRuleStyle } from "../../utils/v1/rule_style_pb";
+import type { RuleStyle } from "../../utils/v1/rule_style_pb";
 
 /**
  * Describes the file document_elements/v1/rule.proto.
@@ -55,9 +55,9 @@ export declare type ProtoRule = Message<"document_elements.v1.ProtoRule"> & {
   color?: ProtoColor;
 
   /**
-   * @generated from field: utils.v1.ProtoRuleStyle style = 7;
+   * @generated from field: utils.v1.RuleStyle style = 7;
    */
-  style: ProtoRuleStyle;
+  style: RuleStyle;
 
   /**
    * Toggles whether the rule is a normal rule or a boundary rule

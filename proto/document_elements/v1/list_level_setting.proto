@@ -15,17 +15,17 @@ enum ProtoNumberType {
   PROTO_NUMBER_TYPE_LETTER_LOWERCASE = 4;
 }
 
-enum ProtoListLevelSettingType {
-  PROTO_LIST_LEVEL_SETTING_TYPE_UNNUMBERED = 0;
-  PROTO_LIST_LEVEL_SETTING_TYPE_NUMERIC = 1;
-  PROTO_LIST_LEVEL_SETTING_TYPE_IMAGE = 2;
+enum ListLevelSettingType {
+  LIST_LEVEL_SETTING_TYPE_UNNUMBERED = 0;
+  LIST_LEVEL_SETTING_TYPE_NUMERIC = 1;
+  LIST_LEVEL_SETTING_TYPE_IMAGE = 2;
 }
 
 // go-gen:ignore
 message ProtoListLevelSetting {
   string list_setting_name = 1;
   box.v1.ProtoBoxedUint32 font_size = 2;
-  ProtoListLevelSettingType type = 3;
+  ListLevelSettingType type = 3;
   int32 level = 4;
   string prefix = 5;
   string suffix = 6;

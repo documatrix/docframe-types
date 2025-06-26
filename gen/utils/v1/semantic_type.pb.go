@@ -24,28 +24,28 @@ const (
 type ProtoSemanticType int32
 
 const (
-	ProtoSemanticType_SEMANTIC_TYPE_NONE ProtoSemanticType = 0
-	ProtoSemanticType_SEMANTIC_TYPE_PART ProtoSemanticType = 1
-	ProtoSemanticType_SEMANTIC_TYPE_ART  ProtoSemanticType = 2
-	ProtoSemanticType_SEMANTIC_TYPE_SECT ProtoSemanticType = 3
-	ProtoSemanticType_SEMANTIC_TYPE_DIV  ProtoSemanticType = 4
+	ProtoSemanticType_PROTO_SEMANTIC_TYPE_NONE ProtoSemanticType = 0
+	ProtoSemanticType_PROTO_SEMANTIC_TYPE_PART ProtoSemanticType = 1
+	ProtoSemanticType_PROTO_SEMANTIC_TYPE_ART  ProtoSemanticType = 2
+	ProtoSemanticType_PROTO_SEMANTIC_TYPE_SECT ProtoSemanticType = 3
+	ProtoSemanticType_PROTO_SEMANTIC_TYPE_DIV  ProtoSemanticType = 4
 )
 
 // Enum value maps for ProtoSemanticType.
 var (
 	ProtoSemanticType_name = map[int32]string{
-		0: "SEMANTIC_TYPE_NONE",
-		1: "SEMANTIC_TYPE_PART",
-		2: "SEMANTIC_TYPE_ART",
-		3: "SEMANTIC_TYPE_SECT",
-		4: "SEMANTIC_TYPE_DIV",
+		0: "PROTO_SEMANTIC_TYPE_NONE",
+		1: "PROTO_SEMANTIC_TYPE_PART",
+		2: "PROTO_SEMANTIC_TYPE_ART",
+		3: "PROTO_SEMANTIC_TYPE_SECT",
+		4: "PROTO_SEMANTIC_TYPE_DIV",
 	}
 	ProtoSemanticType_value = map[string]int32{
-		"SEMANTIC_TYPE_NONE": 0,
-		"SEMANTIC_TYPE_PART": 1,
-		"SEMANTIC_TYPE_ART":  2,
-		"SEMANTIC_TYPE_SECT": 3,
-		"SEMANTIC_TYPE_DIV":  4,
+		"PROTO_SEMANTIC_TYPE_NONE": 0,
+		"PROTO_SEMANTIC_TYPE_PART": 1,
+		"PROTO_SEMANTIC_TYPE_ART":  2,
+		"PROTO_SEMANTIC_TYPE_SECT": 3,
+		"PROTO_SEMANTIC_TYPE_DIV":  4,
 	}
 )
 
@@ -80,13 +80,13 @@ var File_utils_v1_semantic_type_proto protoreflect.FileDescriptor
 
 const file_utils_v1_semantic_type_proto_rawDesc = "" +
 	"\n" +
-	"\x1cutils/v1/semantic_type.proto\x12\butils.v1*\x89\x01\n" +
-	"\x11ProtoSemanticType\x12\x16\n" +
-	"\x12SEMANTIC_TYPE_NONE\x10\x00\x12\x16\n" +
-	"\x12SEMANTIC_TYPE_PART\x10\x01\x12\x15\n" +
-	"\x11SEMANTIC_TYPE_ART\x10\x02\x12\x16\n" +
-	"\x12SEMANTIC_TYPE_SECT\x10\x03\x12\x15\n" +
-	"\x11SEMANTIC_TYPE_DIV\x10\x04B\x9d\x01\n" +
+	"\x1cutils/v1/semantic_type.proto\x12\butils.v1*\xa7\x01\n" +
+	"\x11ProtoSemanticType\x12\x1c\n" +
+	"\x18PROTO_SEMANTIC_TYPE_NONE\x10\x00\x12\x1c\n" +
+	"\x18PROTO_SEMANTIC_TYPE_PART\x10\x01\x12\x1b\n" +
+	"\x17PROTO_SEMANTIC_TYPE_ART\x10\x02\x12\x1c\n" +
+	"\x18PROTO_SEMANTIC_TYPE_SECT\x10\x03\x12\x1b\n" +
+	"\x17PROTO_SEMANTIC_TYPE_DIV\x10\x04B\x9d\x01\n" +
 	"\fcom.utils.v1B\x11SemanticTypeProtoP\x01Z9github.com/documatrix/docframe-types/gen/utils/v1;utilsv1\xa2\x02\x03UXX\xaa\x02\bUtils.V1\xca\x02\bUtils\\V1\xe2\x02\x14Utils\\V1\\GPBMetadata\xea\x02\tUtils::V1b\x06proto3"
 
 var (

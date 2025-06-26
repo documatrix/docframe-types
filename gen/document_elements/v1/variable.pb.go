@@ -21,84 +21,84 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ProtoVariableSpecialType int32
+type VariableSpecialType int32
 
 const (
-	ProtoVariableSpecialType_PROTO_VARIABLE_SPECIAL_TYPE_NOT_SPECIAL    ProtoVariableSpecialType = 0
-	ProtoVariableSpecialType_PROTO_VARIABLE_SPECIAL_TYPE_TABLE_NUMBER   ProtoVariableSpecialType = 1
-	ProtoVariableSpecialType_PROTO_VARIABLE_SPECIAL_TYPE_DOC_PAGE_COUNT ProtoVariableSpecialType = 2
-	ProtoVariableSpecialType_PROTO_VARIABLE_SPECIAL_TYPE_DOC_CUR_PAGE   ProtoVariableSpecialType = 3
-	ProtoVariableSpecialType_PROTO_VARIABLE_SPECIAL_TYPE_CUR_PAGE       ProtoVariableSpecialType = 4
-	ProtoVariableSpecialType_PROTO_VARIABLE_SPECIAL_TYPE_PAGE_COUNT     ProtoVariableSpecialType = 5
-	ProtoVariableSpecialType_PROTO_VARIABLE_SPECIAL_TYPE_PREV_PAGE      ProtoVariableSpecialType = 6
-	ProtoVariableSpecialType_PROTO_VARIABLE_SPECIAL_TYPE_SECTION_PAGE   ProtoVariableSpecialType = 7
-	ProtoVariableSpecialType_PROTO_VARIABLE_SPECIAL_TYPE_UPDATED_AT     ProtoVariableSpecialType = 8
-	ProtoVariableSpecialType_PROTO_VARIABLE_SPECIAL_TYPE_GENERATED_AT   ProtoVariableSpecialType = 9
+	VariableSpecialType_VARIABLE_SPECIAL_TYPE_NOT_SPECIAL    VariableSpecialType = 0
+	VariableSpecialType_VARIABLE_SPECIAL_TYPE_TABLE_NUMBER   VariableSpecialType = 1
+	VariableSpecialType_VARIABLE_SPECIAL_TYPE_DOC_PAGE_COUNT VariableSpecialType = 2
+	VariableSpecialType_VARIABLE_SPECIAL_TYPE_DOC_CUR_PAGE   VariableSpecialType = 3
+	VariableSpecialType_VARIABLE_SPECIAL_TYPE_CUR_PAGE       VariableSpecialType = 4
+	VariableSpecialType_VARIABLE_SPECIAL_TYPE_PAGE_COUNT     VariableSpecialType = 5
+	VariableSpecialType_VARIABLE_SPECIAL_TYPE_PREV_PAGE      VariableSpecialType = 6
+	VariableSpecialType_VARIABLE_SPECIAL_TYPE_SECTION_PAGE   VariableSpecialType = 7
+	VariableSpecialType_VARIABLE_SPECIAL_TYPE_UPDATED_AT     VariableSpecialType = 8
+	VariableSpecialType_VARIABLE_SPECIAL_TYPE_GENERATED_AT   VariableSpecialType = 9
 )
 
-// Enum value maps for ProtoVariableSpecialType.
+// Enum value maps for VariableSpecialType.
 var (
-	ProtoVariableSpecialType_name = map[int32]string{
-		0: "PROTO_VARIABLE_SPECIAL_TYPE_NOT_SPECIAL",
-		1: "PROTO_VARIABLE_SPECIAL_TYPE_TABLE_NUMBER",
-		2: "PROTO_VARIABLE_SPECIAL_TYPE_DOC_PAGE_COUNT",
-		3: "PROTO_VARIABLE_SPECIAL_TYPE_DOC_CUR_PAGE",
-		4: "PROTO_VARIABLE_SPECIAL_TYPE_CUR_PAGE",
-		5: "PROTO_VARIABLE_SPECIAL_TYPE_PAGE_COUNT",
-		6: "PROTO_VARIABLE_SPECIAL_TYPE_PREV_PAGE",
-		7: "PROTO_VARIABLE_SPECIAL_TYPE_SECTION_PAGE",
-		8: "PROTO_VARIABLE_SPECIAL_TYPE_UPDATED_AT",
-		9: "PROTO_VARIABLE_SPECIAL_TYPE_GENERATED_AT",
+	VariableSpecialType_name = map[int32]string{
+		0: "VARIABLE_SPECIAL_TYPE_NOT_SPECIAL",
+		1: "VARIABLE_SPECIAL_TYPE_TABLE_NUMBER",
+		2: "VARIABLE_SPECIAL_TYPE_DOC_PAGE_COUNT",
+		3: "VARIABLE_SPECIAL_TYPE_DOC_CUR_PAGE",
+		4: "VARIABLE_SPECIAL_TYPE_CUR_PAGE",
+		5: "VARIABLE_SPECIAL_TYPE_PAGE_COUNT",
+		6: "VARIABLE_SPECIAL_TYPE_PREV_PAGE",
+		7: "VARIABLE_SPECIAL_TYPE_SECTION_PAGE",
+		8: "VARIABLE_SPECIAL_TYPE_UPDATED_AT",
+		9: "VARIABLE_SPECIAL_TYPE_GENERATED_AT",
 	}
-	ProtoVariableSpecialType_value = map[string]int32{
-		"PROTO_VARIABLE_SPECIAL_TYPE_NOT_SPECIAL":    0,
-		"PROTO_VARIABLE_SPECIAL_TYPE_TABLE_NUMBER":   1,
-		"PROTO_VARIABLE_SPECIAL_TYPE_DOC_PAGE_COUNT": 2,
-		"PROTO_VARIABLE_SPECIAL_TYPE_DOC_CUR_PAGE":   3,
-		"PROTO_VARIABLE_SPECIAL_TYPE_CUR_PAGE":       4,
-		"PROTO_VARIABLE_SPECIAL_TYPE_PAGE_COUNT":     5,
-		"PROTO_VARIABLE_SPECIAL_TYPE_PREV_PAGE":      6,
-		"PROTO_VARIABLE_SPECIAL_TYPE_SECTION_PAGE":   7,
-		"PROTO_VARIABLE_SPECIAL_TYPE_UPDATED_AT":     8,
-		"PROTO_VARIABLE_SPECIAL_TYPE_GENERATED_AT":   9,
+	VariableSpecialType_value = map[string]int32{
+		"VARIABLE_SPECIAL_TYPE_NOT_SPECIAL":    0,
+		"VARIABLE_SPECIAL_TYPE_TABLE_NUMBER":   1,
+		"VARIABLE_SPECIAL_TYPE_DOC_PAGE_COUNT": 2,
+		"VARIABLE_SPECIAL_TYPE_DOC_CUR_PAGE":   3,
+		"VARIABLE_SPECIAL_TYPE_CUR_PAGE":       4,
+		"VARIABLE_SPECIAL_TYPE_PAGE_COUNT":     5,
+		"VARIABLE_SPECIAL_TYPE_PREV_PAGE":      6,
+		"VARIABLE_SPECIAL_TYPE_SECTION_PAGE":   7,
+		"VARIABLE_SPECIAL_TYPE_UPDATED_AT":     8,
+		"VARIABLE_SPECIAL_TYPE_GENERATED_AT":   9,
 	}
 )
 
-func (x ProtoVariableSpecialType) Enum() *ProtoVariableSpecialType {
-	p := new(ProtoVariableSpecialType)
+func (x VariableSpecialType) Enum() *VariableSpecialType {
+	p := new(VariableSpecialType)
 	*p = x
 	return p
 }
 
-func (x ProtoVariableSpecialType) String() string {
+func (x VariableSpecialType) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (ProtoVariableSpecialType) Descriptor() protoreflect.EnumDescriptor {
+func (VariableSpecialType) Descriptor() protoreflect.EnumDescriptor {
 	return file_document_elements_v1_variable_proto_enumTypes[0].Descriptor()
 }
 
-func (ProtoVariableSpecialType) Type() protoreflect.EnumType {
+func (VariableSpecialType) Type() protoreflect.EnumType {
 	return &file_document_elements_v1_variable_proto_enumTypes[0]
 }
 
-func (x ProtoVariableSpecialType) Number() protoreflect.EnumNumber {
+func (x VariableSpecialType) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use ProtoVariableSpecialType.Descriptor instead.
-func (ProtoVariableSpecialType) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use VariableSpecialType.Descriptor instead.
+func (VariableSpecialType) EnumDescriptor() ([]byte, []int) {
 	return file_document_elements_v1_variable_proto_rawDescGZIP(), []int{0}
 }
 
 type ProtoVariable struct {
-	state           protoimpl.MessageState   `protogen:"open.v1"`
-	Path            string                   `protobuf:"bytes,1,opt,name=path,proto3" json:"path,omitempty"`
-	Content         string                   `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"` // Should this be optional or "empty string"
-	FormatUuid      string                   `protobuf:"bytes,3,opt,name=format_uuid,json=formatUuid,proto3" json:"format_uuid,omitempty"`
-	SpecialType     ProtoVariableSpecialType `protobuf:"varint,4,opt,name=special_type,json=specialType,proto3,enum=document_elements.v1.ProtoVariableSpecialType" json:"special_type,omitempty"`
-	Uuid            string                   `protobuf:"bytes,5,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	ComChannelUuids []string                 `protobuf:"bytes,6,rep,name=com_channel_uuids,json=comChannelUuids,proto3" json:"com_channel_uuids,omitempty"`
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Path            string                 `protobuf:"bytes,1,opt,name=path,proto3" json:"path,omitempty"`
+	Content         string                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"` // Should this be optional or "empty string"
+	FormatUuid      string                 `protobuf:"bytes,3,opt,name=format_uuid,json=formatUuid,proto3" json:"format_uuid,omitempty"`
+	SpecialType     VariableSpecialType    `protobuf:"varint,4,opt,name=special_type,json=specialType,proto3,enum=document_elements.v1.VariableSpecialType" json:"special_type,omitempty"`
+	Uuid            string                 `protobuf:"bytes,5,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	ComChannelUuids []string               `protobuf:"bytes,6,rep,name=com_channel_uuids,json=comChannelUuids,proto3" json:"com_channel_uuids,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -154,11 +154,11 @@ func (x *ProtoVariable) GetFormatUuid() string {
 	return ""
 }
 
-func (x *ProtoVariable) GetSpecialType() ProtoVariableSpecialType {
+func (x *ProtoVariable) GetSpecialType() VariableSpecialType {
 	if x != nil {
 		return x.SpecialType
 	}
-	return ProtoVariableSpecialType_PROTO_VARIABLE_SPECIAL_TYPE_NOT_SPECIAL
+	return VariableSpecialType_VARIABLE_SPECIAL_TYPE_NOT_SPECIAL
 }
 
 func (x *ProtoVariable) GetUuid() string {
@@ -179,26 +179,26 @@ var File_document_elements_v1_variable_proto protoreflect.FileDescriptor
 
 const file_document_elements_v1_variable_proto_rawDesc = "" +
 	"\n" +
-	"#document_elements/v1/variable.proto\x12\x14document_elements.v1\"\xf1\x01\n" +
+	"#document_elements/v1/variable.proto\x12\x14document_elements.v1\"\xec\x01\n" +
 	"\rProtoVariable\x12\x12\n" +
 	"\x04path\x18\x01 \x01(\tR\x04path\x12\x18\n" +
 	"\acontent\x18\x02 \x01(\tR\acontent\x12\x1f\n" +
 	"\vformat_uuid\x18\x03 \x01(\tR\n" +
-	"formatUuid\x12Q\n" +
-	"\fspecial_type\x18\x04 \x01(\x0e2..document_elements.v1.ProtoVariableSpecialTypeR\vspecialType\x12\x12\n" +
+	"formatUuid\x12L\n" +
+	"\fspecial_type\x18\x04 \x01(\x0e2).document_elements.v1.VariableSpecialTypeR\vspecialType\x12\x12\n" +
 	"\x04uuid\x18\x05 \x01(\tR\x04uuid\x12*\n" +
-	"\x11com_channel_uuids\x18\x06 \x03(\tR\x0fcomChannelUuids*\xdc\x03\n" +
-	"\x18ProtoVariableSpecialType\x12+\n" +
-	"'PROTO_VARIABLE_SPECIAL_TYPE_NOT_SPECIAL\x10\x00\x12,\n" +
-	"(PROTO_VARIABLE_SPECIAL_TYPE_TABLE_NUMBER\x10\x01\x12.\n" +
-	"*PROTO_VARIABLE_SPECIAL_TYPE_DOC_PAGE_COUNT\x10\x02\x12,\n" +
-	"(PROTO_VARIABLE_SPECIAL_TYPE_DOC_CUR_PAGE\x10\x03\x12(\n" +
-	"$PROTO_VARIABLE_SPECIAL_TYPE_CUR_PAGE\x10\x04\x12*\n" +
-	"&PROTO_VARIABLE_SPECIAL_TYPE_PAGE_COUNT\x10\x05\x12)\n" +
-	"%PROTO_VARIABLE_SPECIAL_TYPE_PREV_PAGE\x10\x06\x12,\n" +
-	"(PROTO_VARIABLE_SPECIAL_TYPE_SECTION_PAGE\x10\a\x12*\n" +
-	"&PROTO_VARIABLE_SPECIAL_TYPE_UPDATED_AT\x10\b\x12,\n" +
-	"(PROTO_VARIABLE_SPECIAL_TYPE_GENERATED_AT\x10\tB\xe9\x01\n" +
+	"\x11com_channel_uuids\x18\x06 \x03(\tR\x0fcomChannelUuids*\x9b\x03\n" +
+	"\x13VariableSpecialType\x12%\n" +
+	"!VARIABLE_SPECIAL_TYPE_NOT_SPECIAL\x10\x00\x12&\n" +
+	"\"VARIABLE_SPECIAL_TYPE_TABLE_NUMBER\x10\x01\x12(\n" +
+	"$VARIABLE_SPECIAL_TYPE_DOC_PAGE_COUNT\x10\x02\x12&\n" +
+	"\"VARIABLE_SPECIAL_TYPE_DOC_CUR_PAGE\x10\x03\x12\"\n" +
+	"\x1eVARIABLE_SPECIAL_TYPE_CUR_PAGE\x10\x04\x12$\n" +
+	" VARIABLE_SPECIAL_TYPE_PAGE_COUNT\x10\x05\x12#\n" +
+	"\x1fVARIABLE_SPECIAL_TYPE_PREV_PAGE\x10\x06\x12&\n" +
+	"\"VARIABLE_SPECIAL_TYPE_SECTION_PAGE\x10\a\x12$\n" +
+	" VARIABLE_SPECIAL_TYPE_UPDATED_AT\x10\b\x12&\n" +
+	"\"VARIABLE_SPECIAL_TYPE_GENERATED_AT\x10\tB\xe9\x01\n" +
 	"\x18com.document_elements.v1B\rVariableProtoP\x01ZQgithub.com/documatrix/docframe-types/gen/document_elements/v1;document_elementsv1\xa2\x02\x03DXX\xaa\x02\x13DocumentElements.V1\xca\x02\x13DocumentElements\\V1\xe2\x02\x1fDocumentElements\\V1\\GPBMetadata\xea\x02\x14DocumentElements::V1b\x06proto3"
 
 var (
@@ -216,11 +216,11 @@ func file_document_elements_v1_variable_proto_rawDescGZIP() []byte {
 var file_document_elements_v1_variable_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_document_elements_v1_variable_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_document_elements_v1_variable_proto_goTypes = []any{
-	(ProtoVariableSpecialType)(0), // 0: document_elements.v1.ProtoVariableSpecialType
-	(*ProtoVariable)(nil),         // 1: document_elements.v1.ProtoVariable
+	(VariableSpecialType)(0), // 0: document_elements.v1.VariableSpecialType
+	(*ProtoVariable)(nil),    // 1: document_elements.v1.ProtoVariable
 }
 var file_document_elements_v1_variable_proto_depIdxs = []int32{
-	0, // 0: document_elements.v1.ProtoVariable.special_type:type_name -> document_elements.v1.ProtoVariableSpecialType
+	0, // 0: document_elements.v1.ProtoVariable.special_type:type_name -> document_elements.v1.VariableSpecialType
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

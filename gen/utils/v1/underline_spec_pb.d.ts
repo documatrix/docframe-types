@@ -6,7 +6,7 @@ import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1"
 import type { Message } from "@bufbuild/protobuf";
 import type { ProtoMeasure } from "./measure_pb";
 import type { ProtoColor } from "./color_pb";
-import type { ProtoRuleStyle } from "./rule_style_pb";
+import type { RuleStyle } from "./rule_style_pb";
 
 /**
  * Describes the file utils/v1/underline_spec.proto.
@@ -38,9 +38,9 @@ export declare type ProtoUnderlineSpec = Message<"utils.v1.ProtoUnderlineSpec"> 
   offsetEm: number;
 
   /**
-   * @generated from field: utils.v1.ProtoRuleStyle style = 5;
+   * @generated from field: utils.v1.RuleStyle style = 5;
    */
-  style: ProtoRuleStyle;
+  style: RuleStyle;
 };
 
 /**

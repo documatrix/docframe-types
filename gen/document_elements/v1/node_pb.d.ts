@@ -55,6 +55,8 @@ import type { ProtoDmScript } from "./dm_script_pb";
 export declare const file_document_elements_v1_node: GenFile;
 
 /**
+ * go-gen:ignore
+ *
  * @generated from message document_elements.v1.Node
  */
 export declare type Node = Message<"document_elements.v1.Node"> & {
@@ -367,13 +369,13 @@ export declare type Node = Message<"document_elements.v1.Node"> & {
     case: "adjustHorizontally";
   } | {
     /**
-     * @generated from field: document_elements.v1.ProtoDoctypeScript doctypeScript = 59;
+     * @generated from field: document_elements.v1.ProtoDoctypeScript doctype_script = 59;
      */
     value: ProtoDoctypeScript;
     case: "doctypeScript";
   } | {
     /**
-     * @generated from field: document_elements.v1.ProtoDmScript dmScript = 60;
+     * @generated from field: document_elements.v1.ProtoDmScript dm_script = 60;
      */
     value: ProtoDmScript;
     case: "dmScript";

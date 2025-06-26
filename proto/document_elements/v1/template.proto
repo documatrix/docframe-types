@@ -15,6 +15,6 @@ message ProtoTemplate {
 }
 
 enum ColumnBalancing {
-  NO_BALANCING = 0;
-  BALANCING = 1;
+  COLUMN_BALANCING_NO_BALANCING = 0;
+  COLUMN_BALANCING_BALANCING = 1;
 }

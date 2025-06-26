@@ -77,7 +77,7 @@ func (ProtoColorType) EnumDescriptor() ([]byte, []int) {
 // easiest and fastest way found.
 type ProtoColor struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Name          *v1.ProtoBoxedString   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Type          ProtoColorType         `protobuf:"varint,2,opt,name=type,proto3,enum=utils.v1.ProtoColorType" json:"type,omitempty"` // set to RGB or CMYK
 	R             int32                  `protobuf:"varint,3,opt,name=r,proto3" json:"r,omitempty"`
 	G             int32                  `protobuf:"varint,4,opt,name=g,proto3" json:"g,omitempty"`
@@ -120,11 +120,11 @@ func (*ProtoColor) Descriptor() ([]byte, []int) {
 	return file_utils_v1_color_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ProtoColor) GetName() *v1.ProtoBoxedString {
+func (x *ProtoColor) GetName() string {
 	if x != nil {
 		return x.Name
 	}
-	return nil
+	return ""
 }
 
 func (x *ProtoColor) GetType() ProtoColorType {
@@ -401,10 +401,10 @@ var File_utils_v1_color_proto protoreflect.FileDescriptor
 
 const file_utils_v1_color_proto_rawDesc = "" +
 	"\n" +
-	"\x14utils/v1/color.proto\x12\butils.v1\x1a\x13box/v1/string.proto\"\xca\x01\n" +
+	"\x14utils/v1/color.proto\x12\butils.v1\x1a\x13box/v1/string.proto\"\xb0\x01\n" +
 	"\n" +
-	"ProtoColor\x12,\n" +
-	"\x04name\x18\x01 \x01(\v2\x18.box.v1.ProtoBoxedStringR\x04name\x12,\n" +
+	"ProtoColor\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12,\n" +
 	"\x04type\x18\x02 \x01(\x0e2\x18.utils.v1.ProtoColorTypeR\x04type\x12\f\n" +
 	"\x01r\x18\x03 \x01(\x05R\x01r\x12\f\n" +
 	"\x01g\x18\x04 \x01(\x05R\x01g\x12\f\n" +
@@ -459,18 +459,17 @@ var file_utils_v1_color_proto_goTypes = []any{
 	(*v1.ProtoBoxedString)(nil), // 5: box.v1.ProtoBoxedString
 }
 var file_utils_v1_color_proto_depIdxs = []int32{
-	5, // 0: utils.v1.ProtoColor.name:type_name -> box.v1.ProtoBoxedString
-	0, // 1: utils.v1.ProtoColor.type:type_name -> utils.v1.ProtoColorType
-	1, // 2: utils.v1.ProtoBoxedColor.value:type_name -> utils.v1.ProtoColor
-	5, // 3: utils.v1.ProtoRGBColor.name:type_name -> box.v1.ProtoBoxedString
-	0, // 4: utils.v1.ProtoRGBColor.type:type_name -> utils.v1.ProtoColorType
-	5, // 5: utils.v1.ProtoCMYKColor.name:type_name -> box.v1.ProtoBoxedString
-	0, // 6: utils.v1.ProtoCMYKColor.type:type_name -> utils.v1.ProtoColorType
-	7, // [7:7] is the sub-list for method output_type
-	7, // [7:7] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+	0, // 0: utils.v1.ProtoColor.type:type_name -> utils.v1.ProtoColorType
+	1, // 1: utils.v1.ProtoBoxedColor.value:type_name -> utils.v1.ProtoColor
+	5, // 2: utils.v1.ProtoRGBColor.name:type_name -> box.v1.ProtoBoxedString
+	0, // 3: utils.v1.ProtoRGBColor.type:type_name -> utils.v1.ProtoColorType
+	5, // 4: utils.v1.ProtoCMYKColor.name:type_name -> box.v1.ProtoBoxedString
+	0, // 5: utils.v1.ProtoCMYKColor.type:type_name -> utils.v1.ProtoColorType
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_utils_v1_color_proto_init() }

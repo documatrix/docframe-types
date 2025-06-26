@@ -32,9 +32,9 @@ export declare type ProtoVariable = Message<"document_elements.v1.ProtoVariable"
   formatUuid: string;
 
   /**
-   * @generated from field: document_elements.v1.ProtoVariableSpecialType special_type = 4;
+   * @generated from field: document_elements.v1.VariableSpecialType special_type = 4;
    */
-  specialType: ProtoVariableSpecialType;
+  specialType: VariableSpecialType;
 
   /**
    * @generated from field: string uuid = 5;
@@ -54,62 +54,62 @@ export declare type ProtoVariable = Message<"document_elements.v1.ProtoVariable"
 export declare const ProtoVariableSchema: GenMessage<ProtoVariable>;
 
 /**
- * @generated from enum document_elements.v1.ProtoVariableSpecialType
+ * @generated from enum document_elements.v1.VariableSpecialType
  */
-export enum ProtoVariableSpecialType {
+export enum VariableSpecialType {
   /**
-   * @generated from enum value: PROTO_VARIABLE_SPECIAL_TYPE_NOT_SPECIAL = 0;
+   * @generated from enum value: VARIABLE_SPECIAL_TYPE_NOT_SPECIAL = 0;
    */
   NOT_SPECIAL = 0,
 
   /**
-   * @generated from enum value: PROTO_VARIABLE_SPECIAL_TYPE_TABLE_NUMBER = 1;
+   * @generated from enum value: VARIABLE_SPECIAL_TYPE_TABLE_NUMBER = 1;
    */
   TABLE_NUMBER = 1,
 
   /**
-   * @generated from enum value: PROTO_VARIABLE_SPECIAL_TYPE_DOC_PAGE_COUNT = 2;
+   * @generated from enum value: VARIABLE_SPECIAL_TYPE_DOC_PAGE_COUNT = 2;
    */
   DOC_PAGE_COUNT = 2,
 
   /**
-   * @generated from enum value: PROTO_VARIABLE_SPECIAL_TYPE_DOC_CUR_PAGE = 3;
+   * @generated from enum value: VARIABLE_SPECIAL_TYPE_DOC_CUR_PAGE = 3;
    */
   DOC_CUR_PAGE = 3,
 
   /**
-   * @generated from enum value: PROTO_VARIABLE_SPECIAL_TYPE_CUR_PAGE = 4;
+   * @generated from enum value: VARIABLE_SPECIAL_TYPE_CUR_PAGE = 4;
    */
   CUR_PAGE = 4,
 
   /**
-   * @generated from enum value: PROTO_VARIABLE_SPECIAL_TYPE_PAGE_COUNT = 5;
+   * @generated from enum value: VARIABLE_SPECIAL_TYPE_PAGE_COUNT = 5;
    */
   PAGE_COUNT = 5,
 
   /**
-   * @generated from enum value: PROTO_VARIABLE_SPECIAL_TYPE_PREV_PAGE = 6;
+   * @generated from enum value: VARIABLE_SPECIAL_TYPE_PREV_PAGE = 6;
    */
   PREV_PAGE = 6,
 
   /**
-   * @generated from enum value: PROTO_VARIABLE_SPECIAL_TYPE_SECTION_PAGE = 7;
+   * @generated from enum value: VARIABLE_SPECIAL_TYPE_SECTION_PAGE = 7;
    */
   SECTION_PAGE = 7,
 
   /**
-   * @generated from enum value: PROTO_VARIABLE_SPECIAL_TYPE_UPDATED_AT = 8;
+   * @generated from enum value: VARIABLE_SPECIAL_TYPE_UPDATED_AT = 8;
    */
   UPDATED_AT = 8,
 
   /**
-   * @generated from enum value: PROTO_VARIABLE_SPECIAL_TYPE_GENERATED_AT = 9;
+   * @generated from enum value: VARIABLE_SPECIAL_TYPE_GENERATED_AT = 9;
    */
   GENERATED_AT = 9,
 }
 
 /**
- * Describes the enum document_elements.v1.ProtoVariableSpecialType.
+ * Describes the enum document_elements.v1.VariableSpecialType.
  */
-export declare const ProtoVariableSpecialTypeSchema: GenEnum<ProtoVariableSpecialType>;
+export declare const VariableSpecialTypeSchema: GenEnum<VariableSpecialType>;
 

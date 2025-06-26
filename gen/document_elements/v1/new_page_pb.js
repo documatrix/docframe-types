@@ -8,7 +8,7 @@ import { enumDesc, fileDesc, messageDesc, tsEnum } from "@bufbuild/protobuf/code
  * Describes the file document_elements/v1/new_page.proto.
  */
 export const file_document_elements_v1_new_page = /*@__PURE__*/
-  fileDesc("CiNkb2N1bWVudF9lbGVtZW50cy92MS9uZXdfcGFnZS5wcm90bxIUZG9jdW1lbnRfZWxlbWVudHMudjEi0AEKDFByb3RvTmV3UGFnZRISCgpwYXBlcl90cmF5GAEgASgNEhMKC3BhcGVyX2NvdW50GAIgASgNEjYKCXBhZ2VfbW9kZRgDIAEoDjIjLmRvY3VtZW50X2VsZW1lbnRzLnYxLlByb3RvUGFnZU1vZGUSRAoQcGFnZV9vcmllbnRhdGlvbhgEIAEoDjIqLmRvY3VtZW50X2VsZW1lbnRzLnYxLlByb3RvUGFnZU9yaWVudGF0aW9uEhkKEWNvbV9jaGFubmVsX3V1aWRzGAUgAygJKngKDVByb3RvUGFnZU1vZGUSHQoZUFJPVE9fUEFHRV9NT0RFX05FWFRfUEFHRRAAEiMKH1BST1RPX1BBR0VfTU9ERV9ORVhUX1JFQ1RPX1BBR0UQARIjCh9QUk9UT19QQUdFX01PREVfTkVYVF9WRVJTT19QQUdFEAIq3gEKFFByb3RvUGFnZU9yaWVudGF0aW9uEiAKHFBST1RPX1BBR0VfT1JJRU5UQVRJT05fVU5TRVQQABIjCh9QUk9UT19QQUdFX09SSUVOVEFUSU9OX1BPUlRSQUlUEAESJAogUFJPVE9fUEFHRV9PUklFTlRBVElPTl9MQU5EU0NBUEUQAhIrCidQUk9UT19QQUdFX09SSUVOVEFUSU9OX0lOVkVSU0VfUE9SVFJBSVQQAxIsCihQUk9UT19QQUdFX09SSUVOVEFUSU9OX0lOVkVSU0VfTEFORFNDQVBFEARC6AEKGGNvbS5kb2N1bWVudF9lbGVtZW50cy52MUIMTmV3UGFnZVByb3RvUAFaUWdpdGh1Yi5jb20vZG9jdW1hdHJpeC9kb2NmcmFtZS10eXBlcy9nZW4vZG9jdW1lbnRfZWxlbWVudHMvdjE7ZG9jdW1lbnRfZWxlbWVudHN2MaICA0RYWKoCE0RvY3VtZW50RWxlbWVudHMuVjHKAhNEb2N1bWVudEVsZW1lbnRzXFYx4gIfRG9jdW1lbnRFbGVtZW50c1xWMVxHUEJNZXRhZGF0YeoCFERvY3VtZW50RWxlbWVudHM6OlYxYgZwcm90bzM");
+  fileDesc("CiNkb2N1bWVudF9lbGVtZW50cy92MS9uZXdfcGFnZS5wcm90bxIUZG9jdW1lbnRfZWxlbWVudHMudjEixgEKDFByb3RvTmV3UGFnZRISCgpwYXBlcl90cmF5GAEgASgNEhMKC3BhcGVyX2NvdW50GAIgASgNEjEKCXBhZ2VfbW9kZRgDIAEoDjIeLmRvY3VtZW50X2VsZW1lbnRzLnYxLlBhZ2VNb2RlEj8KEHBhZ2Vfb3JpZW50YXRpb24YBCABKA4yJS5kb2N1bWVudF9lbGVtZW50cy52MS5QYWdlT3JpZW50YXRpb24SGQoRY29tX2NoYW5uZWxfdXVpZHMYBSADKAkqYQoIUGFnZU1vZGUSFwoTUEFHRV9NT0RFX05FWFRfUEFHRRAAEh0KGVBBR0VfTU9ERV9ORVhUX1JFQ1RPX1BBR0UQARIdChlQQUdFX01PREVfTkVYVF9WRVJTT19QQUdFEAIquwEKD1BhZ2VPcmllbnRhdGlvbhIaChZQQUdFX09SSUVOVEFUSU9OX1VOU0VUEAASHQoZUEFHRV9PUklFTlRBVElPTl9QT1JUUkFJVBABEh4KGlBBR0VfT1JJRU5UQVRJT05fTEFORFNDQVBFEAISJQohUEFHRV9PUklFTlRBVElPTl9JTlZFUlNFX1BPUlRSQUlUEAMSJgoiUEFHRV9PUklFTlRBVElPTl9JTlZFUlNFX0xBTkRTQ0FQRRAEQugBChhjb20uZG9jdW1lbnRfZWxlbWVudHMudjFCDE5ld1BhZ2VQcm90b1ABWlFnaXRodWIuY29tL2RvY3VtYXRyaXgvZG9jZnJhbWUtdHlwZXMvZ2VuL2RvY3VtZW50X2VsZW1lbnRzL3YxO2RvY3VtZW50X2VsZW1lbnRzdjGiAgNEWFiqAhNEb2N1bWVudEVsZW1lbnRzLlYxygITRG9jdW1lbnRFbGVtZW50c1xWMeICH0RvY3VtZW50RWxlbWVudHNcVjFcR1BCTWV0YWRhdGHqAhREb2N1bWVudEVsZW1lbnRzOjpWMWIGcHJvdG8z");
 
 /**
  * Describes the message document_elements.v1.ProtoNewPage.
@@ -18,26 +18,26 @@ export const ProtoNewPageSchema = /*@__PURE__*/
   messageDesc(file_document_elements_v1_new_page, 0);
 
 /**
- * Describes the enum document_elements.v1.ProtoPageMode.
+ * Describes the enum document_elements.v1.PageMode.
  */
-export const ProtoPageModeSchema = /*@__PURE__*/
+export const PageModeSchema = /*@__PURE__*/
   enumDesc(file_document_elements_v1_new_page, 0);
 
 /**
- * @generated from enum document_elements.v1.ProtoPageMode
+ * @generated from enum document_elements.v1.PageMode
  */
-export const ProtoPageMode = /*@__PURE__*/
-  tsEnum(ProtoPageModeSchema);
+export const PageMode = /*@__PURE__*/
+  tsEnum(PageModeSchema);
 
 /**
- * Describes the enum document_elements.v1.ProtoPageOrientation.
+ * Describes the enum document_elements.v1.PageOrientation.
  */
-export const ProtoPageOrientationSchema = /*@__PURE__*/
+export const PageOrientationSchema = /*@__PURE__*/
   enumDesc(file_document_elements_v1_new_page, 1);
 
 /**
- * @generated from enum document_elements.v1.ProtoPageOrientation
+ * @generated from enum document_elements.v1.PageOrientation
  */
-export const ProtoPageOrientation = /*@__PURE__*/
-  tsEnum(ProtoPageOrientationSchema);
+export const PageOrientation = /*@__PURE__*/
+  tsEnum(PageOrientationSchema);
 

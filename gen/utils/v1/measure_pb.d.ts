@@ -20,9 +20,9 @@ export declare type ProtoMeasure = Message<"utils.v1.ProtoMeasure"> & {
   value: number;
 
   /**
-   * @generated from field: utils.v1.ProtoMeasureType mtype = 2;
+   * @generated from field: utils.v1.MeasureType mtype = 2;
    */
-  mtype: ProtoMeasureType;
+  mtype: MeasureType;
 };
 
 /**
@@ -84,42 +84,42 @@ export declare type ProtoSideMeasures = Message<"utils.v1.ProtoSideMeasures"> & 
 export declare const ProtoSideMeasuresSchema: GenMessage<ProtoSideMeasures>;
 
 /**
- * @generated from enum utils.v1.ProtoMeasureType
+ * @generated from enum utils.v1.MeasureType
  */
-export enum ProtoMeasureType {
+export enum MeasureType {
   /**
-   * @generated from enum value: PROTO_MEASURE_TYPE_PT = 0;
+   * @generated from enum value: MEASURE_TYPE_PT = 0;
    */
   PT = 0,
 
   /**
-   * @generated from enum value: PROTO_MEASURE_TYPE_CM = 1;
+   * @generated from enum value: MEASURE_TYPE_CM = 1;
    */
   CM = 1,
 
   /**
-   * @generated from enum value: PROTO_MEASURE_TYPE_MM = 2;
+   * @generated from enum value: MEASURE_TYPE_MM = 2;
    */
   MM = 2,
 
   /**
-   * @generated from enum value: PROTO_MEASURE_TYPE_IN = 3;
+   * @generated from enum value: MEASURE_TYPE_IN = 3;
    */
   IN = 3,
 
   /**
-   * @generated from enum value: PROTO_MEASURE_TYPE_PERCENT = 4;
+   * @generated from enum value: MEASURE_TYPE_PERCENT = 4;
    */
   PERCENT = 4,
 
   /**
-   * @generated from enum value: PROTO_MEASURE_TYPE_PX = 5;
+   * @generated from enum value: MEASURE_TYPE_PX = 5;
    */
   PX = 5,
 }
 
 /**
- * Describes the enum utils.v1.ProtoMeasureType.
+ * Describes the enum utils.v1.MeasureType.
  */
-export declare const ProtoMeasureTypeSchema: GenEnum<ProtoMeasureType>;
+export declare const MeasureTypeSchema: GenEnum<MeasureType>;
 

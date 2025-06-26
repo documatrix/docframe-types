@@ -21,9 +21,9 @@ export declare const file_utils_v1_color: GenFile;
  */
 export declare type ProtoColor = Message<"utils.v1.ProtoColor"> & {
   /**
-   * @generated from field: box.v1.ProtoBoxedString name = 1;
+   * @generated from field: string name = 1;
    */
-  name?: ProtoBoxedString;
+  name: string;
 
   /**
    * set to RGB or CMYK

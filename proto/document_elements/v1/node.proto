@@ -47,6 +47,7 @@ import "document_elements/v1/ul_config.proto";
 import "document_elements/v1/variable.proto";
 import "document_elements/v1/ws_area.proto";
 
+// go-gen:ignore
 message Node {
   repeated Node children = 1;
 
@@ -102,8 +103,8 @@ message Node {
     ProtoLayout layout = 56;
     ProtoAdvancedIllustrationArea advanced_illustration_area = 57;
     ProtoAdjustHorizontally adjust_horizontally = 58;
-    ProtoDoctypeScript doctypeScript = 59;
-    ProtoDmScript dmScript = 60;
+    ProtoDoctypeScript doctype_script = 59;
+    ProtoDmScript dm_script = 60;
   }
 }
 

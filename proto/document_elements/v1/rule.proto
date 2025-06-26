@@ -19,7 +19,7 @@ message ProtoRule {
   //      270° = a vertical rule upwards
   double rotation = 5;
   utils.v1.ProtoColor color = 6;
-  utils.v1.ProtoRuleStyle style = 7;
+  utils.v1.RuleStyle style = 7;
   // Toggles whether the rule is a normal rule or a boundary rule
   ProtoRuleMode mode = 8;
   // If the rule is a boundary rule, this field contains the boundaries where the rule starts and ends.

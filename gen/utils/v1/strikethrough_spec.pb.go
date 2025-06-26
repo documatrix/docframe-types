@@ -27,7 +27,7 @@ type ProtoStrikethroughSpec struct {
 	Mode          ProtoUnderlineMode     `protobuf:"varint,2,opt,name=mode,proto3,enum=utils.v1.ProtoUnderlineMode" json:"mode,omitempty"`
 	Color         *ProtoColor            `protobuf:"bytes,3,opt,name=color,proto3" json:"color,omitempty"`
 	OffsetEm      int32                  `protobuf:"varint,4,opt,name=offset_em,json=offsetEm,proto3" json:"offset_em,omitempty"`
-	Style         ProtoRuleStyle         `protobuf:"varint,5,opt,name=style,proto3,enum=utils.v1.ProtoRuleStyle" json:"style,omitempty"`
+	Style         RuleStyle              `protobuf:"varint,5,opt,name=style,proto3,enum=utils.v1.RuleStyle" json:"style,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -90,11 +90,11 @@ func (x *ProtoStrikethroughSpec) GetOffsetEm() int32 {
 	return 0
 }
 
-func (x *ProtoStrikethroughSpec) GetStyle() ProtoRuleStyle {
+func (x *ProtoStrikethroughSpec) GetStyle() RuleStyle {
 	if x != nil {
 		return x.Style
 	}
-	return ProtoRuleStyle_PROTO_RULE_STYLE_DUMMY_RULE_STYLE
+	return RuleStyle_RULE_STYLE_DUMMY_RULE_STYLE
 }
 
 type ProtoBoxedStrikethroughSpec struct {
@@ -153,13 +153,13 @@ var File_utils_v1_strikethrough_spec_proto protoreflect.FileDescriptor
 
 const file_utils_v1_strikethrough_spec_proto_rawDesc = "" +
 	"\n" +
-	"!utils/v1/strikethrough_spec.proto\x12\butils.v1\x1a\x14utils/v1/color.proto\x1a\x16utils/v1/measure.proto\x1a\x19utils/v1/rule_style.proto\x1a\x1dutils/v1/underline_spec.proto\"\xf3\x01\n" +
+	"!utils/v1/strikethrough_spec.proto\x12\butils.v1\x1a\x14utils/v1/color.proto\x1a\x16utils/v1/measure.proto\x1a\x19utils/v1/rule_style.proto\x1a\x1dutils/v1/underline_spec.proto\"\xee\x01\n" +
 	"\x16ProtoStrikethroughSpec\x12.\n" +
 	"\x06weight\x18\x01 \x01(\v2\x16.utils.v1.ProtoMeasureR\x06weight\x120\n" +
 	"\x04mode\x18\x02 \x01(\x0e2\x1c.utils.v1.ProtoUnderlineModeR\x04mode\x12*\n" +
 	"\x05color\x18\x03 \x01(\v2\x14.utils.v1.ProtoColorR\x05color\x12\x1b\n" +
-	"\toffset_em\x18\x04 \x01(\x05R\boffsetEm\x12.\n" +
-	"\x05style\x18\x05 \x01(\x0e2\x18.utils.v1.ProtoRuleStyleR\x05style\"n\n" +
+	"\toffset_em\x18\x04 \x01(\x05R\boffsetEm\x12)\n" +
+	"\x05style\x18\x05 \x01(\x0e2\x13.utils.v1.RuleStyleR\x05style\"n\n" +
 	"\x1bProtoBoxedStrikethroughSpec\x126\n" +
 	"\x05value\x18\x01 \x01(\v2 .utils.v1.ProtoStrikethroughSpecR\x05value\x12\x17\n" +
 	"\ais_null\x18\x02 \x01(\bR\x06isNullB\xa2\x01\n" +
@@ -184,13 +184,13 @@ var file_utils_v1_strikethrough_spec_proto_goTypes = []any{
 	(*ProtoMeasure)(nil),                // 2: utils.v1.ProtoMeasure
 	(ProtoUnderlineMode)(0),             // 3: utils.v1.ProtoUnderlineMode
 	(*ProtoColor)(nil),                  // 4: utils.v1.ProtoColor
-	(ProtoRuleStyle)(0),                 // 5: utils.v1.ProtoRuleStyle
+	(RuleStyle)(0),                      // 5: utils.v1.RuleStyle
 }
 var file_utils_v1_strikethrough_spec_proto_depIdxs = []int32{
 	2, // 0: utils.v1.ProtoStrikethroughSpec.weight:type_name -> utils.v1.ProtoMeasure
 	3, // 1: utils.v1.ProtoStrikethroughSpec.mode:type_name -> utils.v1.ProtoUnderlineMode
 	4, // 2: utils.v1.ProtoStrikethroughSpec.color:type_name -> utils.v1.ProtoColor
-	5, // 3: utils.v1.ProtoStrikethroughSpec.style:type_name -> utils.v1.ProtoRuleStyle
+	5, // 3: utils.v1.ProtoStrikethroughSpec.style:type_name -> utils.v1.RuleStyle
 	0, // 4: utils.v1.ProtoBoxedStrikethroughSpec.value:type_name -> utils.v1.ProtoStrikethroughSpec
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type

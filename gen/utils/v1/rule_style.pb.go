@@ -21,82 +21,82 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ProtoRuleStyle int32
+type RuleStyle int32
 
 const (
-	ProtoRuleStyle_PROTO_RULE_STYLE_DUMMY_RULE_STYLE ProtoRuleStyle = 0 // dummy is needed here, because otherwise protoc command produces error
-	ProtoRuleStyle_PROTO_RULE_STYLE_SOLID            ProtoRuleStyle = 1
-	ProtoRuleStyle_PROTO_RULE_STYLE_SPARSE_SHADING   ProtoRuleStyle = 2
-	ProtoRuleStyle_PROTO_RULE_STYLE_MEDIUM_SHADING   ProtoRuleStyle = 3
-	ProtoRuleStyle_PROTO_RULE_STYLE_DENSE_SHADING    ProtoRuleStyle = 4
-	ProtoRuleStyle_PROTO_RULE_STYLE_LIGHT_DOTTED     ProtoRuleStyle = 5
-	ProtoRuleStyle_PROTO_RULE_STYLE_MEDIUM_DOTTED    ProtoRuleStyle = 6
-	ProtoRuleStyle_PROTO_RULE_STYLE_HEAVY_DOTTED     ProtoRuleStyle = 7
-	ProtoRuleStyle_PROTO_RULE_STYLE_LIGHT_DASHED     ProtoRuleStyle = 8
-	ProtoRuleStyle_PROTO_RULE_STYLE_MEDIUM_DASHED    ProtoRuleStyle = 9
-	ProtoRuleStyle_PROTO_RULE_STYLE_HEAVY_DASHED     ProtoRuleStyle = 10
-	ProtoRuleStyle_PROTO_RULE_STYLE_DASH_PATTERN     ProtoRuleStyle = 11
-	ProtoRuleStyle_PROTO_RULE_STYLE_DOUBLE           ProtoRuleStyle = 254
+	RuleStyle_RULE_STYLE_DUMMY_RULE_STYLE RuleStyle = 0 // dummy is needed here, because otherwise protoc command produces error
+	RuleStyle_RULE_STYLE_SOLID            RuleStyle = 1
+	RuleStyle_RULE_STYLE_SPARSE_SHADING   RuleStyle = 2
+	RuleStyle_RULE_STYLE_MEDIUM_SHADING   RuleStyle = 3
+	RuleStyle_RULE_STYLE_DENSE_SHADING    RuleStyle = 4
+	RuleStyle_RULE_STYLE_LIGHT_DOTTED     RuleStyle = 5
+	RuleStyle_RULE_STYLE_MEDIUM_DOTTED    RuleStyle = 6
+	RuleStyle_RULE_STYLE_HEAVY_DOTTED     RuleStyle = 7
+	RuleStyle_RULE_STYLE_LIGHT_DASHED     RuleStyle = 8
+	RuleStyle_RULE_STYLE_MEDIUM_DASHED    RuleStyle = 9
+	RuleStyle_RULE_STYLE_HEAVY_DASHED     RuleStyle = 10
+	RuleStyle_RULE_STYLE_DASH_PATTERN     RuleStyle = 11
+	RuleStyle_RULE_STYLE_DOUBLE           RuleStyle = 254
 )
 
-// Enum value maps for ProtoRuleStyle.
+// Enum value maps for RuleStyle.
 var (
-	ProtoRuleStyle_name = map[int32]string{
-		0:   "PROTO_RULE_STYLE_DUMMY_RULE_STYLE",
-		1:   "PROTO_RULE_STYLE_SOLID",
-		2:   "PROTO_RULE_STYLE_SPARSE_SHADING",
-		3:   "PROTO_RULE_STYLE_MEDIUM_SHADING",
-		4:   "PROTO_RULE_STYLE_DENSE_SHADING",
-		5:   "PROTO_RULE_STYLE_LIGHT_DOTTED",
-		6:   "PROTO_RULE_STYLE_MEDIUM_DOTTED",
-		7:   "PROTO_RULE_STYLE_HEAVY_DOTTED",
-		8:   "PROTO_RULE_STYLE_LIGHT_DASHED",
-		9:   "PROTO_RULE_STYLE_MEDIUM_DASHED",
-		10:  "PROTO_RULE_STYLE_HEAVY_DASHED",
-		11:  "PROTO_RULE_STYLE_DASH_PATTERN",
-		254: "PROTO_RULE_STYLE_DOUBLE",
+	RuleStyle_name = map[int32]string{
+		0:   "RULE_STYLE_DUMMY_RULE_STYLE",
+		1:   "RULE_STYLE_SOLID",
+		2:   "RULE_STYLE_SPARSE_SHADING",
+		3:   "RULE_STYLE_MEDIUM_SHADING",
+		4:   "RULE_STYLE_DENSE_SHADING",
+		5:   "RULE_STYLE_LIGHT_DOTTED",
+		6:   "RULE_STYLE_MEDIUM_DOTTED",
+		7:   "RULE_STYLE_HEAVY_DOTTED",
+		8:   "RULE_STYLE_LIGHT_DASHED",
+		9:   "RULE_STYLE_MEDIUM_DASHED",
+		10:  "RULE_STYLE_HEAVY_DASHED",
+		11:  "RULE_STYLE_DASH_PATTERN",
+		254: "RULE_STYLE_DOUBLE",
 	}
-	ProtoRuleStyle_value = map[string]int32{
-		"PROTO_RULE_STYLE_DUMMY_RULE_STYLE": 0,
-		"PROTO_RULE_STYLE_SOLID":            1,
-		"PROTO_RULE_STYLE_SPARSE_SHADING":   2,
-		"PROTO_RULE_STYLE_MEDIUM_SHADING":   3,
-		"PROTO_RULE_STYLE_DENSE_SHADING":    4,
-		"PROTO_RULE_STYLE_LIGHT_DOTTED":     5,
-		"PROTO_RULE_STYLE_MEDIUM_DOTTED":    6,
-		"PROTO_RULE_STYLE_HEAVY_DOTTED":     7,
-		"PROTO_RULE_STYLE_LIGHT_DASHED":     8,
-		"PROTO_RULE_STYLE_MEDIUM_DASHED":    9,
-		"PROTO_RULE_STYLE_HEAVY_DASHED":     10,
-		"PROTO_RULE_STYLE_DASH_PATTERN":     11,
-		"PROTO_RULE_STYLE_DOUBLE":           254,
+	RuleStyle_value = map[string]int32{
+		"RULE_STYLE_DUMMY_RULE_STYLE": 0,
+		"RULE_STYLE_SOLID":            1,
+		"RULE_STYLE_SPARSE_SHADING":   2,
+		"RULE_STYLE_MEDIUM_SHADING":   3,
+		"RULE_STYLE_DENSE_SHADING":    4,
+		"RULE_STYLE_LIGHT_DOTTED":     5,
+		"RULE_STYLE_MEDIUM_DOTTED":    6,
+		"RULE_STYLE_HEAVY_DOTTED":     7,
+		"RULE_STYLE_LIGHT_DASHED":     8,
+		"RULE_STYLE_MEDIUM_DASHED":    9,
+		"RULE_STYLE_HEAVY_DASHED":     10,
+		"RULE_STYLE_DASH_PATTERN":     11,
+		"RULE_STYLE_DOUBLE":           254,
 	}
 )
 
-func (x ProtoRuleStyle) Enum() *ProtoRuleStyle {
-	p := new(ProtoRuleStyle)
+func (x RuleStyle) Enum() *RuleStyle {
+	p := new(RuleStyle)
 	*p = x
 	return p
 }
 
-func (x ProtoRuleStyle) String() string {
+func (x RuleStyle) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (ProtoRuleStyle) Descriptor() protoreflect.EnumDescriptor {
+func (RuleStyle) Descriptor() protoreflect.EnumDescriptor {
 	return file_utils_v1_rule_style_proto_enumTypes[0].Descriptor()
 }
 
-func (ProtoRuleStyle) Type() protoreflect.EnumType {
+func (RuleStyle) Type() protoreflect.EnumType {
 	return &file_utils_v1_rule_style_proto_enumTypes[0]
 }
 
-func (x ProtoRuleStyle) Number() protoreflect.EnumNumber {
+func (x RuleStyle) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use ProtoRuleStyle.Descriptor instead.
-func (ProtoRuleStyle) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use RuleStyle.Descriptor instead.
+func (RuleStyle) EnumDescriptor() ([]byte, []int) {
 	return file_utils_v1_rule_style_proto_rawDescGZIP(), []int{0}
 }
 
@@ -104,22 +104,22 @@ var File_utils_v1_rule_style_proto protoreflect.FileDescriptor
 
 const file_utils_v1_rule_style_proto_rawDesc = "" +
 	"\n" +
-	"\x19utils/v1/rule_style.proto\x12\butils.v1*\xd6\x03\n" +
-	"\x0eProtoRuleStyle\x12%\n" +
-	"!PROTO_RULE_STYLE_DUMMY_RULE_STYLE\x10\x00\x12\x1a\n" +
-	"\x16PROTO_RULE_STYLE_SOLID\x10\x01\x12#\n" +
-	"\x1fPROTO_RULE_STYLE_SPARSE_SHADING\x10\x02\x12#\n" +
-	"\x1fPROTO_RULE_STYLE_MEDIUM_SHADING\x10\x03\x12\"\n" +
-	"\x1ePROTO_RULE_STYLE_DENSE_SHADING\x10\x04\x12!\n" +
-	"\x1dPROTO_RULE_STYLE_LIGHT_DOTTED\x10\x05\x12\"\n" +
-	"\x1ePROTO_RULE_STYLE_MEDIUM_DOTTED\x10\x06\x12!\n" +
-	"\x1dPROTO_RULE_STYLE_HEAVY_DOTTED\x10\a\x12!\n" +
-	"\x1dPROTO_RULE_STYLE_LIGHT_DASHED\x10\b\x12\"\n" +
-	"\x1ePROTO_RULE_STYLE_MEDIUM_DASHED\x10\t\x12!\n" +
-	"\x1dPROTO_RULE_STYLE_HEAVY_DASHED\x10\n" +
-	"\x12!\n" +
-	"\x1dPROTO_RULE_STYLE_DASH_PATTERN\x10\v\x12\x1c\n" +
-	"\x17PROTO_RULE_STYLE_DOUBLE\x10\xfe\x01B\x9a\x01\n" +
+	"\x19utils/v1/rule_style.proto\x12\butils.v1*\x83\x03\n" +
+	"\tRuleStyle\x12\x1f\n" +
+	"\x1bRULE_STYLE_DUMMY_RULE_STYLE\x10\x00\x12\x14\n" +
+	"\x10RULE_STYLE_SOLID\x10\x01\x12\x1d\n" +
+	"\x19RULE_STYLE_SPARSE_SHADING\x10\x02\x12\x1d\n" +
+	"\x19RULE_STYLE_MEDIUM_SHADING\x10\x03\x12\x1c\n" +
+	"\x18RULE_STYLE_DENSE_SHADING\x10\x04\x12\x1b\n" +
+	"\x17RULE_STYLE_LIGHT_DOTTED\x10\x05\x12\x1c\n" +
+	"\x18RULE_STYLE_MEDIUM_DOTTED\x10\x06\x12\x1b\n" +
+	"\x17RULE_STYLE_HEAVY_DOTTED\x10\a\x12\x1b\n" +
+	"\x17RULE_STYLE_LIGHT_DASHED\x10\b\x12\x1c\n" +
+	"\x18RULE_STYLE_MEDIUM_DASHED\x10\t\x12\x1b\n" +
+	"\x17RULE_STYLE_HEAVY_DASHED\x10\n" +
+	"\x12\x1b\n" +
+	"\x17RULE_STYLE_DASH_PATTERN\x10\v\x12\x16\n" +
+	"\x11RULE_STYLE_DOUBLE\x10\xfe\x01B\x9a\x01\n" +
 	"\fcom.utils.v1B\x0eRuleStyleProtoP\x01Z9github.com/documatrix/docframe-types/gen/utils/v1;utilsv1\xa2\x02\x03UXX\xaa\x02\bUtils.V1\xca\x02\bUtils\\V1\xe2\x02\x14Utils\\V1\\GPBMetadata\xea\x02\tUtils::V1b\x06proto3"
 
 var (
@@ -136,7 +136,7 @@ func file_utils_v1_rule_style_proto_rawDescGZIP() []byte {
 
 var file_utils_v1_rule_style_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_utils_v1_rule_style_proto_goTypes = []any{
-	(ProtoRuleStyle)(0), // 0: utils.v1.ProtoRuleStyle
+	(RuleStyle)(0), // 0: utils.v1.RuleStyle
 }
 var file_utils_v1_rule_style_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type

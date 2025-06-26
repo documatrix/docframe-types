@@ -24,22 +24,22 @@ const (
 type ProtoDoctypeOutputMode int32
 
 const (
-	ProtoDoctypeOutputMode_DOCTYPE_OUTPUT_MODE_NOT_SET ProtoDoctypeOutputMode = 0
-	ProtoDoctypeOutputMode_DOCTYPE                     ProtoDoctypeOutputMode = 1
-	ProtoDoctypeOutputMode_JSON                        ProtoDoctypeOutputMode = 2
+	ProtoDoctypeOutputMode_PROTO_DOCTYPE_OUTPUT_MODE_NOT_SET ProtoDoctypeOutputMode = 0
+	ProtoDoctypeOutputMode_PROTO_DOCTYPE_OUTPUT_MODE_DOCTYPE ProtoDoctypeOutputMode = 1
+	ProtoDoctypeOutputMode_PROTO_DOCTYPE_OUTPUT_MODE_JSON    ProtoDoctypeOutputMode = 2
 )
 
 // Enum value maps for ProtoDoctypeOutputMode.
 var (
 	ProtoDoctypeOutputMode_name = map[int32]string{
-		0: "DOCTYPE_OUTPUT_MODE_NOT_SET",
-		1: "DOCTYPE",
-		2: "JSON",
+		0: "PROTO_DOCTYPE_OUTPUT_MODE_NOT_SET",
+		1: "PROTO_DOCTYPE_OUTPUT_MODE_DOCTYPE",
+		2: "PROTO_DOCTYPE_OUTPUT_MODE_JSON",
 	}
 	ProtoDoctypeOutputMode_value = map[string]int32{
-		"DOCTYPE_OUTPUT_MODE_NOT_SET": 0,
-		"DOCTYPE":                     1,
-		"JSON":                        2,
+		"PROTO_DOCTYPE_OUTPUT_MODE_NOT_SET": 0,
+		"PROTO_DOCTYPE_OUTPUT_MODE_DOCTYPE": 1,
+		"PROTO_DOCTYPE_OUTPUT_MODE_JSON":    2,
 	}
 )
 
@@ -122,7 +122,7 @@ func (x *ProtoDoctypeScript) GetOutputMode() ProtoDoctypeOutputMode {
 	if x != nil {
 		return x.OutputMode
 	}
-	return ProtoDoctypeOutputMode_DOCTYPE_OUTPUT_MODE_NOT_SET
+	return ProtoDoctypeOutputMode_PROTO_DOCTYPE_OUTPUT_MODE_NOT_SET
 }
 
 func (x *ProtoDoctypeScript) GetComChannelUuids() []string {
@@ -141,11 +141,11 @@ const file_document_elements_v1_doctype_script_proto_rawDesc = "" +
 	"\acontent\x18\x01 \x01(\tR\acontent\x12M\n" +
 	"\voutput_mode\x18\x02 \x01(\x0e2,.document_elements.v1.ProtoDoctypeOutputModeR\n" +
 	"outputMode\x12*\n" +
-	"\x11com_channel_uuids\x18\x03 \x03(\tR\x0fcomChannelUuids*P\n" +
-	"\x16ProtoDoctypeOutputMode\x12\x1f\n" +
-	"\x1bDOCTYPE_OUTPUT_MODE_NOT_SET\x10\x00\x12\v\n" +
-	"\aDOCTYPE\x10\x01\x12\b\n" +
-	"\x04JSON\x10\x02B\xee\x01\n" +
+	"\x11com_channel_uuids\x18\x03 \x03(\tR\x0fcomChannelUuids*\x8a\x01\n" +
+	"\x16ProtoDoctypeOutputMode\x12%\n" +
+	"!PROTO_DOCTYPE_OUTPUT_MODE_NOT_SET\x10\x00\x12%\n" +
+	"!PROTO_DOCTYPE_OUTPUT_MODE_DOCTYPE\x10\x01\x12\"\n" +
+	"\x1ePROTO_DOCTYPE_OUTPUT_MODE_JSON\x10\x02B\xee\x01\n" +
 	"\x18com.document_elements.v1B\x12DoctypeScriptProtoP\x01ZQgithub.com/documatrix/docframe-types/gen/document_elements/v1;document_elementsv1\xa2\x02\x03DXX\xaa\x02\x13DocumentElements.V1\xca\x02\x13DocumentElements\\V1\xe2\x02\x1fDocumentElements\\V1\\GPBMetadata\xea\x02\x14DocumentElements::V1b\x06proto3"
 
 var (

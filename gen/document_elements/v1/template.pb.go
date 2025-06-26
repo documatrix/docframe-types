@@ -25,19 +25,19 @@ const (
 type ColumnBalancing int32
 
 const (
-	ColumnBalancing_NO_BALANCING ColumnBalancing = 0
-	ColumnBalancing_BALANCING    ColumnBalancing = 1
+	ColumnBalancing_COLUMN_BALANCING_NO_BALANCING ColumnBalancing = 0
+	ColumnBalancing_COLUMN_BALANCING_BALANCING    ColumnBalancing = 1
 )
 
 // Enum value maps for ColumnBalancing.
 var (
 	ColumnBalancing_name = map[int32]string{
-		0: "NO_BALANCING",
-		1: "BALANCING",
+		0: "COLUMN_BALANCING_NO_BALANCING",
+		1: "COLUMN_BALANCING_BALANCING",
 	}
 	ColumnBalancing_value = map[string]int32{
-		"NO_BALANCING": 0,
-		"BALANCING":    1,
+		"COLUMN_BALANCING_NO_BALANCING": 0,
+		"COLUMN_BALANCING_BALANCING":    1,
 	}
 )
 
@@ -136,7 +136,7 @@ func (x *ProtoTemplate) GetColumnBalancing() ColumnBalancing {
 	if x != nil {
 		return x.ColumnBalancing
 	}
-	return ColumnBalancing_NO_BALANCING
+	return ColumnBalancing_COLUMN_BALANCING_NO_BALANCING
 }
 
 func (x *ProtoTemplate) GetSemanticType() v1.ProtoSemanticType {
@@ -159,10 +159,10 @@ const file_document_elements_v1_template_proto_rawDesc = "" +
 	"\rsemantic_type\x18\a \x01(\x0e2\x1b.utils.v1.ProtoSemanticTypeR\fsemanticType\x1aC\n" +
 	"\x15ContainerMappingEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01*2\n" +
-	"\x0fColumnBalancing\x12\x10\n" +
-	"\fNO_BALANCING\x10\x00\x12\r\n" +
-	"\tBALANCING\x10\x01B\xe9\x01\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01*T\n" +
+	"\x0fColumnBalancing\x12!\n" +
+	"\x1dCOLUMN_BALANCING_NO_BALANCING\x10\x00\x12\x1e\n" +
+	"\x1aCOLUMN_BALANCING_BALANCING\x10\x01B\xe9\x01\n" +
 	"\x18com.document_elements.v1B\rTemplateProtoP\x01ZQgithub.com/documatrix/docframe-types/gen/document_elements/v1;document_elementsv1\xa2\x02\x03DXX\xaa\x02\x13DocumentElements.V1\xca\x02\x13DocumentElements\\V1\xe2\x02\x1fDocumentElements\\V1\\GPBMetadata\xea\x02\x14DocumentElements::V1b\x06proto3"
 
 var (

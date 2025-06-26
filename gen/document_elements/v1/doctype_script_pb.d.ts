@@ -44,17 +44,17 @@ export declare const ProtoDoctypeScriptSchema: GenMessage<ProtoDoctypeScript>;
  */
 export enum ProtoDoctypeOutputMode {
   /**
-   * @generated from enum value: DOCTYPE_OUTPUT_MODE_NOT_SET = 0;
+   * @generated from enum value: PROTO_DOCTYPE_OUTPUT_MODE_NOT_SET = 0;
    */
-  DOCTYPE_OUTPUT_MODE_NOT_SET = 0,
+  NOT_SET = 0,
 
   /**
-   * @generated from enum value: DOCTYPE = 1;
+   * @generated from enum value: PROTO_DOCTYPE_OUTPUT_MODE_DOCTYPE = 1;
    */
   DOCTYPE = 1,
 
   /**
-   * @generated from enum value: JSON = 2;
+   * @generated from enum value: PROTO_DOCTYPE_OUTPUT_MODE_JSON = 2;
    */
   JSON = 2,
 }

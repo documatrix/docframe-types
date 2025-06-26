@@ -81,9 +81,9 @@ type ProtoRule struct {
 	//	90° = a vertical rule downwards
 	//	180° = a horizontal rule to the left
 	//	270° = a vertical rule upwards
-	Rotation float64           `protobuf:"fixed64,5,opt,name=rotation,proto3" json:"rotation,omitempty"`
-	Color    *v1.ProtoColor    `protobuf:"bytes,6,opt,name=color,proto3" json:"color,omitempty"`
-	Style    v1.ProtoRuleStyle `protobuf:"varint,7,opt,name=style,proto3,enum=utils.v1.ProtoRuleStyle" json:"style,omitempty"`
+	Rotation float64        `protobuf:"fixed64,5,opt,name=rotation,proto3" json:"rotation,omitempty"`
+	Color    *v1.ProtoColor `protobuf:"bytes,6,opt,name=color,proto3" json:"color,omitempty"`
+	Style    v1.RuleStyle   `protobuf:"varint,7,opt,name=style,proto3,enum=utils.v1.RuleStyle" json:"style,omitempty"`
 	// Toggles whether the rule is a normal rule or a boundary rule
 	Mode ProtoRuleMode `protobuf:"varint,8,opt,name=mode,proto3,enum=document_elements.v1.ProtoRuleMode" json:"mode,omitempty"`
 	// If the rule is a boundary rule, this field contains the boundaries where the rule starts and ends.
@@ -167,11 +167,11 @@ func (x *ProtoRule) GetColor() *v1.ProtoColor {
 	return nil
 }
 
-func (x *ProtoRule) GetStyle() v1.ProtoRuleStyle {
+func (x *ProtoRule) GetStyle() v1.RuleStyle {
 	if x != nil {
 		return x.Style
 	}
-	return v1.ProtoRuleStyle(0)
+	return v1.RuleStyle(0)
 }
 
 func (x *ProtoRule) GetMode() ProtoRuleMode {
@@ -252,15 +252,15 @@ var File_document_elements_v1_rule_proto protoreflect.FileDescriptor
 
 const file_document_elements_v1_rule_proto_rawDesc = "" +
 	"\n" +
-	"\x1fdocument_elements/v1/rule.proto\x12\x14document_elements.v1\x1a\x14utils/v1/color.proto\x1a\x16utils/v1/measure.proto\x1a\x19utils/v1/rule_style.proto\"\xfd\x03\n" +
+	"\x1fdocument_elements/v1/rule.proto\x12\x14document_elements.v1\x1a\x14utils/v1/color.proto\x1a\x16utils/v1/measure.proto\x1a\x19utils/v1/rule_style.proto\"\xf8\x03\n" +
 	"\tProtoRule\x121\n" +
 	"\bx_offset\x18\x01 \x01(\v2\x16.utils.v1.ProtoMeasureR\axOffset\x121\n" +
 	"\by_offset\x18\x02 \x01(\v2\x16.utils.v1.ProtoMeasureR\ayOffset\x12,\n" +
 	"\x05width\x18\x03 \x01(\v2\x16.utils.v1.ProtoMeasureR\x05width\x124\n" +
 	"\tthickness\x18\x04 \x01(\v2\x16.utils.v1.ProtoMeasureR\tthickness\x12\x1a\n" +
 	"\brotation\x18\x05 \x01(\x01R\brotation\x12*\n" +
-	"\x05color\x18\x06 \x01(\v2\x14.utils.v1.ProtoColorR\x05color\x12.\n" +
-	"\x05style\x18\a \x01(\x0e2\x18.utils.v1.ProtoRuleStyleR\x05style\x127\n" +
+	"\x05color\x18\x06 \x01(\v2\x14.utils.v1.ProtoColorR\x05color\x12)\n" +
+	"\x05style\x18\a \x01(\x0e2\x13.utils.v1.RuleStyleR\x05style\x127\n" +
 	"\x04mode\x18\b \x01(\x0e2#.document_elements.v1.ProtoRuleModeR\x04mode\x12I\n" +
 	"\n" +
 	"boundaries\x18\t \x01(\v2).document_elements.v1.ProtoRuleBoundariesR\n" +
@@ -295,7 +295,7 @@ var file_document_elements_v1_rule_proto_goTypes = []any{
 	(*ProtoRuleBoundaries)(nil), // 2: document_elements.v1.ProtoRuleBoundaries
 	(*v1.ProtoMeasure)(nil),     // 3: utils.v1.ProtoMeasure
 	(*v1.ProtoColor)(nil),       // 4: utils.v1.ProtoColor
-	(v1.ProtoRuleStyle)(0),      // 5: utils.v1.ProtoRuleStyle
+	(v1.RuleStyle)(0),           // 5: utils.v1.RuleStyle
 }
 var file_document_elements_v1_rule_proto_depIdxs = []int32{
 	3,  // 0: document_elements.v1.ProtoRule.x_offset:type_name -> utils.v1.ProtoMeasure
@@ -303,7 +303,7 @@ var file_document_elements_v1_rule_proto_depIdxs = []int32{
 	3,  // 2: document_elements.v1.ProtoRule.width:type_name -> utils.v1.ProtoMeasure
 	3,  // 3: document_elements.v1.ProtoRule.thickness:type_name -> utils.v1.ProtoMeasure
 	4,  // 4: document_elements.v1.ProtoRule.color:type_name -> utils.v1.ProtoColor
-	5,  // 5: document_elements.v1.ProtoRule.style:type_name -> utils.v1.ProtoRuleStyle
+	5,  // 5: document_elements.v1.ProtoRule.style:type_name -> utils.v1.RuleStyle
 	0,  // 6: document_elements.v1.ProtoRule.mode:type_name -> document_elements.v1.ProtoRuleMode
 	2,  // 7: document_elements.v1.ProtoRule.boundaries:type_name -> document_elements.v1.ProtoRuleBoundaries
 	3,  // 8: document_elements.v1.ProtoRuleBoundaries.start:type_name -> utils.v1.ProtoMeasure

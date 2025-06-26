@@ -55,12 +55,12 @@ export declare const ProtoTemplateSchema: GenMessage<ProtoTemplate>;
  */
 export enum ColumnBalancing {
   /**
-   * @generated from enum value: NO_BALANCING = 0;
+   * @generated from enum value: COLUMN_BALANCING_NO_BALANCING = 0;
    */
   NO_BALANCING = 0,
 
   /**
-   * @generated from enum value: BALANCING = 1;
+   * @generated from enum value: COLUMN_BALANCING_BALANCING = 1;
    */
   BALANCING = 1,
 }

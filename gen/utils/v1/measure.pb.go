@@ -21,68 +21,68 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ProtoMeasureType int32
+type MeasureType int32
 
 const (
-	ProtoMeasureType_PROTO_MEASURE_TYPE_PT      ProtoMeasureType = 0
-	ProtoMeasureType_PROTO_MEASURE_TYPE_CM      ProtoMeasureType = 1
-	ProtoMeasureType_PROTO_MEASURE_TYPE_MM      ProtoMeasureType = 2
-	ProtoMeasureType_PROTO_MEASURE_TYPE_IN      ProtoMeasureType = 3
-	ProtoMeasureType_PROTO_MEASURE_TYPE_PERCENT ProtoMeasureType = 4
-	ProtoMeasureType_PROTO_MEASURE_TYPE_PX      ProtoMeasureType = 5
+	MeasureType_MEASURE_TYPE_PT      MeasureType = 0
+	MeasureType_MEASURE_TYPE_CM      MeasureType = 1
+	MeasureType_MEASURE_TYPE_MM      MeasureType = 2
+	MeasureType_MEASURE_TYPE_IN      MeasureType = 3
+	MeasureType_MEASURE_TYPE_PERCENT MeasureType = 4
+	MeasureType_MEASURE_TYPE_PX      MeasureType = 5
 )
 
-// Enum value maps for ProtoMeasureType.
+// Enum value maps for MeasureType.
 var (
-	ProtoMeasureType_name = map[int32]string{
-		0: "PROTO_MEASURE_TYPE_PT",
-		1: "PROTO_MEASURE_TYPE_CM",
-		2: "PROTO_MEASURE_TYPE_MM",
-		3: "PROTO_MEASURE_TYPE_IN",
-		4: "PROTO_MEASURE_TYPE_PERCENT",
-		5: "PROTO_MEASURE_TYPE_PX",
+	MeasureType_name = map[int32]string{
+		0: "MEASURE_TYPE_PT",
+		1: "MEASURE_TYPE_CM",
+		2: "MEASURE_TYPE_MM",
+		3: "MEASURE_TYPE_IN",
+		4: "MEASURE_TYPE_PERCENT",
+		5: "MEASURE_TYPE_PX",
 	}
-	ProtoMeasureType_value = map[string]int32{
-		"PROTO_MEASURE_TYPE_PT":      0,
-		"PROTO_MEASURE_TYPE_CM":      1,
-		"PROTO_MEASURE_TYPE_MM":      2,
-		"PROTO_MEASURE_TYPE_IN":      3,
-		"PROTO_MEASURE_TYPE_PERCENT": 4,
-		"PROTO_MEASURE_TYPE_PX":      5,
+	MeasureType_value = map[string]int32{
+		"MEASURE_TYPE_PT":      0,
+		"MEASURE_TYPE_CM":      1,
+		"MEASURE_TYPE_MM":      2,
+		"MEASURE_TYPE_IN":      3,
+		"MEASURE_TYPE_PERCENT": 4,
+		"MEASURE_TYPE_PX":      5,
 	}
 )
 
-func (x ProtoMeasureType) Enum() *ProtoMeasureType {
-	p := new(ProtoMeasureType)
+func (x MeasureType) Enum() *MeasureType {
+	p := new(MeasureType)
 	*p = x
 	return p
 }
 
-func (x ProtoMeasureType) String() string {
+func (x MeasureType) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (ProtoMeasureType) Descriptor() protoreflect.EnumDescriptor {
+func (MeasureType) Descriptor() protoreflect.EnumDescriptor {
 	return file_utils_v1_measure_proto_enumTypes[0].Descriptor()
 }
 
-func (ProtoMeasureType) Type() protoreflect.EnumType {
+func (MeasureType) Type() protoreflect.EnumType {
 	return &file_utils_v1_measure_proto_enumTypes[0]
 }
 
-func (x ProtoMeasureType) Number() protoreflect.EnumNumber {
+func (x MeasureType) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use ProtoMeasureType.Descriptor instead.
-func (ProtoMeasureType) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use MeasureType.Descriptor instead.
+func (MeasureType) EnumDescriptor() ([]byte, []int) {
 	return file_utils_v1_measure_proto_rawDescGZIP(), []int{0}
 }
 
 type ProtoMeasure struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Value         float64                `protobuf:"fixed64,1,opt,name=value,proto3" json:"value,omitempty"`
-	Mtype         ProtoMeasureType       `protobuf:"varint,2,opt,name=mtype,proto3,enum=utils.v1.ProtoMeasureType" json:"mtype,omitempty"`
+	Mtype         MeasureType            `protobuf:"varint,2,opt,name=mtype,proto3,enum=utils.v1.MeasureType" json:"mtype,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -124,11 +124,11 @@ func (x *ProtoMeasure) GetValue() float64 {
 	return 0
 }
 
-func (x *ProtoMeasure) GetMtype() ProtoMeasureType {
+func (x *ProtoMeasure) GetMtype() MeasureType {
 	if x != nil {
 		return x.Mtype
 	}
-	return ProtoMeasureType_PROTO_MEASURE_TYPE_PT
+	return MeasureType_MEASURE_TYPE_PT
 }
 
 type ProtoBoxedMeasure struct {
@@ -255,10 +255,10 @@ var File_utils_v1_measure_proto protoreflect.FileDescriptor
 
 const file_utils_v1_measure_proto_rawDesc = "" +
 	"\n" +
-	"\x16utils/v1/measure.proto\x12\butils.v1\"V\n" +
+	"\x16utils/v1/measure.proto\x12\butils.v1\"Q\n" +
 	"\fProtoMeasure\x12\x14\n" +
-	"\x05value\x18\x01 \x01(\x01R\x05value\x120\n" +
-	"\x05mtype\x18\x02 \x01(\x0e2\x1a.utils.v1.ProtoMeasureTypeR\x05mtype\"Z\n" +
+	"\x05value\x18\x01 \x01(\x01R\x05value\x12+\n" +
+	"\x05mtype\x18\x02 \x01(\x0e2\x15.utils.v1.MeasureTypeR\x05mtype\"Z\n" +
 	"\x11ProtoBoxedMeasure\x12,\n" +
 	"\x05value\x18\x01 \x01(\v2\x16.utils.v1.ProtoMeasureR\x05value\x12\x17\n" +
 	"\ais_null\x18\x02 \x01(\bR\x06isNull\"\xc7\x01\n" +
@@ -266,14 +266,14 @@ const file_utils_v1_measure_proto_rawDesc = "" +
 	"\x03top\x18\x01 \x01(\v2\x16.utils.v1.ProtoMeasureR\x03top\x12,\n" +
 	"\x05right\x18\x02 \x01(\v2\x16.utils.v1.ProtoMeasureR\x05right\x12.\n" +
 	"\x06bottom\x18\x03 \x01(\v2\x16.utils.v1.ProtoMeasureR\x06bottom\x12*\n" +
-	"\x04left\x18\x04 \x01(\v2\x16.utils.v1.ProtoMeasureR\x04left*\xb9\x01\n" +
-	"\x10ProtoMeasureType\x12\x19\n" +
-	"\x15PROTO_MEASURE_TYPE_PT\x10\x00\x12\x19\n" +
-	"\x15PROTO_MEASURE_TYPE_CM\x10\x01\x12\x19\n" +
-	"\x15PROTO_MEASURE_TYPE_MM\x10\x02\x12\x19\n" +
-	"\x15PROTO_MEASURE_TYPE_IN\x10\x03\x12\x1e\n" +
-	"\x1aPROTO_MEASURE_TYPE_PERCENT\x10\x04\x12\x19\n" +
-	"\x15PROTO_MEASURE_TYPE_PX\x10\x05B\x98\x01\n" +
+	"\x04left\x18\x04 \x01(\v2\x16.utils.v1.ProtoMeasureR\x04left*\x90\x01\n" +
+	"\vMeasureType\x12\x13\n" +
+	"\x0fMEASURE_TYPE_PT\x10\x00\x12\x13\n" +
+	"\x0fMEASURE_TYPE_CM\x10\x01\x12\x13\n" +
+	"\x0fMEASURE_TYPE_MM\x10\x02\x12\x13\n" +
+	"\x0fMEASURE_TYPE_IN\x10\x03\x12\x18\n" +
+	"\x14MEASURE_TYPE_PERCENT\x10\x04\x12\x13\n" +
+	"\x0fMEASURE_TYPE_PX\x10\x05B\x98\x01\n" +
 	"\fcom.utils.v1B\fMeasureProtoP\x01Z9github.com/documatrix/docframe-types/gen/utils/v1;utilsv1\xa2\x02\x03UXX\xaa\x02\bUtils.V1\xca\x02\bUtils\\V1\xe2\x02\x14Utils\\V1\\GPBMetadata\xea\x02\tUtils::V1b\x06proto3"
 
 var (
@@ -291,13 +291,13 @@ func file_utils_v1_measure_proto_rawDescGZIP() []byte {
 var file_utils_v1_measure_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_utils_v1_measure_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_utils_v1_measure_proto_goTypes = []any{
-	(ProtoMeasureType)(0),     // 0: utils.v1.ProtoMeasureType
+	(MeasureType)(0),          // 0: utils.v1.MeasureType
 	(*ProtoMeasure)(nil),      // 1: utils.v1.ProtoMeasure
 	(*ProtoBoxedMeasure)(nil), // 2: utils.v1.ProtoBoxedMeasure
 	(*ProtoSideMeasures)(nil), // 3: utils.v1.ProtoSideMeasures
 }
 var file_utils_v1_measure_proto_depIdxs = []int32{
-	0, // 0: utils.v1.ProtoMeasure.mtype:type_name -> utils.v1.ProtoMeasureType
+	0, // 0: utils.v1.ProtoMeasure.mtype:type_name -> utils.v1.MeasureType
 	1, // 1: utils.v1.ProtoBoxedMeasure.value:type_name -> utils.v1.ProtoMeasure
 	1, // 2: utils.v1.ProtoSideMeasures.top:type_name -> utils.v1.ProtoMeasure
 	1, // 3: utils.v1.ProtoSideMeasures.right:type_name -> utils.v1.ProtoMeasure

@@ -25,14 +25,14 @@ export declare type ProtoNewPage = Message<"document_elements.v1.ProtoNewPage"> 
   paperCount: number;
 
   /**
-   * @generated from field: document_elements.v1.ProtoPageMode page_mode = 3;
+   * @generated from field: document_elements.v1.PageMode page_mode = 3;
    */
-  pageMode: ProtoPageMode;
+  pageMode: PageMode;
 
   /**
-   * @generated from field: document_elements.v1.ProtoPageOrientation page_orientation = 4;
+   * @generated from field: document_elements.v1.PageOrientation page_orientation = 4;
    */
-  pageOrientation: ProtoPageOrientation;
+  pageOrientation: PageOrientation;
 
   /**
    * @generated from field: repeated string com_channel_uuids = 5;
@@ -47,62 +47,62 @@ export declare type ProtoNewPage = Message<"document_elements.v1.ProtoNewPage"> 
 export declare const ProtoNewPageSchema: GenMessage<ProtoNewPage>;
 
 /**
- * @generated from enum document_elements.v1.ProtoPageMode
+ * @generated from enum document_elements.v1.PageMode
  */
-export enum ProtoPageMode {
+export enum PageMode {
   /**
-   * @generated from enum value: PROTO_PAGE_MODE_NEXT_PAGE = 0;
+   * @generated from enum value: PAGE_MODE_NEXT_PAGE = 0;
    */
   NEXT_PAGE = 0,
 
   /**
-   * @generated from enum value: PROTO_PAGE_MODE_NEXT_RECTO_PAGE = 1;
+   * @generated from enum value: PAGE_MODE_NEXT_RECTO_PAGE = 1;
    */
   NEXT_RECTO_PAGE = 1,
 
   /**
-   * @generated from enum value: PROTO_PAGE_MODE_NEXT_VERSO_PAGE = 2;
+   * @generated from enum value: PAGE_MODE_NEXT_VERSO_PAGE = 2;
    */
   NEXT_VERSO_PAGE = 2,
 }
 
 /**
- * Describes the enum document_elements.v1.ProtoPageMode.
+ * Describes the enum document_elements.v1.PageMode.
  */
-export declare const ProtoPageModeSchema: GenEnum<ProtoPageMode>;
+export declare const PageModeSchema: GenEnum<PageMode>;
 
 /**
- * @generated from enum document_elements.v1.ProtoPageOrientation
+ * @generated from enum document_elements.v1.PageOrientation
  */
-export enum ProtoPageOrientation {
+export enum PageOrientation {
   /**
-   * @generated from enum value: PROTO_PAGE_ORIENTATION_UNSET = 0;
+   * @generated from enum value: PAGE_ORIENTATION_UNSET = 0;
    */
   UNSET = 0,
 
   /**
-   * @generated from enum value: PROTO_PAGE_ORIENTATION_PORTRAIT = 1;
+   * @generated from enum value: PAGE_ORIENTATION_PORTRAIT = 1;
    */
   PORTRAIT = 1,
 
   /**
-   * @generated from enum value: PROTO_PAGE_ORIENTATION_LANDSCAPE = 2;
+   * @generated from enum value: PAGE_ORIENTATION_LANDSCAPE = 2;
    */
   LANDSCAPE = 2,
 
   /**
-   * @generated from enum value: PROTO_PAGE_ORIENTATION_INVERSE_PORTRAIT = 3;
+   * @generated from enum value: PAGE_ORIENTATION_INVERSE_PORTRAIT = 3;
    */
   INVERSE_PORTRAIT = 3,
 
   /**
-   * @generated from enum value: PROTO_PAGE_ORIENTATION_INVERSE_LANDSCAPE = 4;
+   * @generated from enum value: PAGE_ORIENTATION_INVERSE_LANDSCAPE = 4;
    */
   INVERSE_LANDSCAPE = 4,
 }
 
 /**
- * Describes the enum document_elements.v1.ProtoPageOrientation.
+ * Describes the enum document_elements.v1.PageOrientation.
  */
-export declare const ProtoPageOrientationSchema: GenEnum<ProtoPageOrientation>;
+export declare const PageOrientationSchema: GenEnum<PageOrientation>;
 

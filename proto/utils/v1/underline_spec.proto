@@ -19,7 +19,7 @@ message ProtoUnderlineSpec {
   ProtoUnderlineMode mode = 2;
   ProtoColor color = 3;
   int32 offset_em = 4;
-  ProtoRuleStyle style = 5;
+  RuleStyle style = 5;
 }
 
 message ProtoBoxedUnderlineSpec {

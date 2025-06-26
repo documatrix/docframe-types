@@ -223,6 +223,7 @@ func (DocumentElementType) EnumDescriptor() ([]byte, []int) {
 	return file_document_elements_v1_node_proto_rawDescGZIP(), []int{0}
 }
 
+// go-gen:ignore
 type Node struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Children        []*Node                `protobuf:"bytes,1,rep,name=children,proto3" json:"children,omitempty"`
@@ -996,11 +997,11 @@ type Node_AdjustHorizontally struct {
 }
 
 type Node_DoctypeScript struct {
-	DoctypeScript *ProtoDoctypeScript `protobuf:"bytes,59,opt,name=doctypeScript,proto3,oneof"`
+	DoctypeScript *ProtoDoctypeScript `protobuf:"bytes,59,opt,name=doctype_script,json=doctypeScript,proto3,oneof"`
 }
 
 type Node_DmScript struct {
-	DmScript *ProtoDmScript `protobuf:"bytes,60,opt,name=dmScript,proto3,oneof"`
+	DmScript *ProtoDmScript `protobuf:"bytes,60,opt,name=dm_script,json=dmScript,proto3,oneof"`
 }
 
 func (*Node_ListSetting) isNode_Object() {}
@@ -1185,7 +1186,7 @@ var File_document_elements_v1_node_proto protoreflect.FileDescriptor
 
 const file_document_elements_v1_node_proto_rawDesc = "" +
 	"\n" +
-	"\x1fdocument_elements/v1/node.proto\x12\x14document_elements.v1\x1a.document_elements/v1/adjust_horizontally.proto\x1a5document_elements/v1/advanced_illustration_area.proto\x1a%document_elements/v1/apply_cdef.proto\x1a%document_elements/v1/apply_pdef.proto\x1a*document_elements/v1/apply_ul_config.proto\x1a*document_elements/v1/apply_pt_config.proto\x1a\"document_elements/v1/barcode.proto\x1a document_elements/v1/brick.proto\x1a*document_elements/v1/brick_reference.proto\x1a%document_elements/v1/carry_over.proto\x1a\x1fdocument_elements/v1/cdef.proto\x1a$document_elements/v1/color_def.proto\x1a$document_elements/v1/directory.proto\x1a$document_elements/v1/dm_script.proto\x1a)document_elements/v1/doctype_script.proto\x1a!document_elements/v1/footer.proto\x1a$document_elements/v1/formatted.proto\x1a!document_elements/v1/header.proto\x1a document_elements/v1/image.proto\x1a&document_elements/v1/indentation.proto\x1a!document_elements/v1/layout.proto\x1a$document_elements/v1/linebreak.proto\x1a\x1fdocument_elements/v1/link.proto\x1a'document_elements/v1/list_setting.proto\x1a\x1fdocument_elements/v1/loop.proto\x1a%document_elements/v1/loop_entry.proto\x1a'document_elements/v1/named_string.proto\x1a#document_elements/v1/new_page.proto\x1a$document_elements/v1/paragraph.proto\x1a+document_elements/v1/paragraph_format.proto\x1a\x1fdocument_elements/v1/pdef.proto\x1a$document_elements/v1/pt_config.proto\x1a\x1fdocument_elements/v1/rule.proto\x1a\"document_elements/v1/section.proto\x1a+document_elements/v1/space_vertically.proto\x1a\x1fdocument_elements/v1/span.proto\x1a$document_elements/v1/sub_total.proto\x1a document_elements/v1/table.proto\x1a#document_elements/v1/template.proto\x1a\x1fdocument_elements/v1/text.proto\x1a$document_elements/v1/textbrick.proto\x1a$document_elements/v1/ul_config.proto\x1a#document_elements/v1/variable.proto\x1a\"document_elements/v1/ws_area.proto\"\xd6\x1d\n" +
+	"\x1fdocument_elements/v1/node.proto\x12\x14document_elements.v1\x1a.document_elements/v1/adjust_horizontally.proto\x1a5document_elements/v1/advanced_illustration_area.proto\x1a%document_elements/v1/apply_cdef.proto\x1a%document_elements/v1/apply_pdef.proto\x1a*document_elements/v1/apply_ul_config.proto\x1a*document_elements/v1/apply_pt_config.proto\x1a\"document_elements/v1/barcode.proto\x1a document_elements/v1/brick.proto\x1a*document_elements/v1/brick_reference.proto\x1a%document_elements/v1/carry_over.proto\x1a\x1fdocument_elements/v1/cdef.proto\x1a$document_elements/v1/color_def.proto\x1a$document_elements/v1/directory.proto\x1a$document_elements/v1/dm_script.proto\x1a)document_elements/v1/doctype_script.proto\x1a!document_elements/v1/footer.proto\x1a$document_elements/v1/formatted.proto\x1a!document_elements/v1/header.proto\x1a document_elements/v1/image.proto\x1a&document_elements/v1/indentation.proto\x1a!document_elements/v1/layout.proto\x1a$document_elements/v1/linebreak.proto\x1a\x1fdocument_elements/v1/link.proto\x1a'document_elements/v1/list_setting.proto\x1a\x1fdocument_elements/v1/loop.proto\x1a%document_elements/v1/loop_entry.proto\x1a'document_elements/v1/named_string.proto\x1a#document_elements/v1/new_page.proto\x1a$document_elements/v1/paragraph.proto\x1a+document_elements/v1/paragraph_format.proto\x1a\x1fdocument_elements/v1/pdef.proto\x1a$document_elements/v1/pt_config.proto\x1a\x1fdocument_elements/v1/rule.proto\x1a\"document_elements/v1/section.proto\x1a+document_elements/v1/space_vertically.proto\x1a\x1fdocument_elements/v1/span.proto\x1a$document_elements/v1/sub_total.proto\x1a document_elements/v1/table.proto\x1a#document_elements/v1/template.proto\x1a\x1fdocument_elements/v1/text.proto\x1a$document_elements/v1/textbrick.proto\x1a$document_elements/v1/ul_config.proto\x1a#document_elements/v1/variable.proto\x1a\"document_elements/v1/ws_area.proto\"\xd8\x1d\n" +
 	"\x04Node\x126\n" +
 	"\bchildren\x18\x01 \x03(\v2\x1a.document_elements.v1.NodeR\bchildren\x12*\n" +
 	"\x11com_channel_uuids\x18\x02 \x03(\tR\x0fcomChannelUuids\x12K\n" +
@@ -1242,9 +1243,9 @@ const file_document_elements_v1_node_proto_rawDesc = "" +
 	"\x04rule\x187 \x01(\v2\x1f.document_elements.v1.ProtoRuleH\x00R\x04rule\x12;\n" +
 	"\x06layout\x188 \x01(\v2!.document_elements.v1.ProtoLayoutH\x00R\x06layout\x12s\n" +
 	"\x1aadvanced_illustration_area\x189 \x01(\v23.document_elements.v1.ProtoAdvancedIllustrationAreaH\x00R\x18advancedIllustrationArea\x12`\n" +
-	"\x13adjust_horizontally\x18: \x01(\v2-.document_elements.v1.ProtoAdjustHorizontallyH\x00R\x12adjustHorizontally\x12P\n" +
-	"\rdoctypeScript\x18; \x01(\v2(.document_elements.v1.ProtoDoctypeScriptH\x00R\rdoctypeScript\x12A\n" +
-	"\bdmScript\x18< \x01(\v2#.document_elements.v1.ProtoDmScriptH\x00R\bdmScriptB\b\n" +
+	"\x13adjust_horizontally\x18: \x01(\v2-.document_elements.v1.ProtoAdjustHorizontallyH\x00R\x12adjustHorizontally\x12Q\n" +
+	"\x0edoctype_script\x18; \x01(\v2(.document_elements.v1.ProtoDoctypeScriptH\x00R\rdoctypeScript\x12B\n" +
+	"\tdm_script\x18< \x01(\v2#.document_elements.v1.ProtoDmScriptH\x00R\bdmScriptB\b\n" +
 	"\x06object\"\x93\x02\n" +
 	"\n" +
 	"ProtoTable\x12D\n" +
@@ -1434,8 +1435,8 @@ var file_document_elements_v1_node_proto_depIdxs = []int32{
 	48, // 47: document_elements.v1.Node.layout:type_name -> document_elements.v1.ProtoLayout
 	49, // 48: document_elements.v1.Node.advanced_illustration_area:type_name -> document_elements.v1.ProtoAdvancedIllustrationArea
 	50, // 49: document_elements.v1.Node.adjust_horizontally:type_name -> document_elements.v1.ProtoAdjustHorizontally
-	51, // 50: document_elements.v1.Node.doctypeScript:type_name -> document_elements.v1.ProtoDoctypeScript
-	52, // 51: document_elements.v1.Node.dmScript:type_name -> document_elements.v1.ProtoDmScript
+	51, // 50: document_elements.v1.Node.doctype_script:type_name -> document_elements.v1.ProtoDoctypeScript
+	52, // 51: document_elements.v1.Node.dm_script:type_name -> document_elements.v1.ProtoDmScript
 	53, // 52: document_elements.v1.ProtoTable.settings:type_name -> document_elements.v1.ProtoTableSettings
 	1,  // 53: document_elements.v1.ProtoTable.carry_over:type_name -> document_elements.v1.Node
 	1,  // 54: document_elements.v1.ProtoTable.sub_total:type_name -> document_elements.v1.Node

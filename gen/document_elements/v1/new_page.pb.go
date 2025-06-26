@@ -21,107 +21,107 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ProtoPageMode int32
+type PageMode int32
 
 const (
-	ProtoPageMode_PROTO_PAGE_MODE_NEXT_PAGE       ProtoPageMode = 0
-	ProtoPageMode_PROTO_PAGE_MODE_NEXT_RECTO_PAGE ProtoPageMode = 1
-	ProtoPageMode_PROTO_PAGE_MODE_NEXT_VERSO_PAGE ProtoPageMode = 2
+	PageMode_PAGE_MODE_NEXT_PAGE       PageMode = 0
+	PageMode_PAGE_MODE_NEXT_RECTO_PAGE PageMode = 1
+	PageMode_PAGE_MODE_NEXT_VERSO_PAGE PageMode = 2
 )
 
-// Enum value maps for ProtoPageMode.
+// Enum value maps for PageMode.
 var (
-	ProtoPageMode_name = map[int32]string{
-		0: "PROTO_PAGE_MODE_NEXT_PAGE",
-		1: "PROTO_PAGE_MODE_NEXT_RECTO_PAGE",
-		2: "PROTO_PAGE_MODE_NEXT_VERSO_PAGE",
+	PageMode_name = map[int32]string{
+		0: "PAGE_MODE_NEXT_PAGE",
+		1: "PAGE_MODE_NEXT_RECTO_PAGE",
+		2: "PAGE_MODE_NEXT_VERSO_PAGE",
 	}
-	ProtoPageMode_value = map[string]int32{
-		"PROTO_PAGE_MODE_NEXT_PAGE":       0,
-		"PROTO_PAGE_MODE_NEXT_RECTO_PAGE": 1,
-		"PROTO_PAGE_MODE_NEXT_VERSO_PAGE": 2,
+	PageMode_value = map[string]int32{
+		"PAGE_MODE_NEXT_PAGE":       0,
+		"PAGE_MODE_NEXT_RECTO_PAGE": 1,
+		"PAGE_MODE_NEXT_VERSO_PAGE": 2,
 	}
 )
 
-func (x ProtoPageMode) Enum() *ProtoPageMode {
-	p := new(ProtoPageMode)
+func (x PageMode) Enum() *PageMode {
+	p := new(PageMode)
 	*p = x
 	return p
 }
 
-func (x ProtoPageMode) String() string {
+func (x PageMode) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (ProtoPageMode) Descriptor() protoreflect.EnumDescriptor {
+func (PageMode) Descriptor() protoreflect.EnumDescriptor {
 	return file_document_elements_v1_new_page_proto_enumTypes[0].Descriptor()
 }
 
-func (ProtoPageMode) Type() protoreflect.EnumType {
+func (PageMode) Type() protoreflect.EnumType {
 	return &file_document_elements_v1_new_page_proto_enumTypes[0]
 }
 
-func (x ProtoPageMode) Number() protoreflect.EnumNumber {
+func (x PageMode) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use ProtoPageMode.Descriptor instead.
-func (ProtoPageMode) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use PageMode.Descriptor instead.
+func (PageMode) EnumDescriptor() ([]byte, []int) {
 	return file_document_elements_v1_new_page_proto_rawDescGZIP(), []int{0}
 }
 
-type ProtoPageOrientation int32
+type PageOrientation int32
 
 const (
-	ProtoPageOrientation_PROTO_PAGE_ORIENTATION_UNSET             ProtoPageOrientation = 0
-	ProtoPageOrientation_PROTO_PAGE_ORIENTATION_PORTRAIT          ProtoPageOrientation = 1
-	ProtoPageOrientation_PROTO_PAGE_ORIENTATION_LANDSCAPE         ProtoPageOrientation = 2
-	ProtoPageOrientation_PROTO_PAGE_ORIENTATION_INVERSE_PORTRAIT  ProtoPageOrientation = 3
-	ProtoPageOrientation_PROTO_PAGE_ORIENTATION_INVERSE_LANDSCAPE ProtoPageOrientation = 4
+	PageOrientation_PAGE_ORIENTATION_UNSET             PageOrientation = 0
+	PageOrientation_PAGE_ORIENTATION_PORTRAIT          PageOrientation = 1
+	PageOrientation_PAGE_ORIENTATION_LANDSCAPE         PageOrientation = 2
+	PageOrientation_PAGE_ORIENTATION_INVERSE_PORTRAIT  PageOrientation = 3
+	PageOrientation_PAGE_ORIENTATION_INVERSE_LANDSCAPE PageOrientation = 4
 )
 
-// Enum value maps for ProtoPageOrientation.
+// Enum value maps for PageOrientation.
 var (
-	ProtoPageOrientation_name = map[int32]string{
-		0: "PROTO_PAGE_ORIENTATION_UNSET",
-		1: "PROTO_PAGE_ORIENTATION_PORTRAIT",
-		2: "PROTO_PAGE_ORIENTATION_LANDSCAPE",
-		3: "PROTO_PAGE_ORIENTATION_INVERSE_PORTRAIT",
-		4: "PROTO_PAGE_ORIENTATION_INVERSE_LANDSCAPE",
+	PageOrientation_name = map[int32]string{
+		0: "PAGE_ORIENTATION_UNSET",
+		1: "PAGE_ORIENTATION_PORTRAIT",
+		2: "PAGE_ORIENTATION_LANDSCAPE",
+		3: "PAGE_ORIENTATION_INVERSE_PORTRAIT",
+		4: "PAGE_ORIENTATION_INVERSE_LANDSCAPE",
 	}
-	ProtoPageOrientation_value = map[string]int32{
-		"PROTO_PAGE_ORIENTATION_UNSET":             0,
-		"PROTO_PAGE_ORIENTATION_PORTRAIT":          1,
-		"PROTO_PAGE_ORIENTATION_LANDSCAPE":         2,
-		"PROTO_PAGE_ORIENTATION_INVERSE_PORTRAIT":  3,
-		"PROTO_PAGE_ORIENTATION_INVERSE_LANDSCAPE": 4,
+	PageOrientation_value = map[string]int32{
+		"PAGE_ORIENTATION_UNSET":             0,
+		"PAGE_ORIENTATION_PORTRAIT":          1,
+		"PAGE_ORIENTATION_LANDSCAPE":         2,
+		"PAGE_ORIENTATION_INVERSE_PORTRAIT":  3,
+		"PAGE_ORIENTATION_INVERSE_LANDSCAPE": 4,
 	}
 )
 
-func (x ProtoPageOrientation) Enum() *ProtoPageOrientation {
-	p := new(ProtoPageOrientation)
+func (x PageOrientation) Enum() *PageOrientation {
+	p := new(PageOrientation)
 	*p = x
 	return p
 }
 
-func (x ProtoPageOrientation) String() string {
+func (x PageOrientation) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (ProtoPageOrientation) Descriptor() protoreflect.EnumDescriptor {
+func (PageOrientation) Descriptor() protoreflect.EnumDescriptor {
 	return file_document_elements_v1_new_page_proto_enumTypes[1].Descriptor()
 }
 
-func (ProtoPageOrientation) Type() protoreflect.EnumType {
+func (PageOrientation) Type() protoreflect.EnumType {
 	return &file_document_elements_v1_new_page_proto_enumTypes[1]
 }
 
-func (x ProtoPageOrientation) Number() protoreflect.EnumNumber {
+func (x PageOrientation) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use ProtoPageOrientation.Descriptor instead.
-func (ProtoPageOrientation) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use PageOrientation.Descriptor instead.
+func (PageOrientation) EnumDescriptor() ([]byte, []int) {
 	return file_document_elements_v1_new_page_proto_rawDescGZIP(), []int{1}
 }
 
@@ -129,8 +129,8 @@ type ProtoNewPage struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	PaperTray       uint32                 `protobuf:"varint,1,opt,name=paper_tray,json=paperTray,proto3" json:"paper_tray,omitempty"`
 	PaperCount      uint32                 `protobuf:"varint,2,opt,name=paper_count,json=paperCount,proto3" json:"paper_count,omitempty"`
-	PageMode        ProtoPageMode          `protobuf:"varint,3,opt,name=page_mode,json=pageMode,proto3,enum=document_elements.v1.ProtoPageMode" json:"page_mode,omitempty"`
-	PageOrientation ProtoPageOrientation   `protobuf:"varint,4,opt,name=page_orientation,json=pageOrientation,proto3,enum=document_elements.v1.ProtoPageOrientation" json:"page_orientation,omitempty"`
+	PageMode        PageMode               `protobuf:"varint,3,opt,name=page_mode,json=pageMode,proto3,enum=document_elements.v1.PageMode" json:"page_mode,omitempty"`
+	PageOrientation PageOrientation        `protobuf:"varint,4,opt,name=page_orientation,json=pageOrientation,proto3,enum=document_elements.v1.PageOrientation" json:"page_orientation,omitempty"`
 	ComChannelUuids []string               `protobuf:"bytes,5,rep,name=com_channel_uuids,json=comChannelUuids,proto3" json:"com_channel_uuids,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
@@ -180,18 +180,18 @@ func (x *ProtoNewPage) GetPaperCount() uint32 {
 	return 0
 }
 
-func (x *ProtoNewPage) GetPageMode() ProtoPageMode {
+func (x *ProtoNewPage) GetPageMode() PageMode {
 	if x != nil {
 		return x.PageMode
 	}
-	return ProtoPageMode_PROTO_PAGE_MODE_NEXT_PAGE
+	return PageMode_PAGE_MODE_NEXT_PAGE
 }
 
-func (x *ProtoNewPage) GetPageOrientation() ProtoPageOrientation {
+func (x *ProtoNewPage) GetPageOrientation() PageOrientation {
 	if x != nil {
 		return x.PageOrientation
 	}
-	return ProtoPageOrientation_PROTO_PAGE_ORIENTATION_UNSET
+	return PageOrientation_PAGE_ORIENTATION_UNSET
 }
 
 func (x *ProtoNewPage) GetComChannelUuids() []string {
@@ -205,25 +205,25 @@ var File_document_elements_v1_new_page_proto protoreflect.FileDescriptor
 
 const file_document_elements_v1_new_page_proto_rawDesc = "" +
 	"\n" +
-	"#document_elements/v1/new_page.proto\x12\x14document_elements.v1\"\x93\x02\n" +
+	"#document_elements/v1/new_page.proto\x12\x14document_elements.v1\"\x89\x02\n" +
 	"\fProtoNewPage\x12\x1d\n" +
 	"\n" +
 	"paper_tray\x18\x01 \x01(\rR\tpaperTray\x12\x1f\n" +
 	"\vpaper_count\x18\x02 \x01(\rR\n" +
-	"paperCount\x12@\n" +
-	"\tpage_mode\x18\x03 \x01(\x0e2#.document_elements.v1.ProtoPageModeR\bpageMode\x12U\n" +
-	"\x10page_orientation\x18\x04 \x01(\x0e2*.document_elements.v1.ProtoPageOrientationR\x0fpageOrientation\x12*\n" +
-	"\x11com_channel_uuids\x18\x05 \x03(\tR\x0fcomChannelUuids*x\n" +
-	"\rProtoPageMode\x12\x1d\n" +
-	"\x19PROTO_PAGE_MODE_NEXT_PAGE\x10\x00\x12#\n" +
-	"\x1fPROTO_PAGE_MODE_NEXT_RECTO_PAGE\x10\x01\x12#\n" +
-	"\x1fPROTO_PAGE_MODE_NEXT_VERSO_PAGE\x10\x02*\xde\x01\n" +
-	"\x14ProtoPageOrientation\x12 \n" +
-	"\x1cPROTO_PAGE_ORIENTATION_UNSET\x10\x00\x12#\n" +
-	"\x1fPROTO_PAGE_ORIENTATION_PORTRAIT\x10\x01\x12$\n" +
-	" PROTO_PAGE_ORIENTATION_LANDSCAPE\x10\x02\x12+\n" +
-	"'PROTO_PAGE_ORIENTATION_INVERSE_PORTRAIT\x10\x03\x12,\n" +
-	"(PROTO_PAGE_ORIENTATION_INVERSE_LANDSCAPE\x10\x04B\xe8\x01\n" +
+	"paperCount\x12;\n" +
+	"\tpage_mode\x18\x03 \x01(\x0e2\x1e.document_elements.v1.PageModeR\bpageMode\x12P\n" +
+	"\x10page_orientation\x18\x04 \x01(\x0e2%.document_elements.v1.PageOrientationR\x0fpageOrientation\x12*\n" +
+	"\x11com_channel_uuids\x18\x05 \x03(\tR\x0fcomChannelUuids*a\n" +
+	"\bPageMode\x12\x17\n" +
+	"\x13PAGE_MODE_NEXT_PAGE\x10\x00\x12\x1d\n" +
+	"\x19PAGE_MODE_NEXT_RECTO_PAGE\x10\x01\x12\x1d\n" +
+	"\x19PAGE_MODE_NEXT_VERSO_PAGE\x10\x02*\xbb\x01\n" +
+	"\x0fPageOrientation\x12\x1a\n" +
+	"\x16PAGE_ORIENTATION_UNSET\x10\x00\x12\x1d\n" +
+	"\x19PAGE_ORIENTATION_PORTRAIT\x10\x01\x12\x1e\n" +
+	"\x1aPAGE_ORIENTATION_LANDSCAPE\x10\x02\x12%\n" +
+	"!PAGE_ORIENTATION_INVERSE_PORTRAIT\x10\x03\x12&\n" +
+	"\"PAGE_ORIENTATION_INVERSE_LANDSCAPE\x10\x04B\xe8\x01\n" +
 	"\x18com.document_elements.v1B\fNewPageProtoP\x01ZQgithub.com/documatrix/docframe-types/gen/document_elements/v1;document_elementsv1\xa2\x02\x03DXX\xaa\x02\x13DocumentElements.V1\xca\x02\x13DocumentElements\\V1\xe2\x02\x1fDocumentElements\\V1\\GPBMetadata\xea\x02\x14DocumentElements::V1b\x06proto3"
 
 var (
@@ -241,13 +241,13 @@ func file_document_elements_v1_new_page_proto_rawDescGZIP() []byte {
 var file_document_elements_v1_new_page_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_document_elements_v1_new_page_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_document_elements_v1_new_page_proto_goTypes = []any{
-	(ProtoPageMode)(0),        // 0: document_elements.v1.ProtoPageMode
-	(ProtoPageOrientation)(0), // 1: document_elements.v1.ProtoPageOrientation
-	(*ProtoNewPage)(nil),      // 2: document_elements.v1.ProtoNewPage
+	(PageMode)(0),        // 0: document_elements.v1.PageMode
+	(PageOrientation)(0), // 1: document_elements.v1.PageOrientation
+	(*ProtoNewPage)(nil), // 2: document_elements.v1.ProtoNewPage
 }
 var file_document_elements_v1_new_page_proto_depIdxs = []int32{
-	0, // 0: document_elements.v1.ProtoNewPage.page_mode:type_name -> document_elements.v1.ProtoPageMode
-	1, // 1: document_elements.v1.ProtoNewPage.page_orientation:type_name -> document_elements.v1.ProtoPageOrientation
+	0, // 0: document_elements.v1.ProtoNewPage.page_mode:type_name -> document_elements.v1.PageMode
+	1, // 1: document_elements.v1.ProtoNewPage.page_orientation:type_name -> document_elements.v1.PageOrientation
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
