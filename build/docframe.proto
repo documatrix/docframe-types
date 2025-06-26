@@ -815,6 +815,11 @@ ProtoPageCondition page_condition = 72;
 ProtoLocale locale = 73;
 ProtoTag tag = 74;
 ProtoParagraphSetDefault paragraph_set_default = 75;
+ProtoInputFieldText input_field_text = 76;
+ProtoInputFieldDate input_field_date = 77;
+ProtoInputFieldCheckbox input_field_checkbox = 78;
+ProtoInputFieldLabel input_field_label = 79;
+ProtoInputFieldDropdown input_field_dropdown = 80;
 }
 }
 
@@ -881,6 +886,11 @@ DOCUMENT_ELEMENT_PAGE_CONDITION= 78;
 DOCUMENT_ELEMENT_LOCALE = 79;
 DOCUMENT_ELEMENT_TAG = 80;
 DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT = 81;
+DOCUMENT_ELEMENT_INPUT_FIELD_TEXT = 82;
+DOCUMENT_ELEMENT_INPUT_FIELD_DATE = 83;
+DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX = 84;
+DOCUMENT_ELEMENT_INPUT_FIELD_LABEL = 85;
+DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN = 86;
 }
 enum ProtoImageScaleType {
 IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
@@ -1262,4 +1272,70 @@ string name = 2;
 string paragraphFormatUUID = 3;
 string uuid = 4;
 repeated string comChannelUUIDs = 5;
+}
+message ProtoInputFieldText {
+ProtoDocumentElement parent = 1;
+
+ProtoBaseInputField base = 2;
+PDFPrintingBehavior pdf_printing_behavior = 3;
+ProtoBoxedMeasure pdf_size = 4;
+string pdf_form_name = 5;
+}
+
+message ProtoInputFieldDate {
+ProtoDocumentElement parent = 1;
+
+ProtoBaseInputField base = 2;
+}
+
+message ProtoInputFieldCheckbox {
+ProtoDocumentElement parent = 1;
+
+ProtoBaseInputField base = 2;
+}
+
+message ProtoInputFieldLabel {
+ProtoDocumentElement parent = 1;
+
+ProtoBaseInputField base = 2;
+}
+
+message ProtoInputFieldDropdown {
+ProtoDocumentElement parent = 1;
+
+ProtoBaseInputField base = 2;
+
+bool dynamicOptions = 3;
+
+repeated ProtoOption options = 4;
+
+bool bindOptionsCode = 5;
+
+string optionsCode = 6;
+}
+
+message ProtoOption {
+string key = 1;
+string value = 2;
+}
+
+enum PDFPrintingBehavior {
+INPUT = 0;
+TEXT = 1;
+INHERIT = 2;
+}
+
+message ProtoBaseInputField {
+string name = 1;
+repeated string comChannelUUIDs = 2;
+bool meta = 3;
+ProtoBoxedString value = 4;
+string formatUUID = 5;
+string dataTypeUUID = 6;
+string onChangeCode = 7;
+string placeholder = 8;
+bool bindDefaultValue = 9;
+string defaultValueCode = 10;
+
+bool readonly = 11;
 }

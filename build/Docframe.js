@@ -25070,6 +25070,11 @@ $root.Node = (function() {
      * @property {IProtoLocale|null} [locale] Node locale
      * @property {IProtoTag|null} [tag] Node tag
      * @property {IProtoParagraphSetDefault|null} [paragraphSetDefault] Node paragraphSetDefault
+     * @property {IProtoInputFieldText|null} [inputFieldText] Node inputFieldText
+     * @property {IProtoInputFieldDate|null} [inputFieldDate] Node inputFieldDate
+     * @property {IProtoInputFieldCheckbox|null} [inputFieldCheckbox] Node inputFieldCheckbox
+     * @property {IProtoInputFieldLabel|null} [inputFieldLabel] Node inputFieldLabel
+     * @property {IProtoInputFieldDropdown|null} [inputFieldDropdown] Node inputFieldDropdown
      */
 
     /**
@@ -25568,17 +25573,57 @@ $root.Node = (function() {
      */
     Node.prototype.paragraphSetDefault = null;
 
+    /**
+     * Node inputFieldText.
+     * @member {IProtoInputFieldText|null|undefined} inputFieldText
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.inputFieldText = null;
+
+    /**
+     * Node inputFieldDate.
+     * @member {IProtoInputFieldDate|null|undefined} inputFieldDate
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.inputFieldDate = null;
+
+    /**
+     * Node inputFieldCheckbox.
+     * @member {IProtoInputFieldCheckbox|null|undefined} inputFieldCheckbox
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.inputFieldCheckbox = null;
+
+    /**
+     * Node inputFieldLabel.
+     * @member {IProtoInputFieldLabel|null|undefined} inputFieldLabel
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.inputFieldLabel = null;
+
+    /**
+     * Node inputFieldDropdown.
+     * @member {IProtoInputFieldDropdown|null|undefined} inputFieldDropdown
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.inputFieldDropdown = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault"|"inputFieldText"|"inputFieldDate"|"inputFieldCheckbox"|"inputFieldLabel"|"inputFieldDropdown"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition", "locale", "tag", "paragraphSetDefault"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition", "locale", "tag", "paragraphSetDefault", "inputFieldText", "inputFieldDate", "inputFieldCheckbox", "inputFieldLabel", "inputFieldDropdown"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -25727,6 +25772,16 @@ $root.Node = (function() {
             $root.ProtoTag.encode(message.tag, writer.uint32(/* id 74, wireType 2 =*/594).fork()).ldelim();
         if (message.paragraphSetDefault != null && Object.hasOwnProperty.call(message, "paragraphSetDefault"))
             $root.ProtoParagraphSetDefault.encode(message.paragraphSetDefault, writer.uint32(/* id 75, wireType 2 =*/602).fork()).ldelim();
+        if (message.inputFieldText != null && Object.hasOwnProperty.call(message, "inputFieldText"))
+            $root.ProtoInputFieldText.encode(message.inputFieldText, writer.uint32(/* id 76, wireType 2 =*/610).fork()).ldelim();
+        if (message.inputFieldDate != null && Object.hasOwnProperty.call(message, "inputFieldDate"))
+            $root.ProtoInputFieldDate.encode(message.inputFieldDate, writer.uint32(/* id 77, wireType 2 =*/618).fork()).ldelim();
+        if (message.inputFieldCheckbox != null && Object.hasOwnProperty.call(message, "inputFieldCheckbox"))
+            $root.ProtoInputFieldCheckbox.encode(message.inputFieldCheckbox, writer.uint32(/* id 78, wireType 2 =*/626).fork()).ldelim();
+        if (message.inputFieldLabel != null && Object.hasOwnProperty.call(message, "inputFieldLabel"))
+            $root.ProtoInputFieldLabel.encode(message.inputFieldLabel, writer.uint32(/* id 79, wireType 2 =*/634).fork()).ldelim();
+        if (message.inputFieldDropdown != null && Object.hasOwnProperty.call(message, "inputFieldDropdown"))
+            $root.ProtoInputFieldDropdown.encode(message.inputFieldDropdown, writer.uint32(/* id 80, wireType 2 =*/642).fork()).ldelim();
         return writer;
     };
 
@@ -26001,6 +26056,26 @@ $root.Node = (function() {
                 }
             case 75: {
                     message.paragraphSetDefault = $root.ProtoParagraphSetDefault.decode(reader, reader.uint32());
+                    break;
+                }
+            case 76: {
+                    message.inputFieldText = $root.ProtoInputFieldText.decode(reader, reader.uint32());
+                    break;
+                }
+            case 77: {
+                    message.inputFieldDate = $root.ProtoInputFieldDate.decode(reader, reader.uint32());
+                    break;
+                }
+            case 78: {
+                    message.inputFieldCheckbox = $root.ProtoInputFieldCheckbox.decode(reader, reader.uint32());
+                    break;
+                }
+            case 79: {
+                    message.inputFieldLabel = $root.ProtoInputFieldLabel.decode(reader, reader.uint32());
+                    break;
+                }
+            case 80: {
+                    message.inputFieldDropdown = $root.ProtoInputFieldDropdown.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -26636,6 +26711,56 @@ $root.Node = (function() {
                     return "paragraphSetDefault." + error;
             }
         }
+        if (message.inputFieldText != null && message.hasOwnProperty("inputFieldText")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoInputFieldText.verify(message.inputFieldText);
+                if (error)
+                    return "inputFieldText." + error;
+            }
+        }
+        if (message.inputFieldDate != null && message.hasOwnProperty("inputFieldDate")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoInputFieldDate.verify(message.inputFieldDate);
+                if (error)
+                    return "inputFieldDate." + error;
+            }
+        }
+        if (message.inputFieldCheckbox != null && message.hasOwnProperty("inputFieldCheckbox")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoInputFieldCheckbox.verify(message.inputFieldCheckbox);
+                if (error)
+                    return "inputFieldCheckbox." + error;
+            }
+        }
+        if (message.inputFieldLabel != null && message.hasOwnProperty("inputFieldLabel")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoInputFieldLabel.verify(message.inputFieldLabel);
+                if (error)
+                    return "inputFieldLabel." + error;
+            }
+        }
+        if (message.inputFieldDropdown != null && message.hasOwnProperty("inputFieldDropdown")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoInputFieldDropdown.verify(message.inputFieldDropdown);
+                if (error)
+                    return "inputFieldDropdown." + error;
+            }
+        }
         return null;
     };
 
@@ -26956,6 +27081,31 @@ $root.Node = (function() {
                 throw TypeError(".Node.paragraphSetDefault: object expected");
             message.paragraphSetDefault = $root.ProtoParagraphSetDefault.fromObject(object.paragraphSetDefault);
         }
+        if (object.inputFieldText != null) {
+            if (typeof object.inputFieldText !== "object")
+                throw TypeError(".Node.inputFieldText: object expected");
+            message.inputFieldText = $root.ProtoInputFieldText.fromObject(object.inputFieldText);
+        }
+        if (object.inputFieldDate != null) {
+            if (typeof object.inputFieldDate !== "object")
+                throw TypeError(".Node.inputFieldDate: object expected");
+            message.inputFieldDate = $root.ProtoInputFieldDate.fromObject(object.inputFieldDate);
+        }
+        if (object.inputFieldCheckbox != null) {
+            if (typeof object.inputFieldCheckbox !== "object")
+                throw TypeError(".Node.inputFieldCheckbox: object expected");
+            message.inputFieldCheckbox = $root.ProtoInputFieldCheckbox.fromObject(object.inputFieldCheckbox);
+        }
+        if (object.inputFieldLabel != null) {
+            if (typeof object.inputFieldLabel !== "object")
+                throw TypeError(".Node.inputFieldLabel: object expected");
+            message.inputFieldLabel = $root.ProtoInputFieldLabel.fromObject(object.inputFieldLabel);
+        }
+        if (object.inputFieldDropdown != null) {
+            if (typeof object.inputFieldDropdown !== "object")
+                throw TypeError(".Node.inputFieldDropdown: object expected");
+            message.inputFieldDropdown = $root.ProtoInputFieldDropdown.fromObject(object.inputFieldDropdown);
+        }
         return message;
     };
 
@@ -27274,6 +27424,31 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "paragraphSetDefault";
         }
+        if (message.inputFieldText != null && message.hasOwnProperty("inputFieldText")) {
+            object.inputFieldText = $root.ProtoInputFieldText.toObject(message.inputFieldText, options);
+            if (options.oneofs)
+                object.object = "inputFieldText";
+        }
+        if (message.inputFieldDate != null && message.hasOwnProperty("inputFieldDate")) {
+            object.inputFieldDate = $root.ProtoInputFieldDate.toObject(message.inputFieldDate, options);
+            if (options.oneofs)
+                object.object = "inputFieldDate";
+        }
+        if (message.inputFieldCheckbox != null && message.hasOwnProperty("inputFieldCheckbox")) {
+            object.inputFieldCheckbox = $root.ProtoInputFieldCheckbox.toObject(message.inputFieldCheckbox, options);
+            if (options.oneofs)
+                object.object = "inputFieldCheckbox";
+        }
+        if (message.inputFieldLabel != null && message.hasOwnProperty("inputFieldLabel")) {
+            object.inputFieldLabel = $root.ProtoInputFieldLabel.toObject(message.inputFieldLabel, options);
+            if (options.oneofs)
+                object.object = "inputFieldLabel";
+        }
+        if (message.inputFieldDropdown != null && message.hasOwnProperty("inputFieldDropdown")) {
+            object.inputFieldDropdown = $root.ProtoInputFieldDropdown.toObject(message.inputFieldDropdown, options);
+            if (options.oneofs)
+                object.object = "inputFieldDropdown";
+        }
         return object;
     };
 
@@ -27372,6 +27547,11 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_LOCALE=79 DOCUMENT_ELEMENT_LOCALE value
  * @property {number} DOCUMENT_ELEMENT_TAG=80 DOCUMENT_ELEMENT_TAG value
  * @property {number} DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT=81 DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT value
+ * @property {number} DOCUMENT_ELEMENT_INPUT_FIELD_TEXT=82 DOCUMENT_ELEMENT_INPUT_FIELD_TEXT value
+ * @property {number} DOCUMENT_ELEMENT_INPUT_FIELD_DATE=83 DOCUMENT_ELEMENT_INPUT_FIELD_DATE value
+ * @property {number} DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX=84 DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX value
+ * @property {number} DOCUMENT_ELEMENT_INPUT_FIELD_LABEL=85 DOCUMENT_ELEMENT_INPUT_FIELD_LABEL value
+ * @property {number} DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN=86 DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -27437,6 +27617,11 @@ $root.NodeType = (function() {
     values[valuesById[79] = "DOCUMENT_ELEMENT_LOCALE"] = 79;
     values[valuesById[80] = "DOCUMENT_ELEMENT_TAG"] = 80;
     values[valuesById[81] = "DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT"] = 81;
+    values[valuesById[82] = "DOCUMENT_ELEMENT_INPUT_FIELD_TEXT"] = 82;
+    values[valuesById[83] = "DOCUMENT_ELEMENT_INPUT_FIELD_DATE"] = 83;
+    values[valuesById[84] = "DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX"] = 84;
+    values[valuesById[85] = "DOCUMENT_ELEMENT_INPUT_FIELD_LABEL"] = 85;
+    values[valuesById[86] = "DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN"] = 86;
     return values;
 })();
 
@@ -40723,6 +40908,2102 @@ $root.ProtoParagraphSetDefault = (function() {
     };
 
     return ProtoParagraphSetDefault;
+})();
+
+$root.ProtoInputFieldText = (function() {
+
+    /**
+     * Properties of a ProtoInputFieldText.
+     * @name IProtoInputFieldText
+     * @interface IProtoInputFieldText
+     * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldText parent
+     * @property {IProtoBaseInputField|null} [base] ProtoInputFieldText base
+     * @property {PDFPrintingBehavior|null} [pdfPrintingBehavior] ProtoInputFieldText pdfPrintingBehavior
+     * @property {IProtoBoxedMeasure|null} [pdfSize] ProtoInputFieldText pdfSize
+     * @property {string|null} [pdfFormName] ProtoInputFieldText pdfFormName
+     */
+
+    /**
+     * Constructs a new ProtoInputFieldText.
+     * @name ProtoInputFieldText
+     * @classdesc Represents a ProtoInputFieldText.
+     * @implements IProtoInputFieldText
+     * @constructor
+     * @param {IProtoInputFieldText=} [properties] Properties to set
+     */
+    function ProtoInputFieldText(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoInputFieldText parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoInputFieldText
+     * @instance
+     */
+    ProtoInputFieldText.prototype.parent = null;
+
+    /**
+     * ProtoInputFieldText base.
+     * @member {IProtoBaseInputField|null|undefined} base
+     * @memberof ProtoInputFieldText
+     * @instance
+     */
+    ProtoInputFieldText.prototype.base = null;
+
+    /**
+     * ProtoInputFieldText pdfPrintingBehavior.
+     * @member {PDFPrintingBehavior} pdfPrintingBehavior
+     * @memberof ProtoInputFieldText
+     * @instance
+     */
+    ProtoInputFieldText.prototype.pdfPrintingBehavior = 0;
+
+    /**
+     * ProtoInputFieldText pdfSize.
+     * @member {IProtoBoxedMeasure|null|undefined} pdfSize
+     * @memberof ProtoInputFieldText
+     * @instance
+     */
+    ProtoInputFieldText.prototype.pdfSize = null;
+
+    /**
+     * ProtoInputFieldText pdfFormName.
+     * @member {string} pdfFormName
+     * @memberof ProtoInputFieldText
+     * @instance
+     */
+    ProtoInputFieldText.prototype.pdfFormName = "";
+
+    /**
+     * Creates a new ProtoInputFieldText instance using the specified properties.
+     * @function create
+     * @memberof ProtoInputFieldText
+     * @static
+     * @param {IProtoInputFieldText=} [properties] Properties to set
+     * @returns {ProtoInputFieldText} ProtoInputFieldText instance
+     */
+    ProtoInputFieldText.create = function create(properties) {
+        return new ProtoInputFieldText(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoInputFieldText message. Does not implicitly {@link ProtoInputFieldText.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoInputFieldText
+     * @static
+     * @param {IProtoInputFieldText} message ProtoInputFieldText message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoInputFieldText.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.base != null && Object.hasOwnProperty.call(message, "base"))
+            $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.pdfPrintingBehavior != null && Object.hasOwnProperty.call(message, "pdfPrintingBehavior"))
+            writer.uint32(/* id 3, wireType 0 =*/24).int32(message.pdfPrintingBehavior);
+        if (message.pdfSize != null && Object.hasOwnProperty.call(message, "pdfSize"))
+            $root.ProtoBoxedMeasure.encode(message.pdfSize, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+        if (message.pdfFormName != null && Object.hasOwnProperty.call(message, "pdfFormName"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.pdfFormName);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoInputFieldText message, length delimited. Does not implicitly {@link ProtoInputFieldText.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoInputFieldText
+     * @static
+     * @param {IProtoInputFieldText} message ProtoInputFieldText message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoInputFieldText.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoInputFieldText message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoInputFieldText
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoInputFieldText} ProtoInputFieldText
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoInputFieldText.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoInputFieldText();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.base = $root.ProtoBaseInputField.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.pdfPrintingBehavior = reader.int32();
+                    break;
+                }
+            case 4: {
+                    message.pdfSize = $root.ProtoBoxedMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 5: {
+                    message.pdfFormName = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoInputFieldText message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoInputFieldText
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoInputFieldText} ProtoInputFieldText
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoInputFieldText.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoInputFieldText message.
+     * @function verify
+     * @memberof ProtoInputFieldText
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoInputFieldText.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.base != null && message.hasOwnProperty("base")) {
+            var error = $root.ProtoBaseInputField.verify(message.base);
+            if (error)
+                return "base." + error;
+        }
+        if (message.pdfPrintingBehavior != null && message.hasOwnProperty("pdfPrintingBehavior"))
+            switch (message.pdfPrintingBehavior) {
+            default:
+                return "pdfPrintingBehavior: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+                break;
+            }
+        if (message.pdfSize != null && message.hasOwnProperty("pdfSize")) {
+            var error = $root.ProtoBoxedMeasure.verify(message.pdfSize);
+            if (error)
+                return "pdfSize." + error;
+        }
+        if (message.pdfFormName != null && message.hasOwnProperty("pdfFormName"))
+            if (!$util.isString(message.pdfFormName))
+                return "pdfFormName: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoInputFieldText message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoInputFieldText
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoInputFieldText} ProtoInputFieldText
+     */
+    ProtoInputFieldText.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoInputFieldText)
+            return object;
+        var message = new $root.ProtoInputFieldText();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoInputFieldText.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.base != null) {
+            if (typeof object.base !== "object")
+                throw TypeError(".ProtoInputFieldText.base: object expected");
+            message.base = $root.ProtoBaseInputField.fromObject(object.base);
+        }
+        switch (object.pdfPrintingBehavior) {
+        default:
+            if (typeof object.pdfPrintingBehavior === "number") {
+                message.pdfPrintingBehavior = object.pdfPrintingBehavior;
+                break;
+            }
+            break;
+        case "INPUT":
+        case 0:
+            message.pdfPrintingBehavior = 0;
+            break;
+        case "TEXT":
+        case 1:
+            message.pdfPrintingBehavior = 1;
+            break;
+        case "INHERIT":
+        case 2:
+            message.pdfPrintingBehavior = 2;
+            break;
+        }
+        if (object.pdfSize != null) {
+            if (typeof object.pdfSize !== "object")
+                throw TypeError(".ProtoInputFieldText.pdfSize: object expected");
+            message.pdfSize = $root.ProtoBoxedMeasure.fromObject(object.pdfSize);
+        }
+        if (object.pdfFormName != null)
+            message.pdfFormName = String(object.pdfFormName);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoInputFieldText message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoInputFieldText
+     * @static
+     * @param {ProtoInputFieldText} message ProtoInputFieldText
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoInputFieldText.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.parent = null;
+            object.base = null;
+            object.pdfPrintingBehavior = options.enums === String ? "INPUT" : 0;
+            object.pdfSize = null;
+            object.pdfFormName = "";
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.base != null && message.hasOwnProperty("base"))
+            object.base = $root.ProtoBaseInputField.toObject(message.base, options);
+        if (message.pdfPrintingBehavior != null && message.hasOwnProperty("pdfPrintingBehavior"))
+            object.pdfPrintingBehavior = options.enums === String ? $root.PDFPrintingBehavior[message.pdfPrintingBehavior] === undefined ? message.pdfPrintingBehavior : $root.PDFPrintingBehavior[message.pdfPrintingBehavior] : message.pdfPrintingBehavior;
+        if (message.pdfSize != null && message.hasOwnProperty("pdfSize"))
+            object.pdfSize = $root.ProtoBoxedMeasure.toObject(message.pdfSize, options);
+        if (message.pdfFormName != null && message.hasOwnProperty("pdfFormName"))
+            object.pdfFormName = message.pdfFormName;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoInputFieldText to JSON.
+     * @function toJSON
+     * @memberof ProtoInputFieldText
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoInputFieldText.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoInputFieldText
+     * @function getTypeUrl
+     * @memberof ProtoInputFieldText
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoInputFieldText.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoInputFieldText";
+    };
+
+    return ProtoInputFieldText;
+})();
+
+$root.ProtoInputFieldDate = (function() {
+
+    /**
+     * Properties of a ProtoInputFieldDate.
+     * @name IProtoInputFieldDate
+     * @interface IProtoInputFieldDate
+     * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldDate parent
+     * @property {IProtoBaseInputField|null} [base] ProtoInputFieldDate base
+     */
+
+    /**
+     * Constructs a new ProtoInputFieldDate.
+     * @name ProtoInputFieldDate
+     * @classdesc Represents a ProtoInputFieldDate.
+     * @implements IProtoInputFieldDate
+     * @constructor
+     * @param {IProtoInputFieldDate=} [properties] Properties to set
+     */
+    function ProtoInputFieldDate(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoInputFieldDate parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoInputFieldDate
+     * @instance
+     */
+    ProtoInputFieldDate.prototype.parent = null;
+
+    /**
+     * ProtoInputFieldDate base.
+     * @member {IProtoBaseInputField|null|undefined} base
+     * @memberof ProtoInputFieldDate
+     * @instance
+     */
+    ProtoInputFieldDate.prototype.base = null;
+
+    /**
+     * Creates a new ProtoInputFieldDate instance using the specified properties.
+     * @function create
+     * @memberof ProtoInputFieldDate
+     * @static
+     * @param {IProtoInputFieldDate=} [properties] Properties to set
+     * @returns {ProtoInputFieldDate} ProtoInputFieldDate instance
+     */
+    ProtoInputFieldDate.create = function create(properties) {
+        return new ProtoInputFieldDate(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoInputFieldDate message. Does not implicitly {@link ProtoInputFieldDate.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoInputFieldDate
+     * @static
+     * @param {IProtoInputFieldDate} message ProtoInputFieldDate message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoInputFieldDate.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.base != null && Object.hasOwnProperty.call(message, "base"))
+            $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoInputFieldDate message, length delimited. Does not implicitly {@link ProtoInputFieldDate.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoInputFieldDate
+     * @static
+     * @param {IProtoInputFieldDate} message ProtoInputFieldDate message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoInputFieldDate.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoInputFieldDate message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoInputFieldDate
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoInputFieldDate} ProtoInputFieldDate
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoInputFieldDate.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoInputFieldDate();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.base = $root.ProtoBaseInputField.decode(reader, reader.uint32());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoInputFieldDate message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoInputFieldDate
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoInputFieldDate} ProtoInputFieldDate
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoInputFieldDate.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoInputFieldDate message.
+     * @function verify
+     * @memberof ProtoInputFieldDate
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoInputFieldDate.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.base != null && message.hasOwnProperty("base")) {
+            var error = $root.ProtoBaseInputField.verify(message.base);
+            if (error)
+                return "base." + error;
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoInputFieldDate message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoInputFieldDate
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoInputFieldDate} ProtoInputFieldDate
+     */
+    ProtoInputFieldDate.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoInputFieldDate)
+            return object;
+        var message = new $root.ProtoInputFieldDate();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoInputFieldDate.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.base != null) {
+            if (typeof object.base !== "object")
+                throw TypeError(".ProtoInputFieldDate.base: object expected");
+            message.base = $root.ProtoBaseInputField.fromObject(object.base);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoInputFieldDate message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoInputFieldDate
+     * @static
+     * @param {ProtoInputFieldDate} message ProtoInputFieldDate
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoInputFieldDate.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.parent = null;
+            object.base = null;
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.base != null && message.hasOwnProperty("base"))
+            object.base = $root.ProtoBaseInputField.toObject(message.base, options);
+        return object;
+    };
+
+    /**
+     * Converts this ProtoInputFieldDate to JSON.
+     * @function toJSON
+     * @memberof ProtoInputFieldDate
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoInputFieldDate.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoInputFieldDate
+     * @function getTypeUrl
+     * @memberof ProtoInputFieldDate
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoInputFieldDate.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoInputFieldDate";
+    };
+
+    return ProtoInputFieldDate;
+})();
+
+$root.ProtoInputFieldCheckbox = (function() {
+
+    /**
+     * Properties of a ProtoInputFieldCheckbox.
+     * @name IProtoInputFieldCheckbox
+     * @interface IProtoInputFieldCheckbox
+     * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldCheckbox parent
+     * @property {IProtoBaseInputField|null} [base] ProtoInputFieldCheckbox base
+     */
+
+    /**
+     * Constructs a new ProtoInputFieldCheckbox.
+     * @name ProtoInputFieldCheckbox
+     * @classdesc Represents a ProtoInputFieldCheckbox.
+     * @implements IProtoInputFieldCheckbox
+     * @constructor
+     * @param {IProtoInputFieldCheckbox=} [properties] Properties to set
+     */
+    function ProtoInputFieldCheckbox(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoInputFieldCheckbox parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoInputFieldCheckbox
+     * @instance
+     */
+    ProtoInputFieldCheckbox.prototype.parent = null;
+
+    /**
+     * ProtoInputFieldCheckbox base.
+     * @member {IProtoBaseInputField|null|undefined} base
+     * @memberof ProtoInputFieldCheckbox
+     * @instance
+     */
+    ProtoInputFieldCheckbox.prototype.base = null;
+
+    /**
+     * Creates a new ProtoInputFieldCheckbox instance using the specified properties.
+     * @function create
+     * @memberof ProtoInputFieldCheckbox
+     * @static
+     * @param {IProtoInputFieldCheckbox=} [properties] Properties to set
+     * @returns {ProtoInputFieldCheckbox} ProtoInputFieldCheckbox instance
+     */
+    ProtoInputFieldCheckbox.create = function create(properties) {
+        return new ProtoInputFieldCheckbox(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoInputFieldCheckbox message. Does not implicitly {@link ProtoInputFieldCheckbox.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoInputFieldCheckbox
+     * @static
+     * @param {IProtoInputFieldCheckbox} message ProtoInputFieldCheckbox message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoInputFieldCheckbox.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.base != null && Object.hasOwnProperty.call(message, "base"))
+            $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoInputFieldCheckbox message, length delimited. Does not implicitly {@link ProtoInputFieldCheckbox.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoInputFieldCheckbox
+     * @static
+     * @param {IProtoInputFieldCheckbox} message ProtoInputFieldCheckbox message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoInputFieldCheckbox.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoInputFieldCheckbox message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoInputFieldCheckbox
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoInputFieldCheckbox} ProtoInputFieldCheckbox
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoInputFieldCheckbox.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoInputFieldCheckbox();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.base = $root.ProtoBaseInputField.decode(reader, reader.uint32());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoInputFieldCheckbox message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoInputFieldCheckbox
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoInputFieldCheckbox} ProtoInputFieldCheckbox
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoInputFieldCheckbox.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoInputFieldCheckbox message.
+     * @function verify
+     * @memberof ProtoInputFieldCheckbox
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoInputFieldCheckbox.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.base != null && message.hasOwnProperty("base")) {
+            var error = $root.ProtoBaseInputField.verify(message.base);
+            if (error)
+                return "base." + error;
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoInputFieldCheckbox message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoInputFieldCheckbox
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoInputFieldCheckbox} ProtoInputFieldCheckbox
+     */
+    ProtoInputFieldCheckbox.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoInputFieldCheckbox)
+            return object;
+        var message = new $root.ProtoInputFieldCheckbox();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoInputFieldCheckbox.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.base != null) {
+            if (typeof object.base !== "object")
+                throw TypeError(".ProtoInputFieldCheckbox.base: object expected");
+            message.base = $root.ProtoBaseInputField.fromObject(object.base);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoInputFieldCheckbox message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoInputFieldCheckbox
+     * @static
+     * @param {ProtoInputFieldCheckbox} message ProtoInputFieldCheckbox
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoInputFieldCheckbox.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.parent = null;
+            object.base = null;
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.base != null && message.hasOwnProperty("base"))
+            object.base = $root.ProtoBaseInputField.toObject(message.base, options);
+        return object;
+    };
+
+    /**
+     * Converts this ProtoInputFieldCheckbox to JSON.
+     * @function toJSON
+     * @memberof ProtoInputFieldCheckbox
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoInputFieldCheckbox.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoInputFieldCheckbox
+     * @function getTypeUrl
+     * @memberof ProtoInputFieldCheckbox
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoInputFieldCheckbox.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoInputFieldCheckbox";
+    };
+
+    return ProtoInputFieldCheckbox;
+})();
+
+$root.ProtoInputFieldLabel = (function() {
+
+    /**
+     * Properties of a ProtoInputFieldLabel.
+     * @name IProtoInputFieldLabel
+     * @interface IProtoInputFieldLabel
+     * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldLabel parent
+     * @property {IProtoBaseInputField|null} [base] ProtoInputFieldLabel base
+     */
+
+    /**
+     * Constructs a new ProtoInputFieldLabel.
+     * @name ProtoInputFieldLabel
+     * @classdesc Represents a ProtoInputFieldLabel.
+     * @implements IProtoInputFieldLabel
+     * @constructor
+     * @param {IProtoInputFieldLabel=} [properties] Properties to set
+     */
+    function ProtoInputFieldLabel(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoInputFieldLabel parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoInputFieldLabel
+     * @instance
+     */
+    ProtoInputFieldLabel.prototype.parent = null;
+
+    /**
+     * ProtoInputFieldLabel base.
+     * @member {IProtoBaseInputField|null|undefined} base
+     * @memberof ProtoInputFieldLabel
+     * @instance
+     */
+    ProtoInputFieldLabel.prototype.base = null;
+
+    /**
+     * Creates a new ProtoInputFieldLabel instance using the specified properties.
+     * @function create
+     * @memberof ProtoInputFieldLabel
+     * @static
+     * @param {IProtoInputFieldLabel=} [properties] Properties to set
+     * @returns {ProtoInputFieldLabel} ProtoInputFieldLabel instance
+     */
+    ProtoInputFieldLabel.create = function create(properties) {
+        return new ProtoInputFieldLabel(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoInputFieldLabel message. Does not implicitly {@link ProtoInputFieldLabel.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoInputFieldLabel
+     * @static
+     * @param {IProtoInputFieldLabel} message ProtoInputFieldLabel message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoInputFieldLabel.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.base != null && Object.hasOwnProperty.call(message, "base"))
+            $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoInputFieldLabel message, length delimited. Does not implicitly {@link ProtoInputFieldLabel.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoInputFieldLabel
+     * @static
+     * @param {IProtoInputFieldLabel} message ProtoInputFieldLabel message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoInputFieldLabel.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoInputFieldLabel message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoInputFieldLabel
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoInputFieldLabel} ProtoInputFieldLabel
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoInputFieldLabel.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoInputFieldLabel();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.base = $root.ProtoBaseInputField.decode(reader, reader.uint32());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoInputFieldLabel message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoInputFieldLabel
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoInputFieldLabel} ProtoInputFieldLabel
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoInputFieldLabel.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoInputFieldLabel message.
+     * @function verify
+     * @memberof ProtoInputFieldLabel
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoInputFieldLabel.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.base != null && message.hasOwnProperty("base")) {
+            var error = $root.ProtoBaseInputField.verify(message.base);
+            if (error)
+                return "base." + error;
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoInputFieldLabel message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoInputFieldLabel
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoInputFieldLabel} ProtoInputFieldLabel
+     */
+    ProtoInputFieldLabel.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoInputFieldLabel)
+            return object;
+        var message = new $root.ProtoInputFieldLabel();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoInputFieldLabel.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.base != null) {
+            if (typeof object.base !== "object")
+                throw TypeError(".ProtoInputFieldLabel.base: object expected");
+            message.base = $root.ProtoBaseInputField.fromObject(object.base);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoInputFieldLabel message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoInputFieldLabel
+     * @static
+     * @param {ProtoInputFieldLabel} message ProtoInputFieldLabel
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoInputFieldLabel.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.parent = null;
+            object.base = null;
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.base != null && message.hasOwnProperty("base"))
+            object.base = $root.ProtoBaseInputField.toObject(message.base, options);
+        return object;
+    };
+
+    /**
+     * Converts this ProtoInputFieldLabel to JSON.
+     * @function toJSON
+     * @memberof ProtoInputFieldLabel
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoInputFieldLabel.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoInputFieldLabel
+     * @function getTypeUrl
+     * @memberof ProtoInputFieldLabel
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoInputFieldLabel.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoInputFieldLabel";
+    };
+
+    return ProtoInputFieldLabel;
+})();
+
+$root.ProtoInputFieldDropdown = (function() {
+
+    /**
+     * Properties of a ProtoInputFieldDropdown.
+     * @name IProtoInputFieldDropdown
+     * @interface IProtoInputFieldDropdown
+     * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldDropdown parent
+     * @property {IProtoBaseInputField|null} [base] ProtoInputFieldDropdown base
+     * @property {boolean|null} [dynamicOptions] ProtoInputFieldDropdown dynamicOptions
+     * @property {Array.<IProtoOption>|null} [options] ProtoInputFieldDropdown options
+     * @property {boolean|null} [bindOptionsCode] ProtoInputFieldDropdown bindOptionsCode
+     * @property {string|null} [optionsCode] ProtoInputFieldDropdown optionsCode
+     */
+
+    /**
+     * Constructs a new ProtoInputFieldDropdown.
+     * @name ProtoInputFieldDropdown
+     * @classdesc Represents a ProtoInputFieldDropdown.
+     * @implements IProtoInputFieldDropdown
+     * @constructor
+     * @param {IProtoInputFieldDropdown=} [properties] Properties to set
+     */
+    function ProtoInputFieldDropdown(properties) {
+        this.options = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoInputFieldDropdown parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoInputFieldDropdown
+     * @instance
+     */
+    ProtoInputFieldDropdown.prototype.parent = null;
+
+    /**
+     * ProtoInputFieldDropdown base.
+     * @member {IProtoBaseInputField|null|undefined} base
+     * @memberof ProtoInputFieldDropdown
+     * @instance
+     */
+    ProtoInputFieldDropdown.prototype.base = null;
+
+    /**
+     * ProtoInputFieldDropdown dynamicOptions.
+     * @member {boolean} dynamicOptions
+     * @memberof ProtoInputFieldDropdown
+     * @instance
+     */
+    ProtoInputFieldDropdown.prototype.dynamicOptions = false;
+
+    /**
+     * ProtoInputFieldDropdown options.
+     * @member {Array.<IProtoOption>} options
+     * @memberof ProtoInputFieldDropdown
+     * @instance
+     */
+    ProtoInputFieldDropdown.prototype.options = $util.emptyArray;
+
+    /**
+     * ProtoInputFieldDropdown bindOptionsCode.
+     * @member {boolean} bindOptionsCode
+     * @memberof ProtoInputFieldDropdown
+     * @instance
+     */
+    ProtoInputFieldDropdown.prototype.bindOptionsCode = false;
+
+    /**
+     * ProtoInputFieldDropdown optionsCode.
+     * @member {string} optionsCode
+     * @memberof ProtoInputFieldDropdown
+     * @instance
+     */
+    ProtoInputFieldDropdown.prototype.optionsCode = "";
+
+    /**
+     * Creates a new ProtoInputFieldDropdown instance using the specified properties.
+     * @function create
+     * @memberof ProtoInputFieldDropdown
+     * @static
+     * @param {IProtoInputFieldDropdown=} [properties] Properties to set
+     * @returns {ProtoInputFieldDropdown} ProtoInputFieldDropdown instance
+     */
+    ProtoInputFieldDropdown.create = function create(properties) {
+        return new ProtoInputFieldDropdown(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoInputFieldDropdown message. Does not implicitly {@link ProtoInputFieldDropdown.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoInputFieldDropdown
+     * @static
+     * @param {IProtoInputFieldDropdown} message ProtoInputFieldDropdown message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoInputFieldDropdown.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.base != null && Object.hasOwnProperty.call(message, "base"))
+            $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.dynamicOptions != null && Object.hasOwnProperty.call(message, "dynamicOptions"))
+            writer.uint32(/* id 3, wireType 0 =*/24).bool(message.dynamicOptions);
+        if (message.options != null && message.options.length)
+            for (var i = 0; i < message.options.length; ++i)
+                $root.ProtoOption.encode(message.options[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+        if (message.bindOptionsCode != null && Object.hasOwnProperty.call(message, "bindOptionsCode"))
+            writer.uint32(/* id 5, wireType 0 =*/40).bool(message.bindOptionsCode);
+        if (message.optionsCode != null && Object.hasOwnProperty.call(message, "optionsCode"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.optionsCode);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoInputFieldDropdown message, length delimited. Does not implicitly {@link ProtoInputFieldDropdown.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoInputFieldDropdown
+     * @static
+     * @param {IProtoInputFieldDropdown} message ProtoInputFieldDropdown message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoInputFieldDropdown.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoInputFieldDropdown message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoInputFieldDropdown
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoInputFieldDropdown} ProtoInputFieldDropdown
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoInputFieldDropdown.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoInputFieldDropdown();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.base = $root.ProtoBaseInputField.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.dynamicOptions = reader.bool();
+                    break;
+                }
+            case 4: {
+                    if (!(message.options && message.options.length))
+                        message.options = [];
+                    message.options.push($root.ProtoOption.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 5: {
+                    message.bindOptionsCode = reader.bool();
+                    break;
+                }
+            case 6: {
+                    message.optionsCode = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoInputFieldDropdown message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoInputFieldDropdown
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoInputFieldDropdown} ProtoInputFieldDropdown
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoInputFieldDropdown.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoInputFieldDropdown message.
+     * @function verify
+     * @memberof ProtoInputFieldDropdown
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoInputFieldDropdown.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.base != null && message.hasOwnProperty("base")) {
+            var error = $root.ProtoBaseInputField.verify(message.base);
+            if (error)
+                return "base." + error;
+        }
+        if (message.dynamicOptions != null && message.hasOwnProperty("dynamicOptions"))
+            if (typeof message.dynamicOptions !== "boolean")
+                return "dynamicOptions: boolean expected";
+        if (message.options != null && message.hasOwnProperty("options")) {
+            if (!Array.isArray(message.options))
+                return "options: array expected";
+            for (var i = 0; i < message.options.length; ++i) {
+                var error = $root.ProtoOption.verify(message.options[i]);
+                if (error)
+                    return "options." + error;
+            }
+        }
+        if (message.bindOptionsCode != null && message.hasOwnProperty("bindOptionsCode"))
+            if (typeof message.bindOptionsCode !== "boolean")
+                return "bindOptionsCode: boolean expected";
+        if (message.optionsCode != null && message.hasOwnProperty("optionsCode"))
+            if (!$util.isString(message.optionsCode))
+                return "optionsCode: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoInputFieldDropdown message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoInputFieldDropdown
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoInputFieldDropdown} ProtoInputFieldDropdown
+     */
+    ProtoInputFieldDropdown.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoInputFieldDropdown)
+            return object;
+        var message = new $root.ProtoInputFieldDropdown();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoInputFieldDropdown.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.base != null) {
+            if (typeof object.base !== "object")
+                throw TypeError(".ProtoInputFieldDropdown.base: object expected");
+            message.base = $root.ProtoBaseInputField.fromObject(object.base);
+        }
+        if (object.dynamicOptions != null)
+            message.dynamicOptions = Boolean(object.dynamicOptions);
+        if (object.options) {
+            if (!Array.isArray(object.options))
+                throw TypeError(".ProtoInputFieldDropdown.options: array expected");
+            message.options = [];
+            for (var i = 0; i < object.options.length; ++i) {
+                if (typeof object.options[i] !== "object")
+                    throw TypeError(".ProtoInputFieldDropdown.options: object expected");
+                message.options[i] = $root.ProtoOption.fromObject(object.options[i]);
+            }
+        }
+        if (object.bindOptionsCode != null)
+            message.bindOptionsCode = Boolean(object.bindOptionsCode);
+        if (object.optionsCode != null)
+            message.optionsCode = String(object.optionsCode);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoInputFieldDropdown message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoInputFieldDropdown
+     * @static
+     * @param {ProtoInputFieldDropdown} message ProtoInputFieldDropdown
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoInputFieldDropdown.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.options = [];
+        if (options.defaults) {
+            object.parent = null;
+            object.base = null;
+            object.dynamicOptions = false;
+            object.bindOptionsCode = false;
+            object.optionsCode = "";
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.base != null && message.hasOwnProperty("base"))
+            object.base = $root.ProtoBaseInputField.toObject(message.base, options);
+        if (message.dynamicOptions != null && message.hasOwnProperty("dynamicOptions"))
+            object.dynamicOptions = message.dynamicOptions;
+        if (message.options && message.options.length) {
+            object.options = [];
+            for (var j = 0; j < message.options.length; ++j)
+                object.options[j] = $root.ProtoOption.toObject(message.options[j], options);
+        }
+        if (message.bindOptionsCode != null && message.hasOwnProperty("bindOptionsCode"))
+            object.bindOptionsCode = message.bindOptionsCode;
+        if (message.optionsCode != null && message.hasOwnProperty("optionsCode"))
+            object.optionsCode = message.optionsCode;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoInputFieldDropdown to JSON.
+     * @function toJSON
+     * @memberof ProtoInputFieldDropdown
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoInputFieldDropdown.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoInputFieldDropdown
+     * @function getTypeUrl
+     * @memberof ProtoInputFieldDropdown
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoInputFieldDropdown.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoInputFieldDropdown";
+    };
+
+    return ProtoInputFieldDropdown;
+})();
+
+$root.ProtoOption = (function() {
+
+    /**
+     * Properties of a ProtoOption.
+     * @name IProtoOption
+     * @interface IProtoOption
+     * @property {string|null} [key] ProtoOption key
+     * @property {string|null} [value] ProtoOption value
+     */
+
+    /**
+     * Constructs a new ProtoOption.
+     * @name ProtoOption
+     * @classdesc Represents a ProtoOption.
+     * @implements IProtoOption
+     * @constructor
+     * @param {IProtoOption=} [properties] Properties to set
+     */
+    function ProtoOption(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoOption key.
+     * @member {string} key
+     * @memberof ProtoOption
+     * @instance
+     */
+    ProtoOption.prototype.key = "";
+
+    /**
+     * ProtoOption value.
+     * @member {string} value
+     * @memberof ProtoOption
+     * @instance
+     */
+    ProtoOption.prototype.value = "";
+
+    /**
+     * Creates a new ProtoOption instance using the specified properties.
+     * @function create
+     * @memberof ProtoOption
+     * @static
+     * @param {IProtoOption=} [properties] Properties to set
+     * @returns {ProtoOption} ProtoOption instance
+     */
+    ProtoOption.create = function create(properties) {
+        return new ProtoOption(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoOption message. Does not implicitly {@link ProtoOption.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoOption
+     * @static
+     * @param {IProtoOption} message ProtoOption message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoOption.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.key != null && Object.hasOwnProperty.call(message, "key"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
+        if (message.value != null && Object.hasOwnProperty.call(message, "value"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoOption message, length delimited. Does not implicitly {@link ProtoOption.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoOption
+     * @static
+     * @param {IProtoOption} message ProtoOption message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoOption.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoOption message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoOption
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoOption} ProtoOption
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoOption.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoOption();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.key = reader.string();
+                    break;
+                }
+            case 2: {
+                    message.value = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoOption message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoOption
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoOption} ProtoOption
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoOption.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoOption message.
+     * @function verify
+     * @memberof ProtoOption
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoOption.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.key != null && message.hasOwnProperty("key"))
+            if (!$util.isString(message.key))
+                return "key: string expected";
+        if (message.value != null && message.hasOwnProperty("value"))
+            if (!$util.isString(message.value))
+                return "value: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoOption message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoOption
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoOption} ProtoOption
+     */
+    ProtoOption.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoOption)
+            return object;
+        var message = new $root.ProtoOption();
+        if (object.key != null)
+            message.key = String(object.key);
+        if (object.value != null)
+            message.value = String(object.value);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoOption message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoOption
+     * @static
+     * @param {ProtoOption} message ProtoOption
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoOption.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.key = "";
+            object.value = "";
+        }
+        if (message.key != null && message.hasOwnProperty("key"))
+            object.key = message.key;
+        if (message.value != null && message.hasOwnProperty("value"))
+            object.value = message.value;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoOption to JSON.
+     * @function toJSON
+     * @memberof ProtoOption
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoOption.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoOption
+     * @function getTypeUrl
+     * @memberof ProtoOption
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoOption.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoOption";
+    };
+
+    return ProtoOption;
+})();
+
+/**
+ * PDFPrintingBehavior enum.
+ * @name PDFPrintingBehavior
+ * @enum {number}
+ * @property {number} INPUT=0 INPUT value
+ * @property {number} TEXT=1 TEXT value
+ * @property {number} INHERIT=2 INHERIT value
+ */
+$root.PDFPrintingBehavior = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "INPUT"] = 0;
+    values[valuesById[1] = "TEXT"] = 1;
+    values[valuesById[2] = "INHERIT"] = 2;
+    return values;
+})();
+
+$root.ProtoBaseInputField = (function() {
+
+    /**
+     * Properties of a ProtoBaseInputField.
+     * @name IProtoBaseInputField
+     * @interface IProtoBaseInputField
+     * @property {string|null} [name] ProtoBaseInputField name
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoBaseInputField comChannelUUIDs
+     * @property {boolean|null} [meta] ProtoBaseInputField meta
+     * @property {IProtoBoxedString|null} [value] ProtoBaseInputField value
+     * @property {string|null} [formatUUID] ProtoBaseInputField formatUUID
+     * @property {string|null} [dataTypeUUID] ProtoBaseInputField dataTypeUUID
+     * @property {string|null} [onChangeCode] ProtoBaseInputField onChangeCode
+     * @property {string|null} [placeholder] ProtoBaseInputField placeholder
+     * @property {boolean|null} [bindDefaultValue] ProtoBaseInputField bindDefaultValue
+     * @property {string|null} [defaultValueCode] ProtoBaseInputField defaultValueCode
+     * @property {boolean|null} [readonly] ProtoBaseInputField readonly
+     */
+
+    /**
+     * Constructs a new ProtoBaseInputField.
+     * @name ProtoBaseInputField
+     * @classdesc Represents a ProtoBaseInputField.
+     * @implements IProtoBaseInputField
+     * @constructor
+     * @param {IProtoBaseInputField=} [properties] Properties to set
+     */
+    function ProtoBaseInputField(properties) {
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoBaseInputField name.
+     * @member {string} name
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.name = "";
+
+    /**
+     * ProtoBaseInputField comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * ProtoBaseInputField meta.
+     * @member {boolean} meta
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.meta = false;
+
+    /**
+     * ProtoBaseInputField value.
+     * @member {IProtoBoxedString|null|undefined} value
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.value = null;
+
+    /**
+     * ProtoBaseInputField formatUUID.
+     * @member {string} formatUUID
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.formatUUID = "";
+
+    /**
+     * ProtoBaseInputField dataTypeUUID.
+     * @member {string} dataTypeUUID
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.dataTypeUUID = "";
+
+    /**
+     * ProtoBaseInputField onChangeCode.
+     * @member {string} onChangeCode
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.onChangeCode = "";
+
+    /**
+     * ProtoBaseInputField placeholder.
+     * @member {string} placeholder
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.placeholder = "";
+
+    /**
+     * ProtoBaseInputField bindDefaultValue.
+     * @member {boolean} bindDefaultValue
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.bindDefaultValue = false;
+
+    /**
+     * ProtoBaseInputField defaultValueCode.
+     * @member {string} defaultValueCode
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.defaultValueCode = "";
+
+    /**
+     * ProtoBaseInputField readonly.
+     * @member {boolean} readonly
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.readonly = false;
+
+    /**
+     * Creates a new ProtoBaseInputField instance using the specified properties.
+     * @function create
+     * @memberof ProtoBaseInputField
+     * @static
+     * @param {IProtoBaseInputField=} [properties] Properties to set
+     * @returns {ProtoBaseInputField} ProtoBaseInputField instance
+     */
+    ProtoBaseInputField.create = function create(properties) {
+        return new ProtoBaseInputField(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoBaseInputField message. Does not implicitly {@link ProtoBaseInputField.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoBaseInputField
+     * @static
+     * @param {IProtoBaseInputField} message ProtoBaseInputField message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoBaseInputField.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.comChannelUUIDs[i]);
+        if (message.meta != null && Object.hasOwnProperty.call(message, "meta"))
+            writer.uint32(/* id 3, wireType 0 =*/24).bool(message.meta);
+        if (message.value != null && Object.hasOwnProperty.call(message, "value"))
+            $root.ProtoBoxedString.encode(message.value, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+        if (message.formatUUID != null && Object.hasOwnProperty.call(message, "formatUUID"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.formatUUID);
+        if (message.dataTypeUUID != null && Object.hasOwnProperty.call(message, "dataTypeUUID"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.dataTypeUUID);
+        if (message.onChangeCode != null && Object.hasOwnProperty.call(message, "onChangeCode"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.onChangeCode);
+        if (message.placeholder != null && Object.hasOwnProperty.call(message, "placeholder"))
+            writer.uint32(/* id 8, wireType 2 =*/66).string(message.placeholder);
+        if (message.bindDefaultValue != null && Object.hasOwnProperty.call(message, "bindDefaultValue"))
+            writer.uint32(/* id 9, wireType 0 =*/72).bool(message.bindDefaultValue);
+        if (message.defaultValueCode != null && Object.hasOwnProperty.call(message, "defaultValueCode"))
+            writer.uint32(/* id 10, wireType 2 =*/82).string(message.defaultValueCode);
+        if (message.readonly != null && Object.hasOwnProperty.call(message, "readonly"))
+            writer.uint32(/* id 11, wireType 0 =*/88).bool(message.readonly);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoBaseInputField message, length delimited. Does not implicitly {@link ProtoBaseInputField.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoBaseInputField
+     * @static
+     * @param {IProtoBaseInputField} message ProtoBaseInputField message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoBaseInputField.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoBaseInputField message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoBaseInputField
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoBaseInputField} ProtoBaseInputField
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoBaseInputField.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBaseInputField();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.name = reader.string();
+                    break;
+                }
+            case 2: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 3: {
+                    message.meta = reader.bool();
+                    break;
+                }
+            case 4: {
+                    message.value = $root.ProtoBoxedString.decode(reader, reader.uint32());
+                    break;
+                }
+            case 5: {
+                    message.formatUUID = reader.string();
+                    break;
+                }
+            case 6: {
+                    message.dataTypeUUID = reader.string();
+                    break;
+                }
+            case 7: {
+                    message.onChangeCode = reader.string();
+                    break;
+                }
+            case 8: {
+                    message.placeholder = reader.string();
+                    break;
+                }
+            case 9: {
+                    message.bindDefaultValue = reader.bool();
+                    break;
+                }
+            case 10: {
+                    message.defaultValueCode = reader.string();
+                    break;
+                }
+            case 11: {
+                    message.readonly = reader.bool();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoBaseInputField message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoBaseInputField
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoBaseInputField} ProtoBaseInputField
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoBaseInputField.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoBaseInputField message.
+     * @function verify
+     * @memberof ProtoBaseInputField
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoBaseInputField.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        if (message.meta != null && message.hasOwnProperty("meta"))
+            if (typeof message.meta !== "boolean")
+                return "meta: boolean expected";
+        if (message.value != null && message.hasOwnProperty("value")) {
+            var error = $root.ProtoBoxedString.verify(message.value);
+            if (error)
+                return "value." + error;
+        }
+        if (message.formatUUID != null && message.hasOwnProperty("formatUUID"))
+            if (!$util.isString(message.formatUUID))
+                return "formatUUID: string expected";
+        if (message.dataTypeUUID != null && message.hasOwnProperty("dataTypeUUID"))
+            if (!$util.isString(message.dataTypeUUID))
+                return "dataTypeUUID: string expected";
+        if (message.onChangeCode != null && message.hasOwnProperty("onChangeCode"))
+            if (!$util.isString(message.onChangeCode))
+                return "onChangeCode: string expected";
+        if (message.placeholder != null && message.hasOwnProperty("placeholder"))
+            if (!$util.isString(message.placeholder))
+                return "placeholder: string expected";
+        if (message.bindDefaultValue != null && message.hasOwnProperty("bindDefaultValue"))
+            if (typeof message.bindDefaultValue !== "boolean")
+                return "bindDefaultValue: boolean expected";
+        if (message.defaultValueCode != null && message.hasOwnProperty("defaultValueCode"))
+            if (!$util.isString(message.defaultValueCode))
+                return "defaultValueCode: string expected";
+        if (message.readonly != null && message.hasOwnProperty("readonly"))
+            if (typeof message.readonly !== "boolean")
+                return "readonly: boolean expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoBaseInputField message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoBaseInputField
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoBaseInputField} ProtoBaseInputField
+     */
+    ProtoBaseInputField.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoBaseInputField)
+            return object;
+        var message = new $root.ProtoBaseInputField();
+        if (object.name != null)
+            message.name = String(object.name);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoBaseInputField.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        if (object.meta != null)
+            message.meta = Boolean(object.meta);
+        if (object.value != null) {
+            if (typeof object.value !== "object")
+                throw TypeError(".ProtoBaseInputField.value: object expected");
+            message.value = $root.ProtoBoxedString.fromObject(object.value);
+        }
+        if (object.formatUUID != null)
+            message.formatUUID = String(object.formatUUID);
+        if (object.dataTypeUUID != null)
+            message.dataTypeUUID = String(object.dataTypeUUID);
+        if (object.onChangeCode != null)
+            message.onChangeCode = String(object.onChangeCode);
+        if (object.placeholder != null)
+            message.placeholder = String(object.placeholder);
+        if (object.bindDefaultValue != null)
+            message.bindDefaultValue = Boolean(object.bindDefaultValue);
+        if (object.defaultValueCode != null)
+            message.defaultValueCode = String(object.defaultValueCode);
+        if (object.readonly != null)
+            message.readonly = Boolean(object.readonly);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoBaseInputField message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoBaseInputField
+     * @static
+     * @param {ProtoBaseInputField} message ProtoBaseInputField
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoBaseInputField.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.comChannelUUIDs = [];
+        if (options.defaults) {
+            object.name = "";
+            object.meta = false;
+            object.value = null;
+            object.formatUUID = "";
+            object.dataTypeUUID = "";
+            object.onChangeCode = "";
+            object.placeholder = "";
+            object.bindDefaultValue = false;
+            object.defaultValueCode = "";
+            object.readonly = false;
+        }
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        if (message.meta != null && message.hasOwnProperty("meta"))
+            object.meta = message.meta;
+        if (message.value != null && message.hasOwnProperty("value"))
+            object.value = $root.ProtoBoxedString.toObject(message.value, options);
+        if (message.formatUUID != null && message.hasOwnProperty("formatUUID"))
+            object.formatUUID = message.formatUUID;
+        if (message.dataTypeUUID != null && message.hasOwnProperty("dataTypeUUID"))
+            object.dataTypeUUID = message.dataTypeUUID;
+        if (message.onChangeCode != null && message.hasOwnProperty("onChangeCode"))
+            object.onChangeCode = message.onChangeCode;
+        if (message.placeholder != null && message.hasOwnProperty("placeholder"))
+            object.placeholder = message.placeholder;
+        if (message.bindDefaultValue != null && message.hasOwnProperty("bindDefaultValue"))
+            object.bindDefaultValue = message.bindDefaultValue;
+        if (message.defaultValueCode != null && message.hasOwnProperty("defaultValueCode"))
+            object.defaultValueCode = message.defaultValueCode;
+        if (message.readonly != null && message.hasOwnProperty("readonly"))
+            object.readonly = message.readonly;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoBaseInputField to JSON.
+     * @function toJSON
+     * @memberof ProtoBaseInputField
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoBaseInputField.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoBaseInputField
+     * @function getTypeUrl
+     * @memberof ProtoBaseInputField
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoBaseInputField.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoBaseInputField";
+    };
+
+    return ProtoBaseInputField;
 })();
 
 module.exports = $root;

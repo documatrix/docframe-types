@@ -89,6 +89,7 @@ declare -a FileArray=(
   "src/DocumentElements/documentelements.locale.proto"
   "src/DocumentElements/documentelements.tag.proto"
   "src/DocumentElements/documentelements.paragraph_set_default.proto"
+  "src/DocumentElements/documentelements.input_field.proto"
 )
 
 for file in ${FileArray[@]}; do
@@ -115,4 +116,3 @@ MSYS_NO_PATHCONV=1 protoc --go_out=. --go_opt=Mbuild/docframe.proto=/docframepb 
 pushd docframepb
 go generate .
 popd
-

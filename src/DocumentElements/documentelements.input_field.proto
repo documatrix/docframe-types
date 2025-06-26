@@ -1,0 +1,86 @@
+message ProtoInputFieldText {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+
+  ProtoBaseInputField base = 2;
+  PDFPrintingBehavior pdf_printing_behavior = 3;
+  ProtoBoxedMeasure pdf_size = 4;
+  string pdf_form_name = 5;
+}
+
+message ProtoInputFieldDate {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+
+  ProtoBaseInputField base = 2;
+}
+
+message ProtoInputFieldCheckbox {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+
+  ProtoBaseInputField base = 2;
+}
+
+message ProtoInputFieldLabel {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+
+  ProtoBaseInputField base = 2;
+}
+
+message ProtoInputFieldDropdown {
+    // extends DocumentElement
+    ProtoDocumentElement parent = 1;
+
+    ProtoBaseInputField base = 2;
+
+    bool dynamicOptions = 3;
+
+    repeated ProtoOption options = 4;
+
+    // If bindOptionsCode is true, the result of the optionsCode evaluation will be written to the options field, and re-evaluated for every
+    // time the input field is rendered.
+    // if bindOptionsCode is false, the optionsCode will be evaluated once and the result will be copied to the options field.
+    bool bindOptionsCode = 5;
+
+    // Options code has to return one of the following types:
+    // - An array of Strings, containing the possible options
+    // - An array of Hashes with keys "key" (containing the "hidden" key) and "value" (containing the displayed value)
+    // - A hash with keys (containing the "hidden" key) and "value" (containing the displayed value)
+    string optionsCode = 6;
+}
+
+message ProtoOption {
+    string key = 1;
+    string value = 2;
+}
+
+enum PDFPrintingBehavior {
+    INPUT = 0;
+    TEXT = 1;
+    INHERIT = 2;
+}
+
+message ProtoBaseInputField {
+    string name = 1;
+    repeated string comChannelUUIDs = 2;
+    bool meta = 3;
+    //
+    // If value is not null, the value of value should be used as field value.
+    //
+    ProtoBoxedString value = 4;
+    string formatUUID = 5;
+    string dataTypeUUID = 6;
+    string onChangeCode = 7;
+    string placeholder = 8;
+    //
+    // if bindDefaultValue is true, the result of the defaultValueCode evaluation will not be copied to the value field, but re-evaluated for every
+    // time the input field is rendered.
+    // if bindDefaultValue is false, the defaultValueCode will be evaluated once and the result will be copied to the value field.
+    //
+    bool bindDefaultValue = 9;
+    string defaultValueCode = 10;
+
+    bool readonly = 11;
+}
