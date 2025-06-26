@@ -8593,6 +8593,9 @@ export interface IProtoBrick {
 
     /** ProtoBrick comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoBrick name */
+    name?: (string|null);
 }
 
 /** Represents a ProtoBrick. */
@@ -8624,6 +8627,9 @@ export class ProtoBrick implements IProtoBrick {
 
     /** ProtoBrick comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoBrick name. */
+    public name: string;
 
     /**
      * Creates a new ProtoBrick instance using the specified properties.

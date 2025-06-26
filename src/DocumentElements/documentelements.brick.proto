@@ -10,4 +10,5 @@ message ProtoBrick {
   string uuid = 5;
   bool editable = 6;
   repeated string comChannelUUIDs = 7;
+  string name = 8;
 }

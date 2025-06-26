@@ -23367,6 +23367,7 @@ $root.ProtoBrick = (function() {
      * @property {string|null} [uuid] ProtoBrick uuid
      * @property {boolean|null} [editable] ProtoBrick editable
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoBrick comChannelUUIDs
+     * @property {string|null} [name] ProtoBrick name
      */
 
     /**
@@ -23443,6 +23444,14 @@ $root.ProtoBrick = (function() {
     ProtoBrick.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoBrick name.
+     * @member {string} name
+     * @memberof ProtoBrick
+     * @instance
+     */
+    ProtoBrick.prototype.name = "";
+
+    /**
      * Creates a new ProtoBrick instance using the specified properties.
      * @function create
      * @memberof ProtoBrick
@@ -23482,6 +23491,8 @@ $root.ProtoBrick = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 7, wireType 2 =*/58).string(message.comChannelUUIDs[i]);
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 8, wireType 2 =*/66).string(message.name);
         return writer;
     };
 
@@ -23546,6 +23557,10 @@ $root.ProtoBrick = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 8: {
+                    message.name = reader.string();
                     break;
                 }
             default:
@@ -23616,6 +23631,9 @@ $root.ProtoBrick = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
         return null;
     };
 
@@ -23668,6 +23686,8 @@ $root.ProtoBrick = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.name != null)
+            message.name = String(object.name);
         return message;
     };
 
@@ -23698,6 +23718,7 @@ $root.ProtoBrick = (function() {
             object.internName = "";
             object.uuid = "";
             object.editable = false;
+            object.name = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -23722,6 +23743,8 @@ $root.ProtoBrick = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
         return object;
     };
 

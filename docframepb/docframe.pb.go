@@ -7115,6 +7115,7 @@ type ProtoBrick struct {
 	Uuid            string                  `protobuf:"bytes,5,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	Editable        bool                    `protobuf:"varint,6,opt,name=editable,proto3" json:"editable,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,7,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Name            string                  `protobuf:"bytes,8,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -7196,6 +7197,13 @@ func (x *ProtoBrick) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoBrick) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
 }
 
 type ProtoTemplate struct {
@@ -11892,7 +11900,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"internName\x18\x01 \x01(\tR\n" +
 	"internName\x12\x18\n" +
 	"\aversion\x18\x02 \x01(\rR\aversion\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\xf9\x01\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\x8d\x02\n" +
 	"\n" +
 	"ProtoBrick\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
@@ -11903,7 +11911,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"internName\x12\x12\n" +
 	"\x04uuid\x18\x05 \x01(\tR\x04uuid\x12\x1a\n" +
 	"\beditable\x18\x06 \x01(\bR\beditable\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\"\xc8\x02\n" +
+	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04name\x18\b \x01(\tR\x04name\"\xc8\x02\n" +
 	"\rProtoTemplate\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
