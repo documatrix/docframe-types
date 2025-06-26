@@ -8788,6 +8788,7 @@ type ProtoTextBrick struct {
 	Id              uint64                  `protobuf:"varint,4,opt,name=id,proto3" json:"id,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,5,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	Editable        bool                    `protobuf:"varint,6,opt,name=editable,proto3" json:"editable,omitempty"`
+	Name            string                  `protobuf:"bytes,7,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -8862,6 +8863,13 @@ func (x *ProtoTextBrick) GetEditable() bool {
 		return x.Editable
 	}
 	return false
+}
+
+func (x *ProtoTextBrick) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
 }
 
 type ProtoVariable struct {
@@ -12026,14 +12034,15 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x126\n" +
 	"\fsemanticType\x18\x05 \x01(\x0e2\x12.ProtoSemanticTypeR\fsemanticType\x12\x1a\n" +
 	"\beditable\x18\x06 \x01(\bR\beditable\x12\x12\n" +
-	"\x04name\x18\a \x01(\tR\x04name\"\xdd\x01\n" +
+	"\x04name\x18\a \x01(\tR\x04name\"\xf1\x01\n" +
 	"\x0eProtoTextBrick\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12\x0e\n" +
 	"\x02id\x18\x04 \x01(\x04R\x02id\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\x12\x1a\n" +
-	"\beditable\x18\x06 \x01(\bR\beditable\"\x87\x02\n" +
+	"\beditable\x18\x06 \x01(\bR\beditable\x12\x12\n" +
+	"\x04name\x18\a \x01(\tR\x04name\"\x87\x02\n" +
 	"\rProtoVariable\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04path\x18\x02 \x01(\tR\x04path\x12\x18\n" +

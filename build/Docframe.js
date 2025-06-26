@@ -28892,6 +28892,7 @@ $root.ProtoTextBrick = (function() {
      * @property {number|Long|null} [id] ProtoTextBrick id
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTextBrick comChannelUUIDs
      * @property {boolean|null} [editable] ProtoTextBrick editable
+     * @property {string|null} [name] ProtoTextBrick name
      */
 
     /**
@@ -28960,6 +28961,14 @@ $root.ProtoTextBrick = (function() {
     ProtoTextBrick.prototype.editable = false;
 
     /**
+     * ProtoTextBrick name.
+     * @member {string} name
+     * @memberof ProtoTextBrick
+     * @instance
+     */
+    ProtoTextBrick.prototype.name = "";
+
+    /**
      * Creates a new ProtoTextBrick instance using the specified properties.
      * @function create
      * @memberof ProtoTextBrick
@@ -28997,6 +29006,8 @@ $root.ProtoTextBrick = (function() {
                 writer.uint32(/* id 5, wireType 2 =*/42).string(message.comChannelUUIDs[i]);
         if (message.editable != null && Object.hasOwnProperty.call(message, "editable"))
             writer.uint32(/* id 6, wireType 0 =*/48).bool(message.editable);
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.name);
         return writer;
     };
 
@@ -29057,6 +29068,10 @@ $root.ProtoTextBrick = (function() {
                 }
             case 6: {
                     message.editable = reader.bool();
+                    break;
+                }
+            case 7: {
+                    message.name = reader.string();
                     break;
                 }
             default:
@@ -29124,6 +29139,9 @@ $root.ProtoTextBrick = (function() {
         if (message.editable != null && message.hasOwnProperty("editable"))
             if (typeof message.editable !== "boolean")
                 return "editable: boolean expected";
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
         return null;
     };
 
@@ -29174,6 +29192,8 @@ $root.ProtoTextBrick = (function() {
         }
         if (object.editable != null)
             message.editable = Boolean(object.editable);
+        if (object.name != null)
+            message.name = String(object.name);
         return message;
     };
 
@@ -29203,6 +29223,7 @@ $root.ProtoTextBrick = (function() {
             } else
                 object.id = options.longs === String ? "0" : 0;
             object.editable = false;
+            object.name = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -29225,6 +29246,8 @@ $root.ProtoTextBrick = (function() {
         }
         if (message.editable != null && message.hasOwnProperty("editable"))
             object.editable = message.editable;
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
         return object;
     };
 

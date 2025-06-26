@@ -953,6 +953,7 @@ string uuid = 3;
 uint64 id = 4;
 repeated string comChannelUUIDs = 5;
 bool editable = 6;
+string name = 7;
 }
 message ProtoVariable {
 ProtoDocumentElement parent = 1;

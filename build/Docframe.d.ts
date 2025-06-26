@@ -10045,6 +10045,9 @@ export interface IProtoTextBrick {
 
     /** ProtoTextBrick editable */
     editable?: (boolean|null);
+
+    /** ProtoTextBrick name */
+    name?: (string|null);
 }
 
 /** Represents a ProtoTextBrick. */
@@ -10073,6 +10076,9 @@ export class ProtoTextBrick implements IProtoTextBrick {
 
     /** ProtoTextBrick editable. */
     public editable: boolean;
+
+    /** ProtoTextBrick name. */
+    public name: string;
 
     /**
      * Creates a new ProtoTextBrick instance using the specified properties.
