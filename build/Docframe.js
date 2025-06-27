@@ -41581,6 +41581,7 @@ $root.ProtoInputFieldText = (function() {
      * @property {IProtoBoxedMeasure|null} [pdfSize] ProtoInputFieldText pdfSize
      * @property {string|null} [pdfFormName] ProtoInputFieldText pdfFormName
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoInputFieldText comChannelUUIDs
+     * @property {string|null} [uuid] ProtoInputFieldText uuid
      */
 
     /**
@@ -41648,6 +41649,14 @@ $root.ProtoInputFieldText = (function() {
     ProtoInputFieldText.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoInputFieldText uuid.
+     * @member {string} uuid
+     * @memberof ProtoInputFieldText
+     * @instance
+     */
+    ProtoInputFieldText.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoInputFieldText instance using the specified properties.
      * @function create
      * @memberof ProtoInputFieldText
@@ -41684,6 +41693,8 @@ $root.ProtoInputFieldText = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 6, wireType 2 =*/50).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.uuid);
         return writer;
     };
 
@@ -41742,6 +41753,10 @@ $root.ProtoInputFieldText = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 7: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -41813,6 +41828,9 @@ $root.ProtoInputFieldText = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -41872,6 +41890,8 @@ $root.ProtoInputFieldText = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -41896,6 +41916,7 @@ $root.ProtoInputFieldText = (function() {
             object.pdfPrintingBehavior = options.enums === String ? "INPUT" : 0;
             object.pdfSize = null;
             object.pdfFormName = "";
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -41912,6 +41933,8 @@ $root.ProtoInputFieldText = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -41953,6 +41976,7 @@ $root.ProtoInputFieldDate = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldDate parent
      * @property {IProtoBaseInputField|null} [base] ProtoInputFieldDate base
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoInputFieldDate comChannelUUIDs
+     * @property {string|null} [uuid] ProtoInputFieldDate uuid
      */
 
     /**
@@ -41996,6 +42020,14 @@ $root.ProtoInputFieldDate = (function() {
     ProtoInputFieldDate.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoInputFieldDate uuid.
+     * @member {string} uuid
+     * @memberof ProtoInputFieldDate
+     * @instance
+     */
+    ProtoInputFieldDate.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoInputFieldDate instance using the specified properties.
      * @function create
      * @memberof ProtoInputFieldDate
@@ -42026,6 +42058,8 @@ $root.ProtoInputFieldDate = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         return writer;
     };
 
@@ -42072,6 +42106,10 @@ $root.ProtoInputFieldDate = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -42126,6 +42164,9 @@ $root.ProtoInputFieldDate = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -42158,6 +42199,8 @@ $root.ProtoInputFieldDate = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -42179,6 +42222,7 @@ $root.ProtoInputFieldDate = (function() {
         if (options.defaults) {
             object.parent = null;
             object.base = null;
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -42189,6 +42233,8 @@ $root.ProtoInputFieldDate = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -42230,6 +42276,7 @@ $root.ProtoInputFieldCheckbox = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldCheckbox parent
      * @property {IProtoBaseInputField|null} [base] ProtoInputFieldCheckbox base
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoInputFieldCheckbox comChannelUUIDs
+     * @property {string|null} [uuid] ProtoInputFieldCheckbox uuid
      */
 
     /**
@@ -42273,6 +42320,14 @@ $root.ProtoInputFieldCheckbox = (function() {
     ProtoInputFieldCheckbox.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoInputFieldCheckbox uuid.
+     * @member {string} uuid
+     * @memberof ProtoInputFieldCheckbox
+     * @instance
+     */
+    ProtoInputFieldCheckbox.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoInputFieldCheckbox instance using the specified properties.
      * @function create
      * @memberof ProtoInputFieldCheckbox
@@ -42303,6 +42358,8 @@ $root.ProtoInputFieldCheckbox = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         return writer;
     };
 
@@ -42349,6 +42406,10 @@ $root.ProtoInputFieldCheckbox = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -42403,6 +42464,9 @@ $root.ProtoInputFieldCheckbox = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -42435,6 +42499,8 @@ $root.ProtoInputFieldCheckbox = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -42456,6 +42522,7 @@ $root.ProtoInputFieldCheckbox = (function() {
         if (options.defaults) {
             object.parent = null;
             object.base = null;
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -42466,6 +42533,8 @@ $root.ProtoInputFieldCheckbox = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -42507,6 +42576,7 @@ $root.ProtoInputFieldLabel = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldLabel parent
      * @property {IProtoBaseInputField|null} [base] ProtoInputFieldLabel base
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoInputFieldLabel comChannelUUIDs
+     * @property {string|null} [uuid] ProtoInputFieldLabel uuid
      */
 
     /**
@@ -42550,6 +42620,14 @@ $root.ProtoInputFieldLabel = (function() {
     ProtoInputFieldLabel.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoInputFieldLabel uuid.
+     * @member {string} uuid
+     * @memberof ProtoInputFieldLabel
+     * @instance
+     */
+    ProtoInputFieldLabel.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoInputFieldLabel instance using the specified properties.
      * @function create
      * @memberof ProtoInputFieldLabel
@@ -42580,6 +42658,8 @@ $root.ProtoInputFieldLabel = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         return writer;
     };
 
@@ -42626,6 +42706,10 @@ $root.ProtoInputFieldLabel = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -42680,6 +42764,9 @@ $root.ProtoInputFieldLabel = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -42712,6 +42799,8 @@ $root.ProtoInputFieldLabel = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -42733,6 +42822,7 @@ $root.ProtoInputFieldLabel = (function() {
         if (options.defaults) {
             object.parent = null;
             object.base = null;
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -42743,6 +42833,8 @@ $root.ProtoInputFieldLabel = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -42788,6 +42880,7 @@ $root.ProtoInputFieldDropdown = (function() {
      * @property {boolean|null} [bindOptionsCode] ProtoInputFieldDropdown bindOptionsCode
      * @property {string|null} [optionsCode] ProtoInputFieldDropdown optionsCode
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoInputFieldDropdown comChannelUUIDs
+     * @property {string|null} [uuid] ProtoInputFieldDropdown uuid
      */
 
     /**
@@ -42864,6 +42957,14 @@ $root.ProtoInputFieldDropdown = (function() {
     ProtoInputFieldDropdown.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoInputFieldDropdown uuid.
+     * @member {string} uuid
+     * @memberof ProtoInputFieldDropdown
+     * @instance
+     */
+    ProtoInputFieldDropdown.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoInputFieldDropdown instance using the specified properties.
      * @function create
      * @memberof ProtoInputFieldDropdown
@@ -42903,6 +43004,8 @@ $root.ProtoInputFieldDropdown = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 7, wireType 2 =*/58).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 8, wireType 2 =*/66).string(message.uuid);
         return writer;
     };
 
@@ -42967,6 +43070,10 @@ $root.ProtoInputFieldDropdown = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 8: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -43039,6 +43146,9 @@ $root.ProtoInputFieldDropdown = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -43087,6 +43197,8 @@ $root.ProtoInputFieldDropdown = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -43113,6 +43225,7 @@ $root.ProtoInputFieldDropdown = (function() {
             object.dynamicOptions = false;
             object.bindOptionsCode = false;
             object.optionsCode = "";
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -43134,6 +43247,8 @@ $root.ProtoInputFieldDropdown = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 

@@ -1305,6 +1305,7 @@ PDFPrintingBehavior pdf_printing_behavior = 3;
 ProtoBoxedMeasure pdf_size = 4;
 string pdf_form_name = 5;
 repeated string comChannelUUIDs = 6;
+string uuid = 7;
 }
 
 message ProtoInputFieldDate {
@@ -1312,6 +1313,7 @@ ProtoDocumentElement parent = 1;
 
 ProtoBaseInputField base = 2;
 repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }
 
 message ProtoInputFieldCheckbox {
@@ -1319,6 +1321,7 @@ ProtoDocumentElement parent = 1;
 
 ProtoBaseInputField base = 2;
 repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }
 
 message ProtoInputFieldLabel {
@@ -1326,6 +1329,7 @@ ProtoDocumentElement parent = 1;
 
 ProtoBaseInputField base = 2;
 repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }
 
 message ProtoInputFieldDropdown {
@@ -1341,5 +1345,6 @@ bool bindOptionsCode = 5;
 
 string optionsCode = 6;
 repeated string comChannelUUIDs = 7;
+string uuid = 8;
 }
 

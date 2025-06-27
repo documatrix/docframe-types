@@ -14540,6 +14540,9 @@ export interface IProtoInputFieldText {
 
     /** ProtoInputFieldText comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoInputFieldText uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoInputFieldText. */
@@ -14568,6 +14571,9 @@ export class ProtoInputFieldText implements IProtoInputFieldText {
 
     /** ProtoInputFieldText comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoInputFieldText uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoInputFieldText instance using the specified properties.
@@ -14658,6 +14664,9 @@ export interface IProtoInputFieldDate {
 
     /** ProtoInputFieldDate comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoInputFieldDate uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoInputFieldDate. */
@@ -14677,6 +14686,9 @@ export class ProtoInputFieldDate implements IProtoInputFieldDate {
 
     /** ProtoInputFieldDate comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoInputFieldDate uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoInputFieldDate instance using the specified properties.
@@ -14767,6 +14779,9 @@ export interface IProtoInputFieldCheckbox {
 
     /** ProtoInputFieldCheckbox comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoInputFieldCheckbox uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoInputFieldCheckbox. */
@@ -14786,6 +14801,9 @@ export class ProtoInputFieldCheckbox implements IProtoInputFieldCheckbox {
 
     /** ProtoInputFieldCheckbox comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoInputFieldCheckbox uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoInputFieldCheckbox instance using the specified properties.
@@ -14876,6 +14894,9 @@ export interface IProtoInputFieldLabel {
 
     /** ProtoInputFieldLabel comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoInputFieldLabel uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoInputFieldLabel. */
@@ -14895,6 +14916,9 @@ export class ProtoInputFieldLabel implements IProtoInputFieldLabel {
 
     /** ProtoInputFieldLabel comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoInputFieldLabel uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoInputFieldLabel instance using the specified properties.
@@ -14997,6 +15021,9 @@ export interface IProtoInputFieldDropdown {
 
     /** ProtoInputFieldDropdown comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoInputFieldDropdown uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoInputFieldDropdown. */
@@ -15028,6 +15055,9 @@ export class ProtoInputFieldDropdown implements IProtoInputFieldDropdown {
 
     /** ProtoInputFieldDropdown comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoInputFieldDropdown uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoInputFieldDropdown instance using the specified properties.

@@ -11732,6 +11732,7 @@ type ProtoInputFieldText struct {
 	PdfSize             *ProtoBoxedMeasure     `protobuf:"bytes,4,opt,name=pdf_size,json=pdfSize,proto3" json:"pdf_size,omitempty"`
 	PdfFormName         string                 `protobuf:"bytes,5,opt,name=pdf_form_name,json=pdfFormName,proto3" json:"pdf_form_name,omitempty"`
 	ComChannelUUIDs     []string               `protobuf:"bytes,6,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid                string                 `protobuf:"bytes,7,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -11808,11 +11809,19 @@ func (x *ProtoInputFieldText) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoInputFieldText) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoInputFieldDate struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	Base            *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -11868,11 +11877,19 @@ func (x *ProtoInputFieldDate) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoInputFieldDate) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoInputFieldCheckbox struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	Base            *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -11928,11 +11945,19 @@ func (x *ProtoInputFieldCheckbox) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoInputFieldCheckbox) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoInputFieldLabel struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	Base            *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -11988,6 +12013,13 @@ func (x *ProtoInputFieldLabel) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoInputFieldLabel) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoInputFieldDropdown struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
@@ -11997,6 +12029,7 @@ type ProtoInputFieldDropdown struct {
 	BindOptionsCode bool                   `protobuf:"varint,5,opt,name=bindOptionsCode,proto3" json:"bindOptionsCode,omitempty"`
 	OptionsCode     string                 `protobuf:"bytes,6,opt,name=optionsCode,proto3" json:"optionsCode,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,7,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,8,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -12078,6 +12111,13 @@ func (x *ProtoInputFieldDropdown) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoInputFieldDropdown) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 var File_build_docframe_proto protoreflect.FileDescriptor
@@ -12956,26 +12996,30 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x120\n" +
 	"\x13paragraphFormatUUID\x18\x03 \x01(\tR\x13paragraphFormatUUID\x12\x12\n" +
 	"\x04uuid\x18\x04 \x01(\tR\x04uuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\xb5\x02\n" +
+	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\xc9\x02\n" +
 	"\x13ProtoInputFieldText\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12H\n" +
 	"\x15pdf_printing_behavior\x18\x03 \x01(\x0e2\x14.PDFPrintingBehaviorR\x13pdfPrintingBehavior\x12-\n" +
 	"\bpdf_size\x18\x04 \x01(\v2\x12.ProtoBoxedMeasureR\apdfSize\x12\"\n" +
 	"\rpdf_form_name\x18\x05 \x01(\tR\vpdfFormName\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\"\x98\x01\n" +
+	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\a \x01(\tR\x04uuid\"\xac\x01\n" +
 	"\x13ProtoInputFieldDate\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\x9c\x01\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xb0\x01\n" +
 	"\x17ProtoInputFieldCheckbox\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\x99\x01\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xad\x01\n" +
 	"\x14ProtoInputFieldLabel\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\xb8\x02\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xcc\x02\n" +
 	"\x17ProtoInputFieldDropdown\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12&\n" +
@@ -12983,7 +13027,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\aoptions\x18\x04 \x03(\v2\f.ProtoOptionR\aoptions\x12(\n" +
 	"\x0fbindOptionsCode\x18\x05 \x01(\bR\x0fbindOptionsCode\x12 \n" +
 	"\voptionsCode\x18\x06 \x01(\tR\voptionsCode\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs*8\n" +
+	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\b \x01(\tR\x04uuid*8\n" +
 	"\fProtoSPBMode\x12\b\n" +
 	"\x04NONE\x10\x00\x12\x0f\n" +
 	"\vSUPERSCRIPT\x10\x01\x12\r\n" +
