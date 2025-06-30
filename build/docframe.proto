@@ -223,6 +223,9 @@ ProtoSwissQRDebitor debitor = 2;
 message ProtoLinebreak {
 ProtoDocumentElement parent = 1;
 repeated string comChannelUUIDs = 2;
+
+string uuid = 3;
+ProtoBoxedDouble count = 4;
 }
 message ProtoBorder {
 ProtoMeasure weight = 1;

@@ -2777,6 +2777,12 @@ export interface IProtoLinebreak {
 
     /** ProtoLinebreak comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoLinebreak uuid */
+    uuid?: (string|null);
+
+    /** ProtoLinebreak count */
+    count?: (IProtoBoxedDouble|null);
 }
 
 /** Represents a ProtoLinebreak. */
@@ -2793,6 +2799,12 @@ export class ProtoLinebreak implements IProtoLinebreak {
 
     /** ProtoLinebreak comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoLinebreak uuid. */
+    public uuid: string;
+
+    /** ProtoLinebreak count. */
+    public count?: (IProtoBoxedDouble|null);
 
     /**
      * Creates a new ProtoLinebreak instance using the specified properties.

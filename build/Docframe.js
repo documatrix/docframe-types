@@ -6896,6 +6896,8 @@ $root.ProtoLinebreak = (function() {
      * @interface IProtoLinebreak
      * @property {IProtoDocumentElement|null} [parent] ProtoLinebreak parent
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoLinebreak comChannelUUIDs
+     * @property {string|null} [uuid] ProtoLinebreak uuid
+     * @property {IProtoBoxedDouble|null} [count] ProtoLinebreak count
      */
 
     /**
@@ -6931,6 +6933,22 @@ $root.ProtoLinebreak = (function() {
     ProtoLinebreak.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoLinebreak uuid.
+     * @member {string} uuid
+     * @memberof ProtoLinebreak
+     * @instance
+     */
+    ProtoLinebreak.prototype.uuid = "";
+
+    /**
+     * ProtoLinebreak count.
+     * @member {IProtoBoxedDouble|null|undefined} count
+     * @memberof ProtoLinebreak
+     * @instance
+     */
+    ProtoLinebreak.prototype.count = null;
+
+    /**
      * Creates a new ProtoLinebreak instance using the specified properties.
      * @function create
      * @memberof ProtoLinebreak
@@ -6959,6 +6977,10 @@ $root.ProtoLinebreak = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
+        if (message.count != null && Object.hasOwnProperty.call(message, "count"))
+            $root.ProtoBoxedDouble.encode(message.count, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
         return writer;
     };
 
@@ -7001,6 +7023,14 @@ $root.ProtoLinebreak = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 3: {
+                    message.uuid = reader.string();
+                    break;
+                }
+            case 4: {
+                    message.count = $root.ProtoBoxedDouble.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -7050,6 +7080,14 @@ $root.ProtoLinebreak = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.count != null && message.hasOwnProperty("count")) {
+            var error = $root.ProtoBoxedDouble.verify(message.count);
+            if (error)
+                return "count." + error;
+        }
         return null;
     };
 
@@ -7077,6 +7115,13 @@ $root.ProtoLinebreak = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
+        if (object.count != null) {
+            if (typeof object.count !== "object")
+                throw TypeError(".ProtoLinebreak.count: object expected");
+            message.count = $root.ProtoBoxedDouble.fromObject(object.count);
+        }
         return message;
     };
 
@@ -7095,8 +7140,11 @@ $root.ProtoLinebreak = (function() {
         var object = {};
         if (options.arrays || options.defaults)
             object.comChannelUUIDs = [];
-        if (options.defaults)
+        if (options.defaults) {
             object.parent = null;
+            object.uuid = "";
+            object.count = null;
+        }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
@@ -7104,6 +7152,10 @@ $root.ProtoLinebreak = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.count != null && message.hasOwnProperty("count"))
+            object.count = $root.ProtoBoxedDouble.toObject(message.count, options);
         return object;
     };
 
