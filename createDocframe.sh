@@ -102,7 +102,7 @@ mv ./build/Docframe.js.repaired ./build/Docframe.js
 ./node_modules/.bin/pbts -o ./build/Docframe.d.ts ./build/Docframe.js
 
 # MSYS_NO_PATHCONV=1 fixes build on windows (git bash)
-MSYS_NO_PATHCONV=1 protoc --go_out=. --go_opt=Mbuild/docframe.proto=/docframepb ./build/docframe.proto
+MSYS_NO_PATHCONV=1 protoc --csharp_out=build --go_out=. --go_opt=Mbuild/docframe.proto=/docframepb ./build/docframe.proto
 
 pushd docframepb
 go generate .

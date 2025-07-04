@@ -1,3 +1,5 @@
+option csharp_namespace = "Docframe";
+
 message Node {
   repeated Node children = 1;
 
