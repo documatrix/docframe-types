@@ -123,10 +123,10 @@ ProtoColorType type = 2; // set to RGB or CMYK
 int32 r = 3;
 int32 g = 4;
 int32 b = 5;
-int32 c = 6;
-int32 m = 7;
-int32 y = 8;
-int32 k = 9;
+float c = 6;
+float m = 7;
+float y = 8;
+float k = 9;
 }
 
 message ProtoBoxedColor {
@@ -147,10 +147,10 @@ message ProtoCMYKColor {
 ProtoBoxedString name = 1;
 ProtoColorType type = 2; // set to CMYK
 
-int32 c = 3;
-int32 m = 4;
-int32 y = 5;
-int32 k = 6;
+float c = 3;
+float m = 4;
+float y = 5;
+float k = 6;
 }
 enum ProtoHorizontalAlignment {
 ALIGN_LEFT = 0;
@@ -694,6 +694,8 @@ ProtoDocumentElement parent = 2;
 string uuid = 3;
 repeated string comChannelUUIDs = 4;
 }
+option csharp_namespace = "Docframe";
+
 message Node {
 repeated Node children = 1;
 

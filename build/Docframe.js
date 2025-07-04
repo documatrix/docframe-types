@@ -4038,13 +4038,13 @@ $root.ProtoColor = (function() {
         if (message.b != null && Object.hasOwnProperty.call(message, "b"))
             writer.uint32(/* id 5, wireType 0 =*/40).int32(message.b);
         if (message.c != null && Object.hasOwnProperty.call(message, "c"))
-            writer.uint32(/* id 6, wireType 0 =*/48).int32(message.c);
+            writer.uint32(/* id 6, wireType 5 =*/53).float(message.c);
         if (message.m != null && Object.hasOwnProperty.call(message, "m"))
-            writer.uint32(/* id 7, wireType 0 =*/56).int32(message.m);
+            writer.uint32(/* id 7, wireType 5 =*/61).float(message.m);
         if (message.y != null && Object.hasOwnProperty.call(message, "y"))
-            writer.uint32(/* id 8, wireType 0 =*/64).int32(message.y);
+            writer.uint32(/* id 8, wireType 5 =*/69).float(message.y);
         if (message.k != null && Object.hasOwnProperty.call(message, "k"))
-            writer.uint32(/* id 9, wireType 0 =*/72).int32(message.k);
+            writer.uint32(/* id 9, wireType 5 =*/77).float(message.k);
         return writer;
     };
 
@@ -4100,19 +4100,19 @@ $root.ProtoColor = (function() {
                     break;
                 }
             case 6: {
-                    message.c = reader.int32();
+                    message.c = reader.float();
                     break;
                 }
             case 7: {
-                    message.m = reader.int32();
+                    message.m = reader.float();
                     break;
                 }
             case 8: {
-                    message.y = reader.int32();
+                    message.y = reader.float();
                     break;
                 }
             case 9: {
-                    message.k = reader.int32();
+                    message.k = reader.float();
                     break;
                 }
             default:
@@ -4174,17 +4174,17 @@ $root.ProtoColor = (function() {
             if (!$util.isInteger(message.b))
                 return "b: integer expected";
         if (message.c != null && message.hasOwnProperty("c"))
-            if (!$util.isInteger(message.c))
-                return "c: integer expected";
+            if (typeof message.c !== "number")
+                return "c: number expected";
         if (message.m != null && message.hasOwnProperty("m"))
-            if (!$util.isInteger(message.m))
-                return "m: integer expected";
+            if (typeof message.m !== "number")
+                return "m: number expected";
         if (message.y != null && message.hasOwnProperty("y"))
-            if (!$util.isInteger(message.y))
-                return "y: integer expected";
+            if (typeof message.y !== "number")
+                return "y: number expected";
         if (message.k != null && message.hasOwnProperty("k"))
-            if (!$util.isInteger(message.k))
-                return "k: integer expected";
+            if (typeof message.k !== "number")
+                return "k: number expected";
         return null;
     };
 
@@ -4232,13 +4232,13 @@ $root.ProtoColor = (function() {
         if (object.b != null)
             message.b = object.b | 0;
         if (object.c != null)
-            message.c = object.c | 0;
+            message.c = Number(object.c);
         if (object.m != null)
-            message.m = object.m | 0;
+            message.m = Number(object.m);
         if (object.y != null)
-            message.y = object.y | 0;
+            message.y = Number(object.y);
         if (object.k != null)
-            message.k = object.k | 0;
+            message.k = Number(object.k);
         return message;
     };
 
@@ -4277,13 +4277,13 @@ $root.ProtoColor = (function() {
         if (message.b != null && message.hasOwnProperty("b"))
             object.b = message.b;
         if (message.c != null && message.hasOwnProperty("c"))
-            object.c = message.c;
+            object.c = options.json && !isFinite(message.c) ? String(message.c) : message.c;
         if (message.m != null && message.hasOwnProperty("m"))
-            object.m = message.m;
+            object.m = options.json && !isFinite(message.m) ? String(message.m) : message.m;
         if (message.y != null && message.hasOwnProperty("y"))
-            object.y = message.y;
+            object.y = options.json && !isFinite(message.y) ? String(message.y) : message.y;
         if (message.k != null && message.hasOwnProperty("k"))
-            object.k = message.k;
+            object.k = options.json && !isFinite(message.k) ? String(message.k) : message.k;
         return object;
     };
 
@@ -4979,13 +4979,13 @@ $root.ProtoCMYKColor = (function() {
         if (message.type != null && Object.hasOwnProperty.call(message, "type"))
             writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
         if (message.c != null && Object.hasOwnProperty.call(message, "c"))
-            writer.uint32(/* id 3, wireType 0 =*/24).int32(message.c);
+            writer.uint32(/* id 3, wireType 5 =*/29).float(message.c);
         if (message.m != null && Object.hasOwnProperty.call(message, "m"))
-            writer.uint32(/* id 4, wireType 0 =*/32).int32(message.m);
+            writer.uint32(/* id 4, wireType 5 =*/37).float(message.m);
         if (message.y != null && Object.hasOwnProperty.call(message, "y"))
-            writer.uint32(/* id 5, wireType 0 =*/40).int32(message.y);
+            writer.uint32(/* id 5, wireType 5 =*/45).float(message.y);
         if (message.k != null && Object.hasOwnProperty.call(message, "k"))
-            writer.uint32(/* id 6, wireType 0 =*/48).int32(message.k);
+            writer.uint32(/* id 6, wireType 5 =*/53).float(message.k);
         return writer;
     };
 
@@ -5029,19 +5029,19 @@ $root.ProtoCMYKColor = (function() {
                     break;
                 }
             case 3: {
-                    message.c = reader.int32();
+                    message.c = reader.float();
                     break;
                 }
             case 4: {
-                    message.m = reader.int32();
+                    message.m = reader.float();
                     break;
                 }
             case 5: {
-                    message.y = reader.int32();
+                    message.y = reader.float();
                     break;
                 }
             case 6: {
-                    message.k = reader.int32();
+                    message.k = reader.float();
                     break;
                 }
             default:
@@ -5094,17 +5094,17 @@ $root.ProtoCMYKColor = (function() {
                 break;
             }
         if (message.c != null && message.hasOwnProperty("c"))
-            if (!$util.isInteger(message.c))
-                return "c: integer expected";
+            if (typeof message.c !== "number")
+                return "c: number expected";
         if (message.m != null && message.hasOwnProperty("m"))
-            if (!$util.isInteger(message.m))
-                return "m: integer expected";
+            if (typeof message.m !== "number")
+                return "m: number expected";
         if (message.y != null && message.hasOwnProperty("y"))
-            if (!$util.isInteger(message.y))
-                return "y: integer expected";
+            if (typeof message.y !== "number")
+                return "y: number expected";
         if (message.k != null && message.hasOwnProperty("k"))
-            if (!$util.isInteger(message.k))
-                return "k: integer expected";
+            if (typeof message.k !== "number")
+                return "k: number expected";
         return null;
     };
 
@@ -5146,13 +5146,13 @@ $root.ProtoCMYKColor = (function() {
             break;
         }
         if (object.c != null)
-            message.c = object.c | 0;
+            message.c = Number(object.c);
         if (object.m != null)
-            message.m = object.m | 0;
+            message.m = Number(object.m);
         if (object.y != null)
-            message.y = object.y | 0;
+            message.y = Number(object.y);
         if (object.k != null)
-            message.k = object.k | 0;
+            message.k = Number(object.k);
         return message;
     };
 
@@ -5182,13 +5182,13 @@ $root.ProtoCMYKColor = (function() {
         if (message.type != null && message.hasOwnProperty("type"))
             object.type = options.enums === String ? $root.ProtoColorType[message.type] === undefined ? message.type : $root.ProtoColorType[message.type] : message.type;
         if (message.c != null && message.hasOwnProperty("c"))
-            object.c = message.c;
+            object.c = options.json && !isFinite(message.c) ? String(message.c) : message.c;
         if (message.m != null && message.hasOwnProperty("m"))
-            object.m = message.m;
+            object.m = options.json && !isFinite(message.m) ? String(message.m) : message.m;
         if (message.y != null && message.hasOwnProperty("y"))
-            object.y = message.y;
+            object.y = options.json && !isFinite(message.y) ? String(message.y) : message.y;
         if (message.k != null && message.hasOwnProperty("k"))
-            object.k = message.k;
+            object.k = options.json && !isFinite(message.k) ? String(message.k) : message.k;
         return object;
     };
 

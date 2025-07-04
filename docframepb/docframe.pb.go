@@ -2306,10 +2306,10 @@ type ProtoColor struct {
 	R             int32                  `protobuf:"varint,3,opt,name=r,proto3" json:"r,omitempty"`
 	G             int32                  `protobuf:"varint,4,opt,name=g,proto3" json:"g,omitempty"`
 	B             int32                  `protobuf:"varint,5,opt,name=b,proto3" json:"b,omitempty"`
-	C             int32                  `protobuf:"varint,6,opt,name=c,proto3" json:"c,omitempty"`
-	M             int32                  `protobuf:"varint,7,opt,name=m,proto3" json:"m,omitempty"`
-	Y             int32                  `protobuf:"varint,8,opt,name=y,proto3" json:"y,omitempty"`
-	K             int32                  `protobuf:"varint,9,opt,name=k,proto3" json:"k,omitempty"`
+	C             float32                `protobuf:"fixed32,6,opt,name=c,proto3" json:"c,omitempty"`
+	M             float32                `protobuf:"fixed32,7,opt,name=m,proto3" json:"m,omitempty"`
+	Y             float32                `protobuf:"fixed32,8,opt,name=y,proto3" json:"y,omitempty"`
+	K             float32                `protobuf:"fixed32,9,opt,name=k,proto3" json:"k,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2379,28 +2379,28 @@ func (x *ProtoColor) GetB() int32 {
 	return 0
 }
 
-func (x *ProtoColor) GetC() int32 {
+func (x *ProtoColor) GetC() float32 {
 	if x != nil {
 		return x.C
 	}
 	return 0
 }
 
-func (x *ProtoColor) GetM() int32 {
+func (x *ProtoColor) GetM() float32 {
 	if x != nil {
 		return x.M
 	}
 	return 0
 }
 
-func (x *ProtoColor) GetY() int32 {
+func (x *ProtoColor) GetY() float32 {
 	if x != nil {
 		return x.Y
 	}
 	return 0
 }
 
-func (x *ProtoColor) GetK() int32 {
+func (x *ProtoColor) GetK() float32 {
 	if x != nil {
 		return x.K
 	}
@@ -2539,10 +2539,10 @@ type ProtoCMYKColor struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          *ProtoBoxedString      `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Type          ProtoColorType         `protobuf:"varint,2,opt,name=type,proto3,enum=ProtoColorType" json:"type,omitempty"` // set to CMYK
-	C             int32                  `protobuf:"varint,3,opt,name=c,proto3" json:"c,omitempty"`
-	M             int32                  `protobuf:"varint,4,opt,name=m,proto3" json:"m,omitempty"`
-	Y             int32                  `protobuf:"varint,5,opt,name=y,proto3" json:"y,omitempty"`
-	K             int32                  `protobuf:"varint,6,opt,name=k,proto3" json:"k,omitempty"`
+	C             float32                `protobuf:"fixed32,3,opt,name=c,proto3" json:"c,omitempty"`
+	M             float32                `protobuf:"fixed32,4,opt,name=m,proto3" json:"m,omitempty"`
+	Y             float32                `protobuf:"fixed32,5,opt,name=y,proto3" json:"y,omitempty"`
+	K             float32                `protobuf:"fixed32,6,opt,name=k,proto3" json:"k,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2591,28 +2591,28 @@ func (x *ProtoCMYKColor) GetType() ProtoColorType {
 	return ProtoColorType_DUMMY_COLOR_TYPE
 }
 
-func (x *ProtoCMYKColor) GetC() int32 {
+func (x *ProtoCMYKColor) GetC() float32 {
 	if x != nil {
 		return x.C
 	}
 	return 0
 }
 
-func (x *ProtoCMYKColor) GetM() int32 {
+func (x *ProtoCMYKColor) GetM() float32 {
 	if x != nil {
 		return x.M
 	}
 	return 0
 }
 
-func (x *ProtoCMYKColor) GetY() int32 {
+func (x *ProtoCMYKColor) GetY() float32 {
 	if x != nil {
 		return x.Y
 	}
 	return 0
 }
 
-func (x *ProtoCMYKColor) GetK() int32 {
+func (x *ProtoCMYKColor) GetK() float32 {
 	if x != nil {
 		return x.K
 	}
@@ -9872,10 +9872,10 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x01r\x18\x03 \x01(\x05R\x01r\x12\f\n" +
 	"\x01g\x18\x04 \x01(\x05R\x01g\x12\f\n" +
 	"\x01b\x18\x05 \x01(\x05R\x01b\x12\f\n" +
-	"\x01c\x18\x06 \x01(\x05R\x01c\x12\f\n" +
-	"\x01m\x18\a \x01(\x05R\x01m\x12\f\n" +
-	"\x01y\x18\b \x01(\x05R\x01y\x12\f\n" +
-	"\x01k\x18\t \x01(\x05R\x01k\"L\n" +
+	"\x01c\x18\x06 \x01(\x02R\x01c\x12\f\n" +
+	"\x01m\x18\a \x01(\x02R\x01m\x12\f\n" +
+	"\x01y\x18\b \x01(\x02R\x01y\x12\f\n" +
+	"\x01k\x18\t \x01(\x02R\x01k\"L\n" +
 	"\x0fProtoBoxedColor\x12!\n" +
 	"\x05value\x18\x01 \x01(\v2\v.ProtoColorR\x05value\x12\x16\n" +
 	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\x85\x01\n" +
@@ -9888,10 +9888,10 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0eProtoCMYKColor\x12%\n" +
 	"\x04name\x18\x01 \x01(\v2\x11.ProtoBoxedStringR\x04name\x12#\n" +
 	"\x04type\x18\x02 \x01(\x0e2\x0f.ProtoColorTypeR\x04type\x12\f\n" +
-	"\x01c\x18\x03 \x01(\x05R\x01c\x12\f\n" +
-	"\x01m\x18\x04 \x01(\x05R\x01m\x12\f\n" +
-	"\x01y\x18\x05 \x01(\x05R\x01y\x12\f\n" +
-	"\x01k\x18\x06 \x01(\x05R\x01k\"h\n" +
+	"\x01c\x18\x03 \x01(\x02R\x01c\x12\f\n" +
+	"\x01m\x18\x04 \x01(\x02R\x01m\x12\f\n" +
+	"\x01y\x18\x05 \x01(\x02R\x01y\x12\f\n" +
+	"\x01k\x18\x06 \x01(\x02R\x01k\"h\n" +
 	"\x1dProtoBoxedHorizontalAlignment\x12/\n" +
 	"\x05value\x18\x01 \x01(\x0e2\x19.ProtoHorizontalAlignmentR\x05value\x12\x16\n" +
 	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"d\n" +
@@ -10752,7 +10752,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x16ProtoDoctypeOutputMode\x12\x1f\n" +
 	"\x1bDOCTYPE_OUTPUT_MODE_NOT_SET\x10\x00\x12\v\n" +
 	"\aDOCTYPE\x10\x01\x12\b\n" +
-	"\x04JSON\x10\x02b\x06proto3"
+	"\x04JSON\x10\x02B\v\xaa\x02\bDocframeb\x06proto3"
 
 var (
 	file_build_docframe_proto_rawDescOnce sync.Once

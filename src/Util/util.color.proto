@@ -13,13 +13,20 @@ enum ProtoColorType {
 message ProtoColor {
   ProtoBoxedString name = 1;
   ProtoColorType type = 2; // set to RGB or CMYK
+  // Stores a value between 0 and 255
   int32 r = 3;
+  // Stores a value between 0 and 255
   int32 g = 4;
+// Stores a value between 0 and 255
   int32 b = 5;
-  int32 c = 6;
-  int32 m = 7;
-  int32 y = 8;
-  int32 k = 9;
+  // Stores a value between 0.0 and 100.0
+  float c = 6;
+  // Stores a value between 0.0 and 100.0
+  float m = 7;
+  // Stores a value between 0.0 and 100.0
+  float y = 8;
+  // Stores a value between 0.0 and 100.0
+  float k = 9;
 }
 
 message ProtoBoxedColor {
@@ -44,8 +51,8 @@ message ProtoCMYKColor {
   ProtoColorType type = 2; // set to CMYK
   // extends Color
 
-  int32 c = 3;
-  int32 m = 4;
-  int32 y = 5;
-  int32 k = 6;
+  float c = 3;
+  float m = 4;
+  float y = 5;
+  float k = 6;
 }
