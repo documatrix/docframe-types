@@ -1340,14 +1340,12 @@ ProtoDocumentElement parent = 1;
 
 ProtoBaseInputField base = 2;
 
-bool dynamicOptions = 3;
+repeated ProtoOption options = 3;
 
-repeated ProtoOption options = 4;
+bool bindOptionsCode = 4;
 
-bool bindOptionsCode = 5;
-
-string optionsCode = 6;
-repeated string comChannelUUIDs = 7;
-string uuid = 8;
+string optionsCode = 5;
+repeated string comChannelUUIDs = 6;
+string uuid = 7;
 }
 

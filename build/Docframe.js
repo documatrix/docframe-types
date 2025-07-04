@@ -42927,7 +42927,6 @@ $root.ProtoInputFieldDropdown = (function() {
      * @interface IProtoInputFieldDropdown
      * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldDropdown parent
      * @property {IProtoBaseInputField|null} [base] ProtoInputFieldDropdown base
-     * @property {boolean|null} [dynamicOptions] ProtoInputFieldDropdown dynamicOptions
      * @property {Array.<IProtoOption>|null} [options] ProtoInputFieldDropdown options
      * @property {boolean|null} [bindOptionsCode] ProtoInputFieldDropdown bindOptionsCode
      * @property {string|null} [optionsCode] ProtoInputFieldDropdown optionsCode
@@ -42967,14 +42966,6 @@ $root.ProtoInputFieldDropdown = (function() {
      * @instance
      */
     ProtoInputFieldDropdown.prototype.base = null;
-
-    /**
-     * ProtoInputFieldDropdown dynamicOptions.
-     * @member {boolean} dynamicOptions
-     * @memberof ProtoInputFieldDropdown
-     * @instance
-     */
-    ProtoInputFieldDropdown.prototype.dynamicOptions = false;
 
     /**
      * ProtoInputFieldDropdown options.
@@ -43044,20 +43035,18 @@ $root.ProtoInputFieldDropdown = (function() {
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.base != null && Object.hasOwnProperty.call(message, "base"))
             $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.dynamicOptions != null && Object.hasOwnProperty.call(message, "dynamicOptions"))
-            writer.uint32(/* id 3, wireType 0 =*/24).bool(message.dynamicOptions);
         if (message.options != null && message.options.length)
             for (var i = 0; i < message.options.length; ++i)
-                $root.ProtoOption.encode(message.options[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                $root.ProtoOption.encode(message.options[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
         if (message.bindOptionsCode != null && Object.hasOwnProperty.call(message, "bindOptionsCode"))
-            writer.uint32(/* id 5, wireType 0 =*/40).bool(message.bindOptionsCode);
+            writer.uint32(/* id 4, wireType 0 =*/32).bool(message.bindOptionsCode);
         if (message.optionsCode != null && Object.hasOwnProperty.call(message, "optionsCode"))
-            writer.uint32(/* id 6, wireType 2 =*/50).string(message.optionsCode);
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.optionsCode);
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                writer.uint32(/* id 7, wireType 2 =*/58).string(message.comChannelUUIDs[i]);
+                writer.uint32(/* id 6, wireType 2 =*/50).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
-            writer.uint32(/* id 8, wireType 2 =*/66).string(message.uuid);
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.uuid);
         return writer;
     };
 
@@ -43101,30 +43090,26 @@ $root.ProtoInputFieldDropdown = (function() {
                     break;
                 }
             case 3: {
-                    message.dynamicOptions = reader.bool();
-                    break;
-                }
-            case 4: {
                     if (!(message.options && message.options.length))
                         message.options = [];
                     message.options.push($root.ProtoOption.decode(reader, reader.uint32()));
                     break;
                 }
-            case 5: {
+            case 4: {
                     message.bindOptionsCode = reader.bool();
                     break;
                 }
-            case 6: {
+            case 5: {
                     message.optionsCode = reader.string();
                     break;
                 }
-            case 7: {
+            case 6: {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
                     break;
                 }
-            case 8: {
+            case 7: {
                     message.uuid = reader.string();
                     break;
                 }
@@ -43173,9 +43158,6 @@ $root.ProtoInputFieldDropdown = (function() {
             if (error)
                 return "base." + error;
         }
-        if (message.dynamicOptions != null && message.hasOwnProperty("dynamicOptions"))
-            if (typeof message.dynamicOptions !== "boolean")
-                return "dynamicOptions: boolean expected";
         if (message.options != null && message.hasOwnProperty("options")) {
             if (!Array.isArray(message.options))
                 return "options: array expected";
@@ -43226,8 +43208,6 @@ $root.ProtoInputFieldDropdown = (function() {
                 throw TypeError(".ProtoInputFieldDropdown.base: object expected");
             message.base = $root.ProtoBaseInputField.fromObject(object.base);
         }
-        if (object.dynamicOptions != null)
-            message.dynamicOptions = Boolean(object.dynamicOptions);
         if (object.options) {
             if (!Array.isArray(object.options))
                 throw TypeError(".ProtoInputFieldDropdown.options: array expected");
@@ -43274,7 +43254,6 @@ $root.ProtoInputFieldDropdown = (function() {
         if (options.defaults) {
             object.parent = null;
             object.base = null;
-            object.dynamicOptions = false;
             object.bindOptionsCode = false;
             object.optionsCode = "";
             object.uuid = "";
@@ -43283,8 +43262,6 @@ $root.ProtoInputFieldDropdown = (function() {
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
         if (message.base != null && message.hasOwnProperty("base"))
             object.base = $root.ProtoBaseInputField.toObject(message.base, options);
-        if (message.dynamicOptions != null && message.hasOwnProperty("dynamicOptions"))
-            object.dynamicOptions = message.dynamicOptions;
         if (message.options && message.options.length) {
             object.options = [];
             for (var j = 0; j < message.options.length; ++j)

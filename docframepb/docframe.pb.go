@@ -12040,12 +12040,11 @@ type ProtoInputFieldDropdown struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	Base            *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
-	DynamicOptions  bool                   `protobuf:"varint,3,opt,name=dynamicOptions,proto3" json:"dynamicOptions,omitempty"`
-	Options         []*ProtoOption         `protobuf:"bytes,4,rep,name=options,proto3" json:"options,omitempty"`
-	BindOptionsCode bool                   `protobuf:"varint,5,opt,name=bindOptionsCode,proto3" json:"bindOptionsCode,omitempty"`
-	OptionsCode     string                 `protobuf:"bytes,6,opt,name=optionsCode,proto3" json:"optionsCode,omitempty"`
-	ComChannelUUIDs []string               `protobuf:"bytes,7,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	Uuid            string                 `protobuf:"bytes,8,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Options         []*ProtoOption         `protobuf:"bytes,3,rep,name=options,proto3" json:"options,omitempty"`
+	BindOptionsCode bool                   `protobuf:"varint,4,opt,name=bindOptionsCode,proto3" json:"bindOptionsCode,omitempty"`
+	OptionsCode     string                 `protobuf:"bytes,5,opt,name=optionsCode,proto3" json:"optionsCode,omitempty"`
+	ComChannelUUIDs []string               `protobuf:"bytes,6,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,7,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -12092,13 +12091,6 @@ func (x *ProtoInputFieldDropdown) GetBase() *ProtoBaseInputField {
 		return x.Base
 	}
 	return nil
-}
-
-func (x *ProtoInputFieldDropdown) GetDynamicOptions() bool {
-	if x != nil {
-		return x.DynamicOptions
-	}
-	return false
 }
 
 func (x *ProtoInputFieldDropdown) GetOptions() []*ProtoOption {
@@ -13037,16 +13029,15 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xcc\x02\n" +
+	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xa4\x02\n" +
 	"\x17ProtoInputFieldDropdown\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12&\n" +
-	"\x0edynamicOptions\x18\x03 \x01(\bR\x0edynamicOptions\x12&\n" +
-	"\aoptions\x18\x04 \x03(\v2\f.ProtoOptionR\aoptions\x12(\n" +
-	"\x0fbindOptionsCode\x18\x05 \x01(\bR\x0fbindOptionsCode\x12 \n" +
-	"\voptionsCode\x18\x06 \x01(\tR\voptionsCode\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\b \x01(\tR\x04uuid*8\n" +
+	"\aoptions\x18\x03 \x03(\v2\f.ProtoOptionR\aoptions\x12(\n" +
+	"\x0fbindOptionsCode\x18\x04 \x01(\bR\x0fbindOptionsCode\x12 \n" +
+	"\voptionsCode\x18\x05 \x01(\tR\voptionsCode\x12(\n" +
+	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\a \x01(\tR\x04uuid*8\n" +
 	"\fProtoSPBMode\x12\b\n" +
 	"\x04NONE\x10\x00\x12\x0f\n" +
 	"\vSUPERSCRIPT\x10\x01\x12\r\n" +

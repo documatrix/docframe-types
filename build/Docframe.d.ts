@@ -15019,9 +15019,6 @@ export interface IProtoInputFieldDropdown {
     /** ProtoInputFieldDropdown base */
     base?: (IProtoBaseInputField|null);
 
-    /** ProtoInputFieldDropdown dynamicOptions */
-    dynamicOptions?: (boolean|null);
-
     /** ProtoInputFieldDropdown options */
     options?: (IProtoOption[]|null);
 
@@ -15052,9 +15049,6 @@ export class ProtoInputFieldDropdown implements IProtoInputFieldDropdown {
 
     /** ProtoInputFieldDropdown base. */
     public base?: (IProtoBaseInputField|null);
-
-    /** ProtoInputFieldDropdown dynamicOptions. */
-    public dynamicOptions: boolean;
 
     /** ProtoInputFieldDropdown options. */
     public options: IProtoOption[];
