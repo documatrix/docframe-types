@@ -1182,7 +1182,6 @@ namespace Docframe {
   #endregion
 
   #region Messages
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedBool : pb::IMessage<ProtoBoxedBool>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1367,11 +1366,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1394,11 +1389,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1417,7 +1408,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedDouble : pb::IMessage<ProtoBoxedDouble>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1602,11 +1592,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1629,11 +1615,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1652,7 +1634,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedInt32 : pb::IMessage<ProtoBoxedInt32>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1837,11 +1818,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -1864,11 +1841,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -1887,7 +1860,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedUint32 : pb::IMessage<ProtoBoxedUint32>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2072,11 +2044,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -2099,11 +2067,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -2122,7 +2086,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedString : pb::IMessage<ProtoBoxedString>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2307,11 +2270,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -2334,11 +2293,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -2357,7 +2312,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedSPBMode : pb::IMessage<ProtoBoxedSPBMode>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2542,11 +2496,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -2569,11 +2519,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -2592,7 +2538,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoStrikethroughSpec : pb::IMessage<ProtoStrikethroughSpec>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2870,11 +2815,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -2915,11 +2856,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -2956,7 +2893,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedStrikethroughSpec : pb::IMessage<ProtoBoxedStrikethroughSpec>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3144,11 +3080,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -3174,11 +3106,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -3200,7 +3128,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoMeasure : pb::IMessage<ProtoMeasure>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3385,11 +3312,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -3412,11 +3335,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -3435,7 +3354,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedMeasure : pb::IMessage<ProtoBoxedMeasure>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3623,11 +3541,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -3653,11 +3567,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -3679,7 +3589,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoSideMeasures : pb::IMessage<ProtoSideMeasures>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3934,11 +3843,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -3981,11 +3886,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -4024,7 +3925,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedAdvancedIllustrationAreaTextFlowType : pb::IMessage<ProtoBoxedAdvancedIllustrationAreaTextFlowType>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4209,11 +4109,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -4236,11 +4132,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -4259,7 +4151,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoAdvancedIllustrationAreaImageSettings : pb::IMessage<ProtoAdvancedIllustrationAreaImageSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4450,11 +4341,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -4483,11 +4370,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -4512,7 +4395,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoFont : pb::IMessage<ProtoFont>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4697,11 +4579,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -4724,11 +4602,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -4747,7 +4621,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedFont : pb::IMessage<ProtoBoxedFont>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4935,11 +4808,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -4965,11 +4834,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -4991,7 +4856,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoColor : pb::IMessage<ProtoColor>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5385,11 +5249,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -5443,11 +5303,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -5497,7 +5353,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedColor : pb::IMessage<ProtoBoxedColor>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5685,11 +5540,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -5715,11 +5566,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -5741,7 +5588,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoRGBColor : pb::IMessage<ProtoRGBColor>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6019,11 +5865,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -6061,11 +5903,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -6099,7 +5937,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoCMYKColor : pb::IMessage<ProtoCMYKColor>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6406,11 +6243,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -6452,11 +6285,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -6494,7 +6323,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedHorizontalAlignment : pb::IMessage<ProtoBoxedHorizontalAlignment>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6679,11 +6507,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -6706,11 +6530,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -6729,7 +6549,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedVerticalAlignment : pb::IMessage<ProtoBoxedVerticalAlignment>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6914,11 +6733,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -6941,11 +6756,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -6964,6 +6775,7 @@ namespace Docframe {
 
   }
 
+<<<<<<< HEAD
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoSwissQRCreditor : pb::IMessage<ProtoSwissQRCreditor>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -8317,6 +8129,8 @@ namespace Docframe {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+=======
+>>>>>>> 40ab952 (Implement buf integration for protobuf code generation)
   public sealed partial class ProtoLinebreak : pb::IMessage<ProtoLinebreak>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -8554,11 +8368,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -8595,11 +8405,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -8632,7 +8438,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBorder : pb::IMessage<ProtoBorder>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -8823,11 +8628,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -8856,11 +8657,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -8885,7 +8682,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoSideBorders : pb::IMessage<ProtoSideBorders>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -9140,11 +8936,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -9187,11 +8979,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -9230,7 +9018,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedPositionMode : pb::IMessage<ProtoBoxedPositionMode>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -9415,11 +9202,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -9442,11 +9225,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -9465,7 +9244,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoColumnSettings : pb::IMessage<ProtoColumnSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -9749,11 +9527,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -9800,11 +9574,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -9847,7 +9617,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoGraphicState : pb::IMessage<ProtoGraphicState>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -10184,11 +9953,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -10249,11 +10014,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -10310,7 +10071,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoHtmlParser : pb::IMessage<ProtoHtmlParser>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -10437,11 +10197,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -10456,11 +10212,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -10471,7 +10223,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoUnderlineSpec : pb::IMessage<ProtoUnderlineSpec>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -10749,11 +10500,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -10794,11 +10541,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -10835,7 +10578,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedUnderlineSpec : pb::IMessage<ProtoBoxedUnderlineSpec>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -11023,11 +10765,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -11053,11 +10791,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -11079,7 +10813,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoCropSettings : pb::IMessage<ProtoCropSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -11334,11 +11067,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -11381,11 +11110,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -11424,7 +11149,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoFlipSettings : pb::IMessage<ProtoFlipSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -11609,11 +11333,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -11636,11 +11356,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -11659,6 +11375,7 @@ namespace Docframe {
 
   }
 
+<<<<<<< HEAD
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoOption : pb::IMessage<ProtoOption>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -12435,6 +12152,8 @@ namespace Docframe {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+=======
+>>>>>>> 40ab952 (Implement buf integration for protobuf code generation)
   public sealed partial class ProtoDocumentElement : pb::IMessage<ProtoDocumentElement>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -12611,11 +12330,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -12641,11 +12356,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -12667,7 +12378,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBranchDocumentElement : pb::IMessage<ProtoBranchDocumentElement>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -12862,11 +12572,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -12896,11 +12602,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -12926,7 +12628,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoLink : pb::IMessage<ProtoLink>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -13118,11 +12819,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -13149,11 +12846,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -13176,7 +12869,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoListLevelSetting : pb::IMessage<ProtoListLevelSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -13814,11 +13506,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -13919,11 +13607,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -14020,7 +13704,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoImageListLevelSetting : pb::IMessage<ProtoImageListLevelSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -14504,11 +14187,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -14580,11 +14259,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -14652,7 +14327,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTextListLevelSetting : pb::IMessage<ProtoTextListLevelSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -15203,11 +14877,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -15296,11 +14966,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -15385,7 +15051,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoNumberListLevelSetting : pb::IMessage<ProtoNumberListLevelSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -15965,11 +15630,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -16062,11 +15723,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -16155,7 +15812,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoUnnumberedListLevelSetting : pb::IMessage<ProtoUnnumberedListLevelSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -16735,11 +16391,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -16832,11 +16484,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -16925,7 +16573,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoListSetting : pb::IMessage<ProtoListSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -17181,11 +16828,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -17226,11 +16869,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -17267,7 +16906,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedListSetting : pb::IMessage<ProtoBoxedListSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -17455,11 +17093,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -17485,11 +17119,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -17511,7 +17141,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoNamedString : pb::IMessage<ProtoNamedString>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -17851,11 +17480,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -17905,11 +17530,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -17955,7 +17576,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoParagraph : pb::IMessage<ProtoParagraph>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -18272,11 +17892,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -18328,11 +17944,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -18380,7 +17992,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoParagraphFormat : pb::IMessage<ProtoParagraphFormat>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -19421,11 +19032,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -19640,11 +19247,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -19855,7 +19458,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoSection : pb::IMessage<ProtoSection>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -20108,11 +19710,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -20150,11 +19748,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -20188,7 +19782,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoSpaceVertically : pb::IMessage<ProtoSpaceVertically>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -20397,11 +19990,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -20434,11 +20023,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -20467,7 +20052,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoSpan : pb::IMessage<ProtoSpan>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -20886,11 +20470,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -20969,11 +20549,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -21048,7 +20624,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTable : pb::IMessage<ProtoTable>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -21400,11 +20975,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -21466,11 +21037,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -21528,7 +21095,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableConfig : pb::IMessage<ProtoTableConfig>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -21766,11 +21332,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -21807,11 +21369,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -21844,7 +21402,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableSettings : pb::IMessage<ProtoTableSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -22131,11 +21688,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -22185,11 +21738,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -22235,7 +21784,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedTableContentGroupType : pb::IMessage<ProtoBoxedTableContentGroupType>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -22420,11 +21968,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -22447,11 +21991,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -22470,7 +22010,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableContentGroup : pb::IMessage<ProtoTableContentGroup>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -22729,11 +22268,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -22777,11 +22312,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -22821,7 +22352,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableContentGroupConfig : pb::IMessage<ProtoTableContentGroupConfig>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -23059,11 +22589,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -23100,11 +22626,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -23137,7 +22659,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableContentGroupSettings : pb::IMessage<ProtoTableContentGroupSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -23346,11 +22867,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -23383,11 +22900,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -23416,7 +22929,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableRow : pb::IMessage<ProtoTableRow>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -23707,11 +23219,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -23762,11 +23270,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -23813,7 +23317,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableRowConfig : pb::IMessage<ProtoTableRowConfig>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -24109,11 +23612,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -24158,11 +23657,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -24203,7 +23698,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableRowSettings : pb::IMessage<ProtoTableRowSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -24394,11 +23888,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -24427,11 +23917,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -24456,7 +23942,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedTableCellType : pb::IMessage<ProtoBoxedTableCellType>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -24641,11 +24126,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -24668,11 +24149,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -24691,7 +24168,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableCell : pb::IMessage<ProtoTableCell>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -25040,11 +24516,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -25103,11 +24575,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -25162,7 +24630,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableCellConfig : pb::IMessage<ProtoTableCellConfig>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -25432,11 +24899,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -25480,11 +24943,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -25524,7 +24983,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableCellSettings : pb::IMessage<ProtoTableCellSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -25939,11 +25397,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -26021,11 +25475,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -26099,7 +25549,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableWS : pb::IMessage<ProtoTableWS>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -26313,11 +25762,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -26344,11 +25789,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -26371,6 +25812,7 @@ namespace Docframe {
 
   }
 
+<<<<<<< HEAD
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableElementProperties : pb::IMessage<ProtoTableElementProperties>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -29633,6 +29075,8 @@ namespace Docframe {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+=======
+>>>>>>> 40ab952 (Implement buf integration for protobuf code generation)
   public sealed partial class ProtoText : pb::IMessage<ProtoText>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -29838,11 +29282,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -29872,11 +29312,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -29902,7 +29338,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBarcode : pb::IMessage<ProtoBarcode>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -30442,11 +29877,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -30535,11 +29966,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -30624,7 +30051,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBrickReference : pb::IMessage<ProtoBrickReference>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -30827,11 +30253,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -30858,11 +30280,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -30885,7 +30303,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBrick : pb::IMessage<ProtoBrick>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -31225,11 +30642,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -31279,11 +30692,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -31329,7 +30738,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTemplate : pb::IMessage<ProtoTemplate>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -31616,6 +31024,10 @@ namespace Docframe {
         }
         Parent.MergeFrom(other.Parent);
       }
+<<<<<<< HEAD
+=======
+      containerMapping_.Add(other.containerMapping_);
+>>>>>>> 40ab952 (Implement buf integration for protobuf code generation)
       comChannelUUIDs_.Add(other.comChannelUUIDs_);
       if (other.Uuid.Length != 0) {
         Uuid = other.Uuid;
@@ -31640,11 +31052,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -31690,11 +31098,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -31736,7 +31140,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoHeader : pb::IMessage<ProtoHeader>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -31989,11 +31392,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -32031,11 +31430,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -32069,7 +31464,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoFooter : pb::IMessage<ProtoFooter>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -32322,11 +31716,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -32364,11 +31754,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -32402,7 +31788,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Node : pb::IMessage<Node>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -34814,11 +34199,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -35413,11 +34794,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -36008,7 +35385,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoImage : pb::IMessage<ProtoImage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -36914,11 +36290,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -37073,11 +36445,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -37228,7 +36596,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoDirectory : pb::IMessage<ProtoDirectory>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -37539,11 +36906,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -37589,11 +36952,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -37635,7 +36994,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTextBrick : pb::IMessage<ProtoTextBrick>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -37946,11 +37304,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -37996,11 +37350,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -38042,7 +37392,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoVariable : pb::IMessage<ProtoVariable>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -38367,11 +37716,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -38417,11 +37762,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -38463,7 +37804,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoFormatted : pb::IMessage<ProtoFormatted>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -38843,11 +38183,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -38901,11 +38237,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -38955,7 +38287,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoApplyProtoCDef : pb::IMessage<ProtoApplyProtoCDef>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -39129,11 +38460,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -39156,11 +38483,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -39179,7 +38502,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoApplyProtoPDef : pb::IMessage<ProtoApplyProtoPDef>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -39353,11 +38675,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -39380,11 +38698,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -39403,7 +38717,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoApplyPtConfig : pb::IMessage<ProtoApplyPtConfig>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -39577,11 +38890,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -39604,11 +38913,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -39627,7 +38932,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoApplyUlConfig : pb::IMessage<ProtoApplyUlConfig>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -39801,11 +39105,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -39828,11 +39128,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -39851,7 +39147,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoCDef : pb::IMessage<ProtoCDef>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -40121,11 +39416,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -40169,11 +39460,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -40213,7 +39500,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoPDef : pb::IMessage<ProtoPDef>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -40451,11 +39737,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -40492,11 +39774,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -40529,7 +39807,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoPtConfig : pb::IMessage<ProtoPtConfig>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -40831,11 +40108,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -40886,11 +40159,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -40937,7 +40206,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoUlConfig : pb::IMessage<ProtoUlConfig>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -41140,11 +40408,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -41171,11 +40435,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -41198,7 +40458,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoNewPage : pb::IMessage<ProtoNewPage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -41575,11 +40834,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -41630,11 +40885,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -41681,7 +40932,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoIndentation : pb::IMessage<ProtoIndentation>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -41969,11 +41219,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -42021,11 +41267,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -42069,7 +41311,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoCarryOver : pb::IMessage<ProtoCarryOver>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -42264,11 +41505,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -42298,11 +41535,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -42328,7 +41561,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoLoopEntry : pb::IMessage<ProtoLoopEntry>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -42610,11 +41842,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -42656,11 +41884,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -42698,7 +41922,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoLoop : pb::IMessage<ProtoLoop>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -42951,11 +42174,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -42993,11 +42212,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -43031,7 +42246,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoSubTotal : pb::IMessage<ProtoSubTotal>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -43316,11 +42530,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -43365,11 +42575,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -43410,7 +42616,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoWsArea : pb::IMessage<ProtoWsArea>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -43605,11 +42810,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -43639,11 +42840,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -43669,7 +42866,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoRule : pb::IMessage<ProtoRule>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -44093,11 +43289,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -44170,11 +43362,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -44243,7 +43431,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoRuleBoundaries : pb::IMessage<ProtoRuleBoundaries>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -44434,11 +43621,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -44467,11 +43650,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -44496,7 +43675,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoColorDef : pb::IMessage<ProtoColorDef>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -44673,11 +43851,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -44703,11 +43877,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -44729,7 +43899,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoLayout : pb::IMessage<ProtoLayout>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -44935,11 +44104,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -44969,11 +44134,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -44999,7 +44160,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoAdvancedIllustrationArea : pb::IMessage<ProtoAdvancedIllustrationArea>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -45438,11 +44598,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -45516,11 +44672,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -45590,7 +44742,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoAdjustHorizontally : pb::IMessage<ProtoAdjustHorizontally>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -45849,11 +45000,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -45897,11 +45044,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -45941,7 +45084,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoDoctypeScript : pb::IMessage<ProtoDoctypeScript>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -46205,11 +45347,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -46247,11 +45385,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -46285,7 +45419,6 @@ namespace Docframe {
 
   }
 
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoDmScript : pb::IMessage<ProtoDmScript>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -46520,11 +45653,7 @@ namespace Docframe {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -46558,11 +45687,7 @@ namespace Docframe {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
+        switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;

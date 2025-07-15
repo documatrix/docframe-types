@@ -26,7 +26,8 @@
   },
   "scripts": {
     "commit": "npm run-script build && npm version patch && npm publish && git push",
-    "build": "bash createDocframe.sh",
+    "build": "make gen/document_elements/v1/message_generated.go",
+    "build:old": "bash createDocframe.sh",
     "prepublish": "npm run build"
   },
   "author": "DocuMatrix <office@documatrix.com>",
