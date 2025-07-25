@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (ProtoParagraphFormat *ProtoParagraphFormat) ToNode(children ...Message) *Node {
+func (paragraphFormat *ProtoParagraphFormat) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (ProtoParagraphFormat *ProtoParagraphFormat) ToNode(children ...Message) *N
 
 	node := &Node{
 		Object: &Node_ParagraphFormat{
-			ParagraphFormat: ProtoParagraphFormat,
+			ParagraphFormat: paragraphFormat,
 		},
 		Children: nodeChildren,
 	}

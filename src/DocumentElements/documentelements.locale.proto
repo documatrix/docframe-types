@@ -1,0 +1,10 @@
+message ProtoLocale {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+  repeated string languageUUIDs = 5;
+  repeated string regionUUIDs = 6;
+}

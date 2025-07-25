@@ -5,6 +5,10 @@ message ProtoFormatted {
 
   bool dteditorSyntax = 2;
   string doctypeContent = 3;
-  string htmlContent = 4;
-  repeated string comChannelUUIDs = 5;
+  string doctypeCode = 4;
+  string htmlContent = 5;
+  string htmlCode = 6;
+  string textContent = 7;
+  string textCode = 8;
+  repeated string comChannelUUIDs = 9;
 }

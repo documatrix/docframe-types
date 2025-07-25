@@ -1,0 +1,10 @@
+message ProtoParagraphSetDefault {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  // extends DocumentElement
+
+  string name = 2;
+  string paragraphFormatUUID = 3;
+  string uuid = 4;
+  repeated string comChannelUUIDs = 5;
+}

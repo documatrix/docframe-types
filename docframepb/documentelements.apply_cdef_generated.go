@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (ProtoApplyProtoCDef *ProtoApplyProtoCDef) ToNode(children ...Message) *Node {
+func (applyCdef *ProtoApplyProtoCDef) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (ProtoApplyProtoCDef *ProtoApplyProtoCDef) ToNode(children ...Message) *Nod
 
 	node := &Node{
 		Object: &Node_ApplyCDef{
-			ApplyCDef: ProtoApplyProtoCDef,
+			ApplyCDef: applyCdef,
 		},
 		Children: nodeChildren,
 	}

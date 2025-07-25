@@ -2358,6 +2358,417 @@ export enum ProtoBarcodeType {
     AZTEC = 9
 }
 
+/** Properties of a ProtoSwissQRCreditor. */
+export interface IProtoSwissQRCreditor {
+
+    /** ProtoSwissQRCreditor addressType */
+    addressType?: (string|null);
+
+    /** ProtoSwissQRCreditor name */
+    name?: (string|null);
+
+    /** ProtoSwissQRCreditor postalCode */
+    postalCode?: (string|null);
+
+    /** ProtoSwissQRCreditor town */
+    town?: (string|null);
+
+    /** ProtoSwissQRCreditor country */
+    country?: (string|null);
+
+    /** ProtoSwissQRCreditor streetOrAddressLine1 */
+    streetOrAddressLine1?: (string|null);
+
+    /** ProtoSwissQRCreditor buildingNumberOrAddressLine2 */
+    buildingNumberOrAddressLine2?: (string|null);
+
+    /** ProtoSwissQRCreditor iban */
+    iban?: (string|null);
+
+    /** ProtoSwissQRCreditor amount */
+    amount?: (string|null);
+
+    /** ProtoSwissQRCreditor currency */
+    currency?: (string|null);
+}
+
+/** Represents a ProtoSwissQRCreditor. */
+export class ProtoSwissQRCreditor implements IProtoSwissQRCreditor {
+
+    /**
+     * Constructs a new ProtoSwissQRCreditor.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSwissQRCreditor);
+
+    /** ProtoSwissQRCreditor addressType. */
+    public addressType: string;
+
+    /** ProtoSwissQRCreditor name. */
+    public name: string;
+
+    /** ProtoSwissQRCreditor postalCode. */
+    public postalCode: string;
+
+    /** ProtoSwissQRCreditor town. */
+    public town: string;
+
+    /** ProtoSwissQRCreditor country. */
+    public country: string;
+
+    /** ProtoSwissQRCreditor streetOrAddressLine1. */
+    public streetOrAddressLine1: string;
+
+    /** ProtoSwissQRCreditor buildingNumberOrAddressLine2. */
+    public buildingNumberOrAddressLine2: string;
+
+    /** ProtoSwissQRCreditor iban. */
+    public iban: string;
+
+    /** ProtoSwissQRCreditor amount. */
+    public amount: string;
+
+    /** ProtoSwissQRCreditor currency. */
+    public currency: string;
+
+    /**
+     * Creates a new ProtoSwissQRCreditor instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSwissQRCreditor instance
+     */
+    public static create(properties?: IProtoSwissQRCreditor): ProtoSwissQRCreditor;
+
+    /**
+     * Encodes the specified ProtoSwissQRCreditor message. Does not implicitly {@link ProtoSwissQRCreditor.verify|verify} messages.
+     * @param message ProtoSwissQRCreditor message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSwissQRCreditor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSwissQRCreditor message, length delimited. Does not implicitly {@link ProtoSwissQRCreditor.verify|verify} messages.
+     * @param message ProtoSwissQRCreditor message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSwissQRCreditor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSwissQRCreditor message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSwissQRCreditor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSwissQRCreditor;
+
+    /**
+     * Decodes a ProtoSwissQRCreditor message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSwissQRCreditor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSwissQRCreditor;
+
+    /**
+     * Verifies a ProtoSwissQRCreditor message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSwissQRCreditor message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSwissQRCreditor
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSwissQRCreditor;
+
+    /**
+     * Creates a plain object from a ProtoSwissQRCreditor message. Also converts values to other types if specified.
+     * @param message ProtoSwissQRCreditor
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSwissQRCreditor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSwissQRCreditor to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoSwissQRCreditor
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoSwissQRDebitor. */
+export interface IProtoSwissQRDebitor {
+
+    /** ProtoSwissQRDebitor addressType */
+    addressType?: (string|null);
+
+    /** ProtoSwissQRDebitor name */
+    name?: (string|null);
+
+    /** ProtoSwissQRDebitor postalCode */
+    postalCode?: (string|null);
+
+    /** ProtoSwissQRDebitor town */
+    town?: (string|null);
+
+    /** ProtoSwissQRDebitor country */
+    country?: (string|null);
+
+    /** ProtoSwissQRDebitor streetOrAddressLine1 */
+    streetOrAddressLine1?: (string|null);
+
+    /** ProtoSwissQRDebitor buildingNumberOrAddressLine2 */
+    buildingNumberOrAddressLine2?: (string|null);
+
+    /** ProtoSwissQRDebitor paymentReferenceType */
+    paymentReferenceType?: (string|null);
+
+    /** ProtoSwissQRDebitor paymentReference */
+    paymentReference?: (string|null);
+
+    /** ProtoSwissQRDebitor unstructuredReference */
+    unstructuredReference?: (string|null);
+
+    /** ProtoSwissQRDebitor billInformation */
+    billInformation?: (string|null);
+}
+
+/** Represents a ProtoSwissQRDebitor. */
+export class ProtoSwissQRDebitor implements IProtoSwissQRDebitor {
+
+    /**
+     * Constructs a new ProtoSwissQRDebitor.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSwissQRDebitor);
+
+    /** ProtoSwissQRDebitor addressType. */
+    public addressType: string;
+
+    /** ProtoSwissQRDebitor name. */
+    public name: string;
+
+    /** ProtoSwissQRDebitor postalCode. */
+    public postalCode: string;
+
+    /** ProtoSwissQRDebitor town. */
+    public town: string;
+
+    /** ProtoSwissQRDebitor country. */
+    public country: string;
+
+    /** ProtoSwissQRDebitor streetOrAddressLine1. */
+    public streetOrAddressLine1: string;
+
+    /** ProtoSwissQRDebitor buildingNumberOrAddressLine2. */
+    public buildingNumberOrAddressLine2: string;
+
+    /** ProtoSwissQRDebitor paymentReferenceType. */
+    public paymentReferenceType: string;
+
+    /** ProtoSwissQRDebitor paymentReference. */
+    public paymentReference: string;
+
+    /** ProtoSwissQRDebitor unstructuredReference. */
+    public unstructuredReference: string;
+
+    /** ProtoSwissQRDebitor billInformation. */
+    public billInformation: string;
+
+    /**
+     * Creates a new ProtoSwissQRDebitor instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSwissQRDebitor instance
+     */
+    public static create(properties?: IProtoSwissQRDebitor): ProtoSwissQRDebitor;
+
+    /**
+     * Encodes the specified ProtoSwissQRDebitor message. Does not implicitly {@link ProtoSwissQRDebitor.verify|verify} messages.
+     * @param message ProtoSwissQRDebitor message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSwissQRDebitor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSwissQRDebitor message, length delimited. Does not implicitly {@link ProtoSwissQRDebitor.verify|verify} messages.
+     * @param message ProtoSwissQRDebitor message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSwissQRDebitor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSwissQRDebitor message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSwissQRDebitor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSwissQRDebitor;
+
+    /**
+     * Decodes a ProtoSwissQRDebitor message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSwissQRDebitor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSwissQRDebitor;
+
+    /**
+     * Verifies a ProtoSwissQRDebitor message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSwissQRDebitor message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSwissQRDebitor
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSwissQRDebitor;
+
+    /**
+     * Creates a plain object from a ProtoSwissQRDebitor message. Also converts values to other types if specified.
+     * @param message ProtoSwissQRDebitor
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSwissQRDebitor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSwissQRDebitor to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoSwissQRDebitor
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoSwissQRData. */
+export interface IProtoSwissQRData {
+
+    /** ProtoSwissQRData creditor */
+    creditor?: (IProtoSwissQRCreditor|null);
+
+    /** ProtoSwissQRData debitor */
+    debitor?: (IProtoSwissQRDebitor|null);
+}
+
+/** Represents a ProtoSwissQRData. */
+export class ProtoSwissQRData implements IProtoSwissQRData {
+
+    /**
+     * Constructs a new ProtoSwissQRData.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSwissQRData);
+
+    /** ProtoSwissQRData creditor. */
+    public creditor?: (IProtoSwissQRCreditor|null);
+
+    /** ProtoSwissQRData debitor. */
+    public debitor?: (IProtoSwissQRDebitor|null);
+
+    /**
+     * Creates a new ProtoSwissQRData instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSwissQRData instance
+     */
+    public static create(properties?: IProtoSwissQRData): ProtoSwissQRData;
+
+    /**
+     * Encodes the specified ProtoSwissQRData message. Does not implicitly {@link ProtoSwissQRData.verify|verify} messages.
+     * @param message ProtoSwissQRData message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSwissQRData, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSwissQRData message, length delimited. Does not implicitly {@link ProtoSwissQRData.verify|verify} messages.
+     * @param message ProtoSwissQRData message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSwissQRData, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSwissQRData message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSwissQRData
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSwissQRData;
+
+    /**
+     * Decodes a ProtoSwissQRData message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSwissQRData
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSwissQRData;
+
+    /**
+     * Verifies a ProtoSwissQRData message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSwissQRData message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSwissQRData
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSwissQRData;
+
+    /**
+     * Creates a plain object from a ProtoSwissQRData message. Also converts values to other types if specified.
+     * @param message ProtoSwissQRData
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSwissQRData, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSwissQRData to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoSwissQRData
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
 /** Properties of a ProtoLinebreak. */
 export interface IProtoLinebreak {
 
@@ -2366,6 +2777,12 @@ export interface IProtoLinebreak {
 
     /** ProtoLinebreak comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoLinebreak uuid */
+    uuid?: (string|null);
+
+    /** ProtoLinebreak count */
+    count?: (IProtoBoxedUint32|null);
 }
 
 /** Represents a ProtoLinebreak. */
@@ -2382,6 +2799,12 @@ export class ProtoLinebreak implements IProtoLinebreak {
 
     /** ProtoLinebreak comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoLinebreak uuid. */
+    public uuid: string;
+
+    /** ProtoLinebreak count. */
+    public count?: (IProtoBoxedUint32|null);
 
     /**
      * Creates a new ProtoLinebreak instance using the specified properties.
@@ -3604,6 +4027,275 @@ export enum ProtoSemanticType {
     SEMANTIC_TYPE_ART = 2,
     SEMANTIC_TYPE_SECT = 3,
     SEMANTIC_TYPE_DIV = 4
+}
+
+/** Properties of a ProtoOption. */
+export interface IProtoOption {
+
+    /** ProtoOption key */
+    key?: (string|null);
+
+    /** ProtoOption value */
+    value?: (string|null);
+}
+
+/** Represents a ProtoOption. */
+export class ProtoOption implements IProtoOption {
+
+    /**
+     * Constructs a new ProtoOption.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoOption);
+
+    /** ProtoOption key. */
+    public key: string;
+
+    /** ProtoOption value. */
+    public value: string;
+
+    /**
+     * Creates a new ProtoOption instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoOption instance
+     */
+    public static create(properties?: IProtoOption): ProtoOption;
+
+    /**
+     * Encodes the specified ProtoOption message. Does not implicitly {@link ProtoOption.verify|verify} messages.
+     * @param message ProtoOption message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoOption, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoOption message, length delimited. Does not implicitly {@link ProtoOption.verify|verify} messages.
+     * @param message ProtoOption message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoOption, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoOption message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoOption
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoOption;
+
+    /**
+     * Decodes a ProtoOption message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoOption
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoOption;
+
+    /**
+     * Verifies a ProtoOption message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoOption message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoOption
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoOption;
+
+    /**
+     * Creates a plain object from a ProtoOption message. Also converts values to other types if specified.
+     * @param message ProtoOption
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoOption, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoOption to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoOption
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** PDFPrintingBehavior enum. */
+export enum PDFPrintingBehavior {
+    PDF_PRINTING_BEHAVIOR_INPUT = 0,
+    PDF_PRINTING_BEHAVIOR_TEXT = 1,
+    PDF_PRINTING_BEHAVIOR_INHERIT = 2
+}
+
+/** Properties of a ProtoBaseInputField. */
+export interface IProtoBaseInputField {
+
+    /** ProtoBaseInputField name */
+    name?: (string|null);
+
+    /** ProtoBaseInputField meta */
+    meta?: (boolean|null);
+
+    /** ProtoBaseInputField value */
+    value?: (IProtoBoxedString|null);
+
+    /** ProtoBaseInputField formatUUID */
+    formatUUID?: (string|null);
+
+    /** ProtoBaseInputField dataTypeUUID */
+    dataTypeUUID?: (string|null);
+
+    /** ProtoBaseInputField onChangeCode */
+    onChangeCode?: (string|null);
+
+    /** ProtoBaseInputField placeholder */
+    placeholder?: (string|null);
+
+    /** ProtoBaseInputField bindDefaultValue */
+    bindDefaultValue?: (boolean|null);
+
+    /** ProtoBaseInputField defaultValueCode */
+    defaultValueCode?: (string|null);
+
+    /** ProtoBaseInputField readonly */
+    readonly?: (boolean|null);
+}
+
+/** Represents a ProtoBaseInputField. */
+export class ProtoBaseInputField implements IProtoBaseInputField {
+
+    /**
+     * Constructs a new ProtoBaseInputField.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoBaseInputField);
+
+    /** ProtoBaseInputField name. */
+    public name: string;
+
+    /** ProtoBaseInputField meta. */
+    public meta: boolean;
+
+    /** ProtoBaseInputField value. */
+    public value?: (IProtoBoxedString|null);
+
+    /** ProtoBaseInputField formatUUID. */
+    public formatUUID: string;
+
+    /** ProtoBaseInputField dataTypeUUID. */
+    public dataTypeUUID: string;
+
+    /** ProtoBaseInputField onChangeCode. */
+    public onChangeCode: string;
+
+    /** ProtoBaseInputField placeholder. */
+    public placeholder: string;
+
+    /** ProtoBaseInputField bindDefaultValue. */
+    public bindDefaultValue: boolean;
+
+    /** ProtoBaseInputField defaultValueCode. */
+    public defaultValueCode: string;
+
+    /** ProtoBaseInputField readonly. */
+    public readonly: boolean;
+
+    /**
+     * Creates a new ProtoBaseInputField instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoBaseInputField instance
+     */
+    public static create(properties?: IProtoBaseInputField): ProtoBaseInputField;
+
+    /**
+     * Encodes the specified ProtoBaseInputField message. Does not implicitly {@link ProtoBaseInputField.verify|verify} messages.
+     * @param message ProtoBaseInputField message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoBaseInputField, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoBaseInputField message, length delimited. Does not implicitly {@link ProtoBaseInputField.verify|verify} messages.
+     * @param message ProtoBaseInputField message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoBaseInputField, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoBaseInputField message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoBaseInputField
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoBaseInputField;
+
+    /**
+     * Decodes a ProtoBaseInputField message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoBaseInputField
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoBaseInputField;
+
+    /**
+     * Verifies a ProtoBaseInputField message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoBaseInputField message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoBaseInputField
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoBaseInputField;
+
+    /**
+     * Creates a plain object from a ProtoBaseInputField message. Also converts values to other types if specified.
+     * @param message ProtoBaseInputField
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoBaseInputField, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoBaseInputField to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoBaseInputField
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Inheritance enum. */
+export enum Inheritance {
+    INHERITANCE_INHERIT = 0,
+    INHERITANCE_CODE = 1,
+    INHERITANCE_BIND_CODE = 2,
+    INHERITANCE_STATIC = 3
 }
 
 /** Properties of a ProtoDocumentElement. */
@@ -5074,6 +5766,18 @@ export interface IProtoNamedString {
 
     /** ProtoNamedString comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoNamedString uuid */
+    uuid?: (string|null);
+
+    /** ProtoNamedString description */
+    description?: (string|null);
+
+    /** ProtoNamedString nameCode */
+    nameCode?: (string|null);
+
+    /** ProtoNamedString codeMode */
+    codeMode?: (boolean|null);
 }
 
 /** Represents a ProtoNamedString. */
@@ -5096,6 +5800,18 @@ export class ProtoNamedString implements IProtoNamedString {
 
     /** ProtoNamedString comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoNamedString uuid. */
+    public uuid: string;
+
+    /** ProtoNamedString description. */
+    public description: string;
+
+    /** ProtoNamedString nameCode. */
+    public nameCode: string;
+
+    /** ProtoNamedString codeMode. */
+    public codeMode: boolean;
 
     /**
      * Creates a new ProtoNamedString instance using the specified properties.
@@ -5192,6 +5908,12 @@ export interface IProtoParagraph {
 
     /** ProtoParagraph comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoParagraph paragraphFormatUUID */
+    paragraphFormatUUID?: (string|null);
+
+    /** ProtoParagraph uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoParagraph. */
@@ -5217,6 +5939,12 @@ export class ProtoParagraph implements IProtoParagraph {
 
     /** ProtoParagraph comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoParagraph paragraphFormatUUID. */
+    public paragraphFormatUUID: string;
+
+    /** ProtoParagraph uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoParagraph instance using the specified properties.
@@ -5570,14 +6298,11 @@ export interface IProtoSection {
     /** ProtoSection parent */
     parent?: (IProtoDocumentElement|null);
 
-    /** ProtoSection pageWidth */
-    pageWidth?: (IProtoMeasure|null);
+    /** ProtoSection uuid */
+    uuid?: (string|null);
 
-    /** ProtoSection pageDepth */
-    pageDepth?: (IProtoMeasure|null);
-
-    /** ProtoSection columnSettings */
-    columnSettings?: (IProtoColumnSettings|null);
+    /** ProtoSection cDefUuid */
+    cDefUuid?: (string|null);
 
     /** ProtoSection comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
@@ -5598,14 +6323,11 @@ export class ProtoSection implements IProtoSection {
     /** ProtoSection parent. */
     public parent?: (IProtoDocumentElement|null);
 
-    /** ProtoSection pageWidth. */
-    public pageWidth?: (IProtoMeasure|null);
+    /** ProtoSection uuid. */
+    public uuid: string;
 
-    /** ProtoSection pageDepth. */
-    public pageDepth?: (IProtoMeasure|null);
-
-    /** ProtoSection columnSettings. */
-    public columnSettings?: (IProtoColumnSettings|null);
+    /** ProtoSection cDefUuid. */
+    public cDefUuid: string;
 
     /** ProtoSection comChannelUUIDs. */
     public comChannelUUIDs: string[];
@@ -7736,6 +8458,331 @@ export class ProtoTableWS implements IProtoTableWS {
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
+/** Properties of a ProtoTableElementProperties. */
+export interface IProtoTableElementProperties {
+
+    /** ProtoTableElementProperties widthInheritance */
+    widthInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties width */
+    width?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties widthCode */
+    widthCode?: (string|null);
+
+    /** ProtoTableElementProperties alignInheritance */
+    alignInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties align */
+    align?: (ProtoHorizontalAlignment|null);
+
+    /** ProtoTableElementProperties alignCode */
+    alignCode?: (string|null);
+
+    /** ProtoTableElementProperties valignInheritance */
+    valignInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties valign */
+    valign?: (ProtoVerticalAlignment|null);
+
+    /** ProtoTableElementProperties valignCode */
+    valignCode?: (string|null);
+
+    /** ProtoTableElementProperties backgroundColorInheritance */
+    backgroundColorInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties backgroundColor */
+    backgroundColor?: (IProtoColor[]|null);
+
+    /** ProtoTableElementProperties backgroundColorCode */
+    backgroundColorCode?: (string|null);
+
+    /** ProtoTableElementProperties paddingInheritance */
+    paddingInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties padding */
+    padding?: (IProtoSideMeasures|null);
+
+    /** ProtoTableElementProperties paddingCode */
+    paddingCode?: (string|null);
+
+    /** ProtoTableElementProperties borderInheritance */
+    borderInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties border */
+    border?: (IProtoSideBorders|null);
+
+    /** ProtoTableElementProperties borderCode */
+    borderCode?: (string|null);
+
+    /** ProtoTableElementProperties marginInheritance */
+    marginInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties margin */
+    margin?: (IProtoSideMeasures|null);
+
+    /** ProtoTableElementProperties marginCode */
+    marginCode?: (string|null);
+
+    /** ProtoTableElementProperties rotationInheritance */
+    rotationInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties rotation */
+    rotation?: (number|null);
+
+    /** ProtoTableElementProperties rotationCode */
+    rotationCode?: (string|null);
+
+    /** ProtoTableElementProperties defaultParagraphFormatUUIDInheritance */
+    defaultParagraphFormatUUIDInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties defaultParagraphFormatUUID */
+    defaultParagraphFormatUUID?: (string|null);
+
+    /** ProtoTableElementProperties defaultParagraphFormatUUIDCode */
+    defaultParagraphFormatUUIDCode?: (string|null);
+
+    /** ProtoTableElementProperties tableContentGroupTypeInheritance */
+    tableContentGroupTypeInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties tableContentGroupType */
+    tableContentGroupType?: (ProtoTableContentGroupType|null);
+
+    /** ProtoTableElementProperties tableContentGroupTypeCode */
+    tableContentGroupTypeCode?: (string|null);
+
+    /** ProtoTableElementProperties cellTypeInheritance */
+    cellTypeInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties cellType */
+    cellType?: (ProtoTableCellType|null);
+
+    /** ProtoTableElementProperties cellTypeCode */
+    cellTypeCode?: (string|null);
+
+    /** ProtoTableElementProperties minRowHeightInheritance */
+    minRowHeightInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties minRowHeight */
+    minRowHeight?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties minRowHeightCode */
+    minRowHeightCode?: (string|null);
+
+    /** ProtoTableElementProperties wsInheritance */
+    wsInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties ws */
+    ws?: (IProtoTableWS|null);
+
+    /** ProtoTableElementProperties wsCode */
+    wsCode?: (string|null);
+}
+
+/** Represents a ProtoTableElementProperties. */
+export class ProtoTableElementProperties implements IProtoTableElementProperties {
+
+    /**
+     * Constructs a new ProtoTableElementProperties.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoTableElementProperties);
+
+    /** ProtoTableElementProperties widthInheritance. */
+    public widthInheritance: Inheritance;
+
+    /** ProtoTableElementProperties width. */
+    public width?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties widthCode. */
+    public widthCode: string;
+
+    /** ProtoTableElementProperties alignInheritance. */
+    public alignInheritance: Inheritance;
+
+    /** ProtoTableElementProperties align. */
+    public align: ProtoHorizontalAlignment;
+
+    /** ProtoTableElementProperties alignCode. */
+    public alignCode: string;
+
+    /** ProtoTableElementProperties valignInheritance. */
+    public valignInheritance: Inheritance;
+
+    /** ProtoTableElementProperties valign. */
+    public valign: ProtoVerticalAlignment;
+
+    /** ProtoTableElementProperties valignCode. */
+    public valignCode: string;
+
+    /** ProtoTableElementProperties backgroundColorInheritance. */
+    public backgroundColorInheritance: Inheritance;
+
+    /** ProtoTableElementProperties backgroundColor. */
+    public backgroundColor: IProtoColor[];
+
+    /** ProtoTableElementProperties backgroundColorCode. */
+    public backgroundColorCode: string;
+
+    /** ProtoTableElementProperties paddingInheritance. */
+    public paddingInheritance: Inheritance;
+
+    /** ProtoTableElementProperties padding. */
+    public padding?: (IProtoSideMeasures|null);
+
+    /** ProtoTableElementProperties paddingCode. */
+    public paddingCode: string;
+
+    /** ProtoTableElementProperties borderInheritance. */
+    public borderInheritance: Inheritance;
+
+    /** ProtoTableElementProperties border. */
+    public border?: (IProtoSideBorders|null);
+
+    /** ProtoTableElementProperties borderCode. */
+    public borderCode: string;
+
+    /** ProtoTableElementProperties marginInheritance. */
+    public marginInheritance: Inheritance;
+
+    /** ProtoTableElementProperties margin. */
+    public margin?: (IProtoSideMeasures|null);
+
+    /** ProtoTableElementProperties marginCode. */
+    public marginCode: string;
+
+    /** ProtoTableElementProperties rotationInheritance. */
+    public rotationInheritance: Inheritance;
+
+    /** ProtoTableElementProperties rotation. */
+    public rotation: number;
+
+    /** ProtoTableElementProperties rotationCode. */
+    public rotationCode: string;
+
+    /** ProtoTableElementProperties defaultParagraphFormatUUIDInheritance. */
+    public defaultParagraphFormatUUIDInheritance: Inheritance;
+
+    /** ProtoTableElementProperties defaultParagraphFormatUUID. */
+    public defaultParagraphFormatUUID: string;
+
+    /** ProtoTableElementProperties defaultParagraphFormatUUIDCode. */
+    public defaultParagraphFormatUUIDCode: string;
+
+    /** ProtoTableElementProperties tableContentGroupTypeInheritance. */
+    public tableContentGroupTypeInheritance: Inheritance;
+
+    /** ProtoTableElementProperties tableContentGroupType. */
+    public tableContentGroupType: ProtoTableContentGroupType;
+
+    /** ProtoTableElementProperties tableContentGroupTypeCode. */
+    public tableContentGroupTypeCode: string;
+
+    /** ProtoTableElementProperties cellTypeInheritance. */
+    public cellTypeInheritance: Inheritance;
+
+    /** ProtoTableElementProperties cellType. */
+    public cellType: ProtoTableCellType;
+
+    /** ProtoTableElementProperties cellTypeCode. */
+    public cellTypeCode: string;
+
+    /** ProtoTableElementProperties minRowHeightInheritance. */
+    public minRowHeightInheritance: Inheritance;
+
+    /** ProtoTableElementProperties minRowHeight. */
+    public minRowHeight?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties minRowHeightCode. */
+    public minRowHeightCode: string;
+
+    /** ProtoTableElementProperties wsInheritance. */
+    public wsInheritance: Inheritance;
+
+    /** ProtoTableElementProperties ws. */
+    public ws?: (IProtoTableWS|null);
+
+    /** ProtoTableElementProperties wsCode. */
+    public wsCode: string;
+
+    /**
+     * Creates a new ProtoTableElementProperties instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoTableElementProperties instance
+     */
+    public static create(properties?: IProtoTableElementProperties): ProtoTableElementProperties;
+
+    /**
+     * Encodes the specified ProtoTableElementProperties message. Does not implicitly {@link ProtoTableElementProperties.verify|verify} messages.
+     * @param message ProtoTableElementProperties message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoTableElementProperties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoTableElementProperties message, length delimited. Does not implicitly {@link ProtoTableElementProperties.verify|verify} messages.
+     * @param message ProtoTableElementProperties message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoTableElementProperties, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoTableElementProperties message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoTableElementProperties
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoTableElementProperties;
+
+    /**
+     * Decodes a ProtoTableElementProperties message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoTableElementProperties
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoTableElementProperties;
+
+    /**
+     * Verifies a ProtoTableElementProperties message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoTableElementProperties message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoTableElementProperties
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoTableElementProperties;
+
+    /**
+     * Creates a plain object from a ProtoTableElementProperties message. Also converts values to other types if specified.
+     * @param message ProtoTableElementProperties
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoTableElementProperties, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoTableElementProperties to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoTableElementProperties
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
 /** Properties of a ProtoText. */
 export interface IProtoText {
 
@@ -7880,6 +8927,15 @@ export interface IProtoBarcode {
 
     /** ProtoBarcode comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoBarcode uuid */
+    uuid?: (string|null);
+
+    /** ProtoBarcode code */
+    code?: (string|null);
+
+    /** ProtoBarcode swissQRData */
+    swissQRData?: (IProtoSwissQRData|null);
 }
 
 /** Represents a ProtoBarcode. */
@@ -7923,6 +8979,15 @@ export class ProtoBarcode implements IProtoBarcode {
 
     /** ProtoBarcode comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoBarcode uuid. */
+    public uuid: string;
+
+    /** ProtoBarcode code. */
+    public code: string;
+
+    /** ProtoBarcode swissQRData. */
+    public swissQRData?: (IProtoSwissQRData|null);
 
     /**
      * Creates a new ProtoBarcode instance using the specified properties.
@@ -8134,6 +9199,9 @@ export interface IProtoBrick {
 
     /** ProtoBrick comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoBrick name */
+    name?: (string|null);
 }
 
 /** Represents a ProtoBrick. */
@@ -8165,6 +9233,9 @@ export class ProtoBrick implements IProtoBrick {
 
     /** ProtoBrick comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoBrick name. */
+    public name: string;
 
     /**
      * Creates a new ProtoBrick instance using the specified properties.
@@ -8253,9 +9324,6 @@ export interface IProtoTemplate {
     /** ProtoTemplate parent */
     parent?: (IProtoDocumentElement|null);
 
-    /** ProtoTemplate containerMapping */
-    containerMapping?: ({ [k: string]: string }|null);
-
     /** ProtoTemplate comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
 
@@ -8267,6 +9335,9 @@ export interface IProtoTemplate {
 
     /** ProtoTemplate semanticType */
     semanticType?: (ProtoSemanticType|null);
+
+    /** ProtoTemplate templateUuid */
+    templateUuid?: (string|null);
 }
 
 /** Represents a ProtoTemplate. */
@@ -8284,9 +9355,6 @@ export class ProtoTemplate implements IProtoTemplate {
     /** ProtoTemplate parent. */
     public parent?: (IProtoDocumentElement|null);
 
-    /** ProtoTemplate containerMapping. */
-    public containerMapping: { [k: string]: string };
-
     /** ProtoTemplate comChannelUUIDs. */
     public comChannelUUIDs: string[];
 
@@ -8298,6 +9366,9 @@ export class ProtoTemplate implements IProtoTemplate {
 
     /** ProtoTemplate semanticType. */
     public semanticType: ProtoSemanticType;
+
+    /** ProtoTemplate templateUuid. */
+    public templateUuid: string;
 
     /**
      * Creates a new ProtoTemplate instance using the specified properties.
@@ -8383,6 +9454,14 @@ export enum ColumnBalancing {
     BALANCING = 1
 }
 
+/** ProtoHeaderMode enum. */
+export enum ProtoHeaderMode {
+    HEADER_MODE_APPEND_INITIAL = 0,
+    HEADER_MODE_APPEND = 1,
+    HEADER_MODE_EXTEND = 2,
+    HEADER_MODE_REPLACE = 3
+}
+
 /** Properties of a ProtoHeader. */
 export interface IProtoHeader {
 
@@ -8397,6 +9476,9 @@ export interface IProtoHeader {
 
     /** ProtoHeader comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoHeader mode */
+    mode?: (ProtoHeaderMode|null);
 }
 
 /** Represents a ProtoHeader. */
@@ -8419,6 +9501,9 @@ export class ProtoHeader implements IProtoHeader {
 
     /** ProtoHeader comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoHeader mode. */
+    public mode: ProtoHeaderMode;
 
     /**
      * Creates a new ProtoHeader instance using the specified properties.
@@ -8498,6 +9583,14 @@ export class ProtoHeader implements IProtoHeader {
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
+/** ProtoFooterMode enum. */
+export enum ProtoFooterMode {
+    FOOTER_MODE_APPEND_INITIAL = 0,
+    FOOTER_MODE_APPEND = 1,
+    FOOTER_MODE_EXTEND = 2,
+    FOOTER_MODE_REPLACE = 3
+}
+
 /** Properties of a ProtoFooter. */
 export interface IProtoFooter {
 
@@ -8512,6 +9605,9 @@ export interface IProtoFooter {
 
     /** ProtoFooter comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoFooter mode */
+    mode?: (ProtoFooterMode|null);
 }
 
 /** Represents a ProtoFooter. */
@@ -8534,6 +9630,9 @@ export class ProtoFooter implements IProtoFooter {
 
     /** ProtoFooter comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoFooter mode. */
+    public mode: ProtoFooterMode;
 
     /**
      * Creates a new ProtoFooter instance using the specified properties.
@@ -8771,6 +9870,45 @@ export interface INode {
 
     /** Node dmScript */
     dmScript?: (IProtoDmScript|null);
+
+    /** Node dynamicTemplate */
+    dynamicTemplate?: (IProtoDynamicTemplate|null);
+
+    /** Node selection */
+    selection?: (IProtoSelection|null);
+
+    /** Node selectionEntry */
+    selectionEntry?: (IProtoSelectionEntry|null);
+
+    /** Node condition */
+    condition?: (IProtoCondition|null);
+
+    /** Node pageCondition */
+    pageCondition?: (IProtoPageCondition|null);
+
+    /** Node locale */
+    locale?: (IProtoLocale|null);
+
+    /** Node tag */
+    tag?: (IProtoTag|null);
+
+    /** Node paragraphSetDefault */
+    paragraphSetDefault?: (IProtoParagraphSetDefault|null);
+
+    /** Node inputFieldText */
+    inputFieldText?: (IProtoInputFieldText|null);
+
+    /** Node inputFieldDate */
+    inputFieldDate?: (IProtoInputFieldDate|null);
+
+    /** Node inputFieldCheckbox */
+    inputFieldCheckbox?: (IProtoInputFieldCheckbox|null);
+
+    /** Node inputFieldLabel */
+    inputFieldLabel?: (IProtoInputFieldLabel|null);
+
+    /** Node inputFieldDropdown */
+    inputFieldDropdown?: (IProtoInputFieldDropdown|null);
 }
 
 /** Represents a Node. */
@@ -8938,8 +10076,47 @@ export class Node implements INode {
     /** Node dmScript. */
     public dmScript?: (IProtoDmScript|null);
 
+    /** Node dynamicTemplate. */
+    public dynamicTemplate?: (IProtoDynamicTemplate|null);
+
+    /** Node selection. */
+    public selection?: (IProtoSelection|null);
+
+    /** Node selectionEntry. */
+    public selectionEntry?: (IProtoSelectionEntry|null);
+
+    /** Node condition. */
+    public condition?: (IProtoCondition|null);
+
+    /** Node pageCondition. */
+    public pageCondition?: (IProtoPageCondition|null);
+
+    /** Node locale. */
+    public locale?: (IProtoLocale|null);
+
+    /** Node tag. */
+    public tag?: (IProtoTag|null);
+
+    /** Node paragraphSetDefault. */
+    public paragraphSetDefault?: (IProtoParagraphSetDefault|null);
+
+    /** Node inputFieldText. */
+    public inputFieldText?: (IProtoInputFieldText|null);
+
+    /** Node inputFieldDate. */
+    public inputFieldDate?: (IProtoInputFieldDate|null);
+
+    /** Node inputFieldCheckbox. */
+    public inputFieldCheckbox?: (IProtoInputFieldCheckbox|null);
+
+    /** Node inputFieldLabel. */
+    public inputFieldLabel?: (IProtoInputFieldLabel|null);
+
+    /** Node inputFieldDropdown. */
+    public inputFieldDropdown?: (IProtoInputFieldDropdown|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault"|"inputFieldText"|"inputFieldDate"|"inputFieldCheckbox"|"inputFieldLabel"|"inputFieldDropdown");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -9074,7 +10251,45 @@ export enum NodeType {
     DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70,
     DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71,
     DOCUMENT_ELEMENT_DOCTYPE_SCRIPT = 72,
-    DOCUMENT_ELEMENT_DM_SCRIPT = 73
+    DOCUMENT_ELEMENT_DM_SCRIPT = 73,
+    DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74,
+    DOCUMENT_ELEMENT_SELECTION = 75,
+    DOCUMENT_ELEMENT_SELECTION_ENTRY = 76,
+    DOCUMENT_ELEMENT_CONDITION = 77,
+    DOCUMENT_ELEMENT_PAGE_CONDITION = 78,
+    DOCUMENT_ELEMENT_LOCALE = 79,
+    DOCUMENT_ELEMENT_TAG = 80,
+    DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT = 81,
+    DOCUMENT_ELEMENT_INPUT_FIELD_TEXT = 82,
+    DOCUMENT_ELEMENT_INPUT_FIELD_DATE = 83,
+    DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX = 84,
+    DOCUMENT_ELEMENT_INPUT_FIELD_LABEL = 85,
+    DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN = 86
+}
+
+/** ProtoImageScaleType enum. */
+export enum ProtoImageScaleType {
+    IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0,
+    IMAGE_SCALE_TYPE_RELATIVE = 1,
+    IMAGE_SCALE_TYPE_ABSOLUTE = 2,
+    IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN = 3
+}
+
+/** ProtoImageUAMode enum. */
+export enum ProtoImageUAMode {
+    IMAGE_UA_MODE_DO_NOT_USE_AT_ALL = 0,
+    IMAGE_UA_MODE_INHERITED = 1,
+    IMAGE_UA_MODE_SIMPLE = 2,
+    IMAGE_UA_MODE_ADVANCED = 3
+}
+
+/** ProtoImageContentType enum. */
+export enum ProtoImageContentType {
+    IMAGE_CONTENT_UUID_REFERENCE_INLINE = 0,
+    IMAGE_CONTENT_UUID_REFERENCE_LOCAL = 1,
+    IMAGE_CONTENT_UUID_REFERENCE_GLOBAL = 2,
+    IMAGE_CONTENT_DMSCRIPT = 3,
+    IMAGE_CONTENT_IMAGE_DATA = 4
 }
 
 /** Properties of a ProtoImage. */
@@ -9139,6 +10354,24 @@ export interface IProtoImage {
 
     /** ProtoImage comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoImage imageContentType */
+    imageContentType?: (ProtoImageContentType|null);
+
+    /** ProtoImage imageContent */
+    imageContent?: (string|null);
+
+    /** ProtoImage scaleType */
+    scaleType?: (ProtoImageScaleType|null);
+
+    /** ProtoImage uaMode */
+    uaMode?: (ProtoImageUAMode|null);
+
+    /** ProtoImage uaDescription */
+    uaDescription?: (string|null);
+
+    /** ProtoImage leftBorderIsLeftMeasure */
+    leftBorderIsLeftMeasure?: (IProtoBoxedBool|null);
 }
 
 /** Represents a ProtoImage. */
@@ -9209,6 +10442,24 @@ export class ProtoImage implements IProtoImage {
 
     /** ProtoImage comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoImage imageContentType. */
+    public imageContentType: ProtoImageContentType;
+
+    /** ProtoImage imageContent. */
+    public imageContent: string;
+
+    /** ProtoImage scaleType. */
+    public scaleType: ProtoImageScaleType;
+
+    /** ProtoImage uaMode. */
+    public uaMode: ProtoImageUAMode;
+
+    /** ProtoImage uaDescription. */
+    public uaDescription: string;
+
+    /** ProtoImage leftBorderIsLeftMeasure. */
+    public leftBorderIsLeftMeasure?: (IProtoBoxedBool|null);
 
     /**
      * Creates a new ProtoImage instance using the specified properties.
@@ -9305,6 +10556,12 @@ export interface IProtoDirectory {
 
     /** ProtoDirectory semanticType */
     semanticType?: (ProtoSemanticType|null);
+
+    /** ProtoDirectory editable */
+    editable?: (boolean|null);
+
+    /** ProtoDirectory name */
+    name?: (string|null);
 }
 
 /** Represents a ProtoDirectory. */
@@ -9330,6 +10587,12 @@ export class ProtoDirectory implements IProtoDirectory {
 
     /** ProtoDirectory semanticType. */
     public semanticType: ProtoSemanticType;
+
+    /** ProtoDirectory editable. */
+    public editable: boolean;
+
+    /** ProtoDirectory name. */
+    public name: string;
 
     /**
      * Creates a new ProtoDirectory instance using the specified properties.
@@ -9429,6 +10692,9 @@ export interface IProtoTextBrick {
 
     /** ProtoTextBrick editable */
     editable?: (boolean|null);
+
+    /** ProtoTextBrick name */
+    name?: (string|null);
 }
 
 /** Represents a ProtoTextBrick. */
@@ -9457,6 +10723,9 @@ export class ProtoTextBrick implements IProtoTextBrick {
 
     /** ProtoTextBrick editable. */
     public editable: boolean;
+
+    /** ProtoTextBrick name. */
+    public name: string;
 
     /**
      * Creates a new ProtoTextBrick instance using the specified properties.
@@ -9695,8 +10964,20 @@ export interface IProtoFormatted {
     /** ProtoFormatted doctypeContent */
     doctypeContent?: (string|null);
 
+    /** ProtoFormatted doctypeCode */
+    doctypeCode?: (string|null);
+
     /** ProtoFormatted htmlContent */
     htmlContent?: (string|null);
+
+    /** ProtoFormatted htmlCode */
+    htmlCode?: (string|null);
+
+    /** ProtoFormatted textContent */
+    textContent?: (string|null);
+
+    /** ProtoFormatted textCode */
+    textCode?: (string|null);
 
     /** ProtoFormatted comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
@@ -9720,8 +11001,20 @@ export class ProtoFormatted implements IProtoFormatted {
     /** ProtoFormatted doctypeContent. */
     public doctypeContent: string;
 
+    /** ProtoFormatted doctypeCode. */
+    public doctypeCode: string;
+
     /** ProtoFormatted htmlContent. */
     public htmlContent: string;
+
+    /** ProtoFormatted htmlCode. */
+    public htmlCode: string;
+
+    /** ProtoFormatted textContent. */
+    public textContent: string;
+
+    /** ProtoFormatted textCode. */
+    public textCode: string;
 
     /** ProtoFormatted comChannelUUIDs. */
     public comChannelUUIDs: string[];
@@ -12322,6 +13615,9 @@ export interface IProtoDoctypeScript {
 
     /** ProtoDoctypeScript comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoDoctypeScript uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoDoctypeScript. */
@@ -12344,6 +13640,9 @@ export class ProtoDoctypeScript implements IProtoDoctypeScript {
 
     /** ProtoDoctypeScript comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoDoctypeScript uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoDoctypeScript instance using the specified properties.
@@ -12434,6 +13733,9 @@ export interface IProtoDmScript {
 
     /** ProtoDmScript comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoDmScript uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoDmScript. */
@@ -12453,6 +13755,9 @@ export class ProtoDmScript implements IProtoDmScript {
 
     /** ProtoDmScript comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoDmScript uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoDmScript instance using the specified properties.
@@ -12526,6 +13831,1645 @@ export class ProtoDmScript implements IProtoDmScript {
 
     /**
      * Gets the default type url for ProtoDmScript
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoDynamicTemplate. */
+export interface IProtoDynamicTemplate {
+
+    /** ProtoDynamicTemplate parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoDynamicTemplate uuid */
+    uuid?: (string|null);
+
+    /** ProtoDynamicTemplate script */
+    script?: (string|null);
+
+    /** ProtoDynamicTemplate comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoDynamicTemplate. */
+export class ProtoDynamicTemplate implements IProtoDynamicTemplate {
+
+    /**
+     * Constructs a new ProtoDynamicTemplate.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoDynamicTemplate);
+
+    /** ProtoDynamicTemplate parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoDynamicTemplate uuid. */
+    public uuid: string;
+
+    /** ProtoDynamicTemplate script. */
+    public script: string;
+
+    /** ProtoDynamicTemplate comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoDynamicTemplate instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoDynamicTemplate instance
+     */
+    public static create(properties?: IProtoDynamicTemplate): ProtoDynamicTemplate;
+
+    /**
+     * Encodes the specified ProtoDynamicTemplate message. Does not implicitly {@link ProtoDynamicTemplate.verify|verify} messages.
+     * @param message ProtoDynamicTemplate message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoDynamicTemplate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoDynamicTemplate message, length delimited. Does not implicitly {@link ProtoDynamicTemplate.verify|verify} messages.
+     * @param message ProtoDynamicTemplate message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoDynamicTemplate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoDynamicTemplate message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoDynamicTemplate
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoDynamicTemplate;
+
+    /**
+     * Decodes a ProtoDynamicTemplate message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoDynamicTemplate
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoDynamicTemplate;
+
+    /**
+     * Verifies a ProtoDynamicTemplate message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoDynamicTemplate message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoDynamicTemplate
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoDynamicTemplate;
+
+    /**
+     * Creates a plain object from a ProtoDynamicTemplate message. Also converts values to other types if specified.
+     * @param message ProtoDynamicTemplate
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoDynamicTemplate, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoDynamicTemplate to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoDynamicTemplate
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoSelection. */
+export interface IProtoSelection {
+
+    /** ProtoSelection _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoSelection parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSelection uuid */
+    uuid?: (string|null);
+
+    /** ProtoSelection comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoSelection internalName */
+    internalName?: (string|null);
+
+    /** ProtoSelection name */
+    name?: (string|null);
+
+    /** ProtoSelection multi */
+    multi?: (boolean|null);
+
+    /** ProtoSelection min */
+    min?: (number|Long|null);
+
+    /** ProtoSelection max */
+    max?: (number|Long|null);
+}
+
+/** Represents a ProtoSelection. */
+export class ProtoSelection implements IProtoSelection {
+
+    /**
+     * Constructs a new ProtoSelection.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSelection);
+
+    /** ProtoSelection _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoSelection parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSelection uuid. */
+    public uuid: string;
+
+    /** ProtoSelection comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoSelection internalName. */
+    public internalName: string;
+
+    /** ProtoSelection name. */
+    public name: string;
+
+    /** ProtoSelection multi. */
+    public multi: boolean;
+
+    /** ProtoSelection min. */
+    public min: (number|Long);
+
+    /** ProtoSelection max. */
+    public max: (number|Long);
+
+    /**
+     * Creates a new ProtoSelection instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSelection instance
+     */
+    public static create(properties?: IProtoSelection): ProtoSelection;
+
+    /**
+     * Encodes the specified ProtoSelection message. Does not implicitly {@link ProtoSelection.verify|verify} messages.
+     * @param message ProtoSelection message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSelection, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSelection message, length delimited. Does not implicitly {@link ProtoSelection.verify|verify} messages.
+     * @param message ProtoSelection message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSelection, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSelection message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSelection
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSelection;
+
+    /**
+     * Decodes a ProtoSelection message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSelection
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSelection;
+
+    /**
+     * Verifies a ProtoSelection message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSelection message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSelection
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSelection;
+
+    /**
+     * Creates a plain object from a ProtoSelection message. Also converts values to other types if specified.
+     * @param message ProtoSelection
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSelection, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSelection to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoSelection
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoSelectionEntry. */
+export interface IProtoSelectionEntry {
+
+    /** ProtoSelectionEntry _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoSelectionEntry parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSelectionEntry uuid */
+    uuid?: (string|null);
+
+    /** ProtoSelectionEntry comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoSelectionEntry internalName */
+    internalName?: (string|null);
+
+    /** ProtoSelectionEntry name */
+    name?: (string|null);
+
+    /** ProtoSelectionEntry selected */
+    selected?: (boolean|null);
+}
+
+/** Represents a ProtoSelectionEntry. */
+export class ProtoSelectionEntry implements IProtoSelectionEntry {
+
+    /**
+     * Constructs a new ProtoSelectionEntry.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSelectionEntry);
+
+    /** ProtoSelectionEntry _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoSelectionEntry parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSelectionEntry uuid. */
+    public uuid: string;
+
+    /** ProtoSelectionEntry comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoSelectionEntry internalName. */
+    public internalName: string;
+
+    /** ProtoSelectionEntry name. */
+    public name: string;
+
+    /** ProtoSelectionEntry selected. */
+    public selected: boolean;
+
+    /**
+     * Creates a new ProtoSelectionEntry instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSelectionEntry instance
+     */
+    public static create(properties?: IProtoSelectionEntry): ProtoSelectionEntry;
+
+    /**
+     * Encodes the specified ProtoSelectionEntry message. Does not implicitly {@link ProtoSelectionEntry.verify|verify} messages.
+     * @param message ProtoSelectionEntry message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSelectionEntry, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSelectionEntry message, length delimited. Does not implicitly {@link ProtoSelectionEntry.verify|verify} messages.
+     * @param message ProtoSelectionEntry message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSelectionEntry, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSelectionEntry message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSelectionEntry
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSelectionEntry;
+
+    /**
+     * Decodes a ProtoSelectionEntry message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSelectionEntry
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSelectionEntry;
+
+    /**
+     * Verifies a ProtoSelectionEntry message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSelectionEntry message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSelectionEntry
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSelectionEntry;
+
+    /**
+     * Creates a plain object from a ProtoSelectionEntry message. Also converts values to other types if specified.
+     * @param message ProtoSelectionEntry
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSelectionEntry, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSelectionEntry to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoSelectionEntry
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoCondition. */
+export interface IProtoCondition {
+
+    /** ProtoCondition _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoCondition parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoCondition uuid */
+    uuid?: (string|null);
+
+    /** ProtoCondition comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoCondition code */
+    code?: (string|null);
+
+    /** ProtoCondition result */
+    result?: (boolean|null);
+
+    /** ProtoCondition regenerate */
+    regenerate?: (boolean|null);
+}
+
+/** Represents a ProtoCondition. */
+export class ProtoCondition implements IProtoCondition {
+
+    /**
+     * Constructs a new ProtoCondition.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoCondition);
+
+    /** ProtoCondition _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoCondition parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoCondition uuid. */
+    public uuid: string;
+
+    /** ProtoCondition comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoCondition code. */
+    public code: string;
+
+    /** ProtoCondition result. */
+    public result: boolean;
+
+    /** ProtoCondition regenerate. */
+    public regenerate: boolean;
+
+    /**
+     * Creates a new ProtoCondition instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoCondition instance
+     */
+    public static create(properties?: IProtoCondition): ProtoCondition;
+
+    /**
+     * Encodes the specified ProtoCondition message. Does not implicitly {@link ProtoCondition.verify|verify} messages.
+     * @param message ProtoCondition message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoCondition, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoCondition message, length delimited. Does not implicitly {@link ProtoCondition.verify|verify} messages.
+     * @param message ProtoCondition message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoCondition, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoCondition message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoCondition
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoCondition;
+
+    /**
+     * Decodes a ProtoCondition message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoCondition
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoCondition;
+
+    /**
+     * Verifies a ProtoCondition message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoCondition message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoCondition
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoCondition;
+
+    /**
+     * Creates a plain object from a ProtoCondition message. Also converts values to other types if specified.
+     * @param message ProtoCondition
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoCondition, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoCondition to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoCondition
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoPageCondition. */
+export interface IProtoPageCondition {
+
+    /** ProtoPageCondition _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoPageCondition parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoPageCondition uuid */
+    uuid?: (string|null);
+
+    /** ProtoPageCondition comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoPageCondition code */
+    code?: (string|null);
+}
+
+/** Represents a ProtoPageCondition. */
+export class ProtoPageCondition implements IProtoPageCondition {
+
+    /**
+     * Constructs a new ProtoPageCondition.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoPageCondition);
+
+    /** ProtoPageCondition _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoPageCondition parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoPageCondition uuid. */
+    public uuid: string;
+
+    /** ProtoPageCondition comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoPageCondition code. */
+    public code: string;
+
+    /**
+     * Creates a new ProtoPageCondition instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoPageCondition instance
+     */
+    public static create(properties?: IProtoPageCondition): ProtoPageCondition;
+
+    /**
+     * Encodes the specified ProtoPageCondition message. Does not implicitly {@link ProtoPageCondition.verify|verify} messages.
+     * @param message ProtoPageCondition message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoPageCondition, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoPageCondition message, length delimited. Does not implicitly {@link ProtoPageCondition.verify|verify} messages.
+     * @param message ProtoPageCondition message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoPageCondition, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoPageCondition message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoPageCondition
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoPageCondition;
+
+    /**
+     * Decodes a ProtoPageCondition message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoPageCondition
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoPageCondition;
+
+    /**
+     * Verifies a ProtoPageCondition message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoPageCondition message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoPageCondition
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoPageCondition;
+
+    /**
+     * Creates a plain object from a ProtoPageCondition message. Also converts values to other types if specified.
+     * @param message ProtoPageCondition
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoPageCondition, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoPageCondition to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoPageCondition
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoLocale. */
+export interface IProtoLocale {
+
+    /** ProtoLocale _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoLocale parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoLocale uuid */
+    uuid?: (string|null);
+
+    /** ProtoLocale comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoLocale languageUUIDs */
+    languageUUIDs?: (string[]|null);
+
+    /** ProtoLocale regionUUIDs */
+    regionUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoLocale. */
+export class ProtoLocale implements IProtoLocale {
+
+    /**
+     * Constructs a new ProtoLocale.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoLocale);
+
+    /** ProtoLocale _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoLocale parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoLocale uuid. */
+    public uuid: string;
+
+    /** ProtoLocale comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoLocale languageUUIDs. */
+    public languageUUIDs: string[];
+
+    /** ProtoLocale regionUUIDs. */
+    public regionUUIDs: string[];
+
+    /**
+     * Creates a new ProtoLocale instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoLocale instance
+     */
+    public static create(properties?: IProtoLocale): ProtoLocale;
+
+    /**
+     * Encodes the specified ProtoLocale message. Does not implicitly {@link ProtoLocale.verify|verify} messages.
+     * @param message ProtoLocale message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoLocale, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoLocale message, length delimited. Does not implicitly {@link ProtoLocale.verify|verify} messages.
+     * @param message ProtoLocale message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoLocale, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoLocale message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoLocale
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoLocale;
+
+    /**
+     * Decodes a ProtoLocale message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoLocale
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoLocale;
+
+    /**
+     * Verifies a ProtoLocale message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoLocale message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoLocale
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoLocale;
+
+    /**
+     * Creates a plain object from a ProtoLocale message. Also converts values to other types if specified.
+     * @param message ProtoLocale
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoLocale, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoLocale to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoLocale
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoTag. */
+export interface IProtoTag {
+
+    /** ProtoTag parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoTag name */
+    name?: (string|null);
+
+    /** ProtoTag comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoTag uuid */
+    uuid?: (string|null);
+
+    /** ProtoTag params */
+    params?: (string[]|null);
+
+    /** ProtoTag nameCode */
+    nameCode?: (string|null);
+
+    /** ProtoTag codeMode */
+    codeMode?: (boolean|null);
+}
+
+/** Represents a ProtoTag. */
+export class ProtoTag implements IProtoTag {
+
+    /**
+     * Constructs a new ProtoTag.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoTag);
+
+    /** ProtoTag parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoTag name. */
+    public name: string;
+
+    /** ProtoTag comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoTag uuid. */
+    public uuid: string;
+
+    /** ProtoTag params. */
+    public params: string[];
+
+    /** ProtoTag nameCode. */
+    public nameCode: string;
+
+    /** ProtoTag codeMode. */
+    public codeMode: boolean;
+
+    /**
+     * Creates a new ProtoTag instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoTag instance
+     */
+    public static create(properties?: IProtoTag): ProtoTag;
+
+    /**
+     * Encodes the specified ProtoTag message. Does not implicitly {@link ProtoTag.verify|verify} messages.
+     * @param message ProtoTag message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoTag, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoTag message, length delimited. Does not implicitly {@link ProtoTag.verify|verify} messages.
+     * @param message ProtoTag message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoTag, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoTag message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoTag
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoTag;
+
+    /**
+     * Decodes a ProtoTag message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoTag
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoTag;
+
+    /**
+     * Verifies a ProtoTag message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoTag message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoTag
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoTag;
+
+    /**
+     * Creates a plain object from a ProtoTag message. Also converts values to other types if specified.
+     * @param message ProtoTag
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoTag, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoTag to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoTag
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoParagraphSetDefault. */
+export interface IProtoParagraphSetDefault {
+
+    /** ProtoParagraphSetDefault parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoParagraphSetDefault name */
+    name?: (string|null);
+
+    /** ProtoParagraphSetDefault paragraphFormatUUID */
+    paragraphFormatUUID?: (string|null);
+
+    /** ProtoParagraphSetDefault uuid */
+    uuid?: (string|null);
+
+    /** ProtoParagraphSetDefault comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoParagraphSetDefault. */
+export class ProtoParagraphSetDefault implements IProtoParagraphSetDefault {
+
+    /**
+     * Constructs a new ProtoParagraphSetDefault.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoParagraphSetDefault);
+
+    /** ProtoParagraphSetDefault parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoParagraphSetDefault name. */
+    public name: string;
+
+    /** ProtoParagraphSetDefault paragraphFormatUUID. */
+    public paragraphFormatUUID: string;
+
+    /** ProtoParagraphSetDefault uuid. */
+    public uuid: string;
+
+    /** ProtoParagraphSetDefault comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoParagraphSetDefault instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoParagraphSetDefault instance
+     */
+    public static create(properties?: IProtoParagraphSetDefault): ProtoParagraphSetDefault;
+
+    /**
+     * Encodes the specified ProtoParagraphSetDefault message. Does not implicitly {@link ProtoParagraphSetDefault.verify|verify} messages.
+     * @param message ProtoParagraphSetDefault message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoParagraphSetDefault, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoParagraphSetDefault message, length delimited. Does not implicitly {@link ProtoParagraphSetDefault.verify|verify} messages.
+     * @param message ProtoParagraphSetDefault message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoParagraphSetDefault, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoParagraphSetDefault message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoParagraphSetDefault
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoParagraphSetDefault;
+
+    /**
+     * Decodes a ProtoParagraphSetDefault message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoParagraphSetDefault
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoParagraphSetDefault;
+
+    /**
+     * Verifies a ProtoParagraphSetDefault message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoParagraphSetDefault message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoParagraphSetDefault
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoParagraphSetDefault;
+
+    /**
+     * Creates a plain object from a ProtoParagraphSetDefault message. Also converts values to other types if specified.
+     * @param message ProtoParagraphSetDefault
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoParagraphSetDefault, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoParagraphSetDefault to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoParagraphSetDefault
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoInputFieldText. */
+export interface IProtoInputFieldText {
+
+    /** ProtoInputFieldText parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoInputFieldText base */
+    base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldText pdfPrintingBehavior */
+    pdfPrintingBehavior?: (PDFPrintingBehavior|null);
+
+    /** ProtoInputFieldText pdfSize */
+    pdfSize?: (IProtoBoxedMeasure|null);
+
+    /** ProtoInputFieldText pdfFormName */
+    pdfFormName?: (string|null);
+
+    /** ProtoInputFieldText comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoInputFieldText uuid */
+    uuid?: (string|null);
+}
+
+/** Represents a ProtoInputFieldText. */
+export class ProtoInputFieldText implements IProtoInputFieldText {
+
+    /**
+     * Constructs a new ProtoInputFieldText.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoInputFieldText);
+
+    /** ProtoInputFieldText parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoInputFieldText base. */
+    public base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldText pdfPrintingBehavior. */
+    public pdfPrintingBehavior: PDFPrintingBehavior;
+
+    /** ProtoInputFieldText pdfSize. */
+    public pdfSize?: (IProtoBoxedMeasure|null);
+
+    /** ProtoInputFieldText pdfFormName. */
+    public pdfFormName: string;
+
+    /** ProtoInputFieldText comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoInputFieldText uuid. */
+    public uuid: string;
+
+    /**
+     * Creates a new ProtoInputFieldText instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoInputFieldText instance
+     */
+    public static create(properties?: IProtoInputFieldText): ProtoInputFieldText;
+
+    /**
+     * Encodes the specified ProtoInputFieldText message. Does not implicitly {@link ProtoInputFieldText.verify|verify} messages.
+     * @param message ProtoInputFieldText message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoInputFieldText, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoInputFieldText message, length delimited. Does not implicitly {@link ProtoInputFieldText.verify|verify} messages.
+     * @param message ProtoInputFieldText message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoInputFieldText, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoInputFieldText message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoInputFieldText
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoInputFieldText;
+
+    /**
+     * Decodes a ProtoInputFieldText message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoInputFieldText
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoInputFieldText;
+
+    /**
+     * Verifies a ProtoInputFieldText message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoInputFieldText message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoInputFieldText
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoInputFieldText;
+
+    /**
+     * Creates a plain object from a ProtoInputFieldText message. Also converts values to other types if specified.
+     * @param message ProtoInputFieldText
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoInputFieldText, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoInputFieldText to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoInputFieldText
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoInputFieldDate. */
+export interface IProtoInputFieldDate {
+
+    /** ProtoInputFieldDate parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoInputFieldDate base */
+    base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldDate comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoInputFieldDate uuid */
+    uuid?: (string|null);
+}
+
+/** Represents a ProtoInputFieldDate. */
+export class ProtoInputFieldDate implements IProtoInputFieldDate {
+
+    /**
+     * Constructs a new ProtoInputFieldDate.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoInputFieldDate);
+
+    /** ProtoInputFieldDate parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoInputFieldDate base. */
+    public base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldDate comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoInputFieldDate uuid. */
+    public uuid: string;
+
+    /**
+     * Creates a new ProtoInputFieldDate instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoInputFieldDate instance
+     */
+    public static create(properties?: IProtoInputFieldDate): ProtoInputFieldDate;
+
+    /**
+     * Encodes the specified ProtoInputFieldDate message. Does not implicitly {@link ProtoInputFieldDate.verify|verify} messages.
+     * @param message ProtoInputFieldDate message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoInputFieldDate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoInputFieldDate message, length delimited. Does not implicitly {@link ProtoInputFieldDate.verify|verify} messages.
+     * @param message ProtoInputFieldDate message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoInputFieldDate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoInputFieldDate message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoInputFieldDate
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoInputFieldDate;
+
+    /**
+     * Decodes a ProtoInputFieldDate message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoInputFieldDate
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoInputFieldDate;
+
+    /**
+     * Verifies a ProtoInputFieldDate message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoInputFieldDate message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoInputFieldDate
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoInputFieldDate;
+
+    /**
+     * Creates a plain object from a ProtoInputFieldDate message. Also converts values to other types if specified.
+     * @param message ProtoInputFieldDate
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoInputFieldDate, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoInputFieldDate to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoInputFieldDate
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoInputFieldCheckbox. */
+export interface IProtoInputFieldCheckbox {
+
+    /** ProtoInputFieldCheckbox parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoInputFieldCheckbox base */
+    base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldCheckbox comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoInputFieldCheckbox uuid */
+    uuid?: (string|null);
+}
+
+/** Represents a ProtoInputFieldCheckbox. */
+export class ProtoInputFieldCheckbox implements IProtoInputFieldCheckbox {
+
+    /**
+     * Constructs a new ProtoInputFieldCheckbox.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoInputFieldCheckbox);
+
+    /** ProtoInputFieldCheckbox parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoInputFieldCheckbox base. */
+    public base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldCheckbox comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoInputFieldCheckbox uuid. */
+    public uuid: string;
+
+    /**
+     * Creates a new ProtoInputFieldCheckbox instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoInputFieldCheckbox instance
+     */
+    public static create(properties?: IProtoInputFieldCheckbox): ProtoInputFieldCheckbox;
+
+    /**
+     * Encodes the specified ProtoInputFieldCheckbox message. Does not implicitly {@link ProtoInputFieldCheckbox.verify|verify} messages.
+     * @param message ProtoInputFieldCheckbox message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoInputFieldCheckbox, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoInputFieldCheckbox message, length delimited. Does not implicitly {@link ProtoInputFieldCheckbox.verify|verify} messages.
+     * @param message ProtoInputFieldCheckbox message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoInputFieldCheckbox, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoInputFieldCheckbox message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoInputFieldCheckbox
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoInputFieldCheckbox;
+
+    /**
+     * Decodes a ProtoInputFieldCheckbox message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoInputFieldCheckbox
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoInputFieldCheckbox;
+
+    /**
+     * Verifies a ProtoInputFieldCheckbox message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoInputFieldCheckbox message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoInputFieldCheckbox
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoInputFieldCheckbox;
+
+    /**
+     * Creates a plain object from a ProtoInputFieldCheckbox message. Also converts values to other types if specified.
+     * @param message ProtoInputFieldCheckbox
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoInputFieldCheckbox, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoInputFieldCheckbox to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoInputFieldCheckbox
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoInputFieldLabel. */
+export interface IProtoInputFieldLabel {
+
+    /** ProtoInputFieldLabel parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoInputFieldLabel base */
+    base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldLabel comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoInputFieldLabel uuid */
+    uuid?: (string|null);
+}
+
+/** Represents a ProtoInputFieldLabel. */
+export class ProtoInputFieldLabel implements IProtoInputFieldLabel {
+
+    /**
+     * Constructs a new ProtoInputFieldLabel.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoInputFieldLabel);
+
+    /** ProtoInputFieldLabel parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoInputFieldLabel base. */
+    public base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldLabel comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoInputFieldLabel uuid. */
+    public uuid: string;
+
+    /**
+     * Creates a new ProtoInputFieldLabel instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoInputFieldLabel instance
+     */
+    public static create(properties?: IProtoInputFieldLabel): ProtoInputFieldLabel;
+
+    /**
+     * Encodes the specified ProtoInputFieldLabel message. Does not implicitly {@link ProtoInputFieldLabel.verify|verify} messages.
+     * @param message ProtoInputFieldLabel message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoInputFieldLabel, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoInputFieldLabel message, length delimited. Does not implicitly {@link ProtoInputFieldLabel.verify|verify} messages.
+     * @param message ProtoInputFieldLabel message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoInputFieldLabel, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoInputFieldLabel message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoInputFieldLabel
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoInputFieldLabel;
+
+    /**
+     * Decodes a ProtoInputFieldLabel message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoInputFieldLabel
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoInputFieldLabel;
+
+    /**
+     * Verifies a ProtoInputFieldLabel message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoInputFieldLabel message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoInputFieldLabel
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoInputFieldLabel;
+
+    /**
+     * Creates a plain object from a ProtoInputFieldLabel message. Also converts values to other types if specified.
+     * @param message ProtoInputFieldLabel
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoInputFieldLabel, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoInputFieldLabel to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoInputFieldLabel
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoInputFieldDropdown. */
+export interface IProtoInputFieldDropdown {
+
+    /** ProtoInputFieldDropdown parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoInputFieldDropdown base */
+    base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldDropdown options */
+    options?: (IProtoOption[]|null);
+
+    /** ProtoInputFieldDropdown bindOptionsCode */
+    bindOptionsCode?: (boolean|null);
+
+    /** ProtoInputFieldDropdown optionsCode */
+    optionsCode?: (string|null);
+
+    /** ProtoInputFieldDropdown comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoInputFieldDropdown uuid */
+    uuid?: (string|null);
+}
+
+/** Represents a ProtoInputFieldDropdown. */
+export class ProtoInputFieldDropdown implements IProtoInputFieldDropdown {
+
+    /**
+     * Constructs a new ProtoInputFieldDropdown.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoInputFieldDropdown);
+
+    /** ProtoInputFieldDropdown parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoInputFieldDropdown base. */
+    public base?: (IProtoBaseInputField|null);
+
+    /** ProtoInputFieldDropdown options. */
+    public options: IProtoOption[];
+
+    /** ProtoInputFieldDropdown bindOptionsCode. */
+    public bindOptionsCode: boolean;
+
+    /** ProtoInputFieldDropdown optionsCode. */
+    public optionsCode: string;
+
+    /** ProtoInputFieldDropdown comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoInputFieldDropdown uuid. */
+    public uuid: string;
+
+    /**
+     * Creates a new ProtoInputFieldDropdown instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoInputFieldDropdown instance
+     */
+    public static create(properties?: IProtoInputFieldDropdown): ProtoInputFieldDropdown;
+
+    /**
+     * Encodes the specified ProtoInputFieldDropdown message. Does not implicitly {@link ProtoInputFieldDropdown.verify|verify} messages.
+     * @param message ProtoInputFieldDropdown message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoInputFieldDropdown, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoInputFieldDropdown message, length delimited. Does not implicitly {@link ProtoInputFieldDropdown.verify|verify} messages.
+     * @param message ProtoInputFieldDropdown message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoInputFieldDropdown, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoInputFieldDropdown message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoInputFieldDropdown
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoInputFieldDropdown;
+
+    /**
+     * Decodes a ProtoInputFieldDropdown message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoInputFieldDropdown
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoInputFieldDropdown;
+
+    /**
+     * Verifies a ProtoInputFieldDropdown message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoInputFieldDropdown message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoInputFieldDropdown
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoInputFieldDropdown;
+
+    /**
+     * Creates a plain object from a ProtoInputFieldDropdown message. Also converts values to other types if specified.
+     * @param message ProtoInputFieldDropdown
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoInputFieldDropdown, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoInputFieldDropdown to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoInputFieldDropdown
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

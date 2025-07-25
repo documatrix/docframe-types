@@ -162,3 +162,59 @@ message ProtoTableWS {
   uint32 minLinesAfter = 2;
   uint32 priority = 3;
 }
+
+// go-gen:ignore
+message ProtoTableElementProperties {
+  Inheritance widthInheritance = 1;
+  ProtoMeasure width = 2;
+  string widthCode = 3;
+
+  Inheritance alignInheritance = 4;
+  ProtoHorizontalAlignment align = 5;
+  string alignCode = 6;
+
+  Inheritance valignInheritance = 7;
+  ProtoVerticalAlignment valign = 8;
+  string valignCode = 9;
+
+  Inheritance backgroundColorInheritance = 10;
+  repeated ProtoColor backgroundColor = 11;
+  string backgroundColorCode = 12;
+
+  Inheritance paddingInheritance = 13;
+  ProtoSideMeasures padding = 14;
+  string paddingCode = 15;
+
+  Inheritance borderInheritance = 16;
+  ProtoSideBorders border = 17;
+  string borderCode = 18;
+
+  Inheritance marginInheritance = 19;
+  ProtoSideMeasures margin = 20;
+  string marginCode = 21;
+
+  Inheritance rotationInheritance = 22;
+  double rotation = 23;
+  string rotationCode = 24;
+
+  Inheritance defaultParagraphFormatUUIDInheritance = 25;
+  string defaultParagraphFormatUUID = 26;
+  string defaultParagraphFormatUUIDCode = 27;
+
+  Inheritance tableContentGroupTypeInheritance = 28;
+  ProtoTableContentGroupType tableContentGroupType = 29;
+  string tableContentGroupTypeCode = 30;
+
+  Inheritance cellTypeInheritance = 31;
+  ProtoTableCellType cellType = 32;
+  string cellTypeCode = 33;
+
+  Inheritance minRowHeightInheritance = 34;
+  ProtoMeasure minRowHeight = 35;
+  string minRowHeightCode = 36;
+
+  Inheritance wsInheritance = 37;
+  ProtoTableWS ws = 38;
+  string wsCode = 39;
+}
+

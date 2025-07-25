@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (ProtoAdvancedIllustrationArea *ProtoAdvancedIllustrationArea) ToNode(children ...Message) *Node {
+func (advancedIllustrationArea *ProtoAdvancedIllustrationArea) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (ProtoAdvancedIllustrationArea *ProtoAdvancedIllustrationArea) ToNode(child
 
 	node := &Node{
 		Object: &Node_AdvancedIllustrationArea{
-			AdvancedIllustrationArea: ProtoAdvancedIllustrationArea,
+			AdvancedIllustrationArea: advancedIllustrationArea,
 		},
 		Children: nodeChildren,
 	}

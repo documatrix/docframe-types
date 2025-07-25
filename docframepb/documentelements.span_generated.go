@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (ProtoSpan *ProtoSpan) ToNode(children ...Message) *Node {
+func (span *ProtoSpan) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (ProtoSpan *ProtoSpan) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_Span{
-			Span: ProtoSpan,
+			Span: span,
 		},
 		Children: nodeChildren,
 	}

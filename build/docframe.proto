@@ -188,9 +188,44 @@ CODE39 = 7;
 SWISSQR = 8;
 AZTEC = 9;
 }
+
+message ProtoSwissQRCreditor {
+string addressType = 1;
+string name = 2;
+string postalCode = 3;
+string town = 4;
+string country = 5;
+string streetOrAddressLine1 = 6;
+string buildingNumberOrAddressLine2 = 7;
+string iban = 8;
+string amount = 9;
+string currency = 10;
+}
+
+message ProtoSwissQRDebitor {
+string addressType = 1;
+string name = 2;
+string postalCode = 3;
+string town = 4;
+string country = 5;
+string streetOrAddressLine1 = 6;
+string buildingNumberOrAddressLine2 = 7;
+string paymentReferenceType = 8;
+string paymentReference = 9;
+string unstructuredReference = 10;
+string billInformation = 11;
+}
+
+message ProtoSwissQRData {
+ProtoSwissQRCreditor creditor = 1;
+ProtoSwissQRDebitor debitor = 2;
+}
 message ProtoLinebreak {
 ProtoDocumentElement parent = 1;
 repeated string comChannelUUIDs = 2;
+
+string uuid = 3;
+ProtoBoxedUint32 count = 4;
 }
 message ProtoBorder {
 ProtoMeasure weight = 1;
@@ -281,6 +316,36 @@ SEMANTIC_TYPE_PART = 1;
 SEMANTIC_TYPE_ART = 2;
 SEMANTIC_TYPE_SECT = 3;
 SEMANTIC_TYPE_DIV = 4;
+}
+message ProtoOption {
+string key = 1;
+string value = 2;
+}
+
+enum PDFPrintingBehavior {
+PDF_PRINTING_BEHAVIOR_INPUT = 0;
+PDF_PRINTING_BEHAVIOR_TEXT = 1;
+PDF_PRINTING_BEHAVIOR_INHERIT = 2;
+}
+
+message ProtoBaseInputField {
+string name = 1;
+bool meta = 2;
+ProtoBoxedString value = 3;
+string formatUUID = 4;
+string dataTypeUUID = 5;
+string onChangeCode = 6;
+string placeholder = 7;
+bool bindDefaultValue = 8;
+string defaultValueCode = 9;
+
+bool readonly = 10;
+}
+enum Inheritance {
+INHERITANCE_INHERIT = 0;
+INHERITANCE_CODE = 1;
+INHERITANCE_BIND_CODE = 2;
+INHERITANCE_STATIC = 3;
 }
 message ProtoDocumentElement {
 ProtoDocumentElement parent = 1;
@@ -427,6 +492,10 @@ ProtoDocumentElement parent = 2;
 
 string name = 3;
 repeated string comChannelUUIDs = 4;
+string uuid = 5;
+string description = 6;
+string nameCode = 7;
+bool codeMode = 8;
 }
 message ProtoParagraph {
 repeated ProtoDocumentElement _children = 1;
@@ -435,6 +504,8 @@ ProtoDocumentElement parent = 2;
 ProtoParagraphFormat format = 3;
 ProtoParagraphFormat overwrite = 4;
 repeated string comChannelUUIDs = 5;
+string paragraphFormatUUID = 6;
+string uuid = 7;
 }
 message ProtoParagraphFormat {
 ProtoParagraphFormat baseFormat = 1;
@@ -471,10 +542,10 @@ message ProtoSection {
 repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
 
-ProtoMeasure pageWidth = 3;
-ProtoMeasure pageDepth = 4;
-ProtoColumnSettings columnSettings = 5;
-repeated string comChannelUUIDs = 6;
+string uuid = 3;
+string cDefUuid = 4;
+
+repeated string comChannelUUIDs = 5;
 }
 message ProtoSpaceVertically {
 ProtoDocumentElement parent = 1;
@@ -631,6 +702,61 @@ uint32 minLinesBefore = 1;
 uint32 minLinesAfter = 2;
 uint32 priority = 3;
 }
+
+message ProtoTableElementProperties {
+Inheritance widthInheritance = 1;
+ProtoMeasure width = 2;
+string widthCode = 3;
+
+Inheritance alignInheritance = 4;
+ProtoHorizontalAlignment align = 5;
+string alignCode = 6;
+
+Inheritance valignInheritance = 7;
+ProtoVerticalAlignment valign = 8;
+string valignCode = 9;
+
+Inheritance backgroundColorInheritance = 10;
+repeated ProtoColor backgroundColor = 11;
+string backgroundColorCode = 12;
+
+Inheritance paddingInheritance = 13;
+ProtoSideMeasures padding = 14;
+string paddingCode = 15;
+
+Inheritance borderInheritance = 16;
+ProtoSideBorders border = 17;
+string borderCode = 18;
+
+Inheritance marginInheritance = 19;
+ProtoSideMeasures margin = 20;
+string marginCode = 21;
+
+Inheritance rotationInheritance = 22;
+double rotation = 23;
+string rotationCode = 24;
+
+Inheritance defaultParagraphFormatUUIDInheritance = 25;
+string defaultParagraphFormatUUID = 26;
+string defaultParagraphFormatUUIDCode = 27;
+
+Inheritance tableContentGroupTypeInheritance = 28;
+ProtoTableContentGroupType tableContentGroupType = 29;
+string tableContentGroupTypeCode = 30;
+
+Inheritance cellTypeInheritance = 31;
+ProtoTableCellType cellType = 32;
+string cellTypeCode = 33;
+
+Inheritance minRowHeightInheritance = 34;
+ProtoMeasure minRowHeight = 35;
+string minRowHeightCode = 36;
+
+Inheritance wsInheritance = 37;
+ProtoTableWS ws = 38;
+string wsCode = 39;
+}
+
 message ProtoText {
 ProtoDocumentElement parent = 1;
 
@@ -649,6 +775,9 @@ ProtoMeasure padding = 8;
 string data = 9;
 bool positionAbsolute = 10;
 repeated string comChannelUUIDs = 11;
+string uuid = 12;
+string code = 13;
+ProtoSwissQRData swissQRData = 14;
 }
 message ProtoBrickReference {
 string internName = 1;
@@ -664,35 +793,52 @@ string internName = 4;
 string uuid = 5;
 bool editable = 6;
 repeated string comChannelUUIDs = 7;
+string name = 8;
 }
 message ProtoTemplate {
 repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
 
-map<string, string> containerMapping = 3;
-repeated string comChannelUUIDs = 4;
-string uuid = 5;
-ColumnBalancing columnBalancing = 6;
-ProtoSemanticType semanticType = 7;
+repeated string comChannelUUIDs = 3;
+string uuid = 4;
+ColumnBalancing columnBalancing = 5;
+ProtoSemanticType semanticType = 6;
+string templateUuid = 7;
 }
 
 enum ColumnBalancing {
 NO_BALANCING = 0;
 BALANCING = 1;
 }
+enum ProtoHeaderMode {
+HEADER_MODE_APPEND_INITIAL = 0;
+HEADER_MODE_APPEND = 1;
+HEADER_MODE_EXTEND = 2;
+HEADER_MODE_REPLACE = 3;
+}
+
 message ProtoHeader {
 repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
 
 string uuid = 3;
 repeated string comChannelUUIDs = 4;
+ProtoHeaderMode mode = 5;
 }
+enum ProtoFooterMode {
+FOOTER_MODE_APPEND_INITIAL = 0;
+FOOTER_MODE_APPEND = 1;
+FOOTER_MODE_EXTEND = 2;
+FOOTER_MODE_REPLACE = 3;
+}
+
 message ProtoFooter {
 repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
 
 string uuid = 3;
 repeated string comChannelUUIDs = 4;
+ProtoFooterMode mode = 5;
 }
 option csharp_namespace = "Docframe";
 
@@ -751,6 +897,19 @@ ProtoAdvancedIllustrationArea advanced_illustration_area = 64;
 ProtoAdjustHorizontally adjust_horizontally = 65;
 ProtoDoctypeScript doctypeScript = 66;
 ProtoDmScript dmScript = 67;
+ProtoDynamicTemplate dynamic_template = 68;
+ProtoSelection selection = 69;
+ProtoSelectionEntry selection_entry = 70;
+ProtoCondition condition = 71;
+ProtoPageCondition page_condition = 72;
+ProtoLocale locale = 73;
+ProtoTag tag = 74;
+ProtoParagraphSetDefault paragraph_set_default = 75;
+ProtoInputFieldText input_field_text = 76;
+ProtoInputFieldDate input_field_date = 77;
+ProtoInputFieldCheckbox input_field_checkbox = 78;
+ProtoInputFieldLabel input_field_label = 79;
+ProtoInputFieldDropdown input_field_dropdown = 80;
 }
 }
 
@@ -809,7 +968,44 @@ DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREA = 70;
 DOCUMENT_ELEMENT_ADJUST_HORIZONTALLY = 71;
 DOCUMENT_ELEMENT_DOCTYPE_SCRIPT = 72;
 DOCUMENT_ELEMENT_DM_SCRIPT = 73;
+DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74;
+DOCUMENT_ELEMENT_SELECTION = 75;
+DOCUMENT_ELEMENT_SELECTION_ENTRY = 76;
+DOCUMENT_ELEMENT_CONDITION = 77;
+DOCUMENT_ELEMENT_PAGE_CONDITION = 78;
+DOCUMENT_ELEMENT_LOCALE = 79;
+DOCUMENT_ELEMENT_TAG = 80;
+DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT = 81;
+DOCUMENT_ELEMENT_INPUT_FIELD_TEXT = 82;
+DOCUMENT_ELEMENT_INPUT_FIELD_DATE = 83;
+DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX = 84;
+DOCUMENT_ELEMENT_INPUT_FIELD_LABEL = 85;
+DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN = 86;
 }
+enum ProtoImageScaleType {
+IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
+IMAGE_SCALE_TYPE_RELATIVE = 1;
+IMAGE_SCALE_TYPE_ABSOLUTE = 2;
+IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN = 3;
+}
+
+enum ProtoImageUAMode{
+IMAGE_UA_MODE_DO_NOT_USE_AT_ALL = 0;
+IMAGE_UA_MODE_INHERITED = 1;
+IMAGE_UA_MODE_SIMPLE = 2;
+IMAGE_UA_MODE_ADVANCED = 3;
+
+}
+
+enum ProtoImageContentType{
+IMAGE_CONTENT_UUID_REFERENCE_INLINE = 0;
+IMAGE_CONTENT_UUID_REFERENCE_LOCAL = 1;
+IMAGE_CONTENT_UUID_REFERENCE_GLOBAL = 2;
+IMAGE_CONTENT_DMSCRIPT = 3;
+IMAGE_CONTENT_IMAGE_DATA = 4;
+}
+
+
 message ProtoImage {
 ProtoDocumentElement parent = 1;
 
@@ -832,7 +1028,14 @@ string uuid = 17;
 ProtoImageReferencePoint referencePoint = 18;
 string hyperlink = 19;
 repeated string comChannelUUIDs = 20;
+ProtoImageContentType imageContentType = 21;
+string imageContent = 22;
+ProtoImageScaleType scaleType = 23;
+ProtoImageUAMode uaMode = 24;
+string uaDescription = 25;
+ProtoBoxedBool leftBorderIsLeftMeasure = 26;
 }
+
 message ProtoDirectory {
 repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
@@ -840,6 +1043,8 @@ ProtoDocumentElement parent = 2;
 string uuid = 3;
 repeated string comChannelUUIDs = 4;
 ProtoSemanticType semanticType = 5;
+bool editable = 6;
+string name = 7;
 }
 message ProtoTextBrick {
 repeated ProtoDocumentElement _children = 1;
@@ -849,6 +1054,7 @@ string uuid = 3;
 uint64 id = 4;
 repeated string comChannelUUIDs = 5;
 bool editable = 6;
+string name = 7;
 }
 message ProtoVariable {
 ProtoDocumentElement parent = 1;
@@ -878,8 +1084,12 @@ ProtoDocumentElement parent = 1;
 
 bool dteditorSyntax = 2;
 string doctypeContent = 3;
-string htmlContent = 4;
-repeated string comChannelUUIDs = 5;
+string doctypeCode = 4;
+string htmlContent = 5;
+string htmlCode = 6;
+string textContent = 7;
+string textCode = 8;
+repeated string comChannelUUIDs = 9;
 }
 
 message ProtoApplyProtoCDef {
@@ -1073,10 +1283,132 @@ ProtoDocumentElement parent = 1;
 string content = 2;
 ProtoDoctypeOutputMode outputMode = 3;
 repeated string comChannelUUIDs = 4;
+string uuid = 5;
 }
 message ProtoDmScript {
 ProtoDocumentElement parent = 1;
 
 string content = 2;
 repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }
+message ProtoDynamicTemplate {
+ProtoDocumentElement parent = 1;
+string uuid = 2;
+
+string script = 3;
+repeated string comChannelUUIDs = 4;
+}
+message ProtoSelection {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+string uuid = 3;
+repeated string comChannelUUIDs = 4;
+string internalName = 5;
+string name = 6;
+bool multi = 7;
+uint64 min = 8;
+uint64 max = 9;
+}
+message ProtoSelectionEntry {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+string uuid = 3;
+repeated string comChannelUUIDs = 4;
+string internalName = 5;
+string name = 6;
+bool selected = 7;
+}
+message ProtoCondition {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+string uuid = 3;
+repeated string comChannelUUIDs = 4;
+string code = 5;
+bool result = 6;
+bool regenerate = 7;
+}
+message ProtoPageCondition {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+string uuid = 3;
+repeated string comChannelUUIDs = 4;
+string code = 5;
+}
+message ProtoLocale {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+string uuid = 3;
+repeated string comChannelUUIDs = 4;
+repeated string languageUUIDs = 5;
+repeated string regionUUIDs = 6;
+}
+message ProtoTag {
+ProtoDocumentElement parent = 1;
+
+string name = 2;
+repeated string comChannelUUIDs = 3;
+string uuid = 4;
+repeated string params = 5;
+string nameCode = 6;
+bool codeMode = 7;
+}
+message ProtoParagraphSetDefault {
+ProtoDocumentElement parent = 1;
+
+string name = 2;
+string paragraphFormatUUID = 3;
+string uuid = 4;
+repeated string comChannelUUIDs = 5;
+}
+message ProtoInputFieldText {
+ProtoDocumentElement parent = 1;
+
+ProtoBaseInputField base = 2;
+PDFPrintingBehavior pdf_printing_behavior = 3;
+ProtoBoxedMeasure pdf_size = 4;
+string pdf_form_name = 5;
+repeated string comChannelUUIDs = 6;
+string uuid = 7;
+}
+
+message ProtoInputFieldDate {
+ProtoDocumentElement parent = 1;
+
+ProtoBaseInputField base = 2;
+repeated string comChannelUUIDs = 3;
+string uuid = 4;
+}
+
+message ProtoInputFieldCheckbox {
+ProtoDocumentElement parent = 1;
+
+ProtoBaseInputField base = 2;
+repeated string comChannelUUIDs = 3;
+string uuid = 4;
+}
+
+message ProtoInputFieldLabel {
+ProtoDocumentElement parent = 1;
+
+ProtoBaseInputField base = 2;
+repeated string comChannelUUIDs = 3;
+string uuid = 4;
+}
+
+message ProtoInputFieldDropdown {
+ProtoDocumentElement parent = 1;
+
+ProtoBaseInputField base = 2;
+
+repeated ProtoOption options = 3;
+
+bool bindOptionsCode = 4;
+
+string optionsCode = 5;
+repeated string comChannelUUIDs = 6;
+string uuid = 7;
+}
+

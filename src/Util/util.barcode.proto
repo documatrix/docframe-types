@@ -1,0 +1,44 @@
+enum ProtoBarcodeType {
+  PDF417 = 0;
+  DATAMATRIX = 1;
+  BC128 = 2;
+  QR = 3;
+  ITF = 4;
+  EAN8 = 5;
+  EAN13 = 6;
+  CODE39 = 7;
+  SWISSQR = 8;
+  AZTEC = 9;
+}
+
+message ProtoSwissQRCreditor {
+  string addressType = 1;
+  string name = 2;
+  string postalCode = 3;
+  string town = 4;
+  string country = 5;
+  string streetOrAddressLine1 = 6;
+  string buildingNumberOrAddressLine2 = 7;
+  string iban = 8;
+  string amount = 9;
+  string currency = 10;
+}
+
+message ProtoSwissQRDebitor {
+  string addressType = 1;
+  string name = 2;
+  string postalCode = 3;
+  string town = 4;
+  string country = 5;
+  string streetOrAddressLine1 = 6;
+  string buildingNumberOrAddressLine2 = 7;
+  string paymentReferenceType = 8;
+  string paymentReference = 9;
+  string unstructuredReference = 10;
+  string billInformation = 11;
+}
+
+message ProtoSwissQRData {
+  ProtoSwissQRCreditor creditor = 1;
+  ProtoSwissQRDebitor debitor = 2;
+}

@@ -7,4 +7,6 @@ message ProtoDirectory {
   string uuid = 3;
   repeated string comChannelUUIDs = 4;
   ProtoSemanticType semanticType = 5;
+  bool editable = 6;
+  string name = 7;
 }

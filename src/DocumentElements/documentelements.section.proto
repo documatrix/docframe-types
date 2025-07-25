@@ -4,8 +4,8 @@ message ProtoSection {
   ProtoDocumentElement parent = 2;
   // extends BranchDocumentElement
 
-  ProtoMeasure pageWidth = 3;
-  ProtoMeasure pageDepth = 4;
-  ProtoColumnSettings columnSettings = 5;
-  repeated string comChannelUUIDs = 6;
+  string uuid = 3;
+  string cDefUuid = 4;
+
+  repeated string comChannelUUIDs = 5;
 }

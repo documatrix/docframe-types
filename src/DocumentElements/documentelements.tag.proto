@@ -1,0 +1,12 @@
+message ProtoTag {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  // extends DocumentElement
+
+  string name = 2;
+  repeated string comChannelUUIDs = 3;
+  string uuid = 4;
+  repeated string params = 5;
+  string nameCode = 6;
+  bool codeMode = 7;
+}
