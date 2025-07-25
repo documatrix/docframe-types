@@ -5817,8 +5817,8 @@ $root.ProtoSwissQRCreditor = (function() {
      * @property {string|null} [postalCode] ProtoSwissQRCreditor postalCode
      * @property {string|null} [town] ProtoSwissQRCreditor town
      * @property {string|null} [country] ProtoSwissQRCreditor country
-     * @property {string|null} [streetOrAddressLine_1] ProtoSwissQRCreditor streetOrAddressLine_1
-     * @property {string|null} [buildingNumberOrAddressLine_2] ProtoSwissQRCreditor buildingNumberOrAddressLine_2
+     * @property {string|null} [streetOrAddressLine1] ProtoSwissQRCreditor streetOrAddressLine1
+     * @property {string|null} [buildingNumberOrAddressLine2] ProtoSwissQRCreditor buildingNumberOrAddressLine2
      * @property {string|null} [iban] ProtoSwissQRCreditor iban
      * @property {string|null} [amount] ProtoSwissQRCreditor amount
      * @property {string|null} [currency] ProtoSwissQRCreditor currency
@@ -5880,20 +5880,20 @@ $root.ProtoSwissQRCreditor = (function() {
     ProtoSwissQRCreditor.prototype.country = "";
 
     /**
-     * ProtoSwissQRCreditor streetOrAddressLine_1.
-     * @member {string} streetOrAddressLine_1
+     * ProtoSwissQRCreditor streetOrAddressLine1.
+     * @member {string} streetOrAddressLine1
      * @memberof ProtoSwissQRCreditor
      * @instance
      */
-    ProtoSwissQRCreditor.prototype.streetOrAddressLine_1 = "";
+    ProtoSwissQRCreditor.prototype.streetOrAddressLine1 = "";
 
     /**
-     * ProtoSwissQRCreditor buildingNumberOrAddressLine_2.
-     * @member {string} buildingNumberOrAddressLine_2
+     * ProtoSwissQRCreditor buildingNumberOrAddressLine2.
+     * @member {string} buildingNumberOrAddressLine2
      * @memberof ProtoSwissQRCreditor
      * @instance
      */
-    ProtoSwissQRCreditor.prototype.buildingNumberOrAddressLine_2 = "";
+    ProtoSwissQRCreditor.prototype.buildingNumberOrAddressLine2 = "";
 
     /**
      * ProtoSwissQRCreditor iban.
@@ -5953,10 +5953,10 @@ $root.ProtoSwissQRCreditor = (function() {
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.town);
         if (message.country != null && Object.hasOwnProperty.call(message, "country"))
             writer.uint32(/* id 5, wireType 2 =*/42).string(message.country);
-        if (message.streetOrAddressLine_1 != null && Object.hasOwnProperty.call(message, "streetOrAddressLine_1"))
-            writer.uint32(/* id 6, wireType 2 =*/50).string(message.streetOrAddressLine_1);
-        if (message.buildingNumberOrAddressLine_2 != null && Object.hasOwnProperty.call(message, "buildingNumberOrAddressLine_2"))
-            writer.uint32(/* id 7, wireType 2 =*/58).string(message.buildingNumberOrAddressLine_2);
+        if (message.streetOrAddressLine1 != null && Object.hasOwnProperty.call(message, "streetOrAddressLine1"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.streetOrAddressLine1);
+        if (message.buildingNumberOrAddressLine2 != null && Object.hasOwnProperty.call(message, "buildingNumberOrAddressLine2"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.buildingNumberOrAddressLine2);
         if (message.iban != null && Object.hasOwnProperty.call(message, "iban"))
             writer.uint32(/* id 8, wireType 2 =*/66).string(message.iban);
         if (message.amount != null && Object.hasOwnProperty.call(message, "amount"))
@@ -6018,11 +6018,11 @@ $root.ProtoSwissQRCreditor = (function() {
                     break;
                 }
             case 6: {
-                    message.streetOrAddressLine_1 = reader.string();
+                    message.streetOrAddressLine1 = reader.string();
                     break;
                 }
             case 7: {
-                    message.buildingNumberOrAddressLine_2 = reader.string();
+                    message.buildingNumberOrAddressLine2 = reader.string();
                     break;
                 }
             case 8: {
@@ -6087,12 +6087,12 @@ $root.ProtoSwissQRCreditor = (function() {
         if (message.country != null && message.hasOwnProperty("country"))
             if (!$util.isString(message.country))
                 return "country: string expected";
-        if (message.streetOrAddressLine_1 != null && message.hasOwnProperty("streetOrAddressLine_1"))
-            if (!$util.isString(message.streetOrAddressLine_1))
-                return "streetOrAddressLine_1: string expected";
-        if (message.buildingNumberOrAddressLine_2 != null && message.hasOwnProperty("buildingNumberOrAddressLine_2"))
-            if (!$util.isString(message.buildingNumberOrAddressLine_2))
-                return "buildingNumberOrAddressLine_2: string expected";
+        if (message.streetOrAddressLine1 != null && message.hasOwnProperty("streetOrAddressLine1"))
+            if (!$util.isString(message.streetOrAddressLine1))
+                return "streetOrAddressLine1: string expected";
+        if (message.buildingNumberOrAddressLine2 != null && message.hasOwnProperty("buildingNumberOrAddressLine2"))
+            if (!$util.isString(message.buildingNumberOrAddressLine2))
+                return "buildingNumberOrAddressLine2: string expected";
         if (message.iban != null && message.hasOwnProperty("iban"))
             if (!$util.isString(message.iban))
                 return "iban: string expected";
@@ -6127,10 +6127,10 @@ $root.ProtoSwissQRCreditor = (function() {
             message.town = String(object.town);
         if (object.country != null)
             message.country = String(object.country);
-        if (object.streetOrAddressLine_1 != null)
-            message.streetOrAddressLine_1 = String(object.streetOrAddressLine_1);
-        if (object.buildingNumberOrAddressLine_2 != null)
-            message.buildingNumberOrAddressLine_2 = String(object.buildingNumberOrAddressLine_2);
+        if (object.streetOrAddressLine1 != null)
+            message.streetOrAddressLine1 = String(object.streetOrAddressLine1);
+        if (object.buildingNumberOrAddressLine2 != null)
+            message.buildingNumberOrAddressLine2 = String(object.buildingNumberOrAddressLine2);
         if (object.iban != null)
             message.iban = String(object.iban);
         if (object.amount != null)
@@ -6159,8 +6159,8 @@ $root.ProtoSwissQRCreditor = (function() {
             object.postalCode = "";
             object.town = "";
             object.country = "";
-            object.streetOrAddressLine_1 = "";
-            object.buildingNumberOrAddressLine_2 = "";
+            object.streetOrAddressLine1 = "";
+            object.buildingNumberOrAddressLine2 = "";
             object.iban = "";
             object.amount = "";
             object.currency = "";
@@ -6175,10 +6175,10 @@ $root.ProtoSwissQRCreditor = (function() {
             object.town = message.town;
         if (message.country != null && message.hasOwnProperty("country"))
             object.country = message.country;
-        if (message.streetOrAddressLine_1 != null && message.hasOwnProperty("streetOrAddressLine_1"))
-            object.streetOrAddressLine_1 = message.streetOrAddressLine_1;
-        if (message.buildingNumberOrAddressLine_2 != null && message.hasOwnProperty("buildingNumberOrAddressLine_2"))
-            object.buildingNumberOrAddressLine_2 = message.buildingNumberOrAddressLine_2;
+        if (message.streetOrAddressLine1 != null && message.hasOwnProperty("streetOrAddressLine1"))
+            object.streetOrAddressLine1 = message.streetOrAddressLine1;
+        if (message.buildingNumberOrAddressLine2 != null && message.hasOwnProperty("buildingNumberOrAddressLine2"))
+            object.buildingNumberOrAddressLine2 = message.buildingNumberOrAddressLine2;
         if (message.iban != null && message.hasOwnProperty("iban"))
             object.iban = message.iban;
         if (message.amount != null && message.hasOwnProperty("amount"))
@@ -6228,8 +6228,8 @@ $root.ProtoSwissQRDebitor = (function() {
      * @property {string|null} [postalCode] ProtoSwissQRDebitor postalCode
      * @property {string|null} [town] ProtoSwissQRDebitor town
      * @property {string|null} [country] ProtoSwissQRDebitor country
-     * @property {string|null} [streetOrAddressLine_1] ProtoSwissQRDebitor streetOrAddressLine_1
-     * @property {string|null} [buildingNumberOrAddressLine_2] ProtoSwissQRDebitor buildingNumberOrAddressLine_2
+     * @property {string|null} [streetOrAddressLine1] ProtoSwissQRDebitor streetOrAddressLine1
+     * @property {string|null} [buildingNumberOrAddressLine2] ProtoSwissQRDebitor buildingNumberOrAddressLine2
      * @property {string|null} [paymentReferenceType] ProtoSwissQRDebitor paymentReferenceType
      * @property {string|null} [paymentReference] ProtoSwissQRDebitor paymentReference
      * @property {string|null} [unstructuredReference] ProtoSwissQRDebitor unstructuredReference
@@ -6292,20 +6292,20 @@ $root.ProtoSwissQRDebitor = (function() {
     ProtoSwissQRDebitor.prototype.country = "";
 
     /**
-     * ProtoSwissQRDebitor streetOrAddressLine_1.
-     * @member {string} streetOrAddressLine_1
+     * ProtoSwissQRDebitor streetOrAddressLine1.
+     * @member {string} streetOrAddressLine1
      * @memberof ProtoSwissQRDebitor
      * @instance
      */
-    ProtoSwissQRDebitor.prototype.streetOrAddressLine_1 = "";
+    ProtoSwissQRDebitor.prototype.streetOrAddressLine1 = "";
 
     /**
-     * ProtoSwissQRDebitor buildingNumberOrAddressLine_2.
-     * @member {string} buildingNumberOrAddressLine_2
+     * ProtoSwissQRDebitor buildingNumberOrAddressLine2.
+     * @member {string} buildingNumberOrAddressLine2
      * @memberof ProtoSwissQRDebitor
      * @instance
      */
-    ProtoSwissQRDebitor.prototype.buildingNumberOrAddressLine_2 = "";
+    ProtoSwissQRDebitor.prototype.buildingNumberOrAddressLine2 = "";
 
     /**
      * ProtoSwissQRDebitor paymentReferenceType.
@@ -6373,10 +6373,10 @@ $root.ProtoSwissQRDebitor = (function() {
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.town);
         if (message.country != null && Object.hasOwnProperty.call(message, "country"))
             writer.uint32(/* id 5, wireType 2 =*/42).string(message.country);
-        if (message.streetOrAddressLine_1 != null && Object.hasOwnProperty.call(message, "streetOrAddressLine_1"))
-            writer.uint32(/* id 6, wireType 2 =*/50).string(message.streetOrAddressLine_1);
-        if (message.buildingNumberOrAddressLine_2 != null && Object.hasOwnProperty.call(message, "buildingNumberOrAddressLine_2"))
-            writer.uint32(/* id 7, wireType 2 =*/58).string(message.buildingNumberOrAddressLine_2);
+        if (message.streetOrAddressLine1 != null && Object.hasOwnProperty.call(message, "streetOrAddressLine1"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.streetOrAddressLine1);
+        if (message.buildingNumberOrAddressLine2 != null && Object.hasOwnProperty.call(message, "buildingNumberOrAddressLine2"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.buildingNumberOrAddressLine2);
         if (message.paymentReferenceType != null && Object.hasOwnProperty.call(message, "paymentReferenceType"))
             writer.uint32(/* id 8, wireType 2 =*/66).string(message.paymentReferenceType);
         if (message.paymentReference != null && Object.hasOwnProperty.call(message, "paymentReference"))
@@ -6440,11 +6440,11 @@ $root.ProtoSwissQRDebitor = (function() {
                     break;
                 }
             case 6: {
-                    message.streetOrAddressLine_1 = reader.string();
+                    message.streetOrAddressLine1 = reader.string();
                     break;
                 }
             case 7: {
-                    message.buildingNumberOrAddressLine_2 = reader.string();
+                    message.buildingNumberOrAddressLine2 = reader.string();
                     break;
                 }
             case 8: {
@@ -6513,12 +6513,12 @@ $root.ProtoSwissQRDebitor = (function() {
         if (message.country != null && message.hasOwnProperty("country"))
             if (!$util.isString(message.country))
                 return "country: string expected";
-        if (message.streetOrAddressLine_1 != null && message.hasOwnProperty("streetOrAddressLine_1"))
-            if (!$util.isString(message.streetOrAddressLine_1))
-                return "streetOrAddressLine_1: string expected";
-        if (message.buildingNumberOrAddressLine_2 != null && message.hasOwnProperty("buildingNumberOrAddressLine_2"))
-            if (!$util.isString(message.buildingNumberOrAddressLine_2))
-                return "buildingNumberOrAddressLine_2: string expected";
+        if (message.streetOrAddressLine1 != null && message.hasOwnProperty("streetOrAddressLine1"))
+            if (!$util.isString(message.streetOrAddressLine1))
+                return "streetOrAddressLine1: string expected";
+        if (message.buildingNumberOrAddressLine2 != null && message.hasOwnProperty("buildingNumberOrAddressLine2"))
+            if (!$util.isString(message.buildingNumberOrAddressLine2))
+                return "buildingNumberOrAddressLine2: string expected";
         if (message.paymentReferenceType != null && message.hasOwnProperty("paymentReferenceType"))
             if (!$util.isString(message.paymentReferenceType))
                 return "paymentReferenceType: string expected";
@@ -6556,10 +6556,10 @@ $root.ProtoSwissQRDebitor = (function() {
             message.town = String(object.town);
         if (object.country != null)
             message.country = String(object.country);
-        if (object.streetOrAddressLine_1 != null)
-            message.streetOrAddressLine_1 = String(object.streetOrAddressLine_1);
-        if (object.buildingNumberOrAddressLine_2 != null)
-            message.buildingNumberOrAddressLine_2 = String(object.buildingNumberOrAddressLine_2);
+        if (object.streetOrAddressLine1 != null)
+            message.streetOrAddressLine1 = String(object.streetOrAddressLine1);
+        if (object.buildingNumberOrAddressLine2 != null)
+            message.buildingNumberOrAddressLine2 = String(object.buildingNumberOrAddressLine2);
         if (object.paymentReferenceType != null)
             message.paymentReferenceType = String(object.paymentReferenceType);
         if (object.paymentReference != null)
@@ -6590,8 +6590,8 @@ $root.ProtoSwissQRDebitor = (function() {
             object.postalCode = "";
             object.town = "";
             object.country = "";
-            object.streetOrAddressLine_1 = "";
-            object.buildingNumberOrAddressLine_2 = "";
+            object.streetOrAddressLine1 = "";
+            object.buildingNumberOrAddressLine2 = "";
             object.paymentReferenceType = "";
             object.paymentReference = "";
             object.unstructuredReference = "";
@@ -6607,10 +6607,10 @@ $root.ProtoSwissQRDebitor = (function() {
             object.town = message.town;
         if (message.country != null && message.hasOwnProperty("country"))
             object.country = message.country;
-        if (message.streetOrAddressLine_1 != null && message.hasOwnProperty("streetOrAddressLine_1"))
-            object.streetOrAddressLine_1 = message.streetOrAddressLine_1;
-        if (message.buildingNumberOrAddressLine_2 != null && message.hasOwnProperty("buildingNumberOrAddressLine_2"))
-            object.buildingNumberOrAddressLine_2 = message.buildingNumberOrAddressLine_2;
+        if (message.streetOrAddressLine1 != null && message.hasOwnProperty("streetOrAddressLine1"))
+            object.streetOrAddressLine1 = message.streetOrAddressLine1;
+        if (message.buildingNumberOrAddressLine2 != null && message.hasOwnProperty("buildingNumberOrAddressLine2"))
+            object.buildingNumberOrAddressLine2 = message.buildingNumberOrAddressLine2;
         if (message.paymentReferenceType != null && message.hasOwnProperty("paymentReferenceType"))
             object.paymentReferenceType = message.paymentReferenceType;
         if (message.paymentReference != null && message.hasOwnProperty("paymentReference"))
@@ -10377,15 +10377,15 @@ $root.ProtoOption = (function() {
  * PDFPrintingBehavior enum.
  * @name PDFPrintingBehavior
  * @enum {number}
- * @property {number} INPUT=0 INPUT value
- * @property {number} TEXT=1 TEXT value
- * @property {number} INHERIT=2 INHERIT value
+ * @property {number} PDF_PRINTING_BEHAVIOR_INPUT=0 PDF_PRINTING_BEHAVIOR_INPUT value
+ * @property {number} PDF_PRINTING_BEHAVIOR_TEXT=1 PDF_PRINTING_BEHAVIOR_TEXT value
+ * @property {number} PDF_PRINTING_BEHAVIOR_INHERIT=2 PDF_PRINTING_BEHAVIOR_INHERIT value
  */
 $root.PDFPrintingBehavior = (function() {
     var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "INPUT"] = 0;
-    values[valuesById[1] = "TEXT"] = 1;
-    values[valuesById[2] = "INHERIT"] = 2;
+    values[valuesById[0] = "PDF_PRINTING_BEHAVIOR_INPUT"] = 0;
+    values[valuesById[1] = "PDF_PRINTING_BEHAVIOR_TEXT"] = 1;
+    values[valuesById[2] = "PDF_PRINTING_BEHAVIOR_INHERIT"] = 2;
     return values;
 })();
 
@@ -16972,7 +16972,7 @@ $root.ProtoSection = (function() {
      * @interface IProtoSection
      * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoSection _children
      * @property {IProtoDocumentElement|null} [parent] ProtoSection parent
-     * @property {string|null} [Uuid] ProtoSection Uuid
+     * @property {string|null} [uuid] ProtoSection uuid
      * @property {string|null} [cDefUuid] ProtoSection cDefUuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoSection comChannelUUIDs
      */
@@ -17011,12 +17011,12 @@ $root.ProtoSection = (function() {
     ProtoSection.prototype.parent = null;
 
     /**
-     * ProtoSection Uuid.
-     * @member {string} Uuid
+     * ProtoSection uuid.
+     * @member {string} uuid
      * @memberof ProtoSection
      * @instance
      */
-    ProtoSection.prototype.Uuid = "";
+    ProtoSection.prototype.uuid = "";
 
     /**
      * ProtoSection cDefUuid.
@@ -17063,8 +17063,8 @@ $root.ProtoSection = (function() {
                 $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.Uuid != null && Object.hasOwnProperty.call(message, "Uuid"))
-            writer.uint32(/* id 3, wireType 2 =*/26).string(message.Uuid);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
         if (message.cDefUuid != null && Object.hasOwnProperty.call(message, "cDefUuid"))
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.cDefUuid);
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
@@ -17115,7 +17115,7 @@ $root.ProtoSection = (function() {
                     break;
                 }
             case 3: {
-                    message.Uuid = reader.string();
+                    message.uuid = reader.string();
                     break;
                 }
             case 4: {
@@ -17177,9 +17177,9 @@ $root.ProtoSection = (function() {
             if (error)
                 return "parent." + error;
         }
-        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
-            if (!$util.isString(message.Uuid))
-                return "Uuid: string expected";
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         if (message.cDefUuid != null && message.hasOwnProperty("cDefUuid"))
             if (!$util.isString(message.cDefUuid))
                 return "cDefUuid: string expected";
@@ -17220,8 +17220,8 @@ $root.ProtoSection = (function() {
                 throw TypeError(".ProtoSection.parent: object expected");
             message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
         }
-        if (object.Uuid != null)
-            message.Uuid = String(object.Uuid);
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         if (object.cDefUuid != null)
             message.cDefUuid = String(object.cDefUuid);
         if (object.comChannelUUIDs) {
@@ -17253,7 +17253,7 @@ $root.ProtoSection = (function() {
         }
         if (options.defaults) {
             object.parent = null;
-            object.Uuid = "";
+            object.uuid = "";
             object.cDefUuid = "";
         }
         if (message._children && message._children.length) {
@@ -17263,8 +17263,8 @@ $root.ProtoSection = (function() {
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
-        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
-            object.Uuid = message.Uuid;
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         if (message.cDefUuid != null && message.hasOwnProperty("cDefUuid"))
             object.cDefUuid = message.cDefUuid;
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
@@ -22894,7 +22894,7 @@ $root.ProtoTableElementProperties = (function() {
      * @property {ProtoVerticalAlignment|null} [valign] ProtoTableElementProperties valign
      * @property {string|null} [valignCode] ProtoTableElementProperties valignCode
      * @property {ProtoInheritance|null} [backgroundColorInheritance] ProtoTableElementProperties backgroundColorInheritance
-     * @property {IProtoColor|null} [backgroundColor] ProtoTableElementProperties backgroundColor
+     * @property {Array.<IProtoColor>|null} [backgroundColor] ProtoTableElementProperties backgroundColor
      * @property {string|null} [backgroundColorCode] ProtoTableElementProperties backgroundColorCode
      * @property {ProtoInheritance|null} [paddingInheritance] ProtoTableElementProperties paddingInheritance
      * @property {IProtoSideMeasures|null} [padding] ProtoTableElementProperties padding
@@ -22934,6 +22934,7 @@ $root.ProtoTableElementProperties = (function() {
      * @param {IProtoTableElementProperties=} [properties] Properties to set
      */
     function ProtoTableElementProperties(properties) {
+        this.backgroundColor = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -23022,11 +23023,11 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties backgroundColor.
-     * @member {IProtoColor|null|undefined} backgroundColor
+     * @member {Array.<IProtoColor>} backgroundColor
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.backgroundColor = null;
+    ProtoTableElementProperties.prototype.backgroundColor = $util.emptyArray;
 
     /**
      * ProtoTableElementProperties backgroundColorCode.
@@ -23296,8 +23297,9 @@ $root.ProtoTableElementProperties = (function() {
             writer.uint32(/* id 9, wireType 2 =*/74).string(message.valignCode);
         if (message.backgroundColorInheritance != null && Object.hasOwnProperty.call(message, "backgroundColorInheritance"))
             writer.uint32(/* id 10, wireType 0 =*/80).int32(message.backgroundColorInheritance);
-        if (message.backgroundColor != null && Object.hasOwnProperty.call(message, "backgroundColor"))
-            $root.ProtoColor.encode(message.backgroundColor, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+        if (message.backgroundColor != null && message.backgroundColor.length)
+            for (var i = 0; i < message.backgroundColor.length; ++i)
+                $root.ProtoColor.encode(message.backgroundColor[i], writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
         if (message.backgroundColorCode != null && Object.hasOwnProperty.call(message, "backgroundColorCode"))
             writer.uint32(/* id 12, wireType 2 =*/98).string(message.backgroundColorCode);
         if (message.paddingInheritance != null && Object.hasOwnProperty.call(message, "paddingInheritance"))
@@ -23429,7 +23431,9 @@ $root.ProtoTableElementProperties = (function() {
                     break;
                 }
             case 11: {
-                    message.backgroundColor = $root.ProtoColor.decode(reader, reader.uint32());
+                    if (!(message.backgroundColor && message.backgroundColor.length))
+                        message.backgroundColor = [];
+                    message.backgroundColor.push($root.ProtoColor.decode(reader, reader.uint32()));
                     break;
                 }
             case 12: {
@@ -23655,9 +23659,13 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
         if (message.backgroundColor != null && message.hasOwnProperty("backgroundColor")) {
-            var error = $root.ProtoColor.verify(message.backgroundColor);
-            if (error)
-                return "backgroundColor." + error;
+            if (!Array.isArray(message.backgroundColor))
+                return "backgroundColor: array expected";
+            for (var i = 0; i < message.backgroundColor.length; ++i) {
+                var error = $root.ProtoColor.verify(message.backgroundColor[i]);
+                if (error)
+                    return "backgroundColor." + error;
+            }
         }
         if (message.backgroundColorCode != null && message.hasOwnProperty("backgroundColorCode"))
             if (!$util.isString(message.backgroundColorCode))
@@ -23851,19 +23859,19 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.widthInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.widthInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.widthInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.widthInheritance = 3;
             break;
@@ -23882,19 +23890,19 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.alignInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.alignInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.alignInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.alignInheritance = 3;
             break;
@@ -23940,19 +23948,19 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.valignInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.valignInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.valignInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.valignInheritance = 3;
             break;
@@ -23986,27 +23994,32 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.backgroundColorInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.backgroundColorInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.backgroundColorInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.backgroundColorInheritance = 3;
             break;
         }
-        if (object.backgroundColor != null) {
-            if (typeof object.backgroundColor !== "object")
-                throw TypeError(".ProtoTableElementProperties.backgroundColor: object expected");
-            message.backgroundColor = $root.ProtoColor.fromObject(object.backgroundColor);
+        if (object.backgroundColor) {
+            if (!Array.isArray(object.backgroundColor))
+                throw TypeError(".ProtoTableElementProperties.backgroundColor: array expected");
+            message.backgroundColor = [];
+            for (var i = 0; i < object.backgroundColor.length; ++i) {
+                if (typeof object.backgroundColor[i] !== "object")
+                    throw TypeError(".ProtoTableElementProperties.backgroundColor: object expected");
+                message.backgroundColor[i] = $root.ProtoColor.fromObject(object.backgroundColor[i]);
+            }
         }
         if (object.backgroundColorCode != null)
             message.backgroundColorCode = String(object.backgroundColorCode);
@@ -24017,19 +24030,19 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.paddingInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.paddingInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.paddingInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.paddingInheritance = 3;
             break;
@@ -24048,19 +24061,19 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.borderInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.borderInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.borderInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.borderInheritance = 3;
             break;
@@ -24079,19 +24092,19 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.marginInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.marginInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.marginInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.marginInheritance = 3;
             break;
@@ -24110,19 +24123,19 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.rotationInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.rotationInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.rotationInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.rotationInheritance = 3;
             break;
@@ -24138,19 +24151,19 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.defaultParagraphFormatUUIDInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.defaultParagraphFormatUUIDInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.defaultParagraphFormatUUIDInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.defaultParagraphFormatUUIDInheritance = 3;
             break;
@@ -24166,19 +24179,19 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.tableContentGroupTypeInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.tableContentGroupTypeInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.tableContentGroupTypeInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.tableContentGroupTypeInheritance = 3;
             break;
@@ -24216,19 +24229,19 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.cellTypeInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.cellTypeInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.cellTypeInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.cellTypeInheritance = 3;
             break;
@@ -24262,19 +24275,19 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.minRowHeightInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.minRowHeightInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.minRowHeightInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.minRowHeightInheritance = 3;
             break;
@@ -24293,19 +24306,19 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
             break;
-        case "PROTO_INHERITANCE_INHERIT":
+        case "INHERITANCE_INHERIT":
         case 0:
             message.wsInheritance = 0;
             break;
-        case "PROTO_INHERITANCE_CODE":
+        case "INHERITANCE_CODE":
         case 1:
             message.wsInheritance = 1;
             break;
-        case "PROTO_INHERITANCE_BIND_CODE":
+        case "INHERITANCE_BIND_CODE":
         case 2:
             message.wsInheritance = 2;
             break;
-        case "PROTO_INHERITANCE_STATIC":
+        case "INHERITANCE_STATIC":
         case 3:
             message.wsInheritance = 3;
             break;
@@ -24333,44 +24346,45 @@ $root.ProtoTableElementProperties = (function() {
         if (!options)
             options = {};
         var object = {};
+        if (options.arrays || options.defaults)
+            object.backgroundColor = [];
         if (options.defaults) {
-            object.widthInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
+            object.widthInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.width = null;
             object.widthCode = "";
-            object.alignInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
+            object.alignInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.align = options.enums === String ? "ALIGN_LEFT" : 0;
             object.alignCode = "";
-            object.valignInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
+            object.valignInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.valign = options.enums === String ? "TOP" : 0;
             object.valignCode = "";
-            object.backgroundColorInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
-            object.backgroundColor = null;
+            object.backgroundColorInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.backgroundColorCode = "";
-            object.paddingInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
+            object.paddingInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.padding = null;
             object.paddingCode = "";
-            object.borderInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
+            object.borderInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.border = null;
             object.borderCode = "";
-            object.marginInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
+            object.marginInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.margin = null;
             object.marginCode = "";
-            object.rotationInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
+            object.rotationInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.rotation = 0;
             object.rotationCode = "";
-            object.defaultParagraphFormatUUIDInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
+            object.defaultParagraphFormatUUIDInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.defaultParagraphFormatUUID = "";
             object.defaultParagraphFormatUUIDCode = "";
-            object.tableContentGroupTypeInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
+            object.tableContentGroupTypeInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.tableContentGroupType = options.enums === String ? "HEADER" : 0;
             object.tableContentGroupTypeCode = "";
-            object.cellTypeInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
+            object.cellTypeInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.cellType = options.enums === String ? "TABLE_CELL_BODY" : 0;
             object.cellTypeCode = "";
-            object.minRowHeightInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
+            object.minRowHeightInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.minRowHeight = null;
             object.minRowHeightCode = "";
-            object.wsInheritance = options.enums === String ? "PROTO_INHERITANCE_INHERIT" : 0;
+            object.wsInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.ws = null;
             object.wsCode = "";
         }
@@ -24394,8 +24408,11 @@ $root.ProtoTableElementProperties = (function() {
             object.valignCode = message.valignCode;
         if (message.backgroundColorInheritance != null && message.hasOwnProperty("backgroundColorInheritance"))
             object.backgroundColorInheritance = options.enums === String ? $root.ProtoInheritance[message.backgroundColorInheritance] === undefined ? message.backgroundColorInheritance : $root.ProtoInheritance[message.backgroundColorInheritance] : message.backgroundColorInheritance;
-        if (message.backgroundColor != null && message.hasOwnProperty("backgroundColor"))
-            object.backgroundColor = $root.ProtoColor.toObject(message.backgroundColor, options);
+        if (message.backgroundColor && message.backgroundColor.length) {
+            object.backgroundColor = [];
+            for (var j = 0; j < message.backgroundColor.length; ++j)
+                object.backgroundColor[j] = $root.ProtoColor.toObject(message.backgroundColor[j], options);
+        }
         if (message.backgroundColorCode != null && message.hasOwnProperty("backgroundColorCode"))
             object.backgroundColorCode = message.backgroundColorCode;
         if (message.paddingInheritance != null && message.hasOwnProperty("paddingInheritance"))
@@ -24488,17 +24505,17 @@ $root.ProtoTableElementProperties = (function() {
  * ProtoInheritance enum.
  * @name ProtoInheritance
  * @enum {number}
- * @property {number} PROTO_INHERITANCE_INHERIT=0 PROTO_INHERITANCE_INHERIT value
- * @property {number} PROTO_INHERITANCE_CODE=1 PROTO_INHERITANCE_CODE value
- * @property {number} PROTO_INHERITANCE_BIND_CODE=2 PROTO_INHERITANCE_BIND_CODE value
- * @property {number} PROTO_INHERITANCE_STATIC=3 PROTO_INHERITANCE_STATIC value
+ * @property {number} INHERITANCE_INHERIT=0 INHERITANCE_INHERIT value
+ * @property {number} INHERITANCE_CODE=1 INHERITANCE_CODE value
+ * @property {number} INHERITANCE_BIND_CODE=2 INHERITANCE_BIND_CODE value
+ * @property {number} INHERITANCE_STATIC=3 INHERITANCE_STATIC value
  */
 $root.ProtoInheritance = (function() {
     var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "PROTO_INHERITANCE_INHERIT"] = 0;
-    values[valuesById[1] = "PROTO_INHERITANCE_CODE"] = 1;
-    values[valuesById[2] = "PROTO_INHERITANCE_BIND_CODE"] = 2;
-    values[valuesById[3] = "PROTO_INHERITANCE_STATIC"] = 3;
+    values[valuesById[0] = "INHERITANCE_INHERIT"] = 0;
+    values[valuesById[1] = "INHERITANCE_CODE"] = 1;
+    values[valuesById[2] = "INHERITANCE_BIND_CODE"] = 2;
+    values[valuesById[3] = "INHERITANCE_STATIC"] = 3;
     return values;
 })();
 
@@ -29966,14 +29983,14 @@ $root.NodeType = (function() {
  * @enum {number}
  * @property {number} IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL=0 IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL value
  * @property {number} IMAGE_SCALE_TYPE_RELATIVE=1 IMAGE_SCALE_TYPE_RELATIVE value
- * @property {number} IMAGE_SCALE_TYPE_ABSOLUT=2 IMAGE_SCALE_TYPE_ABSOLUT value
+ * @property {number} IMAGE_SCALE_TYPE_ABSOLUTE=2 IMAGE_SCALE_TYPE_ABSOLUTE value
  * @property {number} IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN=3 IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN value
  */
 $root.ProtoImageScaleType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL"] = 0;
     values[valuesById[1] = "IMAGE_SCALE_TYPE_RELATIVE"] = 1;
-    values[valuesById[2] = "IMAGE_SCALE_TYPE_ABSOLUT"] = 2;
+    values[valuesById[2] = "IMAGE_SCALE_TYPE_ABSOLUTE"] = 2;
     values[valuesById[3] = "IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN"] = 3;
     return values;
 })();
@@ -30000,17 +30017,17 @@ $root.ProtoImageUAMode = (function() {
  * ProtoImageContentType enum.
  * @name ProtoImageContentType
  * @enum {number}
- * @property {number} IMAGE_CONTENT_UUID_REFFERENCE_INLINE=0 IMAGE_CONTENT_UUID_REFFERENCE_INLINE value
- * @property {number} IMAGE_CONTENT_UUID_REFFERENCE_LOCAL=1 IMAGE_CONTENT_UUID_REFFERENCE_LOCAL value
- * @property {number} IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL=2 IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL value
+ * @property {number} IMAGE_CONTENT_UUID_REFERENCE_INLINE=0 IMAGE_CONTENT_UUID_REFERENCE_INLINE value
+ * @property {number} IMAGE_CONTENT_UUID_REFERENCE_LOCAL=1 IMAGE_CONTENT_UUID_REFERENCE_LOCAL value
+ * @property {number} IMAGE_CONTENT_UUID_REFERENCE_GLOBAL=2 IMAGE_CONTENT_UUID_REFERENCE_GLOBAL value
  * @property {number} IMAGE_CONTENT_DMSCRIPT=3 IMAGE_CONTENT_DMSCRIPT value
  * @property {number} IMAGE_CONTENT_IMAGE_DATA=4 IMAGE_CONTENT_IMAGE_DATA value
  */
 $root.ProtoImageContentType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "IMAGE_CONTENT_UUID_REFFERENCE_INLINE"] = 0;
-    values[valuesById[1] = "IMAGE_CONTENT_UUID_REFFERENCE_LOCAL"] = 1;
-    values[valuesById[2] = "IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL"] = 2;
+    values[valuesById[0] = "IMAGE_CONTENT_UUID_REFERENCE_INLINE"] = 0;
+    values[valuesById[1] = "IMAGE_CONTENT_UUID_REFERENCE_LOCAL"] = 1;
+    values[valuesById[2] = "IMAGE_CONTENT_UUID_REFERENCE_GLOBAL"] = 2;
     values[valuesById[3] = "IMAGE_CONTENT_DMSCRIPT"] = 3;
     values[valuesById[4] = "IMAGE_CONTENT_IMAGE_DATA"] = 4;
     return values;
@@ -30045,8 +30062,8 @@ $root.ProtoImage = (function() {
      * @property {ProtoImageContentType|null} [imageContentType] ProtoImage imageContentType
      * @property {string|null} [imageContent] ProtoImage imageContent
      * @property {ProtoImageScaleType|null} [scaleType] ProtoImage scaleType
-     * @property {ProtoImageUAMode|null} [UAMode] ProtoImage UAMode
-     * @property {string|null} [UADescription] ProtoImage UADescription
+     * @property {ProtoImageUAMode|null} [uaMode] ProtoImage uaMode
+     * @property {string|null} [uaDescription] ProtoImage uaDescription
      * @property {IProtoBoxedBool|null} [leftBorderIsLeftMeasure] ProtoImage leftBorderIsLeftMeasure
      */
 
@@ -30251,20 +30268,20 @@ $root.ProtoImage = (function() {
     ProtoImage.prototype.scaleType = 0;
 
     /**
-     * ProtoImage UAMode.
-     * @member {ProtoImageUAMode} UAMode
+     * ProtoImage uaMode.
+     * @member {ProtoImageUAMode} uaMode
      * @memberof ProtoImage
      * @instance
      */
-    ProtoImage.prototype.UAMode = 0;
+    ProtoImage.prototype.uaMode = 0;
 
     /**
-     * ProtoImage UADescription.
-     * @member {string} UADescription
+     * ProtoImage uaDescription.
+     * @member {string} uaDescription
      * @memberof ProtoImage
      * @instance
      */
-    ProtoImage.prototype.UADescription = "";
+    ProtoImage.prototype.uaDescription = "";
 
     /**
      * ProtoImage leftBorderIsLeftMeasure.
@@ -30345,10 +30362,10 @@ $root.ProtoImage = (function() {
             writer.uint32(/* id 22, wireType 2 =*/178).string(message.imageContent);
         if (message.scaleType != null && Object.hasOwnProperty.call(message, "scaleType"))
             writer.uint32(/* id 23, wireType 0 =*/184).int32(message.scaleType);
-        if (message.UAMode != null && Object.hasOwnProperty.call(message, "UAMode"))
-            writer.uint32(/* id 24, wireType 0 =*/192).int32(message.UAMode);
-        if (message.UADescription != null && Object.hasOwnProperty.call(message, "UADescription"))
-            writer.uint32(/* id 25, wireType 2 =*/202).string(message.UADescription);
+        if (message.uaMode != null && Object.hasOwnProperty.call(message, "uaMode"))
+            writer.uint32(/* id 24, wireType 0 =*/192).int32(message.uaMode);
+        if (message.uaDescription != null && Object.hasOwnProperty.call(message, "uaDescription"))
+            writer.uint32(/* id 25, wireType 2 =*/202).string(message.uaDescription);
         if (message.leftBorderIsLeftMeasure != null && Object.hasOwnProperty.call(message, "leftBorderIsLeftMeasure"))
             $root.ProtoBoxedBool.encode(message.leftBorderIsLeftMeasure, writer.uint32(/* id 26, wireType 2 =*/210).fork()).ldelim();
         return writer;
@@ -30480,11 +30497,11 @@ $root.ProtoImage = (function() {
                     break;
                 }
             case 24: {
-                    message.UAMode = reader.int32();
+                    message.uaMode = reader.int32();
                     break;
                 }
             case 25: {
-                    message.UADescription = reader.string();
+                    message.uaDescription = reader.string();
                     break;
                 }
             case 26: {
@@ -30645,19 +30662,19 @@ $root.ProtoImage = (function() {
             case 3:
                 break;
             }
-        if (message.UAMode != null && message.hasOwnProperty("UAMode"))
-            switch (message.UAMode) {
+        if (message.uaMode != null && message.hasOwnProperty("uaMode"))
+            switch (message.uaMode) {
             default:
-                return "UAMode: enum value expected";
+                return "uaMode: enum value expected";
             case 0:
             case 1:
             case 2:
             case 3:
                 break;
             }
-        if (message.UADescription != null && message.hasOwnProperty("UADescription"))
-            if (!$util.isString(message.UADescription))
-                return "UADescription: string expected";
+        if (message.uaDescription != null && message.hasOwnProperty("uaDescription"))
+            if (!$util.isString(message.uaDescription))
+                return "uaDescription: string expected";
         if (message.leftBorderIsLeftMeasure != null && message.hasOwnProperty("leftBorderIsLeftMeasure")) {
             var error = $root.ProtoBoxedBool.verify(message.leftBorderIsLeftMeasure);
             if (error)
@@ -30793,15 +30810,15 @@ $root.ProtoImage = (function() {
                 break;
             }
             break;
-        case "IMAGE_CONTENT_UUID_REFFERENCE_INLINE":
+        case "IMAGE_CONTENT_UUID_REFERENCE_INLINE":
         case 0:
             message.imageContentType = 0;
             break;
-        case "IMAGE_CONTENT_UUID_REFFERENCE_LOCAL":
+        case "IMAGE_CONTENT_UUID_REFERENCE_LOCAL":
         case 1:
             message.imageContentType = 1;
             break;
-        case "IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL":
+        case "IMAGE_CONTENT_UUID_REFERENCE_GLOBAL":
         case 2:
             message.imageContentType = 2;
             break;
@@ -30831,7 +30848,7 @@ $root.ProtoImage = (function() {
         case 1:
             message.scaleType = 1;
             break;
-        case "IMAGE_SCALE_TYPE_ABSOLUT":
+        case "IMAGE_SCALE_TYPE_ABSOLUTE":
         case 2:
             message.scaleType = 2;
             break;
@@ -30840,32 +30857,32 @@ $root.ProtoImage = (function() {
             message.scaleType = 3;
             break;
         }
-        switch (object.UAMode) {
+        switch (object.uaMode) {
         default:
-            if (typeof object.UAMode === "number") {
-                message.UAMode = object.UAMode;
+            if (typeof object.uaMode === "number") {
+                message.uaMode = object.uaMode;
                 break;
             }
             break;
         case "IMAGE_UA_MODE_DO_NOT_USE_AT_ALL":
         case 0:
-            message.UAMode = 0;
+            message.uaMode = 0;
             break;
         case "IMAGE_UA_MODE_INHERITED":
         case 1:
-            message.UAMode = 1;
+            message.uaMode = 1;
             break;
         case "IMAGE_UA_MODE_SIMPLE":
         case 2:
-            message.UAMode = 2;
+            message.uaMode = 2;
             break;
         case "IMAGE_UA_MODE_ADVANCED":
         case 3:
-            message.UAMode = 3;
+            message.uaMode = 3;
             break;
         }
-        if (object.UADescription != null)
-            message.UADescription = String(object.UADescription);
+        if (object.uaDescription != null)
+            message.uaDescription = String(object.uaDescription);
         if (object.leftBorderIsLeftMeasure != null) {
             if (typeof object.leftBorderIsLeftMeasure !== "object")
                 throw TypeError(".ProtoImage.leftBorderIsLeftMeasure: object expected");
@@ -30909,11 +30926,11 @@ $root.ProtoImage = (function() {
             object.uuid = "";
             object.referencePoint = options.enums === String ? "REF_POINT_DO_NOT_USE_AT_ALL" : 0;
             object.hyperlink = "";
-            object.imageContentType = options.enums === String ? "IMAGE_CONTENT_UUID_REFFERENCE_INLINE" : 0;
+            object.imageContentType = options.enums === String ? "IMAGE_CONTENT_UUID_REFERENCE_INLINE" : 0;
             object.imageContent = "";
             object.scaleType = options.enums === String ? "IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL" : 0;
-            object.UAMode = options.enums === String ? "IMAGE_UA_MODE_DO_NOT_USE_AT_ALL" : 0;
-            object.UADescription = "";
+            object.uaMode = options.enums === String ? "IMAGE_UA_MODE_DO_NOT_USE_AT_ALL" : 0;
+            object.uaDescription = "";
             object.leftBorderIsLeftMeasure = null;
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
@@ -30965,10 +30982,10 @@ $root.ProtoImage = (function() {
             object.imageContent = message.imageContent;
         if (message.scaleType != null && message.hasOwnProperty("scaleType"))
             object.scaleType = options.enums === String ? $root.ProtoImageScaleType[message.scaleType] === undefined ? message.scaleType : $root.ProtoImageScaleType[message.scaleType] : message.scaleType;
-        if (message.UAMode != null && message.hasOwnProperty("UAMode"))
-            object.UAMode = options.enums === String ? $root.ProtoImageUAMode[message.UAMode] === undefined ? message.UAMode : $root.ProtoImageUAMode[message.UAMode] : message.UAMode;
-        if (message.UADescription != null && message.hasOwnProperty("UADescription"))
-            object.UADescription = message.UADescription;
+        if (message.uaMode != null && message.hasOwnProperty("uaMode"))
+            object.uaMode = options.enums === String ? $root.ProtoImageUAMode[message.uaMode] === undefined ? message.uaMode : $root.ProtoImageUAMode[message.uaMode] : message.uaMode;
+        if (message.uaDescription != null && message.hasOwnProperty("uaDescription"))
+            object.uaDescription = message.uaDescription;
         if (message.leftBorderIsLeftMeasure != null && message.hasOwnProperty("leftBorderIsLeftMeasure"))
             object.leftBorderIsLeftMeasure = $root.ProtoBoxedBool.toObject(message.leftBorderIsLeftMeasure, options);
         return object;
@@ -41433,7 +41450,7 @@ $root.ProtoCondition = (function() {
      * @interface IProtoCondition
      * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoCondition _children
      * @property {IProtoDocumentElement|null} [parent] ProtoCondition parent
-     * @property {string|null} [Uuid] ProtoCondition Uuid
+     * @property {string|null} [uuid] ProtoCondition uuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoCondition comChannelUUIDs
      * @property {string|null} [code] ProtoCondition code
      * @property {boolean|null} [result] ProtoCondition result
@@ -41474,12 +41491,12 @@ $root.ProtoCondition = (function() {
     ProtoCondition.prototype.parent = null;
 
     /**
-     * ProtoCondition Uuid.
-     * @member {string} Uuid
+     * ProtoCondition uuid.
+     * @member {string} uuid
      * @memberof ProtoCondition
      * @instance
      */
-    ProtoCondition.prototype.Uuid = "";
+    ProtoCondition.prototype.uuid = "";
 
     /**
      * ProtoCondition comChannelUUIDs.
@@ -41542,8 +41559,8 @@ $root.ProtoCondition = (function() {
                 $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.Uuid != null && Object.hasOwnProperty.call(message, "Uuid"))
-            writer.uint32(/* id 3, wireType 2 =*/26).string(message.Uuid);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
@@ -41598,7 +41615,7 @@ $root.ProtoCondition = (function() {
                     break;
                 }
             case 3: {
-                    message.Uuid = reader.string();
+                    message.uuid = reader.string();
                     break;
                 }
             case 4: {
@@ -41668,9 +41685,9 @@ $root.ProtoCondition = (function() {
             if (error)
                 return "parent." + error;
         }
-        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
-            if (!$util.isString(message.Uuid))
-                return "Uuid: string expected";
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
             if (!Array.isArray(message.comChannelUUIDs))
                 return "comChannelUUIDs: array expected";
@@ -41717,8 +41734,8 @@ $root.ProtoCondition = (function() {
                 throw TypeError(".ProtoCondition.parent: object expected");
             message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
         }
-        if (object.Uuid != null)
-            message.Uuid = String(object.Uuid);
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         if (object.comChannelUUIDs) {
             if (!Array.isArray(object.comChannelUUIDs))
                 throw TypeError(".ProtoCondition.comChannelUUIDs: array expected");
@@ -41754,7 +41771,7 @@ $root.ProtoCondition = (function() {
         }
         if (options.defaults) {
             object.parent = null;
-            object.Uuid = "";
+            object.uuid = "";
             object.code = "";
             object.result = false;
             object.regenerate = false;
@@ -41766,8 +41783,8 @@ $root.ProtoCondition = (function() {
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
-        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
-            object.Uuid = message.Uuid;
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
             object.comChannelUUIDs = [];
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
@@ -41819,7 +41836,7 @@ $root.ProtoPageCondition = (function() {
      * @interface IProtoPageCondition
      * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoPageCondition _children
      * @property {IProtoDocumentElement|null} [parent] ProtoPageCondition parent
-     * @property {string|null} [Uuid] ProtoPageCondition Uuid
+     * @property {string|null} [uuid] ProtoPageCondition uuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoPageCondition comChannelUUIDs
      * @property {string|null} [code] ProtoPageCondition code
      */
@@ -41858,12 +41875,12 @@ $root.ProtoPageCondition = (function() {
     ProtoPageCondition.prototype.parent = null;
 
     /**
-     * ProtoPageCondition Uuid.
-     * @member {string} Uuid
+     * ProtoPageCondition uuid.
+     * @member {string} uuid
      * @memberof ProtoPageCondition
      * @instance
      */
-    ProtoPageCondition.prototype.Uuid = "";
+    ProtoPageCondition.prototype.uuid = "";
 
     /**
      * ProtoPageCondition comChannelUUIDs.
@@ -41910,8 +41927,8 @@ $root.ProtoPageCondition = (function() {
                 $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.Uuid != null && Object.hasOwnProperty.call(message, "Uuid"))
-            writer.uint32(/* id 3, wireType 2 =*/26).string(message.Uuid);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
@@ -41962,7 +41979,7 @@ $root.ProtoPageCondition = (function() {
                     break;
                 }
             case 3: {
-                    message.Uuid = reader.string();
+                    message.uuid = reader.string();
                     break;
                 }
             case 4: {
@@ -42024,9 +42041,9 @@ $root.ProtoPageCondition = (function() {
             if (error)
                 return "parent." + error;
         }
-        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
-            if (!$util.isString(message.Uuid))
-                return "Uuid: string expected";
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
             if (!Array.isArray(message.comChannelUUIDs))
                 return "comChannelUUIDs: array expected";
@@ -42067,8 +42084,8 @@ $root.ProtoPageCondition = (function() {
                 throw TypeError(".ProtoPageCondition.parent: object expected");
             message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
         }
-        if (object.Uuid != null)
-            message.Uuid = String(object.Uuid);
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         if (object.comChannelUUIDs) {
             if (!Array.isArray(object.comChannelUUIDs))
                 throw TypeError(".ProtoPageCondition.comChannelUUIDs: array expected");
@@ -42100,7 +42117,7 @@ $root.ProtoPageCondition = (function() {
         }
         if (options.defaults) {
             object.parent = null;
-            object.Uuid = "";
+            object.uuid = "";
             object.code = "";
         }
         if (message._children && message._children.length) {
@@ -42110,8 +42127,8 @@ $root.ProtoPageCondition = (function() {
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
-        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
-            object.Uuid = message.Uuid;
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
             object.comChannelUUIDs = [];
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
@@ -42159,7 +42176,7 @@ $root.ProtoLocale = (function() {
      * @interface IProtoLocale
      * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoLocale _children
      * @property {IProtoDocumentElement|null} [parent] ProtoLocale parent
-     * @property {string|null} [Uuid] ProtoLocale Uuid
+     * @property {string|null} [uuid] ProtoLocale uuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoLocale comChannelUUIDs
      * @property {Array.<string>|null} [languageUUIDs] ProtoLocale languageUUIDs
      * @property {Array.<string>|null} [regionUUIDs] ProtoLocale regionUUIDs
@@ -42201,12 +42218,12 @@ $root.ProtoLocale = (function() {
     ProtoLocale.prototype.parent = null;
 
     /**
-     * ProtoLocale Uuid.
-     * @member {string} Uuid
+     * ProtoLocale uuid.
+     * @member {string} uuid
      * @memberof ProtoLocale
      * @instance
      */
-    ProtoLocale.prototype.Uuid = "";
+    ProtoLocale.prototype.uuid = "";
 
     /**
      * ProtoLocale comChannelUUIDs.
@@ -42261,8 +42278,8 @@ $root.ProtoLocale = (function() {
                 $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.Uuid != null && Object.hasOwnProperty.call(message, "Uuid"))
-            writer.uint32(/* id 3, wireType 2 =*/26).string(message.Uuid);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
@@ -42317,7 +42334,7 @@ $root.ProtoLocale = (function() {
                     break;
                 }
             case 3: {
-                    message.Uuid = reader.string();
+                    message.uuid = reader.string();
                     break;
                 }
             case 4: {
@@ -42387,9 +42404,9 @@ $root.ProtoLocale = (function() {
             if (error)
                 return "parent." + error;
         }
-        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
-            if (!$util.isString(message.Uuid))
-                return "Uuid: string expected";
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
             if (!Array.isArray(message.comChannelUUIDs))
                 return "comChannelUUIDs: array expected";
@@ -42441,8 +42458,8 @@ $root.ProtoLocale = (function() {
                 throw TypeError(".ProtoLocale.parent: object expected");
             message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
         }
-        if (object.Uuid != null)
-            message.Uuid = String(object.Uuid);
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         if (object.comChannelUUIDs) {
             if (!Array.isArray(object.comChannelUUIDs))
                 throw TypeError(".ProtoLocale.comChannelUUIDs: array expected");
@@ -42488,7 +42505,7 @@ $root.ProtoLocale = (function() {
         }
         if (options.defaults) {
             object.parent = null;
-            object.Uuid = "";
+            object.uuid = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -42497,8 +42514,8 @@ $root.ProtoLocale = (function() {
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
-        if (message.Uuid != null && message.hasOwnProperty("Uuid"))
-            object.Uuid = message.Uuid;
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
             object.comChannelUUIDs = [];
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
@@ -43539,15 +43556,15 @@ $root.ProtoInputFieldText = (function() {
                 break;
             }
             break;
-        case "INPUT":
+        case "PDF_PRINTING_BEHAVIOR_INPUT":
         case 0:
             message.pdfPrintingBehavior = 0;
             break;
-        case "TEXT":
+        case "PDF_PRINTING_BEHAVIOR_TEXT":
         case 1:
             message.pdfPrintingBehavior = 1;
             break;
-        case "INHERIT":
+        case "PDF_PRINTING_BEHAVIOR_INHERIT":
         case 2:
             message.pdfPrintingBehavior = 2;
             break;
@@ -43589,7 +43606,7 @@ $root.ProtoInputFieldText = (function() {
         if (options.defaults) {
             object.parent = null;
             object.base = null;
-            object.pdfPrintingBehavior = options.enums === String ? "INPUT" : 0;
+            object.pdfPrintingBehavior = options.enums === String ? "PDF_PRINTING_BEHAVIOR_INPUT" : 0;
             object.pdfSize = null;
             object.pdfFormName = "";
             object.uuid = "";

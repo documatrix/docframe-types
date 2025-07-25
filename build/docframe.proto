@@ -190,30 +190,30 @@ AZTEC = 9;
 }
 
 message ProtoSwissQRCreditor {
-string address_type = 1;
+string addressType = 1;
 string name = 2;
-string postal_code = 3;
+string postalCode = 3;
 string town = 4;
 string country = 5;
-string street_or_address_line_1 = 6;
-string building_number_or_address_line_2 = 7;
+string streetOrAddressLine1 = 6;
+string buildingNumberOrAddressLine2 = 7;
 string iban = 8;
 string amount = 9;
 string currency = 10;
 }
 
 message ProtoSwissQRDebitor {
-string address_type = 1;
+string addressType = 1;
 string name = 2;
-string postal_code = 3;
+string postalCode = 3;
 string town = 4;
 string country = 5;
-string street_or_address_line_1 = 6;
-string building_number_or_address_line_2 = 7;
-string payment_reference_type = 8;
-string payment_reference = 9;
-string unstructured_reference = 10;
-string bill_information = 11;
+string streetOrAddressLine1 = 6;
+string buildingNumberOrAddressLine2 = 7;
+string paymentReferenceType = 8;
+string paymentReference = 9;
+string unstructuredReference = 10;
+string billInformation = 11;
 }
 
 message ProtoSwissQRData {
@@ -323,9 +323,9 @@ string value = 2;
 }
 
 enum PDFPrintingBehavior {
-INPUT = 0;
-TEXT = 1;
-INHERIT = 2;
+PDF_PRINTING_BEHAVIOR_INPUT = 0;
+PDF_PRINTING_BEHAVIOR_TEXT = 1;
+PDF_PRINTING_BEHAVIOR_INHERIT = 2;
 }
 
 message ProtoBaseInputField {
@@ -536,7 +536,7 @@ message ProtoSection {
 repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
 
-string Uuid = 3;
+string uuid = 3;
 string cDefUuid = 4;
 
 repeated string comChannelUUIDs = 5;
@@ -711,7 +711,7 @@ ProtoVerticalAlignment valign = 8;
 string valignCode = 9;
 
 ProtoInheritance backgroundColorInheritance = 10;
-ProtoColor backgroundColor = 11;
+repeated ProtoColor backgroundColor = 11;
 string backgroundColorCode = 12;
 
 ProtoInheritance paddingInheritance = 13;
@@ -752,10 +752,10 @@ string wsCode = 39;
 }
 
 enum ProtoInheritance {
-PROTO_INHERITANCE_INHERIT = 0;
-PROTO_INHERITANCE_CODE = 1;
-PROTO_INHERITANCE_BIND_CODE = 2;
-PROTO_INHERITANCE_STATIC = 3;
+INHERITANCE_INHERIT = 0;
+INHERITANCE_CODE = 1;
+INHERITANCE_BIND_CODE = 2;
+INHERITANCE_STATIC = 3;
 }
 message ProtoText {
 ProtoDocumentElement parent = 1;
@@ -972,7 +972,7 @@ DOCUMENT_ELEMENT_DYNAMIC_TEMPLATE = 74;
 DOCUMENT_ELEMENT_SELECTION = 75;
 DOCUMENT_ELEMENT_SELECTION_ENTRY = 76;
 DOCUMENT_ELEMENT_CONDITION = 77;
-DOCUMENT_ELEMENT_PAGE_CONDITION= 78;
+DOCUMENT_ELEMENT_PAGE_CONDITION = 78;
 DOCUMENT_ELEMENT_LOCALE = 79;
 DOCUMENT_ELEMENT_TAG = 80;
 DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULT = 81;
@@ -985,7 +985,7 @@ DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN = 86;
 enum ProtoImageScaleType {
 IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
 IMAGE_SCALE_TYPE_RELATIVE = 1;
-IMAGE_SCALE_TYPE_ABSOLUT = 2;
+IMAGE_SCALE_TYPE_ABSOLUTE = 2;
 IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN = 3;
 }
 
@@ -998,9 +998,9 @@ IMAGE_UA_MODE_ADVANCED = 3;
 }
 
 enum ProtoImageContentType{
-IMAGE_CONTENT_UUID_REFFERENCE_INLINE = 0;
-IMAGE_CONTENT_UUID_REFFERENCE_LOCAL = 1;
-IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL = 2;
+IMAGE_CONTENT_UUID_REFERENCE_INLINE = 0;
+IMAGE_CONTENT_UUID_REFERENCE_LOCAL = 1;
+IMAGE_CONTENT_UUID_REFERENCE_GLOBAL = 2;
 IMAGE_CONTENT_DMSCRIPT = 3;
 IMAGE_CONTENT_IMAGE_DATA = 4;
 }
@@ -1031,8 +1031,8 @@ repeated string comChannelUUIDs = 20;
 ProtoImageContentType imageContentType = 21;
 string imageContent = 22;
 ProtoImageScaleType scaleType = 23;
-ProtoImageUAMode UAMode = 24;
-string UADescription = 25;
+ProtoImageUAMode uaMode = 24;
+string uaDescription = 25;
 ProtoBoxedBool leftBorderIsLeftMeasure = 26;
 }
 
@@ -1305,7 +1305,7 @@ ProtoDocumentElement parent = 2;
 
 string uuid = 3;
 repeated string comChannelUUIDs = 4;
-string internal_name = 5;
+string internalName = 5;
 string name = 6;
 bool multi = 7;
 uint64 min = 8;
@@ -1317,14 +1317,14 @@ ProtoDocumentElement parent = 2;
 
 string uuid = 3;
 repeated string comChannelUUIDs = 4;
-string internal_name = 5;
+string internalName = 5;
 string name = 6;
 bool selected = 7;
 }
 message ProtoCondition {
 repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
-string Uuid = 3;
+string uuid = 3;
 repeated string comChannelUUIDs = 4;
 string code = 5;
 bool result = 6;
@@ -1333,14 +1333,14 @@ bool regenerate = 7;
 message ProtoPageCondition {
 repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
-string Uuid = 3;
+string uuid = 3;
 repeated string comChannelUUIDs = 4;
 string code = 5;
 }
 message ProtoLocale {
 repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
-string Uuid = 3;
+string uuid = 3;
 repeated string comChannelUUIDs = 4;
 repeated string languageUUIDs = 5;
 repeated string regionUUIDs = 6;

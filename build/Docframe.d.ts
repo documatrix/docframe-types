@@ -2376,11 +2376,11 @@ export interface IProtoSwissQRCreditor {
     /** ProtoSwissQRCreditor country */
     country?: (string|null);
 
-    /** ProtoSwissQRCreditor streetOrAddressLine_1 */
-    streetOrAddressLine_1?: (string|null);
+    /** ProtoSwissQRCreditor streetOrAddressLine1 */
+    streetOrAddressLine1?: (string|null);
 
-    /** ProtoSwissQRCreditor buildingNumberOrAddressLine_2 */
-    buildingNumberOrAddressLine_2?: (string|null);
+    /** ProtoSwissQRCreditor buildingNumberOrAddressLine2 */
+    buildingNumberOrAddressLine2?: (string|null);
 
     /** ProtoSwissQRCreditor iban */
     iban?: (string|null);
@@ -2416,11 +2416,11 @@ export class ProtoSwissQRCreditor implements IProtoSwissQRCreditor {
     /** ProtoSwissQRCreditor country. */
     public country: string;
 
-    /** ProtoSwissQRCreditor streetOrAddressLine_1. */
-    public streetOrAddressLine_1: string;
+    /** ProtoSwissQRCreditor streetOrAddressLine1. */
+    public streetOrAddressLine1: string;
 
-    /** ProtoSwissQRCreditor buildingNumberOrAddressLine_2. */
-    public buildingNumberOrAddressLine_2: string;
+    /** ProtoSwissQRCreditor buildingNumberOrAddressLine2. */
+    public buildingNumberOrAddressLine2: string;
 
     /** ProtoSwissQRCreditor iban. */
     public iban: string;
@@ -2527,11 +2527,11 @@ export interface IProtoSwissQRDebitor {
     /** ProtoSwissQRDebitor country */
     country?: (string|null);
 
-    /** ProtoSwissQRDebitor streetOrAddressLine_1 */
-    streetOrAddressLine_1?: (string|null);
+    /** ProtoSwissQRDebitor streetOrAddressLine1 */
+    streetOrAddressLine1?: (string|null);
 
-    /** ProtoSwissQRDebitor buildingNumberOrAddressLine_2 */
-    buildingNumberOrAddressLine_2?: (string|null);
+    /** ProtoSwissQRDebitor buildingNumberOrAddressLine2 */
+    buildingNumberOrAddressLine2?: (string|null);
 
     /** ProtoSwissQRDebitor paymentReferenceType */
     paymentReferenceType?: (string|null);
@@ -2570,11 +2570,11 @@ export class ProtoSwissQRDebitor implements IProtoSwissQRDebitor {
     /** ProtoSwissQRDebitor country. */
     public country: string;
 
-    /** ProtoSwissQRDebitor streetOrAddressLine_1. */
-    public streetOrAddressLine_1: string;
+    /** ProtoSwissQRDebitor streetOrAddressLine1. */
+    public streetOrAddressLine1: string;
 
-    /** ProtoSwissQRDebitor buildingNumberOrAddressLine_2. */
-    public buildingNumberOrAddressLine_2: string;
+    /** ProtoSwissQRDebitor buildingNumberOrAddressLine2. */
+    public buildingNumberOrAddressLine2: string;
 
     /** ProtoSwissQRDebitor paymentReferenceType. */
     public paymentReferenceType: string;
@@ -4134,9 +4134,9 @@ export class ProtoOption implements IProtoOption {
 
 /** PDFPrintingBehavior enum. */
 export enum PDFPrintingBehavior {
-    INPUT = 0,
-    TEXT = 1,
-    INHERIT = 2
+    PDF_PRINTING_BEHAVIOR_INPUT = 0,
+    PDF_PRINTING_BEHAVIOR_TEXT = 1,
+    PDF_PRINTING_BEHAVIOR_INHERIT = 2
 }
 
 /** Properties of a ProtoBaseInputField. */
@@ -6290,8 +6290,8 @@ export interface IProtoSection {
     /** ProtoSection parent */
     parent?: (IProtoDocumentElement|null);
 
-    /** ProtoSection Uuid */
-    Uuid?: (string|null);
+    /** ProtoSection uuid */
+    uuid?: (string|null);
 
     /** ProtoSection cDefUuid */
     cDefUuid?: (string|null);
@@ -6315,8 +6315,8 @@ export class ProtoSection implements IProtoSection {
     /** ProtoSection parent. */
     public parent?: (IProtoDocumentElement|null);
 
-    /** ProtoSection Uuid. */
-    public Uuid: string;
+    /** ProtoSection uuid. */
+    public uuid: string;
 
     /** ProtoSection cDefUuid. */
     public cDefUuid: string;
@@ -8484,7 +8484,7 @@ export interface IProtoTableElementProperties {
     backgroundColorInheritance?: (ProtoInheritance|null);
 
     /** ProtoTableElementProperties backgroundColor */
-    backgroundColor?: (IProtoColor|null);
+    backgroundColor?: (IProtoColor[]|null);
 
     /** ProtoTableElementProperties backgroundColorCode */
     backgroundColorCode?: (string|null);
@@ -8611,7 +8611,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public backgroundColorInheritance: ProtoInheritance;
 
     /** ProtoTableElementProperties backgroundColor. */
-    public backgroundColor?: (IProtoColor|null);
+    public backgroundColor: IProtoColor[];
 
     /** ProtoTableElementProperties backgroundColorCode. */
     public backgroundColorCode: string;
@@ -8777,10 +8777,10 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
 
 /** ProtoInheritance enum. */
 export enum ProtoInheritance {
-    PROTO_INHERITANCE_INHERIT = 0,
-    PROTO_INHERITANCE_CODE = 1,
-    PROTO_INHERITANCE_BIND_CODE = 2,
-    PROTO_INHERITANCE_STATIC = 3
+    INHERITANCE_INHERIT = 0,
+    INHERITANCE_CODE = 1,
+    INHERITANCE_BIND_CODE = 2,
+    INHERITANCE_STATIC = 3
 }
 
 /** Properties of a ProtoText. */
@@ -10271,7 +10271,7 @@ export enum NodeType {
 export enum ProtoImageScaleType {
     IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0,
     IMAGE_SCALE_TYPE_RELATIVE = 1,
-    IMAGE_SCALE_TYPE_ABSOLUT = 2,
+    IMAGE_SCALE_TYPE_ABSOLUTE = 2,
     IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN = 3
 }
 
@@ -10285,9 +10285,9 @@ export enum ProtoImageUAMode {
 
 /** ProtoImageContentType enum. */
 export enum ProtoImageContentType {
-    IMAGE_CONTENT_UUID_REFFERENCE_INLINE = 0,
-    IMAGE_CONTENT_UUID_REFFERENCE_LOCAL = 1,
-    IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL = 2,
+    IMAGE_CONTENT_UUID_REFERENCE_INLINE = 0,
+    IMAGE_CONTENT_UUID_REFERENCE_LOCAL = 1,
+    IMAGE_CONTENT_UUID_REFERENCE_GLOBAL = 2,
     IMAGE_CONTENT_DMSCRIPT = 3,
     IMAGE_CONTENT_IMAGE_DATA = 4
 }
@@ -10364,11 +10364,11 @@ export interface IProtoImage {
     /** ProtoImage scaleType */
     scaleType?: (ProtoImageScaleType|null);
 
-    /** ProtoImage UAMode */
-    UAMode?: (ProtoImageUAMode|null);
+    /** ProtoImage uaMode */
+    uaMode?: (ProtoImageUAMode|null);
 
-    /** ProtoImage UADescription */
-    UADescription?: (string|null);
+    /** ProtoImage uaDescription */
+    uaDescription?: (string|null);
 
     /** ProtoImage leftBorderIsLeftMeasure */
     leftBorderIsLeftMeasure?: (IProtoBoxedBool|null);
@@ -10452,11 +10452,11 @@ export class ProtoImage implements IProtoImage {
     /** ProtoImage scaleType. */
     public scaleType: ProtoImageScaleType;
 
-    /** ProtoImage UAMode. */
-    public UAMode: ProtoImageUAMode;
+    /** ProtoImage uaMode. */
+    public uaMode: ProtoImageUAMode;
 
-    /** ProtoImage UADescription. */
-    public UADescription: string;
+    /** ProtoImage uaDescription. */
+    public uaDescription: string;
 
     /** ProtoImage leftBorderIsLeftMeasure. */
     public leftBorderIsLeftMeasure?: (IProtoBoxedBool|null);
@@ -14239,8 +14239,8 @@ export interface IProtoCondition {
     /** ProtoCondition parent */
     parent?: (IProtoDocumentElement|null);
 
-    /** ProtoCondition Uuid */
-    Uuid?: (string|null);
+    /** ProtoCondition uuid */
+    uuid?: (string|null);
 
     /** ProtoCondition comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
@@ -14270,8 +14270,8 @@ export class ProtoCondition implements IProtoCondition {
     /** ProtoCondition parent. */
     public parent?: (IProtoDocumentElement|null);
 
-    /** ProtoCondition Uuid. */
-    public Uuid: string;
+    /** ProtoCondition uuid. */
+    public uuid: string;
 
     /** ProtoCondition comChannelUUIDs. */
     public comChannelUUIDs: string[];
@@ -14372,8 +14372,8 @@ export interface IProtoPageCondition {
     /** ProtoPageCondition parent */
     parent?: (IProtoDocumentElement|null);
 
-    /** ProtoPageCondition Uuid */
-    Uuid?: (string|null);
+    /** ProtoPageCondition uuid */
+    uuid?: (string|null);
 
     /** ProtoPageCondition comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
@@ -14397,8 +14397,8 @@ export class ProtoPageCondition implements IProtoPageCondition {
     /** ProtoPageCondition parent. */
     public parent?: (IProtoDocumentElement|null);
 
-    /** ProtoPageCondition Uuid. */
-    public Uuid: string;
+    /** ProtoPageCondition uuid. */
+    public uuid: string;
 
     /** ProtoPageCondition comChannelUUIDs. */
     public comChannelUUIDs: string[];
@@ -14493,8 +14493,8 @@ export interface IProtoLocale {
     /** ProtoLocale parent */
     parent?: (IProtoDocumentElement|null);
 
-    /** ProtoLocale Uuid */
-    Uuid?: (string|null);
+    /** ProtoLocale uuid */
+    uuid?: (string|null);
 
     /** ProtoLocale comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
@@ -14521,8 +14521,8 @@ export class ProtoLocale implements IProtoLocale {
     /** ProtoLocale parent. */
     public parent?: (IProtoDocumentElement|null);
 
-    /** ProtoLocale Uuid. */
-    public Uuid: string;
+    /** ProtoLocale uuid. */
+    public uuid: string;
 
     /** ProtoLocale comChannelUUIDs. */
     public comChannelUUIDs: string[];

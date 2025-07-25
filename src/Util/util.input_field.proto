@@ -4,9 +4,9 @@ message ProtoOption {
 }
 
 enum PDFPrintingBehavior {
-    INPUT = 0;
-    TEXT = 1;
-    INHERIT = 2;
+    PDF_PRINTING_BEHAVIOR_INPUT = 0;
+    PDF_PRINTING_BEHAVIOR_TEXT = 1;
+    PDF_PRINTING_BEHAVIOR_INHERIT = 2;
 }
 
 message ProtoBaseInputField {

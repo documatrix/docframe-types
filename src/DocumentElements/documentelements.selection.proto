@@ -6,7 +6,7 @@ message ProtoSelection {
 
   string uuid = 3;
   repeated string comChannelUUIDs = 4;
-  string internal_name = 5;
+  string internalName = 5;
   string name = 6;
   bool multi = 7;
   uint64 min = 8;

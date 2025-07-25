@@ -1,7 +1,7 @@
 enum ProtoImageScaleType { 
   IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
   IMAGE_SCALE_TYPE_RELATIVE = 1;
-  IMAGE_SCALE_TYPE_ABSOLUT = 2;
+  IMAGE_SCALE_TYPE_ABSOLUTE = 2;
   IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN = 3;
 }
 
@@ -14,11 +14,11 @@ enum ProtoImageUAMode{
 }
 
 enum ProtoImageContentType{
-IMAGE_CONTENT_UUID_REFFERENCE_INLINE = 0;
-IMAGE_CONTENT_UUID_REFFERENCE_LOCAL = 1;
-IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL = 2;
-IMAGE_CONTENT_DMSCRIPT = 3;
-IMAGE_CONTENT_IMAGE_DATA = 4;
+  IMAGE_CONTENT_UUID_REFERENCE_INLINE = 0;
+  IMAGE_CONTENT_UUID_REFERENCE_LOCAL = 1;
+  IMAGE_CONTENT_UUID_REFERENCE_GLOBAL = 2;
+  IMAGE_CONTENT_DMSCRIPT = 3;
+  IMAGE_CONTENT_IMAGE_DATA = 4;
 }
 
 
@@ -49,8 +49,8 @@ message ProtoImage {
   ProtoImageContentType imageContentType = 21;
   string imageContent = 22;  
   ProtoImageScaleType scaleType = 23; 
-  ProtoImageUAMode UAMode = 24;
-  string UADescription = 25;
+  ProtoImageUAMode uaMode = 24;
+  string uaDescription = 25;
   ProtoBoxedBool leftBorderIsLeftMeasure = 26;
 }
 

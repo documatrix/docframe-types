@@ -714,22 +714,22 @@ func (ProtoSemanticType) EnumDescriptor() ([]byte, []int) {
 type PDFPrintingBehavior int32
 
 const (
-	PDFPrintingBehavior_INPUT   PDFPrintingBehavior = 0
-	PDFPrintingBehavior_TEXT    PDFPrintingBehavior = 1
-	PDFPrintingBehavior_INHERIT PDFPrintingBehavior = 2
+	PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_INPUT   PDFPrintingBehavior = 0
+	PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_TEXT    PDFPrintingBehavior = 1
+	PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_INHERIT PDFPrintingBehavior = 2
 )
 
 // Enum value maps for PDFPrintingBehavior.
 var (
 	PDFPrintingBehavior_name = map[int32]string{
-		0: "INPUT",
-		1: "TEXT",
-		2: "INHERIT",
+		0: "PDF_PRINTING_BEHAVIOR_INPUT",
+		1: "PDF_PRINTING_BEHAVIOR_TEXT",
+		2: "PDF_PRINTING_BEHAVIOR_INHERIT",
 	}
 	PDFPrintingBehavior_value = map[string]int32{
-		"INPUT":   0,
-		"TEXT":    1,
-		"INHERIT": 2,
+		"PDF_PRINTING_BEHAVIOR_INPUT":   0,
+		"PDF_PRINTING_BEHAVIOR_TEXT":    1,
+		"PDF_PRINTING_BEHAVIOR_INHERIT": 2,
 	}
 )
 
@@ -968,25 +968,25 @@ func (ProtoTableCellType) EnumDescriptor() ([]byte, []int) {
 type ProtoInheritance int32
 
 const (
-	ProtoInheritance_PROTO_INHERITANCE_INHERIT   ProtoInheritance = 0
-	ProtoInheritance_PROTO_INHERITANCE_CODE      ProtoInheritance = 1
-	ProtoInheritance_PROTO_INHERITANCE_BIND_CODE ProtoInheritance = 2
-	ProtoInheritance_PROTO_INHERITANCE_STATIC    ProtoInheritance = 3
+	ProtoInheritance_INHERITANCE_INHERIT   ProtoInheritance = 0
+	ProtoInheritance_INHERITANCE_CODE      ProtoInheritance = 1
+	ProtoInheritance_INHERITANCE_BIND_CODE ProtoInheritance = 2
+	ProtoInheritance_INHERITANCE_STATIC    ProtoInheritance = 3
 )
 
 // Enum value maps for ProtoInheritance.
 var (
 	ProtoInheritance_name = map[int32]string{
-		0: "PROTO_INHERITANCE_INHERIT",
-		1: "PROTO_INHERITANCE_CODE",
-		2: "PROTO_INHERITANCE_BIND_CODE",
-		3: "PROTO_INHERITANCE_STATIC",
+		0: "INHERITANCE_INHERIT",
+		1: "INHERITANCE_CODE",
+		2: "INHERITANCE_BIND_CODE",
+		3: "INHERITANCE_STATIC",
 	}
 	ProtoInheritance_value = map[string]int32{
-		"PROTO_INHERITANCE_INHERIT":   0,
-		"PROTO_INHERITANCE_CODE":      1,
-		"PROTO_INHERITANCE_BIND_CODE": 2,
-		"PROTO_INHERITANCE_STATIC":    3,
+		"INHERITANCE_INHERIT":   0,
+		"INHERITANCE_CODE":      1,
+		"INHERITANCE_BIND_CODE": 2,
+		"INHERITANCE_STATIC":    3,
 	}
 )
 
@@ -1413,7 +1413,7 @@ type ProtoImageScaleType int32
 const (
 	ProtoImageScaleType_IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL  ProtoImageScaleType = 0
 	ProtoImageScaleType_IMAGE_SCALE_TYPE_RELATIVE           ProtoImageScaleType = 1
-	ProtoImageScaleType_IMAGE_SCALE_TYPE_ABSOLUT            ProtoImageScaleType = 2
+	ProtoImageScaleType_IMAGE_SCALE_TYPE_ABSOLUTE           ProtoImageScaleType = 2
 	ProtoImageScaleType_IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN ProtoImageScaleType = 3
 )
 
@@ -1422,13 +1422,13 @@ var (
 	ProtoImageScaleType_name = map[int32]string{
 		0: "IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL",
 		1: "IMAGE_SCALE_TYPE_RELATIVE",
-		2: "IMAGE_SCALE_TYPE_ABSOLUT",
+		2: "IMAGE_SCALE_TYPE_ABSOLUTE",
 		3: "IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN",
 	}
 	ProtoImageScaleType_value = map[string]int32{
 		"IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL":  0,
 		"IMAGE_SCALE_TYPE_RELATIVE":           1,
-		"IMAGE_SCALE_TYPE_ABSOLUT":            2,
+		"IMAGE_SCALE_TYPE_ABSOLUTE":           2,
 		"IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN": 3,
 	}
 )
@@ -1515,28 +1515,28 @@ func (ProtoImageUAMode) EnumDescriptor() ([]byte, []int) {
 type ProtoImageContentType int32
 
 const (
-	ProtoImageContentType_IMAGE_CONTENT_UUID_REFFERENCE_INLINE ProtoImageContentType = 0
-	ProtoImageContentType_IMAGE_CONTENT_UUID_REFFERENCE_LOCAL  ProtoImageContentType = 1
-	ProtoImageContentType_IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL ProtoImageContentType = 2
-	ProtoImageContentType_IMAGE_CONTENT_DMSCRIPT               ProtoImageContentType = 3
-	ProtoImageContentType_IMAGE_CONTENT_IMAGE_DATA             ProtoImageContentType = 4
+	ProtoImageContentType_IMAGE_CONTENT_UUID_REFERENCE_INLINE ProtoImageContentType = 0
+	ProtoImageContentType_IMAGE_CONTENT_UUID_REFERENCE_LOCAL  ProtoImageContentType = 1
+	ProtoImageContentType_IMAGE_CONTENT_UUID_REFERENCE_GLOBAL ProtoImageContentType = 2
+	ProtoImageContentType_IMAGE_CONTENT_DMSCRIPT              ProtoImageContentType = 3
+	ProtoImageContentType_IMAGE_CONTENT_IMAGE_DATA            ProtoImageContentType = 4
 )
 
 // Enum value maps for ProtoImageContentType.
 var (
 	ProtoImageContentType_name = map[int32]string{
-		0: "IMAGE_CONTENT_UUID_REFFERENCE_INLINE",
-		1: "IMAGE_CONTENT_UUID_REFFERENCE_LOCAL",
-		2: "IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL",
+		0: "IMAGE_CONTENT_UUID_REFERENCE_INLINE",
+		1: "IMAGE_CONTENT_UUID_REFERENCE_LOCAL",
+		2: "IMAGE_CONTENT_UUID_REFERENCE_GLOBAL",
 		3: "IMAGE_CONTENT_DMSCRIPT",
 		4: "IMAGE_CONTENT_IMAGE_DATA",
 	}
 	ProtoImageContentType_value = map[string]int32{
-		"IMAGE_CONTENT_UUID_REFFERENCE_INLINE": 0,
-		"IMAGE_CONTENT_UUID_REFFERENCE_LOCAL":  1,
-		"IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL": 2,
-		"IMAGE_CONTENT_DMSCRIPT":               3,
-		"IMAGE_CONTENT_IMAGE_DATA":             4,
+		"IMAGE_CONTENT_UUID_REFERENCE_INLINE": 0,
+		"IMAGE_CONTENT_UUID_REFERENCE_LOCAL":  1,
+		"IMAGE_CONTENT_UUID_REFERENCE_GLOBAL": 2,
+		"IMAGE_CONTENT_DMSCRIPT":              3,
+		"IMAGE_CONTENT_IMAGE_DATA":            4,
 	}
 )
 
@@ -3127,19 +3127,19 @@ func (x *ProtoBoxedVerticalAlignment) GetIsNull() bool {
 }
 
 type ProtoSwissQRCreditor struct {
-	state                         protoimpl.MessageState `protogen:"open.v1"`
-	AddressType                   string                 `protobuf:"bytes,1,opt,name=address_type,json=addressType,proto3" json:"address_type,omitempty"`
-	Name                          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	PostalCode                    string                 `protobuf:"bytes,3,opt,name=postal_code,json=postalCode,proto3" json:"postal_code,omitempty"`
-	Town                          string                 `protobuf:"bytes,4,opt,name=town,proto3" json:"town,omitempty"`
-	Country                       string                 `protobuf:"bytes,5,opt,name=country,proto3" json:"country,omitempty"`
-	StreetOrAddressLine_1         string                 `protobuf:"bytes,6,opt,name=street_or_address_line_1,json=streetOrAddressLine1,proto3" json:"street_or_address_line_1,omitempty"`
-	BuildingNumberOrAddressLine_2 string                 `protobuf:"bytes,7,opt,name=building_number_or_address_line_2,json=buildingNumberOrAddressLine2,proto3" json:"building_number_or_address_line_2,omitempty"`
-	Iban                          string                 `protobuf:"bytes,8,opt,name=iban,proto3" json:"iban,omitempty"`
-	Amount                        string                 `protobuf:"bytes,9,opt,name=amount,proto3" json:"amount,omitempty"`
-	Currency                      string                 `protobuf:"bytes,10,opt,name=currency,proto3" json:"currency,omitempty"`
-	unknownFields                 protoimpl.UnknownFields
-	sizeCache                     protoimpl.SizeCache
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	AddressType                  string                 `protobuf:"bytes,1,opt,name=addressType,proto3" json:"addressType,omitempty"`
+	Name                         string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	PostalCode                   string                 `protobuf:"bytes,3,opt,name=postalCode,proto3" json:"postalCode,omitempty"`
+	Town                         string                 `protobuf:"bytes,4,opt,name=town,proto3" json:"town,omitempty"`
+	Country                      string                 `protobuf:"bytes,5,opt,name=country,proto3" json:"country,omitempty"`
+	StreetOrAddressLine1         string                 `protobuf:"bytes,6,opt,name=streetOrAddressLine1,proto3" json:"streetOrAddressLine1,omitempty"`
+	BuildingNumberOrAddressLine2 string                 `protobuf:"bytes,7,opt,name=buildingNumberOrAddressLine2,proto3" json:"buildingNumberOrAddressLine2,omitempty"`
+	Iban                         string                 `protobuf:"bytes,8,opt,name=iban,proto3" json:"iban,omitempty"`
+	Amount                       string                 `protobuf:"bytes,9,opt,name=amount,proto3" json:"amount,omitempty"`
+	Currency                     string                 `protobuf:"bytes,10,opt,name=currency,proto3" json:"currency,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
 }
 
 func (x *ProtoSwissQRCreditor) Reset() {
@@ -3207,16 +3207,16 @@ func (x *ProtoSwissQRCreditor) GetCountry() string {
 	return ""
 }
 
-func (x *ProtoSwissQRCreditor) GetStreetOrAddressLine_1() string {
+func (x *ProtoSwissQRCreditor) GetStreetOrAddressLine1() string {
 	if x != nil {
-		return x.StreetOrAddressLine_1
+		return x.StreetOrAddressLine1
 	}
 	return ""
 }
 
-func (x *ProtoSwissQRCreditor) GetBuildingNumberOrAddressLine_2() string {
+func (x *ProtoSwissQRCreditor) GetBuildingNumberOrAddressLine2() string {
 	if x != nil {
-		return x.BuildingNumberOrAddressLine_2
+		return x.BuildingNumberOrAddressLine2
 	}
 	return ""
 }
@@ -3243,20 +3243,20 @@ func (x *ProtoSwissQRCreditor) GetCurrency() string {
 }
 
 type ProtoSwissQRDebitor struct {
-	state                         protoimpl.MessageState `protogen:"open.v1"`
-	AddressType                   string                 `protobuf:"bytes,1,opt,name=address_type,json=addressType,proto3" json:"address_type,omitempty"`
-	Name                          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	PostalCode                    string                 `protobuf:"bytes,3,opt,name=postal_code,json=postalCode,proto3" json:"postal_code,omitempty"`
-	Town                          string                 `protobuf:"bytes,4,opt,name=town,proto3" json:"town,omitempty"`
-	Country                       string                 `protobuf:"bytes,5,opt,name=country,proto3" json:"country,omitempty"`
-	StreetOrAddressLine_1         string                 `protobuf:"bytes,6,opt,name=street_or_address_line_1,json=streetOrAddressLine1,proto3" json:"street_or_address_line_1,omitempty"`
-	BuildingNumberOrAddressLine_2 string                 `protobuf:"bytes,7,opt,name=building_number_or_address_line_2,json=buildingNumberOrAddressLine2,proto3" json:"building_number_or_address_line_2,omitempty"`
-	PaymentReferenceType          string                 `protobuf:"bytes,8,opt,name=payment_reference_type,json=paymentReferenceType,proto3" json:"payment_reference_type,omitempty"`
-	PaymentReference              string                 `protobuf:"bytes,9,opt,name=payment_reference,json=paymentReference,proto3" json:"payment_reference,omitempty"`
-	UnstructuredReference         string                 `protobuf:"bytes,10,opt,name=unstructured_reference,json=unstructuredReference,proto3" json:"unstructured_reference,omitempty"`
-	BillInformation               string                 `protobuf:"bytes,11,opt,name=bill_information,json=billInformation,proto3" json:"bill_information,omitempty"`
-	unknownFields                 protoimpl.UnknownFields
-	sizeCache                     protoimpl.SizeCache
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	AddressType                  string                 `protobuf:"bytes,1,opt,name=addressType,proto3" json:"addressType,omitempty"`
+	Name                         string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	PostalCode                   string                 `protobuf:"bytes,3,opt,name=postalCode,proto3" json:"postalCode,omitempty"`
+	Town                         string                 `protobuf:"bytes,4,opt,name=town,proto3" json:"town,omitempty"`
+	Country                      string                 `protobuf:"bytes,5,opt,name=country,proto3" json:"country,omitempty"`
+	StreetOrAddressLine1         string                 `protobuf:"bytes,6,opt,name=streetOrAddressLine1,proto3" json:"streetOrAddressLine1,omitempty"`
+	BuildingNumberOrAddressLine2 string                 `protobuf:"bytes,7,opt,name=buildingNumberOrAddressLine2,proto3" json:"buildingNumberOrAddressLine2,omitempty"`
+	PaymentReferenceType         string                 `protobuf:"bytes,8,opt,name=paymentReferenceType,proto3" json:"paymentReferenceType,omitempty"`
+	PaymentReference             string                 `protobuf:"bytes,9,opt,name=paymentReference,proto3" json:"paymentReference,omitempty"`
+	UnstructuredReference        string                 `protobuf:"bytes,10,opt,name=unstructuredReference,proto3" json:"unstructuredReference,omitempty"`
+	BillInformation              string                 `protobuf:"bytes,11,opt,name=billInformation,proto3" json:"billInformation,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
 }
 
 func (x *ProtoSwissQRDebitor) Reset() {
@@ -3324,16 +3324,16 @@ func (x *ProtoSwissQRDebitor) GetCountry() string {
 	return ""
 }
 
-func (x *ProtoSwissQRDebitor) GetStreetOrAddressLine_1() string {
+func (x *ProtoSwissQRDebitor) GetStreetOrAddressLine1() string {
 	if x != nil {
-		return x.StreetOrAddressLine_1
+		return x.StreetOrAddressLine1
 	}
 	return ""
 }
 
-func (x *ProtoSwissQRDebitor) GetBuildingNumberOrAddressLine_2() string {
+func (x *ProtoSwissQRDebitor) GetBuildingNumberOrAddressLine2() string {
 	if x != nil {
-		return x.BuildingNumberOrAddressLine_2
+		return x.BuildingNumberOrAddressLine2
 	}
 	return ""
 }
@@ -5806,7 +5806,7 @@ type ProtoSection struct {
 	state           protoimpl.MessageState  `protogen:"open.v1"`
 	XChildren       []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
 	Parent          *ProtoDocumentElement   `protobuf:"bytes,2,opt,name=parent,proto3" json:"parent,omitempty"`
-	Uuid            string                  `protobuf:"bytes,3,opt,name=Uuid,proto3" json:"Uuid,omitempty"`
+	Uuid            string                  `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	CDefUuid        string                  `protobuf:"bytes,4,opt,name=cDefUuid,proto3" json:"cDefUuid,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,5,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	unknownFields   protoimpl.UnknownFields
@@ -7150,7 +7150,7 @@ type ProtoTableElementProperties struct {
 	Valign                                ProtoVerticalAlignment     `protobuf:"varint,8,opt,name=valign,proto3,enum=ProtoVerticalAlignment" json:"valign,omitempty"`
 	ValignCode                            string                     `protobuf:"bytes,9,opt,name=valignCode,proto3" json:"valignCode,omitempty"`
 	BackgroundColorInheritance            ProtoInheritance           `protobuf:"varint,10,opt,name=backgroundColorInheritance,proto3,enum=ProtoInheritance" json:"backgroundColorInheritance,omitempty"`
-	BackgroundColor                       *ProtoColor                `protobuf:"bytes,11,opt,name=backgroundColor,proto3" json:"backgroundColor,omitempty"`
+	BackgroundColor                       []*ProtoColor              `protobuf:"bytes,11,rep,name=backgroundColor,proto3" json:"backgroundColor,omitempty"`
 	BackgroundColorCode                   string                     `protobuf:"bytes,12,opt,name=backgroundColorCode,proto3" json:"backgroundColorCode,omitempty"`
 	PaddingInheritance                    ProtoInheritance           `protobuf:"varint,13,opt,name=paddingInheritance,proto3,enum=ProtoInheritance" json:"paddingInheritance,omitempty"`
 	Padding                               *ProtoSideMeasures         `protobuf:"bytes,14,opt,name=padding,proto3" json:"padding,omitempty"`
@@ -7217,7 +7217,7 @@ func (x *ProtoTableElementProperties) GetWidthInheritance() ProtoInheritance {
 	if x != nil {
 		return x.WidthInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetWidth() *ProtoMeasure {
@@ -7238,7 +7238,7 @@ func (x *ProtoTableElementProperties) GetAlignInheritance() ProtoInheritance {
 	if x != nil {
 		return x.AlignInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetAlign() ProtoHorizontalAlignment {
@@ -7259,7 +7259,7 @@ func (x *ProtoTableElementProperties) GetValignInheritance() ProtoInheritance {
 	if x != nil {
 		return x.ValignInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetValign() ProtoVerticalAlignment {
@@ -7280,10 +7280,10 @@ func (x *ProtoTableElementProperties) GetBackgroundColorInheritance() ProtoInher
 	if x != nil {
 		return x.BackgroundColorInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
-func (x *ProtoTableElementProperties) GetBackgroundColor() *ProtoColor {
+func (x *ProtoTableElementProperties) GetBackgroundColor() []*ProtoColor {
 	if x != nil {
 		return x.BackgroundColor
 	}
@@ -7301,7 +7301,7 @@ func (x *ProtoTableElementProperties) GetPaddingInheritance() ProtoInheritance {
 	if x != nil {
 		return x.PaddingInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetPadding() *ProtoSideMeasures {
@@ -7322,7 +7322,7 @@ func (x *ProtoTableElementProperties) GetBorderInheritance() ProtoInheritance {
 	if x != nil {
 		return x.BorderInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetBorder() *ProtoSideBorders {
@@ -7343,7 +7343,7 @@ func (x *ProtoTableElementProperties) GetMarginInheritance() ProtoInheritance {
 	if x != nil {
 		return x.MarginInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetMargin() *ProtoSideMeasures {
@@ -7364,7 +7364,7 @@ func (x *ProtoTableElementProperties) GetRotationInheritance() ProtoInheritance 
 	if x != nil {
 		return x.RotationInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetRotation() float64 {
@@ -7385,7 +7385,7 @@ func (x *ProtoTableElementProperties) GetDefaultParagraphFormatUUIDInheritance()
 	if x != nil {
 		return x.DefaultParagraphFormatUUIDInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetDefaultParagraphFormatUUID() string {
@@ -7406,7 +7406,7 @@ func (x *ProtoTableElementProperties) GetTableContentGroupTypeInheritance() Prot
 	if x != nil {
 		return x.TableContentGroupTypeInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetTableContentGroupType() ProtoTableContentGroupType {
@@ -7427,7 +7427,7 @@ func (x *ProtoTableElementProperties) GetCellTypeInheritance() ProtoInheritance 
 	if x != nil {
 		return x.CellTypeInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetCellType() ProtoTableCellType {
@@ -7448,7 +7448,7 @@ func (x *ProtoTableElementProperties) GetMinRowHeightInheritance() ProtoInherita
 	if x != nil {
 		return x.MinRowHeightInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetMinRowHeight() *ProtoMeasure {
@@ -7469,7 +7469,7 @@ func (x *ProtoTableElementProperties) GetWsInheritance() ProtoInheritance {
 	if x != nil {
 		return x.WsInheritance
 	}
-	return ProtoInheritance_PROTO_INHERITANCE_INHERIT
+	return ProtoInheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetWs() *ProtoTableWS {
@@ -9205,8 +9205,8 @@ type ProtoImage struct {
 	ImageContentType        ProtoImageContentType                       `protobuf:"varint,21,opt,name=imageContentType,proto3,enum=ProtoImageContentType" json:"imageContentType,omitempty"`
 	ImageContent            string                                      `protobuf:"bytes,22,opt,name=imageContent,proto3" json:"imageContent,omitempty"`
 	ScaleType               ProtoImageScaleType                         `protobuf:"varint,23,opt,name=scaleType,proto3,enum=ProtoImageScaleType" json:"scaleType,omitempty"`
-	UAMode                  ProtoImageUAMode                            `protobuf:"varint,24,opt,name=UAMode,proto3,enum=ProtoImageUAMode" json:"UAMode,omitempty"`
-	UADescription           string                                      `protobuf:"bytes,25,opt,name=UADescription,proto3" json:"UADescription,omitempty"`
+	UaMode                  ProtoImageUAMode                            `protobuf:"varint,24,opt,name=uaMode,proto3,enum=ProtoImageUAMode" json:"uaMode,omitempty"`
+	UaDescription           string                                      `protobuf:"bytes,25,opt,name=uaDescription,proto3" json:"uaDescription,omitempty"`
 	LeftBorderIsLeftMeasure *ProtoBoxedBool                             `protobuf:"bytes,26,opt,name=leftBorderIsLeftMeasure,proto3" json:"leftBorderIsLeftMeasure,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
@@ -9386,7 +9386,7 @@ func (x *ProtoImage) GetImageContentType() ProtoImageContentType {
 	if x != nil {
 		return x.ImageContentType
 	}
-	return ProtoImageContentType_IMAGE_CONTENT_UUID_REFFERENCE_INLINE
+	return ProtoImageContentType_IMAGE_CONTENT_UUID_REFERENCE_INLINE
 }
 
 func (x *ProtoImage) GetImageContent() string {
@@ -9403,16 +9403,16 @@ func (x *ProtoImage) GetScaleType() ProtoImageScaleType {
 	return ProtoImageScaleType_IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL
 }
 
-func (x *ProtoImage) GetUAMode() ProtoImageUAMode {
+func (x *ProtoImage) GetUaMode() ProtoImageUAMode {
 	if x != nil {
-		return x.UAMode
+		return x.UaMode
 	}
 	return ProtoImageUAMode_IMAGE_UA_MODE_DO_NOT_USE_AT_ALL
 }
 
-func (x *ProtoImage) GetUADescription() string {
+func (x *ProtoImage) GetUaDescription() string {
 	if x != nil {
-		return x.UADescription
+		return x.UaDescription
 	}
 	return ""
 }
@@ -11526,7 +11526,7 @@ type ProtoSelection struct {
 	Parent          *ProtoDocumentElement   `protobuf:"bytes,2,opt,name=parent,proto3" json:"parent,omitempty"`
 	Uuid            string                  `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	InternalName    string                  `protobuf:"bytes,5,opt,name=internal_name,json=internalName,proto3" json:"internal_name,omitempty"`
+	InternalName    string                  `protobuf:"bytes,5,opt,name=internalName,proto3" json:"internalName,omitempty"`
 	Name            string                  `protobuf:"bytes,6,opt,name=name,proto3" json:"name,omitempty"`
 	Multi           bool                    `protobuf:"varint,7,opt,name=multi,proto3" json:"multi,omitempty"`
 	Min             uint64                  `protobuf:"varint,8,opt,name=min,proto3" json:"min,omitempty"`
@@ -11634,7 +11634,7 @@ type ProtoSelectionEntry struct {
 	Parent          *ProtoDocumentElement   `protobuf:"bytes,2,opt,name=parent,proto3" json:"parent,omitempty"`
 	Uuid            string                  `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	InternalName    string                  `protobuf:"bytes,5,opt,name=internal_name,json=internalName,proto3" json:"internal_name,omitempty"`
+	InternalName    string                  `protobuf:"bytes,5,opt,name=internalName,proto3" json:"internalName,omitempty"`
 	Name            string                  `protobuf:"bytes,6,opt,name=name,proto3" json:"name,omitempty"`
 	Selected        bool                    `protobuf:"varint,7,opt,name=selected,proto3" json:"selected,omitempty"`
 	unknownFields   protoimpl.UnknownFields
@@ -11724,7 +11724,7 @@ type ProtoCondition struct {
 	state           protoimpl.MessageState  `protogen:"open.v1"`
 	XChildren       []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
 	Parent          *ProtoDocumentElement   `protobuf:"bytes,2,opt,name=parent,proto3" json:"parent,omitempty"`
-	Uuid            string                  `protobuf:"bytes,3,opt,name=Uuid,proto3" json:"Uuid,omitempty"`
+	Uuid            string                  `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	Code            string                  `protobuf:"bytes,5,opt,name=code,proto3" json:"code,omitempty"`
 	Result          bool                    `protobuf:"varint,6,opt,name=result,proto3" json:"result,omitempty"`
@@ -11816,7 +11816,7 @@ type ProtoPageCondition struct {
 	state           protoimpl.MessageState  `protogen:"open.v1"`
 	XChildren       []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
 	Parent          *ProtoDocumentElement   `protobuf:"bytes,2,opt,name=parent,proto3" json:"parent,omitempty"`
-	Uuid            string                  `protobuf:"bytes,3,opt,name=Uuid,proto3" json:"Uuid,omitempty"`
+	Uuid            string                  `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	Code            string                  `protobuf:"bytes,5,opt,name=code,proto3" json:"code,omitempty"`
 	unknownFields   protoimpl.UnknownFields
@@ -11892,7 +11892,7 @@ type ProtoLocale struct {
 	state           protoimpl.MessageState  `protogen:"open.v1"`
 	XChildren       []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
 	Parent          *ProtoDocumentElement   `protobuf:"bytes,2,opt,name=parent,proto3" json:"parent,omitempty"`
-	Uuid            string                  `protobuf:"bytes,3,opt,name=Uuid,proto3" json:"Uuid,omitempty"`
+	Uuid            string                  `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	LanguageUUIDs   []string                `protobuf:"bytes,5,rep,name=languageUUIDs,proto3" json:"languageUUIDs,omitempty"`
 	RegionUUIDs     []string                `protobuf:"bytes,6,rep,name=regionUUIDs,proto3" json:"regionUUIDs,omitempty"`
@@ -12201,7 +12201,7 @@ func (x *ProtoInputFieldText) GetPdfPrintingBehavior() PDFPrintingBehavior {
 	if x != nil {
 		return x.PdfPrintingBehavior
 	}
-	return PDFPrintingBehavior_INPUT
+	return PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_INPUT
 }
 
 func (x *ProtoInputFieldText) GetPdfSize() *ProtoBoxedMeasure {
@@ -12616,34 +12616,36 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"d\n" +
 	"\x1bProtoBoxedVerticalAlignment\x12-\n" +
 	"\x05value\x18\x01 \x01(\x0e2\x17.ProtoVerticalAlignmentR\x05value\x12\x16\n" +
-	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xe5\x02\n" +
-	"\x14ProtoSwissQRCreditor\x12!\n" +
-	"\faddress_type\x18\x01 \x01(\tR\vaddressType\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1f\n" +
-	"\vpostal_code\x18\x03 \x01(\tR\n" +
+	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xda\x02\n" +
+	"\x14ProtoSwissQRCreditor\x12 \n" +
+	"\vaddressType\x18\x01 \x01(\tR\vaddressType\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1e\n" +
+	"\n" +
+	"postalCode\x18\x03 \x01(\tR\n" +
 	"postalCode\x12\x12\n" +
 	"\x04town\x18\x04 \x01(\tR\x04town\x12\x18\n" +
-	"\acountry\x18\x05 \x01(\tR\acountry\x126\n" +
-	"\x18street_or_address_line_1\x18\x06 \x01(\tR\x14streetOrAddressLine1\x12G\n" +
-	"!building_number_or_address_line_2\x18\a \x01(\tR\x1cbuildingNumberOrAddressLine2\x12\x12\n" +
+	"\acountry\x18\x05 \x01(\tR\acountry\x122\n" +
+	"\x14streetOrAddressLine1\x18\x06 \x01(\tR\x14streetOrAddressLine1\x12B\n" +
+	"\x1cbuildingNumberOrAddressLine2\x18\a \x01(\tR\x1cbuildingNumberOrAddressLine2\x12\x12\n" +
 	"\x04iban\x18\b \x01(\tR\x04iban\x12\x16\n" +
 	"\x06amount\x18\t \x01(\tR\x06amount\x12\x1a\n" +
 	"\bcurrency\x18\n" +
-	" \x01(\tR\bcurrency\"\xe1\x03\n" +
-	"\x13ProtoSwissQRDebitor\x12!\n" +
-	"\faddress_type\x18\x01 \x01(\tR\vaddressType\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1f\n" +
-	"\vpostal_code\x18\x03 \x01(\tR\n" +
+	" \x01(\tR\bcurrency\"\xd1\x03\n" +
+	"\x13ProtoSwissQRDebitor\x12 \n" +
+	"\vaddressType\x18\x01 \x01(\tR\vaddressType\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1e\n" +
+	"\n" +
+	"postalCode\x18\x03 \x01(\tR\n" +
 	"postalCode\x12\x12\n" +
 	"\x04town\x18\x04 \x01(\tR\x04town\x12\x18\n" +
-	"\acountry\x18\x05 \x01(\tR\acountry\x126\n" +
-	"\x18street_or_address_line_1\x18\x06 \x01(\tR\x14streetOrAddressLine1\x12G\n" +
-	"!building_number_or_address_line_2\x18\a \x01(\tR\x1cbuildingNumberOrAddressLine2\x124\n" +
-	"\x16payment_reference_type\x18\b \x01(\tR\x14paymentReferenceType\x12+\n" +
-	"\x11payment_reference\x18\t \x01(\tR\x10paymentReference\x125\n" +
-	"\x16unstructured_reference\x18\n" +
-	" \x01(\tR\x15unstructuredReference\x12)\n" +
-	"\x10bill_information\x18\v \x01(\tR\x0fbillInformation\"u\n" +
+	"\acountry\x18\x05 \x01(\tR\acountry\x122\n" +
+	"\x14streetOrAddressLine1\x18\x06 \x01(\tR\x14streetOrAddressLine1\x12B\n" +
+	"\x1cbuildingNumberOrAddressLine2\x18\a \x01(\tR\x1cbuildingNumberOrAddressLine2\x122\n" +
+	"\x14paymentReferenceType\x18\b \x01(\tR\x14paymentReferenceType\x12*\n" +
+	"\x10paymentReference\x18\t \x01(\tR\x10paymentReference\x124\n" +
+	"\x15unstructuredReference\x18\n" +
+	" \x01(\tR\x15unstructuredReference\x12(\n" +
+	"\x0fbillInformation\x18\v \x01(\tR\x0fbillInformation\"u\n" +
 	"\x10ProtoSwissQRData\x121\n" +
 	"\bcreditor\x18\x01 \x01(\v2\x15.ProtoSwissQRCreditorR\bcreditor\x12.\n" +
 	"\adebitor\x18\x02 \x01(\v2\x14.ProtoSwissQRDebitorR\adebitor\"\xa6\x01\n" +
@@ -12895,7 +12897,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\fProtoSection\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
-	"\x04Uuid\x18\x03 \x01(\tR\x04Uuid\x12\x1a\n" +
+	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12\x1a\n" +
 	"\bcDefUuid\x18\x04 \x01(\tR\bcDefUuid\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\x94\x01\n" +
 	"\x14ProtoSpaceVertically\x12-\n" +
@@ -13024,7 +13026,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"valignCode\x12Q\n" +
 	"\x1abackgroundColorInheritance\x18\n" +
 	" \x01(\x0e2\x11.ProtoInheritanceR\x1abackgroundColorInheritance\x125\n" +
-	"\x0fbackgroundColor\x18\v \x01(\v2\v.ProtoColorR\x0fbackgroundColor\x120\n" +
+	"\x0fbackgroundColor\x18\v \x03(\v2\v.ProtoColorR\x0fbackgroundColor\x120\n" +
 	"\x13backgroundColorCode\x18\f \x01(\tR\x13backgroundColorCode\x12A\n" +
 	"\x12paddingInheritance\x18\r \x01(\x0e2\x11.ProtoInheritanceR\x12paddingInheritance\x12,\n" +
 	"\apadding\x18\x0e \x01(\v2\x12.ProtoSideMeasuresR\apadding\x12 \n" +
@@ -13220,8 +13222,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x10imageContentType\x18\x15 \x01(\x0e2\x16.ProtoImageContentTypeR\x10imageContentType\x12\"\n" +
 	"\fimageContent\x18\x16 \x01(\tR\fimageContent\x122\n" +
 	"\tscaleType\x18\x17 \x01(\x0e2\x14.ProtoImageScaleTypeR\tscaleType\x12)\n" +
-	"\x06UAMode\x18\x18 \x01(\x0e2\x11.ProtoImageUAModeR\x06UAMode\x12$\n" +
-	"\rUADescription\x18\x19 \x01(\tR\rUADescription\x12I\n" +
+	"\x06uaMode\x18\x18 \x01(\x0e2\x11.ProtoImageUAModeR\x06uaMode\x12$\n" +
+	"\ruaDescription\x18\x19 \x01(\tR\ruaDescription\x12I\n" +
 	"\x17leftBorderIsLeftMeasure\x18\x1a \x01(\v2\x0f.ProtoBoxedBoolR\x17leftBorderIsLeftMeasure\"\x99\x02\n" +
 	"\x0eProtoDirectory\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
@@ -13398,29 +13400,29 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04uuid\x18\x02 \x01(\tR\x04uuid\x12\x16\n" +
 	"\x06script\x18\x03 \x01(\tR\x06script\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\"\xa4\x02\n" +
+	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\"\xa3\x02\n" +
 	"\x0eProtoSelection\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12#\n" +
-	"\rinternal_name\x18\x05 \x01(\tR\finternalName\x12\x12\n" +
+	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12\"\n" +
+	"\finternalName\x18\x05 \x01(\tR\finternalName\x12\x12\n" +
 	"\x04name\x18\x06 \x01(\tR\x04name\x12\x14\n" +
 	"\x05multi\x18\a \x01(\bR\x05multi\x12\x10\n" +
 	"\x03min\x18\b \x01(\x04R\x03min\x12\x10\n" +
-	"\x03max\x18\t \x01(\x04R\x03max\"\x8b\x02\n" +
+	"\x03max\x18\t \x01(\x04R\x03max\"\x8a\x02\n" +
 	"\x13ProtoSelectionEntry\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12#\n" +
-	"\rinternal_name\x18\x05 \x01(\tR\finternalName\x12\x12\n" +
+	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12\"\n" +
+	"\finternalName\x18\x05 \x01(\tR\finternalName\x12\x12\n" +
 	"\x04name\x18\x06 \x01(\tR\x04name\x12\x1a\n" +
 	"\bselected\x18\a \x01(\bR\bselected\"\xfd\x01\n" +
 	"\x0eProtoCondition\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
-	"\x04Uuid\x18\x03 \x01(\tR\x04Uuid\x12(\n" +
+	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
 	"\x04code\x18\x05 \x01(\tR\x04code\x12\x16\n" +
 	"\x06result\x18\x06 \x01(\bR\x06result\x12\x1e\n" +
@@ -13430,13 +13432,13 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x12ProtoPageCondition\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
-	"\x04Uuid\x18\x03 \x01(\tR\x04Uuid\x12(\n" +
+	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
 	"\x04code\x18\x05 \x01(\tR\x04code\"\xf6\x01\n" +
 	"\vProtoLocale\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
-	"\x04Uuid\x18\x03 \x01(\tR\x04Uuid\x12(\n" +
+	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12$\n" +
 	"\rlanguageUUIDs\x18\x05 \x03(\tR\rlanguageUUIDs\x12 \n" +
 	"\vregionUUIDs\x18\x06 \x03(\tR\vregionUUIDs\"\xdb\x01\n" +
@@ -13577,11 +13579,11 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x12SEMANTIC_TYPE_PART\x10\x01\x12\x15\n" +
 	"\x11SEMANTIC_TYPE_ART\x10\x02\x12\x16\n" +
 	"\x12SEMANTIC_TYPE_SECT\x10\x03\x12\x15\n" +
-	"\x11SEMANTIC_TYPE_DIV\x10\x04*7\n" +
-	"\x13PDFPrintingBehavior\x12\t\n" +
-	"\x05INPUT\x10\x00\x12\b\n" +
-	"\x04TEXT\x10\x01\x12\v\n" +
-	"\aINHERIT\x10\x02*o\n" +
+	"\x11SEMANTIC_TYPE_DIV\x10\x04*y\n" +
+	"\x13PDFPrintingBehavior\x12\x1f\n" +
+	"\x1bPDF_PRINTING_BEHAVIOR_INPUT\x10\x00\x12\x1e\n" +
+	"\x1aPDF_PRINTING_BEHAVIOR_TEXT\x10\x01\x12!\n" +
+	"\x1dPDF_PRINTING_BEHAVIOR_INHERIT\x10\x02*o\n" +
 	"\x0fProtoNumberType\x12\n" +
 	"\n" +
 	"\x06ARABIC\x10\x00\x12\x11\n" +
@@ -13605,12 +13607,12 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x12ProtoTableCellType\x12\x13\n" +
 	"\x0fTABLE_CELL_BODY\x10\x00\x12\x19\n" +
 	"\x15TABLE_CELL_ROW_HEADER\x10\x01\x12\x19\n" +
-	"\x15TABLE_CELL_ROW_FOOTER\x10\x02*\x8c\x01\n" +
-	"\x10ProtoInheritance\x12\x1d\n" +
-	"\x19PROTO_INHERITANCE_INHERIT\x10\x00\x12\x1a\n" +
-	"\x16PROTO_INHERITANCE_CODE\x10\x01\x12\x1f\n" +
-	"\x1bPROTO_INHERITANCE_BIND_CODE\x10\x02\x12\x1c\n" +
-	"\x18PROTO_INHERITANCE_STATIC\x10\x03*2\n" +
+	"\x15TABLE_CELL_ROW_FOOTER\x10\x02*t\n" +
+	"\x10ProtoInheritance\x12\x17\n" +
+	"\x13INHERITANCE_INHERIT\x10\x00\x12\x14\n" +
+	"\x10INHERITANCE_CODE\x10\x01\x12\x19\n" +
+	"\x15INHERITANCE_BIND_CODE\x10\x02\x12\x16\n" +
+	"\x12INHERITANCE_STATIC\x10\x03*2\n" +
 	"\x0fColumnBalancing\x12\x10\n" +
 	"\fNO_BALANCING\x10\x00\x12\r\n" +
 	"\tBALANCING\x10\x01*z\n" +
@@ -13692,21 +13694,21 @@ const file_build_docframe_proto_rawDesc = "" +
 	"!DOCUMENT_ELEMENT_INPUT_FIELD_DATE\x10S\x12)\n" +
 	"%DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX\x10T\x12&\n" +
 	"\"DOCUMENT_ELEMENT_INPUT_FIELD_LABEL\x10U\x12)\n" +
-	"%DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN\x10V*\xa3\x01\n" +
+	"%DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN\x10V*\xa4\x01\n" +
 	"\x13ProtoImageScaleType\x12&\n" +
 	"\"IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL\x10\x00\x12\x1d\n" +
-	"\x19IMAGE_SCALE_TYPE_RELATIVE\x10\x01\x12\x1c\n" +
-	"\x18IMAGE_SCALE_TYPE_ABSOLUT\x10\x02\x12'\n" +
+	"\x19IMAGE_SCALE_TYPE_RELATIVE\x10\x01\x12\x1d\n" +
+	"\x19IMAGE_SCALE_TYPE_ABSOLUTE\x10\x02\x12'\n" +
 	"#IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN\x10\x03*\x8a\x01\n" +
 	"\x10ProtoImageUAMode\x12#\n" +
 	"\x1fIMAGE_UA_MODE_DO_NOT_USE_AT_ALL\x10\x00\x12\x1b\n" +
 	"\x17IMAGE_UA_MODE_INHERITED\x10\x01\x12\x18\n" +
 	"\x14IMAGE_UA_MODE_SIMPLE\x10\x02\x12\x1a\n" +
-	"\x16IMAGE_UA_MODE_ADVANCED\x10\x03*\xce\x01\n" +
-	"\x15ProtoImageContentType\x12(\n" +
-	"$IMAGE_CONTENT_UUID_REFFERENCE_INLINE\x10\x00\x12'\n" +
-	"#IMAGE_CONTENT_UUID_REFFERENCE_LOCAL\x10\x01\x12(\n" +
-	"$IMAGE_CONTENT_UUID_REFFERENCE_GLOBAL\x10\x02\x12\x1a\n" +
+	"\x16IMAGE_UA_MODE_ADVANCED\x10\x03*\xcb\x01\n" +
+	"\x15ProtoImageContentType\x12'\n" +
+	"#IMAGE_CONTENT_UUID_REFERENCE_INLINE\x10\x00\x12&\n" +
+	"\"IMAGE_CONTENT_UUID_REFERENCE_LOCAL\x10\x01\x12'\n" +
+	"#IMAGE_CONTENT_UUID_REFERENCE_GLOBAL\x10\x02\x12\x1a\n" +
 	"\x16IMAGE_CONTENT_DMSCRIPT\x10\x03\x12\x1c\n" +
 	"\x18IMAGE_CONTENT_IMAGE_DATA\x10\x04*\xc4\x01\n" +
 	"\x18ProtoVariableSpecialType\x12\x0f\n" +
@@ -14227,7 +14229,7 @@ var file_build_docframe_proto_depIdxs = []int32{
 	10,  // 314: ProtoImage.referencePoint:type_name -> ProtoImageReferencePoint
 	24,  // 315: ProtoImage.imageContentType:type_name -> ProtoImageContentType
 	22,  // 316: ProtoImage.scaleType:type_name -> ProtoImageScaleType
-	23,  // 317: ProtoImage.UAMode:type_name -> ProtoImageUAMode
+	23,  // 317: ProtoImage.uaMode:type_name -> ProtoImageUAMode
 	31,  // 318: ProtoImage.leftBorderIsLeftMeasure:type_name -> ProtoBoxedBool
 	68,  // 319: ProtoDirectory._children:type_name -> ProtoDocumentElement
 	68,  // 320: ProtoDirectory.parent:type_name -> ProtoDocumentElement

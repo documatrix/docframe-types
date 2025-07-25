@@ -3,7 +3,7 @@ message ProtoCondition {
   repeated ProtoDocumentElement _children = 1;
   ProtoDocumentElement parent = 2;
   // extends BranchDocumentElement
-  string Uuid = 3;
+  string uuid = 3;
   repeated string comChannelUUIDs = 4;
   string code = 5;
   bool result = 6;

@@ -178,7 +178,7 @@ message ProtoTableElementProperties {
   string valignCode = 9;
 
   ProtoInheritance backgroundColorInheritance = 10;
-  ProtoColor backgroundColor = 11;
+  repeated ProtoColor backgroundColor = 11;
   string backgroundColorCode = 12;
 
   ProtoInheritance paddingInheritance = 13;
@@ -220,11 +220,11 @@ message ProtoTableElementProperties {
 
 enum ProtoInheritance {
   // Inherit from parent element
-  PROTO_INHERITANCE_INHERIT = 0;
+  INHERITANCE_INHERIT = 0;
   // Evaluate provided code once
-  PROTO_INHERITANCE_CODE = 1;
+  INHERITANCE_CODE = 1;
   // Evaluate provided code every time
-  PROTO_INHERITANCE_BIND_CODE = 2;
+  INHERITANCE_BIND_CODE = 2;
   // Use the static value
-  PROTO_INHERITANCE_STATIC = 3;
+  INHERITANCE_STATIC = 3;
 }
