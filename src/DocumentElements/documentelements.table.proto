@@ -165,66 +165,56 @@ message ProtoTableWS {
 
 // go-gen:ignore
 message ProtoTableElementProperties {
-  ProtoInheritance widthInheritance = 1;
+  Inheritance widthInheritance = 1;
   ProtoMeasure width = 2;
   string widthCode = 3;
 
-  ProtoInheritance alignInheritance = 4;
+  Inheritance alignInheritance = 4;
   ProtoHorizontalAlignment align = 5;
   string alignCode = 6;
 
-  ProtoInheritance valignInheritance = 7;
+  Inheritance valignInheritance = 7;
   ProtoVerticalAlignment valign = 8;
   string valignCode = 9;
 
-  ProtoInheritance backgroundColorInheritance = 10;
+  Inheritance backgroundColorInheritance = 10;
   repeated ProtoColor backgroundColor = 11;
   string backgroundColorCode = 12;
 
-  ProtoInheritance paddingInheritance = 13;
+  Inheritance paddingInheritance = 13;
   ProtoSideMeasures padding = 14;
   string paddingCode = 15;
 
-  ProtoInheritance borderInheritance = 16;
+  Inheritance borderInheritance = 16;
   ProtoSideBorders border = 17;
   string borderCode = 18;
 
-  ProtoInheritance marginInheritance = 19;
+  Inheritance marginInheritance = 19;
   ProtoSideMeasures margin = 20;
   string marginCode = 21;
 
-  ProtoInheritance rotationInheritance = 22;
+  Inheritance rotationInheritance = 22;
   double rotation = 23;
   string rotationCode = 24;
 
-  ProtoInheritance defaultParagraphFormatUUIDInheritance = 25;
+  Inheritance defaultParagraphFormatUUIDInheritance = 25;
   string defaultParagraphFormatUUID = 26;
   string defaultParagraphFormatUUIDCode = 27;
 
-  ProtoInheritance tableContentGroupTypeInheritance = 28;
+  Inheritance tableContentGroupTypeInheritance = 28;
   ProtoTableContentGroupType tableContentGroupType = 29;
   string tableContentGroupTypeCode = 30;
 
-  ProtoInheritance cellTypeInheritance = 31;
+  Inheritance cellTypeInheritance = 31;
   ProtoTableCellType cellType = 32;
   string cellTypeCode = 33;
 
-  ProtoInheritance minRowHeightInheritance = 34;
+  Inheritance minRowHeightInheritance = 34;
   ProtoMeasure minRowHeight = 35;
   string minRowHeightCode = 36;
 
-  ProtoInheritance wsInheritance = 37;
+  Inheritance wsInheritance = 37;
   ProtoTableWS ws = 38;
   string wsCode = 39;
 }
 
-enum ProtoInheritance {
-  // Inherit from parent element
-  INHERITANCE_INHERIT = 0;
-  // Evaluate provided code once
-  INHERITANCE_CODE = 1;
-  // Evaluate provided code every time
-  INHERITANCE_BIND_CODE = 2;
-  // Use the static value
-  INHERITANCE_STATIC = 3;
-}

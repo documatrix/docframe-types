@@ -760,6 +760,58 @@ func (PDFPrintingBehavior) EnumDescriptor() ([]byte, []int) {
 	return file_build_docframe_proto_rawDescGZIP(), []int{12}
 }
 
+type Inheritance int32
+
+const (
+	Inheritance_INHERITANCE_INHERIT   Inheritance = 0
+	Inheritance_INHERITANCE_CODE      Inheritance = 1
+	Inheritance_INHERITANCE_BIND_CODE Inheritance = 2
+	Inheritance_INHERITANCE_STATIC    Inheritance = 3
+)
+
+// Enum value maps for Inheritance.
+var (
+	Inheritance_name = map[int32]string{
+		0: "INHERITANCE_INHERIT",
+		1: "INHERITANCE_CODE",
+		2: "INHERITANCE_BIND_CODE",
+		3: "INHERITANCE_STATIC",
+	}
+	Inheritance_value = map[string]int32{
+		"INHERITANCE_INHERIT":   0,
+		"INHERITANCE_CODE":      1,
+		"INHERITANCE_BIND_CODE": 2,
+		"INHERITANCE_STATIC":    3,
+	}
+)
+
+func (x Inheritance) Enum() *Inheritance {
+	p := new(Inheritance)
+	*p = x
+	return p
+}
+
+func (x Inheritance) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Inheritance) Descriptor() protoreflect.EnumDescriptor {
+	return file_build_docframe_proto_enumTypes[13].Descriptor()
+}
+
+func (Inheritance) Type() protoreflect.EnumType {
+	return &file_build_docframe_proto_enumTypes[13]
+}
+
+func (x Inheritance) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Inheritance.Descriptor instead.
+func (Inheritance) EnumDescriptor() ([]byte, []int) {
+	return file_build_docframe_proto_rawDescGZIP(), []int{13}
+}
+
 type ProtoNumberType int32
 
 const (
@@ -799,11 +851,11 @@ func (x ProtoNumberType) String() string {
 }
 
 func (ProtoNumberType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[13].Descriptor()
+	return file_build_docframe_proto_enumTypes[14].Descriptor()
 }
 
 func (ProtoNumberType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[13]
+	return &file_build_docframe_proto_enumTypes[14]
 }
 
 func (x ProtoNumberType) Number() protoreflect.EnumNumber {
@@ -812,7 +864,7 @@ func (x ProtoNumberType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoNumberType.Descriptor instead.
 func (ProtoNumberType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{13}
+	return file_build_docframe_proto_rawDescGZIP(), []int{14}
 }
 
 type ProtoListLevelSettingType int32
@@ -848,11 +900,11 @@ func (x ProtoListLevelSettingType) String() string {
 }
 
 func (ProtoListLevelSettingType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[14].Descriptor()
+	return file_build_docframe_proto_enumTypes[15].Descriptor()
 }
 
 func (ProtoListLevelSettingType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[14]
+	return &file_build_docframe_proto_enumTypes[15]
 }
 
 func (x ProtoListLevelSettingType) Number() protoreflect.EnumNumber {
@@ -861,7 +913,7 @@ func (x ProtoListLevelSettingType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoListLevelSettingType.Descriptor instead.
 func (ProtoListLevelSettingType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{14}
+	return file_build_docframe_proto_rawDescGZIP(), []int{15}
 }
 
 type ProtoTableContentGroupType int32
@@ -900,11 +952,11 @@ func (x ProtoTableContentGroupType) String() string {
 }
 
 func (ProtoTableContentGroupType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[15].Descriptor()
+	return file_build_docframe_proto_enumTypes[16].Descriptor()
 }
 
 func (ProtoTableContentGroupType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[15]
+	return &file_build_docframe_proto_enumTypes[16]
 }
 
 func (x ProtoTableContentGroupType) Number() protoreflect.EnumNumber {
@@ -913,7 +965,7 @@ func (x ProtoTableContentGroupType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoTableContentGroupType.Descriptor instead.
 func (ProtoTableContentGroupType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{15}
+	return file_build_docframe_proto_rawDescGZIP(), []int{16}
 }
 
 type ProtoTableCellType int32
@@ -949,11 +1001,11 @@ func (x ProtoTableCellType) String() string {
 }
 
 func (ProtoTableCellType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[16].Descriptor()
+	return file_build_docframe_proto_enumTypes[17].Descriptor()
 }
 
 func (ProtoTableCellType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[16]
+	return &file_build_docframe_proto_enumTypes[17]
 }
 
 func (x ProtoTableCellType) Number() protoreflect.EnumNumber {
@@ -962,58 +1014,6 @@ func (x ProtoTableCellType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoTableCellType.Descriptor instead.
 func (ProtoTableCellType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{16}
-}
-
-type ProtoInheritance int32
-
-const (
-	ProtoInheritance_INHERITANCE_INHERIT   ProtoInheritance = 0
-	ProtoInheritance_INHERITANCE_CODE      ProtoInheritance = 1
-	ProtoInheritance_INHERITANCE_BIND_CODE ProtoInheritance = 2
-	ProtoInheritance_INHERITANCE_STATIC    ProtoInheritance = 3
-)
-
-// Enum value maps for ProtoInheritance.
-var (
-	ProtoInheritance_name = map[int32]string{
-		0: "INHERITANCE_INHERIT",
-		1: "INHERITANCE_CODE",
-		2: "INHERITANCE_BIND_CODE",
-		3: "INHERITANCE_STATIC",
-	}
-	ProtoInheritance_value = map[string]int32{
-		"INHERITANCE_INHERIT":   0,
-		"INHERITANCE_CODE":      1,
-		"INHERITANCE_BIND_CODE": 2,
-		"INHERITANCE_STATIC":    3,
-	}
-)
-
-func (x ProtoInheritance) Enum() *ProtoInheritance {
-	p := new(ProtoInheritance)
-	*p = x
-	return p
-}
-
-func (x ProtoInheritance) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ProtoInheritance) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[17].Descriptor()
-}
-
-func (ProtoInheritance) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[17]
-}
-
-func (x ProtoInheritance) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ProtoInheritance.Descriptor instead.
-func (ProtoInheritance) EnumDescriptor() ([]byte, []int) {
 	return file_build_docframe_proto_rawDescGZIP(), []int{17}
 }
 
@@ -7140,43 +7140,43 @@ func (x *ProtoTableWS) GetPriority() uint32 {
 
 type ProtoTableElementProperties struct {
 	state                                 protoimpl.MessageState     `protogen:"open.v1"`
-	WidthInheritance                      ProtoInheritance           `protobuf:"varint,1,opt,name=widthInheritance,proto3,enum=ProtoInheritance" json:"widthInheritance,omitempty"`
+	WidthInheritance                      Inheritance                `protobuf:"varint,1,opt,name=widthInheritance,proto3,enum=Inheritance" json:"widthInheritance,omitempty"`
 	Width                                 *ProtoMeasure              `protobuf:"bytes,2,opt,name=width,proto3" json:"width,omitempty"`
 	WidthCode                             string                     `protobuf:"bytes,3,opt,name=widthCode,proto3" json:"widthCode,omitempty"`
-	AlignInheritance                      ProtoInheritance           `protobuf:"varint,4,opt,name=alignInheritance,proto3,enum=ProtoInheritance" json:"alignInheritance,omitempty"`
+	AlignInheritance                      Inheritance                `protobuf:"varint,4,opt,name=alignInheritance,proto3,enum=Inheritance" json:"alignInheritance,omitempty"`
 	Align                                 ProtoHorizontalAlignment   `protobuf:"varint,5,opt,name=align,proto3,enum=ProtoHorizontalAlignment" json:"align,omitempty"`
 	AlignCode                             string                     `protobuf:"bytes,6,opt,name=alignCode,proto3" json:"alignCode,omitempty"`
-	ValignInheritance                     ProtoInheritance           `protobuf:"varint,7,opt,name=valignInheritance,proto3,enum=ProtoInheritance" json:"valignInheritance,omitempty"`
+	ValignInheritance                     Inheritance                `protobuf:"varint,7,opt,name=valignInheritance,proto3,enum=Inheritance" json:"valignInheritance,omitempty"`
 	Valign                                ProtoVerticalAlignment     `protobuf:"varint,8,opt,name=valign,proto3,enum=ProtoVerticalAlignment" json:"valign,omitempty"`
 	ValignCode                            string                     `protobuf:"bytes,9,opt,name=valignCode,proto3" json:"valignCode,omitempty"`
-	BackgroundColorInheritance            ProtoInheritance           `protobuf:"varint,10,opt,name=backgroundColorInheritance,proto3,enum=ProtoInheritance" json:"backgroundColorInheritance,omitempty"`
+	BackgroundColorInheritance            Inheritance                `protobuf:"varint,10,opt,name=backgroundColorInheritance,proto3,enum=Inheritance" json:"backgroundColorInheritance,omitempty"`
 	BackgroundColor                       []*ProtoColor              `protobuf:"bytes,11,rep,name=backgroundColor,proto3" json:"backgroundColor,omitempty"`
 	BackgroundColorCode                   string                     `protobuf:"bytes,12,opt,name=backgroundColorCode,proto3" json:"backgroundColorCode,omitempty"`
-	PaddingInheritance                    ProtoInheritance           `protobuf:"varint,13,opt,name=paddingInheritance,proto3,enum=ProtoInheritance" json:"paddingInheritance,omitempty"`
+	PaddingInheritance                    Inheritance                `protobuf:"varint,13,opt,name=paddingInheritance,proto3,enum=Inheritance" json:"paddingInheritance,omitempty"`
 	Padding                               *ProtoSideMeasures         `protobuf:"bytes,14,opt,name=padding,proto3" json:"padding,omitempty"`
 	PaddingCode                           string                     `protobuf:"bytes,15,opt,name=paddingCode,proto3" json:"paddingCode,omitempty"`
-	BorderInheritance                     ProtoInheritance           `protobuf:"varint,16,opt,name=borderInheritance,proto3,enum=ProtoInheritance" json:"borderInheritance,omitempty"`
+	BorderInheritance                     Inheritance                `protobuf:"varint,16,opt,name=borderInheritance,proto3,enum=Inheritance" json:"borderInheritance,omitempty"`
 	Border                                *ProtoSideBorders          `protobuf:"bytes,17,opt,name=border,proto3" json:"border,omitempty"`
 	BorderCode                            string                     `protobuf:"bytes,18,opt,name=borderCode,proto3" json:"borderCode,omitempty"`
-	MarginInheritance                     ProtoInheritance           `protobuf:"varint,19,opt,name=marginInheritance,proto3,enum=ProtoInheritance" json:"marginInheritance,omitempty"`
+	MarginInheritance                     Inheritance                `protobuf:"varint,19,opt,name=marginInheritance,proto3,enum=Inheritance" json:"marginInheritance,omitempty"`
 	Margin                                *ProtoSideMeasures         `protobuf:"bytes,20,opt,name=margin,proto3" json:"margin,omitempty"`
 	MarginCode                            string                     `protobuf:"bytes,21,opt,name=marginCode,proto3" json:"marginCode,omitempty"`
-	RotationInheritance                   ProtoInheritance           `protobuf:"varint,22,opt,name=rotationInheritance,proto3,enum=ProtoInheritance" json:"rotationInheritance,omitempty"`
+	RotationInheritance                   Inheritance                `protobuf:"varint,22,opt,name=rotationInheritance,proto3,enum=Inheritance" json:"rotationInheritance,omitempty"`
 	Rotation                              float64                    `protobuf:"fixed64,23,opt,name=rotation,proto3" json:"rotation,omitempty"`
 	RotationCode                          string                     `protobuf:"bytes,24,opt,name=rotationCode,proto3" json:"rotationCode,omitempty"`
-	DefaultParagraphFormatUUIDInheritance ProtoInheritance           `protobuf:"varint,25,opt,name=defaultParagraphFormatUUIDInheritance,proto3,enum=ProtoInheritance" json:"defaultParagraphFormatUUIDInheritance,omitempty"`
+	DefaultParagraphFormatUUIDInheritance Inheritance                `protobuf:"varint,25,opt,name=defaultParagraphFormatUUIDInheritance,proto3,enum=Inheritance" json:"defaultParagraphFormatUUIDInheritance,omitempty"`
 	DefaultParagraphFormatUUID            string                     `protobuf:"bytes,26,opt,name=defaultParagraphFormatUUID,proto3" json:"defaultParagraphFormatUUID,omitempty"`
 	DefaultParagraphFormatUUIDCode        string                     `protobuf:"bytes,27,opt,name=defaultParagraphFormatUUIDCode,proto3" json:"defaultParagraphFormatUUIDCode,omitempty"`
-	TableContentGroupTypeInheritance      ProtoInheritance           `protobuf:"varint,28,opt,name=tableContentGroupTypeInheritance,proto3,enum=ProtoInheritance" json:"tableContentGroupTypeInheritance,omitempty"`
+	TableContentGroupTypeInheritance      Inheritance                `protobuf:"varint,28,opt,name=tableContentGroupTypeInheritance,proto3,enum=Inheritance" json:"tableContentGroupTypeInheritance,omitempty"`
 	TableContentGroupType                 ProtoTableContentGroupType `protobuf:"varint,29,opt,name=tableContentGroupType,proto3,enum=ProtoTableContentGroupType" json:"tableContentGroupType,omitempty"`
 	TableContentGroupTypeCode             string                     `protobuf:"bytes,30,opt,name=tableContentGroupTypeCode,proto3" json:"tableContentGroupTypeCode,omitempty"`
-	CellTypeInheritance                   ProtoInheritance           `protobuf:"varint,31,opt,name=cellTypeInheritance,proto3,enum=ProtoInheritance" json:"cellTypeInheritance,omitempty"`
+	CellTypeInheritance                   Inheritance                `protobuf:"varint,31,opt,name=cellTypeInheritance,proto3,enum=Inheritance" json:"cellTypeInheritance,omitempty"`
 	CellType                              ProtoTableCellType         `protobuf:"varint,32,opt,name=cellType,proto3,enum=ProtoTableCellType" json:"cellType,omitempty"`
 	CellTypeCode                          string                     `protobuf:"bytes,33,opt,name=cellTypeCode,proto3" json:"cellTypeCode,omitempty"`
-	MinRowHeightInheritance               ProtoInheritance           `protobuf:"varint,34,opt,name=minRowHeightInheritance,proto3,enum=ProtoInheritance" json:"minRowHeightInheritance,omitempty"`
+	MinRowHeightInheritance               Inheritance                `protobuf:"varint,34,opt,name=minRowHeightInheritance,proto3,enum=Inheritance" json:"minRowHeightInheritance,omitempty"`
 	MinRowHeight                          *ProtoMeasure              `protobuf:"bytes,35,opt,name=minRowHeight,proto3" json:"minRowHeight,omitempty"`
 	MinRowHeightCode                      string                     `protobuf:"bytes,36,opt,name=minRowHeightCode,proto3" json:"minRowHeightCode,omitempty"`
-	WsInheritance                         ProtoInheritance           `protobuf:"varint,37,opt,name=wsInheritance,proto3,enum=ProtoInheritance" json:"wsInheritance,omitempty"`
+	WsInheritance                         Inheritance                `protobuf:"varint,37,opt,name=wsInheritance,proto3,enum=Inheritance" json:"wsInheritance,omitempty"`
 	Ws                                    *ProtoTableWS              `protobuf:"bytes,38,opt,name=ws,proto3" json:"ws,omitempty"`
 	WsCode                                string                     `protobuf:"bytes,39,opt,name=wsCode,proto3" json:"wsCode,omitempty"`
 	unknownFields                         protoimpl.UnknownFields
@@ -7213,11 +7213,11 @@ func (*ProtoTableElementProperties) Descriptor() ([]byte, []int) {
 	return file_build_docframe_proto_rawDescGZIP(), []int{68}
 }
 
-func (x *ProtoTableElementProperties) GetWidthInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetWidthInheritance() Inheritance {
 	if x != nil {
 		return x.WidthInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetWidth() *ProtoMeasure {
@@ -7234,11 +7234,11 @@ func (x *ProtoTableElementProperties) GetWidthCode() string {
 	return ""
 }
 
-func (x *ProtoTableElementProperties) GetAlignInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetAlignInheritance() Inheritance {
 	if x != nil {
 		return x.AlignInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetAlign() ProtoHorizontalAlignment {
@@ -7255,11 +7255,11 @@ func (x *ProtoTableElementProperties) GetAlignCode() string {
 	return ""
 }
 
-func (x *ProtoTableElementProperties) GetValignInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetValignInheritance() Inheritance {
 	if x != nil {
 		return x.ValignInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetValign() ProtoVerticalAlignment {
@@ -7276,11 +7276,11 @@ func (x *ProtoTableElementProperties) GetValignCode() string {
 	return ""
 }
 
-func (x *ProtoTableElementProperties) GetBackgroundColorInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetBackgroundColorInheritance() Inheritance {
 	if x != nil {
 		return x.BackgroundColorInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetBackgroundColor() []*ProtoColor {
@@ -7297,11 +7297,11 @@ func (x *ProtoTableElementProperties) GetBackgroundColorCode() string {
 	return ""
 }
 
-func (x *ProtoTableElementProperties) GetPaddingInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetPaddingInheritance() Inheritance {
 	if x != nil {
 		return x.PaddingInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetPadding() *ProtoSideMeasures {
@@ -7318,11 +7318,11 @@ func (x *ProtoTableElementProperties) GetPaddingCode() string {
 	return ""
 }
 
-func (x *ProtoTableElementProperties) GetBorderInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetBorderInheritance() Inheritance {
 	if x != nil {
 		return x.BorderInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetBorder() *ProtoSideBorders {
@@ -7339,11 +7339,11 @@ func (x *ProtoTableElementProperties) GetBorderCode() string {
 	return ""
 }
 
-func (x *ProtoTableElementProperties) GetMarginInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetMarginInheritance() Inheritance {
 	if x != nil {
 		return x.MarginInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetMargin() *ProtoSideMeasures {
@@ -7360,11 +7360,11 @@ func (x *ProtoTableElementProperties) GetMarginCode() string {
 	return ""
 }
 
-func (x *ProtoTableElementProperties) GetRotationInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetRotationInheritance() Inheritance {
 	if x != nil {
 		return x.RotationInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetRotation() float64 {
@@ -7381,11 +7381,11 @@ func (x *ProtoTableElementProperties) GetRotationCode() string {
 	return ""
 }
 
-func (x *ProtoTableElementProperties) GetDefaultParagraphFormatUUIDInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetDefaultParagraphFormatUUIDInheritance() Inheritance {
 	if x != nil {
 		return x.DefaultParagraphFormatUUIDInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetDefaultParagraphFormatUUID() string {
@@ -7402,11 +7402,11 @@ func (x *ProtoTableElementProperties) GetDefaultParagraphFormatUUIDCode() string
 	return ""
 }
 
-func (x *ProtoTableElementProperties) GetTableContentGroupTypeInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetTableContentGroupTypeInheritance() Inheritance {
 	if x != nil {
 		return x.TableContentGroupTypeInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetTableContentGroupType() ProtoTableContentGroupType {
@@ -7423,11 +7423,11 @@ func (x *ProtoTableElementProperties) GetTableContentGroupTypeCode() string {
 	return ""
 }
 
-func (x *ProtoTableElementProperties) GetCellTypeInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetCellTypeInheritance() Inheritance {
 	if x != nil {
 		return x.CellTypeInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetCellType() ProtoTableCellType {
@@ -7444,11 +7444,11 @@ func (x *ProtoTableElementProperties) GetCellTypeCode() string {
 	return ""
 }
 
-func (x *ProtoTableElementProperties) GetMinRowHeightInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetMinRowHeightInheritance() Inheritance {
 	if x != nil {
 		return x.MinRowHeightInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetMinRowHeight() *ProtoMeasure {
@@ -7465,11 +7465,11 @@ func (x *ProtoTableElementProperties) GetMinRowHeightCode() string {
 	return ""
 }
 
-func (x *ProtoTableElementProperties) GetWsInheritance() ProtoInheritance {
+func (x *ProtoTableElementProperties) GetWsInheritance() Inheritance {
 	if x != nil {
 		return x.WsInheritance
 	}
-	return ProtoInheritance_INHERITANCE_INHERIT
+	return Inheritance_INHERITANCE_INHERIT
 }
 
 func (x *ProtoTableElementProperties) GetWs() *ProtoTableWS {
@@ -13011,52 +13011,52 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\fProtoTableWS\x12&\n" +
 	"\x0eminLinesBefore\x18\x01 \x01(\rR\x0eminLinesBefore\x12$\n" +
 	"\rminLinesAfter\x18\x02 \x01(\rR\rminLinesAfter\x12\x1a\n" +
-	"\bpriority\x18\x03 \x01(\rR\bpriority\"\xc3\x10\n" +
-	"\x1bProtoTableElementProperties\x12=\n" +
-	"\x10widthInheritance\x18\x01 \x01(\x0e2\x11.ProtoInheritanceR\x10widthInheritance\x12#\n" +
+	"\bpriority\x18\x03 \x01(\rR\bpriority\"\x82\x10\n" +
+	"\x1bProtoTableElementProperties\x128\n" +
+	"\x10widthInheritance\x18\x01 \x01(\x0e2\f.InheritanceR\x10widthInheritance\x12#\n" +
 	"\x05width\x18\x02 \x01(\v2\r.ProtoMeasureR\x05width\x12\x1c\n" +
-	"\twidthCode\x18\x03 \x01(\tR\twidthCode\x12=\n" +
-	"\x10alignInheritance\x18\x04 \x01(\x0e2\x11.ProtoInheritanceR\x10alignInheritance\x12/\n" +
+	"\twidthCode\x18\x03 \x01(\tR\twidthCode\x128\n" +
+	"\x10alignInheritance\x18\x04 \x01(\x0e2\f.InheritanceR\x10alignInheritance\x12/\n" +
 	"\x05align\x18\x05 \x01(\x0e2\x19.ProtoHorizontalAlignmentR\x05align\x12\x1c\n" +
-	"\talignCode\x18\x06 \x01(\tR\talignCode\x12?\n" +
-	"\x11valignInheritance\x18\a \x01(\x0e2\x11.ProtoInheritanceR\x11valignInheritance\x12/\n" +
+	"\talignCode\x18\x06 \x01(\tR\talignCode\x12:\n" +
+	"\x11valignInheritance\x18\a \x01(\x0e2\f.InheritanceR\x11valignInheritance\x12/\n" +
 	"\x06valign\x18\b \x01(\x0e2\x17.ProtoVerticalAlignmentR\x06valign\x12\x1e\n" +
 	"\n" +
 	"valignCode\x18\t \x01(\tR\n" +
-	"valignCode\x12Q\n" +
+	"valignCode\x12L\n" +
 	"\x1abackgroundColorInheritance\x18\n" +
-	" \x01(\x0e2\x11.ProtoInheritanceR\x1abackgroundColorInheritance\x125\n" +
+	" \x01(\x0e2\f.InheritanceR\x1abackgroundColorInheritance\x125\n" +
 	"\x0fbackgroundColor\x18\v \x03(\v2\v.ProtoColorR\x0fbackgroundColor\x120\n" +
-	"\x13backgroundColorCode\x18\f \x01(\tR\x13backgroundColorCode\x12A\n" +
-	"\x12paddingInheritance\x18\r \x01(\x0e2\x11.ProtoInheritanceR\x12paddingInheritance\x12,\n" +
+	"\x13backgroundColorCode\x18\f \x01(\tR\x13backgroundColorCode\x12<\n" +
+	"\x12paddingInheritance\x18\r \x01(\x0e2\f.InheritanceR\x12paddingInheritance\x12,\n" +
 	"\apadding\x18\x0e \x01(\v2\x12.ProtoSideMeasuresR\apadding\x12 \n" +
-	"\vpaddingCode\x18\x0f \x01(\tR\vpaddingCode\x12?\n" +
-	"\x11borderInheritance\x18\x10 \x01(\x0e2\x11.ProtoInheritanceR\x11borderInheritance\x12)\n" +
+	"\vpaddingCode\x18\x0f \x01(\tR\vpaddingCode\x12:\n" +
+	"\x11borderInheritance\x18\x10 \x01(\x0e2\f.InheritanceR\x11borderInheritance\x12)\n" +
 	"\x06border\x18\x11 \x01(\v2\x11.ProtoSideBordersR\x06border\x12\x1e\n" +
 	"\n" +
 	"borderCode\x18\x12 \x01(\tR\n" +
-	"borderCode\x12?\n" +
-	"\x11marginInheritance\x18\x13 \x01(\x0e2\x11.ProtoInheritanceR\x11marginInheritance\x12*\n" +
+	"borderCode\x12:\n" +
+	"\x11marginInheritance\x18\x13 \x01(\x0e2\f.InheritanceR\x11marginInheritance\x12*\n" +
 	"\x06margin\x18\x14 \x01(\v2\x12.ProtoSideMeasuresR\x06margin\x12\x1e\n" +
 	"\n" +
 	"marginCode\x18\x15 \x01(\tR\n" +
-	"marginCode\x12C\n" +
-	"\x13rotationInheritance\x18\x16 \x01(\x0e2\x11.ProtoInheritanceR\x13rotationInheritance\x12\x1a\n" +
+	"marginCode\x12>\n" +
+	"\x13rotationInheritance\x18\x16 \x01(\x0e2\f.InheritanceR\x13rotationInheritance\x12\x1a\n" +
 	"\brotation\x18\x17 \x01(\x01R\brotation\x12\"\n" +
-	"\frotationCode\x18\x18 \x01(\tR\frotationCode\x12g\n" +
-	"%defaultParagraphFormatUUIDInheritance\x18\x19 \x01(\x0e2\x11.ProtoInheritanceR%defaultParagraphFormatUUIDInheritance\x12>\n" +
+	"\frotationCode\x18\x18 \x01(\tR\frotationCode\x12b\n" +
+	"%defaultParagraphFormatUUIDInheritance\x18\x19 \x01(\x0e2\f.InheritanceR%defaultParagraphFormatUUIDInheritance\x12>\n" +
 	"\x1adefaultParagraphFormatUUID\x18\x1a \x01(\tR\x1adefaultParagraphFormatUUID\x12F\n" +
-	"\x1edefaultParagraphFormatUUIDCode\x18\x1b \x01(\tR\x1edefaultParagraphFormatUUIDCode\x12]\n" +
-	" tableContentGroupTypeInheritance\x18\x1c \x01(\x0e2\x11.ProtoInheritanceR tableContentGroupTypeInheritance\x12Q\n" +
+	"\x1edefaultParagraphFormatUUIDCode\x18\x1b \x01(\tR\x1edefaultParagraphFormatUUIDCode\x12X\n" +
+	" tableContentGroupTypeInheritance\x18\x1c \x01(\x0e2\f.InheritanceR tableContentGroupTypeInheritance\x12Q\n" +
 	"\x15tableContentGroupType\x18\x1d \x01(\x0e2\x1b.ProtoTableContentGroupTypeR\x15tableContentGroupType\x12<\n" +
-	"\x19tableContentGroupTypeCode\x18\x1e \x01(\tR\x19tableContentGroupTypeCode\x12C\n" +
-	"\x13cellTypeInheritance\x18\x1f \x01(\x0e2\x11.ProtoInheritanceR\x13cellTypeInheritance\x12/\n" +
+	"\x19tableContentGroupTypeCode\x18\x1e \x01(\tR\x19tableContentGroupTypeCode\x12>\n" +
+	"\x13cellTypeInheritance\x18\x1f \x01(\x0e2\f.InheritanceR\x13cellTypeInheritance\x12/\n" +
 	"\bcellType\x18  \x01(\x0e2\x13.ProtoTableCellTypeR\bcellType\x12\"\n" +
-	"\fcellTypeCode\x18! \x01(\tR\fcellTypeCode\x12K\n" +
-	"\x17minRowHeightInheritance\x18\" \x01(\x0e2\x11.ProtoInheritanceR\x17minRowHeightInheritance\x121\n" +
+	"\fcellTypeCode\x18! \x01(\tR\fcellTypeCode\x12F\n" +
+	"\x17minRowHeightInheritance\x18\" \x01(\x0e2\f.InheritanceR\x17minRowHeightInheritance\x121\n" +
 	"\fminRowHeight\x18# \x01(\v2\r.ProtoMeasureR\fminRowHeight\x12*\n" +
-	"\x10minRowHeightCode\x18$ \x01(\tR\x10minRowHeightCode\x127\n" +
-	"\rwsInheritance\x18% \x01(\x0e2\x11.ProtoInheritanceR\rwsInheritance\x12\x1d\n" +
+	"\x10minRowHeightCode\x18$ \x01(\tR\x10minRowHeightCode\x122\n" +
+	"\rwsInheritance\x18% \x01(\x0e2\f.InheritanceR\rwsInheritance\x12\x1d\n" +
 	"\x02ws\x18& \x01(\v2\r.ProtoTableWSR\x02ws\x12\x16\n" +
 	"\x06wsCode\x18' \x01(\tR\x06wsCode\"~\n" +
 	"\tProtoText\x12-\n" +
@@ -13584,6 +13584,11 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x1bPDF_PRINTING_BEHAVIOR_INPUT\x10\x00\x12\x1e\n" +
 	"\x1aPDF_PRINTING_BEHAVIOR_TEXT\x10\x01\x12!\n" +
 	"\x1dPDF_PRINTING_BEHAVIOR_INHERIT\x10\x02*o\n" +
+	"\vInheritance\x12\x17\n" +
+	"\x13INHERITANCE_INHERIT\x10\x00\x12\x14\n" +
+	"\x10INHERITANCE_CODE\x10\x01\x12\x19\n" +
+	"\x15INHERITANCE_BIND_CODE\x10\x02\x12\x16\n" +
+	"\x12INHERITANCE_STATIC\x10\x03*o\n" +
 	"\x0fProtoNumberType\x12\n" +
 	"\n" +
 	"\x06ARABIC\x10\x00\x12\x11\n" +
@@ -13607,12 +13612,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x12ProtoTableCellType\x12\x13\n" +
 	"\x0fTABLE_CELL_BODY\x10\x00\x12\x19\n" +
 	"\x15TABLE_CELL_ROW_HEADER\x10\x01\x12\x19\n" +
-	"\x15TABLE_CELL_ROW_FOOTER\x10\x02*t\n" +
-	"\x10ProtoInheritance\x12\x17\n" +
-	"\x13INHERITANCE_INHERIT\x10\x00\x12\x14\n" +
-	"\x10INHERITANCE_CODE\x10\x01\x12\x19\n" +
-	"\x15INHERITANCE_BIND_CODE\x10\x02\x12\x16\n" +
-	"\x12INHERITANCE_STATIC\x10\x03*2\n" +
+	"\x15TABLE_CELL_ROW_FOOTER\x10\x02*2\n" +
 	"\x0fColumnBalancing\x12\x10\n" +
 	"\fNO_BALANCING\x10\x00\x12\r\n" +
 	"\tBALANCING\x10\x01*z\n" +
@@ -13774,11 +13774,11 @@ var file_build_docframe_proto_goTypes = []any{
 	(ProtoImageReferencePoint)(0),                          // 10: ProtoImageReferencePoint
 	(ProtoSemanticType)(0),                                 // 11: ProtoSemanticType
 	(PDFPrintingBehavior)(0),                               // 12: PDFPrintingBehavior
-	(ProtoNumberType)(0),                                   // 13: ProtoNumberType
-	(ProtoListLevelSettingType)(0),                         // 14: ProtoListLevelSettingType
-	(ProtoTableContentGroupType)(0),                        // 15: ProtoTableContentGroupType
-	(ProtoTableCellType)(0),                                // 16: ProtoTableCellType
-	(ProtoInheritance)(0),                                  // 17: ProtoInheritance
+	(Inheritance)(0),                                       // 13: Inheritance
+	(ProtoNumberType)(0),                                   // 14: ProtoNumberType
+	(ProtoListLevelSettingType)(0),                         // 15: ProtoListLevelSettingType
+	(ProtoTableContentGroupType)(0),                        // 16: ProtoTableContentGroupType
+	(ProtoTableCellType)(0),                                // 17: ProtoTableCellType
 	(ColumnBalancing)(0),                                   // 18: ColumnBalancing
 	(ProtoHeaderMode)(0),                                   // 19: ProtoHeaderMode
 	(ProtoFooterMode)(0),                                   // 20: ProtoFooterMode
@@ -13975,34 +13975,34 @@ var file_build_docframe_proto_depIdxs = []int32{
 	68,  // 60: ProtoBranchDocumentElement.parent:type_name -> ProtoDocumentElement
 	68,  // 61: ProtoLink._children:type_name -> ProtoDocumentElement
 	34,  // 62: ProtoListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
-	14,  // 63: ProtoListLevelSetting.type:type_name -> ProtoListLevelSettingType
+	15,  // 63: ProtoListLevelSetting.type:type_name -> ProtoListLevelSettingType
 	44,  // 64: ProtoListLevelSetting.fixFontFamily:type_name -> ProtoFont
 	46,  // 65: ProtoListLevelSetting.color:type_name -> ProtoColor
 	44,  // 66: ProtoListLevelSetting.fontFamily:type_name -> ProtoFont
 	31,  // 67: ProtoListLevelSetting.bold:type_name -> ProtoBoxedBool
 	31,  // 68: ProtoListLevelSetting.italic:type_name -> ProtoBoxedBool
-	13,  // 69: ProtoListLevelSetting.numberType:type_name -> ProtoNumberType
+	14,  // 69: ProtoListLevelSetting.numberType:type_name -> ProtoNumberType
 	34,  // 70: ProtoImageListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
-	14,  // 71: ProtoImageListLevelSetting.type:type_name -> ProtoListLevelSettingType
+	15,  // 71: ProtoImageListLevelSetting.type:type_name -> ProtoListLevelSettingType
 	44,  // 72: ProtoImageListLevelSetting.fixFontFamily:type_name -> ProtoFont
 	46,  // 73: ProtoImageListLevelSetting.color:type_name -> ProtoColor
 	34,  // 74: ProtoTextListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
-	14,  // 75: ProtoTextListLevelSetting.type:type_name -> ProtoListLevelSettingType
+	15,  // 75: ProtoTextListLevelSetting.type:type_name -> ProtoListLevelSettingType
 	44,  // 76: ProtoTextListLevelSetting.fixFontFamily:type_name -> ProtoFont
 	46,  // 77: ProtoTextListLevelSetting.color:type_name -> ProtoColor
 	44,  // 78: ProtoTextListLevelSetting.fontFamily:type_name -> ProtoFont
 	31,  // 79: ProtoTextListLevelSetting.bold:type_name -> ProtoBoxedBool
 	31,  // 80: ProtoTextListLevelSetting.italic:type_name -> ProtoBoxedBool
 	34,  // 81: ProtoNumberListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
-	14,  // 82: ProtoNumberListLevelSetting.type:type_name -> ProtoListLevelSettingType
+	15,  // 82: ProtoNumberListLevelSetting.type:type_name -> ProtoListLevelSettingType
 	44,  // 83: ProtoNumberListLevelSetting.fixFontFamily:type_name -> ProtoFont
 	46,  // 84: ProtoNumberListLevelSetting.color:type_name -> ProtoColor
 	44,  // 85: ProtoNumberListLevelSetting.fontFamily:type_name -> ProtoFont
 	31,  // 86: ProtoNumberListLevelSetting.bold:type_name -> ProtoBoxedBool
 	31,  // 87: ProtoNumberListLevelSetting.italic:type_name -> ProtoBoxedBool
-	13,  // 88: ProtoNumberListLevelSetting.numberType:type_name -> ProtoNumberType
+	14,  // 88: ProtoNumberListLevelSetting.numberType:type_name -> ProtoNumberType
 	34,  // 89: ProtoUnnumberedListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
-	14,  // 90: ProtoUnnumberedListLevelSetting.type:type_name -> ProtoListLevelSettingType
+	15,  // 90: ProtoUnnumberedListLevelSetting.type:type_name -> ProtoListLevelSettingType
 	44,  // 91: ProtoUnnumberedListLevelSetting.fixFontFamily:type_name -> ProtoFont
 	46,  // 92: ProtoUnnumberedListLevelSetting.color:type_name -> ProtoColor
 	44,  // 93: ProtoUnnumberedListLevelSetting.fontFamily:type_name -> ProtoFont
@@ -14071,7 +14071,7 @@ var file_build_docframe_proto_depIdxs = []int32{
 	39,  // 156: ProtoTableSettings.width:type_name -> ProtoMeasure
 	34,  // 157: ProtoTableSettings.repeatHeader:type_name -> ProtoBoxedUint32
 	98,  // 158: ProtoTableSettings.ws:type_name -> ProtoTableWS
-	15,  // 159: ProtoBoxedTableContentGroupType.value:type_name -> ProtoTableContentGroupType
+	16,  // 159: ProtoBoxedTableContentGroupType.value:type_name -> ProtoTableContentGroupType
 	68,  // 160: ProtoTableContentGroup._children:type_name -> ProtoDocumentElement
 	68,  // 161: ProtoTableContentGroup.parent:type_name -> ProtoDocumentElement
 	90,  // 162: ProtoTableContentGroup.settings:type_name -> ProtoTableContentGroupSettings
@@ -14088,7 +14088,7 @@ var file_build_docframe_proto_depIdxs = []int32{
 	93,  // 173: ProtoTableRowConfig.settings:type_name -> ProtoTableRowSettings
 	39,  // 174: ProtoTableRowSettings.minHeight:type_name -> ProtoMeasure
 	98,  // 175: ProtoTableRowSettings.ws:type_name -> ProtoTableWS
-	16,  // 176: ProtoBoxedTableCellType.value:type_name -> ProtoTableCellType
+	17,  // 176: ProtoBoxedTableCellType.value:type_name -> ProtoTableCellType
 	68,  // 177: ProtoTableCell._children:type_name -> ProtoDocumentElement
 	68,  // 178: ProtoTableCell.parent:type_name -> ProtoDocumentElement
 	97,  // 179: ProtoTableCell.settings:type_name -> ProtoTableCellSettings
@@ -14105,29 +14105,29 @@ var file_build_docframe_proto_depIdxs = []int32{
 	41,  // 190: ProtoTableCellSettings.margin:type_name -> ProtoSideMeasures
 	32,  // 191: ProtoTableCellSettings.rotation:type_name -> ProtoBoxedDouble
 	35,  // 192: ProtoTableCellSettings.defaultParagraphFormat:type_name -> ProtoBoxedString
-	17,  // 193: ProtoTableElementProperties.widthInheritance:type_name -> ProtoInheritance
+	13,  // 193: ProtoTableElementProperties.widthInheritance:type_name -> Inheritance
 	39,  // 194: ProtoTableElementProperties.width:type_name -> ProtoMeasure
-	17,  // 195: ProtoTableElementProperties.alignInheritance:type_name -> ProtoInheritance
+	13,  // 195: ProtoTableElementProperties.alignInheritance:type_name -> Inheritance
 	5,   // 196: ProtoTableElementProperties.align:type_name -> ProtoHorizontalAlignment
-	17,  // 197: ProtoTableElementProperties.valignInheritance:type_name -> ProtoInheritance
+	13,  // 197: ProtoTableElementProperties.valignInheritance:type_name -> Inheritance
 	6,   // 198: ProtoTableElementProperties.valign:type_name -> ProtoVerticalAlignment
-	17,  // 199: ProtoTableElementProperties.backgroundColorInheritance:type_name -> ProtoInheritance
+	13,  // 199: ProtoTableElementProperties.backgroundColorInheritance:type_name -> Inheritance
 	46,  // 200: ProtoTableElementProperties.backgroundColor:type_name -> ProtoColor
-	17,  // 201: ProtoTableElementProperties.paddingInheritance:type_name -> ProtoInheritance
+	13,  // 201: ProtoTableElementProperties.paddingInheritance:type_name -> Inheritance
 	41,  // 202: ProtoTableElementProperties.padding:type_name -> ProtoSideMeasures
-	17,  // 203: ProtoTableElementProperties.borderInheritance:type_name -> ProtoInheritance
+	13,  // 203: ProtoTableElementProperties.borderInheritance:type_name -> Inheritance
 	57,  // 204: ProtoTableElementProperties.border:type_name -> ProtoSideBorders
-	17,  // 205: ProtoTableElementProperties.marginInheritance:type_name -> ProtoInheritance
+	13,  // 205: ProtoTableElementProperties.marginInheritance:type_name -> Inheritance
 	41,  // 206: ProtoTableElementProperties.margin:type_name -> ProtoSideMeasures
-	17,  // 207: ProtoTableElementProperties.rotationInheritance:type_name -> ProtoInheritance
-	17,  // 208: ProtoTableElementProperties.defaultParagraphFormatUUIDInheritance:type_name -> ProtoInheritance
-	17,  // 209: ProtoTableElementProperties.tableContentGroupTypeInheritance:type_name -> ProtoInheritance
-	15,  // 210: ProtoTableElementProperties.tableContentGroupType:type_name -> ProtoTableContentGroupType
-	17,  // 211: ProtoTableElementProperties.cellTypeInheritance:type_name -> ProtoInheritance
-	16,  // 212: ProtoTableElementProperties.cellType:type_name -> ProtoTableCellType
-	17,  // 213: ProtoTableElementProperties.minRowHeightInheritance:type_name -> ProtoInheritance
+	13,  // 207: ProtoTableElementProperties.rotationInheritance:type_name -> Inheritance
+	13,  // 208: ProtoTableElementProperties.defaultParagraphFormatUUIDInheritance:type_name -> Inheritance
+	13,  // 209: ProtoTableElementProperties.tableContentGroupTypeInheritance:type_name -> Inheritance
+	16,  // 210: ProtoTableElementProperties.tableContentGroupType:type_name -> ProtoTableContentGroupType
+	13,  // 211: ProtoTableElementProperties.cellTypeInheritance:type_name -> Inheritance
+	17,  // 212: ProtoTableElementProperties.cellType:type_name -> ProtoTableCellType
+	13,  // 213: ProtoTableElementProperties.minRowHeightInheritance:type_name -> Inheritance
 	39,  // 214: ProtoTableElementProperties.minRowHeight:type_name -> ProtoMeasure
-	17,  // 215: ProtoTableElementProperties.wsInheritance:type_name -> ProtoInheritance
+	13,  // 215: ProtoTableElementProperties.wsInheritance:type_name -> Inheritance
 	98,  // 216: ProtoTableElementProperties.ws:type_name -> ProtoTableWS
 	68,  // 217: ProtoText.parent:type_name -> ProtoDocumentElement
 	7,   // 218: ProtoBarcode.type:type_name -> ProtoBarcodeType

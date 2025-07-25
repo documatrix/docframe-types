@@ -4290,6 +4290,14 @@ export class ProtoBaseInputField implements IProtoBaseInputField {
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
+/** Inheritance enum. */
+export enum Inheritance {
+    INHERITANCE_INHERIT = 0,
+    INHERITANCE_CODE = 1,
+    INHERITANCE_BIND_CODE = 2,
+    INHERITANCE_STATIC = 3
+}
+
 /** Properties of a ProtoDocumentElement. */
 export interface IProtoDocumentElement {
 
@@ -8454,7 +8462,7 @@ export class ProtoTableWS implements IProtoTableWS {
 export interface IProtoTableElementProperties {
 
     /** ProtoTableElementProperties widthInheritance */
-    widthInheritance?: (ProtoInheritance|null);
+    widthInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties width */
     width?: (IProtoMeasure|null);
@@ -8463,7 +8471,7 @@ export interface IProtoTableElementProperties {
     widthCode?: (string|null);
 
     /** ProtoTableElementProperties alignInheritance */
-    alignInheritance?: (ProtoInheritance|null);
+    alignInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties align */
     align?: (ProtoHorizontalAlignment|null);
@@ -8472,7 +8480,7 @@ export interface IProtoTableElementProperties {
     alignCode?: (string|null);
 
     /** ProtoTableElementProperties valignInheritance */
-    valignInheritance?: (ProtoInheritance|null);
+    valignInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties valign */
     valign?: (ProtoVerticalAlignment|null);
@@ -8481,7 +8489,7 @@ export interface IProtoTableElementProperties {
     valignCode?: (string|null);
 
     /** ProtoTableElementProperties backgroundColorInheritance */
-    backgroundColorInheritance?: (ProtoInheritance|null);
+    backgroundColorInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties backgroundColor */
     backgroundColor?: (IProtoColor[]|null);
@@ -8490,7 +8498,7 @@ export interface IProtoTableElementProperties {
     backgroundColorCode?: (string|null);
 
     /** ProtoTableElementProperties paddingInheritance */
-    paddingInheritance?: (ProtoInheritance|null);
+    paddingInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties padding */
     padding?: (IProtoSideMeasures|null);
@@ -8499,7 +8507,7 @@ export interface IProtoTableElementProperties {
     paddingCode?: (string|null);
 
     /** ProtoTableElementProperties borderInheritance */
-    borderInheritance?: (ProtoInheritance|null);
+    borderInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties border */
     border?: (IProtoSideBorders|null);
@@ -8508,7 +8516,7 @@ export interface IProtoTableElementProperties {
     borderCode?: (string|null);
 
     /** ProtoTableElementProperties marginInheritance */
-    marginInheritance?: (ProtoInheritance|null);
+    marginInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties margin */
     margin?: (IProtoSideMeasures|null);
@@ -8517,7 +8525,7 @@ export interface IProtoTableElementProperties {
     marginCode?: (string|null);
 
     /** ProtoTableElementProperties rotationInheritance */
-    rotationInheritance?: (ProtoInheritance|null);
+    rotationInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties rotation */
     rotation?: (number|null);
@@ -8526,7 +8534,7 @@ export interface IProtoTableElementProperties {
     rotationCode?: (string|null);
 
     /** ProtoTableElementProperties defaultParagraphFormatUUIDInheritance */
-    defaultParagraphFormatUUIDInheritance?: (ProtoInheritance|null);
+    defaultParagraphFormatUUIDInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties defaultParagraphFormatUUID */
     defaultParagraphFormatUUID?: (string|null);
@@ -8535,7 +8543,7 @@ export interface IProtoTableElementProperties {
     defaultParagraphFormatUUIDCode?: (string|null);
 
     /** ProtoTableElementProperties tableContentGroupTypeInheritance */
-    tableContentGroupTypeInheritance?: (ProtoInheritance|null);
+    tableContentGroupTypeInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties tableContentGroupType */
     tableContentGroupType?: (ProtoTableContentGroupType|null);
@@ -8544,7 +8552,7 @@ export interface IProtoTableElementProperties {
     tableContentGroupTypeCode?: (string|null);
 
     /** ProtoTableElementProperties cellTypeInheritance */
-    cellTypeInheritance?: (ProtoInheritance|null);
+    cellTypeInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties cellType */
     cellType?: (ProtoTableCellType|null);
@@ -8553,7 +8561,7 @@ export interface IProtoTableElementProperties {
     cellTypeCode?: (string|null);
 
     /** ProtoTableElementProperties minRowHeightInheritance */
-    minRowHeightInheritance?: (ProtoInheritance|null);
+    minRowHeightInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties minRowHeight */
     minRowHeight?: (IProtoMeasure|null);
@@ -8562,7 +8570,7 @@ export interface IProtoTableElementProperties {
     minRowHeightCode?: (string|null);
 
     /** ProtoTableElementProperties wsInheritance */
-    wsInheritance?: (ProtoInheritance|null);
+    wsInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties ws */
     ws?: (IProtoTableWS|null);
@@ -8581,7 +8589,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     constructor(properties?: IProtoTableElementProperties);
 
     /** ProtoTableElementProperties widthInheritance. */
-    public widthInheritance: ProtoInheritance;
+    public widthInheritance: Inheritance;
 
     /** ProtoTableElementProperties width. */
     public width?: (IProtoMeasure|null);
@@ -8590,7 +8598,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public widthCode: string;
 
     /** ProtoTableElementProperties alignInheritance. */
-    public alignInheritance: ProtoInheritance;
+    public alignInheritance: Inheritance;
 
     /** ProtoTableElementProperties align. */
     public align: ProtoHorizontalAlignment;
@@ -8599,7 +8607,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public alignCode: string;
 
     /** ProtoTableElementProperties valignInheritance. */
-    public valignInheritance: ProtoInheritance;
+    public valignInheritance: Inheritance;
 
     /** ProtoTableElementProperties valign. */
     public valign: ProtoVerticalAlignment;
@@ -8608,7 +8616,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public valignCode: string;
 
     /** ProtoTableElementProperties backgroundColorInheritance. */
-    public backgroundColorInheritance: ProtoInheritance;
+    public backgroundColorInheritance: Inheritance;
 
     /** ProtoTableElementProperties backgroundColor. */
     public backgroundColor: IProtoColor[];
@@ -8617,7 +8625,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public backgroundColorCode: string;
 
     /** ProtoTableElementProperties paddingInheritance. */
-    public paddingInheritance: ProtoInheritance;
+    public paddingInheritance: Inheritance;
 
     /** ProtoTableElementProperties padding. */
     public padding?: (IProtoSideMeasures|null);
@@ -8626,7 +8634,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public paddingCode: string;
 
     /** ProtoTableElementProperties borderInheritance. */
-    public borderInheritance: ProtoInheritance;
+    public borderInheritance: Inheritance;
 
     /** ProtoTableElementProperties border. */
     public border?: (IProtoSideBorders|null);
@@ -8635,7 +8643,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public borderCode: string;
 
     /** ProtoTableElementProperties marginInheritance. */
-    public marginInheritance: ProtoInheritance;
+    public marginInheritance: Inheritance;
 
     /** ProtoTableElementProperties margin. */
     public margin?: (IProtoSideMeasures|null);
@@ -8644,7 +8652,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public marginCode: string;
 
     /** ProtoTableElementProperties rotationInheritance. */
-    public rotationInheritance: ProtoInheritance;
+    public rotationInheritance: Inheritance;
 
     /** ProtoTableElementProperties rotation. */
     public rotation: number;
@@ -8653,7 +8661,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public rotationCode: string;
 
     /** ProtoTableElementProperties defaultParagraphFormatUUIDInheritance. */
-    public defaultParagraphFormatUUIDInheritance: ProtoInheritance;
+    public defaultParagraphFormatUUIDInheritance: Inheritance;
 
     /** ProtoTableElementProperties defaultParagraphFormatUUID. */
     public defaultParagraphFormatUUID: string;
@@ -8662,7 +8670,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public defaultParagraphFormatUUIDCode: string;
 
     /** ProtoTableElementProperties tableContentGroupTypeInheritance. */
-    public tableContentGroupTypeInheritance: ProtoInheritance;
+    public tableContentGroupTypeInheritance: Inheritance;
 
     /** ProtoTableElementProperties tableContentGroupType. */
     public tableContentGroupType: ProtoTableContentGroupType;
@@ -8671,7 +8679,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public tableContentGroupTypeCode: string;
 
     /** ProtoTableElementProperties cellTypeInheritance. */
-    public cellTypeInheritance: ProtoInheritance;
+    public cellTypeInheritance: Inheritance;
 
     /** ProtoTableElementProperties cellType. */
     public cellType: ProtoTableCellType;
@@ -8680,7 +8688,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public cellTypeCode: string;
 
     /** ProtoTableElementProperties minRowHeightInheritance. */
-    public minRowHeightInheritance: ProtoInheritance;
+    public minRowHeightInheritance: Inheritance;
 
     /** ProtoTableElementProperties minRowHeight. */
     public minRowHeight?: (IProtoMeasure|null);
@@ -8689,7 +8697,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public minRowHeightCode: string;
 
     /** ProtoTableElementProperties wsInheritance. */
-    public wsInheritance: ProtoInheritance;
+    public wsInheritance: Inheritance;
 
     /** ProtoTableElementProperties ws. */
     public ws?: (IProtoTableWS|null);
@@ -8773,14 +8781,6 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-/** ProtoInheritance enum. */
-export enum ProtoInheritance {
-    INHERITANCE_INHERIT = 0,
-    INHERITANCE_CODE = 1,
-    INHERITANCE_BIND_CODE = 2,
-    INHERITANCE_STATIC = 3
 }
 
 /** Properties of a ProtoText. */

@@ -1,0 +1,10 @@
+enum Inheritance {
+  // Inherit from parent element
+  INHERITANCE_INHERIT = 0;
+  // Evaluate provided code once
+  INHERITANCE_CODE = 1;
+  // Evaluate provided code every time
+  INHERITANCE_BIND_CODE = 2;
+  // Use the static value
+  INHERITANCE_STATIC = 3;
+}

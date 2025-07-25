@@ -10805,6 +10805,24 @@ $root.ProtoBaseInputField = (function() {
     return ProtoBaseInputField;
 })();
 
+/**
+ * Inheritance enum.
+ * @name Inheritance
+ * @enum {number}
+ * @property {number} INHERITANCE_INHERIT=0 INHERITANCE_INHERIT value
+ * @property {number} INHERITANCE_CODE=1 INHERITANCE_CODE value
+ * @property {number} INHERITANCE_BIND_CODE=2 INHERITANCE_BIND_CODE value
+ * @property {number} INHERITANCE_STATIC=3 INHERITANCE_STATIC value
+ */
+$root.Inheritance = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "INHERITANCE_INHERIT"] = 0;
+    values[valuesById[1] = "INHERITANCE_CODE"] = 1;
+    values[valuesById[2] = "INHERITANCE_BIND_CODE"] = 2;
+    values[valuesById[3] = "INHERITANCE_STATIC"] = 3;
+    return values;
+})();
+
 $root.ProtoDocumentElement = (function() {
 
     /**
@@ -22884,43 +22902,43 @@ $root.ProtoTableElementProperties = (function() {
      * Properties of a ProtoTableElementProperties.
      * @name IProtoTableElementProperties
      * @interface IProtoTableElementProperties
-     * @property {ProtoInheritance|null} [widthInheritance] ProtoTableElementProperties widthInheritance
+     * @property {Inheritance|null} [widthInheritance] ProtoTableElementProperties widthInheritance
      * @property {IProtoMeasure|null} [width] ProtoTableElementProperties width
      * @property {string|null} [widthCode] ProtoTableElementProperties widthCode
-     * @property {ProtoInheritance|null} [alignInheritance] ProtoTableElementProperties alignInheritance
+     * @property {Inheritance|null} [alignInheritance] ProtoTableElementProperties alignInheritance
      * @property {ProtoHorizontalAlignment|null} [align] ProtoTableElementProperties align
      * @property {string|null} [alignCode] ProtoTableElementProperties alignCode
-     * @property {ProtoInheritance|null} [valignInheritance] ProtoTableElementProperties valignInheritance
+     * @property {Inheritance|null} [valignInheritance] ProtoTableElementProperties valignInheritance
      * @property {ProtoVerticalAlignment|null} [valign] ProtoTableElementProperties valign
      * @property {string|null} [valignCode] ProtoTableElementProperties valignCode
-     * @property {ProtoInheritance|null} [backgroundColorInheritance] ProtoTableElementProperties backgroundColorInheritance
+     * @property {Inheritance|null} [backgroundColorInheritance] ProtoTableElementProperties backgroundColorInheritance
      * @property {Array.<IProtoColor>|null} [backgroundColor] ProtoTableElementProperties backgroundColor
      * @property {string|null} [backgroundColorCode] ProtoTableElementProperties backgroundColorCode
-     * @property {ProtoInheritance|null} [paddingInheritance] ProtoTableElementProperties paddingInheritance
+     * @property {Inheritance|null} [paddingInheritance] ProtoTableElementProperties paddingInheritance
      * @property {IProtoSideMeasures|null} [padding] ProtoTableElementProperties padding
      * @property {string|null} [paddingCode] ProtoTableElementProperties paddingCode
-     * @property {ProtoInheritance|null} [borderInheritance] ProtoTableElementProperties borderInheritance
+     * @property {Inheritance|null} [borderInheritance] ProtoTableElementProperties borderInheritance
      * @property {IProtoSideBorders|null} [border] ProtoTableElementProperties border
      * @property {string|null} [borderCode] ProtoTableElementProperties borderCode
-     * @property {ProtoInheritance|null} [marginInheritance] ProtoTableElementProperties marginInheritance
+     * @property {Inheritance|null} [marginInheritance] ProtoTableElementProperties marginInheritance
      * @property {IProtoSideMeasures|null} [margin] ProtoTableElementProperties margin
      * @property {string|null} [marginCode] ProtoTableElementProperties marginCode
-     * @property {ProtoInheritance|null} [rotationInheritance] ProtoTableElementProperties rotationInheritance
+     * @property {Inheritance|null} [rotationInheritance] ProtoTableElementProperties rotationInheritance
      * @property {number|null} [rotation] ProtoTableElementProperties rotation
      * @property {string|null} [rotationCode] ProtoTableElementProperties rotationCode
-     * @property {ProtoInheritance|null} [defaultParagraphFormatUUIDInheritance] ProtoTableElementProperties defaultParagraphFormatUUIDInheritance
+     * @property {Inheritance|null} [defaultParagraphFormatUUIDInheritance] ProtoTableElementProperties defaultParagraphFormatUUIDInheritance
      * @property {string|null} [defaultParagraphFormatUUID] ProtoTableElementProperties defaultParagraphFormatUUID
      * @property {string|null} [defaultParagraphFormatUUIDCode] ProtoTableElementProperties defaultParagraphFormatUUIDCode
-     * @property {ProtoInheritance|null} [tableContentGroupTypeInheritance] ProtoTableElementProperties tableContentGroupTypeInheritance
+     * @property {Inheritance|null} [tableContentGroupTypeInheritance] ProtoTableElementProperties tableContentGroupTypeInheritance
      * @property {ProtoTableContentGroupType|null} [tableContentGroupType] ProtoTableElementProperties tableContentGroupType
      * @property {string|null} [tableContentGroupTypeCode] ProtoTableElementProperties tableContentGroupTypeCode
-     * @property {ProtoInheritance|null} [cellTypeInheritance] ProtoTableElementProperties cellTypeInheritance
+     * @property {Inheritance|null} [cellTypeInheritance] ProtoTableElementProperties cellTypeInheritance
      * @property {ProtoTableCellType|null} [cellType] ProtoTableElementProperties cellType
      * @property {string|null} [cellTypeCode] ProtoTableElementProperties cellTypeCode
-     * @property {ProtoInheritance|null} [minRowHeightInheritance] ProtoTableElementProperties minRowHeightInheritance
+     * @property {Inheritance|null} [minRowHeightInheritance] ProtoTableElementProperties minRowHeightInheritance
      * @property {IProtoMeasure|null} [minRowHeight] ProtoTableElementProperties minRowHeight
      * @property {string|null} [minRowHeightCode] ProtoTableElementProperties minRowHeightCode
-     * @property {ProtoInheritance|null} [wsInheritance] ProtoTableElementProperties wsInheritance
+     * @property {Inheritance|null} [wsInheritance] ProtoTableElementProperties wsInheritance
      * @property {IProtoTableWS|null} [ws] ProtoTableElementProperties ws
      * @property {string|null} [wsCode] ProtoTableElementProperties wsCode
      */
@@ -22943,7 +22961,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties widthInheritance.
-     * @member {ProtoInheritance} widthInheritance
+     * @member {Inheritance} widthInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -22967,7 +22985,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties alignInheritance.
-     * @member {ProtoInheritance} alignInheritance
+     * @member {Inheritance} alignInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -22991,7 +23009,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties valignInheritance.
-     * @member {ProtoInheritance} valignInheritance
+     * @member {Inheritance} valignInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23015,7 +23033,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties backgroundColorInheritance.
-     * @member {ProtoInheritance} backgroundColorInheritance
+     * @member {Inheritance} backgroundColorInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23039,7 +23057,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties paddingInheritance.
-     * @member {ProtoInheritance} paddingInheritance
+     * @member {Inheritance} paddingInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23063,7 +23081,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties borderInheritance.
-     * @member {ProtoInheritance} borderInheritance
+     * @member {Inheritance} borderInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23087,7 +23105,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties marginInheritance.
-     * @member {ProtoInheritance} marginInheritance
+     * @member {Inheritance} marginInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23111,7 +23129,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties rotationInheritance.
-     * @member {ProtoInheritance} rotationInheritance
+     * @member {Inheritance} rotationInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23135,7 +23153,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties defaultParagraphFormatUUIDInheritance.
-     * @member {ProtoInheritance} defaultParagraphFormatUUIDInheritance
+     * @member {Inheritance} defaultParagraphFormatUUIDInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23159,7 +23177,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties tableContentGroupTypeInheritance.
-     * @member {ProtoInheritance} tableContentGroupTypeInheritance
+     * @member {Inheritance} tableContentGroupTypeInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23183,7 +23201,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties cellTypeInheritance.
-     * @member {ProtoInheritance} cellTypeInheritance
+     * @member {Inheritance} cellTypeInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23207,7 +23225,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties minRowHeightInheritance.
-     * @member {ProtoInheritance} minRowHeightInheritance
+     * @member {Inheritance} minRowHeightInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23231,7 +23249,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties wsInheritance.
-     * @member {ProtoInheritance} wsInheritance
+     * @member {Inheritance} wsInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -24389,25 +24407,25 @@ $root.ProtoTableElementProperties = (function() {
             object.wsCode = "";
         }
         if (message.widthInheritance != null && message.hasOwnProperty("widthInheritance"))
-            object.widthInheritance = options.enums === String ? $root.ProtoInheritance[message.widthInheritance] === undefined ? message.widthInheritance : $root.ProtoInheritance[message.widthInheritance] : message.widthInheritance;
+            object.widthInheritance = options.enums === String ? $root.Inheritance[message.widthInheritance] === undefined ? message.widthInheritance : $root.Inheritance[message.widthInheritance] : message.widthInheritance;
         if (message.width != null && message.hasOwnProperty("width"))
             object.width = $root.ProtoMeasure.toObject(message.width, options);
         if (message.widthCode != null && message.hasOwnProperty("widthCode"))
             object.widthCode = message.widthCode;
         if (message.alignInheritance != null && message.hasOwnProperty("alignInheritance"))
-            object.alignInheritance = options.enums === String ? $root.ProtoInheritance[message.alignInheritance] === undefined ? message.alignInheritance : $root.ProtoInheritance[message.alignInheritance] : message.alignInheritance;
+            object.alignInheritance = options.enums === String ? $root.Inheritance[message.alignInheritance] === undefined ? message.alignInheritance : $root.Inheritance[message.alignInheritance] : message.alignInheritance;
         if (message.align != null && message.hasOwnProperty("align"))
             object.align = options.enums === String ? $root.ProtoHorizontalAlignment[message.align] === undefined ? message.align : $root.ProtoHorizontalAlignment[message.align] : message.align;
         if (message.alignCode != null && message.hasOwnProperty("alignCode"))
             object.alignCode = message.alignCode;
         if (message.valignInheritance != null && message.hasOwnProperty("valignInheritance"))
-            object.valignInheritance = options.enums === String ? $root.ProtoInheritance[message.valignInheritance] === undefined ? message.valignInheritance : $root.ProtoInheritance[message.valignInheritance] : message.valignInheritance;
+            object.valignInheritance = options.enums === String ? $root.Inheritance[message.valignInheritance] === undefined ? message.valignInheritance : $root.Inheritance[message.valignInheritance] : message.valignInheritance;
         if (message.valign != null && message.hasOwnProperty("valign"))
             object.valign = options.enums === String ? $root.ProtoVerticalAlignment[message.valign] === undefined ? message.valign : $root.ProtoVerticalAlignment[message.valign] : message.valign;
         if (message.valignCode != null && message.hasOwnProperty("valignCode"))
             object.valignCode = message.valignCode;
         if (message.backgroundColorInheritance != null && message.hasOwnProperty("backgroundColorInheritance"))
-            object.backgroundColorInheritance = options.enums === String ? $root.ProtoInheritance[message.backgroundColorInheritance] === undefined ? message.backgroundColorInheritance : $root.ProtoInheritance[message.backgroundColorInheritance] : message.backgroundColorInheritance;
+            object.backgroundColorInheritance = options.enums === String ? $root.Inheritance[message.backgroundColorInheritance] === undefined ? message.backgroundColorInheritance : $root.Inheritance[message.backgroundColorInheritance] : message.backgroundColorInheritance;
         if (message.backgroundColor && message.backgroundColor.length) {
             object.backgroundColor = [];
             for (var j = 0; j < message.backgroundColor.length; ++j)
@@ -24416,55 +24434,55 @@ $root.ProtoTableElementProperties = (function() {
         if (message.backgroundColorCode != null && message.hasOwnProperty("backgroundColorCode"))
             object.backgroundColorCode = message.backgroundColorCode;
         if (message.paddingInheritance != null && message.hasOwnProperty("paddingInheritance"))
-            object.paddingInheritance = options.enums === String ? $root.ProtoInheritance[message.paddingInheritance] === undefined ? message.paddingInheritance : $root.ProtoInheritance[message.paddingInheritance] : message.paddingInheritance;
+            object.paddingInheritance = options.enums === String ? $root.Inheritance[message.paddingInheritance] === undefined ? message.paddingInheritance : $root.Inheritance[message.paddingInheritance] : message.paddingInheritance;
         if (message.padding != null && message.hasOwnProperty("padding"))
             object.padding = $root.ProtoSideMeasures.toObject(message.padding, options);
         if (message.paddingCode != null && message.hasOwnProperty("paddingCode"))
             object.paddingCode = message.paddingCode;
         if (message.borderInheritance != null && message.hasOwnProperty("borderInheritance"))
-            object.borderInheritance = options.enums === String ? $root.ProtoInheritance[message.borderInheritance] === undefined ? message.borderInheritance : $root.ProtoInheritance[message.borderInheritance] : message.borderInheritance;
+            object.borderInheritance = options.enums === String ? $root.Inheritance[message.borderInheritance] === undefined ? message.borderInheritance : $root.Inheritance[message.borderInheritance] : message.borderInheritance;
         if (message.border != null && message.hasOwnProperty("border"))
             object.border = $root.ProtoSideBorders.toObject(message.border, options);
         if (message.borderCode != null && message.hasOwnProperty("borderCode"))
             object.borderCode = message.borderCode;
         if (message.marginInheritance != null && message.hasOwnProperty("marginInheritance"))
-            object.marginInheritance = options.enums === String ? $root.ProtoInheritance[message.marginInheritance] === undefined ? message.marginInheritance : $root.ProtoInheritance[message.marginInheritance] : message.marginInheritance;
+            object.marginInheritance = options.enums === String ? $root.Inheritance[message.marginInheritance] === undefined ? message.marginInheritance : $root.Inheritance[message.marginInheritance] : message.marginInheritance;
         if (message.margin != null && message.hasOwnProperty("margin"))
             object.margin = $root.ProtoSideMeasures.toObject(message.margin, options);
         if (message.marginCode != null && message.hasOwnProperty("marginCode"))
             object.marginCode = message.marginCode;
         if (message.rotationInheritance != null && message.hasOwnProperty("rotationInheritance"))
-            object.rotationInheritance = options.enums === String ? $root.ProtoInheritance[message.rotationInheritance] === undefined ? message.rotationInheritance : $root.ProtoInheritance[message.rotationInheritance] : message.rotationInheritance;
+            object.rotationInheritance = options.enums === String ? $root.Inheritance[message.rotationInheritance] === undefined ? message.rotationInheritance : $root.Inheritance[message.rotationInheritance] : message.rotationInheritance;
         if (message.rotation != null && message.hasOwnProperty("rotation"))
             object.rotation = options.json && !isFinite(message.rotation) ? String(message.rotation) : message.rotation;
         if (message.rotationCode != null && message.hasOwnProperty("rotationCode"))
             object.rotationCode = message.rotationCode;
         if (message.defaultParagraphFormatUUIDInheritance != null && message.hasOwnProperty("defaultParagraphFormatUUIDInheritance"))
-            object.defaultParagraphFormatUUIDInheritance = options.enums === String ? $root.ProtoInheritance[message.defaultParagraphFormatUUIDInheritance] === undefined ? message.defaultParagraphFormatUUIDInheritance : $root.ProtoInheritance[message.defaultParagraphFormatUUIDInheritance] : message.defaultParagraphFormatUUIDInheritance;
+            object.defaultParagraphFormatUUIDInheritance = options.enums === String ? $root.Inheritance[message.defaultParagraphFormatUUIDInheritance] === undefined ? message.defaultParagraphFormatUUIDInheritance : $root.Inheritance[message.defaultParagraphFormatUUIDInheritance] : message.defaultParagraphFormatUUIDInheritance;
         if (message.defaultParagraphFormatUUID != null && message.hasOwnProperty("defaultParagraphFormatUUID"))
             object.defaultParagraphFormatUUID = message.defaultParagraphFormatUUID;
         if (message.defaultParagraphFormatUUIDCode != null && message.hasOwnProperty("defaultParagraphFormatUUIDCode"))
             object.defaultParagraphFormatUUIDCode = message.defaultParagraphFormatUUIDCode;
         if (message.tableContentGroupTypeInheritance != null && message.hasOwnProperty("tableContentGroupTypeInheritance"))
-            object.tableContentGroupTypeInheritance = options.enums === String ? $root.ProtoInheritance[message.tableContentGroupTypeInheritance] === undefined ? message.tableContentGroupTypeInheritance : $root.ProtoInheritance[message.tableContentGroupTypeInheritance] : message.tableContentGroupTypeInheritance;
+            object.tableContentGroupTypeInheritance = options.enums === String ? $root.Inheritance[message.tableContentGroupTypeInheritance] === undefined ? message.tableContentGroupTypeInheritance : $root.Inheritance[message.tableContentGroupTypeInheritance] : message.tableContentGroupTypeInheritance;
         if (message.tableContentGroupType != null && message.hasOwnProperty("tableContentGroupType"))
             object.tableContentGroupType = options.enums === String ? $root.ProtoTableContentGroupType[message.tableContentGroupType] === undefined ? message.tableContentGroupType : $root.ProtoTableContentGroupType[message.tableContentGroupType] : message.tableContentGroupType;
         if (message.tableContentGroupTypeCode != null && message.hasOwnProperty("tableContentGroupTypeCode"))
             object.tableContentGroupTypeCode = message.tableContentGroupTypeCode;
         if (message.cellTypeInheritance != null && message.hasOwnProperty("cellTypeInheritance"))
-            object.cellTypeInheritance = options.enums === String ? $root.ProtoInheritance[message.cellTypeInheritance] === undefined ? message.cellTypeInheritance : $root.ProtoInheritance[message.cellTypeInheritance] : message.cellTypeInheritance;
+            object.cellTypeInheritance = options.enums === String ? $root.Inheritance[message.cellTypeInheritance] === undefined ? message.cellTypeInheritance : $root.Inheritance[message.cellTypeInheritance] : message.cellTypeInheritance;
         if (message.cellType != null && message.hasOwnProperty("cellType"))
             object.cellType = options.enums === String ? $root.ProtoTableCellType[message.cellType] === undefined ? message.cellType : $root.ProtoTableCellType[message.cellType] : message.cellType;
         if (message.cellTypeCode != null && message.hasOwnProperty("cellTypeCode"))
             object.cellTypeCode = message.cellTypeCode;
         if (message.minRowHeightInheritance != null && message.hasOwnProperty("minRowHeightInheritance"))
-            object.minRowHeightInheritance = options.enums === String ? $root.ProtoInheritance[message.minRowHeightInheritance] === undefined ? message.minRowHeightInheritance : $root.ProtoInheritance[message.minRowHeightInheritance] : message.minRowHeightInheritance;
+            object.minRowHeightInheritance = options.enums === String ? $root.Inheritance[message.minRowHeightInheritance] === undefined ? message.minRowHeightInheritance : $root.Inheritance[message.minRowHeightInheritance] : message.minRowHeightInheritance;
         if (message.minRowHeight != null && message.hasOwnProperty("minRowHeight"))
             object.minRowHeight = $root.ProtoMeasure.toObject(message.minRowHeight, options);
         if (message.minRowHeightCode != null && message.hasOwnProperty("minRowHeightCode"))
             object.minRowHeightCode = message.minRowHeightCode;
         if (message.wsInheritance != null && message.hasOwnProperty("wsInheritance"))
-            object.wsInheritance = options.enums === String ? $root.ProtoInheritance[message.wsInheritance] === undefined ? message.wsInheritance : $root.ProtoInheritance[message.wsInheritance] : message.wsInheritance;
+            object.wsInheritance = options.enums === String ? $root.Inheritance[message.wsInheritance] === undefined ? message.wsInheritance : $root.Inheritance[message.wsInheritance] : message.wsInheritance;
         if (message.ws != null && message.hasOwnProperty("ws"))
             object.ws = $root.ProtoTableWS.toObject(message.ws, options);
         if (message.wsCode != null && message.hasOwnProperty("wsCode"))
@@ -24499,24 +24517,6 @@ $root.ProtoTableElementProperties = (function() {
     };
 
     return ProtoTableElementProperties;
-})();
-
-/**
- * ProtoInheritance enum.
- * @name ProtoInheritance
- * @enum {number}
- * @property {number} INHERITANCE_INHERIT=0 INHERITANCE_INHERIT value
- * @property {number} INHERITANCE_CODE=1 INHERITANCE_CODE value
- * @property {number} INHERITANCE_BIND_CODE=2 INHERITANCE_BIND_CODE value
- * @property {number} INHERITANCE_STATIC=3 INHERITANCE_STATIC value
- */
-$root.ProtoInheritance = (function() {
-    var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "INHERITANCE_INHERIT"] = 0;
-    values[valuesById[1] = "INHERITANCE_CODE"] = 1;
-    values[valuesById[2] = "INHERITANCE_BIND_CODE"] = 2;
-    values[valuesById[3] = "INHERITANCE_STATIC"] = 3;
-    return values;
 })();
 
 $root.ProtoText = (function() {
