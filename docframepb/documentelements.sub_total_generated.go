@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (SubTotal *ProtoSubTotal) ToNode(children ...Message) *Node {
+func (subTotal *ProtoSubTotal) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (SubTotal *ProtoSubTotal) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_SubTotal{
-			SubTotal: SubTotal,
+			SubTotal: subTotal,
 		},
 		Children: nodeChildren,
 	}

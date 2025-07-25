@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (InputFieldText *ProtoInputFieldText) ToNode(children ...Message) *Node {
+func (inputFieldText *ProtoInputFieldText) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (InputFieldText *ProtoInputFieldText) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_InputFieldText{
-			InputFieldText: InputFieldText,
+			InputFieldText: inputFieldText,
 		},
 		Children: nodeChildren,
 	}
@@ -19,7 +19,7 @@ func (InputFieldText *ProtoInputFieldText) ToNode(children ...Message) *Node {
 	return node
 }
 
-func (InputFieldDate *ProtoInputFieldDate) ToNode(children ...Message) *Node {
+func (inputFieldDate *ProtoInputFieldDate) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -27,7 +27,7 @@ func (InputFieldDate *ProtoInputFieldDate) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_InputFieldDate{
-			InputFieldDate: InputFieldDate,
+			InputFieldDate: inputFieldDate,
 		},
 		Children: nodeChildren,
 	}
@@ -35,7 +35,7 @@ func (InputFieldDate *ProtoInputFieldDate) ToNode(children ...Message) *Node {
 	return node
 }
 
-func (InputFieldCheckbox *ProtoInputFieldCheckbox) ToNode(children ...Message) *Node {
+func (inputFieldCheckbox *ProtoInputFieldCheckbox) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -43,7 +43,7 @@ func (InputFieldCheckbox *ProtoInputFieldCheckbox) ToNode(children ...Message) *
 
 	node := &Node{
 		Object: &Node_InputFieldCheckbox{
-			InputFieldCheckbox: InputFieldCheckbox,
+			InputFieldCheckbox: inputFieldCheckbox,
 		},
 		Children: nodeChildren,
 	}
@@ -51,7 +51,7 @@ func (InputFieldCheckbox *ProtoInputFieldCheckbox) ToNode(children ...Message) *
 	return node
 }
 
-func (InputFieldLabel *ProtoInputFieldLabel) ToNode(children ...Message) *Node {
+func (inputFieldLabel *ProtoInputFieldLabel) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -59,7 +59,7 @@ func (InputFieldLabel *ProtoInputFieldLabel) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_InputFieldLabel{
-			InputFieldLabel: InputFieldLabel,
+			InputFieldLabel: inputFieldLabel,
 		},
 		Children: nodeChildren,
 	}
@@ -67,7 +67,7 @@ func (InputFieldLabel *ProtoInputFieldLabel) ToNode(children ...Message) *Node {
 	return node
 }
 
-func (InputFieldDropdown *ProtoInputFieldDropdown) ToNode(children ...Message) *Node {
+func (inputFieldDropdown *ProtoInputFieldDropdown) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -75,7 +75,7 @@ func (InputFieldDropdown *ProtoInputFieldDropdown) ToNode(children ...Message) *
 
 	node := &Node{
 		Object: &Node_InputFieldDropdown{
-			InputFieldDropdown: InputFieldDropdown,
+			InputFieldDropdown: inputFieldDropdown,
 		},
 		Children: nodeChildren,
 	}

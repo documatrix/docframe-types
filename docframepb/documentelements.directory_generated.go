@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (Directory *ProtoDirectory) ToNode(children ...Message) *Node {
+func (directory *ProtoDirectory) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (Directory *ProtoDirectory) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_Directory{
-			Directory: Directory,
+			Directory: directory,
 		},
 		Children: nodeChildren,
 	}

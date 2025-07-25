@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (ParagraphSetDefault *ProtoParagraphSetDefault) ToNode(children ...Message) *Node {
+func (paragraphSetDefault *ProtoParagraphSetDefault) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (ParagraphSetDefault *ProtoParagraphSetDefault) ToNode(children ...Message)
 
 	node := &Node{
 		Object: &Node_ParagraphSetDefault{
-			ParagraphSetDefault: ParagraphSetDefault,
+			ParagraphSetDefault: paragraphSetDefault,
 		},
 		Children: nodeChildren,
 	}

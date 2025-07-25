@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (Indentation *ProtoIndentation) ToNode(children ...Message) *Node {
+func (indentation *ProtoIndentation) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (Indentation *ProtoIndentation) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_Indentation{
-			Indentation: Indentation,
+			Indentation: indentation,
 		},
 		Children: nodeChildren,
 	}

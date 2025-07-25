@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (DynamicTemplate *ProtoDynamicTemplate) ToNode(children ...Message) *Node {
+func (dynamicTemplate *ProtoDynamicTemplate) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (DynamicTemplate *ProtoDynamicTemplate) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_DynamicTemplate{
-			DynamicTemplate: DynamicTemplate,
+			DynamicTemplate: dynamicTemplate,
 		},
 		Children: nodeChildren,
 	}

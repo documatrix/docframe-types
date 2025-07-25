@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (PageCondition *ProtoPageCondition) ToNode(children ...Message) *Node {
+func (pageCondition *ProtoPageCondition) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (PageCondition *ProtoPageCondition) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_PageCondition{
-			PageCondition: PageCondition,
+			PageCondition: pageCondition,
 		},
 		Children: nodeChildren,
 	}

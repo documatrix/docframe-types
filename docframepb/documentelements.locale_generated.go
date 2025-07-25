@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (Locale *ProtoLocale) ToNode(children ...Message) *Node {
+func (locale *ProtoLocale) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (Locale *ProtoLocale) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_Locale{
-			Locale: Locale,
+			Locale: locale,
 		},
 		Children: nodeChildren,
 	}

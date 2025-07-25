@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (DoctypeScript *ProtoDoctypeScript) ToNode(children ...Message) *Node {
+func (doctypeScript *ProtoDoctypeScript) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (DoctypeScript *ProtoDoctypeScript) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_DoctypeScript{
-			DoctypeScript: DoctypeScript,
+			DoctypeScript: doctypeScript,
 		},
 		Children: nodeChildren,
 	}

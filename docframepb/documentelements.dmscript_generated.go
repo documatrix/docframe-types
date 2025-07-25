@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (DmScript *ProtoDmScript) ToNode(children ...Message) *Node {
+func (dmScript *ProtoDmScript) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (DmScript *ProtoDmScript) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_DmScript{
-			DmScript: DmScript,
+			DmScript: dmScript,
 		},
 		Children: nodeChildren,
 	}

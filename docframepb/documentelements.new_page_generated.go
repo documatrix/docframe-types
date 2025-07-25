@@ -3,7 +3,7 @@
 package docframepb
 
 
-func (NewPage *ProtoNewPage) ToNode(children ...Message) *Node {
+func (newPage *ProtoNewPage) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {
 		nodeChildren[i] = c.ToNode()
@@ -11,7 +11,7 @@ func (NewPage *ProtoNewPage) ToNode(children ...Message) *Node {
 
 	node := &Node{
 		Object: &Node_NewPage{
-			NewPage: NewPage,
+			NewPage: newPage,
 		},
 		Children: nodeChildren,
 	}
