@@ -6693,6 +6693,9 @@ export interface IProtoTable {
 
     /** ProtoTable comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoTable tableProperties */
+    tableProperties?: (IProtoTableElementProperties|null);
 }
 
 /** Represents a ProtoTable. */
@@ -6724,6 +6727,9 @@ export class ProtoTable implements IProtoTable {
 
     /** ProtoTable comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoTable tableProperties. */
+    public tableProperties?: (IProtoTableElementProperties|null);
 
     /**
      * Creates a new ProtoTable instance using the specified properties.
@@ -7164,6 +7170,9 @@ export interface IProtoTableContentGroup {
 
     /** ProtoTableContentGroup comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoTableContentGroup tableProperties */
+    tableProperties?: (IProtoTableElementProperties|null);
 }
 
 /** Represents a ProtoTableContentGroup. */
@@ -7186,6 +7195,9 @@ export class ProtoTableContentGroup implements IProtoTableContentGroup {
 
     /** ProtoTableContentGroup comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoTableContentGroup tableProperties. */
+    public tableProperties?: (IProtoTableElementProperties|null);
 
     /**
      * Creates a new ProtoTableContentGroup instance using the specified properties.
@@ -7506,6 +7518,9 @@ export interface IProtoTableRow {
 
     /** ProtoTableRow comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoTableRow tableProperties */
+    tableProperties?: (IProtoTableElementProperties|null);
 }
 
 /** Represents a ProtoTableRow. */
@@ -7531,6 +7546,9 @@ export class ProtoTableRow implements IProtoTableRow {
 
     /** ProtoTableRow comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoTableRow tableProperties. */
+    public tableProperties?: (IProtoTableElementProperties|null);
 
     /**
      * Creates a new ProtoTableRow instance using the specified properties.
@@ -7973,6 +7991,9 @@ export interface IProtoTableCell {
 
     /** ProtoTableCell comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoTableCell tableProperties */
+    tableProperties?: (IProtoTableElementProperties|null);
 }
 
 /** Represents a ProtoTableCell. */
@@ -8004,6 +8025,9 @@ export class ProtoTableCell implements IProtoTableCell {
 
     /** ProtoTableCell comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoTableCell tableProperties. */
+    public tableProperties?: (IProtoTableElementProperties|null);
 
     /**
      * Creates a new ProtoTableCell instance using the specified properties.
