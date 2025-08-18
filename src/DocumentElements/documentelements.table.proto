@@ -10,6 +10,7 @@ message ProtoTable {
   Node carryOver = 5;
   Node subTotal = 6;
   repeated string comChannelUUIDs = 7;
+  ProtoTableElementProperties properties = 8;
 }
 
 message ProtoTableConfig {
@@ -53,6 +54,7 @@ message ProtoTableContentGroup {
 
   ProtoTableContentGroupSettings settings = 3;
   repeated string comChannelUUIDs = 4;
+  ProtoTableElementProperties properties = 5;
 }
 
 message ProtoTableContentGroupConfig {
@@ -82,6 +84,7 @@ message ProtoTableRow {
   ProtoTableRowSettings settings = 3;
   ProtoBoxedUint32 rowConfigNumber = 4;
   repeated string comChannelUUIDs = 5;
+  ProtoTableElementProperties properties = 6;
 }
 
 message ProtoTableRowConfig {
@@ -127,6 +130,7 @@ message ProtoTableCell {
   // Indicates if this table cell should be merged with the cell above.
   bool mergedUp = 6;
   repeated string comChannelUUIDs = 7;
+  ProtoTableElementProperties properties = 8;
 }
 
 message ProtoTableCellConfig {

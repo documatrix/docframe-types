@@ -576,6 +576,7 @@ string configName = 4;
 Node carryOver = 5;
 Node subTotal = 6;
 repeated string comChannelUUIDs = 7;
+ProtoTableElementProperties properties = 8;
 }
 
 message ProtoTableConfig {
@@ -613,6 +614,7 @@ ProtoDocumentElement parent = 2;
 
 ProtoTableContentGroupSettings settings = 3;
 repeated string comChannelUUIDs = 4;
+ProtoTableElementProperties properties = 5;
 }
 
 message ProtoTableContentGroupConfig {
@@ -637,6 +639,7 @@ ProtoDocumentElement parent = 2;
 ProtoTableRowSettings settings = 3;
 ProtoBoxedUint32 rowConfigNumber = 4;
 repeated string comChannelUUIDs = 5;
+ProtoTableElementProperties properties = 6;
 }
 
 message ProtoTableRowConfig {
@@ -674,6 +677,7 @@ ProtoBoxedUint32 cellConfigNumber = 4;
 bool mergedLeft = 5;
 bool mergedUp = 6;
 repeated string comChannelUUIDs = 7;
+ProtoTableElementProperties properties = 8;
 }
 
 message ProtoTableCellConfig {
