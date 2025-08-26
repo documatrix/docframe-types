@@ -1167,6 +1167,7 @@ uint32 paperCount = 2;
 ProtoPageMode pageMode = 3;
 ProtoPageOrientation pageOrientation = 4;
 repeated string comChannelUUIDs = 5;
+string paperTrayUUID = 6;
 }
 message ProtoIndentation {
 repeated ProtoDocumentElement _children = 1;

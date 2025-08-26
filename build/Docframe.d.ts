@@ -12038,6 +12038,9 @@ export interface IProtoNewPage {
 
     /** ProtoNewPage comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoNewPage paperTrayUUID */
+    paperTrayUUID?: (string|null);
 }
 
 /** Represents a ProtoNewPage. */
@@ -12063,6 +12066,9 @@ export class ProtoNewPage implements IProtoNewPage {
 
     /** ProtoNewPage comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoNewPage paperTrayUUID. */
+    public paperTrayUUID: string;
 
     /**
      * Creates a new ProtoNewPage instance using the specified properties.
