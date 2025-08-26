@@ -35119,6 +35119,7 @@ $root.ProtoNewPage = (function() {
      * @property {ProtoPageMode|null} [pageMode] ProtoNewPage pageMode
      * @property {ProtoPageOrientation|null} [pageOrientation] ProtoNewPage pageOrientation
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoNewPage comChannelUUIDs
+     * @property {string|null} [trayUUID] ProtoNewPage trayUUID
      */
 
     /**
@@ -35178,6 +35179,14 @@ $root.ProtoNewPage = (function() {
     ProtoNewPage.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoNewPage trayUUID.
+     * @member {string} trayUUID
+     * @memberof ProtoNewPage
+     * @instance
+     */
+    ProtoNewPage.prototype.trayUUID = "";
+
+    /**
      * Creates a new ProtoNewPage instance using the specified properties.
      * @function create
      * @memberof ProtoNewPage
@@ -35212,6 +35221,8 @@ $root.ProtoNewPage = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 5, wireType 2 =*/42).string(message.comChannelUUIDs[i]);
+        if (message.trayUUID != null && Object.hasOwnProperty.call(message, "trayUUID"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.trayUUID);
         return writer;
     };
 
@@ -35266,6 +35277,10 @@ $root.ProtoNewPage = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 6: {
+                    message.trayUUID = reader.string();
                     break;
                 }
             default:
@@ -35336,6 +35351,9 @@ $root.ProtoNewPage = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.trayUUID != null && message.hasOwnProperty("trayUUID"))
+            if (!$util.isString(message.trayUUID))
+                return "trayUUID: string expected";
         return null;
     };
 
@@ -35410,6 +35428,8 @@ $root.ProtoNewPage = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.trayUUID != null)
+            message.trayUUID = String(object.trayUUID);
         return message;
     };
 
@@ -35433,6 +35453,7 @@ $root.ProtoNewPage = (function() {
             object.paperCount = 0;
             object.pageMode = options.enums === String ? "NEXT_PAGE" : 0;
             object.pageOrientation = options.enums === String ? "UNSET" : 0;
+            object.trayUUID = "";
         }
         if (message.paperTray != null && message.hasOwnProperty("paperTray"))
             object.paperTray = message.paperTray;
@@ -35447,6 +35468,8 @@ $root.ProtoNewPage = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.trayUUID != null && message.hasOwnProperty("trayUUID"))
+            object.trayUUID = message.trayUUID;
         return object;
     };
 

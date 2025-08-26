@@ -18,4 +18,5 @@ message ProtoNewPage {
   ProtoPageMode pageMode = 3;
   ProtoPageOrientation pageOrientation = 4;
   repeated string comChannelUUIDs = 5;
+  string trayUUID = 6;
 }
