@@ -8562,7 +8562,7 @@ export interface IProtoTableElementProperties {
     borderTopColorInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties borderTopColor */
-    borderTopColor?: (IProtoMeasure|null);
+    borderTopColor?: (IProtoColor|null);
 
     /** ProtoTableElementProperties borderTopColorCode */
     borderTopColorCode?: (string|null);
@@ -8580,7 +8580,7 @@ export interface IProtoTableElementProperties {
     borderRightColorInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties borderRightColor */
-    borderRightColor?: (IProtoMeasure|null);
+    borderRightColor?: (IProtoColor|null);
 
     /** ProtoTableElementProperties borderRightColorCode */
     borderRightColorCode?: (string|null);
@@ -8598,7 +8598,7 @@ export interface IProtoTableElementProperties {
     borderBottomColorInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties borderBottomColor */
-    borderBottomColor?: (IProtoMeasure|null);
+    borderBottomColor?: (IProtoColor|null);
 
     /** ProtoTableElementProperties borderBottomColorCode */
     borderBottomColorCode?: (string|null);
@@ -8616,7 +8616,7 @@ export interface IProtoTableElementProperties {
     borderLeftColorInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties borderLeftColor */
-    borderLeftColor?: (IProtoMeasure|null);
+    borderLeftColor?: (IProtoColor|null);
 
     /** ProtoTableElementProperties borderLeftColorCode */
     borderLeftColorCode?: (string|null);
@@ -8806,7 +8806,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public borderTopColorInheritance: Inheritance;
 
     /** ProtoTableElementProperties borderTopColor. */
-    public borderTopColor?: (IProtoMeasure|null);
+    public borderTopColor?: (IProtoColor|null);
 
     /** ProtoTableElementProperties borderTopColorCode. */
     public borderTopColorCode: string;
@@ -8824,7 +8824,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public borderRightColorInheritance: Inheritance;
 
     /** ProtoTableElementProperties borderRightColor. */
-    public borderRightColor?: (IProtoMeasure|null);
+    public borderRightColor?: (IProtoColor|null);
 
     /** ProtoTableElementProperties borderRightColorCode. */
     public borderRightColorCode: string;
@@ -8842,7 +8842,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public borderBottomColorInheritance: Inheritance;
 
     /** ProtoTableElementProperties borderBottomColor. */
-    public borderBottomColor?: (IProtoMeasure|null);
+    public borderBottomColor?: (IProtoColor|null);
 
     /** ProtoTableElementProperties borderBottomColorCode. */
     public borderBottomColorCode: string;
@@ -8860,7 +8860,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public borderLeftColorInheritance: Inheritance;
 
     /** ProtoTableElementProperties borderLeftColor. */
-    public borderLeftColor?: (IProtoMeasure|null);
+    public borderLeftColor?: (IProtoColor|null);
 
     /** ProtoTableElementProperties borderLeftColorCode. */
     public borderLeftColorCode: string;

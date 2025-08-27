@@ -7200,25 +7200,25 @@ type ProtoTableElementProperties struct {
 	PaddingLeft                           *ProtoMeasure              `protobuf:"bytes,23,opt,name=paddingLeft,proto3" json:"paddingLeft,omitempty"`
 	PaddingLeftCode                       string                     `protobuf:"bytes,24,opt,name=paddingLeftCode,proto3" json:"paddingLeftCode,omitempty"`
 	BorderTopColorInheritance             Inheritance                `protobuf:"varint,25,opt,name=borderTopColorInheritance,proto3,enum=Inheritance" json:"borderTopColorInheritance,omitempty"`
-	BorderTopColor                        *ProtoMeasure              `protobuf:"bytes,26,opt,name=borderTopColor,proto3" json:"borderTopColor,omitempty"`
+	BorderTopColor                        *ProtoColor                `protobuf:"bytes,26,opt,name=borderTopColor,proto3" json:"borderTopColor,omitempty"`
 	BorderTopColorCode                    string                     `protobuf:"bytes,27,opt,name=borderTopColorCode,proto3" json:"borderTopColorCode,omitempty"`
 	BorderTopWeightInheritance            Inheritance                `protobuf:"varint,28,opt,name=borderTopWeightInheritance,proto3,enum=Inheritance" json:"borderTopWeightInheritance,omitempty"`
 	BorderTopWeight                       *ProtoMeasure              `protobuf:"bytes,29,opt,name=borderTopWeight,proto3" json:"borderTopWeight,omitempty"`
 	BorderTopWeightCode                   string                     `protobuf:"bytes,30,opt,name=borderTopWeightCode,proto3" json:"borderTopWeightCode,omitempty"`
 	BorderRightColorInheritance           Inheritance                `protobuf:"varint,31,opt,name=borderRightColorInheritance,proto3,enum=Inheritance" json:"borderRightColorInheritance,omitempty"`
-	BorderRightColor                      *ProtoMeasure              `protobuf:"bytes,32,opt,name=borderRightColor,proto3" json:"borderRightColor,omitempty"`
+	BorderRightColor                      *ProtoColor                `protobuf:"bytes,32,opt,name=borderRightColor,proto3" json:"borderRightColor,omitempty"`
 	BorderRightColorCode                  string                     `protobuf:"bytes,33,opt,name=borderRightColorCode,proto3" json:"borderRightColorCode,omitempty"`
 	BorderRightWeightInheritance          Inheritance                `protobuf:"varint,34,opt,name=borderRightWeightInheritance,proto3,enum=Inheritance" json:"borderRightWeightInheritance,omitempty"`
 	BorderRightWeight                     *ProtoMeasure              `protobuf:"bytes,35,opt,name=borderRightWeight,proto3" json:"borderRightWeight,omitempty"`
 	BorderRightWeightCode                 string                     `protobuf:"bytes,36,opt,name=borderRightWeightCode,proto3" json:"borderRightWeightCode,omitempty"`
 	BorderBottomColorInheritance          Inheritance                `protobuf:"varint,37,opt,name=borderBottomColorInheritance,proto3,enum=Inheritance" json:"borderBottomColorInheritance,omitempty"`
-	BorderBottomColor                     *ProtoMeasure              `protobuf:"bytes,38,opt,name=borderBottomColor,proto3" json:"borderBottomColor,omitempty"`
+	BorderBottomColor                     *ProtoColor                `protobuf:"bytes,38,opt,name=borderBottomColor,proto3" json:"borderBottomColor,omitempty"`
 	BorderBottomColorCode                 string                     `protobuf:"bytes,39,opt,name=borderBottomColorCode,proto3" json:"borderBottomColorCode,omitempty"`
 	BorderBottomWeightInheritance         Inheritance                `protobuf:"varint,40,opt,name=borderBottomWeightInheritance,proto3,enum=Inheritance" json:"borderBottomWeightInheritance,omitempty"`
 	BorderBottomWeight                    *ProtoMeasure              `protobuf:"bytes,41,opt,name=borderBottomWeight,proto3" json:"borderBottomWeight,omitempty"`
 	BorderBottomWeightCode                string                     `protobuf:"bytes,42,opt,name=borderBottomWeightCode,proto3" json:"borderBottomWeightCode,omitempty"`
 	BorderLeftColorInheritance            Inheritance                `protobuf:"varint,43,opt,name=borderLeftColorInheritance,proto3,enum=Inheritance" json:"borderLeftColorInheritance,omitempty"`
-	BorderLeftColor                       *ProtoMeasure              `protobuf:"bytes,44,opt,name=borderLeftColor,proto3" json:"borderLeftColor,omitempty"`
+	BorderLeftColor                       *ProtoColor                `protobuf:"bytes,44,opt,name=borderLeftColor,proto3" json:"borderLeftColor,omitempty"`
 	BorderLeftColorCode                   string                     `protobuf:"bytes,45,opt,name=borderLeftColorCode,proto3" json:"borderLeftColorCode,omitempty"`
 	BorderLeftWeightInheritance           Inheritance                `protobuf:"varint,46,opt,name=borderLeftWeightInheritance,proto3,enum=Inheritance" json:"borderLeftWeightInheritance,omitempty"`
 	BorderLeftWeight                      *ProtoMeasure              `protobuf:"bytes,47,opt,name=borderLeftWeight,proto3" json:"borderLeftWeight,omitempty"`
@@ -7462,7 +7462,7 @@ func (x *ProtoTableElementProperties) GetBorderTopColorInheritance() Inheritance
 	return Inheritance_INHERITANCE_INHERIT
 }
 
-func (x *ProtoTableElementProperties) GetBorderTopColor() *ProtoMeasure {
+func (x *ProtoTableElementProperties) GetBorderTopColor() *ProtoColor {
 	if x != nil {
 		return x.BorderTopColor
 	}
@@ -7504,7 +7504,7 @@ func (x *ProtoTableElementProperties) GetBorderRightColorInheritance() Inheritan
 	return Inheritance_INHERITANCE_INHERIT
 }
 
-func (x *ProtoTableElementProperties) GetBorderRightColor() *ProtoMeasure {
+func (x *ProtoTableElementProperties) GetBorderRightColor() *ProtoColor {
 	if x != nil {
 		return x.BorderRightColor
 	}
@@ -7546,7 +7546,7 @@ func (x *ProtoTableElementProperties) GetBorderBottomColorInheritance() Inherita
 	return Inheritance_INHERITANCE_INHERIT
 }
 
-func (x *ProtoTableElementProperties) GetBorderBottomColor() *ProtoMeasure {
+func (x *ProtoTableElementProperties) GetBorderBottomColor() *ProtoColor {
 	if x != nil {
 		return x.BorderBottomColor
 	}
@@ -7588,7 +7588,7 @@ func (x *ProtoTableElementProperties) GetBorderLeftColorInheritance() Inheritanc
 	return Inheritance_INHERITANCE_INHERIT
 }
 
-func (x *ProtoTableElementProperties) GetBorderLeftColor() *ProtoMeasure {
+func (x *ProtoTableElementProperties) GetBorderLeftColor() *ProtoColor {
 	if x != nil {
 		return x.BorderLeftColor
 	}
@@ -13362,7 +13362,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\fProtoTableWS\x12&\n" +
 	"\x0eminLinesBefore\x18\x01 \x01(\rR\x0eminLinesBefore\x12$\n" +
 	"\rminLinesAfter\x18\x02 \x01(\rR\rminLinesAfter\x12\x1a\n" +
-	"\bpriority\x18\x03 \x01(\rR\bpriority\"\xe5\"\n" +
+	"\bpriority\x18\x03 \x01(\rR\bpriority\"\xdd\"\n" +
 	"\x1bProtoTableElementProperties\x128\n" +
 	"\x10widthInheritance\x18\x01 \x01(\x0e2\f.InheritanceR\x10widthInheritance\x12#\n" +
 	"\x05width\x18\x02 \x01(\v2\r.ProtoMeasureR\x05width\x12\x1c\n" +
@@ -13393,26 +13393,26 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x16paddingLeftInheritance\x18\x16 \x01(\x0e2\f.InheritanceR\x16paddingLeftInheritance\x12/\n" +
 	"\vpaddingLeft\x18\x17 \x01(\v2\r.ProtoMeasureR\vpaddingLeft\x12(\n" +
 	"\x0fpaddingLeftCode\x18\x18 \x01(\tR\x0fpaddingLeftCode\x12J\n" +
-	"\x19borderTopColorInheritance\x18\x19 \x01(\x0e2\f.InheritanceR\x19borderTopColorInheritance\x125\n" +
-	"\x0eborderTopColor\x18\x1a \x01(\v2\r.ProtoMeasureR\x0eborderTopColor\x12.\n" +
+	"\x19borderTopColorInheritance\x18\x19 \x01(\x0e2\f.InheritanceR\x19borderTopColorInheritance\x123\n" +
+	"\x0eborderTopColor\x18\x1a \x01(\v2\v.ProtoColorR\x0eborderTopColor\x12.\n" +
 	"\x12borderTopColorCode\x18\x1b \x01(\tR\x12borderTopColorCode\x12L\n" +
 	"\x1aborderTopWeightInheritance\x18\x1c \x01(\x0e2\f.InheritanceR\x1aborderTopWeightInheritance\x127\n" +
 	"\x0fborderTopWeight\x18\x1d \x01(\v2\r.ProtoMeasureR\x0fborderTopWeight\x120\n" +
 	"\x13borderTopWeightCode\x18\x1e \x01(\tR\x13borderTopWeightCode\x12N\n" +
-	"\x1bborderRightColorInheritance\x18\x1f \x01(\x0e2\f.InheritanceR\x1bborderRightColorInheritance\x129\n" +
-	"\x10borderRightColor\x18  \x01(\v2\r.ProtoMeasureR\x10borderRightColor\x122\n" +
+	"\x1bborderRightColorInheritance\x18\x1f \x01(\x0e2\f.InheritanceR\x1bborderRightColorInheritance\x127\n" +
+	"\x10borderRightColor\x18  \x01(\v2\v.ProtoColorR\x10borderRightColor\x122\n" +
 	"\x14borderRightColorCode\x18! \x01(\tR\x14borderRightColorCode\x12P\n" +
 	"\x1cborderRightWeightInheritance\x18\" \x01(\x0e2\f.InheritanceR\x1cborderRightWeightInheritance\x12;\n" +
 	"\x11borderRightWeight\x18# \x01(\v2\r.ProtoMeasureR\x11borderRightWeight\x124\n" +
 	"\x15borderRightWeightCode\x18$ \x01(\tR\x15borderRightWeightCode\x12P\n" +
-	"\x1cborderBottomColorInheritance\x18% \x01(\x0e2\f.InheritanceR\x1cborderBottomColorInheritance\x12;\n" +
-	"\x11borderBottomColor\x18& \x01(\v2\r.ProtoMeasureR\x11borderBottomColor\x124\n" +
+	"\x1cborderBottomColorInheritance\x18% \x01(\x0e2\f.InheritanceR\x1cborderBottomColorInheritance\x129\n" +
+	"\x11borderBottomColor\x18& \x01(\v2\v.ProtoColorR\x11borderBottomColor\x124\n" +
 	"\x15borderBottomColorCode\x18' \x01(\tR\x15borderBottomColorCode\x12R\n" +
 	"\x1dborderBottomWeightInheritance\x18( \x01(\x0e2\f.InheritanceR\x1dborderBottomWeightInheritance\x12=\n" +
 	"\x12borderBottomWeight\x18) \x01(\v2\r.ProtoMeasureR\x12borderBottomWeight\x126\n" +
 	"\x16borderBottomWeightCode\x18* \x01(\tR\x16borderBottomWeightCode\x12L\n" +
-	"\x1aborderLeftColorInheritance\x18+ \x01(\x0e2\f.InheritanceR\x1aborderLeftColorInheritance\x127\n" +
-	"\x0fborderLeftColor\x18, \x01(\v2\r.ProtoMeasureR\x0fborderLeftColor\x120\n" +
+	"\x1aborderLeftColorInheritance\x18+ \x01(\x0e2\f.InheritanceR\x1aborderLeftColorInheritance\x125\n" +
+	"\x0fborderLeftColor\x18, \x01(\v2\v.ProtoColorR\x0fborderLeftColor\x120\n" +
 	"\x13borderLeftColorCode\x18- \x01(\tR\x13borderLeftColorCode\x12N\n" +
 	"\x1bborderLeftWeightInheritance\x18. \x01(\x0e2\f.InheritanceR\x1bborderLeftWeightInheritance\x129\n" +
 	"\x10borderLeftWeight\x18/ \x01(\v2\r.ProtoMeasureR\x10borderLeftWeight\x122\n" +
@@ -14517,19 +14517,19 @@ var file_build_docframe_proto_depIdxs = []int32{
 	13,  // 211: ProtoTableElementProperties.paddingLeftInheritance:type_name -> Inheritance
 	39,  // 212: ProtoTableElementProperties.paddingLeft:type_name -> ProtoMeasure
 	13,  // 213: ProtoTableElementProperties.borderTopColorInheritance:type_name -> Inheritance
-	39,  // 214: ProtoTableElementProperties.borderTopColor:type_name -> ProtoMeasure
+	46,  // 214: ProtoTableElementProperties.borderTopColor:type_name -> ProtoColor
 	13,  // 215: ProtoTableElementProperties.borderTopWeightInheritance:type_name -> Inheritance
 	39,  // 216: ProtoTableElementProperties.borderTopWeight:type_name -> ProtoMeasure
 	13,  // 217: ProtoTableElementProperties.borderRightColorInheritance:type_name -> Inheritance
-	39,  // 218: ProtoTableElementProperties.borderRightColor:type_name -> ProtoMeasure
+	46,  // 218: ProtoTableElementProperties.borderRightColor:type_name -> ProtoColor
 	13,  // 219: ProtoTableElementProperties.borderRightWeightInheritance:type_name -> Inheritance
 	39,  // 220: ProtoTableElementProperties.borderRightWeight:type_name -> ProtoMeasure
 	13,  // 221: ProtoTableElementProperties.borderBottomColorInheritance:type_name -> Inheritance
-	39,  // 222: ProtoTableElementProperties.borderBottomColor:type_name -> ProtoMeasure
+	46,  // 222: ProtoTableElementProperties.borderBottomColor:type_name -> ProtoColor
 	13,  // 223: ProtoTableElementProperties.borderBottomWeightInheritance:type_name -> Inheritance
 	39,  // 224: ProtoTableElementProperties.borderBottomWeight:type_name -> ProtoMeasure
 	13,  // 225: ProtoTableElementProperties.borderLeftColorInheritance:type_name -> Inheritance
-	39,  // 226: ProtoTableElementProperties.borderLeftColor:type_name -> ProtoMeasure
+	46,  // 226: ProtoTableElementProperties.borderLeftColor:type_name -> ProtoColor
 	13,  // 227: ProtoTableElementProperties.borderLeftWeightInheritance:type_name -> Inheritance
 	39,  // 228: ProtoTableElementProperties.borderLeftWeight:type_name -> ProtoMeasure
 	13,  // 229: ProtoTableElementProperties.marginTopInheritance:type_name -> Inheritance

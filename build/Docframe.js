@@ -23041,25 +23041,25 @@ $root.ProtoTableElementProperties = (function() {
      * @property {IProtoMeasure|null} [paddingLeft] ProtoTableElementProperties paddingLeft
      * @property {string|null} [paddingLeftCode] ProtoTableElementProperties paddingLeftCode
      * @property {Inheritance|null} [borderTopColorInheritance] ProtoTableElementProperties borderTopColorInheritance
-     * @property {IProtoMeasure|null} [borderTopColor] ProtoTableElementProperties borderTopColor
+     * @property {IProtoColor|null} [borderTopColor] ProtoTableElementProperties borderTopColor
      * @property {string|null} [borderTopColorCode] ProtoTableElementProperties borderTopColorCode
      * @property {Inheritance|null} [borderTopWeightInheritance] ProtoTableElementProperties borderTopWeightInheritance
      * @property {IProtoMeasure|null} [borderTopWeight] ProtoTableElementProperties borderTopWeight
      * @property {string|null} [borderTopWeightCode] ProtoTableElementProperties borderTopWeightCode
      * @property {Inheritance|null} [borderRightColorInheritance] ProtoTableElementProperties borderRightColorInheritance
-     * @property {IProtoMeasure|null} [borderRightColor] ProtoTableElementProperties borderRightColor
+     * @property {IProtoColor|null} [borderRightColor] ProtoTableElementProperties borderRightColor
      * @property {string|null} [borderRightColorCode] ProtoTableElementProperties borderRightColorCode
      * @property {Inheritance|null} [borderRightWeightInheritance] ProtoTableElementProperties borderRightWeightInheritance
      * @property {IProtoMeasure|null} [borderRightWeight] ProtoTableElementProperties borderRightWeight
      * @property {string|null} [borderRightWeightCode] ProtoTableElementProperties borderRightWeightCode
      * @property {Inheritance|null} [borderBottomColorInheritance] ProtoTableElementProperties borderBottomColorInheritance
-     * @property {IProtoMeasure|null} [borderBottomColor] ProtoTableElementProperties borderBottomColor
+     * @property {IProtoColor|null} [borderBottomColor] ProtoTableElementProperties borderBottomColor
      * @property {string|null} [borderBottomColorCode] ProtoTableElementProperties borderBottomColorCode
      * @property {Inheritance|null} [borderBottomWeightInheritance] ProtoTableElementProperties borderBottomWeightInheritance
      * @property {IProtoMeasure|null} [borderBottomWeight] ProtoTableElementProperties borderBottomWeight
      * @property {string|null} [borderBottomWeightCode] ProtoTableElementProperties borderBottomWeightCode
      * @property {Inheritance|null} [borderLeftColorInheritance] ProtoTableElementProperties borderLeftColorInheritance
-     * @property {IProtoMeasure|null} [borderLeftColor] ProtoTableElementProperties borderLeftColor
+     * @property {IProtoColor|null} [borderLeftColor] ProtoTableElementProperties borderLeftColor
      * @property {string|null} [borderLeftColorCode] ProtoTableElementProperties borderLeftColorCode
      * @property {Inheritance|null} [borderLeftWeightInheritance] ProtoTableElementProperties borderLeftWeightInheritance
      * @property {IProtoMeasure|null} [borderLeftWeight] ProtoTableElementProperties borderLeftWeight
@@ -23314,7 +23314,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties borderTopColor.
-     * @member {IProtoMeasure|null|undefined} borderTopColor
+     * @member {IProtoColor|null|undefined} borderTopColor
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23362,7 +23362,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties borderRightColor.
-     * @member {IProtoMeasure|null|undefined} borderRightColor
+     * @member {IProtoColor|null|undefined} borderRightColor
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23410,7 +23410,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties borderBottomColor.
-     * @member {IProtoMeasure|null|undefined} borderBottomColor
+     * @member {IProtoColor|null|undefined} borderBottomColor
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23458,7 +23458,7 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties borderLeftColor.
-     * @member {IProtoMeasure|null|undefined} borderLeftColor
+     * @member {IProtoColor|null|undefined} borderLeftColor
      * @memberof ProtoTableElementProperties
      * @instance
      */
@@ -23812,7 +23812,7 @@ $root.ProtoTableElementProperties = (function() {
         if (message.borderTopColorInheritance != null && Object.hasOwnProperty.call(message, "borderTopColorInheritance"))
             writer.uint32(/* id 25, wireType 0 =*/200).int32(message.borderTopColorInheritance);
         if (message.borderTopColor != null && Object.hasOwnProperty.call(message, "borderTopColor"))
-            $root.ProtoMeasure.encode(message.borderTopColor, writer.uint32(/* id 26, wireType 2 =*/210).fork()).ldelim();
+            $root.ProtoColor.encode(message.borderTopColor, writer.uint32(/* id 26, wireType 2 =*/210).fork()).ldelim();
         if (message.borderTopColorCode != null && Object.hasOwnProperty.call(message, "borderTopColorCode"))
             writer.uint32(/* id 27, wireType 2 =*/218).string(message.borderTopColorCode);
         if (message.borderTopWeightInheritance != null && Object.hasOwnProperty.call(message, "borderTopWeightInheritance"))
@@ -23824,7 +23824,7 @@ $root.ProtoTableElementProperties = (function() {
         if (message.borderRightColorInheritance != null && Object.hasOwnProperty.call(message, "borderRightColorInheritance"))
             writer.uint32(/* id 31, wireType 0 =*/248).int32(message.borderRightColorInheritance);
         if (message.borderRightColor != null && Object.hasOwnProperty.call(message, "borderRightColor"))
-            $root.ProtoMeasure.encode(message.borderRightColor, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
+            $root.ProtoColor.encode(message.borderRightColor, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
         if (message.borderRightColorCode != null && Object.hasOwnProperty.call(message, "borderRightColorCode"))
             writer.uint32(/* id 33, wireType 2 =*/266).string(message.borderRightColorCode);
         if (message.borderRightWeightInheritance != null && Object.hasOwnProperty.call(message, "borderRightWeightInheritance"))
@@ -23836,7 +23836,7 @@ $root.ProtoTableElementProperties = (function() {
         if (message.borderBottomColorInheritance != null && Object.hasOwnProperty.call(message, "borderBottomColorInheritance"))
             writer.uint32(/* id 37, wireType 0 =*/296).int32(message.borderBottomColorInheritance);
         if (message.borderBottomColor != null && Object.hasOwnProperty.call(message, "borderBottomColor"))
-            $root.ProtoMeasure.encode(message.borderBottomColor, writer.uint32(/* id 38, wireType 2 =*/306).fork()).ldelim();
+            $root.ProtoColor.encode(message.borderBottomColor, writer.uint32(/* id 38, wireType 2 =*/306).fork()).ldelim();
         if (message.borderBottomColorCode != null && Object.hasOwnProperty.call(message, "borderBottomColorCode"))
             writer.uint32(/* id 39, wireType 2 =*/314).string(message.borderBottomColorCode);
         if (message.borderBottomWeightInheritance != null && Object.hasOwnProperty.call(message, "borderBottomWeightInheritance"))
@@ -23848,7 +23848,7 @@ $root.ProtoTableElementProperties = (function() {
         if (message.borderLeftColorInheritance != null && Object.hasOwnProperty.call(message, "borderLeftColorInheritance"))
             writer.uint32(/* id 43, wireType 0 =*/344).int32(message.borderLeftColorInheritance);
         if (message.borderLeftColor != null && Object.hasOwnProperty.call(message, "borderLeftColor"))
-            $root.ProtoMeasure.encode(message.borderLeftColor, writer.uint32(/* id 44, wireType 2 =*/354).fork()).ldelim();
+            $root.ProtoColor.encode(message.borderLeftColor, writer.uint32(/* id 44, wireType 2 =*/354).fork()).ldelim();
         if (message.borderLeftColorCode != null && Object.hasOwnProperty.call(message, "borderLeftColorCode"))
             writer.uint32(/* id 45, wireType 2 =*/362).string(message.borderLeftColorCode);
         if (message.borderLeftWeightInheritance != null && Object.hasOwnProperty.call(message, "borderLeftWeightInheritance"))
@@ -24054,7 +24054,7 @@ $root.ProtoTableElementProperties = (function() {
                     break;
                 }
             case 26: {
-                    message.borderTopColor = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    message.borderTopColor = $root.ProtoColor.decode(reader, reader.uint32());
                     break;
                 }
             case 27: {
@@ -24078,7 +24078,7 @@ $root.ProtoTableElementProperties = (function() {
                     break;
                 }
             case 32: {
-                    message.borderRightColor = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    message.borderRightColor = $root.ProtoColor.decode(reader, reader.uint32());
                     break;
                 }
             case 33: {
@@ -24102,7 +24102,7 @@ $root.ProtoTableElementProperties = (function() {
                     break;
                 }
             case 38: {
-                    message.borderBottomColor = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    message.borderBottomColor = $root.ProtoColor.decode(reader, reader.uint32());
                     break;
                 }
             case 39: {
@@ -24126,7 +24126,7 @@ $root.ProtoTableElementProperties = (function() {
                     break;
                 }
             case 44: {
-                    message.borderLeftColor = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    message.borderLeftColor = $root.ProtoColor.decode(reader, reader.uint32());
                     break;
                 }
             case 45: {
@@ -24479,7 +24479,7 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
         if (message.borderTopColor != null && message.hasOwnProperty("borderTopColor")) {
-            var error = $root.ProtoMeasure.verify(message.borderTopColor);
+            var error = $root.ProtoColor.verify(message.borderTopColor);
             if (error)
                 return "borderTopColor." + error;
         }
@@ -24517,7 +24517,7 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
         if (message.borderRightColor != null && message.hasOwnProperty("borderRightColor")) {
-            var error = $root.ProtoMeasure.verify(message.borderRightColor);
+            var error = $root.ProtoColor.verify(message.borderRightColor);
             if (error)
                 return "borderRightColor." + error;
         }
@@ -24555,7 +24555,7 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
         if (message.borderBottomColor != null && message.hasOwnProperty("borderBottomColor")) {
-            var error = $root.ProtoMeasure.verify(message.borderBottomColor);
+            var error = $root.ProtoColor.verify(message.borderBottomColor);
             if (error)
                 return "borderBottomColor." + error;
         }
@@ -24593,7 +24593,7 @@ $root.ProtoTableElementProperties = (function() {
                 break;
             }
         if (message.borderLeftColor != null && message.hasOwnProperty("borderLeftColor")) {
-            var error = $root.ProtoMeasure.verify(message.borderLeftColor);
+            var error = $root.ProtoColor.verify(message.borderLeftColor);
             if (error)
                 return "borderLeftColor." + error;
         }
@@ -25187,7 +25187,7 @@ $root.ProtoTableElementProperties = (function() {
         if (object.borderTopColor != null) {
             if (typeof object.borderTopColor !== "object")
                 throw TypeError(".ProtoTableElementProperties.borderTopColor: object expected");
-            message.borderTopColor = $root.ProtoMeasure.fromObject(object.borderTopColor);
+            message.borderTopColor = $root.ProtoColor.fromObject(object.borderTopColor);
         }
         if (object.borderTopColorCode != null)
             message.borderTopColorCode = String(object.borderTopColorCode);
@@ -25257,7 +25257,7 @@ $root.ProtoTableElementProperties = (function() {
         if (object.borderRightColor != null) {
             if (typeof object.borderRightColor !== "object")
                 throw TypeError(".ProtoTableElementProperties.borderRightColor: object expected");
-            message.borderRightColor = $root.ProtoMeasure.fromObject(object.borderRightColor);
+            message.borderRightColor = $root.ProtoColor.fromObject(object.borderRightColor);
         }
         if (object.borderRightColorCode != null)
             message.borderRightColorCode = String(object.borderRightColorCode);
@@ -25327,7 +25327,7 @@ $root.ProtoTableElementProperties = (function() {
         if (object.borderBottomColor != null) {
             if (typeof object.borderBottomColor !== "object")
                 throw TypeError(".ProtoTableElementProperties.borderBottomColor: object expected");
-            message.borderBottomColor = $root.ProtoMeasure.fromObject(object.borderBottomColor);
+            message.borderBottomColor = $root.ProtoColor.fromObject(object.borderBottomColor);
         }
         if (object.borderBottomColorCode != null)
             message.borderBottomColorCode = String(object.borderBottomColorCode);
@@ -25397,7 +25397,7 @@ $root.ProtoTableElementProperties = (function() {
         if (object.borderLeftColor != null) {
             if (typeof object.borderLeftColor !== "object")
                 throw TypeError(".ProtoTableElementProperties.borderLeftColor: object expected");
-            message.borderLeftColor = $root.ProtoMeasure.fromObject(object.borderLeftColor);
+            message.borderLeftColor = $root.ProtoColor.fromObject(object.borderLeftColor);
         }
         if (object.borderLeftColorCode != null)
             message.borderLeftColorCode = String(object.borderLeftColorCode);
@@ -25965,7 +25965,7 @@ $root.ProtoTableElementProperties = (function() {
         if (message.borderTopColorInheritance != null && message.hasOwnProperty("borderTopColorInheritance"))
             object.borderTopColorInheritance = options.enums === String ? $root.Inheritance[message.borderTopColorInheritance] === undefined ? message.borderTopColorInheritance : $root.Inheritance[message.borderTopColorInheritance] : message.borderTopColorInheritance;
         if (message.borderTopColor != null && message.hasOwnProperty("borderTopColor"))
-            object.borderTopColor = $root.ProtoMeasure.toObject(message.borderTopColor, options);
+            object.borderTopColor = $root.ProtoColor.toObject(message.borderTopColor, options);
         if (message.borderTopColorCode != null && message.hasOwnProperty("borderTopColorCode"))
             object.borderTopColorCode = message.borderTopColorCode;
         if (message.borderTopWeightInheritance != null && message.hasOwnProperty("borderTopWeightInheritance"))
@@ -25977,7 +25977,7 @@ $root.ProtoTableElementProperties = (function() {
         if (message.borderRightColorInheritance != null && message.hasOwnProperty("borderRightColorInheritance"))
             object.borderRightColorInheritance = options.enums === String ? $root.Inheritance[message.borderRightColorInheritance] === undefined ? message.borderRightColorInheritance : $root.Inheritance[message.borderRightColorInheritance] : message.borderRightColorInheritance;
         if (message.borderRightColor != null && message.hasOwnProperty("borderRightColor"))
-            object.borderRightColor = $root.ProtoMeasure.toObject(message.borderRightColor, options);
+            object.borderRightColor = $root.ProtoColor.toObject(message.borderRightColor, options);
         if (message.borderRightColorCode != null && message.hasOwnProperty("borderRightColorCode"))
             object.borderRightColorCode = message.borderRightColorCode;
         if (message.borderRightWeightInheritance != null && message.hasOwnProperty("borderRightWeightInheritance"))
@@ -25989,7 +25989,7 @@ $root.ProtoTableElementProperties = (function() {
         if (message.borderBottomColorInheritance != null && message.hasOwnProperty("borderBottomColorInheritance"))
             object.borderBottomColorInheritance = options.enums === String ? $root.Inheritance[message.borderBottomColorInheritance] === undefined ? message.borderBottomColorInheritance : $root.Inheritance[message.borderBottomColorInheritance] : message.borderBottomColorInheritance;
         if (message.borderBottomColor != null && message.hasOwnProperty("borderBottomColor"))
-            object.borderBottomColor = $root.ProtoMeasure.toObject(message.borderBottomColor, options);
+            object.borderBottomColor = $root.ProtoColor.toObject(message.borderBottomColor, options);
         if (message.borderBottomColorCode != null && message.hasOwnProperty("borderBottomColorCode"))
             object.borderBottomColorCode = message.borderBottomColorCode;
         if (message.borderBottomWeightInheritance != null && message.hasOwnProperty("borderBottomWeightInheritance"))
@@ -26001,7 +26001,7 @@ $root.ProtoTableElementProperties = (function() {
         if (message.borderLeftColorInheritance != null && message.hasOwnProperty("borderLeftColorInheritance"))
             object.borderLeftColorInheritance = options.enums === String ? $root.Inheritance[message.borderLeftColorInheritance] === undefined ? message.borderLeftColorInheritance : $root.Inheritance[message.borderLeftColorInheritance] : message.borderLeftColorInheritance;
         if (message.borderLeftColor != null && message.hasOwnProperty("borderLeftColor"))
-            object.borderLeftColor = $root.ProtoMeasure.toObject(message.borderLeftColor, options);
+            object.borderLeftColor = $root.ProtoColor.toObject(message.borderLeftColor, options);
         if (message.borderLeftColorCode != null && message.hasOwnProperty("borderLeftColorCode"))
             object.borderLeftColorCode = message.borderLeftColorCode;
         if (message.borderLeftWeightInheritance != null && message.hasOwnProperty("borderLeftWeightInheritance"))

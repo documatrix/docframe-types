@@ -742,7 +742,7 @@ ProtoMeasure paddingLeft = 23;
 string paddingLeftCode = 24;
 
 Inheritance borderTopColorInheritance = 25;
-ProtoMeasure borderTopColor = 26;
+ProtoColor borderTopColor = 26;
 string borderTopColorCode = 27;
 
 Inheritance borderTopWeightInheritance = 28;
@@ -750,7 +750,7 @@ ProtoMeasure borderTopWeight = 29;
 string borderTopWeightCode = 30;
 
 Inheritance borderRightColorInheritance = 31;
-ProtoMeasure borderRightColor = 32;
+ProtoColor borderRightColor = 32;
 string borderRightColorCode = 33;
 
 Inheritance borderRightWeightInheritance = 34;
@@ -758,7 +758,7 @@ ProtoMeasure borderRightWeight = 35;
 string borderRightWeightCode = 36;
 
 Inheritance borderBottomColorInheritance = 37;
-ProtoMeasure borderBottomColor = 38;
+ProtoColor borderBottomColor = 38;
 string borderBottomColorCode = 39;
 
 Inheritance borderBottomWeightInheritance = 40;
@@ -766,7 +766,7 @@ ProtoMeasure borderBottomWeight = 41;
 string borderBottomWeightCode = 42;
 
 Inheritance borderLeftColorInheritance = 43;
-ProtoMeasure borderLeftColor = 44;
+ProtoColor borderLeftColor = 44;
 string borderLeftColorCode = 45;
 
 Inheritance borderLeftWeightInheritance = 46;
