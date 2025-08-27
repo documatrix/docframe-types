@@ -346,6 +346,7 @@ INHERITANCE_INHERIT = 0;
 INHERITANCE_CODE = 1;
 INHERITANCE_BIND_CODE = 2;
 INHERITANCE_STATIC = 3;
+INHERITANCE_RESET = 4;
 }
 message ProtoDocumentElement {
 ProtoDocumentElement parent = 1;
@@ -724,41 +725,93 @@ Inheritance backgroundColorInheritance = 10;
 repeated ProtoColor backgroundColor = 11;
 string backgroundColorCode = 12;
 
-Inheritance paddingInheritance = 13;
-ProtoSideMeasures padding = 14;
-string paddingCode = 15;
+Inheritance paddingTopInheritance = 13;
+ProtoMeasure paddingTop = 14;
+string paddingTopCode = 15;
 
-Inheritance borderInheritance = 16;
-ProtoSideBorders border = 17;
-string borderCode = 18;
+Inheritance paddingRightInheritance = 16;
+ProtoMeasure paddingRight = 17;
+string paddingRightCode = 18;
 
-Inheritance marginInheritance = 19;
-ProtoSideMeasures margin = 20;
-string marginCode = 21;
+Inheritance paddingBottomInheritance = 19;
+ProtoMeasure paddingBottom = 20;
+string paddingBottomCode = 21;
 
-Inheritance rotationInheritance = 22;
-double rotation = 23;
-string rotationCode = 24;
+Inheritance paddingLeftInheritance = 22;
+ProtoMeasure paddingLeft = 23;
+string paddingLeftCode = 24;
 
-Inheritance defaultParagraphFormatUUIDInheritance = 25;
-string defaultParagraphFormatUUID = 26;
-string defaultParagraphFormatUUIDCode = 27;
+Inheritance borderTopColorInheritance = 25;
+ProtoMeasure borderTopColor = 26;
+string borderTopColorCode = 27;
 
-Inheritance tableContentGroupTypeInheritance = 28;
-ProtoTableContentGroupType tableContentGroupType = 29;
-string tableContentGroupTypeCode = 30;
+Inheritance borderTopWeightInheritance = 28;
+ProtoMeasure borderTopWeight = 29;
+string borderTopWeightCode = 30;
 
-Inheritance cellTypeInheritance = 31;
-ProtoTableCellType cellType = 32;
-string cellTypeCode = 33;
+Inheritance borderRightColorInheritance = 31;
+ProtoMeasure borderRightColor = 32;
+string borderRightColorCode = 33;
 
-Inheritance minRowHeightInheritance = 34;
-ProtoMeasure minRowHeight = 35;
-string minRowHeightCode = 36;
+Inheritance borderRightWeightInheritance = 34;
+ProtoMeasure borderRightWeight = 35;
+string borderRightWeightCode = 36;
 
-Inheritance wsInheritance = 37;
-ProtoTableWS ws = 38;
-string wsCode = 39;
+Inheritance borderBottomColorInheritance = 37;
+ProtoMeasure borderBottomColor = 38;
+string borderBottomColorCode = 39;
+
+Inheritance borderBottomWeightInheritance = 40;
+ProtoMeasure borderBottomWeight = 41;
+string borderBottomWeightCode = 42;
+
+Inheritance borderLeftColorInheritance = 43;
+ProtoMeasure borderLeftColor = 44;
+string borderLeftColorCode = 45;
+
+Inheritance borderLeftWeightInheritance = 46;
+ProtoMeasure borderLeftWeight = 47;
+string borderLeftWeightCode = 48;
+
+Inheritance marginTopInheritance = 49;
+ProtoMeasure marginTop = 50;
+string marginTopCode = 51;
+
+Inheritance marginRightInheritance = 52;
+ProtoMeasure marginRight = 53;
+string marginRightCode = 54;
+
+Inheritance marginBottomInheritance = 55;
+ProtoMeasure marginBottom = 56;
+string marginBottomCode = 57;
+
+Inheritance marginLeftInheritance = 58;
+ProtoMeasure marginLeft = 59;
+string marginLeftCode = 60;
+
+Inheritance rotationInheritance = 61;
+double rotation = 62;
+string rotationCode = 63;
+
+Inheritance defaultParagraphFormatUUIDInheritance = 64;
+string defaultParagraphFormatUUID = 65;
+string defaultParagraphFormatUUIDCode = 66;
+
+Inheritance tableContentGroupTypeInheritance = 67;
+ProtoTableContentGroupType tableContentGroupType = 68;
+string tableContentGroupTypeCode = 69;
+
+Inheritance cellTypeInheritance = 70;
+ProtoTableCellType cellType = 71;
+string cellTypeCode = 72;
+
+Inheritance minRowHeightInheritance = 73;
+ProtoMeasure minRowHeight = 74;
+string minRowHeightCode = 75;
+
+Inheritance wsInheritance = 76;
+ProtoTableWS ws = 77;
+string wsCode = 78;
 }
 
 message ProtoText {

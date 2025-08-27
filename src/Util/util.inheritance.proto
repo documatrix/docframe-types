@@ -7,4 +7,6 @@ enum Inheritance {
   INHERITANCE_BIND_CODE = 2;
   // Use the static value
   INHERITANCE_STATIC = 3;
+  // Reset the value to "no value" -> default behaviour
+  INHERITANCE_RESET = 4;
 }

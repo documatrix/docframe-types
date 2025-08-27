@@ -10813,6 +10813,7 @@ $root.ProtoBaseInputField = (function() {
  * @property {number} INHERITANCE_CODE=1 INHERITANCE_CODE value
  * @property {number} INHERITANCE_BIND_CODE=2 INHERITANCE_BIND_CODE value
  * @property {number} INHERITANCE_STATIC=3 INHERITANCE_STATIC value
+ * @property {number} INHERITANCE_RESET=4 INHERITANCE_RESET value
  */
 $root.Inheritance = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -10820,6 +10821,7 @@ $root.Inheritance = (function() {
     values[valuesById[1] = "INHERITANCE_CODE"] = 1;
     values[valuesById[2] = "INHERITANCE_BIND_CODE"] = 2;
     values[valuesById[3] = "INHERITANCE_STATIC"] = 3;
+    values[valuesById[4] = "INHERITANCE_RESET"] = 4;
     return values;
 })();
 
@@ -23026,15 +23028,54 @@ $root.ProtoTableElementProperties = (function() {
      * @property {Inheritance|null} [backgroundColorInheritance] ProtoTableElementProperties backgroundColorInheritance
      * @property {Array.<IProtoColor>|null} [backgroundColor] ProtoTableElementProperties backgroundColor
      * @property {string|null} [backgroundColorCode] ProtoTableElementProperties backgroundColorCode
-     * @property {Inheritance|null} [paddingInheritance] ProtoTableElementProperties paddingInheritance
-     * @property {IProtoSideMeasures|null} [padding] ProtoTableElementProperties padding
-     * @property {string|null} [paddingCode] ProtoTableElementProperties paddingCode
-     * @property {Inheritance|null} [borderInheritance] ProtoTableElementProperties borderInheritance
-     * @property {IProtoSideBorders|null} [border] ProtoTableElementProperties border
-     * @property {string|null} [borderCode] ProtoTableElementProperties borderCode
-     * @property {Inheritance|null} [marginInheritance] ProtoTableElementProperties marginInheritance
-     * @property {IProtoSideMeasures|null} [margin] ProtoTableElementProperties margin
-     * @property {string|null} [marginCode] ProtoTableElementProperties marginCode
+     * @property {Inheritance|null} [paddingTopInheritance] ProtoTableElementProperties paddingTopInheritance
+     * @property {IProtoMeasure|null} [paddingTop] ProtoTableElementProperties paddingTop
+     * @property {string|null} [paddingTopCode] ProtoTableElementProperties paddingTopCode
+     * @property {Inheritance|null} [paddingRightInheritance] ProtoTableElementProperties paddingRightInheritance
+     * @property {IProtoMeasure|null} [paddingRight] ProtoTableElementProperties paddingRight
+     * @property {string|null} [paddingRightCode] ProtoTableElementProperties paddingRightCode
+     * @property {Inheritance|null} [paddingBottomInheritance] ProtoTableElementProperties paddingBottomInheritance
+     * @property {IProtoMeasure|null} [paddingBottom] ProtoTableElementProperties paddingBottom
+     * @property {string|null} [paddingBottomCode] ProtoTableElementProperties paddingBottomCode
+     * @property {Inheritance|null} [paddingLeftInheritance] ProtoTableElementProperties paddingLeftInheritance
+     * @property {IProtoMeasure|null} [paddingLeft] ProtoTableElementProperties paddingLeft
+     * @property {string|null} [paddingLeftCode] ProtoTableElementProperties paddingLeftCode
+     * @property {Inheritance|null} [borderTopColorInheritance] ProtoTableElementProperties borderTopColorInheritance
+     * @property {IProtoMeasure|null} [borderTopColor] ProtoTableElementProperties borderTopColor
+     * @property {string|null} [borderTopColorCode] ProtoTableElementProperties borderTopColorCode
+     * @property {Inheritance|null} [borderTopWeightInheritance] ProtoTableElementProperties borderTopWeightInheritance
+     * @property {IProtoMeasure|null} [borderTopWeight] ProtoTableElementProperties borderTopWeight
+     * @property {string|null} [borderTopWeightCode] ProtoTableElementProperties borderTopWeightCode
+     * @property {Inheritance|null} [borderRightColorInheritance] ProtoTableElementProperties borderRightColorInheritance
+     * @property {IProtoMeasure|null} [borderRightColor] ProtoTableElementProperties borderRightColor
+     * @property {string|null} [borderRightColorCode] ProtoTableElementProperties borderRightColorCode
+     * @property {Inheritance|null} [borderRightWeightInheritance] ProtoTableElementProperties borderRightWeightInheritance
+     * @property {IProtoMeasure|null} [borderRightWeight] ProtoTableElementProperties borderRightWeight
+     * @property {string|null} [borderRightWeightCode] ProtoTableElementProperties borderRightWeightCode
+     * @property {Inheritance|null} [borderBottomColorInheritance] ProtoTableElementProperties borderBottomColorInheritance
+     * @property {IProtoMeasure|null} [borderBottomColor] ProtoTableElementProperties borderBottomColor
+     * @property {string|null} [borderBottomColorCode] ProtoTableElementProperties borderBottomColorCode
+     * @property {Inheritance|null} [borderBottomWeightInheritance] ProtoTableElementProperties borderBottomWeightInheritance
+     * @property {IProtoMeasure|null} [borderBottomWeight] ProtoTableElementProperties borderBottomWeight
+     * @property {string|null} [borderBottomWeightCode] ProtoTableElementProperties borderBottomWeightCode
+     * @property {Inheritance|null} [borderLeftColorInheritance] ProtoTableElementProperties borderLeftColorInheritance
+     * @property {IProtoMeasure|null} [borderLeftColor] ProtoTableElementProperties borderLeftColor
+     * @property {string|null} [borderLeftColorCode] ProtoTableElementProperties borderLeftColorCode
+     * @property {Inheritance|null} [borderLeftWeightInheritance] ProtoTableElementProperties borderLeftWeightInheritance
+     * @property {IProtoMeasure|null} [borderLeftWeight] ProtoTableElementProperties borderLeftWeight
+     * @property {string|null} [borderLeftWeightCode] ProtoTableElementProperties borderLeftWeightCode
+     * @property {Inheritance|null} [marginTopInheritance] ProtoTableElementProperties marginTopInheritance
+     * @property {IProtoMeasure|null} [marginTop] ProtoTableElementProperties marginTop
+     * @property {string|null} [marginTopCode] ProtoTableElementProperties marginTopCode
+     * @property {Inheritance|null} [marginRightInheritance] ProtoTableElementProperties marginRightInheritance
+     * @property {IProtoMeasure|null} [marginRight] ProtoTableElementProperties marginRight
+     * @property {string|null} [marginRightCode] ProtoTableElementProperties marginRightCode
+     * @property {Inheritance|null} [marginBottomInheritance] ProtoTableElementProperties marginBottomInheritance
+     * @property {IProtoMeasure|null} [marginBottom] ProtoTableElementProperties marginBottom
+     * @property {string|null} [marginBottomCode] ProtoTableElementProperties marginBottomCode
+     * @property {Inheritance|null} [marginLeftInheritance] ProtoTableElementProperties marginLeftInheritance
+     * @property {IProtoMeasure|null} [marginLeft] ProtoTableElementProperties marginLeft
+     * @property {string|null} [marginLeftCode] ProtoTableElementProperties marginLeftCode
      * @property {Inheritance|null} [rotationInheritance] ProtoTableElementProperties rotationInheritance
      * @property {number|null} [rotation] ProtoTableElementProperties rotation
      * @property {string|null} [rotationCode] ProtoTableElementProperties rotationCode
@@ -23168,76 +23209,388 @@ $root.ProtoTableElementProperties = (function() {
     ProtoTableElementProperties.prototype.backgroundColorCode = "";
 
     /**
-     * ProtoTableElementProperties paddingInheritance.
-     * @member {Inheritance} paddingInheritance
+     * ProtoTableElementProperties paddingTopInheritance.
+     * @member {Inheritance} paddingTopInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.paddingInheritance = 0;
+    ProtoTableElementProperties.prototype.paddingTopInheritance = 0;
 
     /**
-     * ProtoTableElementProperties padding.
-     * @member {IProtoSideMeasures|null|undefined} padding
+     * ProtoTableElementProperties paddingTop.
+     * @member {IProtoMeasure|null|undefined} paddingTop
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.padding = null;
+    ProtoTableElementProperties.prototype.paddingTop = null;
 
     /**
-     * ProtoTableElementProperties paddingCode.
-     * @member {string} paddingCode
+     * ProtoTableElementProperties paddingTopCode.
+     * @member {string} paddingTopCode
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.paddingCode = "";
+    ProtoTableElementProperties.prototype.paddingTopCode = "";
 
     /**
-     * ProtoTableElementProperties borderInheritance.
-     * @member {Inheritance} borderInheritance
+     * ProtoTableElementProperties paddingRightInheritance.
+     * @member {Inheritance} paddingRightInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.borderInheritance = 0;
+    ProtoTableElementProperties.prototype.paddingRightInheritance = 0;
 
     /**
-     * ProtoTableElementProperties border.
-     * @member {IProtoSideBorders|null|undefined} border
+     * ProtoTableElementProperties paddingRight.
+     * @member {IProtoMeasure|null|undefined} paddingRight
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.border = null;
+    ProtoTableElementProperties.prototype.paddingRight = null;
 
     /**
-     * ProtoTableElementProperties borderCode.
-     * @member {string} borderCode
+     * ProtoTableElementProperties paddingRightCode.
+     * @member {string} paddingRightCode
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.borderCode = "";
+    ProtoTableElementProperties.prototype.paddingRightCode = "";
 
     /**
-     * ProtoTableElementProperties marginInheritance.
-     * @member {Inheritance} marginInheritance
+     * ProtoTableElementProperties paddingBottomInheritance.
+     * @member {Inheritance} paddingBottomInheritance
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.marginInheritance = 0;
+    ProtoTableElementProperties.prototype.paddingBottomInheritance = 0;
 
     /**
-     * ProtoTableElementProperties margin.
-     * @member {IProtoSideMeasures|null|undefined} margin
+     * ProtoTableElementProperties paddingBottom.
+     * @member {IProtoMeasure|null|undefined} paddingBottom
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.margin = null;
+    ProtoTableElementProperties.prototype.paddingBottom = null;
 
     /**
-     * ProtoTableElementProperties marginCode.
-     * @member {string} marginCode
+     * ProtoTableElementProperties paddingBottomCode.
+     * @member {string} paddingBottomCode
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.marginCode = "";
+    ProtoTableElementProperties.prototype.paddingBottomCode = "";
+
+    /**
+     * ProtoTableElementProperties paddingLeftInheritance.
+     * @member {Inheritance} paddingLeftInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.paddingLeftInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties paddingLeft.
+     * @member {IProtoMeasure|null|undefined} paddingLeft
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.paddingLeft = null;
+
+    /**
+     * ProtoTableElementProperties paddingLeftCode.
+     * @member {string} paddingLeftCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.paddingLeftCode = "";
+
+    /**
+     * ProtoTableElementProperties borderTopColorInheritance.
+     * @member {Inheritance} borderTopColorInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderTopColorInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties borderTopColor.
+     * @member {IProtoMeasure|null|undefined} borderTopColor
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderTopColor = null;
+
+    /**
+     * ProtoTableElementProperties borderTopColorCode.
+     * @member {string} borderTopColorCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderTopColorCode = "";
+
+    /**
+     * ProtoTableElementProperties borderTopWeightInheritance.
+     * @member {Inheritance} borderTopWeightInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderTopWeightInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties borderTopWeight.
+     * @member {IProtoMeasure|null|undefined} borderTopWeight
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderTopWeight = null;
+
+    /**
+     * ProtoTableElementProperties borderTopWeightCode.
+     * @member {string} borderTopWeightCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderTopWeightCode = "";
+
+    /**
+     * ProtoTableElementProperties borderRightColorInheritance.
+     * @member {Inheritance} borderRightColorInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderRightColorInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties borderRightColor.
+     * @member {IProtoMeasure|null|undefined} borderRightColor
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderRightColor = null;
+
+    /**
+     * ProtoTableElementProperties borderRightColorCode.
+     * @member {string} borderRightColorCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderRightColorCode = "";
+
+    /**
+     * ProtoTableElementProperties borderRightWeightInheritance.
+     * @member {Inheritance} borderRightWeightInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderRightWeightInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties borderRightWeight.
+     * @member {IProtoMeasure|null|undefined} borderRightWeight
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderRightWeight = null;
+
+    /**
+     * ProtoTableElementProperties borderRightWeightCode.
+     * @member {string} borderRightWeightCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderRightWeightCode = "";
+
+    /**
+     * ProtoTableElementProperties borderBottomColorInheritance.
+     * @member {Inheritance} borderBottomColorInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderBottomColorInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties borderBottomColor.
+     * @member {IProtoMeasure|null|undefined} borderBottomColor
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderBottomColor = null;
+
+    /**
+     * ProtoTableElementProperties borderBottomColorCode.
+     * @member {string} borderBottomColorCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderBottomColorCode = "";
+
+    /**
+     * ProtoTableElementProperties borderBottomWeightInheritance.
+     * @member {Inheritance} borderBottomWeightInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderBottomWeightInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties borderBottomWeight.
+     * @member {IProtoMeasure|null|undefined} borderBottomWeight
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderBottomWeight = null;
+
+    /**
+     * ProtoTableElementProperties borderBottomWeightCode.
+     * @member {string} borderBottomWeightCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderBottomWeightCode = "";
+
+    /**
+     * ProtoTableElementProperties borderLeftColorInheritance.
+     * @member {Inheritance} borderLeftColorInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderLeftColorInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties borderLeftColor.
+     * @member {IProtoMeasure|null|undefined} borderLeftColor
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderLeftColor = null;
+
+    /**
+     * ProtoTableElementProperties borderLeftColorCode.
+     * @member {string} borderLeftColorCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderLeftColorCode = "";
+
+    /**
+     * ProtoTableElementProperties borderLeftWeightInheritance.
+     * @member {Inheritance} borderLeftWeightInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderLeftWeightInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties borderLeftWeight.
+     * @member {IProtoMeasure|null|undefined} borderLeftWeight
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderLeftWeight = null;
+
+    /**
+     * ProtoTableElementProperties borderLeftWeightCode.
+     * @member {string} borderLeftWeightCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.borderLeftWeightCode = "";
+
+    /**
+     * ProtoTableElementProperties marginTopInheritance.
+     * @member {Inheritance} marginTopInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.marginTopInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties marginTop.
+     * @member {IProtoMeasure|null|undefined} marginTop
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.marginTop = null;
+
+    /**
+     * ProtoTableElementProperties marginTopCode.
+     * @member {string} marginTopCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.marginTopCode = "";
+
+    /**
+     * ProtoTableElementProperties marginRightInheritance.
+     * @member {Inheritance} marginRightInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.marginRightInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties marginRight.
+     * @member {IProtoMeasure|null|undefined} marginRight
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.marginRight = null;
+
+    /**
+     * ProtoTableElementProperties marginRightCode.
+     * @member {string} marginRightCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.marginRightCode = "";
+
+    /**
+     * ProtoTableElementProperties marginBottomInheritance.
+     * @member {Inheritance} marginBottomInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.marginBottomInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties marginBottom.
+     * @member {IProtoMeasure|null|undefined} marginBottom
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.marginBottom = null;
+
+    /**
+     * ProtoTableElementProperties marginBottomCode.
+     * @member {string} marginBottomCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.marginBottomCode = "";
+
+    /**
+     * ProtoTableElementProperties marginLeftInheritance.
+     * @member {Inheritance} marginLeftInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.marginLeftInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties marginLeft.
+     * @member {IProtoMeasure|null|undefined} marginLeft
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.marginLeft = null;
+
+    /**
+     * ProtoTableElementProperties marginLeftCode.
+     * @member {string} marginLeftCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.marginLeftCode = "";
 
     /**
      * ProtoTableElementProperties rotationInheritance.
@@ -23432,60 +23785,138 @@ $root.ProtoTableElementProperties = (function() {
                 $root.ProtoColor.encode(message.backgroundColor[i], writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
         if (message.backgroundColorCode != null && Object.hasOwnProperty.call(message, "backgroundColorCode"))
             writer.uint32(/* id 12, wireType 2 =*/98).string(message.backgroundColorCode);
-        if (message.paddingInheritance != null && Object.hasOwnProperty.call(message, "paddingInheritance"))
-            writer.uint32(/* id 13, wireType 0 =*/104).int32(message.paddingInheritance);
-        if (message.padding != null && Object.hasOwnProperty.call(message, "padding"))
-            $root.ProtoSideMeasures.encode(message.padding, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
-        if (message.paddingCode != null && Object.hasOwnProperty.call(message, "paddingCode"))
-            writer.uint32(/* id 15, wireType 2 =*/122).string(message.paddingCode);
-        if (message.borderInheritance != null && Object.hasOwnProperty.call(message, "borderInheritance"))
-            writer.uint32(/* id 16, wireType 0 =*/128).int32(message.borderInheritance);
-        if (message.border != null && Object.hasOwnProperty.call(message, "border"))
-            $root.ProtoSideBorders.encode(message.border, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
-        if (message.borderCode != null && Object.hasOwnProperty.call(message, "borderCode"))
-            writer.uint32(/* id 18, wireType 2 =*/146).string(message.borderCode);
-        if (message.marginInheritance != null && Object.hasOwnProperty.call(message, "marginInheritance"))
-            writer.uint32(/* id 19, wireType 0 =*/152).int32(message.marginInheritance);
-        if (message.margin != null && Object.hasOwnProperty.call(message, "margin"))
-            $root.ProtoSideMeasures.encode(message.margin, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
-        if (message.marginCode != null && Object.hasOwnProperty.call(message, "marginCode"))
-            writer.uint32(/* id 21, wireType 2 =*/170).string(message.marginCode);
+        if (message.paddingTopInheritance != null && Object.hasOwnProperty.call(message, "paddingTopInheritance"))
+            writer.uint32(/* id 13, wireType 0 =*/104).int32(message.paddingTopInheritance);
+        if (message.paddingTop != null && Object.hasOwnProperty.call(message, "paddingTop"))
+            $root.ProtoMeasure.encode(message.paddingTop, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
+        if (message.paddingTopCode != null && Object.hasOwnProperty.call(message, "paddingTopCode"))
+            writer.uint32(/* id 15, wireType 2 =*/122).string(message.paddingTopCode);
+        if (message.paddingRightInheritance != null && Object.hasOwnProperty.call(message, "paddingRightInheritance"))
+            writer.uint32(/* id 16, wireType 0 =*/128).int32(message.paddingRightInheritance);
+        if (message.paddingRight != null && Object.hasOwnProperty.call(message, "paddingRight"))
+            $root.ProtoMeasure.encode(message.paddingRight, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
+        if (message.paddingRightCode != null && Object.hasOwnProperty.call(message, "paddingRightCode"))
+            writer.uint32(/* id 18, wireType 2 =*/146).string(message.paddingRightCode);
+        if (message.paddingBottomInheritance != null && Object.hasOwnProperty.call(message, "paddingBottomInheritance"))
+            writer.uint32(/* id 19, wireType 0 =*/152).int32(message.paddingBottomInheritance);
+        if (message.paddingBottom != null && Object.hasOwnProperty.call(message, "paddingBottom"))
+            $root.ProtoMeasure.encode(message.paddingBottom, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
+        if (message.paddingBottomCode != null && Object.hasOwnProperty.call(message, "paddingBottomCode"))
+            writer.uint32(/* id 21, wireType 2 =*/170).string(message.paddingBottomCode);
+        if (message.paddingLeftInheritance != null && Object.hasOwnProperty.call(message, "paddingLeftInheritance"))
+            writer.uint32(/* id 22, wireType 0 =*/176).int32(message.paddingLeftInheritance);
+        if (message.paddingLeft != null && Object.hasOwnProperty.call(message, "paddingLeft"))
+            $root.ProtoMeasure.encode(message.paddingLeft, writer.uint32(/* id 23, wireType 2 =*/186).fork()).ldelim();
+        if (message.paddingLeftCode != null && Object.hasOwnProperty.call(message, "paddingLeftCode"))
+            writer.uint32(/* id 24, wireType 2 =*/194).string(message.paddingLeftCode);
+        if (message.borderTopColorInheritance != null && Object.hasOwnProperty.call(message, "borderTopColorInheritance"))
+            writer.uint32(/* id 25, wireType 0 =*/200).int32(message.borderTopColorInheritance);
+        if (message.borderTopColor != null && Object.hasOwnProperty.call(message, "borderTopColor"))
+            $root.ProtoMeasure.encode(message.borderTopColor, writer.uint32(/* id 26, wireType 2 =*/210).fork()).ldelim();
+        if (message.borderTopColorCode != null && Object.hasOwnProperty.call(message, "borderTopColorCode"))
+            writer.uint32(/* id 27, wireType 2 =*/218).string(message.borderTopColorCode);
+        if (message.borderTopWeightInheritance != null && Object.hasOwnProperty.call(message, "borderTopWeightInheritance"))
+            writer.uint32(/* id 28, wireType 0 =*/224).int32(message.borderTopWeightInheritance);
+        if (message.borderTopWeight != null && Object.hasOwnProperty.call(message, "borderTopWeight"))
+            $root.ProtoMeasure.encode(message.borderTopWeight, writer.uint32(/* id 29, wireType 2 =*/234).fork()).ldelim();
+        if (message.borderTopWeightCode != null && Object.hasOwnProperty.call(message, "borderTopWeightCode"))
+            writer.uint32(/* id 30, wireType 2 =*/242).string(message.borderTopWeightCode);
+        if (message.borderRightColorInheritance != null && Object.hasOwnProperty.call(message, "borderRightColorInheritance"))
+            writer.uint32(/* id 31, wireType 0 =*/248).int32(message.borderRightColorInheritance);
+        if (message.borderRightColor != null && Object.hasOwnProperty.call(message, "borderRightColor"))
+            $root.ProtoMeasure.encode(message.borderRightColor, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
+        if (message.borderRightColorCode != null && Object.hasOwnProperty.call(message, "borderRightColorCode"))
+            writer.uint32(/* id 33, wireType 2 =*/266).string(message.borderRightColorCode);
+        if (message.borderRightWeightInheritance != null && Object.hasOwnProperty.call(message, "borderRightWeightInheritance"))
+            writer.uint32(/* id 34, wireType 0 =*/272).int32(message.borderRightWeightInheritance);
+        if (message.borderRightWeight != null && Object.hasOwnProperty.call(message, "borderRightWeight"))
+            $root.ProtoMeasure.encode(message.borderRightWeight, writer.uint32(/* id 35, wireType 2 =*/282).fork()).ldelim();
+        if (message.borderRightWeightCode != null && Object.hasOwnProperty.call(message, "borderRightWeightCode"))
+            writer.uint32(/* id 36, wireType 2 =*/290).string(message.borderRightWeightCode);
+        if (message.borderBottomColorInheritance != null && Object.hasOwnProperty.call(message, "borderBottomColorInheritance"))
+            writer.uint32(/* id 37, wireType 0 =*/296).int32(message.borderBottomColorInheritance);
+        if (message.borderBottomColor != null && Object.hasOwnProperty.call(message, "borderBottomColor"))
+            $root.ProtoMeasure.encode(message.borderBottomColor, writer.uint32(/* id 38, wireType 2 =*/306).fork()).ldelim();
+        if (message.borderBottomColorCode != null && Object.hasOwnProperty.call(message, "borderBottomColorCode"))
+            writer.uint32(/* id 39, wireType 2 =*/314).string(message.borderBottomColorCode);
+        if (message.borderBottomWeightInheritance != null && Object.hasOwnProperty.call(message, "borderBottomWeightInheritance"))
+            writer.uint32(/* id 40, wireType 0 =*/320).int32(message.borderBottomWeightInheritance);
+        if (message.borderBottomWeight != null && Object.hasOwnProperty.call(message, "borderBottomWeight"))
+            $root.ProtoMeasure.encode(message.borderBottomWeight, writer.uint32(/* id 41, wireType 2 =*/330).fork()).ldelim();
+        if (message.borderBottomWeightCode != null && Object.hasOwnProperty.call(message, "borderBottomWeightCode"))
+            writer.uint32(/* id 42, wireType 2 =*/338).string(message.borderBottomWeightCode);
+        if (message.borderLeftColorInheritance != null && Object.hasOwnProperty.call(message, "borderLeftColorInheritance"))
+            writer.uint32(/* id 43, wireType 0 =*/344).int32(message.borderLeftColorInheritance);
+        if (message.borderLeftColor != null && Object.hasOwnProperty.call(message, "borderLeftColor"))
+            $root.ProtoMeasure.encode(message.borderLeftColor, writer.uint32(/* id 44, wireType 2 =*/354).fork()).ldelim();
+        if (message.borderLeftColorCode != null && Object.hasOwnProperty.call(message, "borderLeftColorCode"))
+            writer.uint32(/* id 45, wireType 2 =*/362).string(message.borderLeftColorCode);
+        if (message.borderLeftWeightInheritance != null && Object.hasOwnProperty.call(message, "borderLeftWeightInheritance"))
+            writer.uint32(/* id 46, wireType 0 =*/368).int32(message.borderLeftWeightInheritance);
+        if (message.borderLeftWeight != null && Object.hasOwnProperty.call(message, "borderLeftWeight"))
+            $root.ProtoMeasure.encode(message.borderLeftWeight, writer.uint32(/* id 47, wireType 2 =*/378).fork()).ldelim();
+        if (message.borderLeftWeightCode != null && Object.hasOwnProperty.call(message, "borderLeftWeightCode"))
+            writer.uint32(/* id 48, wireType 2 =*/386).string(message.borderLeftWeightCode);
+        if (message.marginTopInheritance != null && Object.hasOwnProperty.call(message, "marginTopInheritance"))
+            writer.uint32(/* id 49, wireType 0 =*/392).int32(message.marginTopInheritance);
+        if (message.marginTop != null && Object.hasOwnProperty.call(message, "marginTop"))
+            $root.ProtoMeasure.encode(message.marginTop, writer.uint32(/* id 50, wireType 2 =*/402).fork()).ldelim();
+        if (message.marginTopCode != null && Object.hasOwnProperty.call(message, "marginTopCode"))
+            writer.uint32(/* id 51, wireType 2 =*/410).string(message.marginTopCode);
+        if (message.marginRightInheritance != null && Object.hasOwnProperty.call(message, "marginRightInheritance"))
+            writer.uint32(/* id 52, wireType 0 =*/416).int32(message.marginRightInheritance);
+        if (message.marginRight != null && Object.hasOwnProperty.call(message, "marginRight"))
+            $root.ProtoMeasure.encode(message.marginRight, writer.uint32(/* id 53, wireType 2 =*/426).fork()).ldelim();
+        if (message.marginRightCode != null && Object.hasOwnProperty.call(message, "marginRightCode"))
+            writer.uint32(/* id 54, wireType 2 =*/434).string(message.marginRightCode);
+        if (message.marginBottomInheritance != null && Object.hasOwnProperty.call(message, "marginBottomInheritance"))
+            writer.uint32(/* id 55, wireType 0 =*/440).int32(message.marginBottomInheritance);
+        if (message.marginBottom != null && Object.hasOwnProperty.call(message, "marginBottom"))
+            $root.ProtoMeasure.encode(message.marginBottom, writer.uint32(/* id 56, wireType 2 =*/450).fork()).ldelim();
+        if (message.marginBottomCode != null && Object.hasOwnProperty.call(message, "marginBottomCode"))
+            writer.uint32(/* id 57, wireType 2 =*/458).string(message.marginBottomCode);
+        if (message.marginLeftInheritance != null && Object.hasOwnProperty.call(message, "marginLeftInheritance"))
+            writer.uint32(/* id 58, wireType 0 =*/464).int32(message.marginLeftInheritance);
+        if (message.marginLeft != null && Object.hasOwnProperty.call(message, "marginLeft"))
+            $root.ProtoMeasure.encode(message.marginLeft, writer.uint32(/* id 59, wireType 2 =*/474).fork()).ldelim();
+        if (message.marginLeftCode != null && Object.hasOwnProperty.call(message, "marginLeftCode"))
+            writer.uint32(/* id 60, wireType 2 =*/482).string(message.marginLeftCode);
         if (message.rotationInheritance != null && Object.hasOwnProperty.call(message, "rotationInheritance"))
-            writer.uint32(/* id 22, wireType 0 =*/176).int32(message.rotationInheritance);
+            writer.uint32(/* id 61, wireType 0 =*/488).int32(message.rotationInheritance);
         if (message.rotation != null && Object.hasOwnProperty.call(message, "rotation"))
-            writer.uint32(/* id 23, wireType 1 =*/185).double(message.rotation);
+            writer.uint32(/* id 62, wireType 1 =*/497).double(message.rotation);
         if (message.rotationCode != null && Object.hasOwnProperty.call(message, "rotationCode"))
-            writer.uint32(/* id 24, wireType 2 =*/194).string(message.rotationCode);
+            writer.uint32(/* id 63, wireType 2 =*/506).string(message.rotationCode);
         if (message.defaultParagraphFormatUUIDInheritance != null && Object.hasOwnProperty.call(message, "defaultParagraphFormatUUIDInheritance"))
-            writer.uint32(/* id 25, wireType 0 =*/200).int32(message.defaultParagraphFormatUUIDInheritance);
+            writer.uint32(/* id 64, wireType 0 =*/512).int32(message.defaultParagraphFormatUUIDInheritance);
         if (message.defaultParagraphFormatUUID != null && Object.hasOwnProperty.call(message, "defaultParagraphFormatUUID"))
-            writer.uint32(/* id 26, wireType 2 =*/210).string(message.defaultParagraphFormatUUID);
+            writer.uint32(/* id 65, wireType 2 =*/522).string(message.defaultParagraphFormatUUID);
         if (message.defaultParagraphFormatUUIDCode != null && Object.hasOwnProperty.call(message, "defaultParagraphFormatUUIDCode"))
-            writer.uint32(/* id 27, wireType 2 =*/218).string(message.defaultParagraphFormatUUIDCode);
+            writer.uint32(/* id 66, wireType 2 =*/530).string(message.defaultParagraphFormatUUIDCode);
         if (message.tableContentGroupTypeInheritance != null && Object.hasOwnProperty.call(message, "tableContentGroupTypeInheritance"))
-            writer.uint32(/* id 28, wireType 0 =*/224).int32(message.tableContentGroupTypeInheritance);
+            writer.uint32(/* id 67, wireType 0 =*/536).int32(message.tableContentGroupTypeInheritance);
         if (message.tableContentGroupType != null && Object.hasOwnProperty.call(message, "tableContentGroupType"))
-            writer.uint32(/* id 29, wireType 0 =*/232).int32(message.tableContentGroupType);
+            writer.uint32(/* id 68, wireType 0 =*/544).int32(message.tableContentGroupType);
         if (message.tableContentGroupTypeCode != null && Object.hasOwnProperty.call(message, "tableContentGroupTypeCode"))
-            writer.uint32(/* id 30, wireType 2 =*/242).string(message.tableContentGroupTypeCode);
+            writer.uint32(/* id 69, wireType 2 =*/554).string(message.tableContentGroupTypeCode);
         if (message.cellTypeInheritance != null && Object.hasOwnProperty.call(message, "cellTypeInheritance"))
-            writer.uint32(/* id 31, wireType 0 =*/248).int32(message.cellTypeInheritance);
+            writer.uint32(/* id 70, wireType 0 =*/560).int32(message.cellTypeInheritance);
         if (message.cellType != null && Object.hasOwnProperty.call(message, "cellType"))
-            writer.uint32(/* id 32, wireType 0 =*/256).int32(message.cellType);
+            writer.uint32(/* id 71, wireType 0 =*/568).int32(message.cellType);
         if (message.cellTypeCode != null && Object.hasOwnProperty.call(message, "cellTypeCode"))
-            writer.uint32(/* id 33, wireType 2 =*/266).string(message.cellTypeCode);
+            writer.uint32(/* id 72, wireType 2 =*/578).string(message.cellTypeCode);
         if (message.minRowHeightInheritance != null && Object.hasOwnProperty.call(message, "minRowHeightInheritance"))
-            writer.uint32(/* id 34, wireType 0 =*/272).int32(message.minRowHeightInheritance);
+            writer.uint32(/* id 73, wireType 0 =*/584).int32(message.minRowHeightInheritance);
         if (message.minRowHeight != null && Object.hasOwnProperty.call(message, "minRowHeight"))
-            $root.ProtoMeasure.encode(message.minRowHeight, writer.uint32(/* id 35, wireType 2 =*/282).fork()).ldelim();
+            $root.ProtoMeasure.encode(message.minRowHeight, writer.uint32(/* id 74, wireType 2 =*/594).fork()).ldelim();
         if (message.minRowHeightCode != null && Object.hasOwnProperty.call(message, "minRowHeightCode"))
-            writer.uint32(/* id 36, wireType 2 =*/290).string(message.minRowHeightCode);
+            writer.uint32(/* id 75, wireType 2 =*/602).string(message.minRowHeightCode);
         if (message.wsInheritance != null && Object.hasOwnProperty.call(message, "wsInheritance"))
-            writer.uint32(/* id 37, wireType 0 =*/296).int32(message.wsInheritance);
+            writer.uint32(/* id 76, wireType 0 =*/608).int32(message.wsInheritance);
         if (message.ws != null && Object.hasOwnProperty.call(message, "ws"))
-            $root.ProtoTableWS.encode(message.ws, writer.uint32(/* id 38, wireType 2 =*/306).fork()).ldelim();
+            $root.ProtoTableWS.encode(message.ws, writer.uint32(/* id 77, wireType 2 =*/618).fork()).ldelim();
         if (message.wsCode != null && Object.hasOwnProperty.call(message, "wsCode"))
-            writer.uint32(/* id 39, wireType 2 =*/314).string(message.wsCode);
+            writer.uint32(/* id 78, wireType 2 =*/626).string(message.wsCode);
         return writer;
     };
 
@@ -23571,110 +24002,266 @@ $root.ProtoTableElementProperties = (function() {
                     break;
                 }
             case 13: {
-                    message.paddingInheritance = reader.int32();
+                    message.paddingTopInheritance = reader.int32();
                     break;
                 }
             case 14: {
-                    message.padding = $root.ProtoSideMeasures.decode(reader, reader.uint32());
+                    message.paddingTop = $root.ProtoMeasure.decode(reader, reader.uint32());
                     break;
                 }
             case 15: {
-                    message.paddingCode = reader.string();
+                    message.paddingTopCode = reader.string();
                     break;
                 }
             case 16: {
-                    message.borderInheritance = reader.int32();
+                    message.paddingRightInheritance = reader.int32();
                     break;
                 }
             case 17: {
-                    message.border = $root.ProtoSideBorders.decode(reader, reader.uint32());
+                    message.paddingRight = $root.ProtoMeasure.decode(reader, reader.uint32());
                     break;
                 }
             case 18: {
-                    message.borderCode = reader.string();
+                    message.paddingRightCode = reader.string();
                     break;
                 }
             case 19: {
-                    message.marginInheritance = reader.int32();
+                    message.paddingBottomInheritance = reader.int32();
                     break;
                 }
             case 20: {
-                    message.margin = $root.ProtoSideMeasures.decode(reader, reader.uint32());
+                    message.paddingBottom = $root.ProtoMeasure.decode(reader, reader.uint32());
                     break;
                 }
             case 21: {
-                    message.marginCode = reader.string();
+                    message.paddingBottomCode = reader.string();
                     break;
                 }
             case 22: {
-                    message.rotationInheritance = reader.int32();
+                    message.paddingLeftInheritance = reader.int32();
                     break;
                 }
             case 23: {
-                    message.rotation = reader.double();
+                    message.paddingLeft = $root.ProtoMeasure.decode(reader, reader.uint32());
                     break;
                 }
             case 24: {
-                    message.rotationCode = reader.string();
+                    message.paddingLeftCode = reader.string();
                     break;
                 }
             case 25: {
-                    message.defaultParagraphFormatUUIDInheritance = reader.int32();
+                    message.borderTopColorInheritance = reader.int32();
                     break;
                 }
             case 26: {
-                    message.defaultParagraphFormatUUID = reader.string();
+                    message.borderTopColor = $root.ProtoMeasure.decode(reader, reader.uint32());
                     break;
                 }
             case 27: {
-                    message.defaultParagraphFormatUUIDCode = reader.string();
+                    message.borderTopColorCode = reader.string();
                     break;
                 }
             case 28: {
-                    message.tableContentGroupTypeInheritance = reader.int32();
+                    message.borderTopWeightInheritance = reader.int32();
                     break;
                 }
             case 29: {
-                    message.tableContentGroupType = reader.int32();
+                    message.borderTopWeight = $root.ProtoMeasure.decode(reader, reader.uint32());
                     break;
                 }
             case 30: {
-                    message.tableContentGroupTypeCode = reader.string();
+                    message.borderTopWeightCode = reader.string();
                     break;
                 }
             case 31: {
-                    message.cellTypeInheritance = reader.int32();
+                    message.borderRightColorInheritance = reader.int32();
                     break;
                 }
             case 32: {
-                    message.cellType = reader.int32();
+                    message.borderRightColor = $root.ProtoMeasure.decode(reader, reader.uint32());
                     break;
                 }
             case 33: {
-                    message.cellTypeCode = reader.string();
+                    message.borderRightColorCode = reader.string();
                     break;
                 }
             case 34: {
-                    message.minRowHeightInheritance = reader.int32();
+                    message.borderRightWeightInheritance = reader.int32();
                     break;
                 }
             case 35: {
-                    message.minRowHeight = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    message.borderRightWeight = $root.ProtoMeasure.decode(reader, reader.uint32());
                     break;
                 }
             case 36: {
-                    message.minRowHeightCode = reader.string();
+                    message.borderRightWeightCode = reader.string();
                     break;
                 }
             case 37: {
-                    message.wsInheritance = reader.int32();
+                    message.borderBottomColorInheritance = reader.int32();
                     break;
                 }
             case 38: {
-                    message.ws = $root.ProtoTableWS.decode(reader, reader.uint32());
+                    message.borderBottomColor = $root.ProtoMeasure.decode(reader, reader.uint32());
                     break;
                 }
             case 39: {
+                    message.borderBottomColorCode = reader.string();
+                    break;
+                }
+            case 40: {
+                    message.borderBottomWeightInheritance = reader.int32();
+                    break;
+                }
+            case 41: {
+                    message.borderBottomWeight = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 42: {
+                    message.borderBottomWeightCode = reader.string();
+                    break;
+                }
+            case 43: {
+                    message.borderLeftColorInheritance = reader.int32();
+                    break;
+                }
+            case 44: {
+                    message.borderLeftColor = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 45: {
+                    message.borderLeftColorCode = reader.string();
+                    break;
+                }
+            case 46: {
+                    message.borderLeftWeightInheritance = reader.int32();
+                    break;
+                }
+            case 47: {
+                    message.borderLeftWeight = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 48: {
+                    message.borderLeftWeightCode = reader.string();
+                    break;
+                }
+            case 49: {
+                    message.marginTopInheritance = reader.int32();
+                    break;
+                }
+            case 50: {
+                    message.marginTop = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 51: {
+                    message.marginTopCode = reader.string();
+                    break;
+                }
+            case 52: {
+                    message.marginRightInheritance = reader.int32();
+                    break;
+                }
+            case 53: {
+                    message.marginRight = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 54: {
+                    message.marginRightCode = reader.string();
+                    break;
+                }
+            case 55: {
+                    message.marginBottomInheritance = reader.int32();
+                    break;
+                }
+            case 56: {
+                    message.marginBottom = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 57: {
+                    message.marginBottomCode = reader.string();
+                    break;
+                }
+            case 58: {
+                    message.marginLeftInheritance = reader.int32();
+                    break;
+                }
+            case 59: {
+                    message.marginLeft = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 60: {
+                    message.marginLeftCode = reader.string();
+                    break;
+                }
+            case 61: {
+                    message.rotationInheritance = reader.int32();
+                    break;
+                }
+            case 62: {
+                    message.rotation = reader.double();
+                    break;
+                }
+            case 63: {
+                    message.rotationCode = reader.string();
+                    break;
+                }
+            case 64: {
+                    message.defaultParagraphFormatUUIDInheritance = reader.int32();
+                    break;
+                }
+            case 65: {
+                    message.defaultParagraphFormatUUID = reader.string();
+                    break;
+                }
+            case 66: {
+                    message.defaultParagraphFormatUUIDCode = reader.string();
+                    break;
+                }
+            case 67: {
+                    message.tableContentGroupTypeInheritance = reader.int32();
+                    break;
+                }
+            case 68: {
+                    message.tableContentGroupType = reader.int32();
+                    break;
+                }
+            case 69: {
+                    message.tableContentGroupTypeCode = reader.string();
+                    break;
+                }
+            case 70: {
+                    message.cellTypeInheritance = reader.int32();
+                    break;
+                }
+            case 71: {
+                    message.cellType = reader.int32();
+                    break;
+                }
+            case 72: {
+                    message.cellTypeCode = reader.string();
+                    break;
+                }
+            case 73: {
+                    message.minRowHeightInheritance = reader.int32();
+                    break;
+                }
+            case 74: {
+                    message.minRowHeight = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 75: {
+                    message.minRowHeightCode = reader.string();
+                    break;
+                }
+            case 76: {
+                    message.wsInheritance = reader.int32();
+                    break;
+                }
+            case 77: {
+                    message.ws = $root.ProtoTableWS.decode(reader, reader.uint32());
+                    break;
+                }
+            case 78: {
                     message.wsCode = reader.string();
                     break;
                 }
@@ -23721,6 +24308,7 @@ $root.ProtoTableElementProperties = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         if (message.width != null && message.hasOwnProperty("width")) {
@@ -23739,6 +24327,7 @@ $root.ProtoTableElementProperties = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         if (message.align != null && message.hasOwnProperty("align"))
@@ -23764,6 +24353,7 @@ $root.ProtoTableElementProperties = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         if (message.valign != null && message.hasOwnProperty("valign"))
@@ -23786,6 +24376,7 @@ $root.ProtoTableElementProperties = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         if (message.backgroundColor != null && message.hasOwnProperty("backgroundColor")) {
@@ -23800,60 +24391,310 @@ $root.ProtoTableElementProperties = (function() {
         if (message.backgroundColorCode != null && message.hasOwnProperty("backgroundColorCode"))
             if (!$util.isString(message.backgroundColorCode))
                 return "backgroundColorCode: string expected";
-        if (message.paddingInheritance != null && message.hasOwnProperty("paddingInheritance"))
-            switch (message.paddingInheritance) {
+        if (message.paddingTopInheritance != null && message.hasOwnProperty("paddingTopInheritance"))
+            switch (message.paddingTopInheritance) {
             default:
-                return "paddingInheritance: enum value expected";
+                return "paddingTopInheritance: enum value expected";
             case 0:
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
-        if (message.padding != null && message.hasOwnProperty("padding")) {
-            var error = $root.ProtoSideMeasures.verify(message.padding);
+        if (message.paddingTop != null && message.hasOwnProperty("paddingTop")) {
+            var error = $root.ProtoMeasure.verify(message.paddingTop);
             if (error)
-                return "padding." + error;
+                return "paddingTop." + error;
         }
-        if (message.paddingCode != null && message.hasOwnProperty("paddingCode"))
-            if (!$util.isString(message.paddingCode))
-                return "paddingCode: string expected";
-        if (message.borderInheritance != null && message.hasOwnProperty("borderInheritance"))
-            switch (message.borderInheritance) {
+        if (message.paddingTopCode != null && message.hasOwnProperty("paddingTopCode"))
+            if (!$util.isString(message.paddingTopCode))
+                return "paddingTopCode: string expected";
+        if (message.paddingRightInheritance != null && message.hasOwnProperty("paddingRightInheritance"))
+            switch (message.paddingRightInheritance) {
             default:
-                return "borderInheritance: enum value expected";
+                return "paddingRightInheritance: enum value expected";
             case 0:
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
-        if (message.border != null && message.hasOwnProperty("border")) {
-            var error = $root.ProtoSideBorders.verify(message.border);
+        if (message.paddingRight != null && message.hasOwnProperty("paddingRight")) {
+            var error = $root.ProtoMeasure.verify(message.paddingRight);
             if (error)
-                return "border." + error;
+                return "paddingRight." + error;
         }
-        if (message.borderCode != null && message.hasOwnProperty("borderCode"))
-            if (!$util.isString(message.borderCode))
-                return "borderCode: string expected";
-        if (message.marginInheritance != null && message.hasOwnProperty("marginInheritance"))
-            switch (message.marginInheritance) {
+        if (message.paddingRightCode != null && message.hasOwnProperty("paddingRightCode"))
+            if (!$util.isString(message.paddingRightCode))
+                return "paddingRightCode: string expected";
+        if (message.paddingBottomInheritance != null && message.hasOwnProperty("paddingBottomInheritance"))
+            switch (message.paddingBottomInheritance) {
             default:
-                return "marginInheritance: enum value expected";
+                return "paddingBottomInheritance: enum value expected";
             case 0:
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
-        if (message.margin != null && message.hasOwnProperty("margin")) {
-            var error = $root.ProtoSideMeasures.verify(message.margin);
+        if (message.paddingBottom != null && message.hasOwnProperty("paddingBottom")) {
+            var error = $root.ProtoMeasure.verify(message.paddingBottom);
             if (error)
-                return "margin." + error;
+                return "paddingBottom." + error;
         }
-        if (message.marginCode != null && message.hasOwnProperty("marginCode"))
-            if (!$util.isString(message.marginCode))
-                return "marginCode: string expected";
+        if (message.paddingBottomCode != null && message.hasOwnProperty("paddingBottomCode"))
+            if (!$util.isString(message.paddingBottomCode))
+                return "paddingBottomCode: string expected";
+        if (message.paddingLeftInheritance != null && message.hasOwnProperty("paddingLeftInheritance"))
+            switch (message.paddingLeftInheritance) {
+            default:
+                return "paddingLeftInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.paddingLeft != null && message.hasOwnProperty("paddingLeft")) {
+            var error = $root.ProtoMeasure.verify(message.paddingLeft);
+            if (error)
+                return "paddingLeft." + error;
+        }
+        if (message.paddingLeftCode != null && message.hasOwnProperty("paddingLeftCode"))
+            if (!$util.isString(message.paddingLeftCode))
+                return "paddingLeftCode: string expected";
+        if (message.borderTopColorInheritance != null && message.hasOwnProperty("borderTopColorInheritance"))
+            switch (message.borderTopColorInheritance) {
+            default:
+                return "borderTopColorInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.borderTopColor != null && message.hasOwnProperty("borderTopColor")) {
+            var error = $root.ProtoMeasure.verify(message.borderTopColor);
+            if (error)
+                return "borderTopColor." + error;
+        }
+        if (message.borderTopColorCode != null && message.hasOwnProperty("borderTopColorCode"))
+            if (!$util.isString(message.borderTopColorCode))
+                return "borderTopColorCode: string expected";
+        if (message.borderTopWeightInheritance != null && message.hasOwnProperty("borderTopWeightInheritance"))
+            switch (message.borderTopWeightInheritance) {
+            default:
+                return "borderTopWeightInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.borderTopWeight != null && message.hasOwnProperty("borderTopWeight")) {
+            var error = $root.ProtoMeasure.verify(message.borderTopWeight);
+            if (error)
+                return "borderTopWeight." + error;
+        }
+        if (message.borderTopWeightCode != null && message.hasOwnProperty("borderTopWeightCode"))
+            if (!$util.isString(message.borderTopWeightCode))
+                return "borderTopWeightCode: string expected";
+        if (message.borderRightColorInheritance != null && message.hasOwnProperty("borderRightColorInheritance"))
+            switch (message.borderRightColorInheritance) {
+            default:
+                return "borderRightColorInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.borderRightColor != null && message.hasOwnProperty("borderRightColor")) {
+            var error = $root.ProtoMeasure.verify(message.borderRightColor);
+            if (error)
+                return "borderRightColor." + error;
+        }
+        if (message.borderRightColorCode != null && message.hasOwnProperty("borderRightColorCode"))
+            if (!$util.isString(message.borderRightColorCode))
+                return "borderRightColorCode: string expected";
+        if (message.borderRightWeightInheritance != null && message.hasOwnProperty("borderRightWeightInheritance"))
+            switch (message.borderRightWeightInheritance) {
+            default:
+                return "borderRightWeightInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.borderRightWeight != null && message.hasOwnProperty("borderRightWeight")) {
+            var error = $root.ProtoMeasure.verify(message.borderRightWeight);
+            if (error)
+                return "borderRightWeight." + error;
+        }
+        if (message.borderRightWeightCode != null && message.hasOwnProperty("borderRightWeightCode"))
+            if (!$util.isString(message.borderRightWeightCode))
+                return "borderRightWeightCode: string expected";
+        if (message.borderBottomColorInheritance != null && message.hasOwnProperty("borderBottomColorInheritance"))
+            switch (message.borderBottomColorInheritance) {
+            default:
+                return "borderBottomColorInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.borderBottomColor != null && message.hasOwnProperty("borderBottomColor")) {
+            var error = $root.ProtoMeasure.verify(message.borderBottomColor);
+            if (error)
+                return "borderBottomColor." + error;
+        }
+        if (message.borderBottomColorCode != null && message.hasOwnProperty("borderBottomColorCode"))
+            if (!$util.isString(message.borderBottomColorCode))
+                return "borderBottomColorCode: string expected";
+        if (message.borderBottomWeightInheritance != null && message.hasOwnProperty("borderBottomWeightInheritance"))
+            switch (message.borderBottomWeightInheritance) {
+            default:
+                return "borderBottomWeightInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.borderBottomWeight != null && message.hasOwnProperty("borderBottomWeight")) {
+            var error = $root.ProtoMeasure.verify(message.borderBottomWeight);
+            if (error)
+                return "borderBottomWeight." + error;
+        }
+        if (message.borderBottomWeightCode != null && message.hasOwnProperty("borderBottomWeightCode"))
+            if (!$util.isString(message.borderBottomWeightCode))
+                return "borderBottomWeightCode: string expected";
+        if (message.borderLeftColorInheritance != null && message.hasOwnProperty("borderLeftColorInheritance"))
+            switch (message.borderLeftColorInheritance) {
+            default:
+                return "borderLeftColorInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.borderLeftColor != null && message.hasOwnProperty("borderLeftColor")) {
+            var error = $root.ProtoMeasure.verify(message.borderLeftColor);
+            if (error)
+                return "borderLeftColor." + error;
+        }
+        if (message.borderLeftColorCode != null && message.hasOwnProperty("borderLeftColorCode"))
+            if (!$util.isString(message.borderLeftColorCode))
+                return "borderLeftColorCode: string expected";
+        if (message.borderLeftWeightInheritance != null && message.hasOwnProperty("borderLeftWeightInheritance"))
+            switch (message.borderLeftWeightInheritance) {
+            default:
+                return "borderLeftWeightInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.borderLeftWeight != null && message.hasOwnProperty("borderLeftWeight")) {
+            var error = $root.ProtoMeasure.verify(message.borderLeftWeight);
+            if (error)
+                return "borderLeftWeight." + error;
+        }
+        if (message.borderLeftWeightCode != null && message.hasOwnProperty("borderLeftWeightCode"))
+            if (!$util.isString(message.borderLeftWeightCode))
+                return "borderLeftWeightCode: string expected";
+        if (message.marginTopInheritance != null && message.hasOwnProperty("marginTopInheritance"))
+            switch (message.marginTopInheritance) {
+            default:
+                return "marginTopInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.marginTop != null && message.hasOwnProperty("marginTop")) {
+            var error = $root.ProtoMeasure.verify(message.marginTop);
+            if (error)
+                return "marginTop." + error;
+        }
+        if (message.marginTopCode != null && message.hasOwnProperty("marginTopCode"))
+            if (!$util.isString(message.marginTopCode))
+                return "marginTopCode: string expected";
+        if (message.marginRightInheritance != null && message.hasOwnProperty("marginRightInheritance"))
+            switch (message.marginRightInheritance) {
+            default:
+                return "marginRightInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.marginRight != null && message.hasOwnProperty("marginRight")) {
+            var error = $root.ProtoMeasure.verify(message.marginRight);
+            if (error)
+                return "marginRight." + error;
+        }
+        if (message.marginRightCode != null && message.hasOwnProperty("marginRightCode"))
+            if (!$util.isString(message.marginRightCode))
+                return "marginRightCode: string expected";
+        if (message.marginBottomInheritance != null && message.hasOwnProperty("marginBottomInheritance"))
+            switch (message.marginBottomInheritance) {
+            default:
+                return "marginBottomInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.marginBottom != null && message.hasOwnProperty("marginBottom")) {
+            var error = $root.ProtoMeasure.verify(message.marginBottom);
+            if (error)
+                return "marginBottom." + error;
+        }
+        if (message.marginBottomCode != null && message.hasOwnProperty("marginBottomCode"))
+            if (!$util.isString(message.marginBottomCode))
+                return "marginBottomCode: string expected";
+        if (message.marginLeftInheritance != null && message.hasOwnProperty("marginLeftInheritance"))
+            switch (message.marginLeftInheritance) {
+            default:
+                return "marginLeftInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.marginLeft != null && message.hasOwnProperty("marginLeft")) {
+            var error = $root.ProtoMeasure.verify(message.marginLeft);
+            if (error)
+                return "marginLeft." + error;
+        }
+        if (message.marginLeftCode != null && message.hasOwnProperty("marginLeftCode"))
+            if (!$util.isString(message.marginLeftCode))
+                return "marginLeftCode: string expected";
         if (message.rotationInheritance != null && message.hasOwnProperty("rotationInheritance"))
             switch (message.rotationInheritance) {
             default:
@@ -23862,6 +24703,7 @@ $root.ProtoTableElementProperties = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         if (message.rotation != null && message.hasOwnProperty("rotation"))
@@ -23878,6 +24720,7 @@ $root.ProtoTableElementProperties = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         if (message.defaultParagraphFormatUUID != null && message.hasOwnProperty("defaultParagraphFormatUUID"))
@@ -23894,6 +24737,7 @@ $root.ProtoTableElementProperties = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         if (message.tableContentGroupType != null && message.hasOwnProperty("tableContentGroupType"))
@@ -23917,6 +24761,7 @@ $root.ProtoTableElementProperties = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         if (message.cellType != null && message.hasOwnProperty("cellType"))
@@ -23939,6 +24784,7 @@ $root.ProtoTableElementProperties = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         if (message.minRowHeight != null && message.hasOwnProperty("minRowHeight")) {
@@ -23957,6 +24803,7 @@ $root.ProtoTableElementProperties = (function() {
             case 1:
             case 2:
             case 3:
+            case 4:
                 break;
             }
         if (message.ws != null && message.hasOwnProperty("ws")) {
@@ -24005,6 +24852,10 @@ $root.ProtoTableElementProperties = (function() {
         case 3:
             message.widthInheritance = 3;
             break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.widthInheritance = 4;
+            break;
         }
         if (object.width != null) {
             if (typeof object.width !== "object")
@@ -24035,6 +24886,10 @@ $root.ProtoTableElementProperties = (function() {
         case "INHERITANCE_STATIC":
         case 3:
             message.alignInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.alignInheritance = 4;
             break;
         }
         switch (object.align) {
@@ -24094,6 +24949,10 @@ $root.ProtoTableElementProperties = (function() {
         case 3:
             message.valignInheritance = 3;
             break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.valignInheritance = 4;
+            break;
         }
         switch (object.valign) {
         default:
@@ -24140,6 +24999,10 @@ $root.ProtoTableElementProperties = (function() {
         case 3:
             message.backgroundColorInheritance = 3;
             break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.backgroundColorInheritance = 4;
+            break;
         }
         if (object.backgroundColor) {
             if (!Array.isArray(object.backgroundColor))
@@ -24153,99 +25016,566 @@ $root.ProtoTableElementProperties = (function() {
         }
         if (object.backgroundColorCode != null)
             message.backgroundColorCode = String(object.backgroundColorCode);
-        switch (object.paddingInheritance) {
+        switch (object.paddingTopInheritance) {
         default:
-            if (typeof object.paddingInheritance === "number") {
-                message.paddingInheritance = object.paddingInheritance;
+            if (typeof object.paddingTopInheritance === "number") {
+                message.paddingTopInheritance = object.paddingTopInheritance;
                 break;
             }
             break;
         case "INHERITANCE_INHERIT":
         case 0:
-            message.paddingInheritance = 0;
+            message.paddingTopInheritance = 0;
             break;
         case "INHERITANCE_CODE":
         case 1:
-            message.paddingInheritance = 1;
+            message.paddingTopInheritance = 1;
             break;
         case "INHERITANCE_BIND_CODE":
         case 2:
-            message.paddingInheritance = 2;
+            message.paddingTopInheritance = 2;
             break;
         case "INHERITANCE_STATIC":
         case 3:
-            message.paddingInheritance = 3;
+            message.paddingTopInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.paddingTopInheritance = 4;
             break;
         }
-        if (object.padding != null) {
-            if (typeof object.padding !== "object")
-                throw TypeError(".ProtoTableElementProperties.padding: object expected");
-            message.padding = $root.ProtoSideMeasures.fromObject(object.padding);
+        if (object.paddingTop != null) {
+            if (typeof object.paddingTop !== "object")
+                throw TypeError(".ProtoTableElementProperties.paddingTop: object expected");
+            message.paddingTop = $root.ProtoMeasure.fromObject(object.paddingTop);
         }
-        if (object.paddingCode != null)
-            message.paddingCode = String(object.paddingCode);
-        switch (object.borderInheritance) {
+        if (object.paddingTopCode != null)
+            message.paddingTopCode = String(object.paddingTopCode);
+        switch (object.paddingRightInheritance) {
         default:
-            if (typeof object.borderInheritance === "number") {
-                message.borderInheritance = object.borderInheritance;
+            if (typeof object.paddingRightInheritance === "number") {
+                message.paddingRightInheritance = object.paddingRightInheritance;
                 break;
             }
             break;
         case "INHERITANCE_INHERIT":
         case 0:
-            message.borderInheritance = 0;
+            message.paddingRightInheritance = 0;
             break;
         case "INHERITANCE_CODE":
         case 1:
-            message.borderInheritance = 1;
+            message.paddingRightInheritance = 1;
             break;
         case "INHERITANCE_BIND_CODE":
         case 2:
-            message.borderInheritance = 2;
+            message.paddingRightInheritance = 2;
             break;
         case "INHERITANCE_STATIC":
         case 3:
-            message.borderInheritance = 3;
+            message.paddingRightInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.paddingRightInheritance = 4;
             break;
         }
-        if (object.border != null) {
-            if (typeof object.border !== "object")
-                throw TypeError(".ProtoTableElementProperties.border: object expected");
-            message.border = $root.ProtoSideBorders.fromObject(object.border);
+        if (object.paddingRight != null) {
+            if (typeof object.paddingRight !== "object")
+                throw TypeError(".ProtoTableElementProperties.paddingRight: object expected");
+            message.paddingRight = $root.ProtoMeasure.fromObject(object.paddingRight);
         }
-        if (object.borderCode != null)
-            message.borderCode = String(object.borderCode);
-        switch (object.marginInheritance) {
+        if (object.paddingRightCode != null)
+            message.paddingRightCode = String(object.paddingRightCode);
+        switch (object.paddingBottomInheritance) {
         default:
-            if (typeof object.marginInheritance === "number") {
-                message.marginInheritance = object.marginInheritance;
+            if (typeof object.paddingBottomInheritance === "number") {
+                message.paddingBottomInheritance = object.paddingBottomInheritance;
                 break;
             }
             break;
         case "INHERITANCE_INHERIT":
         case 0:
-            message.marginInheritance = 0;
+            message.paddingBottomInheritance = 0;
             break;
         case "INHERITANCE_CODE":
         case 1:
-            message.marginInheritance = 1;
+            message.paddingBottomInheritance = 1;
             break;
         case "INHERITANCE_BIND_CODE":
         case 2:
-            message.marginInheritance = 2;
+            message.paddingBottomInheritance = 2;
             break;
         case "INHERITANCE_STATIC":
         case 3:
-            message.marginInheritance = 3;
+            message.paddingBottomInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.paddingBottomInheritance = 4;
             break;
         }
-        if (object.margin != null) {
-            if (typeof object.margin !== "object")
-                throw TypeError(".ProtoTableElementProperties.margin: object expected");
-            message.margin = $root.ProtoSideMeasures.fromObject(object.margin);
+        if (object.paddingBottom != null) {
+            if (typeof object.paddingBottom !== "object")
+                throw TypeError(".ProtoTableElementProperties.paddingBottom: object expected");
+            message.paddingBottom = $root.ProtoMeasure.fromObject(object.paddingBottom);
         }
-        if (object.marginCode != null)
-            message.marginCode = String(object.marginCode);
+        if (object.paddingBottomCode != null)
+            message.paddingBottomCode = String(object.paddingBottomCode);
+        switch (object.paddingLeftInheritance) {
+        default:
+            if (typeof object.paddingLeftInheritance === "number") {
+                message.paddingLeftInheritance = object.paddingLeftInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.paddingLeftInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.paddingLeftInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.paddingLeftInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.paddingLeftInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.paddingLeftInheritance = 4;
+            break;
+        }
+        if (object.paddingLeft != null) {
+            if (typeof object.paddingLeft !== "object")
+                throw TypeError(".ProtoTableElementProperties.paddingLeft: object expected");
+            message.paddingLeft = $root.ProtoMeasure.fromObject(object.paddingLeft);
+        }
+        if (object.paddingLeftCode != null)
+            message.paddingLeftCode = String(object.paddingLeftCode);
+        switch (object.borderTopColorInheritance) {
+        default:
+            if (typeof object.borderTopColorInheritance === "number") {
+                message.borderTopColorInheritance = object.borderTopColorInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.borderTopColorInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.borderTopColorInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.borderTopColorInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.borderTopColorInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.borderTopColorInheritance = 4;
+            break;
+        }
+        if (object.borderTopColor != null) {
+            if (typeof object.borderTopColor !== "object")
+                throw TypeError(".ProtoTableElementProperties.borderTopColor: object expected");
+            message.borderTopColor = $root.ProtoMeasure.fromObject(object.borderTopColor);
+        }
+        if (object.borderTopColorCode != null)
+            message.borderTopColorCode = String(object.borderTopColorCode);
+        switch (object.borderTopWeightInheritance) {
+        default:
+            if (typeof object.borderTopWeightInheritance === "number") {
+                message.borderTopWeightInheritance = object.borderTopWeightInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.borderTopWeightInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.borderTopWeightInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.borderTopWeightInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.borderTopWeightInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.borderTopWeightInheritance = 4;
+            break;
+        }
+        if (object.borderTopWeight != null) {
+            if (typeof object.borderTopWeight !== "object")
+                throw TypeError(".ProtoTableElementProperties.borderTopWeight: object expected");
+            message.borderTopWeight = $root.ProtoMeasure.fromObject(object.borderTopWeight);
+        }
+        if (object.borderTopWeightCode != null)
+            message.borderTopWeightCode = String(object.borderTopWeightCode);
+        switch (object.borderRightColorInheritance) {
+        default:
+            if (typeof object.borderRightColorInheritance === "number") {
+                message.borderRightColorInheritance = object.borderRightColorInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.borderRightColorInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.borderRightColorInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.borderRightColorInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.borderRightColorInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.borderRightColorInheritance = 4;
+            break;
+        }
+        if (object.borderRightColor != null) {
+            if (typeof object.borderRightColor !== "object")
+                throw TypeError(".ProtoTableElementProperties.borderRightColor: object expected");
+            message.borderRightColor = $root.ProtoMeasure.fromObject(object.borderRightColor);
+        }
+        if (object.borderRightColorCode != null)
+            message.borderRightColorCode = String(object.borderRightColorCode);
+        switch (object.borderRightWeightInheritance) {
+        default:
+            if (typeof object.borderRightWeightInheritance === "number") {
+                message.borderRightWeightInheritance = object.borderRightWeightInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.borderRightWeightInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.borderRightWeightInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.borderRightWeightInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.borderRightWeightInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.borderRightWeightInheritance = 4;
+            break;
+        }
+        if (object.borderRightWeight != null) {
+            if (typeof object.borderRightWeight !== "object")
+                throw TypeError(".ProtoTableElementProperties.borderRightWeight: object expected");
+            message.borderRightWeight = $root.ProtoMeasure.fromObject(object.borderRightWeight);
+        }
+        if (object.borderRightWeightCode != null)
+            message.borderRightWeightCode = String(object.borderRightWeightCode);
+        switch (object.borderBottomColorInheritance) {
+        default:
+            if (typeof object.borderBottomColorInheritance === "number") {
+                message.borderBottomColorInheritance = object.borderBottomColorInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.borderBottomColorInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.borderBottomColorInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.borderBottomColorInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.borderBottomColorInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.borderBottomColorInheritance = 4;
+            break;
+        }
+        if (object.borderBottomColor != null) {
+            if (typeof object.borderBottomColor !== "object")
+                throw TypeError(".ProtoTableElementProperties.borderBottomColor: object expected");
+            message.borderBottomColor = $root.ProtoMeasure.fromObject(object.borderBottomColor);
+        }
+        if (object.borderBottomColorCode != null)
+            message.borderBottomColorCode = String(object.borderBottomColorCode);
+        switch (object.borderBottomWeightInheritance) {
+        default:
+            if (typeof object.borderBottomWeightInheritance === "number") {
+                message.borderBottomWeightInheritance = object.borderBottomWeightInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.borderBottomWeightInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.borderBottomWeightInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.borderBottomWeightInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.borderBottomWeightInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.borderBottomWeightInheritance = 4;
+            break;
+        }
+        if (object.borderBottomWeight != null) {
+            if (typeof object.borderBottomWeight !== "object")
+                throw TypeError(".ProtoTableElementProperties.borderBottomWeight: object expected");
+            message.borderBottomWeight = $root.ProtoMeasure.fromObject(object.borderBottomWeight);
+        }
+        if (object.borderBottomWeightCode != null)
+            message.borderBottomWeightCode = String(object.borderBottomWeightCode);
+        switch (object.borderLeftColorInheritance) {
+        default:
+            if (typeof object.borderLeftColorInheritance === "number") {
+                message.borderLeftColorInheritance = object.borderLeftColorInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.borderLeftColorInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.borderLeftColorInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.borderLeftColorInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.borderLeftColorInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.borderLeftColorInheritance = 4;
+            break;
+        }
+        if (object.borderLeftColor != null) {
+            if (typeof object.borderLeftColor !== "object")
+                throw TypeError(".ProtoTableElementProperties.borderLeftColor: object expected");
+            message.borderLeftColor = $root.ProtoMeasure.fromObject(object.borderLeftColor);
+        }
+        if (object.borderLeftColorCode != null)
+            message.borderLeftColorCode = String(object.borderLeftColorCode);
+        switch (object.borderLeftWeightInheritance) {
+        default:
+            if (typeof object.borderLeftWeightInheritance === "number") {
+                message.borderLeftWeightInheritance = object.borderLeftWeightInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.borderLeftWeightInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.borderLeftWeightInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.borderLeftWeightInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.borderLeftWeightInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.borderLeftWeightInheritance = 4;
+            break;
+        }
+        if (object.borderLeftWeight != null) {
+            if (typeof object.borderLeftWeight !== "object")
+                throw TypeError(".ProtoTableElementProperties.borderLeftWeight: object expected");
+            message.borderLeftWeight = $root.ProtoMeasure.fromObject(object.borderLeftWeight);
+        }
+        if (object.borderLeftWeightCode != null)
+            message.borderLeftWeightCode = String(object.borderLeftWeightCode);
+        switch (object.marginTopInheritance) {
+        default:
+            if (typeof object.marginTopInheritance === "number") {
+                message.marginTopInheritance = object.marginTopInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.marginTopInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.marginTopInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.marginTopInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.marginTopInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.marginTopInheritance = 4;
+            break;
+        }
+        if (object.marginTop != null) {
+            if (typeof object.marginTop !== "object")
+                throw TypeError(".ProtoTableElementProperties.marginTop: object expected");
+            message.marginTop = $root.ProtoMeasure.fromObject(object.marginTop);
+        }
+        if (object.marginTopCode != null)
+            message.marginTopCode = String(object.marginTopCode);
+        switch (object.marginRightInheritance) {
+        default:
+            if (typeof object.marginRightInheritance === "number") {
+                message.marginRightInheritance = object.marginRightInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.marginRightInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.marginRightInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.marginRightInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.marginRightInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.marginRightInheritance = 4;
+            break;
+        }
+        if (object.marginRight != null) {
+            if (typeof object.marginRight !== "object")
+                throw TypeError(".ProtoTableElementProperties.marginRight: object expected");
+            message.marginRight = $root.ProtoMeasure.fromObject(object.marginRight);
+        }
+        if (object.marginRightCode != null)
+            message.marginRightCode = String(object.marginRightCode);
+        switch (object.marginBottomInheritance) {
+        default:
+            if (typeof object.marginBottomInheritance === "number") {
+                message.marginBottomInheritance = object.marginBottomInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.marginBottomInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.marginBottomInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.marginBottomInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.marginBottomInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.marginBottomInheritance = 4;
+            break;
+        }
+        if (object.marginBottom != null) {
+            if (typeof object.marginBottom !== "object")
+                throw TypeError(".ProtoTableElementProperties.marginBottom: object expected");
+            message.marginBottom = $root.ProtoMeasure.fromObject(object.marginBottom);
+        }
+        if (object.marginBottomCode != null)
+            message.marginBottomCode = String(object.marginBottomCode);
+        switch (object.marginLeftInheritance) {
+        default:
+            if (typeof object.marginLeftInheritance === "number") {
+                message.marginLeftInheritance = object.marginLeftInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.marginLeftInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.marginLeftInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.marginLeftInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.marginLeftInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.marginLeftInheritance = 4;
+            break;
+        }
+        if (object.marginLeft != null) {
+            if (typeof object.marginLeft !== "object")
+                throw TypeError(".ProtoTableElementProperties.marginLeft: object expected");
+            message.marginLeft = $root.ProtoMeasure.fromObject(object.marginLeft);
+        }
+        if (object.marginLeftCode != null)
+            message.marginLeftCode = String(object.marginLeftCode);
         switch (object.rotationInheritance) {
         default:
             if (typeof object.rotationInheritance === "number") {
@@ -24268,6 +25598,10 @@ $root.ProtoTableElementProperties = (function() {
         case "INHERITANCE_STATIC":
         case 3:
             message.rotationInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.rotationInheritance = 4;
             break;
         }
         if (object.rotation != null)
@@ -24297,6 +25631,10 @@ $root.ProtoTableElementProperties = (function() {
         case 3:
             message.defaultParagraphFormatUUIDInheritance = 3;
             break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.defaultParagraphFormatUUIDInheritance = 4;
+            break;
         }
         if (object.defaultParagraphFormatUUID != null)
             message.defaultParagraphFormatUUID = String(object.defaultParagraphFormatUUID);
@@ -24324,6 +25662,10 @@ $root.ProtoTableElementProperties = (function() {
         case "INHERITANCE_STATIC":
         case 3:
             message.tableContentGroupTypeInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.tableContentGroupTypeInheritance = 4;
             break;
         }
         switch (object.tableContentGroupType) {
@@ -24375,6 +25717,10 @@ $root.ProtoTableElementProperties = (function() {
         case 3:
             message.cellTypeInheritance = 3;
             break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.cellTypeInheritance = 4;
+            break;
         }
         switch (object.cellType) {
         default:
@@ -24421,6 +25767,10 @@ $root.ProtoTableElementProperties = (function() {
         case 3:
             message.minRowHeightInheritance = 3;
             break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.minRowHeightInheritance = 4;
+            break;
         }
         if (object.minRowHeight != null) {
             if (typeof object.minRowHeight !== "object")
@@ -24451,6 +25801,10 @@ $root.ProtoTableElementProperties = (function() {
         case "INHERITANCE_STATIC":
         case 3:
             message.wsInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.wsInheritance = 4;
             break;
         }
         if (object.ws != null) {
@@ -24490,15 +25844,54 @@ $root.ProtoTableElementProperties = (function() {
             object.valignCode = "";
             object.backgroundColorInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.backgroundColorCode = "";
-            object.paddingInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
-            object.padding = null;
-            object.paddingCode = "";
-            object.borderInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
-            object.border = null;
-            object.borderCode = "";
-            object.marginInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
-            object.margin = null;
-            object.marginCode = "";
+            object.paddingTopInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.paddingTop = null;
+            object.paddingTopCode = "";
+            object.paddingRightInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.paddingRight = null;
+            object.paddingRightCode = "";
+            object.paddingBottomInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.paddingBottom = null;
+            object.paddingBottomCode = "";
+            object.paddingLeftInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.paddingLeft = null;
+            object.paddingLeftCode = "";
+            object.borderTopColorInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.borderTopColor = null;
+            object.borderTopColorCode = "";
+            object.borderTopWeightInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.borderTopWeight = null;
+            object.borderTopWeightCode = "";
+            object.borderRightColorInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.borderRightColor = null;
+            object.borderRightColorCode = "";
+            object.borderRightWeightInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.borderRightWeight = null;
+            object.borderRightWeightCode = "";
+            object.borderBottomColorInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.borderBottomColor = null;
+            object.borderBottomColorCode = "";
+            object.borderBottomWeightInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.borderBottomWeight = null;
+            object.borderBottomWeightCode = "";
+            object.borderLeftColorInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.borderLeftColor = null;
+            object.borderLeftColorCode = "";
+            object.borderLeftWeightInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.borderLeftWeight = null;
+            object.borderLeftWeightCode = "";
+            object.marginTopInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.marginTop = null;
+            object.marginTopCode = "";
+            object.marginRightInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.marginRight = null;
+            object.marginRightCode = "";
+            object.marginBottomInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.marginBottom = null;
+            object.marginBottomCode = "";
+            object.marginLeftInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.marginLeft = null;
+            object.marginLeftCode = "";
             object.rotationInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.rotation = 0;
             object.rotationCode = "";
@@ -24545,24 +25938,102 @@ $root.ProtoTableElementProperties = (function() {
         }
         if (message.backgroundColorCode != null && message.hasOwnProperty("backgroundColorCode"))
             object.backgroundColorCode = message.backgroundColorCode;
-        if (message.paddingInheritance != null && message.hasOwnProperty("paddingInheritance"))
-            object.paddingInheritance = options.enums === String ? $root.Inheritance[message.paddingInheritance] === undefined ? message.paddingInheritance : $root.Inheritance[message.paddingInheritance] : message.paddingInheritance;
-        if (message.padding != null && message.hasOwnProperty("padding"))
-            object.padding = $root.ProtoSideMeasures.toObject(message.padding, options);
-        if (message.paddingCode != null && message.hasOwnProperty("paddingCode"))
-            object.paddingCode = message.paddingCode;
-        if (message.borderInheritance != null && message.hasOwnProperty("borderInheritance"))
-            object.borderInheritance = options.enums === String ? $root.Inheritance[message.borderInheritance] === undefined ? message.borderInheritance : $root.Inheritance[message.borderInheritance] : message.borderInheritance;
-        if (message.border != null && message.hasOwnProperty("border"))
-            object.border = $root.ProtoSideBorders.toObject(message.border, options);
-        if (message.borderCode != null && message.hasOwnProperty("borderCode"))
-            object.borderCode = message.borderCode;
-        if (message.marginInheritance != null && message.hasOwnProperty("marginInheritance"))
-            object.marginInheritance = options.enums === String ? $root.Inheritance[message.marginInheritance] === undefined ? message.marginInheritance : $root.Inheritance[message.marginInheritance] : message.marginInheritance;
-        if (message.margin != null && message.hasOwnProperty("margin"))
-            object.margin = $root.ProtoSideMeasures.toObject(message.margin, options);
-        if (message.marginCode != null && message.hasOwnProperty("marginCode"))
-            object.marginCode = message.marginCode;
+        if (message.paddingTopInheritance != null && message.hasOwnProperty("paddingTopInheritance"))
+            object.paddingTopInheritance = options.enums === String ? $root.Inheritance[message.paddingTopInheritance] === undefined ? message.paddingTopInheritance : $root.Inheritance[message.paddingTopInheritance] : message.paddingTopInheritance;
+        if (message.paddingTop != null && message.hasOwnProperty("paddingTop"))
+            object.paddingTop = $root.ProtoMeasure.toObject(message.paddingTop, options);
+        if (message.paddingTopCode != null && message.hasOwnProperty("paddingTopCode"))
+            object.paddingTopCode = message.paddingTopCode;
+        if (message.paddingRightInheritance != null && message.hasOwnProperty("paddingRightInheritance"))
+            object.paddingRightInheritance = options.enums === String ? $root.Inheritance[message.paddingRightInheritance] === undefined ? message.paddingRightInheritance : $root.Inheritance[message.paddingRightInheritance] : message.paddingRightInheritance;
+        if (message.paddingRight != null && message.hasOwnProperty("paddingRight"))
+            object.paddingRight = $root.ProtoMeasure.toObject(message.paddingRight, options);
+        if (message.paddingRightCode != null && message.hasOwnProperty("paddingRightCode"))
+            object.paddingRightCode = message.paddingRightCode;
+        if (message.paddingBottomInheritance != null && message.hasOwnProperty("paddingBottomInheritance"))
+            object.paddingBottomInheritance = options.enums === String ? $root.Inheritance[message.paddingBottomInheritance] === undefined ? message.paddingBottomInheritance : $root.Inheritance[message.paddingBottomInheritance] : message.paddingBottomInheritance;
+        if (message.paddingBottom != null && message.hasOwnProperty("paddingBottom"))
+            object.paddingBottom = $root.ProtoMeasure.toObject(message.paddingBottom, options);
+        if (message.paddingBottomCode != null && message.hasOwnProperty("paddingBottomCode"))
+            object.paddingBottomCode = message.paddingBottomCode;
+        if (message.paddingLeftInheritance != null && message.hasOwnProperty("paddingLeftInheritance"))
+            object.paddingLeftInheritance = options.enums === String ? $root.Inheritance[message.paddingLeftInheritance] === undefined ? message.paddingLeftInheritance : $root.Inheritance[message.paddingLeftInheritance] : message.paddingLeftInheritance;
+        if (message.paddingLeft != null && message.hasOwnProperty("paddingLeft"))
+            object.paddingLeft = $root.ProtoMeasure.toObject(message.paddingLeft, options);
+        if (message.paddingLeftCode != null && message.hasOwnProperty("paddingLeftCode"))
+            object.paddingLeftCode = message.paddingLeftCode;
+        if (message.borderTopColorInheritance != null && message.hasOwnProperty("borderTopColorInheritance"))
+            object.borderTopColorInheritance = options.enums === String ? $root.Inheritance[message.borderTopColorInheritance] === undefined ? message.borderTopColorInheritance : $root.Inheritance[message.borderTopColorInheritance] : message.borderTopColorInheritance;
+        if (message.borderTopColor != null && message.hasOwnProperty("borderTopColor"))
+            object.borderTopColor = $root.ProtoMeasure.toObject(message.borderTopColor, options);
+        if (message.borderTopColorCode != null && message.hasOwnProperty("borderTopColorCode"))
+            object.borderTopColorCode = message.borderTopColorCode;
+        if (message.borderTopWeightInheritance != null && message.hasOwnProperty("borderTopWeightInheritance"))
+            object.borderTopWeightInheritance = options.enums === String ? $root.Inheritance[message.borderTopWeightInheritance] === undefined ? message.borderTopWeightInheritance : $root.Inheritance[message.borderTopWeightInheritance] : message.borderTopWeightInheritance;
+        if (message.borderTopWeight != null && message.hasOwnProperty("borderTopWeight"))
+            object.borderTopWeight = $root.ProtoMeasure.toObject(message.borderTopWeight, options);
+        if (message.borderTopWeightCode != null && message.hasOwnProperty("borderTopWeightCode"))
+            object.borderTopWeightCode = message.borderTopWeightCode;
+        if (message.borderRightColorInheritance != null && message.hasOwnProperty("borderRightColorInheritance"))
+            object.borderRightColorInheritance = options.enums === String ? $root.Inheritance[message.borderRightColorInheritance] === undefined ? message.borderRightColorInheritance : $root.Inheritance[message.borderRightColorInheritance] : message.borderRightColorInheritance;
+        if (message.borderRightColor != null && message.hasOwnProperty("borderRightColor"))
+            object.borderRightColor = $root.ProtoMeasure.toObject(message.borderRightColor, options);
+        if (message.borderRightColorCode != null && message.hasOwnProperty("borderRightColorCode"))
+            object.borderRightColorCode = message.borderRightColorCode;
+        if (message.borderRightWeightInheritance != null && message.hasOwnProperty("borderRightWeightInheritance"))
+            object.borderRightWeightInheritance = options.enums === String ? $root.Inheritance[message.borderRightWeightInheritance] === undefined ? message.borderRightWeightInheritance : $root.Inheritance[message.borderRightWeightInheritance] : message.borderRightWeightInheritance;
+        if (message.borderRightWeight != null && message.hasOwnProperty("borderRightWeight"))
+            object.borderRightWeight = $root.ProtoMeasure.toObject(message.borderRightWeight, options);
+        if (message.borderRightWeightCode != null && message.hasOwnProperty("borderRightWeightCode"))
+            object.borderRightWeightCode = message.borderRightWeightCode;
+        if (message.borderBottomColorInheritance != null && message.hasOwnProperty("borderBottomColorInheritance"))
+            object.borderBottomColorInheritance = options.enums === String ? $root.Inheritance[message.borderBottomColorInheritance] === undefined ? message.borderBottomColorInheritance : $root.Inheritance[message.borderBottomColorInheritance] : message.borderBottomColorInheritance;
+        if (message.borderBottomColor != null && message.hasOwnProperty("borderBottomColor"))
+            object.borderBottomColor = $root.ProtoMeasure.toObject(message.borderBottomColor, options);
+        if (message.borderBottomColorCode != null && message.hasOwnProperty("borderBottomColorCode"))
+            object.borderBottomColorCode = message.borderBottomColorCode;
+        if (message.borderBottomWeightInheritance != null && message.hasOwnProperty("borderBottomWeightInheritance"))
+            object.borderBottomWeightInheritance = options.enums === String ? $root.Inheritance[message.borderBottomWeightInheritance] === undefined ? message.borderBottomWeightInheritance : $root.Inheritance[message.borderBottomWeightInheritance] : message.borderBottomWeightInheritance;
+        if (message.borderBottomWeight != null && message.hasOwnProperty("borderBottomWeight"))
+            object.borderBottomWeight = $root.ProtoMeasure.toObject(message.borderBottomWeight, options);
+        if (message.borderBottomWeightCode != null && message.hasOwnProperty("borderBottomWeightCode"))
+            object.borderBottomWeightCode = message.borderBottomWeightCode;
+        if (message.borderLeftColorInheritance != null && message.hasOwnProperty("borderLeftColorInheritance"))
+            object.borderLeftColorInheritance = options.enums === String ? $root.Inheritance[message.borderLeftColorInheritance] === undefined ? message.borderLeftColorInheritance : $root.Inheritance[message.borderLeftColorInheritance] : message.borderLeftColorInheritance;
+        if (message.borderLeftColor != null && message.hasOwnProperty("borderLeftColor"))
+            object.borderLeftColor = $root.ProtoMeasure.toObject(message.borderLeftColor, options);
+        if (message.borderLeftColorCode != null && message.hasOwnProperty("borderLeftColorCode"))
+            object.borderLeftColorCode = message.borderLeftColorCode;
+        if (message.borderLeftWeightInheritance != null && message.hasOwnProperty("borderLeftWeightInheritance"))
+            object.borderLeftWeightInheritance = options.enums === String ? $root.Inheritance[message.borderLeftWeightInheritance] === undefined ? message.borderLeftWeightInheritance : $root.Inheritance[message.borderLeftWeightInheritance] : message.borderLeftWeightInheritance;
+        if (message.borderLeftWeight != null && message.hasOwnProperty("borderLeftWeight"))
+            object.borderLeftWeight = $root.ProtoMeasure.toObject(message.borderLeftWeight, options);
+        if (message.borderLeftWeightCode != null && message.hasOwnProperty("borderLeftWeightCode"))
+            object.borderLeftWeightCode = message.borderLeftWeightCode;
+        if (message.marginTopInheritance != null && message.hasOwnProperty("marginTopInheritance"))
+            object.marginTopInheritance = options.enums === String ? $root.Inheritance[message.marginTopInheritance] === undefined ? message.marginTopInheritance : $root.Inheritance[message.marginTopInheritance] : message.marginTopInheritance;
+        if (message.marginTop != null && message.hasOwnProperty("marginTop"))
+            object.marginTop = $root.ProtoMeasure.toObject(message.marginTop, options);
+        if (message.marginTopCode != null && message.hasOwnProperty("marginTopCode"))
+            object.marginTopCode = message.marginTopCode;
+        if (message.marginRightInheritance != null && message.hasOwnProperty("marginRightInheritance"))
+            object.marginRightInheritance = options.enums === String ? $root.Inheritance[message.marginRightInheritance] === undefined ? message.marginRightInheritance : $root.Inheritance[message.marginRightInheritance] : message.marginRightInheritance;
+        if (message.marginRight != null && message.hasOwnProperty("marginRight"))
+            object.marginRight = $root.ProtoMeasure.toObject(message.marginRight, options);
+        if (message.marginRightCode != null && message.hasOwnProperty("marginRightCode"))
+            object.marginRightCode = message.marginRightCode;
+        if (message.marginBottomInheritance != null && message.hasOwnProperty("marginBottomInheritance"))
+            object.marginBottomInheritance = options.enums === String ? $root.Inheritance[message.marginBottomInheritance] === undefined ? message.marginBottomInheritance : $root.Inheritance[message.marginBottomInheritance] : message.marginBottomInheritance;
+        if (message.marginBottom != null && message.hasOwnProperty("marginBottom"))
+            object.marginBottom = $root.ProtoMeasure.toObject(message.marginBottom, options);
+        if (message.marginBottomCode != null && message.hasOwnProperty("marginBottomCode"))
+            object.marginBottomCode = message.marginBottomCode;
+        if (message.marginLeftInheritance != null && message.hasOwnProperty("marginLeftInheritance"))
+            object.marginLeftInheritance = options.enums === String ? $root.Inheritance[message.marginLeftInheritance] === undefined ? message.marginLeftInheritance : $root.Inheritance[message.marginLeftInheritance] : message.marginLeftInheritance;
+        if (message.marginLeft != null && message.hasOwnProperty("marginLeft"))
+            object.marginLeft = $root.ProtoMeasure.toObject(message.marginLeft, options);
+        if (message.marginLeftCode != null && message.hasOwnProperty("marginLeftCode"))
+            object.marginLeftCode = message.marginLeftCode;
         if (message.rotationInheritance != null && message.hasOwnProperty("rotationInheritance"))
             object.rotationInheritance = options.enums === String ? $root.Inheritance[message.rotationInheritance] === undefined ? message.rotationInheritance : $root.Inheritance[message.rotationInheritance] : message.rotationInheritance;
         if (message.rotation != null && message.hasOwnProperty("rotation"))

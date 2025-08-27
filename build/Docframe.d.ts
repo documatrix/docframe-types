@@ -4295,7 +4295,8 @@ export enum Inheritance {
     INHERITANCE_INHERIT = 0,
     INHERITANCE_CODE = 1,
     INHERITANCE_BIND_CODE = 2,
-    INHERITANCE_STATIC = 3
+    INHERITANCE_STATIC = 3,
+    INHERITANCE_RESET = 4
 }
 
 /** Properties of a ProtoDocumentElement. */
@@ -8521,32 +8522,149 @@ export interface IProtoTableElementProperties {
     /** ProtoTableElementProperties backgroundColorCode */
     backgroundColorCode?: (string|null);
 
-    /** ProtoTableElementProperties paddingInheritance */
-    paddingInheritance?: (Inheritance|null);
+    /** ProtoTableElementProperties paddingTopInheritance */
+    paddingTopInheritance?: (Inheritance|null);
 
-    /** ProtoTableElementProperties padding */
-    padding?: (IProtoSideMeasures|null);
+    /** ProtoTableElementProperties paddingTop */
+    paddingTop?: (IProtoMeasure|null);
 
-    /** ProtoTableElementProperties paddingCode */
-    paddingCode?: (string|null);
+    /** ProtoTableElementProperties paddingTopCode */
+    paddingTopCode?: (string|null);
 
-    /** ProtoTableElementProperties borderInheritance */
-    borderInheritance?: (Inheritance|null);
+    /** ProtoTableElementProperties paddingRightInheritance */
+    paddingRightInheritance?: (Inheritance|null);
 
-    /** ProtoTableElementProperties border */
-    border?: (IProtoSideBorders|null);
+    /** ProtoTableElementProperties paddingRight */
+    paddingRight?: (IProtoMeasure|null);
 
-    /** ProtoTableElementProperties borderCode */
-    borderCode?: (string|null);
+    /** ProtoTableElementProperties paddingRightCode */
+    paddingRightCode?: (string|null);
 
-    /** ProtoTableElementProperties marginInheritance */
-    marginInheritance?: (Inheritance|null);
+    /** ProtoTableElementProperties paddingBottomInheritance */
+    paddingBottomInheritance?: (Inheritance|null);
 
-    /** ProtoTableElementProperties margin */
-    margin?: (IProtoSideMeasures|null);
+    /** ProtoTableElementProperties paddingBottom */
+    paddingBottom?: (IProtoMeasure|null);
 
-    /** ProtoTableElementProperties marginCode */
-    marginCode?: (string|null);
+    /** ProtoTableElementProperties paddingBottomCode */
+    paddingBottomCode?: (string|null);
+
+    /** ProtoTableElementProperties paddingLeftInheritance */
+    paddingLeftInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties paddingLeft */
+    paddingLeft?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties paddingLeftCode */
+    paddingLeftCode?: (string|null);
+
+    /** ProtoTableElementProperties borderTopColorInheritance */
+    borderTopColorInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties borderTopColor */
+    borderTopColor?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderTopColorCode */
+    borderTopColorCode?: (string|null);
+
+    /** ProtoTableElementProperties borderTopWeightInheritance */
+    borderTopWeightInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties borderTopWeight */
+    borderTopWeight?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderTopWeightCode */
+    borderTopWeightCode?: (string|null);
+
+    /** ProtoTableElementProperties borderRightColorInheritance */
+    borderRightColorInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties borderRightColor */
+    borderRightColor?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderRightColorCode */
+    borderRightColorCode?: (string|null);
+
+    /** ProtoTableElementProperties borderRightWeightInheritance */
+    borderRightWeightInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties borderRightWeight */
+    borderRightWeight?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderRightWeightCode */
+    borderRightWeightCode?: (string|null);
+
+    /** ProtoTableElementProperties borderBottomColorInheritance */
+    borderBottomColorInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties borderBottomColor */
+    borderBottomColor?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderBottomColorCode */
+    borderBottomColorCode?: (string|null);
+
+    /** ProtoTableElementProperties borderBottomWeightInheritance */
+    borderBottomWeightInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties borderBottomWeight */
+    borderBottomWeight?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderBottomWeightCode */
+    borderBottomWeightCode?: (string|null);
+
+    /** ProtoTableElementProperties borderLeftColorInheritance */
+    borderLeftColorInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties borderLeftColor */
+    borderLeftColor?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderLeftColorCode */
+    borderLeftColorCode?: (string|null);
+
+    /** ProtoTableElementProperties borderLeftWeightInheritance */
+    borderLeftWeightInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties borderLeftWeight */
+    borderLeftWeight?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderLeftWeightCode */
+    borderLeftWeightCode?: (string|null);
+
+    /** ProtoTableElementProperties marginTopInheritance */
+    marginTopInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties marginTop */
+    marginTop?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties marginTopCode */
+    marginTopCode?: (string|null);
+
+    /** ProtoTableElementProperties marginRightInheritance */
+    marginRightInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties marginRight */
+    marginRight?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties marginRightCode */
+    marginRightCode?: (string|null);
+
+    /** ProtoTableElementProperties marginBottomInheritance */
+    marginBottomInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties marginBottom */
+    marginBottom?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties marginBottomCode */
+    marginBottomCode?: (string|null);
+
+    /** ProtoTableElementProperties marginLeftInheritance */
+    marginLeftInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties marginLeft */
+    marginLeft?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties marginLeftCode */
+    marginLeftCode?: (string|null);
 
     /** ProtoTableElementProperties rotationInheritance */
     rotationInheritance?: (Inheritance|null);
@@ -8648,32 +8766,149 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     /** ProtoTableElementProperties backgroundColorCode. */
     public backgroundColorCode: string;
 
-    /** ProtoTableElementProperties paddingInheritance. */
-    public paddingInheritance: Inheritance;
+    /** ProtoTableElementProperties paddingTopInheritance. */
+    public paddingTopInheritance: Inheritance;
 
-    /** ProtoTableElementProperties padding. */
-    public padding?: (IProtoSideMeasures|null);
+    /** ProtoTableElementProperties paddingTop. */
+    public paddingTop?: (IProtoMeasure|null);
 
-    /** ProtoTableElementProperties paddingCode. */
-    public paddingCode: string;
+    /** ProtoTableElementProperties paddingTopCode. */
+    public paddingTopCode: string;
 
-    /** ProtoTableElementProperties borderInheritance. */
-    public borderInheritance: Inheritance;
+    /** ProtoTableElementProperties paddingRightInheritance. */
+    public paddingRightInheritance: Inheritance;
 
-    /** ProtoTableElementProperties border. */
-    public border?: (IProtoSideBorders|null);
+    /** ProtoTableElementProperties paddingRight. */
+    public paddingRight?: (IProtoMeasure|null);
 
-    /** ProtoTableElementProperties borderCode. */
-    public borderCode: string;
+    /** ProtoTableElementProperties paddingRightCode. */
+    public paddingRightCode: string;
 
-    /** ProtoTableElementProperties marginInheritance. */
-    public marginInheritance: Inheritance;
+    /** ProtoTableElementProperties paddingBottomInheritance. */
+    public paddingBottomInheritance: Inheritance;
 
-    /** ProtoTableElementProperties margin. */
-    public margin?: (IProtoSideMeasures|null);
+    /** ProtoTableElementProperties paddingBottom. */
+    public paddingBottom?: (IProtoMeasure|null);
 
-    /** ProtoTableElementProperties marginCode. */
-    public marginCode: string;
+    /** ProtoTableElementProperties paddingBottomCode. */
+    public paddingBottomCode: string;
+
+    /** ProtoTableElementProperties paddingLeftInheritance. */
+    public paddingLeftInheritance: Inheritance;
+
+    /** ProtoTableElementProperties paddingLeft. */
+    public paddingLeft?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties paddingLeftCode. */
+    public paddingLeftCode: string;
+
+    /** ProtoTableElementProperties borderTopColorInheritance. */
+    public borderTopColorInheritance: Inheritance;
+
+    /** ProtoTableElementProperties borderTopColor. */
+    public borderTopColor?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderTopColorCode. */
+    public borderTopColorCode: string;
+
+    /** ProtoTableElementProperties borderTopWeightInheritance. */
+    public borderTopWeightInheritance: Inheritance;
+
+    /** ProtoTableElementProperties borderTopWeight. */
+    public borderTopWeight?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderTopWeightCode. */
+    public borderTopWeightCode: string;
+
+    /** ProtoTableElementProperties borderRightColorInheritance. */
+    public borderRightColorInheritance: Inheritance;
+
+    /** ProtoTableElementProperties borderRightColor. */
+    public borderRightColor?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderRightColorCode. */
+    public borderRightColorCode: string;
+
+    /** ProtoTableElementProperties borderRightWeightInheritance. */
+    public borderRightWeightInheritance: Inheritance;
+
+    /** ProtoTableElementProperties borderRightWeight. */
+    public borderRightWeight?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderRightWeightCode. */
+    public borderRightWeightCode: string;
+
+    /** ProtoTableElementProperties borderBottomColorInheritance. */
+    public borderBottomColorInheritance: Inheritance;
+
+    /** ProtoTableElementProperties borderBottomColor. */
+    public borderBottomColor?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderBottomColorCode. */
+    public borderBottomColorCode: string;
+
+    /** ProtoTableElementProperties borderBottomWeightInheritance. */
+    public borderBottomWeightInheritance: Inheritance;
+
+    /** ProtoTableElementProperties borderBottomWeight. */
+    public borderBottomWeight?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderBottomWeightCode. */
+    public borderBottomWeightCode: string;
+
+    /** ProtoTableElementProperties borderLeftColorInheritance. */
+    public borderLeftColorInheritance: Inheritance;
+
+    /** ProtoTableElementProperties borderLeftColor. */
+    public borderLeftColor?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderLeftColorCode. */
+    public borderLeftColorCode: string;
+
+    /** ProtoTableElementProperties borderLeftWeightInheritance. */
+    public borderLeftWeightInheritance: Inheritance;
+
+    /** ProtoTableElementProperties borderLeftWeight. */
+    public borderLeftWeight?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties borderLeftWeightCode. */
+    public borderLeftWeightCode: string;
+
+    /** ProtoTableElementProperties marginTopInheritance. */
+    public marginTopInheritance: Inheritance;
+
+    /** ProtoTableElementProperties marginTop. */
+    public marginTop?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties marginTopCode. */
+    public marginTopCode: string;
+
+    /** ProtoTableElementProperties marginRightInheritance. */
+    public marginRightInheritance: Inheritance;
+
+    /** ProtoTableElementProperties marginRight. */
+    public marginRight?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties marginRightCode. */
+    public marginRightCode: string;
+
+    /** ProtoTableElementProperties marginBottomInheritance. */
+    public marginBottomInheritance: Inheritance;
+
+    /** ProtoTableElementProperties marginBottom. */
+    public marginBottom?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties marginBottomCode. */
+    public marginBottomCode: string;
+
+    /** ProtoTableElementProperties marginLeftInheritance. */
+    public marginLeftInheritance: Inheritance;
+
+    /** ProtoTableElementProperties marginLeft. */
+    public marginLeft?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties marginLeftCode. */
+    public marginLeftCode: string;
 
     /** ProtoTableElementProperties rotationInheritance. */
     public rotationInheritance: Inheritance;
