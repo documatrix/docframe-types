@@ -8499,7 +8499,7 @@ export interface IProtoTableElementProperties {
     alignInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties align */
-    align?: (ProtoHorizontalAlignment|null);
+    align?: (IProtoBoxedHorizontalAlignment|null);
 
     /** ProtoTableElementProperties alignCode */
     alignCode?: (string|null);
@@ -8508,7 +8508,7 @@ export interface IProtoTableElementProperties {
     valignInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties valign */
-    valign?: (ProtoVerticalAlignment|null);
+    valign?: (IProtoBoxedVerticalAlignment|null);
 
     /** ProtoTableElementProperties valignCode */
     valignCode?: (string|null);
@@ -8670,7 +8670,7 @@ export interface IProtoTableElementProperties {
     rotationInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties rotation */
-    rotation?: (number|null);
+    rotation?: (IProtoBoxedDouble|null);
 
     /** ProtoTableElementProperties rotationCode */
     rotationCode?: (string|null);
@@ -8679,7 +8679,7 @@ export interface IProtoTableElementProperties {
     defaultParagraphFormatUUIDInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties defaultParagraphFormatUUID */
-    defaultParagraphFormatUUID?: (string|null);
+    defaultParagraphFormatUUID?: (IProtoBoxedString|null);
 
     /** ProtoTableElementProperties defaultParagraphFormatUUIDCode */
     defaultParagraphFormatUUIDCode?: (string|null);
@@ -8688,7 +8688,7 @@ export interface IProtoTableElementProperties {
     tableContentGroupTypeInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties tableContentGroupType */
-    tableContentGroupType?: (ProtoTableContentGroupType|null);
+    tableContentGroupType?: (IProtoBoxedTableContentGroupType|null);
 
     /** ProtoTableElementProperties tableContentGroupTypeCode */
     tableContentGroupTypeCode?: (string|null);
@@ -8697,7 +8697,7 @@ export interface IProtoTableElementProperties {
     cellTypeInheritance?: (Inheritance|null);
 
     /** ProtoTableElementProperties cellType */
-    cellType?: (ProtoTableCellType|null);
+    cellType?: (IProtoBoxedTableCellType|null);
 
     /** ProtoTableElementProperties cellTypeCode */
     cellTypeCode?: (string|null);
@@ -8743,7 +8743,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public alignInheritance: Inheritance;
 
     /** ProtoTableElementProperties align. */
-    public align: ProtoHorizontalAlignment;
+    public align?: (IProtoBoxedHorizontalAlignment|null);
 
     /** ProtoTableElementProperties alignCode. */
     public alignCode: string;
@@ -8752,7 +8752,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public valignInheritance: Inheritance;
 
     /** ProtoTableElementProperties valign. */
-    public valign: ProtoVerticalAlignment;
+    public valign?: (IProtoBoxedVerticalAlignment|null);
 
     /** ProtoTableElementProperties valignCode. */
     public valignCode: string;
@@ -8914,7 +8914,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public rotationInheritance: Inheritance;
 
     /** ProtoTableElementProperties rotation. */
-    public rotation: number;
+    public rotation?: (IProtoBoxedDouble|null);
 
     /** ProtoTableElementProperties rotationCode. */
     public rotationCode: string;
@@ -8923,7 +8923,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public defaultParagraphFormatUUIDInheritance: Inheritance;
 
     /** ProtoTableElementProperties defaultParagraphFormatUUID. */
-    public defaultParagraphFormatUUID: string;
+    public defaultParagraphFormatUUID?: (IProtoBoxedString|null);
 
     /** ProtoTableElementProperties defaultParagraphFormatUUIDCode. */
     public defaultParagraphFormatUUIDCode: string;
@@ -8932,7 +8932,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public tableContentGroupTypeInheritance: Inheritance;
 
     /** ProtoTableElementProperties tableContentGroupType. */
-    public tableContentGroupType: ProtoTableContentGroupType;
+    public tableContentGroupType?: (IProtoBoxedTableContentGroupType|null);
 
     /** ProtoTableElementProperties tableContentGroupTypeCode. */
     public tableContentGroupTypeCode: string;
@@ -8941,7 +8941,7 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public cellTypeInheritance: Inheritance;
 
     /** ProtoTableElementProperties cellType. */
-    public cellType: ProtoTableCellType;
+    public cellType?: (IProtoBoxedTableCellType|null);
 
     /** ProtoTableElementProperties cellTypeCode. */
     public cellTypeCode: string;

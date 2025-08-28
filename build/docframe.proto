@@ -714,11 +714,11 @@ ProtoMeasure width = 2;
 string widthCode = 3;
 
 Inheritance alignInheritance = 4;
-ProtoHorizontalAlignment align = 5;
+ProtoBoxedHorizontalAlignment align = 5;
 string alignCode = 6;
 
 Inheritance valignInheritance = 7;
-ProtoVerticalAlignment valign = 8;
+ProtoBoxedVerticalAlignment valign = 8;
 string valignCode = 9;
 
 Inheritance backgroundColorInheritance = 10;
@@ -790,19 +790,19 @@ ProtoMeasure marginLeft = 59;
 string marginLeftCode = 60;
 
 Inheritance rotationInheritance = 61;
-double rotation = 62;
+ProtoBoxedDouble rotation = 62;
 string rotationCode = 63;
 
 Inheritance defaultParagraphFormatUUIDInheritance = 64;
-string defaultParagraphFormatUUID = 65;
+ProtoBoxedString defaultParagraphFormatUUID = 65;
 string defaultParagraphFormatUUIDCode = 66;
 
 Inheritance tableContentGroupTypeInheritance = 67;
-ProtoTableContentGroupType tableContentGroupType = 68;
+ProtoBoxedTableContentGroupType tableContentGroupType = 68;
 string tableContentGroupTypeCode = 69;
 
 Inheritance cellTypeInheritance = 70;
-ProtoTableCellType cellType = 71;
+ProtoBoxedTableCellType cellType = 71;
 string cellTypeCode = 72;
 
 Inheritance minRowHeightInheritance = 73;

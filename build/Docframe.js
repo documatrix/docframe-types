@@ -23020,10 +23020,10 @@ $root.ProtoTableElementProperties = (function() {
      * @property {IProtoMeasure|null} [width] ProtoTableElementProperties width
      * @property {string|null} [widthCode] ProtoTableElementProperties widthCode
      * @property {Inheritance|null} [alignInheritance] ProtoTableElementProperties alignInheritance
-     * @property {ProtoHorizontalAlignment|null} [align] ProtoTableElementProperties align
+     * @property {IProtoBoxedHorizontalAlignment|null} [align] ProtoTableElementProperties align
      * @property {string|null} [alignCode] ProtoTableElementProperties alignCode
      * @property {Inheritance|null} [valignInheritance] ProtoTableElementProperties valignInheritance
-     * @property {ProtoVerticalAlignment|null} [valign] ProtoTableElementProperties valign
+     * @property {IProtoBoxedVerticalAlignment|null} [valign] ProtoTableElementProperties valign
      * @property {string|null} [valignCode] ProtoTableElementProperties valignCode
      * @property {Inheritance|null} [backgroundColorInheritance] ProtoTableElementProperties backgroundColorInheritance
      * @property {Array.<IProtoColor>|null} [backgroundColor] ProtoTableElementProperties backgroundColor
@@ -23077,16 +23077,16 @@ $root.ProtoTableElementProperties = (function() {
      * @property {IProtoMeasure|null} [marginLeft] ProtoTableElementProperties marginLeft
      * @property {string|null} [marginLeftCode] ProtoTableElementProperties marginLeftCode
      * @property {Inheritance|null} [rotationInheritance] ProtoTableElementProperties rotationInheritance
-     * @property {number|null} [rotation] ProtoTableElementProperties rotation
+     * @property {IProtoBoxedDouble|null} [rotation] ProtoTableElementProperties rotation
      * @property {string|null} [rotationCode] ProtoTableElementProperties rotationCode
      * @property {Inheritance|null} [defaultParagraphFormatUUIDInheritance] ProtoTableElementProperties defaultParagraphFormatUUIDInheritance
-     * @property {string|null} [defaultParagraphFormatUUID] ProtoTableElementProperties defaultParagraphFormatUUID
+     * @property {IProtoBoxedString|null} [defaultParagraphFormatUUID] ProtoTableElementProperties defaultParagraphFormatUUID
      * @property {string|null} [defaultParagraphFormatUUIDCode] ProtoTableElementProperties defaultParagraphFormatUUIDCode
      * @property {Inheritance|null} [tableContentGroupTypeInheritance] ProtoTableElementProperties tableContentGroupTypeInheritance
-     * @property {ProtoTableContentGroupType|null} [tableContentGroupType] ProtoTableElementProperties tableContentGroupType
+     * @property {IProtoBoxedTableContentGroupType|null} [tableContentGroupType] ProtoTableElementProperties tableContentGroupType
      * @property {string|null} [tableContentGroupTypeCode] ProtoTableElementProperties tableContentGroupTypeCode
      * @property {Inheritance|null} [cellTypeInheritance] ProtoTableElementProperties cellTypeInheritance
-     * @property {ProtoTableCellType|null} [cellType] ProtoTableElementProperties cellType
+     * @property {IProtoBoxedTableCellType|null} [cellType] ProtoTableElementProperties cellType
      * @property {string|null} [cellTypeCode] ProtoTableElementProperties cellTypeCode
      * @property {Inheritance|null} [minRowHeightInheritance] ProtoTableElementProperties minRowHeightInheritance
      * @property {IProtoMeasure|null} [minRowHeight] ProtoTableElementProperties minRowHeight
@@ -23146,11 +23146,11 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties align.
-     * @member {ProtoHorizontalAlignment} align
+     * @member {IProtoBoxedHorizontalAlignment|null|undefined} align
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.align = 0;
+    ProtoTableElementProperties.prototype.align = null;
 
     /**
      * ProtoTableElementProperties alignCode.
@@ -23170,11 +23170,11 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties valign.
-     * @member {ProtoVerticalAlignment} valign
+     * @member {IProtoBoxedVerticalAlignment|null|undefined} valign
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.valign = 0;
+    ProtoTableElementProperties.prototype.valign = null;
 
     /**
      * ProtoTableElementProperties valignCode.
@@ -23602,11 +23602,11 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties rotation.
-     * @member {number} rotation
+     * @member {IProtoBoxedDouble|null|undefined} rotation
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.rotation = 0;
+    ProtoTableElementProperties.prototype.rotation = null;
 
     /**
      * ProtoTableElementProperties rotationCode.
@@ -23626,11 +23626,11 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties defaultParagraphFormatUUID.
-     * @member {string} defaultParagraphFormatUUID
+     * @member {IProtoBoxedString|null|undefined} defaultParagraphFormatUUID
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.defaultParagraphFormatUUID = "";
+    ProtoTableElementProperties.prototype.defaultParagraphFormatUUID = null;
 
     /**
      * ProtoTableElementProperties defaultParagraphFormatUUIDCode.
@@ -23650,11 +23650,11 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties tableContentGroupType.
-     * @member {ProtoTableContentGroupType} tableContentGroupType
+     * @member {IProtoBoxedTableContentGroupType|null|undefined} tableContentGroupType
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.tableContentGroupType = 0;
+    ProtoTableElementProperties.prototype.tableContentGroupType = null;
 
     /**
      * ProtoTableElementProperties tableContentGroupTypeCode.
@@ -23674,11 +23674,11 @@ $root.ProtoTableElementProperties = (function() {
 
     /**
      * ProtoTableElementProperties cellType.
-     * @member {ProtoTableCellType} cellType
+     * @member {IProtoBoxedTableCellType|null|undefined} cellType
      * @memberof ProtoTableElementProperties
      * @instance
      */
-    ProtoTableElementProperties.prototype.cellType = 0;
+    ProtoTableElementProperties.prototype.cellType = null;
 
     /**
      * ProtoTableElementProperties cellTypeCode.
@@ -23769,13 +23769,13 @@ $root.ProtoTableElementProperties = (function() {
         if (message.alignInheritance != null && Object.hasOwnProperty.call(message, "alignInheritance"))
             writer.uint32(/* id 4, wireType 0 =*/32).int32(message.alignInheritance);
         if (message.align != null && Object.hasOwnProperty.call(message, "align"))
-            writer.uint32(/* id 5, wireType 0 =*/40).int32(message.align);
+            $root.ProtoBoxedHorizontalAlignment.encode(message.align, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
         if (message.alignCode != null && Object.hasOwnProperty.call(message, "alignCode"))
             writer.uint32(/* id 6, wireType 2 =*/50).string(message.alignCode);
         if (message.valignInheritance != null && Object.hasOwnProperty.call(message, "valignInheritance"))
             writer.uint32(/* id 7, wireType 0 =*/56).int32(message.valignInheritance);
         if (message.valign != null && Object.hasOwnProperty.call(message, "valign"))
-            writer.uint32(/* id 8, wireType 0 =*/64).int32(message.valign);
+            $root.ProtoBoxedVerticalAlignment.encode(message.valign, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
         if (message.valignCode != null && Object.hasOwnProperty.call(message, "valignCode"))
             writer.uint32(/* id 9, wireType 2 =*/74).string(message.valignCode);
         if (message.backgroundColorInheritance != null && Object.hasOwnProperty.call(message, "backgroundColorInheritance"))
@@ -23884,25 +23884,25 @@ $root.ProtoTableElementProperties = (function() {
         if (message.rotationInheritance != null && Object.hasOwnProperty.call(message, "rotationInheritance"))
             writer.uint32(/* id 61, wireType 0 =*/488).int32(message.rotationInheritance);
         if (message.rotation != null && Object.hasOwnProperty.call(message, "rotation"))
-            writer.uint32(/* id 62, wireType 1 =*/497).double(message.rotation);
+            $root.ProtoBoxedDouble.encode(message.rotation, writer.uint32(/* id 62, wireType 2 =*/498).fork()).ldelim();
         if (message.rotationCode != null && Object.hasOwnProperty.call(message, "rotationCode"))
             writer.uint32(/* id 63, wireType 2 =*/506).string(message.rotationCode);
         if (message.defaultParagraphFormatUUIDInheritance != null && Object.hasOwnProperty.call(message, "defaultParagraphFormatUUIDInheritance"))
             writer.uint32(/* id 64, wireType 0 =*/512).int32(message.defaultParagraphFormatUUIDInheritance);
         if (message.defaultParagraphFormatUUID != null && Object.hasOwnProperty.call(message, "defaultParagraphFormatUUID"))
-            writer.uint32(/* id 65, wireType 2 =*/522).string(message.defaultParagraphFormatUUID);
+            $root.ProtoBoxedString.encode(message.defaultParagraphFormatUUID, writer.uint32(/* id 65, wireType 2 =*/522).fork()).ldelim();
         if (message.defaultParagraphFormatUUIDCode != null && Object.hasOwnProperty.call(message, "defaultParagraphFormatUUIDCode"))
             writer.uint32(/* id 66, wireType 2 =*/530).string(message.defaultParagraphFormatUUIDCode);
         if (message.tableContentGroupTypeInheritance != null && Object.hasOwnProperty.call(message, "tableContentGroupTypeInheritance"))
             writer.uint32(/* id 67, wireType 0 =*/536).int32(message.tableContentGroupTypeInheritance);
         if (message.tableContentGroupType != null && Object.hasOwnProperty.call(message, "tableContentGroupType"))
-            writer.uint32(/* id 68, wireType 0 =*/544).int32(message.tableContentGroupType);
+            $root.ProtoBoxedTableContentGroupType.encode(message.tableContentGroupType, writer.uint32(/* id 68, wireType 2 =*/546).fork()).ldelim();
         if (message.tableContentGroupTypeCode != null && Object.hasOwnProperty.call(message, "tableContentGroupTypeCode"))
             writer.uint32(/* id 69, wireType 2 =*/554).string(message.tableContentGroupTypeCode);
         if (message.cellTypeInheritance != null && Object.hasOwnProperty.call(message, "cellTypeInheritance"))
             writer.uint32(/* id 70, wireType 0 =*/560).int32(message.cellTypeInheritance);
         if (message.cellType != null && Object.hasOwnProperty.call(message, "cellType"))
-            writer.uint32(/* id 71, wireType 0 =*/568).int32(message.cellType);
+            $root.ProtoBoxedTableCellType.encode(message.cellType, writer.uint32(/* id 71, wireType 2 =*/570).fork()).ldelim();
         if (message.cellTypeCode != null && Object.hasOwnProperty.call(message, "cellTypeCode"))
             writer.uint32(/* id 72, wireType 2 =*/578).string(message.cellTypeCode);
         if (message.minRowHeightInheritance != null && Object.hasOwnProperty.call(message, "minRowHeightInheritance"))
@@ -23968,7 +23968,7 @@ $root.ProtoTableElementProperties = (function() {
                     break;
                 }
             case 5: {
-                    message.align = reader.int32();
+                    message.align = $root.ProtoBoxedHorizontalAlignment.decode(reader, reader.uint32());
                     break;
                 }
             case 6: {
@@ -23980,7 +23980,7 @@ $root.ProtoTableElementProperties = (function() {
                     break;
                 }
             case 8: {
-                    message.valign = reader.int32();
+                    message.valign = $root.ProtoBoxedVerticalAlignment.decode(reader, reader.uint32());
                     break;
                 }
             case 9: {
@@ -24198,7 +24198,7 @@ $root.ProtoTableElementProperties = (function() {
                     break;
                 }
             case 62: {
-                    message.rotation = reader.double();
+                    message.rotation = $root.ProtoBoxedDouble.decode(reader, reader.uint32());
                     break;
                 }
             case 63: {
@@ -24210,7 +24210,7 @@ $root.ProtoTableElementProperties = (function() {
                     break;
                 }
             case 65: {
-                    message.defaultParagraphFormatUUID = reader.string();
+                    message.defaultParagraphFormatUUID = $root.ProtoBoxedString.decode(reader, reader.uint32());
                     break;
                 }
             case 66: {
@@ -24222,7 +24222,7 @@ $root.ProtoTableElementProperties = (function() {
                     break;
                 }
             case 68: {
-                    message.tableContentGroupType = reader.int32();
+                    message.tableContentGroupType = $root.ProtoBoxedTableContentGroupType.decode(reader, reader.uint32());
                     break;
                 }
             case 69: {
@@ -24234,7 +24234,7 @@ $root.ProtoTableElementProperties = (function() {
                     break;
                 }
             case 71: {
-                    message.cellType = reader.int32();
+                    message.cellType = $root.ProtoBoxedTableCellType.decode(reader, reader.uint32());
                     break;
                 }
             case 72: {
@@ -24330,18 +24330,11 @@ $root.ProtoTableElementProperties = (function() {
             case 4:
                 break;
             }
-        if (message.align != null && message.hasOwnProperty("align"))
-            switch (message.align) {
-            default:
-                return "align: enum value expected";
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-                break;
-            }
+        if (message.align != null && message.hasOwnProperty("align")) {
+            var error = $root.ProtoBoxedHorizontalAlignment.verify(message.align);
+            if (error)
+                return "align." + error;
+        }
         if (message.alignCode != null && message.hasOwnProperty("alignCode"))
             if (!$util.isString(message.alignCode))
                 return "alignCode: string expected";
@@ -24356,15 +24349,11 @@ $root.ProtoTableElementProperties = (function() {
             case 4:
                 break;
             }
-        if (message.valign != null && message.hasOwnProperty("valign"))
-            switch (message.valign) {
-            default:
-                return "valign: enum value expected";
-            case 0:
-            case 1:
-            case 2:
-                break;
-            }
+        if (message.valign != null && message.hasOwnProperty("valign")) {
+            var error = $root.ProtoBoxedVerticalAlignment.verify(message.valign);
+            if (error)
+                return "valign." + error;
+        }
         if (message.valignCode != null && message.hasOwnProperty("valignCode"))
             if (!$util.isString(message.valignCode))
                 return "valignCode: string expected";
@@ -24706,9 +24695,11 @@ $root.ProtoTableElementProperties = (function() {
             case 4:
                 break;
             }
-        if (message.rotation != null && message.hasOwnProperty("rotation"))
-            if (typeof message.rotation !== "number")
-                return "rotation: number expected";
+        if (message.rotation != null && message.hasOwnProperty("rotation")) {
+            var error = $root.ProtoBoxedDouble.verify(message.rotation);
+            if (error)
+                return "rotation." + error;
+        }
         if (message.rotationCode != null && message.hasOwnProperty("rotationCode"))
             if (!$util.isString(message.rotationCode))
                 return "rotationCode: string expected";
@@ -24723,9 +24714,11 @@ $root.ProtoTableElementProperties = (function() {
             case 4:
                 break;
             }
-        if (message.defaultParagraphFormatUUID != null && message.hasOwnProperty("defaultParagraphFormatUUID"))
-            if (!$util.isString(message.defaultParagraphFormatUUID))
-                return "defaultParagraphFormatUUID: string expected";
+        if (message.defaultParagraphFormatUUID != null && message.hasOwnProperty("defaultParagraphFormatUUID")) {
+            var error = $root.ProtoBoxedString.verify(message.defaultParagraphFormatUUID);
+            if (error)
+                return "defaultParagraphFormatUUID." + error;
+        }
         if (message.defaultParagraphFormatUUIDCode != null && message.hasOwnProperty("defaultParagraphFormatUUIDCode"))
             if (!$util.isString(message.defaultParagraphFormatUUIDCode))
                 return "defaultParagraphFormatUUIDCode: string expected";
@@ -24740,16 +24733,11 @@ $root.ProtoTableElementProperties = (function() {
             case 4:
                 break;
             }
-        if (message.tableContentGroupType != null && message.hasOwnProperty("tableContentGroupType"))
-            switch (message.tableContentGroupType) {
-            default:
-                return "tableContentGroupType: enum value expected";
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-                break;
-            }
+        if (message.tableContentGroupType != null && message.hasOwnProperty("tableContentGroupType")) {
+            var error = $root.ProtoBoxedTableContentGroupType.verify(message.tableContentGroupType);
+            if (error)
+                return "tableContentGroupType." + error;
+        }
         if (message.tableContentGroupTypeCode != null && message.hasOwnProperty("tableContentGroupTypeCode"))
             if (!$util.isString(message.tableContentGroupTypeCode))
                 return "tableContentGroupTypeCode: string expected";
@@ -24764,15 +24752,11 @@ $root.ProtoTableElementProperties = (function() {
             case 4:
                 break;
             }
-        if (message.cellType != null && message.hasOwnProperty("cellType"))
-            switch (message.cellType) {
-            default:
-                return "cellType: enum value expected";
-            case 0:
-            case 1:
-            case 2:
-                break;
-            }
+        if (message.cellType != null && message.hasOwnProperty("cellType")) {
+            var error = $root.ProtoBoxedTableCellType.verify(message.cellType);
+            if (error)
+                return "cellType." + error;
+        }
         if (message.cellTypeCode != null && message.hasOwnProperty("cellTypeCode"))
             if (!$util.isString(message.cellTypeCode))
                 return "cellTypeCode: string expected";
@@ -24892,37 +24876,10 @@ $root.ProtoTableElementProperties = (function() {
             message.alignInheritance = 4;
             break;
         }
-        switch (object.align) {
-        default:
-            if (typeof object.align === "number") {
-                message.align = object.align;
-                break;
-            }
-            break;
-        case "ALIGN_LEFT":
-        case 0:
-            message.align = 0;
-            break;
-        case "ALIGN_CENTER":
-        case 1:
-            message.align = 1;
-            break;
-        case "ALIGN_RIGHT":
-        case 2:
-            message.align = 2;
-            break;
-        case "ALIGN_JUSTIFY":
-        case 3:
-            message.align = 3;
-            break;
-        case "ALIGN_FULL_JUSTIFY":
-        case 4:
-            message.align = 4;
-            break;
-        case "ALIGN_CENTER_ON_PAGE":
-        case 5:
-            message.align = 5;
-            break;
+        if (object.align != null) {
+            if (typeof object.align !== "object")
+                throw TypeError(".ProtoTableElementProperties.align: object expected");
+            message.align = $root.ProtoBoxedHorizontalAlignment.fromObject(object.align);
         }
         if (object.alignCode != null)
             message.alignCode = String(object.alignCode);
@@ -24954,25 +24911,10 @@ $root.ProtoTableElementProperties = (function() {
             message.valignInheritance = 4;
             break;
         }
-        switch (object.valign) {
-        default:
-            if (typeof object.valign === "number") {
-                message.valign = object.valign;
-                break;
-            }
-            break;
-        case "TOP":
-        case 0:
-            message.valign = 0;
-            break;
-        case "MIDDLE":
-        case 1:
-            message.valign = 1;
-            break;
-        case "BOTTOM":
-        case 2:
-            message.valign = 2;
-            break;
+        if (object.valign != null) {
+            if (typeof object.valign !== "object")
+                throw TypeError(".ProtoTableElementProperties.valign: object expected");
+            message.valign = $root.ProtoBoxedVerticalAlignment.fromObject(object.valign);
         }
         if (object.valignCode != null)
             message.valignCode = String(object.valignCode);
@@ -25604,8 +25546,11 @@ $root.ProtoTableElementProperties = (function() {
             message.rotationInheritance = 4;
             break;
         }
-        if (object.rotation != null)
-            message.rotation = Number(object.rotation);
+        if (object.rotation != null) {
+            if (typeof object.rotation !== "object")
+                throw TypeError(".ProtoTableElementProperties.rotation: object expected");
+            message.rotation = $root.ProtoBoxedDouble.fromObject(object.rotation);
+        }
         if (object.rotationCode != null)
             message.rotationCode = String(object.rotationCode);
         switch (object.defaultParagraphFormatUUIDInheritance) {
@@ -25636,8 +25581,11 @@ $root.ProtoTableElementProperties = (function() {
             message.defaultParagraphFormatUUIDInheritance = 4;
             break;
         }
-        if (object.defaultParagraphFormatUUID != null)
-            message.defaultParagraphFormatUUID = String(object.defaultParagraphFormatUUID);
+        if (object.defaultParagraphFormatUUID != null) {
+            if (typeof object.defaultParagraphFormatUUID !== "object")
+                throw TypeError(".ProtoTableElementProperties.defaultParagraphFormatUUID: object expected");
+            message.defaultParagraphFormatUUID = $root.ProtoBoxedString.fromObject(object.defaultParagraphFormatUUID);
+        }
         if (object.defaultParagraphFormatUUIDCode != null)
             message.defaultParagraphFormatUUIDCode = String(object.defaultParagraphFormatUUIDCode);
         switch (object.tableContentGroupTypeInheritance) {
@@ -25668,29 +25616,10 @@ $root.ProtoTableElementProperties = (function() {
             message.tableContentGroupTypeInheritance = 4;
             break;
         }
-        switch (object.tableContentGroupType) {
-        default:
-            if (typeof object.tableContentGroupType === "number") {
-                message.tableContentGroupType = object.tableContentGroupType;
-                break;
-            }
-            break;
-        case "HEADER":
-        case 0:
-            message.tableContentGroupType = 0;
-            break;
-        case "BODY":
-        case 1:
-            message.tableContentGroupType = 1;
-            break;
-        case "FOOTER":
-        case 2:
-            message.tableContentGroupType = 2;
-            break;
-        case "SUB_HEADER":
-        case 3:
-            message.tableContentGroupType = 3;
-            break;
+        if (object.tableContentGroupType != null) {
+            if (typeof object.tableContentGroupType !== "object")
+                throw TypeError(".ProtoTableElementProperties.tableContentGroupType: object expected");
+            message.tableContentGroupType = $root.ProtoBoxedTableContentGroupType.fromObject(object.tableContentGroupType);
         }
         if (object.tableContentGroupTypeCode != null)
             message.tableContentGroupTypeCode = String(object.tableContentGroupTypeCode);
@@ -25722,25 +25651,10 @@ $root.ProtoTableElementProperties = (function() {
             message.cellTypeInheritance = 4;
             break;
         }
-        switch (object.cellType) {
-        default:
-            if (typeof object.cellType === "number") {
-                message.cellType = object.cellType;
-                break;
-            }
-            break;
-        case "TABLE_CELL_BODY":
-        case 0:
-            message.cellType = 0;
-            break;
-        case "TABLE_CELL_ROW_HEADER":
-        case 1:
-            message.cellType = 1;
-            break;
-        case "TABLE_CELL_ROW_FOOTER":
-        case 2:
-            message.cellType = 2;
-            break;
+        if (object.cellType != null) {
+            if (typeof object.cellType !== "object")
+                throw TypeError(".ProtoTableElementProperties.cellType: object expected");
+            message.cellType = $root.ProtoBoxedTableCellType.fromObject(object.cellType);
         }
         if (object.cellTypeCode != null)
             message.cellTypeCode = String(object.cellTypeCode);
@@ -25837,10 +25751,10 @@ $root.ProtoTableElementProperties = (function() {
             object.width = null;
             object.widthCode = "";
             object.alignInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
-            object.align = options.enums === String ? "ALIGN_LEFT" : 0;
+            object.align = null;
             object.alignCode = "";
             object.valignInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
-            object.valign = options.enums === String ? "TOP" : 0;
+            object.valign = null;
             object.valignCode = "";
             object.backgroundColorInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.backgroundColorCode = "";
@@ -25893,16 +25807,16 @@ $root.ProtoTableElementProperties = (function() {
             object.marginLeft = null;
             object.marginLeftCode = "";
             object.rotationInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
-            object.rotation = 0;
+            object.rotation = null;
             object.rotationCode = "";
             object.defaultParagraphFormatUUIDInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
-            object.defaultParagraphFormatUUID = "";
+            object.defaultParagraphFormatUUID = null;
             object.defaultParagraphFormatUUIDCode = "";
             object.tableContentGroupTypeInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
-            object.tableContentGroupType = options.enums === String ? "HEADER" : 0;
+            object.tableContentGroupType = null;
             object.tableContentGroupTypeCode = "";
             object.cellTypeInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
-            object.cellType = options.enums === String ? "TABLE_CELL_BODY" : 0;
+            object.cellType = null;
             object.cellTypeCode = "";
             object.minRowHeightInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.minRowHeight = null;
@@ -25920,13 +25834,13 @@ $root.ProtoTableElementProperties = (function() {
         if (message.alignInheritance != null && message.hasOwnProperty("alignInheritance"))
             object.alignInheritance = options.enums === String ? $root.Inheritance[message.alignInheritance] === undefined ? message.alignInheritance : $root.Inheritance[message.alignInheritance] : message.alignInheritance;
         if (message.align != null && message.hasOwnProperty("align"))
-            object.align = options.enums === String ? $root.ProtoHorizontalAlignment[message.align] === undefined ? message.align : $root.ProtoHorizontalAlignment[message.align] : message.align;
+            object.align = $root.ProtoBoxedHorizontalAlignment.toObject(message.align, options);
         if (message.alignCode != null && message.hasOwnProperty("alignCode"))
             object.alignCode = message.alignCode;
         if (message.valignInheritance != null && message.hasOwnProperty("valignInheritance"))
             object.valignInheritance = options.enums === String ? $root.Inheritance[message.valignInheritance] === undefined ? message.valignInheritance : $root.Inheritance[message.valignInheritance] : message.valignInheritance;
         if (message.valign != null && message.hasOwnProperty("valign"))
-            object.valign = options.enums === String ? $root.ProtoVerticalAlignment[message.valign] === undefined ? message.valign : $root.ProtoVerticalAlignment[message.valign] : message.valign;
+            object.valign = $root.ProtoBoxedVerticalAlignment.toObject(message.valign, options);
         if (message.valignCode != null && message.hasOwnProperty("valignCode"))
             object.valignCode = message.valignCode;
         if (message.backgroundColorInheritance != null && message.hasOwnProperty("backgroundColorInheritance"))
@@ -26037,25 +25951,25 @@ $root.ProtoTableElementProperties = (function() {
         if (message.rotationInheritance != null && message.hasOwnProperty("rotationInheritance"))
             object.rotationInheritance = options.enums === String ? $root.Inheritance[message.rotationInheritance] === undefined ? message.rotationInheritance : $root.Inheritance[message.rotationInheritance] : message.rotationInheritance;
         if (message.rotation != null && message.hasOwnProperty("rotation"))
-            object.rotation = options.json && !isFinite(message.rotation) ? String(message.rotation) : message.rotation;
+            object.rotation = $root.ProtoBoxedDouble.toObject(message.rotation, options);
         if (message.rotationCode != null && message.hasOwnProperty("rotationCode"))
             object.rotationCode = message.rotationCode;
         if (message.defaultParagraphFormatUUIDInheritance != null && message.hasOwnProperty("defaultParagraphFormatUUIDInheritance"))
             object.defaultParagraphFormatUUIDInheritance = options.enums === String ? $root.Inheritance[message.defaultParagraphFormatUUIDInheritance] === undefined ? message.defaultParagraphFormatUUIDInheritance : $root.Inheritance[message.defaultParagraphFormatUUIDInheritance] : message.defaultParagraphFormatUUIDInheritance;
         if (message.defaultParagraphFormatUUID != null && message.hasOwnProperty("defaultParagraphFormatUUID"))
-            object.defaultParagraphFormatUUID = message.defaultParagraphFormatUUID;
+            object.defaultParagraphFormatUUID = $root.ProtoBoxedString.toObject(message.defaultParagraphFormatUUID, options);
         if (message.defaultParagraphFormatUUIDCode != null && message.hasOwnProperty("defaultParagraphFormatUUIDCode"))
             object.defaultParagraphFormatUUIDCode = message.defaultParagraphFormatUUIDCode;
         if (message.tableContentGroupTypeInheritance != null && message.hasOwnProperty("tableContentGroupTypeInheritance"))
             object.tableContentGroupTypeInheritance = options.enums === String ? $root.Inheritance[message.tableContentGroupTypeInheritance] === undefined ? message.tableContentGroupTypeInheritance : $root.Inheritance[message.tableContentGroupTypeInheritance] : message.tableContentGroupTypeInheritance;
         if (message.tableContentGroupType != null && message.hasOwnProperty("tableContentGroupType"))
-            object.tableContentGroupType = options.enums === String ? $root.ProtoTableContentGroupType[message.tableContentGroupType] === undefined ? message.tableContentGroupType : $root.ProtoTableContentGroupType[message.tableContentGroupType] : message.tableContentGroupType;
+            object.tableContentGroupType = $root.ProtoBoxedTableContentGroupType.toObject(message.tableContentGroupType, options);
         if (message.tableContentGroupTypeCode != null && message.hasOwnProperty("tableContentGroupTypeCode"))
             object.tableContentGroupTypeCode = message.tableContentGroupTypeCode;
         if (message.cellTypeInheritance != null && message.hasOwnProperty("cellTypeInheritance"))
             object.cellTypeInheritance = options.enums === String ? $root.Inheritance[message.cellTypeInheritance] === undefined ? message.cellTypeInheritance : $root.Inheritance[message.cellTypeInheritance] : message.cellTypeInheritance;
         if (message.cellType != null && message.hasOwnProperty("cellType"))
-            object.cellType = options.enums === String ? $root.ProtoTableCellType[message.cellType] === undefined ? message.cellType : $root.ProtoTableCellType[message.cellType] : message.cellType;
+            object.cellType = $root.ProtoBoxedTableCellType.toObject(message.cellType, options);
         if (message.cellTypeCode != null && message.hasOwnProperty("cellTypeCode"))
             object.cellTypeCode = message.cellTypeCode;
         if (message.minRowHeightInheritance != null && message.hasOwnProperty("minRowHeightInheritance"))
