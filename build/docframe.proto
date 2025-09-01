@@ -1215,11 +1215,15 @@ INVERSE_LANDSCAPE = 4;
 }
 
 message ProtoNewPage {
-uint32 paperTray = 1;
-uint32 paperCount = 2;
-ProtoPageMode pageMode = 3;
-ProtoPageOrientation pageOrientation = 4;
-repeated string comChannelUUIDs = 5;
+string uuid = 1;
+string paperTrayUuid = 2;
+uint32 paperTrayNumber = 3;
+uint32 paperCount = 4;
+ProtoPageMode pageMode = 5;
+ProtoPageOrientation pageOrientation = 6;
+string pDefUuid = 7;
+string cDefUuid = 8;
+repeated string comChannelUUIDs = 9;
 }
 message ProtoIndentation {
 repeated ProtoDocumentElement _children = 1;

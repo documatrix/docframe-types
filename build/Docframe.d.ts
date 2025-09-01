@@ -12259,8 +12259,14 @@ export enum ProtoPageOrientation {
 /** Properties of a ProtoNewPage. */
 export interface IProtoNewPage {
 
-    /** ProtoNewPage paperTray */
-    paperTray?: (number|null);
+    /** ProtoNewPage uuid */
+    uuid?: (string|null);
+
+    /** ProtoNewPage paperTrayUuid */
+    paperTrayUuid?: (string|null);
+
+    /** ProtoNewPage paperTrayNumber */
+    paperTrayNumber?: (number|null);
 
     /** ProtoNewPage paperCount */
     paperCount?: (number|null);
@@ -12270,6 +12276,12 @@ export interface IProtoNewPage {
 
     /** ProtoNewPage pageOrientation */
     pageOrientation?: (ProtoPageOrientation|null);
+
+    /** ProtoNewPage pDefUuid */
+    pDefUuid?: (string|null);
+
+    /** ProtoNewPage cDefUuid */
+    cDefUuid?: (string|null);
 
     /** ProtoNewPage comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
@@ -12284,8 +12296,14 @@ export class ProtoNewPage implements IProtoNewPage {
      */
     constructor(properties?: IProtoNewPage);
 
-    /** ProtoNewPage paperTray. */
-    public paperTray: number;
+    /** ProtoNewPage uuid. */
+    public uuid: string;
+
+    /** ProtoNewPage paperTrayUuid. */
+    public paperTrayUuid: string;
+
+    /** ProtoNewPage paperTrayNumber. */
+    public paperTrayNumber: number;
 
     /** ProtoNewPage paperCount. */
     public paperCount: number;
@@ -12295,6 +12313,12 @@ export class ProtoNewPage implements IProtoNewPage {
 
     /** ProtoNewPage pageOrientation. */
     public pageOrientation: ProtoPageOrientation;
+
+    /** ProtoNewPage pDefUuid. */
+    public pDefUuid: string;
+
+    /** ProtoNewPage cDefUuid. */
+    public cDefUuid: string;
 
     /** ProtoNewPage comChannelUUIDs. */
     public comChannelUUIDs: string[];
