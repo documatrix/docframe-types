@@ -24,7 +24,7 @@ message ProtoNewPage {
   ProtoPageOrientation pageOrientation = 6;
   // An optional page definition to be used for the new page.
   string pDefUuid = 7;
-  // An optional content definition to be used for the new page.
+  // An optional column definition to be used for the new page.
   string cDefUuid = 8;
   repeated string comChannelUUIDs = 9;
 }
