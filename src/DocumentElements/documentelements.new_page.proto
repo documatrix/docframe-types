@@ -13,9 +13,18 @@ enum ProtoPageOrientation {
 }
 
 message ProtoNewPage {
-  uint32  paperTray = 1;
-  uint32  paperCount = 2;
-  ProtoPageMode pageMode = 3;
-  ProtoPageOrientation pageOrientation = 4;
-  repeated string comChannelUUIDs = 5;
+  string uuid = 1;
+  // Identifies the paper tray to be used for the following page.
+  string paperTrayUuid = 2;
+  // Inherited from the referenced tray itself, not set directly.
+  uint32  paperTrayNumber = 3;
+  // Page count for the referenced tray. Might be set directly.
+  uint32  paperCount = 4;
+  ProtoPageMode pageMode = 5;
+  ProtoPageOrientation pageOrientation = 6;
+  // An optional page definition to be used for the new page.
+  string pDefUuid = 7;
+  // An optional column definition to be used for the new page.
+  string cDefUuid = 8;
+  repeated string comChannelUUIDs = 9;
 }
