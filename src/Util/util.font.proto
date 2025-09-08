@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 message ProtoFont {
   int32 id = 1;
   string name = 2;

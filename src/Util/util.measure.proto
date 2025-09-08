@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 enum ProtoMeasureType {
   PT = 0;
   CM = 1;

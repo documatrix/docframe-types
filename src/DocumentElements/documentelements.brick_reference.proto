@@ -1,6 +1,0 @@
-message ProtoBrickReference {
-  // comparable with BricksTemplates::BRICK
-  string internName = 1;
-  uint32 version = 2;
-  repeated string comChannelUUIDs = 3;
-}

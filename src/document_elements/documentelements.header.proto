@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+enum ProtoHeaderMode {
+  HEADER_MODE_APPEND_INITIAL = 0;
+  HEADER_MODE_APPEND = 1;
+  HEADER_MODE_EXTEND = 2;
+  HEADER_MODE_REPLACE = 3;
+}
+
+message ProtoHeader {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+  ProtoHeaderMode mode = 5;
+}

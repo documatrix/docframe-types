@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 enum ProtoSPBMode {
   NONE = 0;
   SUPERSCRIPT = 1;

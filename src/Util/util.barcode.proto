@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 enum ProtoBarcodeType {
   PDF417 = 0;
   DATAMATRIX = 1;

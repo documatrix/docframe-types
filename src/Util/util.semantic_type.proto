@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 enum ProtoSemanticType { 
   SEMANTIC_TYPE_NONE = 0;
   SEMANTIC_TYPE_PART = 1;

@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 enum ProtoColorType {
   DUMMY_COLOR_TYPE = 0; // dummy is needed here, because otherwise protoc command produces error
   RGB = 3;

@@ -1,7 +1,15 @@
 version: v1
 plugins:
   - plugin: go
-    out: .
+    out: build
     opt: Mbuild/docframe.proto=/docframepb,paths=source_relative
   - plugin: csharp
     out: build
+  - plugin: ts-proto
+    out: build
+    opt:
+      - esModuleInterop=true       # use ES module interop
+      - forceLong=string           # represent int64 as string
+      - useOptionals=true          # optional fields as TS optional
+      - outputServices=generic-definitions
+      - snakeToCamel=true          # convert snake_case to camelCase

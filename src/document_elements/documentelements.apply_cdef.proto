@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ProtoApplyProtoCDef {
+  string cDefUuid = 1;
+  repeated string comChannelUUIDs = 2;
+}

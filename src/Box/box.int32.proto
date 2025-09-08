@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 message ProtoBoxedInt32 {
   int32 value = 1;
   bool isNull = 2;

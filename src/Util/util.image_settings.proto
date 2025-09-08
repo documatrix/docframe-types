@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 message ProtoCropSettings {
   ProtoBoxedMeasure x = 1;
   ProtoBoxedMeasure y = 2;

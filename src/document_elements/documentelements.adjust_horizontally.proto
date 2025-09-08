@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "./documentelements.document_element.proto";
+
+message ProtoAdjustHorizontally {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  ProtoMeasure minFontSize = 3;
+  ProtoMeasure maxFontSize = 4;
+  repeated string comChannelUUIDs = 5;
+}

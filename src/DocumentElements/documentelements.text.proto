@@ -1,8 +1,0 @@
-message ProtoText {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-  // extends DocumentElement
-
-  string content = 2;
-  repeated string comChannelUUIDs = 3;
-}

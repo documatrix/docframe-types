@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 message ProtoGraphicState {
   ProtoBoxedBool bold = 1;
   ProtoBoxedBool italic = 2;

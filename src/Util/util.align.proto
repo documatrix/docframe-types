@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 enum ProtoHorizontalAlignment {
   ALIGN_LEFT = 0;
   ALIGN_CENTER = 1;

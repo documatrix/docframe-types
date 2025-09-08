@@ -1,9 +1,0 @@
-
-message ProtoPtConfig {
-  ProtoBoxedMeasure height = 1;
-  ProtoBoxedMeasure lineFeed = 2;
-  ProtoBoxedMeasure characterWidth = 3;
-  ProtoBoxedMeasure spaceWidth = 4;
-  string Uuid = 5;
-  repeated string comChannelUUIDs = 6;
-}

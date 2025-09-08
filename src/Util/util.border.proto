@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 message ProtoBorder {
   ProtoMeasure weight = 1;
   ProtoColor color = 2;
