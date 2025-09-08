@@ -6,7 +6,7 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
-//go:generate go run ../tools/proto_node_generator/proto_node_generator.go -proto-document-element-dir ../src/DocumentElements -proto-util-dir ../src/Util -destination-dir .
+//go:generate go run ../tools/proto_node_generator/proto_node_generator.go -proto-document-element-dir ../src/document_elements -proto-util-dir ../src/Util -destination-dir .
 
 type Message interface {
 	proto.Message

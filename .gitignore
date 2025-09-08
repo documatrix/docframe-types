@@ -132,3 +132,7 @@ dist
 # Generated proto files from buf experiments
 proto/
 gen/
+
+# Generated build files
+build/
+docframepb/docframe.pb.go

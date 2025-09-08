@@ -26,7 +26,8 @@
   },
   "scripts": {
     "commit": "npm run-script build && npm version patch && npm publish && git push",
-    "build": "make",
+    "build": "bash createDocframe.sh",
+    "build:buf": "make",
     "prepublish": "npm run build"
   },
   "author": "DocuMatrix <office@documatrix.com>",
