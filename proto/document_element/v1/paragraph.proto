@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "document_element/v1/paragraph_format.proto";
+
+message ProtoParagraph {
+  // BranchDocumentElement
+  document_element.v1.ProtoParagraphFormat format = 3;
+  document_element.v1.ProtoParagraphFormat overwrite = 4;
+  repeated string com_channel_uuids = 5;
+  string paragraph_format_uuid = 6;
+  string uuid = 7;
+}

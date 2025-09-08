@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "util/v1/measure.proto";
+
+message ProtoIndentation {
+  // BranchDocumentElement
+  util.v1.ProtoBoxedMeasure left = 3;
+  util.v1.ProtoBoxedMeasure right = 4;
+  string uuid = 5;
+  repeated string com_channel_uuids = 6;
+}

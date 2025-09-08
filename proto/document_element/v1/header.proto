@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+enum ProtoHeaderMode {
+  PROTO_HEADER_MODE_APPEND_INITIAL = 0;
+  PROTO_HEADER_MODE_APPEND = 1;
+  PROTO_HEADER_MODE_EXTEND = 2;
+  PROTO_HEADER_MODE_REPLACE = 3;
+}
+
+message ProtoHeader {
+  // BranchDocumentElement
+  string uuid = 3;
+  repeated string com_channel_uuids = 4;
+  ProtoHeaderMode mode = 5;
+}

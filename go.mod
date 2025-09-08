@@ -8,4 +8,4 @@ require (
 	google.golang.org/protobuf v1.36.8
 )
 
-require golang.org/x/sys v0.35.0 // indirect
+require golang.org/x/sys v0.36.0 // indirect

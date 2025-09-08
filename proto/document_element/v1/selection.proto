@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+message ProtoSelection {
+  // BranchDocumentElement
+  string uuid = 3;
+  repeated string com_channel_uuids = 4;
+  string internal_name = 5;
+  string name = 6;
+  bool multi = 7;
+  uint64 min = 8;
+  uint64 max = 9;
+}

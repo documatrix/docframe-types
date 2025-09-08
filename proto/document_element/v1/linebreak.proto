@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "box/v1/uint32.proto";
+
+message ProtoLinebreak {
+  repeated string com_channel_uuids = 2;
+
+  string uuid = 3;
+  box.v1.ProtoBoxedUint32 count = 4;
+}

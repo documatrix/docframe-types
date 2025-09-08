@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package util.v1;
+
+enum ProtoBarcodeType {
+  PROTO_BARCODE_TYPE_PDF417 = 0;
+  PROTO_BARCODE_TYPE_DATAMATRIX = 1;
+  PROTO_BARCODE_TYPE_BC128 = 2;
+  PROTO_BARCODE_TYPE_QR = 3;
+  PROTO_BARCODE_TYPE_ITF = 4;
+  PROTO_BARCODE_TYPE_EAN8 = 5;
+  PROTO_BARCODE_TYPE_EAN13 = 6;
+  PROTO_BARCODE_TYPE_CODE39 = 7;
+  PROTO_BARCODE_TYPE_SWISSQR = 8;
+  PROTO_BARCODE_TYPE_AZTEC = 9;
+}
+
+message ProtoSwissQRCreditor {
+  string address_type = 1;
+  string name = 2;
+  string postal_code = 3;
+  string town = 4;
+  string country = 5;
+  string street_or_address_line1 = 6;
+  string building_number_or_address_line2 = 7;
+  string iban = 8;
+  string amount = 9;
+  string currency = 10;
+}
+
+message ProtoSwissQRDebitor {
+  string address_type = 1;
+  string name = 2;
+  string postal_code = 3;
+  string town = 4;
+  string country = 5;
+  string street_or_address_line1 = 6;
+  string building_number_or_address_line2 = 7;
+  string payment_reference_type = 8;
+  string payment_reference = 9;
+  string unstructured_reference = 10;
+  string bill_information = 11;
+}
+
+message ProtoSwissQRData {
+  ProtoSwissQRCreditor creditor = 1;
+  ProtoSwissQRDebitor debitor = 2;
+}

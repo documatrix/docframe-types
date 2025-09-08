@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+message ProtoNamedString {
+  // BranchDocumentElement
+  string name = 3;
+  repeated string com_channel_uuids = 4;
+  string uuid = 5;
+  string description = 6;
+  string name_code = 7;
+  bool code_mode = 8;
+}

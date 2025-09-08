@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+enum ProtoFooterMode { 
+  PROTO_FOOTER_MODE_APPEND_INITIAL = 0;
+  PROTO_FOOTER_MODE_APPEND = 1;
+  PROTO_FOOTER_MODE_EXTEND = 2;
+  PROTO_FOOTER_MODE_REPLACE = 3;
+}
+
+message ProtoFooter {
+  // BranchDocumentElement
+  string uuid = 3;
+  repeated string com_channel_uuids = 4;
+  ProtoFooterMode mode = 5;
+}

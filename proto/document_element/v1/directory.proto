@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "util/v1/semantic_type.proto";
+
+message ProtoDirectory {
+  // BranchDocumentElement
+  string uuid = 3;
+  repeated string com_channel_uuids = 4;
+  util.v1.ProtoSemanticType semantic_type = 5;
+  bool editable = 6;
+  string name = 7;
+}

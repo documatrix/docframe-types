@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+message ProtoPageCondition {
+  // BranchDocumentElement
+  string uuid = 3;
+  repeated string com_channel_uuids = 4;
+  string code = 5;
+}

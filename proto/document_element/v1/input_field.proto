@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "util/v1/input_field.proto";
+import "util/v1/measure.proto";
+
+message ProtoInputFieldText {
+  util.v1.ProtoBaseInputField base = 2;
+  util.v1.PDFPrintingBehavior pdf_printing_behavior = 3;
+  util.v1.ProtoBoxedMeasure pdf_size = 4;
+  string pdf_form_name = 5;
+  repeated string com_channel_uuids = 6;
+  string uuid = 7;
+}
+
+message ProtoInputFieldDate {
+  util.v1.ProtoBaseInputField base = 2;
+  repeated string com_channel_uuids = 3;
+  string uuid = 4;
+}
+
+message ProtoInputFieldCheckbox {
+  util.v1.ProtoBaseInputField base = 2;
+  repeated string com_channel_uuids = 3;
+  string uuid = 4;
+}
+
+message ProtoInputFieldLabel {
+  util.v1.ProtoBaseInputField base = 2;
+  repeated string com_channel_uuids = 3;
+  string uuid = 4;
+}
+
+message ProtoInputFieldDropdown {
+  util.v1.ProtoBaseInputField base = 2;
+
+  repeated util.v1.ProtoOption options = 3;
+
+  // If true, the result of the options_code evaluation will be written to the options field, and re-evaluated for every
+  // time the input field is rendered.
+  // if false, the options_code will be evaluated once and the result will be copied to the options field.
+  bool bind_options_code = 4;
+
+  // Options code has to return one of the following types:
+  // - An array of Strings, containing the possible options
+  // - An array of Hashes with keys "key" (containing the "hidden" key) and "value" (containing the displayed value)
+  // - A hash with keys (containing the "hidden" key) and "value" (containing the displayed value)
+  string options_code = 5;
+  repeated string com_channel_uuids = 6;
+  string uuid = 7;
+}
+

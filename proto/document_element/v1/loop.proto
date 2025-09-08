@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+message ProtoLoop {
+  // BranchDocumentElement
+  string path = 3;
+  string uuid = 4;
+  repeated string com_channel_uuids = 5;
+}

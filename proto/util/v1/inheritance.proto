@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package util.v1;
+
+enum ProtoInheritance {
+  // Inherit from parent element
+  PROTO_INHERITANCE_INHERIT = 0;
+  // Evaluate provided code once
+  PROTO_INHERITANCE_CODE = 1;
+  // Evaluate provided code every time
+  PROTO_INHERITANCE_BIND_CODE = 2;
+  // Use the static value
+  PROTO_INHERITANCE_STATIC = 3;
+  // Reset the value to "no value" -> default behaviour
+  PROTO_INHERITANCE_RESET = 4;
+}

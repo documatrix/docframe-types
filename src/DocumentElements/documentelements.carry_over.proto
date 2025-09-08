@@ -1,8 +1,0 @@
-message ProtoCarryOver {
-  // extends BranchDocumentElement
-  repeated ProtoDocumentElement _children = 1;
-  ProtoDocumentElement parent = 2;
-  // extends BranchDocumentElement
-
-  repeated string comChannelUUIDs = 3;
-}

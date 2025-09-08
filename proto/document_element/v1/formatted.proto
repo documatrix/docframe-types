@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+message ProtoFormatted {
+  bool dteditor_syntax = 2;
+  string doctype_content = 3;
+  string doctype_code = 4;
+  string html_content = 5;
+  string html_code = 6;
+  string text_content = 7;
+  string text_code = 8;
+  repeated string com_channel_uuids = 9;
+}

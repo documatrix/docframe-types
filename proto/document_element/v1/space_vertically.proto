@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "util/v1/measure.proto";
+
+message ProtoSpaceVertically {
+  util.v1.ProtoMeasure space = 2;
+  repeated string com_channel_uuids = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+message ProtoDynamicTemplate {
+  string uuid = 2;
+  string script = 3;
+  repeated string com_channel_uuids = 4;
+}

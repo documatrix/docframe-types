@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+message ProtoLink {
+  // BranchDocumentElement
+  string url = 2;
+  repeated string com_channel_uuids = 3;
+}

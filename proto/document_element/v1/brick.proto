@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+message ProtoBrick {
+  // BranchDocumentElement
+  uint64 id = 3;
+  string intern_name = 4;
+  string uuid = 5;
+  bool editable = 6;
+  repeated string com_channel_uuids = 7;
+  string name = 8;
+}
