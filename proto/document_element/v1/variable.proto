@@ -2,12 +2,7 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
-
 message ProtoVariable {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-
   string path = 2;
   string content = 3; // Should this be optional or "empty string"
   string format_uuid = 4;

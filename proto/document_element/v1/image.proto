@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
 import "util/v1/measure.proto";
 import "box/v1/double.proto";
 import "box/v1/bool.proto";
@@ -33,10 +32,6 @@ enum ProtoImageContentType{
 }
 
 message ProtoImage {
-  //extends DocumentElement
-  ProtoDocumentElement parent = 1;
-  //extends DocumentElement
-
   string alt = 2;
   string name = 3;
   string src = 4;

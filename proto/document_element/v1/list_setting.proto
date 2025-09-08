@@ -2,14 +2,9 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
 import "document_element/v1/list_level_setting.proto";
 
 message ProtoListSetting {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-  // extends DocumentElement
-
   string name = 2;
   repeated ProtoListLevelSetting list_level_settings = 3;
   ProtoListLevelSetting default_list_level_setting = 4;

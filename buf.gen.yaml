@@ -11,9 +11,9 @@ plugins:
     out: gen
     opt:
       - paths=source_relative
-  - remote: buf.build/grpc/csharp:v1.74.1
+  - remote: buf.build/protocolbuffers/csharp:v32.0
     out: gen
     opt:
-      - base_namespace=Docframe
+      - base_namespace=
   - remote: buf.build/bufbuild/es:v2.7.0
     out: gen

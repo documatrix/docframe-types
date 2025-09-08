@@ -2,13 +2,7 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
-
 message ProtoLink {
-  // extends BranchDocumentElement
-  repeated ProtoDocumentElement children = 1;
-  // extends BranchDocumentElement
-
   string url = 2;
   repeated string com_channel_uuids = 3;
 }

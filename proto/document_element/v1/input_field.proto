@@ -2,14 +2,10 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
 import "util/v1/input_field.proto";
 import "util/v1/measure.proto";
 
 message ProtoInputFieldText {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-
   util.v1.ProtoBaseInputField base = 2;
   util.v1.PDFPrintingBehavior pdf_printing_behavior = 3;
   util.v1.ProtoBoxedMeasure pdf_size = 4;
@@ -19,36 +15,24 @@ message ProtoInputFieldText {
 }
 
 message ProtoInputFieldDate {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-
   util.v1.ProtoBaseInputField base = 2;
   repeated string com_channel_uuids = 3;
   string uuid = 4;
 }
 
 message ProtoInputFieldCheckbox {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-
   util.v1.ProtoBaseInputField base = 2;
   repeated string com_channel_uuids = 3;
   string uuid = 4;
 }
 
 message ProtoInputFieldLabel {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-
   util.v1.ProtoBaseInputField base = 2;
   repeated string com_channel_uuids = 3;
   string uuid = 4;
 }
 
 message ProtoInputFieldDropdown {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-
   util.v1.ProtoBaseInputField base = 2;
 
   repeated util.v1.ProtoOption options = 3;

@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
 import "document_element/v1/carry_over.proto";
 import "document_element/v1/sub_total.proto";
 import "util/v1/color.proto";
@@ -16,11 +15,6 @@ import "box/v1/double.proto";
 import "box/v1/string.proto";
 
 message ProtoTable {
-  // extends BranchDocumentElement
-  repeated ProtoDocumentElement children = 1;
-  ProtoDocumentElement parent = 2;
-  // extends BranchDocumentElement
-
   ProtoTableSettings settings = 3;
   string config_name = 4;
 
@@ -31,10 +25,6 @@ message ProtoTable {
 }
 
 message ProtoTableConfig {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-  // extends DocumentElement
-
   ProtoTableSettings settings = 2;
   string config_name = 3;
   repeated string com_channel_uuids = 4;
@@ -63,21 +53,12 @@ message ProtoBoxedTableContentGroupType {
 }
 
 message ProtoTableContentGroup {
-  // extends BranchDocumentElement
-  repeated ProtoDocumentElement children = 1;
-  ProtoDocumentElement parent = 2;
-  // extends BranchDocumentElement
-
   ProtoTableContentGroupSettings settings = 3;
   repeated string com_channel_uuids = 4;
   ProtoTableElementProperties element_properties = 5;
 }
 
 message ProtoTableContentGroupConfig {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-  // extends DocumentElement
-
   ProtoTableContentGroupSettings settings = 2;
   string config_name = 3;
   repeated string com_channel_uuids = 4;
@@ -91,11 +72,6 @@ message ProtoTableContentGroupSettings {
 }
 
 message ProtoTableRow {
-  // extends BranchDocumentElement
-  repeated ProtoDocumentElement children = 1;
-  ProtoDocumentElement parent = 2;
-  // extends BranchDocumentElement
-
   ProtoTableRowSettings settings = 3;
   box.v1.ProtoBoxedUint32 row_config_number = 4;
   repeated string com_channel_uuids = 5;
@@ -103,10 +79,6 @@ message ProtoTableRow {
 }
 
 message ProtoTableRowConfig {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-  // extends DocumentElement
-
   ProtoTableRowSettings settings = 2;
   string config_name = 3;
   string row_header = 4;
@@ -133,11 +105,6 @@ message ProtoBoxedTableCellType {
 }
 
 message ProtoTableCell {
-  // extends BranchDocumentElement
-  repeated ProtoDocumentElement children = 1;
-  ProtoDocumentElement parent = 2;
-  // extends BranchDocumentElement
-
   ProtoTableCellSettings settings = 3;
   box.v1.ProtoBoxedUint32 cell_config_number = 4;
   // Indicates if this table cell should merged with the left table cell.
@@ -149,10 +116,6 @@ message ProtoTableCell {
 }
 
 message ProtoTableCellConfig {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-  // extends DocumentElement
-
   ProtoTableCellSettings settings = 2;
   string config_name = 3;
   ProtoBoxedTableCellType cell_type = 4;

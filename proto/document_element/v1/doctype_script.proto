@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
-
 enum ProtoDoctypeOutputMode {
   PROTO_DOCTYPE_OUTPUT_MODE_NOT_SET = 0;
   PROTO_DOCTYPE_OUTPUT_MODE_DOCTYPE = 1;
@@ -13,9 +11,6 @@ enum ProtoDoctypeOutputMode {
 // These elements are actually script snippets (usually dmSCRIPT), whichs result (String) is used
 // as docTYPE code.
 message ProtoDoctypeScript {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-
   string content = 2;
   ProtoDoctypeOutputMode output_mode = 3;
   repeated string com_channel_uuids = 4;

@@ -2,15 +2,9 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
 import "util/v1/semantic_type.proto";
 
 message ProtoTemplate {
-  // extends BranchDocumentElement
-  repeated ProtoDocumentElement children = 1;
-  ProtoDocumentElement parent = 2;
-  // extends BranchDocumentElement
-
   repeated string com_channel_uuids = 3;
   string uuid = 4;
   ProtoColumnBalancing column_balancing = 5;

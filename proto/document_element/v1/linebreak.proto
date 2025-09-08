@@ -2,13 +2,9 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
 import "box/v1/uint32.proto";
 
 message ProtoLinebreak {
-  //extends DocumentElement
-  ProtoDocumentElement parent = 1;
-  //extends DocumentElement
   repeated string com_channel_uuids = 2;
 
   string uuid = 3;

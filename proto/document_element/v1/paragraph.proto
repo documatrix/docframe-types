@@ -2,17 +2,11 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
 import "document_element/v1/paragraph_format.proto";
 
 message ProtoParagraph {
-  // extends BranchDocumentElement
-  repeated ProtoDocumentElement children = 1;
-  ProtoDocumentElement parent = 2;
-  // extends BranchDocumentElement
-
-  ProtoParagraphFormat format = 3;
-  ProtoParagraphFormat overwrite = 4;
+  document_element.v1.ProtoParagraphFormat format = 3;
+  document_element.v1.ProtoParagraphFormat overwrite = 4;
   repeated string com_channel_uuids = 5;
   string paragraph_format_uuid = 6;
   string uuid = 7;

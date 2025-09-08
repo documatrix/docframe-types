@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package document_element.v1;
-
-message ProtoDocumentElement {
-  ProtoDocumentElement parent = 1;
-  repeated string com_channel_uuids = 2;
-}

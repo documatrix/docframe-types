@@ -2,15 +2,9 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
 import "util/v1/measure.proto";
 
 message ProtoAdjustHorizontally {
-  // extends BranchDocumentElement
-  repeated ProtoDocumentElement children = 1;
-  ProtoDocumentElement parent = 2;
-  // extends BranchDocumentElement
-
   util.v1.ProtoMeasure min_font_size = 3;
   util.v1.ProtoMeasure max_font_size = 4;
   repeated string com_channel_uuids = 5;

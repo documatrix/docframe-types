@@ -2,16 +2,10 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
 import "util/v1/measure.proto";
 import "util/v1/advanced_illustration_area_image_settings.proto";
 
 message ProtoAdvancedIllustrationArea {
-  // extends BranchDocumentElement
-  repeated ProtoDocumentElement children = 1;
-  ProtoDocumentElement parent = 2;
-  // extends BranchDocumentElement
-
   string uuid = 3;
   bool absolute = 4;
   util.v1.ProtoMeasure width = 5;

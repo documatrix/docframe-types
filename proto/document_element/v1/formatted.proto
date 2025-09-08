@@ -2,13 +2,7 @@ syntax = "proto3";
 
 package document_element.v1;
 
-import "document_element/v1/document_element.proto";
-
 message ProtoFormatted {
-  // extends DocumentElement
-  ProtoDocumentElement parent = 1;
-  // extends DocumentElement
-
   bool dteditor_syntax = 2;
   string doctype_content = 3;
   string doctype_code = 4;

@@ -1,6 +1,6 @@
 {
   "name": "docframe-types",
-  "version": "0.8.0",
+  "version": "1.0.0",
   "description": "docframe-types contains type definitions for creating documents (e. g. using Deuterium)",
   "keywords": [
     "formatting",
@@ -16,16 +16,9 @@
     "type": "git",
     "url": "git+https://github.com/documatrix/docframe-types.git"
   },
-  "main": "build/Docframe.js",
-  "devDependencies": {
-    "@bufbuild/buf": "^1.57.0",
-    "@bufbuild/protoc-gen-es": "^2.7.0",
-    "ts-proto": "^2.7.7"
-  },
   "scripts": {
     "commit": "npm run-script build && npm version patch && npm publish && git push",
-    "build": "bash createDocframe.sh",
-    "build:buf": "make",
+    "build": "make",
     "prepublish": "npm run build"
   },
   "author": "DocuMatrix <office@documatrix.com>",
