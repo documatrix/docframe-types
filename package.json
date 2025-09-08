@@ -32,7 +32,7 @@
   },
   "author": "DocuMatrix <office@documatrix.com>",
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
     "@bufbuild/protobuf": "^2.7.0"
   },
   "devDependencies": {
