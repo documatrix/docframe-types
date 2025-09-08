@@ -16,6 +16,15 @@
     "type": "git",
     "url": "git+https://github.com/documatrix/docframe-types.git"
   },
+  "main": "gen/index.js",
+  "module": "gen/index.js",
+  "types": "gen/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./gen/index.js",
+      "types": "./gen/index.d.ts"
+    }
+  },
   "scripts": {
     "commit": "npm run-script build && npm version patch && npm publish && git push",
     "build": "make",
@@ -25,5 +34,9 @@
   "license": "MIT",
   "dependencies": {
     "@bufbuild/protobuf": "^2.7.0"
+  },
+  "devDependencies": {
+    "barrelsby": "^2.8.1",
+    "typescript": "^5.9.2"
   }
 }

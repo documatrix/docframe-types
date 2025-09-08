@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "outDir": "gen",
+    "allowJs": true,
+    "checkJs": false,
+    "moduleResolution": "node",
+    "target": "ES2020",
+    "module": "ES2020",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "rootDir": "gen"
+  },
+  "include": ["gen/index.ts"],
+  "exclude": []
+}
