@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "document_element/v1/document_element.proto";
+import "box/v1/bool.proto";
+import "util/v1/color.proto";
+
+message ProtoSpan {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  box.v1.ProtoBoxedBool bold = 3;
+  box.v1.ProtoBoxedBool italic = 4;
+  util.v1.ProtoColor color = 5;
+  box.v1.ProtoBoxedBool subscript = 6;
+  box.v1.ProtoBoxedBool superscript = 7;
+  box.v1.ProtoBoxedBool underline = 8;
+  box.v1.ProtoBoxedBool strikethrough = 9;
+  repeated string com_channel_uuids = 10;
+}

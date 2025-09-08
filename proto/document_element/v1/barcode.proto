@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "util/v1/measure.proto";
+import "util/v1/barcode.proto";
+import "util/v1/image_settings.proto";
+
+message ProtoBarcode {
+  util.v1.ProtoBarcodeType type = 1;
+  util.v1.ProtoMeasure x = 2;
+  util.v1.ProtoMeasure y = 3;
+  util.v1.ProtoImageReferencePoint reference_point = 4;
+  // Rotation in degrees, counter-clockwise
+  float rotation = 5;
+  util.v1.ProtoMeasure width = 6;
+  util.v1.ProtoMeasure height = 7;
+  util.v1.ProtoMeasure padding = 8;
+  // keeps the evaluated code
+  string data = 9;
+  bool position_absolute = 10;
+  repeated string com_channel_uuids = 11;
+  string uuid = 12;
+  // keeps the original code, which gives us the possibility to re-evaluate it and save it in data
+  // it will be empty if the barcode type is SwissQR
+  string code = 13;
+  // will only be set if the barcode type is SwissQR
+  util.v1.ProtoSwissQRData swiss_qr_data = 14;
+}

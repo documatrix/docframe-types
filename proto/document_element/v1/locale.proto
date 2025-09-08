@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "document_element/v1/document_element.proto";
+
+message ProtoLocale {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+  string uuid = 3;
+  repeated string com_channel_uuids = 4;
+  repeated string language_uuids = 5;
+  repeated string region_uuids = 6;
+}

@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "util/v1/color.proto";
+import "util/v1/measure.proto";
+import "util/v1/rule_style.proto";
+
+message ProtoRule {
+  util.v1.ProtoMeasure  x_offset = 1;
+  util.v1.ProtoMeasure  y_offset = 2;
+  util.v1.ProtoMeasure  width = 3;
+  util.v1.ProtoMeasure thickness = 4;
+  // Rotation of the rule is stored in degrees clockwise
+  // Examples:
+  //      0° = a horizontal rule to the right
+  //      90° = a vertical rule downwards
+  //      180° = a horizontal rule to the left
+  //      270° = a vertical rule upwards
+  double rotation = 5;
+  util.v1.ProtoColor color = 6;
+  util.v1.ProtoRuleStyle style = 7;
+  // Toggles whether the rule is a normal rule or a boundary rule
+  ProtoRuleMode mode = 8;
+  // If the rule is a boundary rule, this field contains the boundaries where the rule starts and ends.
+  // Both boundaries can be independently set to be either an absolute value e.g. PT or a relative value e.g. %.
+  // If the rule is a normal rule, this field is ignored.
+  ProtoRuleBoundaries boundaries = 9;
+  repeated string com_channel_uuids = 10;
+}
+
+enum ProtoRuleMode {
+  PROTO_RULE_MODE_NORMAL = 0;
+  PROTO_RULE_MODE_BOUNDARY = 1;
+}
+
+// go-gen:ignore
+message ProtoRuleBoundaries {
+  util.v1.ProtoMeasure start = 1;
+  util.v1.ProtoMeasure end = 2;
+}

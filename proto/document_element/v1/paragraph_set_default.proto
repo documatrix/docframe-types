@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "document_element/v1/document_element.proto";
+
+message ProtoParagraphSetDefault {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  // extends DocumentElement
+
+  string name = 2;
+  string paragraph_format_uuid = 3;
+  string uuid = 4;
+  repeated string com_channel_uuids = 5;
+}

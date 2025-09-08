@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "document_element/v1/document_element.proto";
+import "util/v1/measure.proto";
+import "box/v1/double.proto";
+import "box/v1/bool.proto";
+import "util/v1/image_settings.proto";
+import "util/v1/advanced_illustration_area_image_settings.proto";
+
+enum ProtoImageScaleType {
+  PROTO_IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
+  PROTO_IMAGE_SCALE_TYPE_RELATIVE = 1;
+  PROTO_IMAGE_SCALE_TYPE_ABSOLUTE = 2;
+  PROTO_IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN = 3;
+}
+
+enum ProtoImageUAMode{
+  PROTO_IMAGE_UA_MODE_DO_NOT_USE_AT_ALL = 0;
+  PROTO_IMAGE_UA_MODE_INHERITED = 1;
+  PROTO_IMAGE_UA_MODE_SIMPLE = 2;
+  PROTO_IMAGE_UA_MODE_ADVANCED = 3;
+
+}
+
+enum ProtoImageContentType{
+  PROTO_IMAGE_CONTENT_TYPE_UUID_REFERENCE_INLINE = 0;
+  PROTO_IMAGE_CONTENT_TYPE_UUID_REFERENCE_LOCAL = 1;
+  PROTO_IMAGE_CONTENT_TYPE_UUID_REFERENCE_GLOBAL = 2;
+  PROTO_IMAGE_CONTENT_TYPE_DMSCRIPT = 3;
+  PROTO_IMAGE_CONTENT_TYPE_IMAGE_DATA = 4;
+}
+
+message ProtoImage {
+  //extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  //extends DocumentElement
+
+  string alt = 2;
+  string name = 3;
+  string src = 4;
+  string filename = 5;
+  box.v1.ProtoBoxedDouble scale = 6;
+  box.v1.ProtoBoxedDouble column_scale = 7;
+  util.v1.ProtoBoxedMeasure width = 8;
+  util.v1.ProtoBoxedMeasure height = 9;
+  util.v1.ProtoBoxedMeasure x = 10;
+  util.v1.ProtoBoxedMeasure y = 11;
+  box.v1.ProtoBoxedBool position_absolute = 12;
+  double rotation = 13;
+  util.v1.ProtoFlipSettings flip_settings = 14;
+  util.v1.ProtoCropSettings crop_settings = 15;
+  util.v1.ProtoAdvancedIllustrationAreaImageSettings aia = 16;
+  string uuid = 17;
+  util.v1.ProtoImageReferencePoint reference_point = 18;
+  string hyperlink = 19;
+  repeated string com_channel_uui_ds = 20;
+  ProtoImageContentType image_content_type = 21;
+  string image_content = 22;  
+  ProtoImageScaleType scale_type = 23; 
+  ProtoImageUAMode ua_mode = 24;
+  string ua_description = 25;
+  box.v1.ProtoBoxedBool left_border_is_left_measure = 26;
+}
+

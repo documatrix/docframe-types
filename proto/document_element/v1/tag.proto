@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "document_element/v1/document_element.proto";
+
+message ProtoTag {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  // extends DocumentElement
+
+  string name = 2;
+  repeated string com_channel_uuids = 3;
+  string uuid = 4;
+  repeated string params = 5;
+  string name_code = 6;
+  bool code_mode = 7;
+}

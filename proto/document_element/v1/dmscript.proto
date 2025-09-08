@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "document_element/v1/document_element.proto";
+
+message ProtoDmScript {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+
+  string content = 2;
+  repeated string com_channel_uuids = 3;
+  string uuid = 4;
+}

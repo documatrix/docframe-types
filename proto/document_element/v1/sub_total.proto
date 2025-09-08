@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package document_element.v1;
+
+import "document_element/v1/document_element.proto";
+import "util/v1/measure.proto";
+
+enum ProtoSubTotalPosition {
+  PROTO_SUB_TOTAL_POSITION_ABOVE_FOOTER = 0;
+  PROTO_SUB_TOTAL_POSITION_BELOW_CONTENT = 1;
+}
+
+message ProtoSubTotal {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  bool apply_immediate = 3;
+  ProtoSubTotalPosition position = 4;
+  util.v1.ProtoMeasure height = 5;
+  repeated string com_channel_uuids = 6;
+}
+

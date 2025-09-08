@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package util.v1;
+
+import "util/v1/color.proto";
+import "util/v1/measure.proto";
+import "util/v1/rule_style.proto";
+import "util/v1/underline_spec.proto";
+
+message ProtoStrikethroughSpec {
+
+  // extends UnderlineSpec
+  ProtoMeasure weight = 1;
+  ProtoUnderlineMode mode = 2;
+  ProtoColor color = 3;
+  int32 offset_em = 4;
+  ProtoRuleStyle style = 5;
+  // extends UnderlineSpec
+
+}
+
+message ProtoBoxedStrikethroughSpec {
+  ProtoStrikethroughSpec value = 1;
+  bool is_null = 2;
+}

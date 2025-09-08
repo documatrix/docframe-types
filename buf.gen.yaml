@@ -1,15 +1,19 @@
-version: v1
+version: v2
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/documatrix/docframe-types/gen
+inputs:
+  - directory: src
 plugins:
-  - plugin: go
-    out: build
-    opt: Mbuild/docframe.proto=/docframepb,paths=source_relative
-  - plugin: csharp
-    out: build
-  - plugin: ts-proto
-    out: build
+  - remote: buf.build/protocolbuffers/go:v1.36.8
+    out: gen
     opt:
-      - esModuleInterop=true       # use ES module interop
-      - forceLong=string           # represent int64 as string
-      - useOptionals=true          # optional fields as TS optional
-      - outputServices=generic-definitions
-      - snakeToCamel=true          # convert snake_case to camelCase
+      - paths=source_relative
+  - remote: buf.build/grpc/csharp:v1.74.1
+    out: gen
+    opt:
+      - base_namespace=Docframe
+  - remote: buf.build/bufbuild/es:v2.7.0
+    out: gen
