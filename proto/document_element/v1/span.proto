@@ -6,6 +6,7 @@ import "box/v1/bool.proto";
 import "util/v1/color.proto";
 
 message ProtoSpan {
+  // BranchDocumentElement
   box.v1.ProtoBoxedBool bold = 3;
   box.v1.ProtoBoxedBool italic = 4;
   util.v1.ProtoColor color = 5;

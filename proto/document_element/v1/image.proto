@@ -50,7 +50,7 @@ message ProtoImage {
   string uuid = 17;
   util.v1.ProtoImageReferencePoint reference_point = 18;
   string hyperlink = 19;
-  repeated string com_channel_uui_ds = 20;
+  repeated string com_channel_uuids = 20;
   ProtoImageContentType image_content_type = 21;
   string image_content = 22;  
   ProtoImageScaleType scale_type = 23; 

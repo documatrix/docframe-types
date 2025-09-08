@@ -15,9 +15,9 @@ import "box/v1/double.proto";
 import "box/v1/string.proto";
 
 message ProtoTable {
+  // BranchDocumentElement
   ProtoTableSettings settings = 3;
   string config_name = 4;
-
   ProtoCarryOver carry_over = 5;
   ProtoSubTotal sub_total = 6;
   repeated string com_channel_uuids = 7;
@@ -53,6 +53,7 @@ message ProtoBoxedTableContentGroupType {
 }
 
 message ProtoTableContentGroup {
+  // BranchDocumentElement
   ProtoTableContentGroupSettings settings = 3;
   repeated string com_channel_uuids = 4;
   ProtoTableElementProperties element_properties = 5;
@@ -72,6 +73,7 @@ message ProtoTableContentGroupSettings {
 }
 
 message ProtoTableRow {
+  // BranchDocumentElement
   ProtoTableRowSettings settings = 3;
   box.v1.ProtoBoxedUint32 row_config_number = 4;
   repeated string com_channel_uuids = 5;
@@ -105,6 +107,7 @@ message ProtoBoxedTableCellType {
 }
 
 message ProtoTableCell {
+  // BranchDocumentElement
   ProtoTableCellSettings settings = 3;
   box.v1.ProtoBoxedUint32 cell_config_number = 4;
   // Indicates if this table cell should merged with the left table cell.

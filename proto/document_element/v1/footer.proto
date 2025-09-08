@@ -10,6 +10,7 @@ enum ProtoFooterMode {
 }
 
 message ProtoFooter {
+  // BranchDocumentElement
   string uuid = 3;
   repeated string com_channel_uuids = 4;
   ProtoFooterMode mode = 5;

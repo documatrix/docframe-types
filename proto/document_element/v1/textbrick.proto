@@ -3,6 +3,7 @@ syntax = "proto3";
 package document_element.v1;
 
 message ProtoTextBrick {
+  // BranchDocumentElement
   string uuid = 3;
   uint64 id = 4;
   repeated string com_channel_uuids = 5;

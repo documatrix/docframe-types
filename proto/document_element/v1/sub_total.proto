@@ -10,6 +10,7 @@ enum ProtoSubTotalPosition {
 }
 
 message ProtoSubTotal {
+  // BranchDocumentElement
   bool apply_immediate = 3;
   ProtoSubTotalPosition position = 4;
   util.v1.ProtoMeasure height = 5;

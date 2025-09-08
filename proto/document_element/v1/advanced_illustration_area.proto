@@ -6,6 +6,7 @@ import "util/v1/measure.proto";
 import "util/v1/advanced_illustration_area_image_settings.proto";
 
 message ProtoAdvancedIllustrationArea {
+  // BranchDocumentElement
   string uuid = 3;
   bool absolute = 4;
   util.v1.ProtoMeasure width = 5;

@@ -3,6 +3,7 @@ syntax = "proto3";
 package document_element.v1;
 
 message ProtoLocale {
+  // BranchDocumentElement
   string uuid = 3;
   repeated string com_channel_uuids = 4;
   repeated string language_uuids = 5;

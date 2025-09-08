@@ -3,5 +3,6 @@ syntax = "proto3";
 package document_element.v1;
 
 message ProtoWsArea {
+  // BranchDocumentElement
   repeated string com_channel_uuids = 3;
 }
