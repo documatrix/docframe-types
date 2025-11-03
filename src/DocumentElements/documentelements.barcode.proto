@@ -19,4 +19,5 @@ message ProtoBarcode {
   string code = 13;
   // will only be set if the barcode type is SwissQR
   ProtoSwissQRData swissQRData = 14;
+  string altText = 15;
 }
