@@ -26308,6 +26308,7 @@ $root.ProtoBarcode = (function() {
      * @property {string|null} [uuid] ProtoBarcode uuid
      * @property {string|null} [code] ProtoBarcode code
      * @property {IProtoSwissQRData|null} [swissQRData] ProtoBarcode swissQRData
+     * @property {string|null} [altText] ProtoBarcode altText
      */
 
     /**
@@ -26439,6 +26440,14 @@ $root.ProtoBarcode = (function() {
     ProtoBarcode.prototype.swissQRData = null;
 
     /**
+     * ProtoBarcode altText.
+     * @member {string} altText
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.altText = "";
+
+    /**
      * Creates a new ProtoBarcode instance using the specified properties.
      * @function create
      * @memberof ProtoBarcode
@@ -26491,6 +26500,8 @@ $root.ProtoBarcode = (function() {
             writer.uint32(/* id 13, wireType 2 =*/106).string(message.code);
         if (message.swissQRData != null && Object.hasOwnProperty.call(message, "swissQRData"))
             $root.ProtoSwissQRData.encode(message.swissQRData, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
+        if (message.altText != null && Object.hasOwnProperty.call(message, "altText"))
+            writer.uint32(/* id 15, wireType 2 =*/122).string(message.altText);
         return writer;
     };
 
@@ -26581,6 +26592,10 @@ $root.ProtoBarcode = (function() {
                 }
             case 14: {
                     message.swissQRData = $root.ProtoSwissQRData.decode(reader, reader.uint32());
+                    break;
+                }
+            case 15: {
+                    message.altText = reader.string();
                     break;
                 }
             default:
@@ -26698,6 +26713,9 @@ $root.ProtoBarcode = (function() {
             if (error)
                 return "swissQRData." + error;
         }
+        if (message.altText != null && message.hasOwnProperty("altText"))
+            if (!$util.isString(message.altText))
+                return "altText: string expected";
         return null;
     };
 
@@ -26840,6 +26858,8 @@ $root.ProtoBarcode = (function() {
                 throw TypeError(".ProtoBarcode.swissQRData: object expected");
             message.swissQRData = $root.ProtoSwissQRData.fromObject(object.swissQRData);
         }
+        if (object.altText != null)
+            message.altText = String(object.altText);
         return message;
     };
 
@@ -26872,6 +26892,7 @@ $root.ProtoBarcode = (function() {
             object.uuid = "";
             object.code = "";
             object.swissQRData = null;
+            object.altText = "";
         }
         if (message.type != null && message.hasOwnProperty("type"))
             object.type = options.enums === String ? $root.ProtoBarcodeType[message.type] === undefined ? message.type : $root.ProtoBarcodeType[message.type] : message.type;
@@ -26904,6 +26925,8 @@ $root.ProtoBarcode = (function() {
             object.code = message.code;
         if (message.swissQRData != null && message.hasOwnProperty("swissQRData"))
             object.swissQRData = $root.ProtoSwissQRData.toObject(message.swissQRData, options);
+        if (message.altText != null && message.hasOwnProperty("altText"))
+            object.altText = message.altText;
         return object;
     };
 

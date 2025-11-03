@@ -9195,6 +9195,9 @@ export interface IProtoBarcode {
 
     /** ProtoBarcode swissQRData */
     swissQRData?: (IProtoSwissQRData|null);
+
+    /** ProtoBarcode altText */
+    altText?: (string|null);
 }
 
 /** Represents a ProtoBarcode. */
@@ -9247,6 +9250,9 @@ export class ProtoBarcode implements IProtoBarcode {
 
     /** ProtoBarcode swissQRData. */
     public swissQRData?: (IProtoSwissQRData|null);
+
+    /** ProtoBarcode altText. */
+    public altText: string;
 
     /**
      * Creates a new ProtoBarcode instance using the specified properties.

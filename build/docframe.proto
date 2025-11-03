@@ -835,6 +835,7 @@ repeated string comChannelUUIDs = 11;
 string uuid = 12;
 string code = 13;
 ProtoSwissQRData swissQRData = 14;
+string altText = 15;
 }
 message ProtoBrickReference {
 string internName = 1;
