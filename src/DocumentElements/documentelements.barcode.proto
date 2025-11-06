@@ -12,4 +12,5 @@ message ProtoBarcode {
   string data = 9;
   bool positionAbsolute = 10;
   repeated string comChannelUUIDs = 11;
+  string altText = 12;
 }
