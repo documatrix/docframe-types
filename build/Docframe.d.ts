@@ -2769,6 +2769,12 @@ export class ProtoSwissQRData implements IProtoSwissQRData {
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
+/** ProtoBarcodeUAMode enum. */
+export enum ProtoBarcodeUAMode {
+    BARCODE_UA_MODE_SIMPLE = 0,
+    BARCODE_UA_MODE_ADVANCED = 1
+}
+
 /** Properties of a ProtoLinebreak. */
 export interface IProtoLinebreak {
 
@@ -9198,6 +9204,12 @@ export interface IProtoBarcode {
 
     /** ProtoBarcode altText */
     altText?: (string|null);
+
+    /** ProtoBarcode uaMode */
+    uaMode?: (ProtoBarcodeUAMode|null);
+
+    /** ProtoBarcode uaDescription */
+    uaDescription?: (string|null);
 }
 
 /** Represents a ProtoBarcode. */
@@ -9253,6 +9265,12 @@ export class ProtoBarcode implements IProtoBarcode {
 
     /** ProtoBarcode altText. */
     public altText: string;
+
+    /** ProtoBarcode uaMode. */
+    public uaMode: ProtoBarcodeUAMode;
+
+    /** ProtoBarcode uaDescription. */
+    public uaDescription: string;
 
     /**
      * Creates a new ProtoBarcode instance using the specified properties.

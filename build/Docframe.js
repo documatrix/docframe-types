@@ -6888,6 +6888,20 @@ $root.ProtoSwissQRData = (function() {
     return ProtoSwissQRData;
 })();
 
+/**
+ * ProtoBarcodeUAMode enum.
+ * @name ProtoBarcodeUAMode
+ * @enum {number}
+ * @property {number} BARCODE_UA_MODE_SIMPLE=0 BARCODE_UA_MODE_SIMPLE value
+ * @property {number} BARCODE_UA_MODE_ADVANCED=1 BARCODE_UA_MODE_ADVANCED value
+ */
+$root.ProtoBarcodeUAMode = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "BARCODE_UA_MODE_SIMPLE"] = 0;
+    values[valuesById[1] = "BARCODE_UA_MODE_ADVANCED"] = 1;
+    return values;
+})();
+
 $root.ProtoLinebreak = (function() {
 
     /**
@@ -26309,6 +26323,8 @@ $root.ProtoBarcode = (function() {
      * @property {string|null} [code] ProtoBarcode code
      * @property {IProtoSwissQRData|null} [swissQRData] ProtoBarcode swissQRData
      * @property {string|null} [altText] ProtoBarcode altText
+     * @property {ProtoBarcodeUAMode|null} [uaMode] ProtoBarcode uaMode
+     * @property {string|null} [uaDescription] ProtoBarcode uaDescription
      */
 
     /**
@@ -26448,6 +26464,22 @@ $root.ProtoBarcode = (function() {
     ProtoBarcode.prototype.altText = "";
 
     /**
+     * ProtoBarcode uaMode.
+     * @member {ProtoBarcodeUAMode} uaMode
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.uaMode = 0;
+
+    /**
+     * ProtoBarcode uaDescription.
+     * @member {string} uaDescription
+     * @memberof ProtoBarcode
+     * @instance
+     */
+    ProtoBarcode.prototype.uaDescription = "";
+
+    /**
      * Creates a new ProtoBarcode instance using the specified properties.
      * @function create
      * @memberof ProtoBarcode
@@ -26502,6 +26534,10 @@ $root.ProtoBarcode = (function() {
             $root.ProtoSwissQRData.encode(message.swissQRData, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
         if (message.altText != null && Object.hasOwnProperty.call(message, "altText"))
             writer.uint32(/* id 15, wireType 2 =*/122).string(message.altText);
+        if (message.uaMode != null && Object.hasOwnProperty.call(message, "uaMode"))
+            writer.uint32(/* id 16, wireType 0 =*/128).int32(message.uaMode);
+        if (message.uaDescription != null && Object.hasOwnProperty.call(message, "uaDescription"))
+            writer.uint32(/* id 17, wireType 2 =*/138).string(message.uaDescription);
         return writer;
     };
 
@@ -26596,6 +26632,14 @@ $root.ProtoBarcode = (function() {
                 }
             case 15: {
                     message.altText = reader.string();
+                    break;
+                }
+            case 16: {
+                    message.uaMode = reader.int32();
+                    break;
+                }
+            case 17: {
+                    message.uaDescription = reader.string();
                     break;
                 }
             default:
@@ -26716,6 +26760,17 @@ $root.ProtoBarcode = (function() {
         if (message.altText != null && message.hasOwnProperty("altText"))
             if (!$util.isString(message.altText))
                 return "altText: string expected";
+        if (message.uaMode != null && message.hasOwnProperty("uaMode"))
+            switch (message.uaMode) {
+            default:
+                return "uaMode: enum value expected";
+            case 0:
+            case 1:
+                break;
+            }
+        if (message.uaDescription != null && message.hasOwnProperty("uaDescription"))
+            if (!$util.isString(message.uaDescription))
+                return "uaDescription: string expected";
         return null;
     };
 
@@ -26860,6 +26915,24 @@ $root.ProtoBarcode = (function() {
         }
         if (object.altText != null)
             message.altText = String(object.altText);
+        switch (object.uaMode) {
+        default:
+            if (typeof object.uaMode === "number") {
+                message.uaMode = object.uaMode;
+                break;
+            }
+            break;
+        case "BARCODE_UA_MODE_SIMPLE":
+        case 0:
+            message.uaMode = 0;
+            break;
+        case "BARCODE_UA_MODE_ADVANCED":
+        case 1:
+            message.uaMode = 1;
+            break;
+        }
+        if (object.uaDescription != null)
+            message.uaDescription = String(object.uaDescription);
         return message;
     };
 
@@ -26893,6 +26966,8 @@ $root.ProtoBarcode = (function() {
             object.code = "";
             object.swissQRData = null;
             object.altText = "";
+            object.uaMode = options.enums === String ? "BARCODE_UA_MODE_SIMPLE" : 0;
+            object.uaDescription = "";
         }
         if (message.type != null && message.hasOwnProperty("type"))
             object.type = options.enums === String ? $root.ProtoBarcodeType[message.type] === undefined ? message.type : $root.ProtoBarcodeType[message.type] : message.type;
@@ -26927,6 +27002,10 @@ $root.ProtoBarcode = (function() {
             object.swissQRData = $root.ProtoSwissQRData.toObject(message.swissQRData, options);
         if (message.altText != null && message.hasOwnProperty("altText"))
             object.altText = message.altText;
+        if (message.uaMode != null && message.hasOwnProperty("uaMode"))
+            object.uaMode = options.enums === String ? $root.ProtoBarcodeUAMode[message.uaMode] === undefined ? message.uaMode : $root.ProtoBarcodeUAMode[message.uaMode] : message.uaMode;
+        if (message.uaDescription != null && message.hasOwnProperty("uaDescription"))
+            object.uaDescription = message.uaDescription;
         return object;
     };
 
