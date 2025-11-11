@@ -42,3 +42,8 @@ message ProtoSwissQRData {
   ProtoSwissQRCreditor creditor = 1;
   ProtoSwissQRDebitor debitor = 2;
 }
+
+enum ProtoBarcodeUAMode{
+  BARCODE_UA_MODE_SIMPLE = 0;
+  BARCODE_UA_MODE_ADVANCED = 1;
+}
