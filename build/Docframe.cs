@@ -610,158 +610,168 @@ namespace Docframe {
             "b2RlGAcgASgIIpMBChhQcm90b1BhcmFncmFwaFNldERlZmF1bHQSJQoGcGFy",
             "ZW50GAEgASgLMhUuUHJvdG9Eb2N1bWVudEVsZW1lbnQSDAoEbmFtZRgCIAEo",
             "CRIbChNwYXJhZ3JhcGhGb3JtYXRVVUlEGAMgASgJEgwKBHV1aWQYBCABKAkS",
-            "FwoPY29tQ2hhbm5lbFVVSURzGAUgAygJIvkBChNQcm90b0lucHV0RmllbGRU",
+            "FwoPY29tQ2hhbm5lbFVVSURzGAUgAygJIs0EChNQcm90b0lucHV0RmllbGRU",
             "ZXh0EiUKBnBhcmVudBgBIAEoCzIVLlByb3RvRG9jdW1lbnRFbGVtZW50EiIK",
             "BGJhc2UYAiABKAsyFC5Qcm90b0Jhc2VJbnB1dEZpZWxkEjMKFXBkZl9wcmlu",
             "dGluZ19iZWhhdmlvchgDIAEoDjIULlBERlByaW50aW5nQmVoYXZpb3ISJAoI",
             "cGRmX3NpemUYBCABKAsyEi5Qcm90b0JveGVkTWVhc3VyZRIVCg1wZGZfZm9y",
             "bV9uYW1lGAUgASgJEhcKD2NvbUNoYW5uZWxVVUlEcxgGIAMoCRIMCgR1dWlk",
-            "GAcgASgJIocBChNQcm90b0lucHV0RmllbGREYXRlEiUKBnBhcmVudBgBIAEo",
+            "GAcgASgJEhIKCnBkZkFsdFRleHQYCCABKAkSKgoOcGRmSW5wdXRIZWlnaHQY",
+            "CSABKAsyEi5Qcm90b0JveGVkTWVhc3VyZRIVCg1wZGZJc1JlYWRPbmx5GAog",
+            "ASgIEhUKDXBkZklzUmVxdWlyZWQYCyABKAgSGAoQcGRmSXNOb3RFeHBvcnRl",
+            "ZBgMIAEoCBIWCg5wZGZJc011bHRpbGluZRgNIAEoCBIaChJwZGZJc1Bhc3N3",
+            "b3JkRmllbGQYDiABKAgSHwoXcGRmSXNGaWxlU2VsZWN0aW9uRmllbGQYDyAB",
+            "KAgSHAoUcGRmRGlzYWJsZVNwZWxsQ2hlY2sYECABKAgSGwoTcGRmRGlzYWJs",
+            "ZVNjcm9sbGluZxgRIAEoCBIcChRwZGZVc2VDb21iRm9ybWF0dGluZxgSIAEo",
+            "CBIcChRwZGZJc1JpY2hUZXh0RW5hYmxlZBgTIAEoCCKHAQoTUHJvdG9JbnB1",
+            "dEZpZWxkRGF0ZRIlCgZwYXJlbnQYASABKAsyFS5Qcm90b0RvY3VtZW50RWxl",
+            "bWVudBIiCgRiYXNlGAIgASgLMhQuUHJvdG9CYXNlSW5wdXRGaWVsZBIXCg9j",
+            "b21DaGFubmVsVVVJRHMYAyADKAkSDAoEdXVpZBgEIAEoCSLnAQoXUHJvdG9J",
+            "bnB1dEZpZWxkQ2hlY2tib3gSJQoGcGFyZW50GAEgASgLMhUuUHJvdG9Eb2N1",
+            "bWVudEVsZW1lbnQSIgoEYmFzZRgCIAEoCzIULlByb3RvQmFzZUlucHV0Rmll",
+            "bGQSFwoPY29tQ2hhbm5lbFVVSURzGAMgAygJEgwKBHV1aWQYBCABKAkSMQoT",
+            "cGRmUHJpbnRpbmdCZWhhdmlvchgFIAEoDjIULlBERlByaW50aW5nQmVoYXZp",
+            "b3ISEwoLcGRmRm9ybU5hbWUYBiABKAkSEgoKcGRmQWx0VGV4dBgHIAEoCSKI",
+            "AQoUUHJvdG9JbnB1dEZpZWxkTGFiZWwSJQoGcGFyZW50GAEgASgLMhUuUHJv",
+            "dG9Eb2N1bWVudEVsZW1lbnQSIgoEYmFzZRgCIAEoCzIULlByb3RvQmFzZUlu",
+            "cHV0RmllbGQSFwoPY29tQ2hhbm5lbFVVSURzGAMgAygJEgwKBHV1aWQYBCAB",
+            "KAki2AEKF1Byb3RvSW5wdXRGaWVsZERyb3Bkb3duEiUKBnBhcmVudBgBIAEo",
             "CzIVLlByb3RvRG9jdW1lbnRFbGVtZW50EiIKBGJhc2UYAiABKAsyFC5Qcm90",
-            "b0Jhc2VJbnB1dEZpZWxkEhcKD2NvbUNoYW5uZWxVVUlEcxgDIAMoCRIMCgR1",
-            "dWlkGAQgASgJIosBChdQcm90b0lucHV0RmllbGRDaGVja2JveBIlCgZwYXJl",
-            "bnQYASABKAsyFS5Qcm90b0RvY3VtZW50RWxlbWVudBIiCgRiYXNlGAIgASgL",
-            "MhQuUHJvdG9CYXNlSW5wdXRGaWVsZBIXCg9jb21DaGFubmVsVVVJRHMYAyAD",
-            "KAkSDAoEdXVpZBgEIAEoCSKIAQoUUHJvdG9JbnB1dEZpZWxkTGFiZWwSJQoG",
-            "cGFyZW50GAEgASgLMhUuUHJvdG9Eb2N1bWVudEVsZW1lbnQSIgoEYmFzZRgC",
-            "IAEoCzIULlByb3RvQmFzZUlucHV0RmllbGQSFwoPY29tQ2hhbm5lbFVVSURz",
-            "GAMgAygJEgwKBHV1aWQYBCABKAki2AEKF1Byb3RvSW5wdXRGaWVsZERyb3Bk",
-            "b3duEiUKBnBhcmVudBgBIAEoCzIVLlByb3RvRG9jdW1lbnRFbGVtZW50EiIK",
-            "BGJhc2UYAiABKAsyFC5Qcm90b0Jhc2VJbnB1dEZpZWxkEh0KB29wdGlvbnMY",
-            "AyADKAsyDC5Qcm90b09wdGlvbhIXCg9iaW5kT3B0aW9uc0NvZGUYBCABKAgS",
-            "EwoLb3B0aW9uc0NvZGUYBSABKAkSFwoPY29tQ2hhbm5lbFVVSURzGAYgAygJ",
-            "EgwKBHV1aWQYByABKAkqOAoMUHJvdG9TUEJNb2RlEggKBE5PTkUQABIPCgtT",
-            "VVBFUlNDUklQVBABEg0KCVNVQlNDUklQVBACKvkBCg5Qcm90b1J1bGVTdHls",
-            "ZRIUChBEVU1NWV9SVUxFX1NUWUxFEAASCQoFU09MSUQQARISCg5TUEFSU0Vf",
-            "U0hBRElORxACEhIKDk1FRElVTV9TSEFESU5HEAMSEQoNREVOU0VfU0hBRElO",
-            "RxAEEhAKDExJR0hUX0RPVFRFRBAFEhEKDU1FRElVTV9ET1RURUQQBhIQCgxI",
-            "RUFWWV9ET1RURUQQBxIQCgxMSUdIVF9EQVNIRUQQCBIRCg1NRURJVU1fREFT",
-            "SEVEEAkSEAoMSEVBVllfREFTSEVEEAoSEAoMREFTSF9QQVRURVJOEAsSCwoG",
-            "RE9VQkxFEP4BKkcKEFByb3RvTWVhc3VyZVR5cGUSBgoCUFQQABIGCgJDTRAB",
-            "EgYKAk1NEAISBgoCSU4QAxILCgdQRVJDRU5UEAQSBgoCUFgQBSp7CilQcm90",
-            "b0FkdmFuY2VkSWxsdXN0cmF0aW9uQXJlYVRleHRGbG93VHlwZRIVChFET19O",
-            "T1RfVVNFX0FUX0FMTBAAEgoKBkFST1VORBABEgsKB05PX0ZMT1cQAhIOCgpG",
-            "T1JFR1JPVU5EEAMSDgoKQkFDS0dST1VORBAEKjkKDlByb3RvQ29sb3JUeXBl",
-            "EhQKEERVTU1ZX0NPTE9SX1RZUEUQABIHCgNSR0IQAxIICgRDTVlLEAQqkgEK",
-            "GFByb3RvSG9yaXpvbnRhbEFsaWdubWVudBIOCgpBTElHTl9MRUZUEAASEAoM",
-            "QUxJR05fQ0VOVEVSEAESDwoLQUxJR05fUklHSFQQAhIRCg1BTElHTl9KVVNU",
-            "SUZZEAMSFgoSQUxJR05fRlVMTF9KVVNUSUZZEAQSGAoUQUxJR05fQ0VOVEVS",
-            "X09OX1BBR0UQBSo5ChZQcm90b1ZlcnRpY2FsQWxpZ25tZW50EgcKA1RPUBAA",
-            "EgoKBk1JRERMRRABEgoKBkJPVFRPTRACKoMBChBQcm90b0JhcmNvZGVUeXBl",
-            "EgoKBlBERjQxNxAAEg4KCkRBVEFNQVRSSVgQARIJCgVCQzEyOBACEgYKAlFS",
-            "EAMSBwoDSVRGEAQSCAoERUFOOBAFEgkKBUVBTjEzEAYSCgoGQ09ERTM5EAcS",
-            "CwoHU1dJU1NRUhAIEgkKBUFaVEVDEAkqTgoSUHJvdG9CYXJjb2RlVUFNb2Rl",
-            "EhoKFkJBUkNPREVfVUFfTU9ERV9TSU1QTEUQABIcChhCQVJDT0RFX1VBX01P",
-            "REVfQURWQU5DRUQQASpSChFQcm90b1Bvc2l0aW9uTW9kZRIKCgZDRU5URVIQ",
-            "ABIICgRMRUZUEAESCQoFRk9MSU8QAhIJCgVSSUdIVBADEhEKDVJFVkVSU0Vf",
-            "Rk9MSU8QBCqOAQoSUHJvdG9VbmRlcmxpbmVNb2RlEhgKFERVTU1ZX1VOREVS",
-            "TElORV9NT0RFEAASEwoPV09SRFNfTk9fQkxBTktTEAESFAoQV09SRFNfQU5E",
-            "X0JMQU5LUxACEhgKFENIQVJBQ1RFUlNfTk9fQkxBTktTEAMSGQoVQ0hBUkFD",
-            "VEVSU19BTkRfQkxBTktTEAQquQEKGFByb3RvSW1hZ2VSZWZlcmVuY2VQb2lu",
-            "dBIfChtSRUZfUE9JTlRfRE9fTk9UX1VTRV9BVF9BTEwQABIZChVSRUZfUE9J",
-            "TlRfQk9UVE9NX0xFRlQQARIWChJSRUZfUE9JTlRfVE9QX0xFRlQQAhIUChBS",
-            "RUZfUE9JTlRfQ0VOVEVSEAMSGgoWUkVGX1BPSU5UX0JPVFRPTV9SSUdIVBAE",
-            "EhcKE1JFRl9QT0lOVF9UT1BfUklHSFQQBSqJAQoRUHJvdG9TZW1hbnRpY1R5",
-            "cGUSFgoSU0VNQU5USUNfVFlQRV9OT05FEAASFgoSU0VNQU5USUNfVFlQRV9Q",
-            "QVJUEAESFQoRU0VNQU5USUNfVFlQRV9BUlQQAhIWChJTRU1BTlRJQ19UWVBF",
-            "X1NFQ1QQAxIVChFTRU1BTlRJQ19UWVBFX0RJVhAEKnkKE1BERlByaW50aW5n",
-            "QmVoYXZpb3ISHwobUERGX1BSSU5USU5HX0JFSEFWSU9SX0lOUFVUEAASHgoa",
-            "UERGX1BSSU5USU5HX0JFSEFWSU9SX1RFWFQQARIhCh1QREZfUFJJTlRJTkdf",
-            "QkVIQVZJT1JfSU5IRVJJVBACKoYBCgtJbmhlcml0YW5jZRIXChNJTkhFUklU",
-            "QU5DRV9JTkhFUklUEAASFAoQSU5IRVJJVEFOQ0VfQ09ERRABEhkKFUlOSEVS",
-            "SVRBTkNFX0JJTkRfQ09ERRACEhYKEklOSEVSSVRBTkNFX1NUQVRJQxADEhUK",
-            "EUlOSEVSSVRBTkNFX1JFU0VUEAQqbwoPUHJvdG9OdW1iZXJUeXBlEgoKBkFS",
-            "QUJJQxAAEhEKDVJPTV9VUFBFUkNBU0UQARIRCg1ST01fTE9XRVJDQVNFEAIS",
-            "FAoQTEVUVEVSX1VQUEVSQ0FTRRADEhQKEExFVFRFUl9MT1dFUkNBU0UQBCpD",
-            "ChlQcm90b0xpc3RMZXZlbFNldHRpbmdUeXBlEg4KClVOTlVNQkVSRUQQABIL",
-            "CgdOVU1FUklDEAESCQoFSU1BR0UQAipOChpQcm90b1RhYmxlQ29udGVudEdy",
-            "b3VwVHlwZRIKCgZIRUFERVIQABIICgRCT0RZEAESCgoGRk9PVEVSEAISDgoK",
-            "U1VCX0hFQURFUhADKl8KElByb3RvVGFibGVDZWxsVHlwZRITCg9UQUJMRV9D",
-            "RUxMX0JPRFkQABIZChVUQUJMRV9DRUxMX1JPV19IRUFERVIQARIZChVUQUJM",
-            "RV9DRUxMX1JPV19GT09URVIQAioyCg9Db2x1bW5CYWxhbmNpbmcSEAoMTk9f",
-            "QkFMQU5DSU5HEAASDQoJQkFMQU5DSU5HEAEqegoPUHJvdG9IZWFkZXJNb2Rl",
-            "Eh4KGkhFQURFUl9NT0RFX0FQUEVORF9JTklUSUFMEAASFgoSSEVBREVSX01P",
-            "REVfQVBQRU5EEAESFgoSSEVBREVSX01PREVfRVhURU5EEAISFwoTSEVBREVS",
-            "X01PREVfUkVQTEFDRRADKnoKD1Byb3RvRm9vdGVyTW9kZRIeChpGT09URVJf",
-            "TU9ERV9BUFBFTkRfSU5JVElBTBAAEhYKEkZPT1RFUl9NT0RFX0FQUEVORBAB",
-            "EhYKEkZPT1RFUl9NT0RFX0VYVEVORBACEhcKE0ZPT1RFUl9NT0RFX1JFUExB",
-            "Q0UQAyqHEgoITm9kZVR5cGUSLAooRE9DVU1FTlRfRUxFTUVOVF9CUkFOQ0hf",
-            "RE9DVU1FTlRfRUxFTUVOVBAAEiQKIERPQ1VNRU5UX0VMRU1FTlRfQlJJQ0tf",
-            "UkVGRVJFTkNFEAESGgoWRE9DVU1FTlRfRUxFTUVOVF9CUklDSxACEiUKIURP",
-            "Q1VNRU5UX0VMRU1FTlRfRE9DVU1FTlRfRUxFTUVOVBADEh4KGkRPQ1VNRU5U",
-            "X0VMRU1FTlRfTElORUJSRUFLEAQSIQodRE9DVU1FTlRfRUxFTUVOVF9MSVNU",
-            "X1NFVFRJTkcQBhIlCiFET0NVTUVOVF9FTEVNRU5UX1BBUkFHUkFQSF9GT1JN",
-            "QVQQBxIeChpET0NVTUVOVF9FTEVNRU5UX1BBUkFHUkFQSBAIEhwKGERPQ1VN",
-            "RU5UX0VMRU1FTlRfU0VDVElPThAJEhkKFURPQ1VNRU5UX0VMRU1FTlRfU1BB",
-            "ThAKEhoKFkRPQ1VNRU5UX0VMRU1FTlRfVEFCTEUQCxIfChtET0NVTUVOVF9F",
-            "TEVNRU5UX1RBQkxFX0NFTEwQDBIeChpET0NVTUVOVF9FTEVNRU5UX1RBQkxF",
-            "X1JPVxANEh0KGURPQ1VNRU5UX0VMRU1FTlRfVEVNUExBVEUQDxIZChVET0NV",
-            "TUVOVF9FTEVNRU5UX1RFWFQQEBIeChpET0NVTUVOVF9FTEVNRU5UX0NPTE9S",
-            "X0RFRhATEhoKFkRPQ1VNRU5UX0VMRU1FTlRfSU1BR0UQHhIhCh1ET0NVTUVO",
-            "VF9FTEVNRU5UX05BTUVEX1NUUklORxAiEigKJERPQ1VNRU5UX0VMRU1FTlRf",
-            "VEFCTEVfQ09OVEVOVF9HUk9VUBAjEiEKHURPQ1VNRU5UX0VMRU1FTlRfVEFC",
-            "TEVfQ09ORklHECQSJgoiRE9DVU1FTlRfRUxFTUVOVF9UQUJMRV9DRUxMX0NP",
-            "TkZJRxAlEiUKIURPQ1VNRU5UX0VMRU1FTlRfVEFCTEVfUk9XX0NPTkZJRxAm",
-            "Ei8KK0RPQ1VNRU5UX0VMRU1FTlRfVEFCTEVfQ09OVEVOVF9HUk9VUF9DT05G",
-            "SUcQJxIZChVET0NVTUVOVF9FTEVNRU5UX0xJTksQKBIeChpET0NVTUVOVF9F",
-            "TEVNRU5UX0RJUkVDVE9SWRApEh8KG0RPQ1VNRU5UX0VMRU1FTlRfVEVYVF9C",
-            "UklDSxAqEh0KGURPQ1VNRU5UX0VMRU1FTlRfVkFSSUFCTEUQLBIlCiFET0NV",
-            "TUVOVF9FTEVNRU5UX1NQQUNFX1ZFUlRJQ0FMTFkQLRIeChpET0NVTUVOVF9F",
-            "TEVNRU5UX0ZPUk1BVFRFRBAuEiAKHERPQ1VNRU5UX0VMRU1FTlRfQVBQTFlf",
-            "Q19ERUYQLxIgChxET0NVTUVOVF9FTEVNRU5UX0FQUExZX1BfREVGEDASJAog",
-            "RE9DVU1FTlRfRUxFTUVOVF9BUFBMWV9QVF9DT05GSUcQMRIkCiBET0NVTUVO",
-            "VF9FTEVNRU5UX0FQUExZX1VMX0NPTkZJRxAyEhoKFkRPQ1VNRU5UX0VMRU1F",
-            "TlRfQ19ERUYQMxIaChZET0NVTUVOVF9FTEVNRU5UX1BfREVGEDQSHgoaRE9D",
-            "VU1FTlRfRUxFTUVOVF9QVF9DT05GSUcQNRIeChpET0NVTUVOVF9FTEVNRU5U",
-            "X1VMX0NPTkZJRxA2Eh0KGURPQ1VNRU5UX0VMRU1FTlRfTkVXX1BBR0UQNxIb",
-            "ChdET0NVTUVOVF9FTEVNRU5UX0hFQURFUhA4EhsKF0RPQ1VNRU5UX0VMRU1F",
-            "TlRfRk9PVEVSEDkSIAocRE9DVU1FTlRfRUxFTUVOVF9JTkRFTlRBVElPThA8",
-            "EhwKGERPQ1VNRU5UX0VMRU1FTlRfQkFSQ09ERRA9EhwKGERPQ1VNRU5UX0VM",
-            "RU1FTlRfV1NfQVJFQRA+Eh8KG0RPQ1VNRU5UX0VMRU1FTlRfQ0FSUllfT1ZF",
-            "UhA/Eh4KGkRPQ1VNRU5UX0VMRU1FTlRfU1VCX1RPVEFMEEASGQoVRE9DVU1F",
-            "TlRfRUxFTUVOVF9MT09QEEESHwobRE9DVU1FTlRfRUxFTUVOVF9MT09QX0VO",
-            "VFJZEEISGQoVRE9DVU1FTlRfRUxFTUVOVF9SVUxFEEMSJwojRE9DVU1FTlRf",
-            "RUxFTUVOVF9MSVNUX0xFVkVMX1NFVFRJTkcQRBIbChdET0NVTUVOVF9FTEVN",
-            "RU5UX0xBWU9VVBBFEi8KK0RPQ1VNRU5UX0VMRU1FTlRfQURWQU5DRURfSUxM",
-            "VVNUUkFUSU9OX0FSRUEQRhIoCiRET0NVTUVOVF9FTEVNRU5UX0FESlVTVF9I",
-            "T1JJWk9OVEFMTFkQRxIjCh9ET0NVTUVOVF9FTEVNRU5UX0RPQ1RZUEVfU0NS",
-            "SVBUEEgSHgoaRE9DVU1FTlRfRUxFTUVOVF9ETV9TQ1JJUFQQSRIlCiFET0NV",
-            "TUVOVF9FTEVNRU5UX0RZTkFNSUNfVEVNUExBVEUQShIeChpET0NVTUVOVF9F",
-            "TEVNRU5UX1NFTEVDVElPThBLEiQKIERPQ1VNRU5UX0VMRU1FTlRfU0VMRUNU",
-            "SU9OX0VOVFJZEEwSHgoaRE9DVU1FTlRfRUxFTUVOVF9DT05ESVRJT04QTRIj",
-            "Ch9ET0NVTUVOVF9FTEVNRU5UX1BBR0VfQ09ORElUSU9OEE4SGwoXRE9DVU1F",
-            "TlRfRUxFTUVOVF9MT0NBTEUQTxIYChRET0NVTUVOVF9FTEVNRU5UX1RBRxBQ",
-            "EioKJkRPQ1VNRU5UX0VMRU1FTlRfUEFSQUdSQVBIX1NFVF9ERUZBVUxUEFES",
-            "JQohRE9DVU1FTlRfRUxFTUVOVF9JTlBVVF9GSUVMRF9URVhUEFISJQohRE9D",
-            "VU1FTlRfRUxFTUVOVF9JTlBVVF9GSUVMRF9EQVRFEFMSKQolRE9DVU1FTlRf",
-            "RUxFTUVOVF9JTlBVVF9GSUVMRF9DSEVDS0JPWBBUEiYKIkRPQ1VNRU5UX0VM",
-            "RU1FTlRfSU5QVVRfRklFTERfTEFCRUwQVRIpCiVET0NVTUVOVF9FTEVNRU5U",
-            "X0lOUFVUX0ZJRUxEX0RST1BET1dOEFYqpAEKE1Byb3RvSW1hZ2VTY2FsZVR5",
-            "cGUSJgoiSU1BR0VfU0NBTEVfVFlQRV9ET19OT1RfVVNFX0FUX0FMTBAAEh0K",
-            "GUlNQUdFX1NDQUxFX1RZUEVfUkVMQVRJVkUQARIdChlJTUFHRV9TQ0FMRV9U",
-            "WVBFX0FCU09MVVRFEAISJwojSU1BR0VfU0NBTEVfVFlQRV9SRUxBVElWRV9U",
-            "T19DT0xVTU4QAyqKAQoQUHJvdG9JbWFnZVVBTW9kZRIjCh9JTUFHRV9VQV9N",
-            "T0RFX0RPX05PVF9VU0VfQVRfQUxMEAASGwoXSU1BR0VfVUFfTU9ERV9JTkhF",
-            "UklURUQQARIYChRJTUFHRV9VQV9NT0RFX1NJTVBMRRACEhoKFklNQUdFX1VB",
-            "X01PREVfQURWQU5DRUQQAyrLAQoVUHJvdG9JbWFnZUNvbnRlbnRUeXBlEicK",
-            "I0lNQUdFX0NPTlRFTlRfVVVJRF9SRUZFUkVOQ0VfSU5MSU5FEAASJgoiSU1B",
-            "R0VfQ09OVEVOVF9VVUlEX1JFRkVSRU5DRV9MT0NBTBABEicKI0lNQUdFX0NP",
-            "TlRFTlRfVVVJRF9SRUZFUkVOQ0VfR0xPQkFMEAISGgoWSU1BR0VfQ09OVEVO",
-            "VF9ETVNDUklQVBADEhwKGElNQUdFX0NPTlRFTlRfSU1BR0VfREFUQRAEKsQB",
-            "ChhQcm90b1ZhcmlhYmxlU3BlY2lhbFR5cGUSDwoLTk9UX1NQRUNJQUwQABIQ",
-            "CgxUQUJMRV9OVU1CRVIQARISCg5ET0NfUEFHRV9DT1VOVBACEhAKDERPQ19D",
-            "VVJfUEFHRRADEgwKCENVUl9QQUdFEAQSDgoKUEFHRV9DT1VOVBAFEg0KCVBS",
-            "RVZfUEFHRRAGEhAKDFNFQ1RJT05fUEFHRRAHEg4KClVQREFURURfQVQQCBIQ",
-            "CgxHRU5FUkFURURfQVQQCSpICg1Qcm90b1BhZ2VNb2RlEg0KCU5FWFRfUEFH",
-            "RRAAEhMKD05FWFRfUkVDVE9fUEFHRRABEhMKD05FWFRfVkVSU09fUEFHRRAC",
-            "KmsKFFByb3RvUGFnZU9yaWVudGF0aW9uEgkKBVVOU0VUEAASDAoIUE9SVFJB",
-            "SVQQARINCglMQU5EU0NBUEUQAhIUChBJTlZFUlNFX1BPUlRSQUlUEAMSFQoR",
-            "SU5WRVJTRV9MQU5EU0NBUEUQBCpOChVQcm90b1N1YlRvdGFsUG9zaXRpb24S",
-            "GQoVUE9TSVRJT05fQUJPVkVfRk9PVEVSEAASGgoWUE9TSVRJT05fQkVMT1df",
-            "Q09OVEVOVBABKikKDVByb3RvUnVsZU1vZGUSCgoGTk9STUFMEAASDAoIQk9V",
-            "TkRBUlkQASpQChZQcm90b0RvY3R5cGVPdXRwdXRNb2RlEh8KG0RPQ1RZUEVf",
-            "T1VUUFVUX01PREVfTk9UX1NFVBAAEgsKB0RPQ1RZUEUQARIICgRKU09OEAJC",
-            "C6oCCERvY2ZyYW1lYgZwcm90bzM="));
+            "b0Jhc2VJbnB1dEZpZWxkEh0KB29wdGlvbnMYAyADKAsyDC5Qcm90b09wdGlv",
+            "bhIXCg9iaW5kT3B0aW9uc0NvZGUYBCABKAgSEwoLb3B0aW9uc0NvZGUYBSAB",
+            "KAkSFwoPY29tQ2hhbm5lbFVVSURzGAYgAygJEgwKBHV1aWQYByABKAkqOAoM",
+            "UHJvdG9TUEJNb2RlEggKBE5PTkUQABIPCgtTVVBFUlNDUklQVBABEg0KCVNV",
+            "QlNDUklQVBACKvkBCg5Qcm90b1J1bGVTdHlsZRIUChBEVU1NWV9SVUxFX1NU",
+            "WUxFEAASCQoFU09MSUQQARISCg5TUEFSU0VfU0hBRElORxACEhIKDk1FRElV",
+            "TV9TSEFESU5HEAMSEQoNREVOU0VfU0hBRElORxAEEhAKDExJR0hUX0RPVFRF",
+            "RBAFEhEKDU1FRElVTV9ET1RURUQQBhIQCgxIRUFWWV9ET1RURUQQBxIQCgxM",
+            "SUdIVF9EQVNIRUQQCBIRCg1NRURJVU1fREFTSEVEEAkSEAoMSEVBVllfREFT",
+            "SEVEEAoSEAoMREFTSF9QQVRURVJOEAsSCwoGRE9VQkxFEP4BKkcKEFByb3Rv",
+            "TWVhc3VyZVR5cGUSBgoCUFQQABIGCgJDTRABEgYKAk1NEAISBgoCSU4QAxIL",
+            "CgdQRVJDRU5UEAQSBgoCUFgQBSp7CilQcm90b0FkdmFuY2VkSWxsdXN0cmF0",
+            "aW9uQXJlYVRleHRGbG93VHlwZRIVChFET19OT1RfVVNFX0FUX0FMTBAAEgoK",
+            "BkFST1VORBABEgsKB05PX0ZMT1cQAhIOCgpGT1JFR1JPVU5EEAMSDgoKQkFD",
+            "S0dST1VORBAEKjkKDlByb3RvQ29sb3JUeXBlEhQKEERVTU1ZX0NPTE9SX1RZ",
+            "UEUQABIHCgNSR0IQAxIICgRDTVlLEAQqkgEKGFByb3RvSG9yaXpvbnRhbEFs",
+            "aWdubWVudBIOCgpBTElHTl9MRUZUEAASEAoMQUxJR05fQ0VOVEVSEAESDwoL",
+            "QUxJR05fUklHSFQQAhIRCg1BTElHTl9KVVNUSUZZEAMSFgoSQUxJR05fRlVM",
+            "TF9KVVNUSUZZEAQSGAoUQUxJR05fQ0VOVEVSX09OX1BBR0UQBSo5ChZQcm90",
+            "b1ZlcnRpY2FsQWxpZ25tZW50EgcKA1RPUBAAEgoKBk1JRERMRRABEgoKBkJP",
+            "VFRPTRACKoMBChBQcm90b0JhcmNvZGVUeXBlEgoKBlBERjQxNxAAEg4KCkRB",
+            "VEFNQVRSSVgQARIJCgVCQzEyOBACEgYKAlFSEAMSBwoDSVRGEAQSCAoERUFO",
+            "OBAFEgkKBUVBTjEzEAYSCgoGQ09ERTM5EAcSCwoHU1dJU1NRUhAIEgkKBUFa",
+            "VEVDEAkqTgoSUHJvdG9CYXJjb2RlVUFNb2RlEhoKFkJBUkNPREVfVUFfTU9E",
+            "RV9TSU1QTEUQABIcChhCQVJDT0RFX1VBX01PREVfQURWQU5DRUQQASpSChFQ",
+            "cm90b1Bvc2l0aW9uTW9kZRIKCgZDRU5URVIQABIICgRMRUZUEAESCQoFRk9M",
+            "SU8QAhIJCgVSSUdIVBADEhEKDVJFVkVSU0VfRk9MSU8QBCqOAQoSUHJvdG9V",
+            "bmRlcmxpbmVNb2RlEhgKFERVTU1ZX1VOREVSTElORV9NT0RFEAASEwoPV09S",
+            "RFNfTk9fQkxBTktTEAESFAoQV09SRFNfQU5EX0JMQU5LUxACEhgKFENIQVJB",
+            "Q1RFUlNfTk9fQkxBTktTEAMSGQoVQ0hBUkFDVEVSU19BTkRfQkxBTktTEAQq",
+            "uQEKGFByb3RvSW1hZ2VSZWZlcmVuY2VQb2ludBIfChtSRUZfUE9JTlRfRE9f",
+            "Tk9UX1VTRV9BVF9BTEwQABIZChVSRUZfUE9JTlRfQk9UVE9NX0xFRlQQARIW",
+            "ChJSRUZfUE9JTlRfVE9QX0xFRlQQAhIUChBSRUZfUE9JTlRfQ0VOVEVSEAMS",
+            "GgoWUkVGX1BPSU5UX0JPVFRPTV9SSUdIVBAEEhcKE1JFRl9QT0lOVF9UT1Bf",
+            "UklHSFQQBSqJAQoRUHJvdG9TZW1hbnRpY1R5cGUSFgoSU0VNQU5USUNfVFlQ",
+            "RV9OT05FEAASFgoSU0VNQU5USUNfVFlQRV9QQVJUEAESFQoRU0VNQU5USUNf",
+            "VFlQRV9BUlQQAhIWChJTRU1BTlRJQ19UWVBFX1NFQ1QQAxIVChFTRU1BTlRJ",
+            "Q19UWVBFX0RJVhAEKnkKE1BERlByaW50aW5nQmVoYXZpb3ISHwobUERGX1BS",
+            "SU5USU5HX0JFSEFWSU9SX0lOUFVUEAASHgoaUERGX1BSSU5USU5HX0JFSEFW",
+            "SU9SX1RFWFQQARIhCh1QREZfUFJJTlRJTkdfQkVIQVZJT1JfSU5IRVJJVBAC",
+            "KoYBCgtJbmhlcml0YW5jZRIXChNJTkhFUklUQU5DRV9JTkhFUklUEAASFAoQ",
+            "SU5IRVJJVEFOQ0VfQ09ERRABEhkKFUlOSEVSSVRBTkNFX0JJTkRfQ09ERRAC",
+            "EhYKEklOSEVSSVRBTkNFX1NUQVRJQxADEhUKEUlOSEVSSVRBTkNFX1JFU0VU",
+            "EAQqbwoPUHJvdG9OdW1iZXJUeXBlEgoKBkFSQUJJQxAAEhEKDVJPTV9VUFBF",
+            "UkNBU0UQARIRCg1ST01fTE9XRVJDQVNFEAISFAoQTEVUVEVSX1VQUEVSQ0FT",
+            "RRADEhQKEExFVFRFUl9MT1dFUkNBU0UQBCpDChlQcm90b0xpc3RMZXZlbFNl",
+            "dHRpbmdUeXBlEg4KClVOTlVNQkVSRUQQABILCgdOVU1FUklDEAESCQoFSU1B",
+            "R0UQAipOChpQcm90b1RhYmxlQ29udGVudEdyb3VwVHlwZRIKCgZIRUFERVIQ",
+            "ABIICgRCT0RZEAESCgoGRk9PVEVSEAISDgoKU1VCX0hFQURFUhADKl8KElBy",
+            "b3RvVGFibGVDZWxsVHlwZRITCg9UQUJMRV9DRUxMX0JPRFkQABIZChVUQUJM",
+            "RV9DRUxMX1JPV19IRUFERVIQARIZChVUQUJMRV9DRUxMX1JPV19GT09URVIQ",
+            "AioyCg9Db2x1bW5CYWxhbmNpbmcSEAoMTk9fQkFMQU5DSU5HEAASDQoJQkFM",
+            "QU5DSU5HEAEqegoPUHJvdG9IZWFkZXJNb2RlEh4KGkhFQURFUl9NT0RFX0FQ",
+            "UEVORF9JTklUSUFMEAASFgoSSEVBREVSX01PREVfQVBQRU5EEAESFgoSSEVB",
+            "REVSX01PREVfRVhURU5EEAISFwoTSEVBREVSX01PREVfUkVQTEFDRRADKnoK",
+            "D1Byb3RvRm9vdGVyTW9kZRIeChpGT09URVJfTU9ERV9BUFBFTkRfSU5JVElB",
+            "TBAAEhYKEkZPT1RFUl9NT0RFX0FQUEVORBABEhYKEkZPT1RFUl9NT0RFX0VY",
+            "VEVORBACEhcKE0ZPT1RFUl9NT0RFX1JFUExBQ0UQAyqHEgoITm9kZVR5cGUS",
+            "LAooRE9DVU1FTlRfRUxFTUVOVF9CUkFOQ0hfRE9DVU1FTlRfRUxFTUVOVBAA",
+            "EiQKIERPQ1VNRU5UX0VMRU1FTlRfQlJJQ0tfUkVGRVJFTkNFEAESGgoWRE9D",
+            "VU1FTlRfRUxFTUVOVF9CUklDSxACEiUKIURPQ1VNRU5UX0VMRU1FTlRfRE9D",
+            "VU1FTlRfRUxFTUVOVBADEh4KGkRPQ1VNRU5UX0VMRU1FTlRfTElORUJSRUFL",
+            "EAQSIQodRE9DVU1FTlRfRUxFTUVOVF9MSVNUX1NFVFRJTkcQBhIlCiFET0NV",
+            "TUVOVF9FTEVNRU5UX1BBUkFHUkFQSF9GT1JNQVQQBxIeChpET0NVTUVOVF9F",
+            "TEVNRU5UX1BBUkFHUkFQSBAIEhwKGERPQ1VNRU5UX0VMRU1FTlRfU0VDVElP",
+            "ThAJEhkKFURPQ1VNRU5UX0VMRU1FTlRfU1BBThAKEhoKFkRPQ1VNRU5UX0VM",
+            "RU1FTlRfVEFCTEUQCxIfChtET0NVTUVOVF9FTEVNRU5UX1RBQkxFX0NFTEwQ",
+            "DBIeChpET0NVTUVOVF9FTEVNRU5UX1RBQkxFX1JPVxANEh0KGURPQ1VNRU5U",
+            "X0VMRU1FTlRfVEVNUExBVEUQDxIZChVET0NVTUVOVF9FTEVNRU5UX1RFWFQQ",
+            "EBIeChpET0NVTUVOVF9FTEVNRU5UX0NPTE9SX0RFRhATEhoKFkRPQ1VNRU5U",
+            "X0VMRU1FTlRfSU1BR0UQHhIhCh1ET0NVTUVOVF9FTEVNRU5UX05BTUVEX1NU",
+            "UklORxAiEigKJERPQ1VNRU5UX0VMRU1FTlRfVEFCTEVfQ09OVEVOVF9HUk9V",
+            "UBAjEiEKHURPQ1VNRU5UX0VMRU1FTlRfVEFCTEVfQ09ORklHECQSJgoiRE9D",
+            "VU1FTlRfRUxFTUVOVF9UQUJMRV9DRUxMX0NPTkZJRxAlEiUKIURPQ1VNRU5U",
+            "X0VMRU1FTlRfVEFCTEVfUk9XX0NPTkZJRxAmEi8KK0RPQ1VNRU5UX0VMRU1F",
+            "TlRfVEFCTEVfQ09OVEVOVF9HUk9VUF9DT05GSUcQJxIZChVET0NVTUVOVF9F",
+            "TEVNRU5UX0xJTksQKBIeChpET0NVTUVOVF9FTEVNRU5UX0RJUkVDVE9SWRAp",
+            "Eh8KG0RPQ1VNRU5UX0VMRU1FTlRfVEVYVF9CUklDSxAqEh0KGURPQ1VNRU5U",
+            "X0VMRU1FTlRfVkFSSUFCTEUQLBIlCiFET0NVTUVOVF9FTEVNRU5UX1NQQUNF",
+            "X1ZFUlRJQ0FMTFkQLRIeChpET0NVTUVOVF9FTEVNRU5UX0ZPUk1BVFRFRBAu",
+            "EiAKHERPQ1VNRU5UX0VMRU1FTlRfQVBQTFlfQ19ERUYQLxIgChxET0NVTUVO",
+            "VF9FTEVNRU5UX0FQUExZX1BfREVGEDASJAogRE9DVU1FTlRfRUxFTUVOVF9B",
+            "UFBMWV9QVF9DT05GSUcQMRIkCiBET0NVTUVOVF9FTEVNRU5UX0FQUExZX1VM",
+            "X0NPTkZJRxAyEhoKFkRPQ1VNRU5UX0VMRU1FTlRfQ19ERUYQMxIaChZET0NV",
+            "TUVOVF9FTEVNRU5UX1BfREVGEDQSHgoaRE9DVU1FTlRfRUxFTUVOVF9QVF9D",
+            "T05GSUcQNRIeChpET0NVTUVOVF9FTEVNRU5UX1VMX0NPTkZJRxA2Eh0KGURP",
+            "Q1VNRU5UX0VMRU1FTlRfTkVXX1BBR0UQNxIbChdET0NVTUVOVF9FTEVNRU5U",
+            "X0hFQURFUhA4EhsKF0RPQ1VNRU5UX0VMRU1FTlRfRk9PVEVSEDkSIAocRE9D",
+            "VU1FTlRfRUxFTUVOVF9JTkRFTlRBVElPThA8EhwKGERPQ1VNRU5UX0VMRU1F",
+            "TlRfQkFSQ09ERRA9EhwKGERPQ1VNRU5UX0VMRU1FTlRfV1NfQVJFQRA+Eh8K",
+            "G0RPQ1VNRU5UX0VMRU1FTlRfQ0FSUllfT1ZFUhA/Eh4KGkRPQ1VNRU5UX0VM",
+            "RU1FTlRfU1VCX1RPVEFMEEASGQoVRE9DVU1FTlRfRUxFTUVOVF9MT09QEEES",
+            "HwobRE9DVU1FTlRfRUxFTUVOVF9MT09QX0VOVFJZEEISGQoVRE9DVU1FTlRf",
+            "RUxFTUVOVF9SVUxFEEMSJwojRE9DVU1FTlRfRUxFTUVOVF9MSVNUX0xFVkVM",
+            "X1NFVFRJTkcQRBIbChdET0NVTUVOVF9FTEVNRU5UX0xBWU9VVBBFEi8KK0RP",
+            "Q1VNRU5UX0VMRU1FTlRfQURWQU5DRURfSUxMVVNUUkFUSU9OX0FSRUEQRhIo",
+            "CiRET0NVTUVOVF9FTEVNRU5UX0FESlVTVF9IT1JJWk9OVEFMTFkQRxIjCh9E",
+            "T0NVTUVOVF9FTEVNRU5UX0RPQ1RZUEVfU0NSSVBUEEgSHgoaRE9DVU1FTlRf",
+            "RUxFTUVOVF9ETV9TQ1JJUFQQSRIlCiFET0NVTUVOVF9FTEVNRU5UX0RZTkFN",
+            "SUNfVEVNUExBVEUQShIeChpET0NVTUVOVF9FTEVNRU5UX1NFTEVDVElPThBL",
+            "EiQKIERPQ1VNRU5UX0VMRU1FTlRfU0VMRUNUSU9OX0VOVFJZEEwSHgoaRE9D",
+            "VU1FTlRfRUxFTUVOVF9DT05ESVRJT04QTRIjCh9ET0NVTUVOVF9FTEVNRU5U",
+            "X1BBR0VfQ09ORElUSU9OEE4SGwoXRE9DVU1FTlRfRUxFTUVOVF9MT0NBTEUQ",
+            "TxIYChRET0NVTUVOVF9FTEVNRU5UX1RBRxBQEioKJkRPQ1VNRU5UX0VMRU1F",
+            "TlRfUEFSQUdSQVBIX1NFVF9ERUZBVUxUEFESJQohRE9DVU1FTlRfRUxFTUVO",
+            "VF9JTlBVVF9GSUVMRF9URVhUEFISJQohRE9DVU1FTlRfRUxFTUVOVF9JTlBV",
+            "VF9GSUVMRF9EQVRFEFMSKQolRE9DVU1FTlRfRUxFTUVOVF9JTlBVVF9GSUVM",
+            "RF9DSEVDS0JPWBBUEiYKIkRPQ1VNRU5UX0VMRU1FTlRfSU5QVVRfRklFTERf",
+            "TEFCRUwQVRIpCiVET0NVTUVOVF9FTEVNRU5UX0lOUFVUX0ZJRUxEX0RST1BE",
+            "T1dOEFYqpAEKE1Byb3RvSW1hZ2VTY2FsZVR5cGUSJgoiSU1BR0VfU0NBTEVf",
+            "VFlQRV9ET19OT1RfVVNFX0FUX0FMTBAAEh0KGUlNQUdFX1NDQUxFX1RZUEVf",
+            "UkVMQVRJVkUQARIdChlJTUFHRV9TQ0FMRV9UWVBFX0FCU09MVVRFEAISJwoj",
+            "SU1BR0VfU0NBTEVfVFlQRV9SRUxBVElWRV9UT19DT0xVTU4QAyqKAQoQUHJv",
+            "dG9JbWFnZVVBTW9kZRIjCh9JTUFHRV9VQV9NT0RFX0RPX05PVF9VU0VfQVRf",
+            "QUxMEAASGwoXSU1BR0VfVUFfTU9ERV9JTkhFUklURUQQARIYChRJTUFHRV9V",
+            "QV9NT0RFX1NJTVBMRRACEhoKFklNQUdFX1VBX01PREVfQURWQU5DRUQQAyrL",
+            "AQoVUHJvdG9JbWFnZUNvbnRlbnRUeXBlEicKI0lNQUdFX0NPTlRFTlRfVVVJ",
+            "RF9SRUZFUkVOQ0VfSU5MSU5FEAASJgoiSU1BR0VfQ09OVEVOVF9VVUlEX1JF",
+            "RkVSRU5DRV9MT0NBTBABEicKI0lNQUdFX0NPTlRFTlRfVVVJRF9SRUZFUkVO",
+            "Q0VfR0xPQkFMEAISGgoWSU1BR0VfQ09OVEVOVF9ETVNDUklQVBADEhwKGElN",
+            "QUdFX0NPTlRFTlRfSU1BR0VfREFUQRAEKsQBChhQcm90b1ZhcmlhYmxlU3Bl",
+            "Y2lhbFR5cGUSDwoLTk9UX1NQRUNJQUwQABIQCgxUQUJMRV9OVU1CRVIQARIS",
+            "Cg5ET0NfUEFHRV9DT1VOVBACEhAKDERPQ19DVVJfUEFHRRADEgwKCENVUl9Q",
+            "QUdFEAQSDgoKUEFHRV9DT1VOVBAFEg0KCVBSRVZfUEFHRRAGEhAKDFNFQ1RJ",
+            "T05fUEFHRRAHEg4KClVQREFURURfQVQQCBIQCgxHRU5FUkFURURfQVQQCSpI",
+            "Cg1Qcm90b1BhZ2VNb2RlEg0KCU5FWFRfUEFHRRAAEhMKD05FWFRfUkVDVE9f",
+            "UEFHRRABEhMKD05FWFRfVkVSU09fUEFHRRACKmsKFFByb3RvUGFnZU9yaWVu",
+            "dGF0aW9uEgkKBVVOU0VUEAASDAoIUE9SVFJBSVQQARINCglMQU5EU0NBUEUQ",
+            "AhIUChBJTlZFUlNFX1BPUlRSQUlUEAMSFQoRSU5WRVJTRV9MQU5EU0NBUEUQ",
+            "BCpOChVQcm90b1N1YlRvdGFsUG9zaXRpb24SGQoVUE9TSVRJT05fQUJPVkVf",
+            "Rk9PVEVSEAASGgoWUE9TSVRJT05fQkVMT1dfQ09OVEVOVBABKikKDVByb3Rv",
+            "UnVsZU1vZGUSCgoGTk9STUFMEAASDAoIQk9VTkRBUlkQASpQChZQcm90b0Rv",
+            "Y3R5cGVPdXRwdXRNb2RlEh8KG0RPQ1RZUEVfT1VUUFVUX01PREVfTk9UX1NF",
+            "VBAAEgsKB0RPQ1RZUEUQARIICgRKU09OEAJCC6oCCERvY2ZyYW1lYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Docframe.ProtoSPBMode), typeof(global::Docframe.ProtoRuleStyle), typeof(global::Docframe.ProtoMeasureType), typeof(global::Docframe.ProtoAdvancedIllustrationAreaTextFlowType), typeof(global::Docframe.ProtoColorType), typeof(global::Docframe.ProtoHorizontalAlignment), typeof(global::Docframe.ProtoVerticalAlignment), typeof(global::Docframe.ProtoBarcodeType), typeof(global::Docframe.ProtoBarcodeUAMode), typeof(global::Docframe.ProtoPositionMode), typeof(global::Docframe.ProtoUnderlineMode), typeof(global::Docframe.ProtoImageReferencePoint), typeof(global::Docframe.ProtoSemanticType), typeof(global::Docframe.PDFPrintingBehavior), typeof(global::Docframe.Inheritance), typeof(global::Docframe.ProtoNumberType), typeof(global::Docframe.ProtoListLevelSettingType), typeof(global::Docframe.ProtoTableContentGroupType), typeof(global::Docframe.ProtoTableCellType), typeof(global::Docframe.ColumnBalancing), typeof(global::Docframe.ProtoHeaderMode), typeof(global::Docframe.ProtoFooterMode), typeof(global::Docframe.NodeType), typeof(global::Docframe.ProtoImageScaleType), typeof(global::Docframe.ProtoImageUAMode), typeof(global::Docframe.ProtoImageContentType), typeof(global::Docframe.ProtoVariableSpecialType), typeof(global::Docframe.ProtoPageMode), typeof(global::Docframe.ProtoPageOrientation), typeof(global::Docframe.ProtoSubTotalPosition), typeof(global::Docframe.ProtoRuleMode), typeof(global::Docframe.ProtoDoctypeOutputMode), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -878,9 +888,9 @@ namespace Docframe {
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoLocale), global::Docframe.ProtoLocale.Parser, new[]{ "Children", "Parent", "Uuid", "ComChannelUUIDs", "LanguageUUIDs", "RegionUUIDs" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoTag), global::Docframe.ProtoTag.Parser, new[]{ "Parent", "Name", "ComChannelUUIDs", "Uuid", "Params", "NameCode", "CodeMode" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoParagraphSetDefault), global::Docframe.ProtoParagraphSetDefault.Parser, new[]{ "Parent", "Name", "ParagraphFormatUUID", "Uuid", "ComChannelUUIDs" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoInputFieldText), global::Docframe.ProtoInputFieldText.Parser, new[]{ "Parent", "Base", "PdfPrintingBehavior", "PdfSize", "PdfFormName", "ComChannelUUIDs", "Uuid" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoInputFieldText), global::Docframe.ProtoInputFieldText.Parser, new[]{ "Parent", "Base", "PdfPrintingBehavior", "PdfSize", "PdfFormName", "ComChannelUUIDs", "Uuid", "PdfAltText", "PdfInputHeight", "PdfIsReadOnly", "PdfIsRequired", "PdfIsNotExported", "PdfIsMultiline", "PdfIsPasswordField", "PdfIsFileSelectionField", "PdfDisableSpellCheck", "PdfDisableScrolling", "PdfUseCombFormatting", "PdfIsRichTextEnabled" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoInputFieldDate), global::Docframe.ProtoInputFieldDate.Parser, new[]{ "Parent", "Base", "ComChannelUUIDs", "Uuid" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoInputFieldCheckbox), global::Docframe.ProtoInputFieldCheckbox.Parser, new[]{ "Parent", "Base", "ComChannelUUIDs", "Uuid" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoInputFieldCheckbox), global::Docframe.ProtoInputFieldCheckbox.Parser, new[]{ "Parent", "Base", "ComChannelUUIDs", "Uuid", "PdfPrintingBehavior", "PdfFormName", "PdfAltText" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoInputFieldLabel), global::Docframe.ProtoInputFieldLabel.Parser, new[]{ "Parent", "Base", "ComChannelUUIDs", "Uuid" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoInputFieldDropdown), global::Docframe.ProtoInputFieldDropdown.Parser, new[]{ "Parent", "Base", "Options", "BindOptionsCode", "OptionsCode", "ComChannelUUIDs", "Uuid" }, null, null, null, null)
           }));
@@ -50644,6 +50654,18 @@ namespace Docframe {
       pdfFormName_ = other.pdfFormName_;
       comChannelUUIDs_ = other.comChannelUUIDs_.Clone();
       uuid_ = other.uuid_;
+      pdfAltText_ = other.pdfAltText_;
+      pdfInputHeight_ = other.pdfInputHeight_ != null ? other.pdfInputHeight_.Clone() : null;
+      pdfIsReadOnly_ = other.pdfIsReadOnly_;
+      pdfIsRequired_ = other.pdfIsRequired_;
+      pdfIsNotExported_ = other.pdfIsNotExported_;
+      pdfIsMultiline_ = other.pdfIsMultiline_;
+      pdfIsPasswordField_ = other.pdfIsPasswordField_;
+      pdfIsFileSelectionField_ = other.pdfIsFileSelectionField_;
+      pdfDisableSpellCheck_ = other.pdfDisableSpellCheck_;
+      pdfDisableScrolling_ = other.pdfDisableScrolling_;
+      pdfUseCombFormatting_ = other.pdfUseCombFormatting_;
+      pdfIsRichTextEnabled_ = other.pdfIsRichTextEnabled_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -50736,6 +50758,150 @@ namespace Docframe {
       }
     }
 
+    /// <summary>Field number for the "pdfAltText" field.</summary>
+    public const int PdfAltTextFieldNumber = 8;
+    private string pdfAltText_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PdfAltText {
+      get { return pdfAltText_; }
+      set {
+        pdfAltText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "pdfInputHeight" field.</summary>
+    public const int PdfInputHeightFieldNumber = 9;
+    private global::Docframe.ProtoBoxedMeasure pdfInputHeight_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Docframe.ProtoBoxedMeasure PdfInputHeight {
+      get { return pdfInputHeight_; }
+      set {
+        pdfInputHeight_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pdfIsReadOnly" field.</summary>
+    public const int PdfIsReadOnlyFieldNumber = 10;
+    private bool pdfIsReadOnly_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PdfIsReadOnly {
+      get { return pdfIsReadOnly_; }
+      set {
+        pdfIsReadOnly_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pdfIsRequired" field.</summary>
+    public const int PdfIsRequiredFieldNumber = 11;
+    private bool pdfIsRequired_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PdfIsRequired {
+      get { return pdfIsRequired_; }
+      set {
+        pdfIsRequired_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pdfIsNotExported" field.</summary>
+    public const int PdfIsNotExportedFieldNumber = 12;
+    private bool pdfIsNotExported_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PdfIsNotExported {
+      get { return pdfIsNotExported_; }
+      set {
+        pdfIsNotExported_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pdfIsMultiline" field.</summary>
+    public const int PdfIsMultilineFieldNumber = 13;
+    private bool pdfIsMultiline_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PdfIsMultiline {
+      get { return pdfIsMultiline_; }
+      set {
+        pdfIsMultiline_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pdfIsPasswordField" field.</summary>
+    public const int PdfIsPasswordFieldFieldNumber = 14;
+    private bool pdfIsPasswordField_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PdfIsPasswordField {
+      get { return pdfIsPasswordField_; }
+      set {
+        pdfIsPasswordField_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pdfIsFileSelectionField" field.</summary>
+    public const int PdfIsFileSelectionFieldFieldNumber = 15;
+    private bool pdfIsFileSelectionField_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PdfIsFileSelectionField {
+      get { return pdfIsFileSelectionField_; }
+      set {
+        pdfIsFileSelectionField_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pdfDisableSpellCheck" field.</summary>
+    public const int PdfDisableSpellCheckFieldNumber = 16;
+    private bool pdfDisableSpellCheck_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PdfDisableSpellCheck {
+      get { return pdfDisableSpellCheck_; }
+      set {
+        pdfDisableSpellCheck_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pdfDisableScrolling" field.</summary>
+    public const int PdfDisableScrollingFieldNumber = 17;
+    private bool pdfDisableScrolling_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PdfDisableScrolling {
+      get { return pdfDisableScrolling_; }
+      set {
+        pdfDisableScrolling_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pdfUseCombFormatting" field.</summary>
+    public const int PdfUseCombFormattingFieldNumber = 18;
+    private bool pdfUseCombFormatting_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PdfUseCombFormatting {
+      get { return pdfUseCombFormatting_; }
+      set {
+        pdfUseCombFormatting_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pdfIsRichTextEnabled" field.</summary>
+    public const int PdfIsRichTextEnabledFieldNumber = 19;
+    private bool pdfIsRichTextEnabled_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool PdfIsRichTextEnabled {
+      get { return pdfIsRichTextEnabled_; }
+      set {
+        pdfIsRichTextEnabled_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -50758,6 +50924,18 @@ namespace Docframe {
       if (PdfFormName != other.PdfFormName) return false;
       if(!comChannelUUIDs_.Equals(other.comChannelUUIDs_)) return false;
       if (Uuid != other.Uuid) return false;
+      if (PdfAltText != other.PdfAltText) return false;
+      if (!object.Equals(PdfInputHeight, other.PdfInputHeight)) return false;
+      if (PdfIsReadOnly != other.PdfIsReadOnly) return false;
+      if (PdfIsRequired != other.PdfIsRequired) return false;
+      if (PdfIsNotExported != other.PdfIsNotExported) return false;
+      if (PdfIsMultiline != other.PdfIsMultiline) return false;
+      if (PdfIsPasswordField != other.PdfIsPasswordField) return false;
+      if (PdfIsFileSelectionField != other.PdfIsFileSelectionField) return false;
+      if (PdfDisableSpellCheck != other.PdfDisableSpellCheck) return false;
+      if (PdfDisableScrolling != other.PdfDisableScrolling) return false;
+      if (PdfUseCombFormatting != other.PdfUseCombFormatting) return false;
+      if (PdfIsRichTextEnabled != other.PdfIsRichTextEnabled) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -50772,6 +50950,18 @@ namespace Docframe {
       if (PdfFormName.Length != 0) hash ^= PdfFormName.GetHashCode();
       hash ^= comChannelUUIDs_.GetHashCode();
       if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
+      if (PdfAltText.Length != 0) hash ^= PdfAltText.GetHashCode();
+      if (pdfInputHeight_ != null) hash ^= PdfInputHeight.GetHashCode();
+      if (PdfIsReadOnly != false) hash ^= PdfIsReadOnly.GetHashCode();
+      if (PdfIsRequired != false) hash ^= PdfIsRequired.GetHashCode();
+      if (PdfIsNotExported != false) hash ^= PdfIsNotExported.GetHashCode();
+      if (PdfIsMultiline != false) hash ^= PdfIsMultiline.GetHashCode();
+      if (PdfIsPasswordField != false) hash ^= PdfIsPasswordField.GetHashCode();
+      if (PdfIsFileSelectionField != false) hash ^= PdfIsFileSelectionField.GetHashCode();
+      if (PdfDisableSpellCheck != false) hash ^= PdfDisableSpellCheck.GetHashCode();
+      if (PdfDisableScrolling != false) hash ^= PdfDisableScrolling.GetHashCode();
+      if (PdfUseCombFormatting != false) hash ^= PdfUseCombFormatting.GetHashCode();
+      if (PdfIsRichTextEnabled != false) hash ^= PdfIsRichTextEnabled.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -50815,6 +51005,54 @@ namespace Docframe {
         output.WriteRawTag(58);
         output.WriteString(Uuid);
       }
+      if (PdfAltText.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(PdfAltText);
+      }
+      if (pdfInputHeight_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(PdfInputHeight);
+      }
+      if (PdfIsReadOnly != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(PdfIsReadOnly);
+      }
+      if (PdfIsRequired != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(PdfIsRequired);
+      }
+      if (PdfIsNotExported != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(PdfIsNotExported);
+      }
+      if (PdfIsMultiline != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(PdfIsMultiline);
+      }
+      if (PdfIsPasswordField != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(PdfIsPasswordField);
+      }
+      if (PdfIsFileSelectionField != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(PdfIsFileSelectionField);
+      }
+      if (PdfDisableSpellCheck != false) {
+        output.WriteRawTag(128, 1);
+        output.WriteBool(PdfDisableSpellCheck);
+      }
+      if (PdfDisableScrolling != false) {
+        output.WriteRawTag(136, 1);
+        output.WriteBool(PdfDisableScrolling);
+      }
+      if (PdfUseCombFormatting != false) {
+        output.WriteRawTag(144, 1);
+        output.WriteBool(PdfUseCombFormatting);
+      }
+      if (PdfIsRichTextEnabled != false) {
+        output.WriteRawTag(152, 1);
+        output.WriteBool(PdfIsRichTextEnabled);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -50850,6 +51088,54 @@ namespace Docframe {
         output.WriteRawTag(58);
         output.WriteString(Uuid);
       }
+      if (PdfAltText.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(PdfAltText);
+      }
+      if (pdfInputHeight_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(PdfInputHeight);
+      }
+      if (PdfIsReadOnly != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(PdfIsReadOnly);
+      }
+      if (PdfIsRequired != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(PdfIsRequired);
+      }
+      if (PdfIsNotExported != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(PdfIsNotExported);
+      }
+      if (PdfIsMultiline != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(PdfIsMultiline);
+      }
+      if (PdfIsPasswordField != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(PdfIsPasswordField);
+      }
+      if (PdfIsFileSelectionField != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(PdfIsFileSelectionField);
+      }
+      if (PdfDisableSpellCheck != false) {
+        output.WriteRawTag(128, 1);
+        output.WriteBool(PdfDisableSpellCheck);
+      }
+      if (PdfDisableScrolling != false) {
+        output.WriteRawTag(136, 1);
+        output.WriteBool(PdfDisableScrolling);
+      }
+      if (PdfUseCombFormatting != false) {
+        output.WriteRawTag(144, 1);
+        output.WriteBool(PdfUseCombFormatting);
+      }
+      if (PdfIsRichTextEnabled != false) {
+        output.WriteRawTag(152, 1);
+        output.WriteBool(PdfIsRichTextEnabled);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -50878,6 +51164,42 @@ namespace Docframe {
       size += comChannelUUIDs_.CalculateSize(_repeated_comChannelUUIDs_codec);
       if (Uuid.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Uuid);
+      }
+      if (PdfAltText.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PdfAltText);
+      }
+      if (pdfInputHeight_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PdfInputHeight);
+      }
+      if (PdfIsReadOnly != false) {
+        size += 1 + 1;
+      }
+      if (PdfIsRequired != false) {
+        size += 1 + 1;
+      }
+      if (PdfIsNotExported != false) {
+        size += 1 + 1;
+      }
+      if (PdfIsMultiline != false) {
+        size += 1 + 1;
+      }
+      if (PdfIsPasswordField != false) {
+        size += 1 + 1;
+      }
+      if (PdfIsFileSelectionField != false) {
+        size += 1 + 1;
+      }
+      if (PdfDisableSpellCheck != false) {
+        size += 2 + 1;
+      }
+      if (PdfDisableScrolling != false) {
+        size += 2 + 1;
+      }
+      if (PdfUseCombFormatting != false) {
+        size += 2 + 1;
+      }
+      if (PdfIsRichTextEnabled != false) {
+        size += 2 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -50918,6 +51240,45 @@ namespace Docframe {
       comChannelUUIDs_.Add(other.comChannelUUIDs_);
       if (other.Uuid.Length != 0) {
         Uuid = other.Uuid;
+      }
+      if (other.PdfAltText.Length != 0) {
+        PdfAltText = other.PdfAltText;
+      }
+      if (other.pdfInputHeight_ != null) {
+        if (pdfInputHeight_ == null) {
+          PdfInputHeight = new global::Docframe.ProtoBoxedMeasure();
+        }
+        PdfInputHeight.MergeFrom(other.PdfInputHeight);
+      }
+      if (other.PdfIsReadOnly != false) {
+        PdfIsReadOnly = other.PdfIsReadOnly;
+      }
+      if (other.PdfIsRequired != false) {
+        PdfIsRequired = other.PdfIsRequired;
+      }
+      if (other.PdfIsNotExported != false) {
+        PdfIsNotExported = other.PdfIsNotExported;
+      }
+      if (other.PdfIsMultiline != false) {
+        PdfIsMultiline = other.PdfIsMultiline;
+      }
+      if (other.PdfIsPasswordField != false) {
+        PdfIsPasswordField = other.PdfIsPasswordField;
+      }
+      if (other.PdfIsFileSelectionField != false) {
+        PdfIsFileSelectionField = other.PdfIsFileSelectionField;
+      }
+      if (other.PdfDisableSpellCheck != false) {
+        PdfDisableSpellCheck = other.PdfDisableSpellCheck;
+      }
+      if (other.PdfDisableScrolling != false) {
+        PdfDisableScrolling = other.PdfDisableScrolling;
+      }
+      if (other.PdfUseCombFormatting != false) {
+        PdfUseCombFormatting = other.PdfUseCombFormatting;
+      }
+      if (other.PdfIsRichTextEnabled != false) {
+        PdfIsRichTextEnabled = other.PdfIsRichTextEnabled;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -50975,6 +51336,57 @@ namespace Docframe {
             Uuid = input.ReadString();
             break;
           }
+          case 66: {
+            PdfAltText = input.ReadString();
+            break;
+          }
+          case 74: {
+            if (pdfInputHeight_ == null) {
+              PdfInputHeight = new global::Docframe.ProtoBoxedMeasure();
+            }
+            input.ReadMessage(PdfInputHeight);
+            break;
+          }
+          case 80: {
+            PdfIsReadOnly = input.ReadBool();
+            break;
+          }
+          case 88: {
+            PdfIsRequired = input.ReadBool();
+            break;
+          }
+          case 96: {
+            PdfIsNotExported = input.ReadBool();
+            break;
+          }
+          case 104: {
+            PdfIsMultiline = input.ReadBool();
+            break;
+          }
+          case 112: {
+            PdfIsPasswordField = input.ReadBool();
+            break;
+          }
+          case 120: {
+            PdfIsFileSelectionField = input.ReadBool();
+            break;
+          }
+          case 128: {
+            PdfDisableSpellCheck = input.ReadBool();
+            break;
+          }
+          case 136: {
+            PdfDisableScrolling = input.ReadBool();
+            break;
+          }
+          case 144: {
+            PdfUseCombFormatting = input.ReadBool();
+            break;
+          }
+          case 152: {
+            PdfIsRichTextEnabled = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -51029,6 +51441,57 @@ namespace Docframe {
           }
           case 58: {
             Uuid = input.ReadString();
+            break;
+          }
+          case 66: {
+            PdfAltText = input.ReadString();
+            break;
+          }
+          case 74: {
+            if (pdfInputHeight_ == null) {
+              PdfInputHeight = new global::Docframe.ProtoBoxedMeasure();
+            }
+            input.ReadMessage(PdfInputHeight);
+            break;
+          }
+          case 80: {
+            PdfIsReadOnly = input.ReadBool();
+            break;
+          }
+          case 88: {
+            PdfIsRequired = input.ReadBool();
+            break;
+          }
+          case 96: {
+            PdfIsNotExported = input.ReadBool();
+            break;
+          }
+          case 104: {
+            PdfIsMultiline = input.ReadBool();
+            break;
+          }
+          case 112: {
+            PdfIsPasswordField = input.ReadBool();
+            break;
+          }
+          case 120: {
+            PdfIsFileSelectionField = input.ReadBool();
+            break;
+          }
+          case 128: {
+            PdfDisableSpellCheck = input.ReadBool();
+            break;
+          }
+          case 136: {
+            PdfDisableScrolling = input.ReadBool();
+            break;
+          }
+          case 144: {
+            PdfUseCombFormatting = input.ReadBool();
+            break;
+          }
+          case 152: {
+            PdfIsRichTextEnabled = input.ReadBool();
             break;
           }
         }
@@ -51393,6 +51856,9 @@ namespace Docframe {
       base_ = other.base_ != null ? other.base_.Clone() : null;
       comChannelUUIDs_ = other.comChannelUUIDs_.Clone();
       uuid_ = other.uuid_;
+      pdfPrintingBehavior_ = other.pdfPrintingBehavior_;
+      pdfFormName_ = other.pdfFormName_;
+      pdfAltText_ = other.pdfAltText_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -51449,6 +51915,42 @@ namespace Docframe {
       }
     }
 
+    /// <summary>Field number for the "pdfPrintingBehavior" field.</summary>
+    public const int PdfPrintingBehaviorFieldNumber = 5;
+    private global::Docframe.PDFPrintingBehavior pdfPrintingBehavior_ = global::Docframe.PDFPrintingBehavior.Input;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Docframe.PDFPrintingBehavior PdfPrintingBehavior {
+      get { return pdfPrintingBehavior_; }
+      set {
+        pdfPrintingBehavior_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pdfFormName" field.</summary>
+    public const int PdfFormNameFieldNumber = 6;
+    private string pdfFormName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PdfFormName {
+      get { return pdfFormName_; }
+      set {
+        pdfFormName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "pdfAltText" field.</summary>
+    public const int PdfAltTextFieldNumber = 7;
+    private string pdfAltText_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PdfAltText {
+      get { return pdfAltText_; }
+      set {
+        pdfAltText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -51468,6 +51970,9 @@ namespace Docframe {
       if (!object.Equals(Base, other.Base)) return false;
       if(!comChannelUUIDs_.Equals(other.comChannelUUIDs_)) return false;
       if (Uuid != other.Uuid) return false;
+      if (PdfPrintingBehavior != other.PdfPrintingBehavior) return false;
+      if (PdfFormName != other.PdfFormName) return false;
+      if (PdfAltText != other.PdfAltText) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -51479,6 +51984,9 @@ namespace Docframe {
       if (base_ != null) hash ^= Base.GetHashCode();
       hash ^= comChannelUUIDs_.GetHashCode();
       if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
+      if (PdfPrintingBehavior != global::Docframe.PDFPrintingBehavior.Input) hash ^= PdfPrintingBehavior.GetHashCode();
+      if (PdfFormName.Length != 0) hash ^= PdfFormName.GetHashCode();
+      if (PdfAltText.Length != 0) hash ^= PdfAltText.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -51510,6 +52018,18 @@ namespace Docframe {
         output.WriteRawTag(34);
         output.WriteString(Uuid);
       }
+      if (PdfPrintingBehavior != global::Docframe.PDFPrintingBehavior.Input) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) PdfPrintingBehavior);
+      }
+      if (PdfFormName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(PdfFormName);
+      }
+      if (PdfAltText.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(PdfAltText);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -51533,6 +52053,18 @@ namespace Docframe {
         output.WriteRawTag(34);
         output.WriteString(Uuid);
       }
+      if (PdfPrintingBehavior != global::Docframe.PDFPrintingBehavior.Input) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) PdfPrintingBehavior);
+      }
+      if (PdfFormName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(PdfFormName);
+      }
+      if (PdfAltText.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(PdfAltText);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -51552,6 +52084,15 @@ namespace Docframe {
       size += comChannelUUIDs_.CalculateSize(_repeated_comChannelUUIDs_codec);
       if (Uuid.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Uuid);
+      }
+      if (PdfPrintingBehavior != global::Docframe.PDFPrintingBehavior.Input) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PdfPrintingBehavior);
+      }
+      if (PdfFormName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PdfFormName);
+      }
+      if (PdfAltText.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PdfAltText);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -51580,6 +52121,15 @@ namespace Docframe {
       comChannelUUIDs_.Add(other.comChannelUUIDs_);
       if (other.Uuid.Length != 0) {
         Uuid = other.Uuid;
+      }
+      if (other.PdfPrintingBehavior != global::Docframe.PDFPrintingBehavior.Input) {
+        PdfPrintingBehavior = other.PdfPrintingBehavior;
+      }
+      if (other.PdfFormName.Length != 0) {
+        PdfFormName = other.PdfFormName;
+      }
+      if (other.PdfAltText.Length != 0) {
+        PdfAltText = other.PdfAltText;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -51622,6 +52172,18 @@ namespace Docframe {
             Uuid = input.ReadString();
             break;
           }
+          case 40: {
+            PdfPrintingBehavior = (global::Docframe.PDFPrintingBehavior) input.ReadEnum();
+            break;
+          }
+          case 50: {
+            PdfFormName = input.ReadString();
+            break;
+          }
+          case 58: {
+            PdfAltText = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -51661,6 +52223,18 @@ namespace Docframe {
           }
           case 34: {
             Uuid = input.ReadString();
+            break;
+          }
+          case 40: {
+            PdfPrintingBehavior = (global::Docframe.PDFPrintingBehavior) input.ReadEnum();
+            break;
+          }
+          case 50: {
+            PdfFormName = input.ReadString();
+            break;
+          }
+          case 58: {
+            PdfAltText = input.ReadString();
             break;
           }
         }

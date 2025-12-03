@@ -7,11 +7,12 @@
 package docframepb
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -12758,16 +12759,28 @@ func (x *ProtoParagraphSetDefault) GetComChannelUUIDs() []string {
 }
 
 type ProtoInputFieldText struct {
-	state               protoimpl.MessageState `protogen:"open.v1"`
-	Parent              *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	Base                *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
-	PdfPrintingBehavior PDFPrintingBehavior    `protobuf:"varint,3,opt,name=pdf_printing_behavior,json=pdfPrintingBehavior,proto3,enum=PDFPrintingBehavior" json:"pdf_printing_behavior,omitempty"`
-	PdfSize             *ProtoBoxedMeasure     `protobuf:"bytes,4,opt,name=pdf_size,json=pdfSize,proto3" json:"pdf_size,omitempty"`
-	PdfFormName         string                 `protobuf:"bytes,5,opt,name=pdf_form_name,json=pdfFormName,proto3" json:"pdf_form_name,omitempty"`
-	ComChannelUUIDs     []string               `protobuf:"bytes,6,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	Uuid                string                 `protobuf:"bytes,7,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	Parent                  *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	Base                    *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
+	PdfPrintingBehavior     PDFPrintingBehavior    `protobuf:"varint,3,opt,name=pdf_printing_behavior,json=pdfPrintingBehavior,proto3,enum=PDFPrintingBehavior" json:"pdf_printing_behavior,omitempty"`
+	PdfSize                 *ProtoBoxedMeasure     `protobuf:"bytes,4,opt,name=pdf_size,json=pdfSize,proto3" json:"pdf_size,omitempty"`
+	PdfFormName             string                 `protobuf:"bytes,5,opt,name=pdf_form_name,json=pdfFormName,proto3" json:"pdf_form_name,omitempty"`
+	ComChannelUUIDs         []string               `protobuf:"bytes,6,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid                    string                 `protobuf:"bytes,7,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	PdfAltText              string                 `protobuf:"bytes,8,opt,name=pdfAltText,proto3" json:"pdfAltText,omitempty"`
+	PdfInputHeight          *ProtoBoxedMeasure     `protobuf:"bytes,9,opt,name=pdfInputHeight,proto3" json:"pdfInputHeight,omitempty"`
+	PdfIsReadOnly           bool                   `protobuf:"varint,10,opt,name=pdfIsReadOnly,proto3" json:"pdfIsReadOnly,omitempty"`
+	PdfIsRequired           bool                   `protobuf:"varint,11,opt,name=pdfIsRequired,proto3" json:"pdfIsRequired,omitempty"`
+	PdfIsNotExported        bool                   `protobuf:"varint,12,opt,name=pdfIsNotExported,proto3" json:"pdfIsNotExported,omitempty"`
+	PdfIsMultiline          bool                   `protobuf:"varint,13,opt,name=pdfIsMultiline,proto3" json:"pdfIsMultiline,omitempty"`
+	PdfIsPasswordField      bool                   `protobuf:"varint,14,opt,name=pdfIsPasswordField,proto3" json:"pdfIsPasswordField,omitempty"`
+	PdfIsFileSelectionField bool                   `protobuf:"varint,15,opt,name=pdfIsFileSelectionField,proto3" json:"pdfIsFileSelectionField,omitempty"`
+	PdfDisableSpellCheck    bool                   `protobuf:"varint,16,opt,name=pdfDisableSpellCheck,proto3" json:"pdfDisableSpellCheck,omitempty"`
+	PdfDisableScrolling     bool                   `protobuf:"varint,17,opt,name=pdfDisableScrolling,proto3" json:"pdfDisableScrolling,omitempty"`
+	PdfUseCombFormatting    bool                   `protobuf:"varint,18,opt,name=pdfUseCombFormatting,proto3" json:"pdfUseCombFormatting,omitempty"`
+	PdfIsRichTextEnabled    bool                   `protobuf:"varint,19,opt,name=pdfIsRichTextEnabled,proto3" json:"pdfIsRichTextEnabled,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
 }
 
 func (x *ProtoInputFieldText) Reset() {
@@ -12849,6 +12862,90 @@ func (x *ProtoInputFieldText) GetUuid() string {
 	return ""
 }
 
+func (x *ProtoInputFieldText) GetPdfAltText() string {
+	if x != nil {
+		return x.PdfAltText
+	}
+	return ""
+}
+
+func (x *ProtoInputFieldText) GetPdfInputHeight() *ProtoBoxedMeasure {
+	if x != nil {
+		return x.PdfInputHeight
+	}
+	return nil
+}
+
+func (x *ProtoInputFieldText) GetPdfIsReadOnly() bool {
+	if x != nil {
+		return x.PdfIsReadOnly
+	}
+	return false
+}
+
+func (x *ProtoInputFieldText) GetPdfIsRequired() bool {
+	if x != nil {
+		return x.PdfIsRequired
+	}
+	return false
+}
+
+func (x *ProtoInputFieldText) GetPdfIsNotExported() bool {
+	if x != nil {
+		return x.PdfIsNotExported
+	}
+	return false
+}
+
+func (x *ProtoInputFieldText) GetPdfIsMultiline() bool {
+	if x != nil {
+		return x.PdfIsMultiline
+	}
+	return false
+}
+
+func (x *ProtoInputFieldText) GetPdfIsPasswordField() bool {
+	if x != nil {
+		return x.PdfIsPasswordField
+	}
+	return false
+}
+
+func (x *ProtoInputFieldText) GetPdfIsFileSelectionField() bool {
+	if x != nil {
+		return x.PdfIsFileSelectionField
+	}
+	return false
+}
+
+func (x *ProtoInputFieldText) GetPdfDisableSpellCheck() bool {
+	if x != nil {
+		return x.PdfDisableSpellCheck
+	}
+	return false
+}
+
+func (x *ProtoInputFieldText) GetPdfDisableScrolling() bool {
+	if x != nil {
+		return x.PdfDisableScrolling
+	}
+	return false
+}
+
+func (x *ProtoInputFieldText) GetPdfUseCombFormatting() bool {
+	if x != nil {
+		return x.PdfUseCombFormatting
+	}
+	return false
+}
+
+func (x *ProtoInputFieldText) GetPdfIsRichTextEnabled() bool {
+	if x != nil {
+		return x.PdfIsRichTextEnabled
+	}
+	return false
+}
+
 type ProtoInputFieldDate struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
@@ -12918,13 +13015,16 @@ func (x *ProtoInputFieldDate) GetUuid() string {
 }
 
 type ProtoInputFieldCheckbox struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	Base            *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
-	ComChannelUUIDs []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	Uuid            string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	Parent              *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	Base                *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
+	ComChannelUUIDs     []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid                string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	PdfPrintingBehavior PDFPrintingBehavior    `protobuf:"varint,5,opt,name=pdfPrintingBehavior,proto3,enum=PDFPrintingBehavior" json:"pdfPrintingBehavior,omitempty"`
+	PdfFormName         string                 `protobuf:"bytes,6,opt,name=pdfFormName,proto3" json:"pdfFormName,omitempty"`
+	PdfAltText          string                 `protobuf:"bytes,7,opt,name=pdfAltText,proto3" json:"pdfAltText,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *ProtoInputFieldCheckbox) Reset() {
@@ -12981,6 +13081,27 @@ func (x *ProtoInputFieldCheckbox) GetComChannelUUIDs() []string {
 func (x *ProtoInputFieldCheckbox) GetUuid() string {
 	if x != nil {
 		return x.Uuid
+	}
+	return ""
+}
+
+func (x *ProtoInputFieldCheckbox) GetPdfPrintingBehavior() PDFPrintingBehavior {
+	if x != nil {
+		return x.PdfPrintingBehavior
+	}
+	return PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_INPUT
+}
+
+func (x *ProtoInputFieldCheckbox) GetPdfFormName() string {
+	if x != nil {
+		return x.PdfFormName
+	}
+	return ""
+}
+
+func (x *ProtoInputFieldCheckbox) GetPdfAltText() string {
+	if x != nil {
+		return x.PdfAltText
 	}
 	return ""
 }
@@ -14143,7 +14264,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x120\n" +
 	"\x13paragraphFormatUUID\x18\x03 \x01(\tR\x13paragraphFormatUUID\x12\x12\n" +
 	"\x04uuid\x18\x04 \x01(\tR\x04uuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\xc9\x02\n" +
+	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\xfd\x06\n" +
 	"\x13ProtoInputFieldText\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12H\n" +
@@ -14151,17 +14272,37 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\bpdf_size\x18\x04 \x01(\v2\x12.ProtoBoxedMeasureR\apdfSize\x12\"\n" +
 	"\rpdf_form_name\x18\x05 \x01(\tR\vpdfFormName\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\a \x01(\tR\x04uuid\"\xac\x01\n" +
+	"\x04uuid\x18\a \x01(\tR\x04uuid\x12\x1e\n" +
+	"\n" +
+	"pdfAltText\x18\b \x01(\tR\n" +
+	"pdfAltText\x12:\n" +
+	"\x0epdfInputHeight\x18\t \x01(\v2\x12.ProtoBoxedMeasureR\x0epdfInputHeight\x12$\n" +
+	"\rpdfIsReadOnly\x18\n" +
+	" \x01(\bR\rpdfIsReadOnly\x12$\n" +
+	"\rpdfIsRequired\x18\v \x01(\bR\rpdfIsRequired\x12*\n" +
+	"\x10pdfIsNotExported\x18\f \x01(\bR\x10pdfIsNotExported\x12&\n" +
+	"\x0epdfIsMultiline\x18\r \x01(\bR\x0epdfIsMultiline\x12.\n" +
+	"\x12pdfIsPasswordField\x18\x0e \x01(\bR\x12pdfIsPasswordField\x128\n" +
+	"\x17pdfIsFileSelectionField\x18\x0f \x01(\bR\x17pdfIsFileSelectionField\x122\n" +
+	"\x14pdfDisableSpellCheck\x18\x10 \x01(\bR\x14pdfDisableSpellCheck\x120\n" +
+	"\x13pdfDisableScrolling\x18\x11 \x01(\bR\x13pdfDisableScrolling\x122\n" +
+	"\x14pdfUseCombFormatting\x18\x12 \x01(\bR\x14pdfUseCombFormatting\x122\n" +
+	"\x14pdfIsRichTextEnabled\x18\x13 \x01(\bR\x14pdfIsRichTextEnabled\"\xac\x01\n" +
 	"\x13ProtoInputFieldDate\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xb0\x01\n" +
+	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xba\x02\n" +
 	"\x17ProtoInputFieldCheckbox\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xad\x01\n" +
+	"\x04uuid\x18\x04 \x01(\tR\x04uuid\x12F\n" +
+	"\x13pdfPrintingBehavior\x18\x05 \x01(\x0e2\x14.PDFPrintingBehaviorR\x13pdfPrintingBehavior\x12 \n" +
+	"\vpdfFormName\x18\x06 \x01(\tR\vpdfFormName\x12\x1e\n" +
+	"\n" +
+	"pdfAltText\x18\a \x01(\tR\n" +
+	"pdfAltText\"\xad\x01\n" +
 	"\x14ProtoInputFieldLabel\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12(\n" +
