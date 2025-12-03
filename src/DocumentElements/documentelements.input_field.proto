@@ -8,6 +8,19 @@ message ProtoInputFieldText {
   string pdf_form_name = 5;
   repeated string comChannelUUIDs = 6;
   string uuid = 7;
+  string pdfAltText = 8;
+  ProtoBoxedMeasure pdfInputHeight = 9;
+
+  bool pdfIsReadOnly = 10;
+  bool pdfIsRequired = 11;
+  bool pdfIsNotExported = 12;
+  bool pdfIsMultiline = 13;
+  bool pdfIsPasswordField = 14;
+  bool pdfIsFileSelectionField = 15;
+  bool pdfDisableSpellCheck = 16;
+  bool pdfDisableScrolling = 17;
+  bool pdfUseCombFormatting = 18;
+  bool pdfIsRichTextEnabled = 19;
 }
 
 message ProtoInputFieldDate {
@@ -26,6 +39,9 @@ message ProtoInputFieldCheckbox {
   ProtoBaseInputField base = 2;
   repeated string comChannelUUIDs = 3;
   string uuid = 4;
+  PDFPrintingBehavior pdfPrintingBehavior = 5;
+  string pdfFormName = 6;
+  string pdfAltText = 7;
 }
 
 message ProtoInputFieldLabel {

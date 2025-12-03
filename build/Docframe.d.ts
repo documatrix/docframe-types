@@ -15195,6 +15195,42 @@ export interface IProtoInputFieldText {
 
     /** ProtoInputFieldText uuid */
     uuid?: (string|null);
+
+    /** ProtoInputFieldText pdfAltText */
+    pdfAltText?: (string|null);
+
+    /** ProtoInputFieldText pdfInputHeight */
+    pdfInputHeight?: (IProtoBoxedMeasure|null);
+
+    /** ProtoInputFieldText pdfIsReadOnly */
+    pdfIsReadOnly?: (boolean|null);
+
+    /** ProtoInputFieldText pdfIsRequired */
+    pdfIsRequired?: (boolean|null);
+
+    /** ProtoInputFieldText pdfIsNotExported */
+    pdfIsNotExported?: (boolean|null);
+
+    /** ProtoInputFieldText pdfIsMultiline */
+    pdfIsMultiline?: (boolean|null);
+
+    /** ProtoInputFieldText pdfIsPasswordField */
+    pdfIsPasswordField?: (boolean|null);
+
+    /** ProtoInputFieldText pdfIsFileSelectionField */
+    pdfIsFileSelectionField?: (boolean|null);
+
+    /** ProtoInputFieldText pdfDisableSpellCheck */
+    pdfDisableSpellCheck?: (boolean|null);
+
+    /** ProtoInputFieldText pdfDisableScrolling */
+    pdfDisableScrolling?: (boolean|null);
+
+    /** ProtoInputFieldText pdfUseCombFormatting */
+    pdfUseCombFormatting?: (boolean|null);
+
+    /** ProtoInputFieldText pdfIsRichTextEnabled */
+    pdfIsRichTextEnabled?: (boolean|null);
 }
 
 /** Represents a ProtoInputFieldText. */
@@ -15226,6 +15262,42 @@ export class ProtoInputFieldText implements IProtoInputFieldText {
 
     /** ProtoInputFieldText uuid. */
     public uuid: string;
+
+    /** ProtoInputFieldText pdfAltText. */
+    public pdfAltText: string;
+
+    /** ProtoInputFieldText pdfInputHeight. */
+    public pdfInputHeight?: (IProtoBoxedMeasure|null);
+
+    /** ProtoInputFieldText pdfIsReadOnly. */
+    public pdfIsReadOnly: boolean;
+
+    /** ProtoInputFieldText pdfIsRequired. */
+    public pdfIsRequired: boolean;
+
+    /** ProtoInputFieldText pdfIsNotExported. */
+    public pdfIsNotExported: boolean;
+
+    /** ProtoInputFieldText pdfIsMultiline. */
+    public pdfIsMultiline: boolean;
+
+    /** ProtoInputFieldText pdfIsPasswordField. */
+    public pdfIsPasswordField: boolean;
+
+    /** ProtoInputFieldText pdfIsFileSelectionField. */
+    public pdfIsFileSelectionField: boolean;
+
+    /** ProtoInputFieldText pdfDisableSpellCheck. */
+    public pdfDisableSpellCheck: boolean;
+
+    /** ProtoInputFieldText pdfDisableScrolling. */
+    public pdfDisableScrolling: boolean;
+
+    /** ProtoInputFieldText pdfUseCombFormatting. */
+    public pdfUseCombFormatting: boolean;
+
+    /** ProtoInputFieldText pdfIsRichTextEnabled. */
+    public pdfIsRichTextEnabled: boolean;
 
     /**
      * Creates a new ProtoInputFieldText instance using the specified properties.
@@ -15434,6 +15506,15 @@ export interface IProtoInputFieldCheckbox {
 
     /** ProtoInputFieldCheckbox uuid */
     uuid?: (string|null);
+
+    /** ProtoInputFieldCheckbox pdfPrintingBehavior */
+    pdfPrintingBehavior?: (PDFPrintingBehavior|null);
+
+    /** ProtoInputFieldCheckbox pdfFormName */
+    pdfFormName?: (string|null);
+
+    /** ProtoInputFieldCheckbox pdfAltText */
+    pdfAltText?: (string|null);
 }
 
 /** Represents a ProtoInputFieldCheckbox. */
@@ -15456,6 +15537,15 @@ export class ProtoInputFieldCheckbox implements IProtoInputFieldCheckbox {
 
     /** ProtoInputFieldCheckbox uuid. */
     public uuid: string;
+
+    /** ProtoInputFieldCheckbox pdfPrintingBehavior. */
+    public pdfPrintingBehavior: PDFPrintingBehavior;
+
+    /** ProtoInputFieldCheckbox pdfFormName. */
+    public pdfFormName: string;
+
+    /** ProtoInputFieldCheckbox pdfAltText. */
+    public pdfAltText: string;
 
     /**
      * Creates a new ProtoInputFieldCheckbox instance using the specified properties.
