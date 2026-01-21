@@ -817,6 +817,18 @@ string minRowHeightCode = 75;
 Inheritance wsInheritance = 76;
 ProtoTableWS ws = 77;
 string wsCode = 78;
+
+Inheritance xOffsetInheritance = 79;
+ProtoMeasure xOffset = 80;
+string xOffsetCode = 81;
+
+Inheritance leftMeasureInheritance = 82;
+ProtoBoxedBool leftMeasure = 83;
+string leftMeasureCode = 84;
+
+Inheritance repeatHeaderInheritance = 85;
+ProtoBoxedUint32 repeatHeader = 86;
+string repeatHeaderCode = 87;
 }
 
 message ProtoText {
