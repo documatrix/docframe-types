@@ -8725,6 +8725,33 @@ export interface IProtoTableElementProperties {
 
     /** ProtoTableElementProperties wsCode */
     wsCode?: (string|null);
+
+    /** ProtoTableElementProperties xOffsetInheritance */
+    xOffsetInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties xOffset */
+    xOffset?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties xOffsetCode */
+    xOffsetCode?: (string|null);
+
+    /** ProtoTableElementProperties leftMeasureInheritance */
+    leftMeasureInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties leftMeasure */
+    leftMeasure?: (IProtoBoxedBool|null);
+
+    /** ProtoTableElementProperties leftMeasureCode */
+    leftMeasureCode?: (string|null);
+
+    /** ProtoTableElementProperties repeatHeaderInheritance */
+    repeatHeaderInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties repeatHeader */
+    repeatHeader?: (IProtoBoxedUint32|null);
+
+    /** ProtoTableElementProperties repeatHeaderCode */
+    repeatHeaderCode?: (string|null);
 }
 
 /** Represents a ProtoTableElementProperties. */
@@ -8969,6 +8996,33 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
 
     /** ProtoTableElementProperties wsCode. */
     public wsCode: string;
+
+    /** ProtoTableElementProperties xOffsetInheritance. */
+    public xOffsetInheritance: Inheritance;
+
+    /** ProtoTableElementProperties xOffset. */
+    public xOffset?: (IProtoMeasure|null);
+
+    /** ProtoTableElementProperties xOffsetCode. */
+    public xOffsetCode: string;
+
+    /** ProtoTableElementProperties leftMeasureInheritance. */
+    public leftMeasureInheritance: Inheritance;
+
+    /** ProtoTableElementProperties leftMeasure. */
+    public leftMeasure?: (IProtoBoxedBool|null);
+
+    /** ProtoTableElementProperties leftMeasureCode. */
+    public leftMeasureCode: string;
+
+    /** ProtoTableElementProperties repeatHeaderInheritance. */
+    public repeatHeaderInheritance: Inheritance;
+
+    /** ProtoTableElementProperties repeatHeader. */
+    public repeatHeader?: (IProtoBoxedUint32|null);
+
+    /** ProtoTableElementProperties repeatHeaderCode. */
+    public repeatHeaderCode: string;
 
     /**
      * Creates a new ProtoTableElementProperties instance using the specified properties.

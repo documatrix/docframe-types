@@ -23108,6 +23108,15 @@ $root.ProtoTableElementProperties = (function() {
      * @property {Inheritance|null} [wsInheritance] ProtoTableElementProperties wsInheritance
      * @property {IProtoTableWS|null} [ws] ProtoTableElementProperties ws
      * @property {string|null} [wsCode] ProtoTableElementProperties wsCode
+     * @property {Inheritance|null} [xOffsetInheritance] ProtoTableElementProperties xOffsetInheritance
+     * @property {IProtoMeasure|null} [xOffset] ProtoTableElementProperties xOffset
+     * @property {string|null} [xOffsetCode] ProtoTableElementProperties xOffsetCode
+     * @property {Inheritance|null} [leftMeasureInheritance] ProtoTableElementProperties leftMeasureInheritance
+     * @property {IProtoBoxedBool|null} [leftMeasure] ProtoTableElementProperties leftMeasure
+     * @property {string|null} [leftMeasureCode] ProtoTableElementProperties leftMeasureCode
+     * @property {Inheritance|null} [repeatHeaderInheritance] ProtoTableElementProperties repeatHeaderInheritance
+     * @property {IProtoBoxedUint32|null} [repeatHeader] ProtoTableElementProperties repeatHeader
+     * @property {string|null} [repeatHeaderCode] ProtoTableElementProperties repeatHeaderCode
      */
 
     /**
@@ -23751,6 +23760,78 @@ $root.ProtoTableElementProperties = (function() {
     ProtoTableElementProperties.prototype.wsCode = "";
 
     /**
+     * ProtoTableElementProperties xOffsetInheritance.
+     * @member {Inheritance} xOffsetInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.xOffsetInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties xOffset.
+     * @member {IProtoMeasure|null|undefined} xOffset
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.xOffset = null;
+
+    /**
+     * ProtoTableElementProperties xOffsetCode.
+     * @member {string} xOffsetCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.xOffsetCode = "";
+
+    /**
+     * ProtoTableElementProperties leftMeasureInheritance.
+     * @member {Inheritance} leftMeasureInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.leftMeasureInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties leftMeasure.
+     * @member {IProtoBoxedBool|null|undefined} leftMeasure
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.leftMeasure = null;
+
+    /**
+     * ProtoTableElementProperties leftMeasureCode.
+     * @member {string} leftMeasureCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.leftMeasureCode = "";
+
+    /**
+     * ProtoTableElementProperties repeatHeaderInheritance.
+     * @member {Inheritance} repeatHeaderInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.repeatHeaderInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties repeatHeader.
+     * @member {IProtoBoxedUint32|null|undefined} repeatHeader
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.repeatHeader = null;
+
+    /**
+     * ProtoTableElementProperties repeatHeaderCode.
+     * @member {string} repeatHeaderCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.repeatHeaderCode = "";
+
+    /**
      * Creates a new ProtoTableElementProperties instance using the specified properties.
      * @function create
      * @memberof ProtoTableElementProperties
@@ -23931,6 +24012,24 @@ $root.ProtoTableElementProperties = (function() {
             $root.ProtoTableWS.encode(message.ws, writer.uint32(/* id 77, wireType 2 =*/618).fork()).ldelim();
         if (message.wsCode != null && Object.hasOwnProperty.call(message, "wsCode"))
             writer.uint32(/* id 78, wireType 2 =*/626).string(message.wsCode);
+        if (message.xOffsetInheritance != null && Object.hasOwnProperty.call(message, "xOffsetInheritance"))
+            writer.uint32(/* id 79, wireType 0 =*/632).int32(message.xOffsetInheritance);
+        if (message.xOffset != null && Object.hasOwnProperty.call(message, "xOffset"))
+            $root.ProtoMeasure.encode(message.xOffset, writer.uint32(/* id 80, wireType 2 =*/642).fork()).ldelim();
+        if (message.xOffsetCode != null && Object.hasOwnProperty.call(message, "xOffsetCode"))
+            writer.uint32(/* id 81, wireType 2 =*/650).string(message.xOffsetCode);
+        if (message.leftMeasureInheritance != null && Object.hasOwnProperty.call(message, "leftMeasureInheritance"))
+            writer.uint32(/* id 82, wireType 0 =*/656).int32(message.leftMeasureInheritance);
+        if (message.leftMeasure != null && Object.hasOwnProperty.call(message, "leftMeasure"))
+            $root.ProtoBoxedBool.encode(message.leftMeasure, writer.uint32(/* id 83, wireType 2 =*/666).fork()).ldelim();
+        if (message.leftMeasureCode != null && Object.hasOwnProperty.call(message, "leftMeasureCode"))
+            writer.uint32(/* id 84, wireType 2 =*/674).string(message.leftMeasureCode);
+        if (message.repeatHeaderInheritance != null && Object.hasOwnProperty.call(message, "repeatHeaderInheritance"))
+            writer.uint32(/* id 85, wireType 0 =*/680).int32(message.repeatHeaderInheritance);
+        if (message.repeatHeader != null && Object.hasOwnProperty.call(message, "repeatHeader"))
+            $root.ProtoBoxedUint32.encode(message.repeatHeader, writer.uint32(/* id 86, wireType 2 =*/690).fork()).ldelim();
+        if (message.repeatHeaderCode != null && Object.hasOwnProperty.call(message, "repeatHeaderCode"))
+            writer.uint32(/* id 87, wireType 2 =*/698).string(message.repeatHeaderCode);
         return writer;
     };
 
@@ -24277,6 +24376,42 @@ $root.ProtoTableElementProperties = (function() {
                 }
             case 78: {
                     message.wsCode = reader.string();
+                    break;
+                }
+            case 79: {
+                    message.xOffsetInheritance = reader.int32();
+                    break;
+                }
+            case 80: {
+                    message.xOffset = $root.ProtoMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 81: {
+                    message.xOffsetCode = reader.string();
+                    break;
+                }
+            case 82: {
+                    message.leftMeasureInheritance = reader.int32();
+                    break;
+                }
+            case 83: {
+                    message.leftMeasure = $root.ProtoBoxedBool.decode(reader, reader.uint32());
+                    break;
+                }
+            case 84: {
+                    message.leftMeasureCode = reader.string();
+                    break;
+                }
+            case 85: {
+                    message.repeatHeaderInheritance = reader.int32();
+                    break;
+                }
+            case 86: {
+                    message.repeatHeader = $root.ProtoBoxedUint32.decode(reader, reader.uint32());
+                    break;
+                }
+            case 87: {
+                    message.repeatHeaderCode = reader.string();
                     break;
                 }
             default:
@@ -24812,6 +24947,63 @@ $root.ProtoTableElementProperties = (function() {
         if (message.wsCode != null && message.hasOwnProperty("wsCode"))
             if (!$util.isString(message.wsCode))
                 return "wsCode: string expected";
+        if (message.xOffsetInheritance != null && message.hasOwnProperty("xOffsetInheritance"))
+            switch (message.xOffsetInheritance) {
+            default:
+                return "xOffsetInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.xOffset != null && message.hasOwnProperty("xOffset")) {
+            var error = $root.ProtoMeasure.verify(message.xOffset);
+            if (error)
+                return "xOffset." + error;
+        }
+        if (message.xOffsetCode != null && message.hasOwnProperty("xOffsetCode"))
+            if (!$util.isString(message.xOffsetCode))
+                return "xOffsetCode: string expected";
+        if (message.leftMeasureInheritance != null && message.hasOwnProperty("leftMeasureInheritance"))
+            switch (message.leftMeasureInheritance) {
+            default:
+                return "leftMeasureInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.leftMeasure != null && message.hasOwnProperty("leftMeasure")) {
+            var error = $root.ProtoBoxedBool.verify(message.leftMeasure);
+            if (error)
+                return "leftMeasure." + error;
+        }
+        if (message.leftMeasureCode != null && message.hasOwnProperty("leftMeasureCode"))
+            if (!$util.isString(message.leftMeasureCode))
+                return "leftMeasureCode: string expected";
+        if (message.repeatHeaderInheritance != null && message.hasOwnProperty("repeatHeaderInheritance"))
+            switch (message.repeatHeaderInheritance) {
+            default:
+                return "repeatHeaderInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.repeatHeader != null && message.hasOwnProperty("repeatHeader")) {
+            var error = $root.ProtoBoxedUint32.verify(message.repeatHeader);
+            if (error)
+                return "repeatHeader." + error;
+        }
+        if (message.repeatHeaderCode != null && message.hasOwnProperty("repeatHeaderCode"))
+            if (!$util.isString(message.repeatHeaderCode))
+                return "repeatHeaderCode: string expected";
         return null;
     };
 
@@ -25742,6 +25934,111 @@ $root.ProtoTableElementProperties = (function() {
         }
         if (object.wsCode != null)
             message.wsCode = String(object.wsCode);
+        switch (object.xOffsetInheritance) {
+        default:
+            if (typeof object.xOffsetInheritance === "number") {
+                message.xOffsetInheritance = object.xOffsetInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.xOffsetInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.xOffsetInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.xOffsetInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.xOffsetInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.xOffsetInheritance = 4;
+            break;
+        }
+        if (object.xOffset != null) {
+            if (typeof object.xOffset !== "object")
+                throw TypeError(".ProtoTableElementProperties.xOffset: object expected");
+            message.xOffset = $root.ProtoMeasure.fromObject(object.xOffset);
+        }
+        if (object.xOffsetCode != null)
+            message.xOffsetCode = String(object.xOffsetCode);
+        switch (object.leftMeasureInheritance) {
+        default:
+            if (typeof object.leftMeasureInheritance === "number") {
+                message.leftMeasureInheritance = object.leftMeasureInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.leftMeasureInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.leftMeasureInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.leftMeasureInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.leftMeasureInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.leftMeasureInheritance = 4;
+            break;
+        }
+        if (object.leftMeasure != null) {
+            if (typeof object.leftMeasure !== "object")
+                throw TypeError(".ProtoTableElementProperties.leftMeasure: object expected");
+            message.leftMeasure = $root.ProtoBoxedBool.fromObject(object.leftMeasure);
+        }
+        if (object.leftMeasureCode != null)
+            message.leftMeasureCode = String(object.leftMeasureCode);
+        switch (object.repeatHeaderInheritance) {
+        default:
+            if (typeof object.repeatHeaderInheritance === "number") {
+                message.repeatHeaderInheritance = object.repeatHeaderInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.repeatHeaderInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.repeatHeaderInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.repeatHeaderInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.repeatHeaderInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.repeatHeaderInheritance = 4;
+            break;
+        }
+        if (object.repeatHeader != null) {
+            if (typeof object.repeatHeader !== "object")
+                throw TypeError(".ProtoTableElementProperties.repeatHeader: object expected");
+            message.repeatHeader = $root.ProtoBoxedUint32.fromObject(object.repeatHeader);
+        }
+        if (object.repeatHeaderCode != null)
+            message.repeatHeaderCode = String(object.repeatHeaderCode);
         return message;
     };
 
@@ -25838,6 +26135,15 @@ $root.ProtoTableElementProperties = (function() {
             object.wsInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.ws = null;
             object.wsCode = "";
+            object.xOffsetInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.xOffset = null;
+            object.xOffsetCode = "";
+            object.leftMeasureInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.leftMeasure = null;
+            object.leftMeasureCode = "";
+            object.repeatHeaderInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.repeatHeader = null;
+            object.repeatHeaderCode = "";
         }
         if (message.widthInheritance != null && message.hasOwnProperty("widthInheritance"))
             object.widthInheritance = options.enums === String ? $root.Inheritance[message.widthInheritance] === undefined ? message.widthInheritance : $root.Inheritance[message.widthInheritance] : message.widthInheritance;
@@ -25998,6 +26304,24 @@ $root.ProtoTableElementProperties = (function() {
             object.ws = $root.ProtoTableWS.toObject(message.ws, options);
         if (message.wsCode != null && message.hasOwnProperty("wsCode"))
             object.wsCode = message.wsCode;
+        if (message.xOffsetInheritance != null && message.hasOwnProperty("xOffsetInheritance"))
+            object.xOffsetInheritance = options.enums === String ? $root.Inheritance[message.xOffsetInheritance] === undefined ? message.xOffsetInheritance : $root.Inheritance[message.xOffsetInheritance] : message.xOffsetInheritance;
+        if (message.xOffset != null && message.hasOwnProperty("xOffset"))
+            object.xOffset = $root.ProtoMeasure.toObject(message.xOffset, options);
+        if (message.xOffsetCode != null && message.hasOwnProperty("xOffsetCode"))
+            object.xOffsetCode = message.xOffsetCode;
+        if (message.leftMeasureInheritance != null && message.hasOwnProperty("leftMeasureInheritance"))
+            object.leftMeasureInheritance = options.enums === String ? $root.Inheritance[message.leftMeasureInheritance] === undefined ? message.leftMeasureInheritance : $root.Inheritance[message.leftMeasureInheritance] : message.leftMeasureInheritance;
+        if (message.leftMeasure != null && message.hasOwnProperty("leftMeasure"))
+            object.leftMeasure = $root.ProtoBoxedBool.toObject(message.leftMeasure, options);
+        if (message.leftMeasureCode != null && message.hasOwnProperty("leftMeasureCode"))
+            object.leftMeasureCode = message.leftMeasureCode;
+        if (message.repeatHeaderInheritance != null && message.hasOwnProperty("repeatHeaderInheritance"))
+            object.repeatHeaderInheritance = options.enums === String ? $root.Inheritance[message.repeatHeaderInheritance] === undefined ? message.repeatHeaderInheritance : $root.Inheritance[message.repeatHeaderInheritance] : message.repeatHeaderInheritance;
+        if (message.repeatHeader != null && message.hasOwnProperty("repeatHeader"))
+            object.repeatHeader = $root.ProtoBoxedUint32.toObject(message.repeatHeader, options);
+        if (message.repeatHeaderCode != null && message.hasOwnProperty("repeatHeaderCode"))
+            object.repeatHeaderCode = message.repeatHeaderCode;
         return object;
     };
 
