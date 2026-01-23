@@ -21299,6 +21299,7 @@ namespace Docframe {
       subTotal_ = other.subTotal_ != null ? other.subTotal_.Clone() : null;
       comChannelUUIDs_ = other.comChannelUUIDs_.Clone();
       elementProperties_ = other.elementProperties_ != null ? other.elementProperties_.Clone() : null;
+      uuid_ = other.uuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -21402,6 +21403,18 @@ namespace Docframe {
       }
     }
 
+    /// <summary>Field number for the "uuid" field.</summary>
+    public const int UuidFieldNumber = 9;
+    private string uuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Uuid {
+      get { return uuid_; }
+      set {
+        uuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -21425,6 +21438,7 @@ namespace Docframe {
       if (!object.Equals(SubTotal, other.SubTotal)) return false;
       if(!comChannelUUIDs_.Equals(other.comChannelUUIDs_)) return false;
       if (!object.Equals(ElementProperties, other.ElementProperties)) return false;
+      if (Uuid != other.Uuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -21440,6 +21454,7 @@ namespace Docframe {
       if (subTotal_ != null) hash ^= SubTotal.GetHashCode();
       hash ^= comChannelUUIDs_.GetHashCode();
       if (elementProperties_ != null) hash ^= ElementProperties.GetHashCode();
+      if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -21484,6 +21499,10 @@ namespace Docframe {
         output.WriteRawTag(66);
         output.WriteMessage(ElementProperties);
       }
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -21520,6 +21539,10 @@ namespace Docframe {
         output.WriteRawTag(66);
         output.WriteMessage(ElementProperties);
       }
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -21549,6 +21572,9 @@ namespace Docframe {
       size += comChannelUUIDs_.CalculateSize(_repeated_comChannelUUIDs_codec);
       if (elementProperties_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ElementProperties);
+      }
+      if (Uuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Uuid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -21596,6 +21622,9 @@ namespace Docframe {
           ElementProperties = new global::Docframe.ProtoTableElementProperties();
         }
         ElementProperties.MergeFrom(other.ElementProperties);
+      }
+      if (other.Uuid.Length != 0) {
+        Uuid = other.Uuid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -21663,6 +21692,10 @@ namespace Docframe {
             input.ReadMessage(ElementProperties);
             break;
           }
+          case 74: {
+            Uuid = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -21727,6 +21760,10 @@ namespace Docframe {
               ElementProperties = new global::Docframe.ProtoTableElementProperties();
             }
             input.ReadMessage(ElementProperties);
+            break;
+          }
+          case 74: {
+            Uuid = input.ReadString();
             break;
           }
         }
@@ -22755,6 +22792,7 @@ namespace Docframe {
       settings_ = other.settings_ != null ? other.settings_.Clone() : null;
       comChannelUUIDs_ = other.comChannelUUIDs_.Clone();
       elementProperties_ = other.elementProperties_ != null ? other.elementProperties_.Clone() : null;
+      uuid_ = other.uuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -22822,6 +22860,18 @@ namespace Docframe {
       }
     }
 
+    /// <summary>Field number for the "uuid" field.</summary>
+    public const int UuidFieldNumber = 6;
+    private string uuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Uuid {
+      get { return uuid_; }
+      set {
+        uuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -22842,6 +22892,7 @@ namespace Docframe {
       if (!object.Equals(Settings, other.Settings)) return false;
       if(!comChannelUUIDs_.Equals(other.comChannelUUIDs_)) return false;
       if (!object.Equals(ElementProperties, other.ElementProperties)) return false;
+      if (Uuid != other.Uuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -22854,6 +22905,7 @@ namespace Docframe {
       if (settings_ != null) hash ^= Settings.GetHashCode();
       hash ^= comChannelUUIDs_.GetHashCode();
       if (elementProperties_ != null) hash ^= ElementProperties.GetHashCode();
+      if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -22886,6 +22938,10 @@ namespace Docframe {
         output.WriteRawTag(42);
         output.WriteMessage(ElementProperties);
       }
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -22910,6 +22966,10 @@ namespace Docframe {
         output.WriteRawTag(42);
         output.WriteMessage(ElementProperties);
       }
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -22930,6 +22990,9 @@ namespace Docframe {
       size += comChannelUUIDs_.CalculateSize(_repeated_comChannelUUIDs_codec);
       if (elementProperties_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ElementProperties);
+      }
+      if (Uuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Uuid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -22962,6 +23025,9 @@ namespace Docframe {
           ElementProperties = new global::Docframe.ProtoTableElementProperties();
         }
         ElementProperties.MergeFrom(other.ElementProperties);
+      }
+      if (other.Uuid.Length != 0) {
+        Uuid = other.Uuid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -23011,6 +23077,10 @@ namespace Docframe {
             input.ReadMessage(ElementProperties);
             break;
           }
+          case 50: {
+            Uuid = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -23057,6 +23127,10 @@ namespace Docframe {
               ElementProperties = new global::Docframe.ProtoTableElementProperties();
             }
             input.ReadMessage(ElementProperties);
+            break;
+          }
+          case 50: {
+            Uuid = input.ReadString();
             break;
           }
         }
@@ -23739,6 +23813,7 @@ namespace Docframe {
       rowConfigNumber_ = other.rowConfigNumber_ != null ? other.rowConfigNumber_.Clone() : null;
       comChannelUUIDs_ = other.comChannelUUIDs_.Clone();
       elementProperties_ = other.elementProperties_ != null ? other.elementProperties_.Clone() : null;
+      uuid_ = other.uuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -23818,6 +23893,18 @@ namespace Docframe {
       }
     }
 
+    /// <summary>Field number for the "uuid" field.</summary>
+    public const int UuidFieldNumber = 7;
+    private string uuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Uuid {
+      get { return uuid_; }
+      set {
+        uuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -23839,6 +23926,7 @@ namespace Docframe {
       if (!object.Equals(RowConfigNumber, other.RowConfigNumber)) return false;
       if(!comChannelUUIDs_.Equals(other.comChannelUUIDs_)) return false;
       if (!object.Equals(ElementProperties, other.ElementProperties)) return false;
+      if (Uuid != other.Uuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -23852,6 +23940,7 @@ namespace Docframe {
       if (rowConfigNumber_ != null) hash ^= RowConfigNumber.GetHashCode();
       hash ^= comChannelUUIDs_.GetHashCode();
       if (elementProperties_ != null) hash ^= ElementProperties.GetHashCode();
+      if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -23888,6 +23977,10 @@ namespace Docframe {
         output.WriteRawTag(50);
         output.WriteMessage(ElementProperties);
       }
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -23916,6 +24009,10 @@ namespace Docframe {
         output.WriteRawTag(50);
         output.WriteMessage(ElementProperties);
       }
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -23939,6 +24036,9 @@ namespace Docframe {
       size += comChannelUUIDs_.CalculateSize(_repeated_comChannelUUIDs_codec);
       if (elementProperties_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ElementProperties);
+      }
+      if (Uuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Uuid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -23977,6 +24077,9 @@ namespace Docframe {
           ElementProperties = new global::Docframe.ProtoTableElementProperties();
         }
         ElementProperties.MergeFrom(other.ElementProperties);
+      }
+      if (other.Uuid.Length != 0) {
+        Uuid = other.Uuid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -24033,6 +24136,10 @@ namespace Docframe {
             input.ReadMessage(ElementProperties);
             break;
           }
+          case 58: {
+            Uuid = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -24086,6 +24193,10 @@ namespace Docframe {
               ElementProperties = new global::Docframe.ProtoTableElementProperties();
             }
             input.ReadMessage(ElementProperties);
+            break;
+          }
+          case 58: {
+            Uuid = input.ReadString();
             break;
           }
         }
@@ -25053,6 +25164,7 @@ namespace Docframe {
       mergedUp_ = other.mergedUp_;
       comChannelUUIDs_ = other.comChannelUUIDs_.Clone();
       elementProperties_ = other.elementProperties_ != null ? other.elementProperties_.Clone() : null;
+      uuid_ = other.uuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -25156,6 +25268,18 @@ namespace Docframe {
       }
     }
 
+    /// <summary>Field number for the "uuid" field.</summary>
+    public const int UuidFieldNumber = 9;
+    private string uuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Uuid {
+      get { return uuid_; }
+      set {
+        uuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -25179,6 +25303,7 @@ namespace Docframe {
       if (MergedUp != other.MergedUp) return false;
       if(!comChannelUUIDs_.Equals(other.comChannelUUIDs_)) return false;
       if (!object.Equals(ElementProperties, other.ElementProperties)) return false;
+      if (Uuid != other.Uuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -25194,6 +25319,7 @@ namespace Docframe {
       if (MergedUp != false) hash ^= MergedUp.GetHashCode();
       hash ^= comChannelUUIDs_.GetHashCode();
       if (elementProperties_ != null) hash ^= ElementProperties.GetHashCode();
+      if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -25238,6 +25364,10 @@ namespace Docframe {
         output.WriteRawTag(66);
         output.WriteMessage(ElementProperties);
       }
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -25274,6 +25404,10 @@ namespace Docframe {
         output.WriteRawTag(66);
         output.WriteMessage(ElementProperties);
       }
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -25303,6 +25437,9 @@ namespace Docframe {
       size += comChannelUUIDs_.CalculateSize(_repeated_comChannelUUIDs_codec);
       if (elementProperties_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ElementProperties);
+      }
+      if (Uuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Uuid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -25347,6 +25484,9 @@ namespace Docframe {
           ElementProperties = new global::Docframe.ProtoTableElementProperties();
         }
         ElementProperties.MergeFrom(other.ElementProperties);
+      }
+      if (other.Uuid.Length != 0) {
+        Uuid = other.Uuid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -25411,6 +25551,10 @@ namespace Docframe {
             input.ReadMessage(ElementProperties);
             break;
           }
+          case 74: {
+            Uuid = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -25472,6 +25616,10 @@ namespace Docframe {
               ElementProperties = new global::Docframe.ProtoTableElementProperties();
             }
             input.ReadMessage(ElementProperties);
+            break;
+          }
+          case 74: {
+            Uuid = input.ReadString();
             break;
           }
         }

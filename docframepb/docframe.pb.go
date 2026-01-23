@@ -2,16 +2,18 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v6.33.4
+// 	protoc        v6.33.4
 // source: build/docframe.proto
 
 package docframepb
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -6153,6 +6155,7 @@ type ProtoTable struct {
 	SubTotal          *Node                        `protobuf:"bytes,6,opt,name=subTotal,proto3" json:"subTotal,omitempty"`
 	ComChannelUUIDs   []string                     `protobuf:"bytes,7,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	ElementProperties *ProtoTableElementProperties `protobuf:"bytes,8,opt,name=elementProperties,proto3" json:"elementProperties,omitempty"`
+	Uuid              string                       `protobuf:"bytes,9,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -6241,6 +6244,13 @@ func (x *ProtoTable) GetElementProperties() *ProtoTableElementProperties {
 		return x.ElementProperties
 	}
 	return nil
+}
+
+func (x *ProtoTable) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoTableConfig struct {
@@ -6454,6 +6464,7 @@ type ProtoTableContentGroup struct {
 	Settings          *ProtoTableContentGroupSettings `protobuf:"bytes,3,opt,name=settings,proto3" json:"settings,omitempty"`
 	ComChannelUUIDs   []string                        `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	ElementProperties *ProtoTableElementProperties    `protobuf:"bytes,5,opt,name=elementProperties,proto3" json:"elementProperties,omitempty"`
+	Uuid              string                          `protobuf:"bytes,6,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -6521,6 +6532,13 @@ func (x *ProtoTableContentGroup) GetElementProperties() *ProtoTableElementProper
 		return x.ElementProperties
 	}
 	return nil
+}
+
+func (x *ProtoTableContentGroup) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoTableContentGroupConfig struct {
@@ -6667,6 +6685,7 @@ type ProtoTableRow struct {
 	RowConfigNumber   *ProtoBoxedUint32            `protobuf:"bytes,4,opt,name=rowConfigNumber,proto3" json:"rowConfigNumber,omitempty"`
 	ComChannelUUIDs   []string                     `protobuf:"bytes,5,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	ElementProperties *ProtoTableElementProperties `protobuf:"bytes,6,opt,name=elementProperties,proto3" json:"elementProperties,omitempty"`
+	Uuid              string                       `protobuf:"bytes,7,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -6741,6 +6760,13 @@ func (x *ProtoTableRow) GetElementProperties() *ProtoTableElementProperties {
 		return x.ElementProperties
 	}
 	return nil
+}
+
+func (x *ProtoTableRow) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoTableRowConfig struct {
@@ -6949,6 +6975,7 @@ type ProtoTableCell struct {
 	MergedUp          bool                         `protobuf:"varint,6,opt,name=mergedUp,proto3" json:"mergedUp,omitempty"`
 	ComChannelUUIDs   []string                     `protobuf:"bytes,7,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	ElementProperties *ProtoTableElementProperties `protobuf:"bytes,8,opt,name=elementProperties,proto3" json:"elementProperties,omitempty"`
+	Uuid              string                       `protobuf:"bytes,9,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -7037,6 +7064,13 @@ func (x *ProtoTableCell) GetElementProperties() *ProtoTableElementProperties {
 		return x.ElementProperties
 	}
 	return nil
+}
+
+func (x *ProtoTableCell) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoTableCellConfig struct {
@@ -13646,7 +13680,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x02ws\x18\x05 \x01(\v2\r.ProtoTableWSR\x02ws\"l\n" +
 	"\x1fProtoBoxedTableContentGroupType\x121\n" +
 	"\x05value\x18\x01 \x01(\x0e2\x1b.ProtoTableContentGroupTypeR\x05value\x12\x16\n" +
-	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xae\x02\n" +
+	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xc2\x02\n" +
 	"\x16ProtoTableContentGroup\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12;\n" +
@@ -13664,7 +13698,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x1eProtoTableContentGroupSettings\x12L\n" +
 	"\x10contentGroupType\x18\x01 \x01(\v2 .ProtoBoxedTableContentGroupTypeR\x10contentGroupType\x127\n" +
 	"\x10backgroundColors\x18\x02 \x03(\v2\v.ProtoColorR\x10backgroundColors\x12\x1d\n" +
-	"\x02ws\x18\x03 \x01(\v2\r.ProtoTableWSR\x02ws\"\xd9\x02\n" +
+	"\x02ws\x18\x03 \x01(\v2\r.ProtoTableWSR\x02ws\"\xed\x02\n" +
 	"\rProtoTableRow\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x122\n" +
@@ -13687,7 +13721,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x02ws\x18\x02 \x01(\v2\r.ProtoTableWSR\x02ws\"\\\n" +
 	"\x17ProtoBoxedTableCellType\x12)\n" +
 	"\x05value\x18\x01 \x01(\x0e2\x13.ProtoTableCellTypeR\x05value\x12\x16\n" +
-	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\x99\x03\n" +
+	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xad\x03\n" +
 	"\x0eProtoTableCell\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x123\n" +
