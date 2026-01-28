@@ -8269,7 +8269,6 @@ type ProtoBrickReference struct {
 	InternName      string                 `protobuf:"bytes,1,opt,name=internName,proto3" json:"internName,omitempty"`
 	Version         uint32                 `protobuf:"varint,2,opt,name=version,proto3" json:"version,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	Uuid            string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -8323,13 +8322,6 @@ func (x *ProtoBrickReference) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
-}
-
-func (x *ProtoBrickReference) GetUuid() string {
-	if x != nil {
-		return x.Uuid
-	}
-	return ""
 }
 
 type ProtoBrick struct {
@@ -13853,14 +13845,13 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\vswissQRData\x18\x0e \x01(\v2\x11.ProtoSwissQRDataR\vswissQRData\x12\x18\n" +
 	"\aaltText\x18\x0f \x01(\tR\aaltText\x12+\n" +
 	"\x06uaMode\x18\x10 \x01(\x0e2\x13.ProtoBarcodeUAModeR\x06uaMode\x12$\n" +
-	"\ruaDescription\x18\x11 \x01(\tR\ruaDescription\"\x8d\x01\n" +
+	"\ruaDescription\x18\x11 \x01(\tR\ruaDescription\"y\n" +
 	"\x13ProtoBrickReference\x12\x1e\n" +
 	"\n" +
 	"internName\x18\x01 \x01(\tR\n" +
 	"internName\x12\x18\n" +
 	"\aversion\x18\x02 \x01(\rR\aversion\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\x8d\x02\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\x8d\x02\n" +
 	"\n" +
 	"ProtoBrick\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +

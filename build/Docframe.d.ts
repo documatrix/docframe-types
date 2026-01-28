@@ -9475,9 +9475,6 @@ export interface IProtoBrickReference {
 
     /** ProtoBrickReference comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
-
-    /** ProtoBrickReference uuid */
-    uuid?: (string|null);
 }
 
 /** Represents a ProtoBrickReference. */
@@ -9497,9 +9494,6 @@ export class ProtoBrickReference implements IProtoBrickReference {
 
     /** ProtoBrickReference comChannelUUIDs. */
     public comChannelUUIDs: string[];
-
-    /** ProtoBrickReference uuid. */
-    public uuid: string;
 
     /**
      * Creates a new ProtoBrickReference instance using the specified properties.
