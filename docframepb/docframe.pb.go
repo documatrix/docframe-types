@@ -2,18 +2,16 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v6.33.4
-// 	protoc        v6.33.4
 // source: build/docframe.proto
 
 package docframepb
 
 import (
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
-
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -13651,7 +13649,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\rstrikethrough\x18\t \x01(\v2\x0f.ProtoBoxedBoolR\rstrikethrough\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\n" +
 	" \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\v \x01(\tR\x04uuid\"\xfe\x02\n" +
+	"\x04uuid\x18\v \x01(\tR\x04uuid\"\x92\x03\n" +
 	"\n" +
 	"ProtoTable\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
@@ -13663,7 +13661,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\tcarryOver\x18\x05 \x01(\v2\x05.NodeR\tcarryOver\x12!\n" +
 	"\bsubTotal\x18\x06 \x01(\v2\x05.NodeR\bsubTotal\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
-	"\x11elementProperties\x18\b \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\"\xd0\x01\n" +
+	"\x11elementProperties\x18\b \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
+	"\x04uuid\x18\t \x01(\tR\x04uuid\"\xd0\x01\n" +
 	"\x10ProtoTableConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12/\n" +
 	"\bsettings\x18\x02 \x01(\v2\x13.ProtoTableSettingsR\bsettings\x12\x1e\n" +
@@ -13686,7 +13685,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12;\n" +
 	"\bsettings\x18\x03 \x01(\v2\x1f.ProtoTableContentGroupSettingsR\bsettings\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
-	"\x11elementProperties\x18\x05 \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\"\xe8\x01\n" +
+	"\x11elementProperties\x18\x05 \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
+	"\x04uuid\x18\x06 \x01(\tR\x04uuid\"\xe8\x01\n" +
 	"\x1cProtoTableContentGroupConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12;\n" +
 	"\bsettings\x18\x02 \x01(\v2\x1f.ProtoTableContentGroupSettingsR\bsettings\x12\x1e\n" +
@@ -13705,7 +13705,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\bsettings\x18\x03 \x01(\v2\x16.ProtoTableRowSettingsR\bsettings\x12;\n" +
 	"\x0frowConfigNumber\x18\x04 \x01(\v2\x11.ProtoBoxedUint32R\x0frowConfigNumber\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
-	"\x11elementProperties\x18\x06 \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\"\x92\x02\n" +
+	"\x11elementProperties\x18\x06 \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
+	"\x04uuid\x18\a \x01(\tR\x04uuid\"\x92\x02\n" +
 	"\x13ProtoTableRowConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x122\n" +
 	"\bsettings\x18\x02 \x01(\v2\x16.ProtoTableRowSettingsR\bsettings\x12\x1e\n" +
@@ -13732,7 +13733,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"mergedLeft\x12\x1a\n" +
 	"\bmergedUp\x18\x06 \x01(\bR\bmergedUp\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
-	"\x11elementProperties\x18\b \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\"\x8e\x02\n" +
+	"\x11elementProperties\x18\b \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
+	"\x04uuid\x18\t \x01(\tR\x04uuid\"\x8e\x02\n" +
 	"\x14ProtoTableCellConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x123\n" +
 	"\bsettings\x18\x02 \x01(\v2\x17.ProtoTableCellSettingsR\bsettings\x12\x1e\n" +
