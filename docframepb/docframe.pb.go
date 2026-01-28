@@ -4503,6 +4503,7 @@ type ProtoLink struct {
 	ParagraphFormatInternalName string                  `protobuf:"bytes,5,opt,name=paragraphFormatInternalName,proto3" json:"paragraphFormatInternalName,omitempty"`
 	UrlCode                     string                  `protobuf:"bytes,6,opt,name=urlCode,proto3" json:"urlCode,omitempty"`
 	BindUrlCode                 bool                    `protobuf:"varint,7,opt,name=bindUrlCode,proto3" json:"bindUrlCode,omitempty"`
+	Uuid                        string                  `protobuf:"bytes,8,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields               protoimpl.UnknownFields
 	sizeCache                   protoimpl.SizeCache
 }
@@ -4584,6 +4585,13 @@ func (x *ProtoLink) GetBindUrlCode() bool {
 		return x.BindUrlCode
 	}
 	return false
+}
+
+func (x *ProtoLink) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoListLevelSetting struct {
@@ -5433,6 +5441,7 @@ type ProtoListSetting struct {
 	ListLevelSettings       []*ProtoListLevelSetting `protobuf:"bytes,3,rep,name=listLevelSettings,proto3" json:"listLevelSettings,omitempty"`
 	DefaultListLevelSetting *ProtoListLevelSetting   `protobuf:"bytes,4,opt,name=defaultListLevelSetting,proto3" json:"defaultListLevelSetting,omitempty"`
 	ComChannelUUIDs         []string                 `protobuf:"bytes,5,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid                    string                   `protobuf:"bytes,6,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -5500,6 +5509,13 @@ func (x *ProtoListSetting) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoListSetting) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoBoxedListSetting struct {
@@ -5777,6 +5793,7 @@ type ProtoParagraphFormat struct {
 	PostNamedString      *ProtoBoxedString              `protobuf:"bytes,27,opt,name=postNamedString,proto3" json:"postNamedString,omitempty"`
 	SemanticType         *ProtoBoxedString              `protobuf:"bytes,28,opt,name=semanticType,proto3" json:"semanticType,omitempty"`
 	ComChannelUUIDs      []string                       `protobuf:"bytes,29,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid                 string                         `protobuf:"bytes,30,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields        protoimpl.UnknownFields
 	sizeCache            protoimpl.SizeCache
 }
@@ -6014,6 +6031,13 @@ func (x *ProtoParagraphFormat) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoParagraphFormat) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoSection struct {
 	state           protoimpl.MessageState  `protogen:"open.v1"`
 	XChildren       []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
@@ -6095,6 +6119,7 @@ type ProtoSpaceVertically struct {
 	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	Space           *ProtoMeasure          `protobuf:"bytes,2,opt,name=space,proto3" json:"space,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -6148,6 +6173,13 @@ func (x *ProtoSpaceVertically) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoSpaceVertically) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoSpan struct {
@@ -6380,6 +6412,7 @@ type ProtoTableConfig struct {
 	Settings        *ProtoTableSettings    `protobuf:"bytes,2,opt,name=settings,proto3" json:"settings,omitempty"`
 	ConfigName      string                 `protobuf:"bytes,3,opt,name=configName,proto3" json:"configName,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,5,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -6440,6 +6473,13 @@ func (x *ProtoTableConfig) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoTableConfig) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoTableSettings struct {
@@ -6676,6 +6716,7 @@ type ProtoTableContentGroupConfig struct {
 	Settings        *ProtoTableContentGroupSettings `protobuf:"bytes,2,opt,name=settings,proto3" json:"settings,omitempty"`
 	ConfigName      string                          `protobuf:"bytes,3,opt,name=configName,proto3" json:"configName,omitempty"`
 	ComChannelUUIDs []string                        `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                          `protobuf:"bytes,5,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -6736,6 +6777,13 @@ func (x *ProtoTableContentGroupConfig) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoTableContentGroupConfig) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoTableContentGroupSettings struct {
@@ -6898,6 +6946,7 @@ type ProtoTableRowConfig struct {
 	RowHeader       string                 `protobuf:"bytes,4,opt,name=rowHeader,proto3" json:"rowHeader,omitempty"`
 	RowFooter       string                 `protobuf:"bytes,5,opt,name=rowFooter,proto3" json:"rowFooter,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,6,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,7,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -6972,6 +7021,13 @@ func (x *ProtoTableRowConfig) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoTableRowConfig) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoTableRowSettings struct {
@@ -7193,6 +7249,7 @@ type ProtoTableCellConfig struct {
 	ConfigName      string                   `protobuf:"bytes,3,opt,name=configName,proto3" json:"configName,omitempty"`
 	CellType        *ProtoBoxedTableCellType `protobuf:"bytes,4,opt,name=cellType,proto3" json:"cellType,omitempty"`
 	ComChannelUUIDs []string                 `protobuf:"bytes,5,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                   `protobuf:"bytes,6,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -7260,6 +7317,13 @@ func (x *ProtoTableCellConfig) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoTableCellConfig) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoTableCellSettings struct {
@@ -10507,6 +10571,7 @@ type ProtoFormatted struct {
 	TextContent     string                 `protobuf:"bytes,7,opt,name=textContent,proto3" json:"textContent,omitempty"`
 	TextCode        string                 `protobuf:"bytes,8,opt,name=textCode,proto3" json:"textCode,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,9,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,10,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -10604,10 +10669,18 @@ func (x *ProtoFormatted) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoFormatted) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoApplyProtoCDef struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	CDefUuid        string                 `protobuf:"bytes,1,opt,name=cDefUuid,proto3" json:"cDefUuid,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,2,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -10656,10 +10729,18 @@ func (x *ProtoApplyProtoCDef) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoApplyProtoCDef) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoApplyProtoPDef struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	PDefUuid        string                 `protobuf:"bytes,1,opt,name=pDefUuid,proto3" json:"pDefUuid,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,2,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -10708,10 +10789,18 @@ func (x *ProtoApplyProtoPDef) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoApplyProtoPDef) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoApplyPtConfig struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	PtConfigUuid    string                 `protobuf:"bytes,1,opt,name=ptConfigUuid,proto3" json:"ptConfigUuid,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,2,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -10760,10 +10849,18 @@ func (x *ProtoApplyPtConfig) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoApplyPtConfig) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoApplyUlConfig struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	UlConfigUuid    string                 `protobuf:"bytes,1,opt,name=ulConfigUuid,proto3" json:"ulConfigUuid,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,2,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -10810,6 +10907,13 @@ func (x *ProtoApplyUlConfig) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoApplyUlConfig) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoCDef struct {
@@ -11297,6 +11401,7 @@ type ProtoCarryOver struct {
 	XChildren       []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
 	Parent          *ProtoDocumentElement   `protobuf:"bytes,2,opt,name=parent,proto3" json:"parent,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                  `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -11350,6 +11455,13 @@ func (x *ProtoCarryOver) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoCarryOver) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoLoopEntry struct {
@@ -11520,6 +11632,7 @@ type ProtoSubTotal struct {
 	Position        ProtoSubTotalPosition   `protobuf:"varint,4,opt,name=position,proto3,enum=ProtoSubTotalPosition" json:"position,omitempty"`
 	Height          *ProtoMeasure           `protobuf:"bytes,5,opt,name=height,proto3" json:"height,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,6,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                  `protobuf:"bytes,7,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -11596,11 +11709,19 @@ func (x *ProtoSubTotal) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoSubTotal) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoWsArea struct {
 	state           protoimpl.MessageState  `protogen:"open.v1"`
 	XChildren       []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
 	Parent          *ProtoDocumentElement   `protobuf:"bytes,2,opt,name=parent,proto3" json:"parent,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                  `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -11656,6 +11777,13 @@ func (x *ProtoWsArea) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoWsArea) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoRule struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	XOffset         *ProtoMeasure          `protobuf:"bytes,1,opt,name=xOffset,proto3" json:"xOffset,omitempty"`
@@ -11668,6 +11796,7 @@ type ProtoRule struct {
 	Mode            ProtoRuleMode          `protobuf:"varint,8,opt,name=mode,proto3,enum=ProtoRuleMode" json:"mode,omitempty"`
 	Boundaries      *ProtoRuleBoundaries   `protobuf:"bytes,9,opt,name=boundaries,proto3" json:"boundaries,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,10,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,11,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -11772,6 +11901,13 @@ func (x *ProtoRule) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoRule) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoRuleBoundaries struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Start         *ProtoMeasure          `protobuf:"bytes,1,opt,name=start,proto3" json:"start,omitempty"`
@@ -11828,6 +11964,7 @@ type ProtoColorDef struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Color           *ProtoColor            `protobuf:"bytes,1,opt,name=color,proto3" json:"color,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,2,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -11876,11 +12013,19 @@ func (x *ProtoColorDef) GetComChannelUUIDs() []string {
 	return nil
 }
 
+func (x *ProtoColorDef) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
 type ProtoLayout struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	Name            string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	ComChannelUUIDs []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -11934,6 +12079,13 @@ func (x *ProtoLayout) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoLayout) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoAdvancedIllustrationArea struct {
@@ -12075,6 +12227,7 @@ type ProtoAdjustHorizontally struct {
 	MinFontSize     *ProtoMeasure           `protobuf:"bytes,3,opt,name=minFontSize,proto3" json:"minFontSize,omitempty"`
 	MaxFontSize     *ProtoMeasure           `protobuf:"bytes,4,opt,name=maxFontSize,proto3" json:"maxFontSize,omitempty"`
 	ComChannelUUIDs []string                `protobuf:"bytes,5,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid            string                  `protobuf:"bytes,6,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -12142,6 +12295,13 @@ func (x *ProtoAdjustHorizontally) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoAdjustHorizontally) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type ProtoDoctypeScript struct {
@@ -13895,7 +14055,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x1aProtoBranchDocumentElement\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\xab\x02\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\xbf\x02\n" +
 	"\tProtoLink\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12\x10\n" +
 	"\x03url\x18\x02 \x01(\tR\x03url\x12(\n" +
@@ -13903,7 +14063,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x13paragraphFormatUUID\x18\x04 \x01(\tR\x13paragraphFormatUUID\x12@\n" +
 	"\x1bparagraphFormatInternalName\x18\x05 \x01(\tR\x1bparagraphFormatInternalName\x12\x18\n" +
 	"\aurlCode\x18\x06 \x01(\tR\aurlCode\x12 \n" +
-	"\vbindUrlCode\x18\a \x01(\bR\vbindUrlCode\"\xa5\x05\n" +
+	"\vbindUrlCode\x18\a \x01(\bR\vbindUrlCode\x12\x12\n" +
+	"\x04uuid\x18\b \x01(\tR\x04uuid\"\xa5\x05\n" +
 	"\x15ProtoListLevelSetting\x12(\n" +
 	"\x0flistSettingName\x18\x01 \x01(\tR\x0flistSettingName\x12-\n" +
 	"\bfontSize\x18\x02 \x01(\v2\x11.ProtoBoxedUint32R\bfontSize\x12.\n" +
@@ -14013,13 +14174,14 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0flistSettingName\x18\x01 \x01(\tR\x0flistSettingName\x12.\n" +
 	"\x04type\x18\x02 \x01(\x0e2\x1a.ProtoListLevelSettingTypeR\x04type\x12\x14\n" +
 	"\x05level\x18\x03 \x01(\x05R\x05level\x12 \n" +
-	"\vdoctypeCode\x18\x04 \x01(\tR\vdoctypeCode\"\x97\x02\n" +
+	"\vdoctypeCode\x18\x04 \x01(\tR\vdoctypeCode\"\xab\x02\n" +
 	"\x10ProtoListSetting\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12D\n" +
 	"\x11listLevelSettings\x18\x03 \x03(\v2\x16.ProtoListLevelSettingR\x11listLevelSettings\x12P\n" +
 	"\x17defaultListLevelSetting\x18\x04 \x01(\v2\x16.ProtoListLevelSettingR\x17defaultListLevelSetting\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"X\n" +
+	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x06 \x01(\tR\x04uuid\"X\n" +
 	"\x15ProtoBoxedListSetting\x12'\n" +
 	"\x05value\x18\x01 \x01(\v2\x11.ProtoListSettingR\x05value\x12\x16\n" +
 	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xa1\x02\n" +
@@ -14039,7 +14201,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\toverwrite\x18\x04 \x01(\v2\x15.ProtoParagraphFormatR\toverwrite\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\x120\n" +
 	"\x13paragraphFormatUUID\x18\x06 \x01(\tR\x13paragraphFormatUUID\x12\x12\n" +
-	"\x04uuid\x18\a \x01(\tR\x04uuid\"\xa6\f\n" +
+	"\x04uuid\x18\a \x01(\tR\x04uuid\"\xba\f\n" +
 	"\x14ProtoParagraphFormat\x125\n" +
 	"\n" +
 	"baseFormat\x18\x01 \x01(\v2\x15.ProtoParagraphFormatR\n" +
@@ -14076,17 +14238,19 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0epreNamedString\x18\x1a \x01(\v2\x11.ProtoBoxedStringR\x0epreNamedString\x12;\n" +
 	"\x0fpostNamedString\x18\x1b \x01(\v2\x11.ProtoBoxedStringR\x0fpostNamedString\x125\n" +
 	"\fsemanticType\x18\x1c \x01(\v2\x11.ProtoBoxedStringR\fsemanticType\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x1d \x03(\tR\x0fcomChannelUUIDs\"\xcb\x01\n" +
+	"\x0fcomChannelUUIDs\x18\x1d \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x1e \x01(\tR\x04uuid\"\xcb\x01\n" +
 	"\fProtoSection\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04uuid\x18\x03 \x01(\tR\x04uuid\x12\x1a\n" +
 	"\bcDefUuid\x18\x04 \x01(\tR\bcDefUuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\x94\x01\n" +
+	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\xa8\x01\n" +
 	"\x14ProtoSpaceVertically\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12#\n" +
 	"\x05space\x18\x02 \x01(\v2\r.ProtoMeasureR\x05space\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\xd1\x03\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xd1\x03\n" +
 	"\tProtoSpan\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12#\n" +
@@ -14111,14 +14275,15 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\bsubTotal\x18\x06 \x01(\v2\x05.NodeR\bsubTotal\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
 	"\x11elementProperties\x18\b \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
-	"\x04uuid\x18\t \x01(\tR\x04uuid\"\xbc\x01\n" +
+	"\x04uuid\x18\t \x01(\tR\x04uuid\"\xd0\x01\n" +
 	"\x10ProtoTableConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12/\n" +
 	"\bsettings\x18\x02 \x01(\v2\x13.ProtoTableSettingsR\bsettings\x12\x1e\n" +
 	"\n" +
 	"configName\x18\x03 \x01(\tR\n" +
 	"configName\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\"\xeb\x02\n" +
+	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x05 \x01(\tR\x04uuid\"\xeb\x02\n" +
 	"\x12ProtoTableSettings\x12'\n" +
 	"\axOffset\x18\x01 \x01(\v2\r.ProtoMeasureR\axOffset\x121\n" +
 	"\vleftMeasure\x18\x02 \x01(\v2\x0f.ProtoBoxedBoolR\vleftMeasure\x12#\n" +
@@ -14136,14 +14301,15 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\bsettings\x18\x03 \x01(\v2\x1f.ProtoTableContentGroupSettingsR\bsettings\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
 	"\x11elementProperties\x18\x05 \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
-	"\x04uuid\x18\x06 \x01(\tR\x04uuid\"\xd4\x01\n" +
+	"\x04uuid\x18\x06 \x01(\tR\x04uuid\"\xe8\x01\n" +
 	"\x1cProtoTableContentGroupConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12;\n" +
 	"\bsettings\x18\x02 \x01(\v2\x1f.ProtoTableContentGroupSettingsR\bsettings\x12\x1e\n" +
 	"\n" +
 	"configName\x18\x03 \x01(\tR\n" +
 	"configName\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\"\xc6\x01\n" +
+	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x05 \x01(\tR\x04uuid\"\xc6\x01\n" +
 	"\x1eProtoTableContentGroupSettings\x12L\n" +
 	"\x10contentGroupType\x18\x01 \x01(\v2 .ProtoBoxedTableContentGroupTypeR\x10contentGroupType\x127\n" +
 	"\x10backgroundColors\x18\x02 \x03(\v2\v.ProtoColorR\x10backgroundColors\x12\x1d\n" +
@@ -14155,7 +14321,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0frowConfigNumber\x18\x04 \x01(\v2\x11.ProtoBoxedUint32R\x0frowConfigNumber\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
 	"\x11elementProperties\x18\x06 \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
-	"\x04uuid\x18\a \x01(\tR\x04uuid\"\xfe\x01\n" +
+	"\x04uuid\x18\a \x01(\tR\x04uuid\"\x92\x02\n" +
 	"\x13ProtoTableRowConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x122\n" +
 	"\bsettings\x18\x02 \x01(\v2\x16.ProtoTableRowSettingsR\bsettings\x12\x1e\n" +
@@ -14164,7 +14330,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"configName\x12\x1c\n" +
 	"\trowHeader\x18\x04 \x01(\tR\trowHeader\x12\x1c\n" +
 	"\trowFooter\x18\x05 \x01(\tR\trowFooter\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\"c\n" +
+	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\a \x01(\tR\x04uuid\"c\n" +
 	"\x15ProtoTableRowSettings\x12+\n" +
 	"\tminHeight\x18\x01 \x01(\v2\r.ProtoMeasureR\tminHeight\x12\x1d\n" +
 	"\x02ws\x18\x02 \x01(\v2\r.ProtoTableWSR\x02ws\"\\\n" +
@@ -14182,7 +14349,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\bmergedUp\x18\x06 \x01(\bR\bmergedUp\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
 	"\x11elementProperties\x18\b \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
-	"\x04uuid\x18\t \x01(\tR\x04uuid\"\xfa\x01\n" +
+	"\x04uuid\x18\t \x01(\tR\x04uuid\"\x8e\x02\n" +
 	"\x14ProtoTableCellConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x123\n" +
 	"\bsettings\x18\x02 \x01(\v2\x17.ProtoTableCellSettingsR\bsettings\x12\x1e\n" +
@@ -14190,7 +14357,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"configName\x18\x03 \x01(\tR\n" +
 	"configName\x124\n" +
 	"\bcellType\x18\x04 \x01(\v2\x18.ProtoBoxedTableCellTypeR\bcellType\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\xdf\x03\n" +
+	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x06 \x01(\tR\x04uuid\"\xdf\x03\n" +
 	"\x16ProtoTableCellSettings\x12#\n" +
 	"\x05width\x18\x01 \x01(\v2\r.ProtoMeasureR\x05width\x124\n" +
 	"\x05align\x18\x02 \x01(\v2\x1e.ProtoBoxedHorizontalAlignmentR\x05align\x124\n" +
@@ -14504,7 +14672,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"formatUuid\x12;\n" +
 	"\vspecialType\x18\x05 \x01(\x0e2\x19.ProtoVariableSpecialTypeR\vspecialType\x12\x12\n" +
 	"\x04uuid\x18\x06 \x01(\tR\x04uuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\"\xd7\x02\n" +
+	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\"\xeb\x02\n" +
 	"\x0eProtoFormatted\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12&\n" +
 	"\x0edteditorSyntax\x18\x02 \x01(\bR\x0edteditorSyntax\x12&\n" +
@@ -14514,19 +14682,25 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\bhtmlCode\x18\x06 \x01(\tR\bhtmlCode\x12 \n" +
 	"\vtextContent\x18\a \x01(\tR\vtextContent\x12\x1a\n" +
 	"\btextCode\x18\b \x01(\tR\btextCode\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\t \x03(\tR\x0fcomChannelUUIDs\"[\n" +
+	"\x0fcomChannelUUIDs\x18\t \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\n" +
+	" \x01(\tR\x04uuid\"o\n" +
 	"\x13ProtoApplyProtoCDef\x12\x1a\n" +
 	"\bcDefUuid\x18\x01 \x01(\tR\bcDefUuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\"[\n" +
+	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x03 \x01(\tR\x04uuid\"o\n" +
 	"\x13ProtoApplyProtoPDef\x12\x1a\n" +
 	"\bpDefUuid\x18\x01 \x01(\tR\bpDefUuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\"b\n" +
+	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x03 \x01(\tR\x04uuid\"v\n" +
 	"\x12ProtoApplyPtConfig\x12\"\n" +
 	"\fptConfigUuid\x18\x01 \x01(\tR\fptConfigUuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\"b\n" +
+	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x03 \x01(\tR\x04uuid\"v\n" +
 	"\x12ProtoApplyUlConfig\x12\"\n" +
 	"\fulConfigUuid\x18\x01 \x01(\tR\fulConfigUuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\"\x81\x02\n" +
+	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x03 \x01(\tR\x04uuid\"\x81\x02\n" +
 	"\tProtoCDef\x12:\n" +
 	"\rcolumSettings\x18\x01 \x01(\v2\x14.ProtoColumnSettingsR\rcolumSettings\x12A\n" +
 	"\x13applyToHeaderFooter\x18\x02 \x01(\v2\x0f.ProtoBoxedBoolR\x13applyToHeaderFooter\x127\n" +
@@ -14569,11 +14743,12 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x04left\x18\x03 \x01(\v2\x12.ProtoBoxedMeasureR\x04left\x12(\n" +
 	"\x05right\x18\x04 \x01(\v2\x12.ProtoBoxedMeasureR\x05right\x12\x12\n" +
 	"\x04uuid\x18\x05 \x01(\tR\x04uuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\"\x9d\x01\n" +
+	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\"\xb1\x01\n" +
 	"\x0eProtoCarryOver\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\xdb\x01\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xdb\x01\n" +
 	"\x0eProtoLoopEntry\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
@@ -14586,18 +14761,20 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04path\x18\x03 \x01(\tR\x04path\x12\x12\n" +
 	"\x04uuid\x18\x04 \x01(\tR\x04uuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\xa0\x02\n" +
+	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\xb4\x02\n" +
 	"\rProtoSubTotal\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12'\n" +
 	"\x0fapply_immediate\x18\x03 \x01(\bR\x0eapplyImmediate\x122\n" +
 	"\bposition\x18\x04 \x01(\x0e2\x16.ProtoSubTotalPositionR\bposition\x12%\n" +
 	"\x06height\x18\x05 \x01(\v2\r.ProtoMeasureR\x06height\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\"\x9a\x01\n" +
+	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\a \x01(\tR\x04uuid\"\xae\x01\n" +
 	"\vProtoWsArea\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\x99\x03\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xad\x03\n" +
 	"\tProtoRule\x12'\n" +
 	"\axOffset\x18\x01 \x01(\v2\r.ProtoMeasureR\axOffset\x12'\n" +
 	"\ayOffset\x18\x02 \x01(\v2\r.ProtoMeasureR\ayOffset\x12#\n" +
@@ -14611,17 +14788,20 @@ const file_build_docframe_proto_rawDesc = "" +
 	"boundaries\x18\t \x01(\v2\x14.ProtoRuleBoundariesR\n" +
 	"boundaries\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\n" +
-	" \x03(\tR\x0fcomChannelUUIDs\"[\n" +
+	" \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\v \x01(\tR\x04uuid\"[\n" +
 	"\x13ProtoRuleBoundaries\x12#\n" +
 	"\x05start\x18\x01 \x01(\v2\r.ProtoMeasureR\x05start\x12\x1f\n" +
-	"\x03end\x18\x02 \x01(\v2\r.ProtoMeasureR\x03end\"\\\n" +
+	"\x03end\x18\x02 \x01(\v2\r.ProtoMeasureR\x03end\"p\n" +
 	"\rProtoColorDef\x12!\n" +
 	"\x05color\x18\x01 \x01(\v2\v.ProtoColorR\x05color\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\"z\n" +
+	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x03 \x01(\tR\x04uuid\"\x8e\x01\n" +
 	"\vProtoLayout\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\xe6\x03\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xe6\x03\n" +
 	"\x1dProtoAdvancedIllustrationArea\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
@@ -14637,13 +14817,14 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0fcomChannelUUIDs\x18\v \x03(\tR\x0fcomChannelUUIDs\x12\x1e\n" +
 	"\n" +
 	"noArtifact\x18\f \x01(\bR\n" +
-	"noArtifact\"\x88\x02\n" +
+	"noArtifact\"\x9c\x02\n" +
 	"\x17ProtoAdjustHorizontally\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12/\n" +
 	"\vminFontSize\x18\x03 \x01(\v2\r.ProtoMeasureR\vminFontSize\x12/\n" +
 	"\vmaxFontSize\x18\x04 \x01(\v2\r.ProtoMeasureR\vmaxFontSize\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\xd4\x01\n" +
+	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x06 \x01(\tR\x04uuid\"\xd4\x01\n" +
 	"\x12ProtoDoctypeScript\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x18\n" +
 	"\acontent\x18\x02 \x01(\tR\acontent\x127\n" +

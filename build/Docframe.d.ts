@@ -8,6 +8,9 @@ export interface IProtoBoxedBool {
 
     /** ProtoBoxedBool isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedBool. */
@@ -18,6 +21,9 @@ export class ProtoBoxedBool implements IProtoBoxedBool {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedBool);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedBool value. */
     public value: boolean;
@@ -96,11 +102,11 @@ export class ProtoBoxedBool implements IProtoBoxedBool {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedBool
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedBool
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBoxedDouble. */
@@ -111,6 +117,9 @@ export interface IProtoBoxedDouble {
 
     /** ProtoBoxedDouble isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedDouble. */
@@ -121,6 +130,9 @@ export class ProtoBoxedDouble implements IProtoBoxedDouble {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedDouble);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedDouble value. */
     public value: number;
@@ -199,11 +211,11 @@ export class ProtoBoxedDouble implements IProtoBoxedDouble {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedDouble
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedDouble
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBoxedInt32. */
@@ -214,6 +226,9 @@ export interface IProtoBoxedInt32 {
 
     /** ProtoBoxedInt32 isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedInt32. */
@@ -224,6 +239,9 @@ export class ProtoBoxedInt32 implements IProtoBoxedInt32 {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedInt32);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedInt32 value. */
     public value: number;
@@ -302,11 +320,11 @@ export class ProtoBoxedInt32 implements IProtoBoxedInt32 {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedInt32
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedInt32
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBoxedUint32. */
@@ -317,6 +335,9 @@ export interface IProtoBoxedUint32 {
 
     /** ProtoBoxedUint32 isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedUint32. */
@@ -327,6 +348,9 @@ export class ProtoBoxedUint32 implements IProtoBoxedUint32 {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedUint32);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedUint32 value. */
     public value: number;
@@ -405,11 +429,11 @@ export class ProtoBoxedUint32 implements IProtoBoxedUint32 {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedUint32
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedUint32
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBoxedString. */
@@ -420,6 +444,9 @@ export interface IProtoBoxedString {
 
     /** ProtoBoxedString isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedString. */
@@ -430,6 +457,9 @@ export class ProtoBoxedString implements IProtoBoxedString {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedString);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedString value. */
     public value: string;
@@ -508,11 +538,11 @@ export class ProtoBoxedString implements IProtoBoxedString {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedString
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedString
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoSPBMode enum. */
@@ -530,6 +560,9 @@ export interface IProtoBoxedSPBMode {
 
     /** ProtoBoxedSPBMode isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedSPBMode. */
@@ -540,6 +573,9 @@ export class ProtoBoxedSPBMode implements IProtoBoxedSPBMode {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedSPBMode);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedSPBMode value. */
     public value: ProtoSPBMode;
@@ -618,11 +654,11 @@ export class ProtoBoxedSPBMode implements IProtoBoxedSPBMode {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedSPBMode
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedSPBMode
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoRuleStyle enum. */
@@ -659,6 +695,9 @@ export interface IProtoStrikethroughSpec {
 
     /** ProtoStrikethroughSpec style */
     style?: (ProtoRuleStyle|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoStrikethroughSpec. */
@@ -669,6 +708,9 @@ export class ProtoStrikethroughSpec implements IProtoStrikethroughSpec {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoStrikethroughSpec);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoStrikethroughSpec weight. */
     public weight?: (IProtoMeasure|null);
@@ -756,11 +798,11 @@ export class ProtoStrikethroughSpec implements IProtoStrikethroughSpec {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoStrikethroughSpec
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoStrikethroughSpec
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBoxedStrikethroughSpec. */
@@ -771,6 +813,9 @@ export interface IProtoBoxedStrikethroughSpec {
 
     /** ProtoBoxedStrikethroughSpec isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedStrikethroughSpec. */
@@ -781,6 +826,9 @@ export class ProtoBoxedStrikethroughSpec implements IProtoBoxedStrikethroughSpec
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedStrikethroughSpec);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedStrikethroughSpec value. */
     public value?: (IProtoStrikethroughSpec|null);
@@ -859,11 +907,11 @@ export class ProtoBoxedStrikethroughSpec implements IProtoBoxedStrikethroughSpec
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedStrikethroughSpec
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedStrikethroughSpec
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoMeasureType enum. */
@@ -884,6 +932,9 @@ export interface IProtoMeasure {
 
     /** ProtoMeasure mtype */
     mtype?: (ProtoMeasureType|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoMeasure. */
@@ -894,6 +945,9 @@ export class ProtoMeasure implements IProtoMeasure {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoMeasure);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoMeasure value. */
     public value: number;
@@ -972,11 +1026,11 @@ export class ProtoMeasure implements IProtoMeasure {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoMeasure
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoMeasure
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBoxedMeasure. */
@@ -987,6 +1041,9 @@ export interface IProtoBoxedMeasure {
 
     /** ProtoBoxedMeasure isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedMeasure. */
@@ -997,6 +1054,9 @@ export class ProtoBoxedMeasure implements IProtoBoxedMeasure {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedMeasure);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedMeasure value. */
     public value?: (IProtoMeasure|null);
@@ -1075,11 +1135,11 @@ export class ProtoBoxedMeasure implements IProtoBoxedMeasure {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedMeasure
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedMeasure
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoSideMeasures. */
@@ -1096,6 +1156,9 @@ export interface IProtoSideMeasures {
 
     /** ProtoSideMeasures left */
     left?: (IProtoMeasure|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoSideMeasures. */
@@ -1106,6 +1169,9 @@ export class ProtoSideMeasures implements IProtoSideMeasures {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoSideMeasures);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoSideMeasures top. */
     public top?: (IProtoMeasure|null);
@@ -1190,11 +1256,11 @@ export class ProtoSideMeasures implements IProtoSideMeasures {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoSideMeasures
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoSideMeasures
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoAdvancedIllustrationAreaTextFlowType enum. */
@@ -1214,6 +1280,9 @@ export interface IProtoBoxedAdvancedIllustrationAreaTextFlowType {
 
     /** ProtoBoxedAdvancedIllustrationAreaTextFlowType isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedAdvancedIllustrationAreaTextFlowType. */
@@ -1224,6 +1293,9 @@ export class ProtoBoxedAdvancedIllustrationAreaTextFlowType implements IProtoBox
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedAdvancedIllustrationAreaTextFlowType);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedAdvancedIllustrationAreaTextFlowType value. */
     public value: ProtoAdvancedIllustrationAreaTextFlowType;
@@ -1302,11 +1374,11 @@ export class ProtoBoxedAdvancedIllustrationAreaTextFlowType implements IProtoBox
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedAdvancedIllustrationAreaTextFlowType
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedAdvancedIllustrationAreaTextFlowType
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoAdvancedIllustrationAreaImageSettings. */
@@ -1317,6 +1389,9 @@ export interface IProtoAdvancedIllustrationAreaImageSettings {
 
     /** ProtoAdvancedIllustrationAreaImageSettings margin */
     margin?: (IProtoSideMeasures|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoAdvancedIllustrationAreaImageSettings. */
@@ -1327,6 +1402,9 @@ export class ProtoAdvancedIllustrationAreaImageSettings implements IProtoAdvance
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoAdvancedIllustrationAreaImageSettings);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoAdvancedIllustrationAreaImageSettings textFlow. */
     public textFlow?: (IProtoBoxedAdvancedIllustrationAreaTextFlowType|null);
@@ -1405,11 +1483,11 @@ export class ProtoAdvancedIllustrationAreaImageSettings implements IProtoAdvance
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoAdvancedIllustrationAreaImageSettings
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoAdvancedIllustrationAreaImageSettings
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoFont. */
@@ -1420,6 +1498,9 @@ export interface IProtoFont {
 
     /** ProtoFont name */
     name?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoFont. */
@@ -1430,6 +1511,9 @@ export class ProtoFont implements IProtoFont {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoFont);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoFont id. */
     public id: number;
@@ -1508,11 +1592,11 @@ export class ProtoFont implements IProtoFont {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoFont
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoFont
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBoxedFont. */
@@ -1523,6 +1607,9 @@ export interface IProtoBoxedFont {
 
     /** ProtoBoxedFont isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedFont. */
@@ -1533,6 +1620,9 @@ export class ProtoBoxedFont implements IProtoBoxedFont {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedFont);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedFont value. */
     public value?: (IProtoFont|null);
@@ -1611,11 +1701,11 @@ export class ProtoBoxedFont implements IProtoBoxedFont {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedFont
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedFont
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoColorType enum. */
@@ -1654,6 +1744,9 @@ export interface IProtoColor {
 
     /** ProtoColor k */
     k?: (number|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoColor. */
@@ -1664,6 +1757,9 @@ export class ProtoColor implements IProtoColor {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoColor);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoColor name. */
     public name?: (IProtoBoxedString|null);
@@ -1763,11 +1859,11 @@ export class ProtoColor implements IProtoColor {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoColor
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoColor
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBoxedColor. */
@@ -1778,6 +1874,9 @@ export interface IProtoBoxedColor {
 
     /** ProtoBoxedColor isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedColor. */
@@ -1788,6 +1887,9 @@ export class ProtoBoxedColor implements IProtoBoxedColor {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedColor);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedColor value. */
     public value?: (IProtoColor|null);
@@ -1866,11 +1968,11 @@ export class ProtoBoxedColor implements IProtoBoxedColor {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedColor
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedColor
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoRGBColor. */
@@ -1890,6 +1992,9 @@ export interface IProtoRGBColor {
 
     /** ProtoRGBColor b */
     b?: (number|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoRGBColor. */
@@ -1900,6 +2005,9 @@ export class ProtoRGBColor implements IProtoRGBColor {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoRGBColor);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoRGBColor name. */
     public name?: (IProtoBoxedString|null);
@@ -1987,11 +2095,11 @@ export class ProtoRGBColor implements IProtoRGBColor {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoRGBColor
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoRGBColor
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoCMYKColor. */
@@ -2014,6 +2122,9 @@ export interface IProtoCMYKColor {
 
     /** ProtoCMYKColor k */
     k?: (number|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoCMYKColor. */
@@ -2024,6 +2135,9 @@ export class ProtoCMYKColor implements IProtoCMYKColor {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoCMYKColor);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoCMYKColor name. */
     public name?: (IProtoBoxedString|null);
@@ -2114,11 +2228,11 @@ export class ProtoCMYKColor implements IProtoCMYKColor {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoCMYKColor
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoCMYKColor
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoHorizontalAlignment enum. */
@@ -2146,6 +2260,9 @@ export interface IProtoBoxedHorizontalAlignment {
 
     /** ProtoBoxedHorizontalAlignment isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedHorizontalAlignment. */
@@ -2156,6 +2273,9 @@ export class ProtoBoxedHorizontalAlignment implements IProtoBoxedHorizontalAlign
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedHorizontalAlignment);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedHorizontalAlignment value. */
     public value: ProtoHorizontalAlignment;
@@ -2234,11 +2354,11 @@ export class ProtoBoxedHorizontalAlignment implements IProtoBoxedHorizontalAlign
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedHorizontalAlignment
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedHorizontalAlignment
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBoxedVerticalAlignment. */
@@ -2249,6 +2369,9 @@ export interface IProtoBoxedVerticalAlignment {
 
     /** ProtoBoxedVerticalAlignment isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedVerticalAlignment. */
@@ -2259,6 +2382,9 @@ export class ProtoBoxedVerticalAlignment implements IProtoBoxedVerticalAlignment
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedVerticalAlignment);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedVerticalAlignment value. */
     public value: ProtoVerticalAlignment;
@@ -2337,11 +2463,11 @@ export class ProtoBoxedVerticalAlignment implements IProtoBoxedVerticalAlignment
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedVerticalAlignment
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedVerticalAlignment
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoBarcodeType enum. */
@@ -2390,6 +2516,9 @@ export interface IProtoSwissQRCreditor {
 
     /** ProtoSwissQRCreditor currency */
     currency?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoSwissQRCreditor. */
@@ -2400,6 +2529,9 @@ export class ProtoSwissQRCreditor implements IProtoSwissQRCreditor {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoSwissQRCreditor);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoSwissQRCreditor addressType. */
     public addressType: string;
@@ -2502,11 +2634,11 @@ export class ProtoSwissQRCreditor implements IProtoSwissQRCreditor {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoSwissQRCreditor
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoSwissQRCreditor
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoSwissQRDebitor. */
@@ -2544,6 +2676,9 @@ export interface IProtoSwissQRDebitor {
 
     /** ProtoSwissQRDebitor billInformation */
     billInformation?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoSwissQRDebitor. */
@@ -2554,6 +2689,9 @@ export class ProtoSwissQRDebitor implements IProtoSwissQRDebitor {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoSwissQRDebitor);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoSwissQRDebitor addressType. */
     public addressType: string;
@@ -2659,11 +2797,11 @@ export class ProtoSwissQRDebitor implements IProtoSwissQRDebitor {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoSwissQRDebitor
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoSwissQRDebitor
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoSwissQRData. */
@@ -2674,6 +2812,9 @@ export interface IProtoSwissQRData {
 
     /** ProtoSwissQRData debitor */
     debitor?: (IProtoSwissQRDebitor|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoSwissQRData. */
@@ -2684,6 +2825,9 @@ export class ProtoSwissQRData implements IProtoSwissQRData {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoSwissQRData);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoSwissQRData creditor. */
     public creditor?: (IProtoSwissQRCreditor|null);
@@ -2762,11 +2906,11 @@ export class ProtoSwissQRData implements IProtoSwissQRData {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoSwissQRData
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoSwissQRData
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoBarcodeUAMode enum. */
@@ -2789,6 +2933,9 @@ export interface IProtoLinebreak {
 
     /** ProtoLinebreak count */
     count?: (IProtoBoxedUint32|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoLinebreak. */
@@ -2799,6 +2946,9 @@ export class ProtoLinebreak implements IProtoLinebreak {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoLinebreak);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoLinebreak parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -2883,11 +3033,11 @@ export class ProtoLinebreak implements IProtoLinebreak {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoLinebreak
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoLinebreak
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBorder. */
@@ -2898,6 +3048,9 @@ export interface IProtoBorder {
 
     /** ProtoBorder color */
     color?: (IProtoColor|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBorder. */
@@ -2908,6 +3061,9 @@ export class ProtoBorder implements IProtoBorder {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBorder);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBorder weight. */
     public weight?: (IProtoMeasure|null);
@@ -2986,11 +3142,11 @@ export class ProtoBorder implements IProtoBorder {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBorder
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBorder
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoSideBorders. */
@@ -3007,6 +3163,9 @@ export interface IProtoSideBorders {
 
     /** ProtoSideBorders left */
     left?: (IProtoBorder|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoSideBorders. */
@@ -3017,6 +3176,9 @@ export class ProtoSideBorders implements IProtoSideBorders {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoSideBorders);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoSideBorders top. */
     public top?: (IProtoBorder|null);
@@ -3101,11 +3263,11 @@ export class ProtoSideBorders implements IProtoSideBorders {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoSideBorders
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoSideBorders
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoPositionMode enum. */
@@ -3125,6 +3287,9 @@ export interface IProtoBoxedPositionMode {
 
     /** ProtoBoxedPositionMode isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedPositionMode. */
@@ -3135,6 +3300,9 @@ export class ProtoBoxedPositionMode implements IProtoBoxedPositionMode {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedPositionMode);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedPositionMode value. */
     public value: ProtoPositionMode;
@@ -3213,11 +3381,11 @@ export class ProtoBoxedPositionMode implements IProtoBoxedPositionMode {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedPositionMode
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedPositionMode
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoColumnSettings. */
@@ -3237,6 +3405,9 @@ export interface IProtoColumnSettings {
 
     /** ProtoColumnSettings outsideMargin */
     outsideMargin?: (IProtoBoxedMeasure|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoColumnSettings. */
@@ -3247,6 +3418,9 @@ export class ProtoColumnSettings implements IProtoColumnSettings {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoColumnSettings);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoColumnSettings width. */
     public width?: (IProtoBoxedMeasure|null);
@@ -3334,11 +3508,11 @@ export class ProtoColumnSettings implements IProtoColumnSettings {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoColumnSettings
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoColumnSettings
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoGraphicState. */
@@ -3364,6 +3538,9 @@ export interface IProtoGraphicState {
 
     /** ProtoGraphicState strikethrough */
     strikethrough?: (IProtoBoxedBool|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoGraphicState. */
@@ -3374,6 +3551,9 @@ export class ProtoGraphicState implements IProtoGraphicState {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoGraphicState);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoGraphicState bold. */
     public bold?: (IProtoBoxedBool|null);
@@ -3467,15 +3647,18 @@ export class ProtoGraphicState implements IProtoGraphicState {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoGraphicState
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoGraphicState
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoHtmlParser. */
 export interface IProtoHtmlParser {
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoHtmlParser. */
@@ -3486,6 +3669,9 @@ export class ProtoHtmlParser implements IProtoHtmlParser {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoHtmlParser);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /**
      * Creates a new ProtoHtmlParser instance using the specified properties.
@@ -3558,11 +3744,11 @@ export class ProtoHtmlParser implements IProtoHtmlParser {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoHtmlParser
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoHtmlParser
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoUnderlineMode enum. */
@@ -3591,6 +3777,9 @@ export interface IProtoUnderlineSpec {
 
     /** ProtoUnderlineSpec style */
     style?: (ProtoRuleStyle|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoUnderlineSpec. */
@@ -3601,6 +3790,9 @@ export class ProtoUnderlineSpec implements IProtoUnderlineSpec {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoUnderlineSpec);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoUnderlineSpec weight. */
     public weight?: (IProtoMeasure|null);
@@ -3688,11 +3880,11 @@ export class ProtoUnderlineSpec implements IProtoUnderlineSpec {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoUnderlineSpec
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoUnderlineSpec
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBoxedUnderlineSpec. */
@@ -3703,6 +3895,9 @@ export interface IProtoBoxedUnderlineSpec {
 
     /** ProtoBoxedUnderlineSpec isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedUnderlineSpec. */
@@ -3713,6 +3908,9 @@ export class ProtoBoxedUnderlineSpec implements IProtoBoxedUnderlineSpec {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedUnderlineSpec);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedUnderlineSpec value. */
     public value?: (IProtoUnderlineSpec|null);
@@ -3791,11 +3989,11 @@ export class ProtoBoxedUnderlineSpec implements IProtoBoxedUnderlineSpec {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedUnderlineSpec
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedUnderlineSpec
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoCropSettings. */
@@ -3812,6 +4010,9 @@ export interface IProtoCropSettings {
 
     /** ProtoCropSettings height */
     height?: (IProtoBoxedMeasure|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoCropSettings. */
@@ -3822,6 +4023,9 @@ export class ProtoCropSettings implements IProtoCropSettings {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoCropSettings);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoCropSettings x. */
     public x?: (IProtoBoxedMeasure|null);
@@ -3906,11 +4110,11 @@ export class ProtoCropSettings implements IProtoCropSettings {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoCropSettings
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoCropSettings
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoFlipSettings. */
@@ -3921,6 +4125,9 @@ export interface IProtoFlipSettings {
 
     /** ProtoFlipSettings y */
     y?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoFlipSettings. */
@@ -3931,6 +4138,9 @@ export class ProtoFlipSettings implements IProtoFlipSettings {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoFlipSettings);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoFlipSettings x. */
     public x: boolean;
@@ -4009,11 +4219,11 @@ export class ProtoFlipSettings implements IProtoFlipSettings {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoFlipSettings
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoFlipSettings
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoImageReferencePoint enum. */
@@ -4043,6 +4253,9 @@ export interface IProtoOption {
 
     /** ProtoOption value */
     value?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoOption. */
@@ -4053,6 +4266,9 @@ export class ProtoOption implements IProtoOption {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoOption);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoOption key. */
     public key: string;
@@ -4131,11 +4347,11 @@ export class ProtoOption implements IProtoOption {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoOption
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoOption
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** PDFPrintingBehavior enum. */
@@ -4193,6 +4409,9 @@ export interface IProtoBaseInputField {
 
     /** ProtoBaseInputField uuid */
     uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBaseInputField. */
@@ -4203,6 +4422,9 @@ export class ProtoBaseInputField implements IProtoBaseInputField {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBaseInputField);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBaseInputField name. */
     public name: string;
@@ -4320,11 +4542,11 @@ export class ProtoBaseInputField implements IProtoBaseInputField {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBaseInputField
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBaseInputField
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Inheritance enum. */
@@ -4344,6 +4566,9 @@ export interface IProtoDocumentElement {
 
     /** ProtoDocumentElement comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoDocumentElement. */
@@ -4354,6 +4579,9 @@ export class ProtoDocumentElement implements IProtoDocumentElement {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoDocumentElement);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoDocumentElement parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -4432,11 +4660,11 @@ export class ProtoDocumentElement implements IProtoDocumentElement {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoDocumentElement
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoDocumentElement
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBranchDocumentElement. */
@@ -4450,6 +4678,9 @@ export interface IProtoBranchDocumentElement {
 
     /** ProtoBranchDocumentElement comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBranchDocumentElement. */
@@ -4460,6 +4691,9 @@ export class ProtoBranchDocumentElement implements IProtoBranchDocumentElement {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBranchDocumentElement);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBranchDocumentElement _children. */
     public _children: IProtoDocumentElement[];
@@ -4541,11 +4775,11 @@ export class ProtoBranchDocumentElement implements IProtoBranchDocumentElement {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBranchDocumentElement
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBranchDocumentElement
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoLink. */
@@ -4571,6 +4805,12 @@ export interface IProtoLink {
 
     /** ProtoLink bindUrlCode */
     bindUrlCode?: (boolean|null);
+
+    /** ProtoLink uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoLink. */
@@ -4581,6 +4821,9 @@ export class ProtoLink implements IProtoLink {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoLink);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoLink _children. */
     public _children: IProtoDocumentElement[];
@@ -4602,6 +4845,9 @@ export class ProtoLink implements IProtoLink {
 
     /** ProtoLink bindUrlCode. */
     public bindUrlCode: boolean;
+
+    /** ProtoLink uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoLink instance using the specified properties.
@@ -4674,11 +4920,11 @@ export class ProtoLink implements IProtoLink {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoLink
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoLink
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoNumberType enum. */
@@ -4754,6 +5000,9 @@ export interface IProtoListLevelSetting {
 
     /** ProtoListLevelSetting doctypeCode */
     doctypeCode?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoListLevelSetting. */
@@ -4764,6 +5013,9 @@ export class ProtoListLevelSetting implements IProtoListLevelSetting {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoListLevelSetting);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoListLevelSetting listSettingName. */
     public listSettingName: string;
@@ -4890,11 +5142,11 @@ export class ProtoListLevelSetting implements IProtoListLevelSetting {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoListLevelSetting
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoListLevelSetting
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoImageListLevelSetting. */
@@ -4935,6 +5187,9 @@ export interface IProtoImageListLevelSetting {
 
     /** ProtoImageListLevelSetting imageName */
     imageName?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoImageListLevelSetting. */
@@ -4945,6 +5200,9 @@ export class ProtoImageListLevelSetting implements IProtoImageListLevelSetting {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoImageListLevelSetting);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoImageListLevelSetting listSettingName. */
     public listSettingName: string;
@@ -5053,11 +5311,11 @@ export class ProtoImageListLevelSetting implements IProtoImageListLevelSetting {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoImageListLevelSetting
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoImageListLevelSetting
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTextListLevelSetting. */
@@ -5104,6 +5362,9 @@ export interface IProtoTextListLevelSetting {
 
     /** ProtoTextListLevelSetting italic */
     italic?: (IProtoBoxedBool|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTextListLevelSetting. */
@@ -5114,6 +5375,9 @@ export class ProtoTextListLevelSetting implements IProtoTextListLevelSetting {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTextListLevelSetting);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTextListLevelSetting listSettingName. */
     public listSettingName: string;
@@ -5228,11 +5492,11 @@ export class ProtoTextListLevelSetting implements IProtoTextListLevelSetting {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTextListLevelSetting
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTextListLevelSetting
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoNumberListLevelSetting. */
@@ -5282,6 +5546,9 @@ export interface IProtoNumberListLevelSetting {
 
     /** ProtoNumberListLevelSetting numberType */
     numberType?: (ProtoNumberType|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoNumberListLevelSetting. */
@@ -5292,6 +5559,9 @@ export class ProtoNumberListLevelSetting implements IProtoNumberListLevelSetting
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoNumberListLevelSetting);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoNumberListLevelSetting listSettingName. */
     public listSettingName: string;
@@ -5409,11 +5679,11 @@ export class ProtoNumberListLevelSetting implements IProtoNumberListLevelSetting
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoNumberListLevelSetting
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoNumberListLevelSetting
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoUnnumberedListLevelSetting. */
@@ -5463,6 +5733,9 @@ export interface IProtoUnnumberedListLevelSetting {
 
     /** ProtoUnnumberedListLevelSetting character */
     character?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoUnnumberedListLevelSetting. */
@@ -5473,6 +5746,9 @@ export class ProtoUnnumberedListLevelSetting implements IProtoUnnumberedListLeve
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoUnnumberedListLevelSetting);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoUnnumberedListLevelSetting listSettingName. */
     public listSettingName: string;
@@ -5590,11 +5866,11 @@ export class ProtoUnnumberedListLevelSetting implements IProtoUnnumberedListLeve
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoUnnumberedListLevelSetting
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoUnnumberedListLevelSetting
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoCustomListLevelSetting. */
@@ -5611,6 +5887,9 @@ export interface IProtoCustomListLevelSetting {
 
     /** ProtoCustomListLevelSetting doctypeCode */
     doctypeCode?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoCustomListLevelSetting. */
@@ -5621,6 +5900,9 @@ export class ProtoCustomListLevelSetting implements IProtoCustomListLevelSetting
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoCustomListLevelSetting);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoCustomListLevelSetting listSettingName. */
     public listSettingName: string;
@@ -5705,11 +5987,11 @@ export class ProtoCustomListLevelSetting implements IProtoCustomListLevelSetting
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoCustomListLevelSetting
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoCustomListLevelSetting
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoListSetting. */
@@ -5729,6 +6011,12 @@ export interface IProtoListSetting {
 
     /** ProtoListSetting comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoListSetting uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoListSetting. */
@@ -5739,6 +6027,9 @@ export class ProtoListSetting implements IProtoListSetting {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoListSetting);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoListSetting parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -5754,6 +6045,9 @@ export class ProtoListSetting implements IProtoListSetting {
 
     /** ProtoListSetting comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoListSetting uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoListSetting instance using the specified properties.
@@ -5826,11 +6120,11 @@ export class ProtoListSetting implements IProtoListSetting {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoListSetting
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoListSetting
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBoxedListSetting. */
@@ -5841,6 +6135,9 @@ export interface IProtoBoxedListSetting {
 
     /** ProtoBoxedListSetting isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedListSetting. */
@@ -5851,6 +6148,9 @@ export class ProtoBoxedListSetting implements IProtoBoxedListSetting {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedListSetting);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedListSetting value. */
     public value?: (IProtoListSetting|null);
@@ -5929,11 +6229,11 @@ export class ProtoBoxedListSetting implements IProtoBoxedListSetting {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedListSetting
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedListSetting
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoNamedString. */
@@ -5962,6 +6262,9 @@ export interface IProtoNamedString {
 
     /** ProtoNamedString codeMode */
     codeMode?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoNamedString. */
@@ -5972,6 +6275,9 @@ export class ProtoNamedString implements IProtoNamedString {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoNamedString);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoNamedString _children. */
     public _children: IProtoDocumentElement[];
@@ -6068,11 +6374,11 @@ export class ProtoNamedString implements IProtoNamedString {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoNamedString
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoNamedString
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoParagraph. */
@@ -6098,6 +6404,9 @@ export interface IProtoParagraph {
 
     /** ProtoParagraph uuid */
     uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoParagraph. */
@@ -6108,6 +6417,9 @@ export class ProtoParagraph implements IProtoParagraph {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoParagraph);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoParagraph _children. */
     public _children: IProtoDocumentElement[];
@@ -6201,11 +6513,11 @@ export class ProtoParagraph implements IProtoParagraph {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoParagraph
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoParagraph
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoParagraphFormat. */
@@ -6297,6 +6609,12 @@ export interface IProtoParagraphFormat {
 
     /** ProtoParagraphFormat comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoParagraphFormat uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoParagraphFormat. */
@@ -6307,6 +6625,9 @@ export class ProtoParagraphFormat implements IProtoParagraphFormat {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoParagraphFormat);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoParagraphFormat baseFormat. */
     public baseFormat?: (IProtoParagraphFormat|null);
@@ -6395,6 +6716,9 @@ export class ProtoParagraphFormat implements IProtoParagraphFormat {
     /** ProtoParagraphFormat comChannelUUIDs. */
     public comChannelUUIDs: string[];
 
+    /** ProtoParagraphFormat uuid. */
+    public uuid: string;
+
     /**
      * Creates a new ProtoParagraphFormat instance using the specified properties.
      * @param [properties] Properties to set
@@ -6466,11 +6790,11 @@ export class ProtoParagraphFormat implements IProtoParagraphFormat {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoParagraphFormat
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoParagraphFormat
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoSection. */
@@ -6490,6 +6814,9 @@ export interface IProtoSection {
 
     /** ProtoSection comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoSection. */
@@ -6500,6 +6827,9 @@ export class ProtoSection implements IProtoSection {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoSection);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoSection _children. */
     public _children: IProtoDocumentElement[];
@@ -6587,11 +6917,11 @@ export class ProtoSection implements IProtoSection {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoSection
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoSection
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoSpaceVertically. */
@@ -6605,6 +6935,12 @@ export interface IProtoSpaceVertically {
 
     /** ProtoSpaceVertically comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoSpaceVertically uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoSpaceVertically. */
@@ -6616,6 +6952,9 @@ export class ProtoSpaceVertically implements IProtoSpaceVertically {
      */
     constructor(properties?: IProtoSpaceVertically);
 
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
     /** ProtoSpaceVertically parent. */
     public parent?: (IProtoDocumentElement|null);
 
@@ -6624,6 +6963,9 @@ export class ProtoSpaceVertically implements IProtoSpaceVertically {
 
     /** ProtoSpaceVertically comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoSpaceVertically uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoSpaceVertically instance using the specified properties.
@@ -6696,11 +7038,11 @@ export class ProtoSpaceVertically implements IProtoSpaceVertically {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoSpaceVertically
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoSpaceVertically
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoSpan. */
@@ -6735,6 +7077,9 @@ export interface IProtoSpan {
 
     /** ProtoSpan comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoSpan. */
@@ -6745,6 +7090,9 @@ export class ProtoSpan implements IProtoSpan {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoSpan);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoSpan _children. */
     public _children: IProtoDocumentElement[];
@@ -6847,11 +7195,11 @@ export class ProtoSpan implements IProtoSpan {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoSpan
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoSpan
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTable. */
@@ -6883,6 +7231,9 @@ export interface IProtoTable {
 
     /** ProtoTable uuid */
     uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTable. */
@@ -6893,6 +7244,9 @@ export class ProtoTable implements IProtoTable {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTable);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTable _children. */
     public _children: IProtoDocumentElement[];
@@ -6992,11 +7346,11 @@ export class ProtoTable implements IProtoTable {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTable
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTable
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableConfig. */
@@ -7013,6 +7367,12 @@ export interface IProtoTableConfig {
 
     /** ProtoTableConfig comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoTableConfig uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableConfig. */
@@ -7023,6 +7383,9 @@ export class ProtoTableConfig implements IProtoTableConfig {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableConfig);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableConfig parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -7035,6 +7398,9 @@ export class ProtoTableConfig implements IProtoTableConfig {
 
     /** ProtoTableConfig comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoTableConfig uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoTableConfig instance using the specified properties.
@@ -7107,11 +7473,11 @@ export class ProtoTableConfig implements IProtoTableConfig {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableConfig
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableConfig
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableSettings. */
@@ -7137,6 +7503,9 @@ export interface IProtoTableSettings {
 
     /** ProtoTableSettings repeatSubHeader */
     repeatSubHeader?: (IProtoBoxedUint32|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableSettings. */
@@ -7147,6 +7516,9 @@ export class ProtoTableSettings implements IProtoTableSettings {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableSettings);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableSettings xOffset. */
     public xOffset?: (IProtoMeasure|null);
@@ -7240,11 +7612,11 @@ export class ProtoTableSettings implements IProtoTableSettings {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableSettings
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableSettings
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoTableContentGroupType enum. */
@@ -7263,6 +7635,9 @@ export interface IProtoBoxedTableContentGroupType {
 
     /** ProtoBoxedTableContentGroupType isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedTableContentGroupType. */
@@ -7273,6 +7648,9 @@ export class ProtoBoxedTableContentGroupType implements IProtoBoxedTableContentG
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedTableContentGroupType);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedTableContentGroupType value. */
     public value: ProtoTableContentGroupType;
@@ -7351,11 +7729,11 @@ export class ProtoBoxedTableContentGroupType implements IProtoBoxedTableContentG
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedTableContentGroupType
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedTableContentGroupType
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableContentGroup. */
@@ -7378,6 +7756,9 @@ export interface IProtoTableContentGroup {
 
     /** ProtoTableContentGroup uuid */
     uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableContentGroup. */
@@ -7388,6 +7769,9 @@ export class ProtoTableContentGroup implements IProtoTableContentGroup {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableContentGroup);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableContentGroup _children. */
     public _children: IProtoDocumentElement[];
@@ -7478,11 +7862,11 @@ export class ProtoTableContentGroup implements IProtoTableContentGroup {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableContentGroup
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableContentGroup
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableContentGroupConfig. */
@@ -7499,6 +7883,12 @@ export interface IProtoTableContentGroupConfig {
 
     /** ProtoTableContentGroupConfig comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoTableContentGroupConfig uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableContentGroupConfig. */
@@ -7509,6 +7899,9 @@ export class ProtoTableContentGroupConfig implements IProtoTableContentGroupConf
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableContentGroupConfig);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableContentGroupConfig parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -7521,6 +7914,9 @@ export class ProtoTableContentGroupConfig implements IProtoTableContentGroupConf
 
     /** ProtoTableContentGroupConfig comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoTableContentGroupConfig uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoTableContentGroupConfig instance using the specified properties.
@@ -7593,11 +7989,11 @@ export class ProtoTableContentGroupConfig implements IProtoTableContentGroupConf
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableContentGroupConfig
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableContentGroupConfig
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableContentGroupSettings. */
@@ -7611,6 +8007,9 @@ export interface IProtoTableContentGroupSettings {
 
     /** ProtoTableContentGroupSettings ws */
     ws?: (IProtoTableWS|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableContentGroupSettings. */
@@ -7621,6 +8020,9 @@ export class ProtoTableContentGroupSettings implements IProtoTableContentGroupSe
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableContentGroupSettings);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableContentGroupSettings contentGroupType. */
     public contentGroupType?: (IProtoBoxedTableContentGroupType|null);
@@ -7702,11 +8104,11 @@ export class ProtoTableContentGroupSettings implements IProtoTableContentGroupSe
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableContentGroupSettings
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableContentGroupSettings
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableRow. */
@@ -7732,6 +8134,9 @@ export interface IProtoTableRow {
 
     /** ProtoTableRow uuid */
     uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableRow. */
@@ -7742,6 +8147,9 @@ export class ProtoTableRow implements IProtoTableRow {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableRow);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableRow _children. */
     public _children: IProtoDocumentElement[];
@@ -7835,11 +8243,11 @@ export class ProtoTableRow implements IProtoTableRow {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableRow
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableRow
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableRowConfig. */
@@ -7862,6 +8270,12 @@ export interface IProtoTableRowConfig {
 
     /** ProtoTableRowConfig comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoTableRowConfig uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableRowConfig. */
@@ -7872,6 +8286,9 @@ export class ProtoTableRowConfig implements IProtoTableRowConfig {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableRowConfig);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableRowConfig parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -7890,6 +8307,9 @@ export class ProtoTableRowConfig implements IProtoTableRowConfig {
 
     /** ProtoTableRowConfig comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoTableRowConfig uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoTableRowConfig instance using the specified properties.
@@ -7962,11 +8382,11 @@ export class ProtoTableRowConfig implements IProtoTableRowConfig {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableRowConfig
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableRowConfig
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableRowSettings. */
@@ -7977,6 +8397,9 @@ export interface IProtoTableRowSettings {
 
     /** ProtoTableRowSettings ws */
     ws?: (IProtoTableWS|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableRowSettings. */
@@ -7987,6 +8410,9 @@ export class ProtoTableRowSettings implements IProtoTableRowSettings {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableRowSettings);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableRowSettings minHeight. */
     public minHeight?: (IProtoMeasure|null);
@@ -8065,11 +8491,11 @@ export class ProtoTableRowSettings implements IProtoTableRowSettings {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableRowSettings
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableRowSettings
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoTableCellType enum. */
@@ -8087,6 +8513,9 @@ export interface IProtoBoxedTableCellType {
 
     /** ProtoBoxedTableCellType isNull */
     isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBoxedTableCellType. */
@@ -8097,6 +8526,9 @@ export class ProtoBoxedTableCellType implements IProtoBoxedTableCellType {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBoxedTableCellType);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBoxedTableCellType value. */
     public value: ProtoTableCellType;
@@ -8175,11 +8607,11 @@ export class ProtoBoxedTableCellType implements IProtoBoxedTableCellType {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBoxedTableCellType
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBoxedTableCellType
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableCell. */
@@ -8211,6 +8643,9 @@ export interface IProtoTableCell {
 
     /** ProtoTableCell uuid */
     uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableCell. */
@@ -8221,6 +8656,9 @@ export class ProtoTableCell implements IProtoTableCell {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableCell);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableCell _children. */
     public _children: IProtoDocumentElement[];
@@ -8320,11 +8758,11 @@ export class ProtoTableCell implements IProtoTableCell {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableCell
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableCell
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableCellConfig. */
@@ -8344,6 +8782,12 @@ export interface IProtoTableCellConfig {
 
     /** ProtoTableCellConfig comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoTableCellConfig uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableCellConfig. */
@@ -8354,6 +8798,9 @@ export class ProtoTableCellConfig implements IProtoTableCellConfig {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableCellConfig);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableCellConfig parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -8369,6 +8816,9 @@ export class ProtoTableCellConfig implements IProtoTableCellConfig {
 
     /** ProtoTableCellConfig comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoTableCellConfig uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoTableCellConfig instance using the specified properties.
@@ -8441,11 +8891,11 @@ export class ProtoTableCellConfig implements IProtoTableCellConfig {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableCellConfig
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableCellConfig
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableCellSettings. */
@@ -8477,6 +8927,9 @@ export interface IProtoTableCellSettings {
 
     /** ProtoTableCellSettings defaultParagraphFormat */
     defaultParagraphFormat?: (IProtoBoxedString|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableCellSettings. */
@@ -8487,6 +8940,9 @@ export class ProtoTableCellSettings implements IProtoTableCellSettings {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableCellSettings);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableCellSettings width. */
     public width?: (IProtoMeasure|null);
@@ -8586,11 +9042,11 @@ export class ProtoTableCellSettings implements IProtoTableCellSettings {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableCellSettings
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableCellSettings
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableWS. */
@@ -8604,6 +9060,9 @@ export interface IProtoTableWS {
 
     /** ProtoTableWS priority */
     priority?: (number|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableWS. */
@@ -8614,6 +9073,9 @@ export class ProtoTableWS implements IProtoTableWS {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableWS);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableWS minLinesBefore. */
     public minLinesBefore: number;
@@ -8695,11 +9157,11 @@ export class ProtoTableWS implements IProtoTableWS {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableWS
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableWS
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTableElementProperties. */
@@ -8983,6 +9445,9 @@ export interface IProtoTableElementProperties {
 
     /** ProtoTableElementProperties repeatSubHeaderCode */
     repeatSubHeaderCode?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTableElementProperties. */
@@ -8993,6 +9458,9 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTableElementProperties);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTableElementProperties widthInheritance. */
     public widthInheritance: Inheritance;
@@ -9344,11 +9812,11 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTableElementProperties
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTableElementProperties
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoText. */
@@ -9362,6 +9830,9 @@ export interface IProtoText {
 
     /** ProtoText comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoText. */
@@ -9372,6 +9843,9 @@ export class ProtoText implements IProtoText {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoText);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoText parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -9453,11 +9927,11 @@ export class ProtoText implements IProtoText {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoText
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoText
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBarcode. */
@@ -9513,6 +9987,9 @@ export interface IProtoBarcode {
 
     /** ProtoBarcode uaDescription */
     uaDescription?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBarcode. */
@@ -9523,6 +10000,9 @@ export class ProtoBarcode implements IProtoBarcode {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBarcode);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBarcode type. */
     public type: ProtoBarcodeType;
@@ -9646,11 +10126,11 @@ export class ProtoBarcode implements IProtoBarcode {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBarcode
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBarcode
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBrickReference. */
@@ -9664,6 +10144,9 @@ export interface IProtoBrickReference {
 
     /** ProtoBrickReference comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBrickReference. */
@@ -9674,6 +10157,9 @@ export class ProtoBrickReference implements IProtoBrickReference {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBrickReference);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBrickReference internName. */
     public internName: string;
@@ -9755,11 +10241,11 @@ export class ProtoBrickReference implements IProtoBrickReference {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBrickReference
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBrickReference
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBrick. */
@@ -9788,6 +10274,9 @@ export interface IProtoBrick {
 
     /** ProtoBrick name */
     name?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBrick. */
@@ -9798,6 +10287,9 @@ export class ProtoBrick implements IProtoBrick {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBrick);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBrick _children. */
     public _children: IProtoDocumentElement[];
@@ -9894,11 +10386,11 @@ export class ProtoBrick implements IProtoBrick {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBrick
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBrick
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTemplate. */
@@ -9924,6 +10416,9 @@ export interface IProtoTemplate {
 
     /** ProtoTemplate templateUuid */
     templateUuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTemplate. */
@@ -9934,6 +10429,9 @@ export class ProtoTemplate implements IProtoTemplate {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTemplate);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTemplate _children. */
     public _children: IProtoDocumentElement[];
@@ -10027,11 +10525,11 @@ export class ProtoTemplate implements IProtoTemplate {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTemplate
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTemplate
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ColumnBalancing enum. */
@@ -10065,6 +10563,9 @@ export interface IProtoHeader {
 
     /** ProtoHeader mode */
     mode?: (ProtoHeaderMode|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoHeader. */
@@ -10075,6 +10576,9 @@ export class ProtoHeader implements IProtoHeader {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoHeader);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoHeader _children. */
     public _children: IProtoDocumentElement[];
@@ -10162,11 +10666,11 @@ export class ProtoHeader implements IProtoHeader {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoHeader
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoHeader
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoFooterMode enum. */
@@ -10194,6 +10698,9 @@ export interface IProtoFooter {
 
     /** ProtoFooter mode */
     mode?: (ProtoFooterMode|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoFooter. */
@@ -10204,6 +10711,9 @@ export class ProtoFooter implements IProtoFooter {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoFooter);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoFooter _children. */
     public _children: IProtoDocumentElement[];
@@ -10291,11 +10801,11 @@ export class ProtoFooter implements IProtoFooter {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoFooter
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoFooter
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a Node. */
@@ -10504,6 +11014,9 @@ export interface INode {
 
     /** Node coloredArea */
     coloredArea?: (IProtoColoredArea|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a Node. */
@@ -10514,6 +11027,9 @@ export class Node implements INode {
      * @param [properties] Properties to set
      */
     constructor(properties?: INode);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** Node children. */
     public children: INode[];
@@ -10793,11 +11309,11 @@ export class Node implements INode {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for Node
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for Node
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** NodeType enum. */
@@ -10979,6 +11495,9 @@ export interface IProtoImage {
 
     /** ProtoImage leftBorderIsLeftMeasure */
     leftBorderIsLeftMeasure?: (IProtoBoxedBool|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoImage. */
@@ -10989,6 +11508,9 @@ export class ProtoImage implements IProtoImage {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoImage);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoImage parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -11139,11 +11661,11 @@ export class ProtoImage implements IProtoImage {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoImage
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoImage
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoDirectory. */
@@ -11169,6 +11691,9 @@ export interface IProtoDirectory {
 
     /** ProtoDirectory name */
     name?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoDirectory. */
@@ -11179,6 +11704,9 @@ export class ProtoDirectory implements IProtoDirectory {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoDirectory);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoDirectory _children. */
     public _children: IProtoDocumentElement[];
@@ -11272,11 +11800,11 @@ export class ProtoDirectory implements IProtoDirectory {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoDirectory
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoDirectory
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTextBrick. */
@@ -11302,6 +11830,9 @@ export interface IProtoTextBrick {
 
     /** ProtoTextBrick name */
     name?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTextBrick. */
@@ -11312,6 +11843,9 @@ export class ProtoTextBrick implements IProtoTextBrick {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTextBrick);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTextBrick _children. */
     public _children: IProtoDocumentElement[];
@@ -11405,11 +11939,11 @@ export class ProtoTextBrick implements IProtoTextBrick {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTextBrick
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTextBrick
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoVariable. */
@@ -11435,6 +11969,9 @@ export interface IProtoVariable {
 
     /** ProtoVariable comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoVariable. */
@@ -11445,6 +11982,9 @@ export class ProtoVariable implements IProtoVariable {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoVariable);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoVariable parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -11538,11 +12078,11 @@ export class ProtoVariable implements IProtoVariable {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoVariable
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoVariable
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoVariableSpecialType enum. */
@@ -11588,6 +12128,12 @@ export interface IProtoFormatted {
 
     /** ProtoFormatted comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoFormatted uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoFormatted. */
@@ -11598,6 +12144,9 @@ export class ProtoFormatted implements IProtoFormatted {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoFormatted);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoFormatted parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -11625,6 +12174,9 @@ export class ProtoFormatted implements IProtoFormatted {
 
     /** ProtoFormatted comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoFormatted uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoFormatted instance using the specified properties.
@@ -11697,11 +12249,11 @@ export class ProtoFormatted implements IProtoFormatted {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoFormatted
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoFormatted
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoApplyProtoCDef. */
@@ -11712,6 +12264,12 @@ export interface IProtoApplyProtoCDef {
 
     /** ProtoApplyProtoCDef comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoApplyProtoCDef uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoApplyProtoCDef. */
@@ -11723,11 +12281,17 @@ export class ProtoApplyProtoCDef implements IProtoApplyProtoCDef {
      */
     constructor(properties?: IProtoApplyProtoCDef);
 
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
     /** ProtoApplyProtoCDef cDefUuid. */
     public cDefUuid: string;
 
     /** ProtoApplyProtoCDef comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoApplyProtoCDef uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoApplyProtoCDef instance using the specified properties.
@@ -11800,11 +12364,11 @@ export class ProtoApplyProtoCDef implements IProtoApplyProtoCDef {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoApplyProtoCDef
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoApplyProtoCDef
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoApplyProtoPDef. */
@@ -11815,6 +12379,12 @@ export interface IProtoApplyProtoPDef {
 
     /** ProtoApplyProtoPDef comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoApplyProtoPDef uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoApplyProtoPDef. */
@@ -11826,11 +12396,17 @@ export class ProtoApplyProtoPDef implements IProtoApplyProtoPDef {
      */
     constructor(properties?: IProtoApplyProtoPDef);
 
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
     /** ProtoApplyProtoPDef pDefUuid. */
     public pDefUuid: string;
 
     /** ProtoApplyProtoPDef comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoApplyProtoPDef uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoApplyProtoPDef instance using the specified properties.
@@ -11903,11 +12479,11 @@ export class ProtoApplyProtoPDef implements IProtoApplyProtoPDef {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoApplyProtoPDef
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoApplyProtoPDef
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoApplyPtConfig. */
@@ -11918,6 +12494,12 @@ export interface IProtoApplyPtConfig {
 
     /** ProtoApplyPtConfig comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoApplyPtConfig uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoApplyPtConfig. */
@@ -11929,11 +12511,17 @@ export class ProtoApplyPtConfig implements IProtoApplyPtConfig {
      */
     constructor(properties?: IProtoApplyPtConfig);
 
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
     /** ProtoApplyPtConfig ptConfigUuid. */
     public ptConfigUuid: string;
 
     /** ProtoApplyPtConfig comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoApplyPtConfig uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoApplyPtConfig instance using the specified properties.
@@ -12006,11 +12594,11 @@ export class ProtoApplyPtConfig implements IProtoApplyPtConfig {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoApplyPtConfig
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoApplyPtConfig
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoApplyUlConfig. */
@@ -12021,6 +12609,12 @@ export interface IProtoApplyUlConfig {
 
     /** ProtoApplyUlConfig comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoApplyUlConfig uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoApplyUlConfig. */
@@ -12032,11 +12626,17 @@ export class ProtoApplyUlConfig implements IProtoApplyUlConfig {
      */
     constructor(properties?: IProtoApplyUlConfig);
 
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
     /** ProtoApplyUlConfig ulConfigUuid. */
     public ulConfigUuid: string;
 
     /** ProtoApplyUlConfig comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoApplyUlConfig uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoApplyUlConfig instance using the specified properties.
@@ -12109,11 +12709,11 @@ export class ProtoApplyUlConfig implements IProtoApplyUlConfig {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoApplyUlConfig
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoApplyUlConfig
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoCDef. */
@@ -12133,6 +12733,9 @@ export interface IProtoCDef {
 
     /** ProtoCDef comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoCDef. */
@@ -12143,6 +12746,9 @@ export class ProtoCDef implements IProtoCDef {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoCDef);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoCDef columSettings. */
     public columSettings?: (IProtoColumnSettings|null);
@@ -12230,11 +12836,11 @@ export class ProtoCDef implements IProtoCDef {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoCDef
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoCDef
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoPDef. */
@@ -12251,6 +12857,9 @@ export interface IProtoPDef {
 
     /** ProtoPDef comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoPDef. */
@@ -12261,6 +12870,9 @@ export class ProtoPDef implements IProtoPDef {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoPDef);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoPDef pageWidth. */
     public pageWidth?: (IProtoBoxedMeasure|null);
@@ -12345,11 +12957,11 @@ export class ProtoPDef implements IProtoPDef {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoPDef
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoPDef
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoPtConfig. */
@@ -12372,6 +12984,9 @@ export interface IProtoPtConfig {
 
     /** ProtoPtConfig comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoPtConfig. */
@@ -12382,6 +12997,9 @@ export class ProtoPtConfig implements IProtoPtConfig {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoPtConfig);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoPtConfig height. */
     public height?: (IProtoBoxedMeasure|null);
@@ -12472,11 +13090,11 @@ export class ProtoPtConfig implements IProtoPtConfig {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoPtConfig
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoPtConfig
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoUlConfig. */
@@ -12490,6 +13108,9 @@ export interface IProtoUlConfig {
 
     /** ProtoUlConfig comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoUlConfig. */
@@ -12500,6 +13121,9 @@ export class ProtoUlConfig implements IProtoUlConfig {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoUlConfig);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoUlConfig mode. */
     public mode: ProtoUnderlineMode;
@@ -12581,11 +13205,11 @@ export class ProtoUlConfig implements IProtoUlConfig {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoUlConfig
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoUlConfig
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoPageMode enum. */
@@ -12633,6 +13257,9 @@ export interface IProtoNewPage {
 
     /** ProtoNewPage comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoNewPage. */
@@ -12643,6 +13270,9 @@ export class ProtoNewPage implements IProtoNewPage {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoNewPage);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoNewPage uuid. */
     public uuid: string;
@@ -12742,11 +13372,11 @@ export class ProtoNewPage implements IProtoNewPage {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoNewPage
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoNewPage
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoIndentation. */
@@ -12769,6 +13399,9 @@ export interface IProtoIndentation {
 
     /** ProtoIndentation comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoIndentation. */
@@ -12779,6 +13412,9 @@ export class ProtoIndentation implements IProtoIndentation {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoIndentation);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoIndentation _children. */
     public _children: IProtoDocumentElement[];
@@ -12869,11 +13505,11 @@ export class ProtoIndentation implements IProtoIndentation {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoIndentation
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoIndentation
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoCarryOver. */
@@ -12887,6 +13523,12 @@ export interface IProtoCarryOver {
 
     /** ProtoCarryOver comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoCarryOver uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoCarryOver. */
@@ -12898,6 +13540,9 @@ export class ProtoCarryOver implements IProtoCarryOver {
      */
     constructor(properties?: IProtoCarryOver);
 
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
     /** ProtoCarryOver _children. */
     public _children: IProtoDocumentElement[];
 
@@ -12906,6 +13551,9 @@ export class ProtoCarryOver implements IProtoCarryOver {
 
     /** ProtoCarryOver comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoCarryOver uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoCarryOver instance using the specified properties.
@@ -12978,11 +13626,11 @@ export class ProtoCarryOver implements IProtoCarryOver {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoCarryOver
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoCarryOver
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoLoopEntry. */
@@ -13005,6 +13653,9 @@ export interface IProtoLoopEntry {
 
     /** ProtoLoopEntry comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoLoopEntry. */
@@ -13015,6 +13666,9 @@ export class ProtoLoopEntry implements IProtoLoopEntry {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoLoopEntry);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoLoopEntry _children. */
     public _children: IProtoDocumentElement[];
@@ -13105,11 +13759,11 @@ export class ProtoLoopEntry implements IProtoLoopEntry {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoLoopEntry
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoLoopEntry
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoLoop. */
@@ -13129,6 +13783,9 @@ export interface IProtoLoop {
 
     /** ProtoLoop comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoLoop. */
@@ -13139,6 +13796,9 @@ export class ProtoLoop implements IProtoLoop {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoLoop);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoLoop _children. */
     public _children: IProtoDocumentElement[];
@@ -13226,11 +13886,11 @@ export class ProtoLoop implements IProtoLoop {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoLoop
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoLoop
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoSubTotalPosition enum. */
@@ -13259,6 +13919,12 @@ export interface IProtoSubTotal {
 
     /** ProtoSubTotal comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoSubTotal uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoSubTotal. */
@@ -13269,6 +13935,9 @@ export class ProtoSubTotal implements IProtoSubTotal {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoSubTotal);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoSubTotal _children. */
     public _children: IProtoDocumentElement[];
@@ -13287,6 +13956,9 @@ export class ProtoSubTotal implements IProtoSubTotal {
 
     /** ProtoSubTotal comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoSubTotal uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoSubTotal instance using the specified properties.
@@ -13359,11 +14031,11 @@ export class ProtoSubTotal implements IProtoSubTotal {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoSubTotal
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoSubTotal
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoWsArea. */
@@ -13377,6 +14049,12 @@ export interface IProtoWsArea {
 
     /** ProtoWsArea comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoWsArea uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoWsArea. */
@@ -13388,6 +14066,9 @@ export class ProtoWsArea implements IProtoWsArea {
      */
     constructor(properties?: IProtoWsArea);
 
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
     /** ProtoWsArea _children. */
     public _children: IProtoDocumentElement[];
 
@@ -13396,6 +14077,9 @@ export class ProtoWsArea implements IProtoWsArea {
 
     /** ProtoWsArea comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoWsArea uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoWsArea instance using the specified properties.
@@ -13468,11 +14152,11 @@ export class ProtoWsArea implements IProtoWsArea {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoWsArea
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoWsArea
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoRule. */
@@ -13507,6 +14191,12 @@ export interface IProtoRule {
 
     /** ProtoRule comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoRule uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoRule. */
@@ -13517,6 +14207,9 @@ export class ProtoRule implements IProtoRule {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoRule);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoRule xOffset. */
     public xOffset?: (IProtoMeasure|null);
@@ -13547,6 +14240,9 @@ export class ProtoRule implements IProtoRule {
 
     /** ProtoRule comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoRule uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoRule instance using the specified properties.
@@ -13619,11 +14315,11 @@ export class ProtoRule implements IProtoRule {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoRule
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoRule
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoRuleMode enum. */
@@ -13640,6 +14336,9 @@ export interface IProtoRuleBoundaries {
 
     /** ProtoRuleBoundaries end */
     end?: (IProtoMeasure|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoRuleBoundaries. */
@@ -13650,6 +14349,9 @@ export class ProtoRuleBoundaries implements IProtoRuleBoundaries {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoRuleBoundaries);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoRuleBoundaries start. */
     public start?: (IProtoMeasure|null);
@@ -13728,11 +14430,11 @@ export class ProtoRuleBoundaries implements IProtoRuleBoundaries {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoRuleBoundaries
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoRuleBoundaries
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoColorDef. */
@@ -13743,6 +14445,12 @@ export interface IProtoColorDef {
 
     /** ProtoColorDef comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoColorDef uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoColorDef. */
@@ -13754,11 +14462,17 @@ export class ProtoColorDef implements IProtoColorDef {
      */
     constructor(properties?: IProtoColorDef);
 
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
     /** ProtoColorDef color. */
     public color?: (IProtoColor|null);
 
     /** ProtoColorDef comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoColorDef uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoColorDef instance using the specified properties.
@@ -13831,11 +14545,11 @@ export class ProtoColorDef implements IProtoColorDef {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoColorDef
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoColorDef
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoLayout. */
@@ -13849,6 +14563,12 @@ export interface IProtoLayout {
 
     /** ProtoLayout comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoLayout uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoLayout. */
@@ -13860,6 +14580,9 @@ export class ProtoLayout implements IProtoLayout {
      */
     constructor(properties?: IProtoLayout);
 
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
     /** ProtoLayout parent. */
     public parent?: (IProtoDocumentElement|null);
 
@@ -13868,6 +14591,9 @@ export class ProtoLayout implements IProtoLayout {
 
     /** ProtoLayout comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoLayout uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoLayout instance using the specified properties.
@@ -13940,11 +14666,11 @@ export class ProtoLayout implements IProtoLayout {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoLayout
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoLayout
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoAdvancedIllustrationArea. */
@@ -13985,6 +14711,9 @@ export interface IProtoAdvancedIllustrationArea {
 
     /** ProtoAdvancedIllustrationArea noArtifact */
     noArtifact?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoAdvancedIllustrationArea. */
@@ -13995,6 +14724,9 @@ export class ProtoAdvancedIllustrationArea implements IProtoAdvancedIllustration
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoAdvancedIllustrationArea);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoAdvancedIllustrationArea _children. */
     public _children: IProtoDocumentElement[];
@@ -14103,11 +14835,11 @@ export class ProtoAdvancedIllustrationArea implements IProtoAdvancedIllustration
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoAdvancedIllustrationArea
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoAdvancedIllustrationArea
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoAdjustHorizontally. */
@@ -14127,6 +14859,12 @@ export interface IProtoAdjustHorizontally {
 
     /** ProtoAdjustHorizontally comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoAdjustHorizontally uuid */
+    uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoAdjustHorizontally. */
@@ -14137,6 +14875,9 @@ export class ProtoAdjustHorizontally implements IProtoAdjustHorizontally {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoAdjustHorizontally);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoAdjustHorizontally _children. */
     public _children: IProtoDocumentElement[];
@@ -14152,6 +14893,9 @@ export class ProtoAdjustHorizontally implements IProtoAdjustHorizontally {
 
     /** ProtoAdjustHorizontally comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoAdjustHorizontally uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoAdjustHorizontally instance using the specified properties.
@@ -14224,11 +14968,11 @@ export class ProtoAdjustHorizontally implements IProtoAdjustHorizontally {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoAdjustHorizontally
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoAdjustHorizontally
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** ProtoDoctypeOutputMode enum. */
@@ -14255,6 +14999,9 @@ export interface IProtoDoctypeScript {
 
     /** ProtoDoctypeScript uuid */
     uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoDoctypeScript. */
@@ -14265,6 +15012,9 @@ export class ProtoDoctypeScript implements IProtoDoctypeScript {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoDoctypeScript);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoDoctypeScript parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -14352,11 +15102,11 @@ export class ProtoDoctypeScript implements IProtoDoctypeScript {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoDoctypeScript
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoDoctypeScript
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoDmScript. */
@@ -14373,6 +15123,9 @@ export interface IProtoDmScript {
 
     /** ProtoDmScript uuid */
     uuid?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoDmScript. */
@@ -14383,6 +15136,9 @@ export class ProtoDmScript implements IProtoDmScript {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoDmScript);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoDmScript parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -14467,11 +15223,11 @@ export class ProtoDmScript implements IProtoDmScript {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoDmScript
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoDmScript
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoDynamicTemplate. */
@@ -14488,6 +15244,9 @@ export interface IProtoDynamicTemplate {
 
     /** ProtoDynamicTemplate comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoDynamicTemplate. */
@@ -14498,6 +15257,9 @@ export class ProtoDynamicTemplate implements IProtoDynamicTemplate {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoDynamicTemplate);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoDynamicTemplate parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -14582,11 +15344,11 @@ export class ProtoDynamicTemplate implements IProtoDynamicTemplate {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoDynamicTemplate
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoDynamicTemplate
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoSelection. */
@@ -14618,6 +15380,9 @@ export interface IProtoSelection {
 
     /** ProtoSelection max */
     max?: (number|Long|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoSelection. */
@@ -14628,6 +15393,9 @@ export class ProtoSelection implements IProtoSelection {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoSelection);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoSelection _children. */
     public _children: IProtoDocumentElement[];
@@ -14727,11 +15495,11 @@ export class ProtoSelection implements IProtoSelection {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoSelection
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoSelection
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoSelectionEntry. */
@@ -14757,6 +15525,9 @@ export interface IProtoSelectionEntry {
 
     /** ProtoSelectionEntry selected */
     selected?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoSelectionEntry. */
@@ -14767,6 +15538,9 @@ export class ProtoSelectionEntry implements IProtoSelectionEntry {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoSelectionEntry);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoSelectionEntry _children. */
     public _children: IProtoDocumentElement[];
@@ -14860,11 +15634,11 @@ export class ProtoSelectionEntry implements IProtoSelectionEntry {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoSelectionEntry
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoSelectionEntry
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoCondition. */
@@ -14890,6 +15664,9 @@ export interface IProtoCondition {
 
     /** ProtoCondition regenerate */
     regenerate?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoCondition. */
@@ -14900,6 +15677,9 @@ export class ProtoCondition implements IProtoCondition {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoCondition);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoCondition _children. */
     public _children: IProtoDocumentElement[];
@@ -14993,11 +15773,11 @@ export class ProtoCondition implements IProtoCondition {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoCondition
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoCondition
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoPageCondition. */
@@ -15017,6 +15797,9 @@ export interface IProtoPageCondition {
 
     /** ProtoPageCondition code */
     code?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoPageCondition. */
@@ -15027,6 +15810,9 @@ export class ProtoPageCondition implements IProtoPageCondition {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoPageCondition);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoPageCondition _children. */
     public _children: IProtoDocumentElement[];
@@ -15114,11 +15900,11 @@ export class ProtoPageCondition implements IProtoPageCondition {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoPageCondition
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoPageCondition
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoLocale. */
@@ -15141,6 +15927,9 @@ export interface IProtoLocale {
 
     /** ProtoLocale regionUUIDs */
     regionUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoLocale. */
@@ -15151,6 +15940,9 @@ export class ProtoLocale implements IProtoLocale {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoLocale);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoLocale _children. */
     public _children: IProtoDocumentElement[];
@@ -15241,11 +16033,11 @@ export class ProtoLocale implements IProtoLocale {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoLocale
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoLocale
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoTag. */
@@ -15271,6 +16063,9 @@ export interface IProtoTag {
 
     /** ProtoTag codeMode */
     codeMode?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoTag. */
@@ -15281,6 +16076,9 @@ export class ProtoTag implements IProtoTag {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoTag);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoTag parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -15374,11 +16172,11 @@ export class ProtoTag implements IProtoTag {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoTag
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoTag
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoParagraphSetDefault. */
@@ -15398,6 +16196,9 @@ export interface IProtoParagraphSetDefault {
 
     /** ProtoParagraphSetDefault comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoParagraphSetDefault. */
@@ -15408,6 +16209,9 @@ export class ProtoParagraphSetDefault implements IProtoParagraphSetDefault {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoParagraphSetDefault);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoParagraphSetDefault parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -15495,11 +16299,11 @@ export class ProtoParagraphSetDefault implements IProtoParagraphSetDefault {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoParagraphSetDefault
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoParagraphSetDefault
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoBaseTextInputField. */
@@ -15543,6 +16347,9 @@ export interface IProtoBaseTextInputField {
 
     /** ProtoBaseTextInputField pdfIsRichTextEnabled */
     pdfIsRichTextEnabled?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoBaseTextInputField. */
@@ -15553,6 +16360,9 @@ export class ProtoBaseTextInputField implements IProtoBaseTextInputField {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoBaseTextInputField);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoBaseTextInputField base. */
     public base?: (IProtoBaseInputField|null);
@@ -15664,11 +16474,11 @@ export class ProtoBaseTextInputField implements IProtoBaseTextInputField {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoBaseTextInputField
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoBaseTextInputField
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoInputFieldText. */
@@ -15679,6 +16489,9 @@ export interface IProtoInputFieldText {
 
     /** ProtoInputFieldText base */
     base?: (IProtoBaseTextInputField|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoInputFieldText. */
@@ -15689,6 +16502,9 @@ export class ProtoInputFieldText implements IProtoInputFieldText {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoInputFieldText);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoInputFieldText parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -15767,11 +16583,11 @@ export class ProtoInputFieldText implements IProtoInputFieldText {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoInputFieldText
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoInputFieldText
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoInputFieldDate. */
@@ -15782,6 +16598,9 @@ export interface IProtoInputFieldDate {
 
     /** ProtoInputFieldDate base */
     base?: (IProtoBaseTextInputField|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoInputFieldDate. */
@@ -15792,6 +16611,9 @@ export class ProtoInputFieldDate implements IProtoInputFieldDate {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoInputFieldDate);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoInputFieldDate parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -15870,11 +16692,11 @@ export class ProtoInputFieldDate implements IProtoInputFieldDate {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoInputFieldDate
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoInputFieldDate
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoInputFieldCheckbox. */
@@ -15885,6 +16707,9 @@ export interface IProtoInputFieldCheckbox {
 
     /** ProtoInputFieldCheckbox base */
     base?: (IProtoBaseInputField|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoInputFieldCheckbox. */
@@ -15895,6 +16720,9 @@ export class ProtoInputFieldCheckbox implements IProtoInputFieldCheckbox {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoInputFieldCheckbox);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoInputFieldCheckbox parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -15973,11 +16801,11 @@ export class ProtoInputFieldCheckbox implements IProtoInputFieldCheckbox {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoInputFieldCheckbox
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoInputFieldCheckbox
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoInputFieldLabel. */
@@ -15988,6 +16816,9 @@ export interface IProtoInputFieldLabel {
 
     /** ProtoInputFieldLabel base */
     base?: (IProtoBaseTextInputField|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoInputFieldLabel. */
@@ -15998,6 +16829,9 @@ export class ProtoInputFieldLabel implements IProtoInputFieldLabel {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoInputFieldLabel);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoInputFieldLabel parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -16076,11 +16910,11 @@ export class ProtoInputFieldLabel implements IProtoInputFieldLabel {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoInputFieldLabel
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoInputFieldLabel
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoInputFieldDropdown. */
@@ -16100,6 +16934,9 @@ export interface IProtoInputFieldDropdown {
 
     /** ProtoInputFieldDropdown optionsCode */
     optionsCode?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoInputFieldDropdown. */
@@ -16110,6 +16947,9 @@ export class ProtoInputFieldDropdown implements IProtoInputFieldDropdown {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoInputFieldDropdown);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoInputFieldDropdown parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -16197,11 +17037,11 @@ export class ProtoInputFieldDropdown implements IProtoInputFieldDropdown {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoInputFieldDropdown
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoInputFieldDropdown
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoColorChoice. */
@@ -16212,6 +17052,9 @@ export interface IProtoColorChoice {
 
     /** ProtoColorChoice colorDefinitionUUID */
     colorDefinitionUUID?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoColorChoice. */
@@ -16222,6 +17065,9 @@ export class ProtoColorChoice implements IProtoColorChoice {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoColorChoice);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoColorChoice color. */
     public color?: (IProtoColor|null);
@@ -16303,11 +17149,11 @@ export class ProtoColorChoice implements IProtoColorChoice {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoColorChoice
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoColorChoice
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoSetColor. */
@@ -16324,6 +17170,9 @@ export interface IProtoSetColor {
 
     /** ProtoSetColor comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoSetColor. */
@@ -16334,6 +17183,9 @@ export class ProtoSetColor implements IProtoSetColor {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoSetColor);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoSetColor parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -16418,11 +17270,11 @@ export class ProtoSetColor implements IProtoSetColor {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoSetColor
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoSetColor
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoUnsetColor. */
@@ -16439,6 +17291,9 @@ export interface IProtoUnsetColor {
 
     /** ProtoUnsetColor comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoUnsetColor. */
@@ -16449,6 +17304,9 @@ export class ProtoUnsetColor implements IProtoUnsetColor {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoUnsetColor);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoUnsetColor parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -16533,11 +17391,11 @@ export class ProtoUnsetColor implements IProtoUnsetColor {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoUnsetColor
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoUnsetColor
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }
 
 /** Properties of a ProtoColoredArea. */
@@ -16557,6 +17415,9 @@ export interface IProtoColoredArea {
 
     /** ProtoColoredArea comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
 }
 
 /** Represents a ProtoColoredArea. */
@@ -16567,6 +17428,9 @@ export class ProtoColoredArea implements IProtoColoredArea {
      * @param [properties] Properties to set
      */
     constructor(properties?: IProtoColoredArea);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
 
     /** ProtoColoredArea parent. */
     public parent?: (IProtoDocumentElement|null);
@@ -16654,9 +17518,9 @@ export class ProtoColoredArea implements IProtoColoredArea {
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for ProtoColoredArea
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
+     * Gets the type url for ProtoColoredArea
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
      */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+    public static getTypeUrl(prefix?: string): string;
 }

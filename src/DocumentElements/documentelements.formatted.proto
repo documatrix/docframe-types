@@ -11,4 +11,5 @@ message ProtoFormatted {
   string textContent = 7;
   string textCode = 8;
   repeated string comChannelUUIDs = 9;
+  string uuid = 10;
 }

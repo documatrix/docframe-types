@@ -2,4 +2,5 @@
 message ProtoApplyUlConfig {
   string ulConfigUuid = 1;
   repeated string comChannelUUIDs = 2;
+  string uuid = 3;
 }

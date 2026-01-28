@@ -9,4 +9,5 @@ message ProtoLink {
   string paragraphFormatInternalName = 5;
   string urlCode = 6;
   bool bindUrlCode = 7;
+  string uuid = 8;
 }
