@@ -13,5 +13,6 @@ message ProtoSubTotal {
   ProtoSubTotalPosition position = 4;
   ProtoMeasure height = 5;
   repeated string comChannelUUIDs = 6;
+  string uuid = 7;
 }
 

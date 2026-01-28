@@ -11389,6 +11389,7 @@ $root.ProtoLink = (function() {
      * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoLink _children
      * @property {string|null} [url] ProtoLink url
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoLink comChannelUUIDs
+     * @property {string|null} [uuid] ProtoLink uuid
      */
 
     /**
@@ -11433,6 +11434,14 @@ $root.ProtoLink = (function() {
     ProtoLink.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoLink uuid.
+     * @member {string} uuid
+     * @memberof ProtoLink
+     * @instance
+     */
+    ProtoLink.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoLink instance using the specified properties.
      * @function create
      * @memberof ProtoLink
@@ -11464,6 +11473,8 @@ $root.ProtoLink = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         return writer;
     };
 
@@ -11512,6 +11523,10 @@ $root.ProtoLink = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -11568,6 +11583,9 @@ $root.ProtoLink = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -11602,6 +11620,8 @@ $root.ProtoLink = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -11622,8 +11642,10 @@ $root.ProtoLink = (function() {
             object._children = [];
             object.comChannelUUIDs = [];
         }
-        if (options.defaults)
+        if (options.defaults) {
             object.url = "";
+            object.uuid = "";
+        }
         if (message._children && message._children.length) {
             object._children = [];
             for (var j = 0; j < message._children.length; ++j)
@@ -11636,6 +11658,8 @@ $root.ProtoLink = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -14622,6 +14646,7 @@ $root.ProtoListSetting = (function() {
      * @property {Array.<IProtoListLevelSetting>|null} [listLevelSettings] ProtoListSetting listLevelSettings
      * @property {IProtoListLevelSetting|null} [defaultListLevelSetting] ProtoListSetting defaultListLevelSetting
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoListSetting comChannelUUIDs
+     * @property {string|null} [uuid] ProtoListSetting uuid
      */
 
     /**
@@ -14682,6 +14707,14 @@ $root.ProtoListSetting = (function() {
     ProtoListSetting.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoListSetting uuid.
+     * @member {string} uuid
+     * @memberof ProtoListSetting
+     * @instance
+     */
+    ProtoListSetting.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoListSetting instance using the specified properties.
      * @function create
      * @memberof ProtoListSetting
@@ -14717,6 +14750,8 @@ $root.ProtoListSetting = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 5, wireType 2 =*/42).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.uuid);
         return writer;
     };
 
@@ -14773,6 +14808,10 @@ $root.ProtoListSetting = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 6: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -14839,6 +14878,9 @@ $root.ProtoListSetting = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -14883,6 +14925,8 @@ $root.ProtoListSetting = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -14907,6 +14951,7 @@ $root.ProtoListSetting = (function() {
             object.parent = null;
             object.name = "";
             object.defaultListLevelSetting = null;
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -14924,6 +14969,8 @@ $root.ProtoListSetting = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -16028,6 +16075,7 @@ $root.ProtoParagraphFormat = (function() {
      * @property {IProtoBoxedString|null} [postNamedString] ProtoParagraphFormat postNamedString
      * @property {IProtoBoxedString|null} [semanticType] ProtoParagraphFormat semanticType
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoParagraphFormat comChannelUUIDs
+     * @property {string|null} [uuid] ProtoParagraphFormat uuid
      */
 
     /**
@@ -16279,6 +16327,14 @@ $root.ProtoParagraphFormat = (function() {
     ProtoParagraphFormat.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoParagraphFormat uuid.
+     * @member {string} uuid
+     * @memberof ProtoParagraphFormat
+     * @instance
+     */
+    ProtoParagraphFormat.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoParagraphFormat instance using the specified properties.
      * @function create
      * @memberof ProtoParagraphFormat
@@ -16361,6 +16417,8 @@ $root.ProtoParagraphFormat = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 29, wireType 2 =*/234).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 30, wireType 2 =*/242).string(message.uuid);
         return writer;
     };
 
@@ -16511,6 +16569,10 @@ $root.ProtoParagraphFormat = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 30: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -16695,6 +16757,9 @@ $root.ProtoParagraphFormat = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -16857,6 +16922,8 @@ $root.ProtoParagraphFormat = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -16904,6 +16971,7 @@ $root.ProtoParagraphFormat = (function() {
             object.preNamedString = null;
             object.postNamedString = null;
             object.semanticType = null;
+            object.uuid = "";
         }
         if (message.baseFormat != null && message.hasOwnProperty("baseFormat"))
             object.baseFormat = $root.ProtoParagraphFormat.toObject(message.baseFormat, options);
@@ -16966,6 +17034,8 @@ $root.ProtoParagraphFormat = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -17347,6 +17417,7 @@ $root.ProtoSpaceVertically = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoSpaceVertically parent
      * @property {IProtoMeasure|null} [space] ProtoSpaceVertically space
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoSpaceVertically comChannelUUIDs
+     * @property {string|null} [uuid] ProtoSpaceVertically uuid
      */
 
     /**
@@ -17390,6 +17461,14 @@ $root.ProtoSpaceVertically = (function() {
     ProtoSpaceVertically.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoSpaceVertically uuid.
+     * @member {string} uuid
+     * @memberof ProtoSpaceVertically
+     * @instance
+     */
+    ProtoSpaceVertically.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoSpaceVertically instance using the specified properties.
      * @function create
      * @memberof ProtoSpaceVertically
@@ -17420,6 +17499,8 @@ $root.ProtoSpaceVertically = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         return writer;
     };
 
@@ -17466,6 +17547,10 @@ $root.ProtoSpaceVertically = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -17520,6 +17605,9 @@ $root.ProtoSpaceVertically = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -17552,6 +17640,8 @@ $root.ProtoSpaceVertically = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -17573,6 +17663,7 @@ $root.ProtoSpaceVertically = (function() {
         if (options.defaults) {
             object.parent = null;
             object.space = null;
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -17583,6 +17674,8 @@ $root.ProtoSpaceVertically = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -17631,6 +17724,7 @@ $root.ProtoSpan = (function() {
      * @property {IProtoBoxedBool|null} [underline] ProtoSpan underline
      * @property {IProtoBoxedBool|null} [strikethrough] ProtoSpan strikethrough
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoSpan comChannelUUIDs
+     * @property {string|null} [uuid] ProtoSpan uuid
      */
 
     /**
@@ -17731,6 +17825,14 @@ $root.ProtoSpan = (function() {
     ProtoSpan.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoSpan uuid.
+     * @member {string} uuid
+     * @memberof ProtoSpan
+     * @instance
+     */
+    ProtoSpan.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoSpan instance using the specified properties.
      * @function create
      * @memberof ProtoSpan
@@ -17776,6 +17878,8 @@ $root.ProtoSpan = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 10, wireType 2 =*/82).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 11, wireType 2 =*/90).string(message.uuid);
         return writer;
     };
 
@@ -17852,6 +17956,10 @@ $root.ProtoSpan = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 11: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -17945,6 +18053,9 @@ $root.ProtoSpan = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -18017,6 +18128,8 @@ $root.ProtoSpan = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -18046,6 +18159,7 @@ $root.ProtoSpan = (function() {
             object.superscript = null;
             object.underline = null;
             object.strikethrough = null;
+            object.uuid = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -18073,6 +18187,8 @@ $root.ProtoSpan = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -18544,6 +18660,7 @@ $root.ProtoTableConfig = (function() {
      * @property {IProtoTableSettings|null} [settings] ProtoTableConfig settings
      * @property {string|null} [configName] ProtoTableConfig configName
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTableConfig comChannelUUIDs
+     * @property {string|null} [uuid] ProtoTableConfig uuid
      */
 
     /**
@@ -18595,6 +18712,14 @@ $root.ProtoTableConfig = (function() {
     ProtoTableConfig.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoTableConfig uuid.
+     * @member {string} uuid
+     * @memberof ProtoTableConfig
+     * @instance
+     */
+    ProtoTableConfig.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoTableConfig instance using the specified properties.
      * @function create
      * @memberof ProtoTableConfig
@@ -18627,6 +18752,8 @@ $root.ProtoTableConfig = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.uuid);
         return writer;
     };
 
@@ -18677,6 +18804,10 @@ $root.ProtoTableConfig = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 5: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -18734,6 +18865,9 @@ $root.ProtoTableConfig = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -18768,6 +18902,8 @@ $root.ProtoTableConfig = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -18790,6 +18926,7 @@ $root.ProtoTableConfig = (function() {
             object.parent = null;
             object.settings = null;
             object.configName = "";
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -18802,6 +18939,8 @@ $root.ProtoTableConfig = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -19789,6 +19928,7 @@ $root.ProtoTableContentGroupConfig = (function() {
      * @property {IProtoTableContentGroupSettings|null} [settings] ProtoTableContentGroupConfig settings
      * @property {string|null} [configName] ProtoTableContentGroupConfig configName
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTableContentGroupConfig comChannelUUIDs
+     * @property {string|null} [uuid] ProtoTableContentGroupConfig uuid
      */
 
     /**
@@ -19840,6 +19980,14 @@ $root.ProtoTableContentGroupConfig = (function() {
     ProtoTableContentGroupConfig.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoTableContentGroupConfig uuid.
+     * @member {string} uuid
+     * @memberof ProtoTableContentGroupConfig
+     * @instance
+     */
+    ProtoTableContentGroupConfig.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoTableContentGroupConfig instance using the specified properties.
      * @function create
      * @memberof ProtoTableContentGroupConfig
@@ -19872,6 +20020,8 @@ $root.ProtoTableContentGroupConfig = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.uuid);
         return writer;
     };
 
@@ -19922,6 +20072,10 @@ $root.ProtoTableContentGroupConfig = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 5: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -19979,6 +20133,9 @@ $root.ProtoTableContentGroupConfig = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -20013,6 +20170,8 @@ $root.ProtoTableContentGroupConfig = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -20035,6 +20194,7 @@ $root.ProtoTableContentGroupConfig = (function() {
             object.parent = null;
             object.settings = null;
             object.configName = "";
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -20047,6 +20207,8 @@ $root.ProtoTableContentGroupConfig = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -20751,6 +20913,7 @@ $root.ProtoTableRowConfig = (function() {
      * @property {string|null} [rowHeader] ProtoTableRowConfig rowHeader
      * @property {string|null} [rowFooter] ProtoTableRowConfig rowFooter
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTableRowConfig comChannelUUIDs
+     * @property {string|null} [uuid] ProtoTableRowConfig uuid
      */
 
     /**
@@ -20818,6 +20981,14 @@ $root.ProtoTableRowConfig = (function() {
     ProtoTableRowConfig.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoTableRowConfig uuid.
+     * @member {string} uuid
+     * @memberof ProtoTableRowConfig
+     * @instance
+     */
+    ProtoTableRowConfig.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoTableRowConfig instance using the specified properties.
      * @function create
      * @memberof ProtoTableRowConfig
@@ -20854,6 +21025,8 @@ $root.ProtoTableRowConfig = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 6, wireType 2 =*/50).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.uuid);
         return writer;
     };
 
@@ -20912,6 +21085,10 @@ $root.ProtoTableRowConfig = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 7: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -20975,6 +21152,9 @@ $root.ProtoTableRowConfig = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -21013,6 +21193,8 @@ $root.ProtoTableRowConfig = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -21037,6 +21219,7 @@ $root.ProtoTableRowConfig = (function() {
             object.configName = "";
             object.rowHeader = "";
             object.rowFooter = "";
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -21053,6 +21236,8 @@ $root.ProtoTableRowConfig = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -22024,6 +22209,7 @@ $root.ProtoTableCellConfig = (function() {
      * @property {string|null} [configName] ProtoTableCellConfig configName
      * @property {IProtoBoxedTableCellType|null} [cellType] ProtoTableCellConfig cellType
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTableCellConfig comChannelUUIDs
+     * @property {string|null} [uuid] ProtoTableCellConfig uuid
      */
 
     /**
@@ -22083,6 +22269,14 @@ $root.ProtoTableCellConfig = (function() {
     ProtoTableCellConfig.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoTableCellConfig uuid.
+     * @member {string} uuid
+     * @memberof ProtoTableCellConfig
+     * @instance
+     */
+    ProtoTableCellConfig.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoTableCellConfig instance using the specified properties.
      * @function create
      * @memberof ProtoTableCellConfig
@@ -22117,6 +22311,8 @@ $root.ProtoTableCellConfig = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 5, wireType 2 =*/42).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.uuid);
         return writer;
     };
 
@@ -22171,6 +22367,10 @@ $root.ProtoTableCellConfig = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 6: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -22233,6 +22433,9 @@ $root.ProtoTableCellConfig = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -22272,6 +22475,8 @@ $root.ProtoTableCellConfig = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -22295,6 +22500,7 @@ $root.ProtoTableCellConfig = (function() {
             object.settings = null;
             object.configName = "";
             object.cellType = null;
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -22309,6 +22515,8 @@ $root.ProtoTableCellConfig = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -26363,6 +26571,7 @@ $root.ProtoText = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoText parent
      * @property {string|null} [content] ProtoText content
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoText comChannelUUIDs
+     * @property {string|null} [uuid] ProtoText uuid
      */
 
     /**
@@ -26406,6 +26615,14 @@ $root.ProtoText = (function() {
     ProtoText.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoText uuid.
+     * @member {string} uuid
+     * @memberof ProtoText
+     * @instance
+     */
+    ProtoText.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoText instance using the specified properties.
      * @function create
      * @memberof ProtoText
@@ -26436,6 +26653,8 @@ $root.ProtoText = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         return writer;
     };
 
@@ -26482,6 +26701,10 @@ $root.ProtoText = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -26534,6 +26757,9 @@ $root.ProtoText = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -26563,6 +26789,8 @@ $root.ProtoText = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -26584,6 +26812,7 @@ $root.ProtoText = (function() {
         if (options.defaults) {
             object.parent = null;
             object.content = "";
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -26594,6 +26823,8 @@ $root.ProtoText = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -27371,6 +27602,7 @@ $root.ProtoBrickReference = (function() {
      * @property {string|null} [internName] ProtoBrickReference internName
      * @property {number|null} [version] ProtoBrickReference version
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoBrickReference comChannelUUIDs
+     * @property {string|null} [uuid] ProtoBrickReference uuid
      */
 
     /**
@@ -27414,6 +27646,14 @@ $root.ProtoBrickReference = (function() {
     ProtoBrickReference.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoBrickReference uuid.
+     * @member {string} uuid
+     * @memberof ProtoBrickReference
+     * @instance
+     */
+    ProtoBrickReference.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoBrickReference instance using the specified properties.
      * @function create
      * @memberof ProtoBrickReference
@@ -27444,6 +27684,8 @@ $root.ProtoBrickReference = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         return writer;
     };
 
@@ -27490,6 +27732,10 @@ $root.ProtoBrickReference = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -27540,6 +27786,9 @@ $root.ProtoBrickReference = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -27566,6 +27815,8 @@ $root.ProtoBrickReference = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -27587,6 +27838,7 @@ $root.ProtoBrickReference = (function() {
         if (options.defaults) {
             object.internName = "";
             object.version = 0;
+            object.uuid = "";
         }
         if (message.internName != null && message.hasOwnProperty("internName"))
             object.internName = message.internName;
@@ -27597,6 +27849,8 @@ $root.ProtoBrickReference = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -34231,6 +34485,7 @@ $root.ProtoFormatted = (function() {
      * @property {string|null} [textContent] ProtoFormatted textContent
      * @property {string|null} [textCode] ProtoFormatted textCode
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoFormatted comChannelUUIDs
+     * @property {string|null} [uuid] ProtoFormatted uuid
      */
 
     /**
@@ -34322,6 +34577,14 @@ $root.ProtoFormatted = (function() {
     ProtoFormatted.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoFormatted uuid.
+     * @member {string} uuid
+     * @memberof ProtoFormatted
+     * @instance
+     */
+    ProtoFormatted.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoFormatted instance using the specified properties.
      * @function create
      * @memberof ProtoFormatted
@@ -34364,6 +34627,8 @@ $root.ProtoFormatted = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 9, wireType 2 =*/74).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 10, wireType 2 =*/82).string(message.uuid);
         return writer;
     };
 
@@ -34436,6 +34701,10 @@ $root.ProtoFormatted = (function() {
                     message.comChannelUUIDs.push(reader.string());
                     break;
                 }
+            case 10: {
+                    message.uuid = reader.string();
+                    break;
+                }
             default:
                 reader.skipType(tag & 7);
                 break;
@@ -34504,6 +34773,9 @@ $root.ProtoFormatted = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -34545,6 +34817,8 @@ $root.ProtoFormatted = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -34572,6 +34846,7 @@ $root.ProtoFormatted = (function() {
             object.htmlCode = "";
             object.textContent = "";
             object.textCode = "";
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -34594,6 +34869,8 @@ $root.ProtoFormatted = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -34634,6 +34911,7 @@ $root.ProtoApplyProtoCDef = (function() {
      * @interface IProtoApplyProtoCDef
      * @property {string|null} [cDefUuid] ProtoApplyProtoCDef cDefUuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoApplyProtoCDef comChannelUUIDs
+     * @property {string|null} [uuid] ProtoApplyProtoCDef uuid
      */
 
     /**
@@ -34669,6 +34947,14 @@ $root.ProtoApplyProtoCDef = (function() {
     ProtoApplyProtoCDef.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoApplyProtoCDef uuid.
+     * @member {string} uuid
+     * @memberof ProtoApplyProtoCDef
+     * @instance
+     */
+    ProtoApplyProtoCDef.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoApplyProtoCDef instance using the specified properties.
      * @function create
      * @memberof ProtoApplyProtoCDef
@@ -34697,6 +34983,8 @@ $root.ProtoApplyProtoCDef = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
         return writer;
     };
 
@@ -34739,6 +35027,10 @@ $root.ProtoApplyProtoCDef = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 3: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -34786,6 +35078,9 @@ $root.ProtoApplyProtoCDef = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -34810,6 +35105,8 @@ $root.ProtoApplyProtoCDef = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -34828,8 +35125,10 @@ $root.ProtoApplyProtoCDef = (function() {
         var object = {};
         if (options.arrays || options.defaults)
             object.comChannelUUIDs = [];
-        if (options.defaults)
+        if (options.defaults) {
             object.cDefUuid = "";
+            object.uuid = "";
+        }
         if (message.cDefUuid != null && message.hasOwnProperty("cDefUuid"))
             object.cDefUuid = message.cDefUuid;
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
@@ -34837,6 +35136,8 @@ $root.ProtoApplyProtoCDef = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -34877,6 +35178,7 @@ $root.ProtoApplyProtoPDef = (function() {
      * @interface IProtoApplyProtoPDef
      * @property {string|null} [pDefUuid] ProtoApplyProtoPDef pDefUuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoApplyProtoPDef comChannelUUIDs
+     * @property {string|null} [uuid] ProtoApplyProtoPDef uuid
      */
 
     /**
@@ -34912,6 +35214,14 @@ $root.ProtoApplyProtoPDef = (function() {
     ProtoApplyProtoPDef.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoApplyProtoPDef uuid.
+     * @member {string} uuid
+     * @memberof ProtoApplyProtoPDef
+     * @instance
+     */
+    ProtoApplyProtoPDef.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoApplyProtoPDef instance using the specified properties.
      * @function create
      * @memberof ProtoApplyProtoPDef
@@ -34940,6 +35250,8 @@ $root.ProtoApplyProtoPDef = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
         return writer;
     };
 
@@ -34982,6 +35294,10 @@ $root.ProtoApplyProtoPDef = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 3: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -35029,6 +35345,9 @@ $root.ProtoApplyProtoPDef = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -35053,6 +35372,8 @@ $root.ProtoApplyProtoPDef = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -35071,8 +35392,10 @@ $root.ProtoApplyProtoPDef = (function() {
         var object = {};
         if (options.arrays || options.defaults)
             object.comChannelUUIDs = [];
-        if (options.defaults)
+        if (options.defaults) {
             object.pDefUuid = "";
+            object.uuid = "";
+        }
         if (message.pDefUuid != null && message.hasOwnProperty("pDefUuid"))
             object.pDefUuid = message.pDefUuid;
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
@@ -35080,6 +35403,8 @@ $root.ProtoApplyProtoPDef = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -35120,6 +35445,7 @@ $root.ProtoApplyPtConfig = (function() {
      * @interface IProtoApplyPtConfig
      * @property {string|null} [ptConfigUuid] ProtoApplyPtConfig ptConfigUuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoApplyPtConfig comChannelUUIDs
+     * @property {string|null} [uuid] ProtoApplyPtConfig uuid
      */
 
     /**
@@ -35155,6 +35481,14 @@ $root.ProtoApplyPtConfig = (function() {
     ProtoApplyPtConfig.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoApplyPtConfig uuid.
+     * @member {string} uuid
+     * @memberof ProtoApplyPtConfig
+     * @instance
+     */
+    ProtoApplyPtConfig.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoApplyPtConfig instance using the specified properties.
      * @function create
      * @memberof ProtoApplyPtConfig
@@ -35183,6 +35517,8 @@ $root.ProtoApplyPtConfig = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
         return writer;
     };
 
@@ -35225,6 +35561,10 @@ $root.ProtoApplyPtConfig = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 3: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -35272,6 +35612,9 @@ $root.ProtoApplyPtConfig = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -35296,6 +35639,8 @@ $root.ProtoApplyPtConfig = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -35314,8 +35659,10 @@ $root.ProtoApplyPtConfig = (function() {
         var object = {};
         if (options.arrays || options.defaults)
             object.comChannelUUIDs = [];
-        if (options.defaults)
+        if (options.defaults) {
             object.ptConfigUuid = "";
+            object.uuid = "";
+        }
         if (message.ptConfigUuid != null && message.hasOwnProperty("ptConfigUuid"))
             object.ptConfigUuid = message.ptConfigUuid;
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
@@ -35323,6 +35670,8 @@ $root.ProtoApplyPtConfig = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -35363,6 +35712,7 @@ $root.ProtoApplyUlConfig = (function() {
      * @interface IProtoApplyUlConfig
      * @property {string|null} [ulConfigUuid] ProtoApplyUlConfig ulConfigUuid
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoApplyUlConfig comChannelUUIDs
+     * @property {string|null} [uuid] ProtoApplyUlConfig uuid
      */
 
     /**
@@ -35398,6 +35748,14 @@ $root.ProtoApplyUlConfig = (function() {
     ProtoApplyUlConfig.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoApplyUlConfig uuid.
+     * @member {string} uuid
+     * @memberof ProtoApplyUlConfig
+     * @instance
+     */
+    ProtoApplyUlConfig.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoApplyUlConfig instance using the specified properties.
      * @function create
      * @memberof ProtoApplyUlConfig
@@ -35426,6 +35784,8 @@ $root.ProtoApplyUlConfig = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
         return writer;
     };
 
@@ -35468,6 +35828,10 @@ $root.ProtoApplyUlConfig = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 3: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -35515,6 +35879,9 @@ $root.ProtoApplyUlConfig = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -35539,6 +35906,8 @@ $root.ProtoApplyUlConfig = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -35557,8 +35926,10 @@ $root.ProtoApplyUlConfig = (function() {
         var object = {};
         if (options.arrays || options.defaults)
             object.comChannelUUIDs = [];
-        if (options.defaults)
+        if (options.defaults) {
             object.ulConfigUuid = "";
+            object.uuid = "";
+        }
         if (message.ulConfigUuid != null && message.hasOwnProperty("ulConfigUuid"))
             object.ulConfigUuid = message.ulConfigUuid;
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
@@ -35566,6 +35937,8 @@ $root.ProtoApplyUlConfig = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -37764,6 +38137,7 @@ $root.ProtoCarryOver = (function() {
      * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoCarryOver _children
      * @property {IProtoDocumentElement|null} [parent] ProtoCarryOver parent
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoCarryOver comChannelUUIDs
+     * @property {string|null} [uuid] ProtoCarryOver uuid
      */
 
     /**
@@ -37808,6 +38182,14 @@ $root.ProtoCarryOver = (function() {
     ProtoCarryOver.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoCarryOver uuid.
+     * @member {string} uuid
+     * @memberof ProtoCarryOver
+     * @instance
+     */
+    ProtoCarryOver.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoCarryOver instance using the specified properties.
      * @function create
      * @memberof ProtoCarryOver
@@ -37839,6 +38221,8 @@ $root.ProtoCarryOver = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         return writer;
     };
 
@@ -37887,6 +38271,10 @@ $root.ProtoCarryOver = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -37945,6 +38333,9 @@ $root.ProtoCarryOver = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -37982,6 +38373,8 @@ $root.ProtoCarryOver = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -38002,8 +38395,10 @@ $root.ProtoCarryOver = (function() {
             object._children = [];
             object.comChannelUUIDs = [];
         }
-        if (options.defaults)
+        if (options.defaults) {
             object.parent = null;
+            object.uuid = "";
+        }
         if (message._children && message._children.length) {
             object._children = [];
             for (var j = 0; j < message._children.length; ++j)
@@ -38016,6 +38411,8 @@ $root.ProtoCarryOver = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -38791,6 +39188,7 @@ $root.ProtoSubTotal = (function() {
      * @property {ProtoSubTotalPosition|null} [position] ProtoSubTotal position
      * @property {IProtoMeasure|null} [height] ProtoSubTotal height
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoSubTotal comChannelUUIDs
+     * @property {string|null} [uuid] ProtoSubTotal uuid
      */
 
     /**
@@ -38859,6 +39257,14 @@ $root.ProtoSubTotal = (function() {
     ProtoSubTotal.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoSubTotal uuid.
+     * @member {string} uuid
+     * @memberof ProtoSubTotal
+     * @instance
+     */
+    ProtoSubTotal.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoSubTotal instance using the specified properties.
      * @function create
      * @memberof ProtoSubTotal
@@ -38896,6 +39302,8 @@ $root.ProtoSubTotal = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 6, wireType 2 =*/50).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.uuid);
         return writer;
     };
 
@@ -38956,6 +39364,10 @@ $root.ProtoSubTotal = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 7: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -39030,6 +39442,9 @@ $root.ProtoSubTotal = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -39090,6 +39505,8 @@ $root.ProtoSubTotal = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -39115,6 +39532,7 @@ $root.ProtoSubTotal = (function() {
             object.applyImmediate = false;
             object.position = options.enums === String ? "POSITION_ABOVE_FOOTER" : 0;
             object.height = null;
+            object.uuid = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -39134,6 +39552,8 @@ $root.ProtoSubTotal = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -39175,6 +39595,7 @@ $root.ProtoWsArea = (function() {
      * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoWsArea _children
      * @property {IProtoDocumentElement|null} [parent] ProtoWsArea parent
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoWsArea comChannelUUIDs
+     * @property {string|null} [uuid] ProtoWsArea uuid
      */
 
     /**
@@ -39219,6 +39640,14 @@ $root.ProtoWsArea = (function() {
     ProtoWsArea.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoWsArea uuid.
+     * @member {string} uuid
+     * @memberof ProtoWsArea
+     * @instance
+     */
+    ProtoWsArea.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoWsArea instance using the specified properties.
      * @function create
      * @memberof ProtoWsArea
@@ -39250,6 +39679,8 @@ $root.ProtoWsArea = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         return writer;
     };
 
@@ -39298,6 +39729,10 @@ $root.ProtoWsArea = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -39356,6 +39791,9 @@ $root.ProtoWsArea = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -39393,6 +39831,8 @@ $root.ProtoWsArea = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -39413,8 +39853,10 @@ $root.ProtoWsArea = (function() {
             object._children = [];
             object.comChannelUUIDs = [];
         }
-        if (options.defaults)
+        if (options.defaults) {
             object.parent = null;
+            object.uuid = "";
+        }
         if (message._children && message._children.length) {
             object._children = [];
             for (var j = 0; j < message._children.length; ++j)
@@ -39427,6 +39869,8 @@ $root.ProtoWsArea = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -39475,6 +39919,7 @@ $root.ProtoRule = (function() {
      * @property {ProtoRuleMode|null} [mode] ProtoRule mode
      * @property {IProtoRuleBoundaries|null} [boundaries] ProtoRule boundaries
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoRule comChannelUUIDs
+     * @property {string|null} [uuid] ProtoRule uuid
      */
 
     /**
@@ -39574,6 +40019,14 @@ $root.ProtoRule = (function() {
     ProtoRule.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoRule uuid.
+     * @member {string} uuid
+     * @memberof ProtoRule
+     * @instance
+     */
+    ProtoRule.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoRule instance using the specified properties.
      * @function create
      * @memberof ProtoRule
@@ -39618,6 +40071,8 @@ $root.ProtoRule = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 10, wireType 2 =*/82).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 11, wireType 2 =*/90).string(message.uuid);
         return writer;
     };
 
@@ -39692,6 +40147,10 @@ $root.ProtoRule = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 11: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -39796,6 +40255,9 @@ $root.ProtoRule = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -39926,6 +40388,8 @@ $root.ProtoRule = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -39954,6 +40418,7 @@ $root.ProtoRule = (function() {
             object.style = options.enums === String ? "DUMMY_RULE_STYLE" : 0;
             object.mode = options.enums === String ? "NORMAL" : 0;
             object.boundaries = null;
+            object.uuid = "";
         }
         if (message.xOffset != null && message.hasOwnProperty("xOffset"))
             object.xOffset = $root.ProtoMeasure.toObject(message.xOffset, options);
@@ -39978,6 +40443,8 @@ $root.ProtoRule = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -40269,6 +40736,7 @@ $root.ProtoColorDef = (function() {
      * @interface IProtoColorDef
      * @property {IProtoColor|null} [color] ProtoColorDef color
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoColorDef comChannelUUIDs
+     * @property {string|null} [uuid] ProtoColorDef uuid
      */
 
     /**
@@ -40304,6 +40772,14 @@ $root.ProtoColorDef = (function() {
     ProtoColorDef.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoColorDef uuid.
+     * @member {string} uuid
+     * @memberof ProtoColorDef
+     * @instance
+     */
+    ProtoColorDef.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoColorDef instance using the specified properties.
      * @function create
      * @memberof ProtoColorDef
@@ -40332,6 +40808,8 @@ $root.ProtoColorDef = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
         return writer;
     };
 
@@ -40374,6 +40852,10 @@ $root.ProtoColorDef = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 3: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -40423,6 +40905,9 @@ $root.ProtoColorDef = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -40450,6 +40935,8 @@ $root.ProtoColorDef = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -40468,8 +40955,10 @@ $root.ProtoColorDef = (function() {
         var object = {};
         if (options.arrays || options.defaults)
             object.comChannelUUIDs = [];
-        if (options.defaults)
+        if (options.defaults) {
             object.color = null;
+            object.uuid = "";
+        }
         if (message.color != null && message.hasOwnProperty("color"))
             object.color = $root.ProtoColor.toObject(message.color, options);
         if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
@@ -40477,6 +40966,8 @@ $root.ProtoColorDef = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -40518,6 +41009,7 @@ $root.ProtoLayout = (function() {
      * @property {IProtoDocumentElement|null} [parent] ProtoLayout parent
      * @property {string|null} [name] ProtoLayout name
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoLayout comChannelUUIDs
+     * @property {string|null} [uuid] ProtoLayout uuid
      */
 
     /**
@@ -40561,6 +41053,14 @@ $root.ProtoLayout = (function() {
     ProtoLayout.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoLayout uuid.
+     * @member {string} uuid
+     * @memberof ProtoLayout
+     * @instance
+     */
+    ProtoLayout.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoLayout instance using the specified properties.
      * @function create
      * @memberof ProtoLayout
@@ -40591,6 +41091,8 @@ $root.ProtoLayout = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         return writer;
     };
 
@@ -40637,6 +41139,10 @@ $root.ProtoLayout = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -40689,6 +41195,9 @@ $root.ProtoLayout = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -40718,6 +41227,8 @@ $root.ProtoLayout = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -40739,6 +41250,7 @@ $root.ProtoLayout = (function() {
         if (options.defaults) {
             object.parent = null;
             object.name = "";
+            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -40749,6 +41261,8 @@ $root.ProtoLayout = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -41324,6 +41838,7 @@ $root.ProtoAdjustHorizontally = (function() {
      * @property {IProtoMeasure|null} [minFontSize] ProtoAdjustHorizontally minFontSize
      * @property {IProtoMeasure|null} [maxFontSize] ProtoAdjustHorizontally maxFontSize
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoAdjustHorizontally comChannelUUIDs
+     * @property {string|null} [uuid] ProtoAdjustHorizontally uuid
      */
 
     /**
@@ -41384,6 +41899,14 @@ $root.ProtoAdjustHorizontally = (function() {
     ProtoAdjustHorizontally.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoAdjustHorizontally uuid.
+     * @member {string} uuid
+     * @memberof ProtoAdjustHorizontally
+     * @instance
+     */
+    ProtoAdjustHorizontally.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoAdjustHorizontally instance using the specified properties.
      * @function create
      * @memberof ProtoAdjustHorizontally
@@ -41419,6 +41942,8 @@ $root.ProtoAdjustHorizontally = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 5, wireType 2 =*/42).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.uuid);
         return writer;
     };
 
@@ -41475,6 +42000,10 @@ $root.ProtoAdjustHorizontally = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 6: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -41543,6 +42072,9 @@ $root.ProtoAdjustHorizontally = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -41590,6 +42122,8 @@ $root.ProtoAdjustHorizontally = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -41614,6 +42148,7 @@ $root.ProtoAdjustHorizontally = (function() {
             object.parent = null;
             object.minFontSize = null;
             object.maxFontSize = null;
+            object.uuid = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -41631,6 +42166,8 @@ $root.ProtoAdjustHorizontally = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 

@@ -369,6 +369,7 @@ repeated ProtoDocumentElement _children = 1;
 
 string url = 2;
 repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }
 enum ProtoNumberType {
 ARABIC = 0;
@@ -486,6 +487,7 @@ string name = 2;
 repeated ProtoListLevelSetting listLevelSettings = 3;
 ProtoListLevelSetting defaultListLevelSetting = 4;
 repeated string comChannelUUIDs = 5;
+string uuid = 6;
 }
 
 message ProtoBoxedListSetting {
@@ -543,6 +545,7 @@ ProtoBoxedString preNamedString = 26;
 ProtoBoxedString postNamedString = 27;
 ProtoBoxedString semanticType = 28;
 repeated string comChannelUUIDs = 29;
+string uuid = 30;
 }
 message ProtoSection {
 repeated ProtoDocumentElement _children = 1;
@@ -558,6 +561,7 @@ ProtoDocumentElement parent = 1;
 
 ProtoMeasure space = 2;
 repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }
 message ProtoSpan {
 repeated ProtoDocumentElement _children = 1;
@@ -571,6 +575,7 @@ ProtoBoxedBool superscript = 7;
 ProtoBoxedBool underline = 8;
 ProtoBoxedBool strikethrough = 9;
 repeated string comChannelUUIDs = 10;
+string uuid = 11;
 }
 message ProtoTable {
 repeated ProtoDocumentElement _children = 1;
@@ -591,6 +596,7 @@ ProtoDocumentElement parent = 1;
 ProtoTableSettings settings = 2;
 string configName = 3;
 repeated string comChannelUUIDs = 4;
+string uuid = 5;
 }
 
 message ProtoTableSettings {
@@ -629,6 +635,7 @@ ProtoDocumentElement parent = 1;
 ProtoTableContentGroupSettings settings = 2;
 string configName = 3;
 repeated string comChannelUUIDs = 4;
+string uuid = 5;
 }
 
 message ProtoTableContentGroupSettings {
@@ -656,6 +663,7 @@ string configName = 3;
 string rowHeader = 4;
 string rowFooter = 5;
 repeated string comChannelUUIDs = 6;
+string uuid = 7;
 }
 
 message ProtoTableRowSettings {
@@ -693,6 +701,7 @@ ProtoTableCellSettings settings = 2;
 string configName = 3;
 ProtoBoxedTableCellType cellType = 4;
 repeated string comChannelUUIDs = 5;
+string uuid = 6;
 }
 
 message ProtoTableCellSettings {
@@ -836,6 +845,7 @@ ProtoDocumentElement parent = 1;
 
 string content = 2;
 repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }
 message ProtoBarcode {
 ProtoBarcodeType type = 1;
@@ -860,6 +870,7 @@ message ProtoBrickReference {
 string internName = 1;
 uint32 version = 2;
 repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }
 message ProtoBrick {
 repeated ProtoDocumentElement _children = 1;
@@ -1167,26 +1178,31 @@ string htmlCode = 6;
 string textContent = 7;
 string textCode = 8;
 repeated string comChannelUUIDs = 9;
+string uuid = 10;
 }
 
 message ProtoApplyProtoCDef {
 string cDefUuid = 1;
 repeated string comChannelUUIDs = 2;
+string uuid = 3;
 }
 
 message ProtoApplyProtoPDef {
 string pDefUuid = 1;
 repeated string comChannelUUIDs = 2;
+string uuid = 3;
 }
 
 message ProtoApplyPtConfig {
 string ptConfigUuid = 1;
 repeated string comChannelUUIDs = 2;
+string uuid = 3;
 }
 
 message ProtoApplyUlConfig {
 string ulConfigUuid = 1;
 repeated string comChannelUUIDs = 2;
+string uuid = 3;
 }
 
 
@@ -1259,6 +1275,7 @@ repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
 
 repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }
 message ProtoLoopEntry {
 repeated ProtoDocumentElement _children = 1;
@@ -1290,6 +1307,7 @@ bool apply_immediate = 3;
 ProtoSubTotalPosition position = 4;
 ProtoMeasure height = 5;
 repeated string comChannelUUIDs = 6;
+string uuid = 7;
 }
 
 message ProtoWsArea {
@@ -1297,6 +1315,7 @@ repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;
 
 repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }
 message ProtoRule {
 ProtoMeasure xOffset = 1;
@@ -1309,6 +1328,7 @@ ProtoRuleStyle style = 7;
 ProtoRuleMode mode = 8;
 ProtoRuleBoundaries boundaries = 9;
 repeated string comChannelUUIDs = 10;
+string uuid = 11;
 }
 
 enum ProtoRuleMode {
@@ -1323,12 +1343,14 @@ ProtoMeasure end = 2;
 message ProtoColorDef {
 ProtoColor color = 1;
 repeated string comChannelUUIDs = 2;
+string uuid = 3;
 }
 message ProtoLayout {
 ProtoDocumentElement parent = 1;
 
 string name = 2;
 repeated string comChannelUUIDs = 3;
+string uuid = 4;
 }
 message ProtoAdvancedIllustrationArea {
 repeated ProtoDocumentElement _children = 1;
@@ -1351,6 +1373,7 @@ ProtoDocumentElement parent = 2;
 ProtoMeasure minFontSize = 3;
 ProtoMeasure maxFontSize = 4;
 repeated string comChannelUUIDs = 5;
+string uuid = 6;
 }
 enum ProtoDoctypeOutputMode {
 DOCTYPE_OUTPUT_MODE_NOT_SET = 0;

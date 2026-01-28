@@ -28,4 +28,5 @@ message ProtoParagraphFormat {
   ProtoBoxedString postNamedString = 27;
   ProtoBoxedString semanticType = 28;
   repeated string comChannelUUIDs = 29;
+  string uuid = 30;
 }
