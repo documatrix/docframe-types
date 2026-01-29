@@ -6703,6 +6703,9 @@ export interface IProtoTable {
 
     /** ProtoTable elementProperties */
     elementProperties?: (IProtoTableElementProperties|null);
+
+    /** ProtoTable uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoTable. */
@@ -6737,6 +6740,9 @@ export class ProtoTable implements IProtoTable {
 
     /** ProtoTable elementProperties. */
     public elementProperties?: (IProtoTableElementProperties|null);
+
+    /** ProtoTable uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoTable instance using the specified properties.
@@ -7180,6 +7186,9 @@ export interface IProtoTableContentGroup {
 
     /** ProtoTableContentGroup elementProperties */
     elementProperties?: (IProtoTableElementProperties|null);
+
+    /** ProtoTableContentGroup uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoTableContentGroup. */
@@ -7205,6 +7214,9 @@ export class ProtoTableContentGroup implements IProtoTableContentGroup {
 
     /** ProtoTableContentGroup elementProperties. */
     public elementProperties?: (IProtoTableElementProperties|null);
+
+    /** ProtoTableContentGroup uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoTableContentGroup instance using the specified properties.
@@ -7528,6 +7540,9 @@ export interface IProtoTableRow {
 
     /** ProtoTableRow elementProperties */
     elementProperties?: (IProtoTableElementProperties|null);
+
+    /** ProtoTableRow uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoTableRow. */
@@ -7556,6 +7571,9 @@ export class ProtoTableRow implements IProtoTableRow {
 
     /** ProtoTableRow elementProperties. */
     public elementProperties?: (IProtoTableElementProperties|null);
+
+    /** ProtoTableRow uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoTableRow instance using the specified properties.
@@ -8001,6 +8019,9 @@ export interface IProtoTableCell {
 
     /** ProtoTableCell elementProperties */
     elementProperties?: (IProtoTableElementProperties|null);
+
+    /** ProtoTableCell uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoTableCell. */
@@ -8035,6 +8056,9 @@ export class ProtoTableCell implements IProtoTableCell {
 
     /** ProtoTableCell elementProperties. */
     public elementProperties?: (IProtoTableElementProperties|null);
+
+    /** ProtoTableCell uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoTableCell instance using the specified properties.

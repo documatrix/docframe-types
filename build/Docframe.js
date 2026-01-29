@@ -18119,6 +18119,7 @@ $root.ProtoTable = (function() {
      * @property {INode|null} [subTotal] ProtoTable subTotal
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTable comChannelUUIDs
      * @property {IProtoTableElementProperties|null} [elementProperties] ProtoTable elementProperties
+     * @property {string|null} [uuid] ProtoTable uuid
      */
 
     /**
@@ -18203,6 +18204,14 @@ $root.ProtoTable = (function() {
     ProtoTable.prototype.elementProperties = null;
 
     /**
+     * ProtoTable uuid.
+     * @member {string} uuid
+     * @memberof ProtoTable
+     * @instance
+     */
+    ProtoTable.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoTable instance using the specified properties.
      * @function create
      * @memberof ProtoTable
@@ -18244,6 +18253,8 @@ $root.ProtoTable = (function() {
                 writer.uint32(/* id 7, wireType 2 =*/58).string(message.comChannelUUIDs[i]);
         if (message.elementProperties != null && Object.hasOwnProperty.call(message, "elementProperties"))
             $root.ProtoTableElementProperties.encode(message.elementProperties, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 9, wireType 2 =*/74).string(message.uuid);
         return writer;
     };
 
@@ -18312,6 +18323,10 @@ $root.ProtoTable = (function() {
                 }
             case 8: {
                     message.elementProperties = $root.ProtoTableElementProperties.decode(reader, reader.uint32());
+                    break;
+                }
+            case 9: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -18393,6 +18408,9 @@ $root.ProtoTable = (function() {
             if (error)
                 return "elementProperties." + error;
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -18452,6 +18470,8 @@ $root.ProtoTable = (function() {
                 throw TypeError(".ProtoTable.elementProperties: object expected");
             message.elementProperties = $root.ProtoTableElementProperties.fromObject(object.elementProperties);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -18479,6 +18499,7 @@ $root.ProtoTable = (function() {
             object.carryOver = null;
             object.subTotal = null;
             object.elementProperties = null;
+            object.uuid = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -18502,6 +18523,8 @@ $root.ProtoTable = (function() {
         }
         if (message.elementProperties != null && message.hasOwnProperty("elementProperties"))
             object.elementProperties = $root.ProtoTableElementProperties.toObject(message.elementProperties, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -19440,6 +19463,7 @@ $root.ProtoTableContentGroup = (function() {
      * @property {IProtoTableContentGroupSettings|null} [settings] ProtoTableContentGroup settings
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTableContentGroup comChannelUUIDs
      * @property {IProtoTableElementProperties|null} [elementProperties] ProtoTableContentGroup elementProperties
+     * @property {string|null} [uuid] ProtoTableContentGroup uuid
      */
 
     /**
@@ -19500,6 +19524,14 @@ $root.ProtoTableContentGroup = (function() {
     ProtoTableContentGroup.prototype.elementProperties = null;
 
     /**
+     * ProtoTableContentGroup uuid.
+     * @member {string} uuid
+     * @memberof ProtoTableContentGroup
+     * @instance
+     */
+    ProtoTableContentGroup.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoTableContentGroup instance using the specified properties.
      * @function create
      * @memberof ProtoTableContentGroup
@@ -19535,6 +19567,8 @@ $root.ProtoTableContentGroup = (function() {
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
         if (message.elementProperties != null && Object.hasOwnProperty.call(message, "elementProperties"))
             $root.ProtoTableElementProperties.encode(message.elementProperties, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.uuid);
         return writer;
     };
 
@@ -19591,6 +19625,10 @@ $root.ProtoTableContentGroup = (function() {
                 }
             case 5: {
                     message.elementProperties = $root.ProtoTableElementProperties.decode(reader, reader.uint32());
+                    break;
+                }
+            case 6: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -19659,6 +19697,9 @@ $root.ProtoTableContentGroup = (function() {
             if (error)
                 return "elementProperties." + error;
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -19706,6 +19747,8 @@ $root.ProtoTableContentGroup = (function() {
                 throw TypeError(".ProtoTableContentGroup.elementProperties: object expected");
             message.elementProperties = $root.ProtoTableElementProperties.fromObject(object.elementProperties);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -19730,6 +19773,7 @@ $root.ProtoTableContentGroup = (function() {
             object.parent = null;
             object.settings = null;
             object.elementProperties = null;
+            object.uuid = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -19747,6 +19791,8 @@ $root.ProtoTableContentGroup = (function() {
         }
         if (message.elementProperties != null && message.hasOwnProperty("elementProperties"))
             object.elementProperties = $root.ProtoTableElementProperties.toObject(message.elementProperties, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -20373,6 +20419,7 @@ $root.ProtoTableRow = (function() {
      * @property {IProtoBoxedUint32|null} [rowConfigNumber] ProtoTableRow rowConfigNumber
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTableRow comChannelUUIDs
      * @property {IProtoTableElementProperties|null} [elementProperties] ProtoTableRow elementProperties
+     * @property {string|null} [uuid] ProtoTableRow uuid
      */
 
     /**
@@ -20441,6 +20488,14 @@ $root.ProtoTableRow = (function() {
     ProtoTableRow.prototype.elementProperties = null;
 
     /**
+     * ProtoTableRow uuid.
+     * @member {string} uuid
+     * @memberof ProtoTableRow
+     * @instance
+     */
+    ProtoTableRow.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoTableRow instance using the specified properties.
      * @function create
      * @memberof ProtoTableRow
@@ -20478,6 +20533,8 @@ $root.ProtoTableRow = (function() {
                 writer.uint32(/* id 5, wireType 2 =*/42).string(message.comChannelUUIDs[i]);
         if (message.elementProperties != null && Object.hasOwnProperty.call(message, "elementProperties"))
             $root.ProtoTableElementProperties.encode(message.elementProperties, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.uuid);
         return writer;
     };
 
@@ -20538,6 +20595,10 @@ $root.ProtoTableRow = (function() {
                 }
             case 6: {
                     message.elementProperties = $root.ProtoTableElementProperties.decode(reader, reader.uint32());
+                    break;
+                }
+            case 7: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -20611,6 +20672,9 @@ $root.ProtoTableRow = (function() {
             if (error)
                 return "elementProperties." + error;
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -20663,6 +20727,8 @@ $root.ProtoTableRow = (function() {
                 throw TypeError(".ProtoTableRow.elementProperties: object expected");
             message.elementProperties = $root.ProtoTableElementProperties.fromObject(object.elementProperties);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -20688,6 +20754,7 @@ $root.ProtoTableRow = (function() {
             object.settings = null;
             object.rowConfigNumber = null;
             object.elementProperties = null;
+            object.uuid = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -20707,6 +20774,8 @@ $root.ProtoTableRow = (function() {
         }
         if (message.elementProperties != null && message.hasOwnProperty("elementProperties"))
             object.elementProperties = $root.ProtoTableElementProperties.toObject(message.elementProperties, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -21603,6 +21672,7 @@ $root.ProtoTableCell = (function() {
      * @property {boolean|null} [mergedUp] ProtoTableCell mergedUp
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoTableCell comChannelUUIDs
      * @property {IProtoTableElementProperties|null} [elementProperties] ProtoTableCell elementProperties
+     * @property {string|null} [uuid] ProtoTableCell uuid
      */
 
     /**
@@ -21687,6 +21757,14 @@ $root.ProtoTableCell = (function() {
     ProtoTableCell.prototype.elementProperties = null;
 
     /**
+     * ProtoTableCell uuid.
+     * @member {string} uuid
+     * @memberof ProtoTableCell
+     * @instance
+     */
+    ProtoTableCell.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoTableCell instance using the specified properties.
      * @function create
      * @memberof ProtoTableCell
@@ -21728,6 +21806,8 @@ $root.ProtoTableCell = (function() {
                 writer.uint32(/* id 7, wireType 2 =*/58).string(message.comChannelUUIDs[i]);
         if (message.elementProperties != null && Object.hasOwnProperty.call(message, "elementProperties"))
             $root.ProtoTableElementProperties.encode(message.elementProperties, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 9, wireType 2 =*/74).string(message.uuid);
         return writer;
     };
 
@@ -21796,6 +21876,10 @@ $root.ProtoTableCell = (function() {
                 }
             case 8: {
                     message.elementProperties = $root.ProtoTableElementProperties.decode(reader, reader.uint32());
+                    break;
+                }
+            case 9: {
+                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -21875,6 +21959,9 @@ $root.ProtoTableCell = (function() {
             if (error)
                 return "elementProperties." + error;
         }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -21931,6 +22018,8 @@ $root.ProtoTableCell = (function() {
                 throw TypeError(".ProtoTableCell.elementProperties: object expected");
             message.elementProperties = $root.ProtoTableElementProperties.fromObject(object.elementProperties);
         }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -21958,6 +22047,7 @@ $root.ProtoTableCell = (function() {
             object.mergedLeft = false;
             object.mergedUp = false;
             object.elementProperties = null;
+            object.uuid = "";
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -21981,6 +22071,8 @@ $root.ProtoTableCell = (function() {
         }
         if (message.elementProperties != null && message.hasOwnProperty("elementProperties"))
             object.elementProperties = $root.ProtoTableElementProperties.toObject(message.elementProperties, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
