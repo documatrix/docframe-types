@@ -92,6 +92,7 @@ declare -a FileArray=(
   "src/DocumentElements/documentelements.tag.proto"
   "src/DocumentElements/documentelements.paragraph_set_default.proto"
   "src/DocumentElements/documentelements.input_field.proto"
+  "src/DocumentElements/documentelements.set_unset_color.proto"
 )
 
 for file in ${FileArray[@]}; do

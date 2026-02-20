@@ -992,6 +992,9 @@ ProtoInputFieldDate input_field_date = 77;
 ProtoInputFieldCheckbox input_field_checkbox = 78;
 ProtoInputFieldLabel input_field_label = 79;
 ProtoInputFieldDropdown input_field_dropdown = 80;
+ProtoSetColor set_color = 81;
+ProtoUnsetColor unset_color = 82;
+ProtoColoredArea colored_area = 83;
 }
 }
 
@@ -1063,6 +1066,9 @@ DOCUMENT_ELEMENT_INPUT_FIELD_DATE = 83;
 DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX = 84;
 DOCUMENT_ELEMENT_INPUT_FIELD_LABEL = 85;
 DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN = 86;
+DOCUMENT_ELEMENT_SET_COLOR = 87;
+DOCUMENT_ELEMENT_UNSET_COLOR = 88;
+DOCUMENT_ELEMENT_COLORED_AREA = 89;
 }
 enum ProtoImageScaleType {
 IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
@@ -1498,3 +1504,34 @@ repeated string comChannelUUIDs = 6;
 string uuid = 7;
 }
 
+message ProtoColorChoice {
+oneof choice {
+ProtoColor color = 1;
+string colorDefinitionUUID = 2;
+}
+}
+
+message ProtoSetColor {
+ProtoDocumentElement parent = 1;
+ProtoColorChoice color = 2;
+
+string uuid = 3;
+repeated string comChannelUUIDs = 4;
+}
+
+message ProtoUnsetColor {
+ProtoDocumentElement parent = 1;
+ProtoColorChoice color = 2;
+
+string uuid = 3;
+repeated string comChannelUUIDs = 4;
+}
+
+message ProtoColoredArea {
+ProtoDocumentElement parent = 1;
+repeated ProtoDocumentElement _children = 2;
+ProtoColorChoice color = 3;
+
+string uuid = 4;
+repeated string comChannelUUIDs = 5;
+}

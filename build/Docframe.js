@@ -29470,6 +29470,9 @@ $root.Node = (function() {
      * @property {IProtoInputFieldCheckbox|null} [inputFieldCheckbox] Node inputFieldCheckbox
      * @property {IProtoInputFieldLabel|null} [inputFieldLabel] Node inputFieldLabel
      * @property {IProtoInputFieldDropdown|null} [inputFieldDropdown] Node inputFieldDropdown
+     * @property {IProtoSetColor|null} [setColor] Node setColor
+     * @property {IProtoUnsetColor|null} [unsetColor] Node unsetColor
+     * @property {IProtoColoredArea|null} [coloredArea] Node coloredArea
      */
 
     /**
@@ -30008,17 +30011,41 @@ $root.Node = (function() {
      */
     Node.prototype.inputFieldDropdown = null;
 
+    /**
+     * Node setColor.
+     * @member {IProtoSetColor|null|undefined} setColor
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.setColor = null;
+
+    /**
+     * Node unsetColor.
+     * @member {IProtoUnsetColor|null|undefined} unsetColor
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.unsetColor = null;
+
+    /**
+     * Node coloredArea.
+     * @member {IProtoColoredArea|null|undefined} coloredArea
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.coloredArea = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault"|"inputFieldText"|"inputFieldDate"|"inputFieldCheckbox"|"inputFieldLabel"|"inputFieldDropdown"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault"|"inputFieldText"|"inputFieldDate"|"inputFieldCheckbox"|"inputFieldLabel"|"inputFieldDropdown"|"setColor"|"unsetColor"|"coloredArea"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition", "locale", "tag", "paragraphSetDefault", "inputFieldText", "inputFieldDate", "inputFieldCheckbox", "inputFieldLabel", "inputFieldDropdown"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition", "locale", "tag", "paragraphSetDefault", "inputFieldText", "inputFieldDate", "inputFieldCheckbox", "inputFieldLabel", "inputFieldDropdown", "setColor", "unsetColor", "coloredArea"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -30177,6 +30204,12 @@ $root.Node = (function() {
             $root.ProtoInputFieldLabel.encode(message.inputFieldLabel, writer.uint32(/* id 79, wireType 2 =*/634).fork()).ldelim();
         if (message.inputFieldDropdown != null && Object.hasOwnProperty.call(message, "inputFieldDropdown"))
             $root.ProtoInputFieldDropdown.encode(message.inputFieldDropdown, writer.uint32(/* id 80, wireType 2 =*/642).fork()).ldelim();
+        if (message.setColor != null && Object.hasOwnProperty.call(message, "setColor"))
+            $root.ProtoSetColor.encode(message.setColor, writer.uint32(/* id 81, wireType 2 =*/650).fork()).ldelim();
+        if (message.unsetColor != null && Object.hasOwnProperty.call(message, "unsetColor"))
+            $root.ProtoUnsetColor.encode(message.unsetColor, writer.uint32(/* id 82, wireType 2 =*/658).fork()).ldelim();
+        if (message.coloredArea != null && Object.hasOwnProperty.call(message, "coloredArea"))
+            $root.ProtoColoredArea.encode(message.coloredArea, writer.uint32(/* id 83, wireType 2 =*/666).fork()).ldelim();
         return writer;
     };
 
@@ -30471,6 +30504,18 @@ $root.Node = (function() {
                 }
             case 80: {
                     message.inputFieldDropdown = $root.ProtoInputFieldDropdown.decode(reader, reader.uint32());
+                    break;
+                }
+            case 81: {
+                    message.setColor = $root.ProtoSetColor.decode(reader, reader.uint32());
+                    break;
+                }
+            case 82: {
+                    message.unsetColor = $root.ProtoUnsetColor.decode(reader, reader.uint32());
+                    break;
+                }
+            case 83: {
+                    message.coloredArea = $root.ProtoColoredArea.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -31156,6 +31201,36 @@ $root.Node = (function() {
                     return "inputFieldDropdown." + error;
             }
         }
+        if (message.setColor != null && message.hasOwnProperty("setColor")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoSetColor.verify(message.setColor);
+                if (error)
+                    return "setColor." + error;
+            }
+        }
+        if (message.unsetColor != null && message.hasOwnProperty("unsetColor")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoUnsetColor.verify(message.unsetColor);
+                if (error)
+                    return "unsetColor." + error;
+            }
+        }
+        if (message.coloredArea != null && message.hasOwnProperty("coloredArea")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoColoredArea.verify(message.coloredArea);
+                if (error)
+                    return "coloredArea." + error;
+            }
+        }
         return null;
     };
 
@@ -31501,6 +31576,21 @@ $root.Node = (function() {
                 throw TypeError(".Node.inputFieldDropdown: object expected");
             message.inputFieldDropdown = $root.ProtoInputFieldDropdown.fromObject(object.inputFieldDropdown);
         }
+        if (object.setColor != null) {
+            if (typeof object.setColor !== "object")
+                throw TypeError(".Node.setColor: object expected");
+            message.setColor = $root.ProtoSetColor.fromObject(object.setColor);
+        }
+        if (object.unsetColor != null) {
+            if (typeof object.unsetColor !== "object")
+                throw TypeError(".Node.unsetColor: object expected");
+            message.unsetColor = $root.ProtoUnsetColor.fromObject(object.unsetColor);
+        }
+        if (object.coloredArea != null) {
+            if (typeof object.coloredArea !== "object")
+                throw TypeError(".Node.coloredArea: object expected");
+            message.coloredArea = $root.ProtoColoredArea.fromObject(object.coloredArea);
+        }
         return message;
     };
 
@@ -31844,6 +31934,21 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "inputFieldDropdown";
         }
+        if (message.setColor != null && message.hasOwnProperty("setColor")) {
+            object.setColor = $root.ProtoSetColor.toObject(message.setColor, options);
+            if (options.oneofs)
+                object.object = "setColor";
+        }
+        if (message.unsetColor != null && message.hasOwnProperty("unsetColor")) {
+            object.unsetColor = $root.ProtoUnsetColor.toObject(message.unsetColor, options);
+            if (options.oneofs)
+                object.object = "unsetColor";
+        }
+        if (message.coloredArea != null && message.hasOwnProperty("coloredArea")) {
+            object.coloredArea = $root.ProtoColoredArea.toObject(message.coloredArea, options);
+            if (options.oneofs)
+                object.object = "coloredArea";
+        }
         return object;
     };
 
@@ -31947,6 +32052,9 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX=84 DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX value
  * @property {number} DOCUMENT_ELEMENT_INPUT_FIELD_LABEL=85 DOCUMENT_ELEMENT_INPUT_FIELD_LABEL value
  * @property {number} DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN=86 DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN value
+ * @property {number} DOCUMENT_ELEMENT_SET_COLOR=87 DOCUMENT_ELEMENT_SET_COLOR value
+ * @property {number} DOCUMENT_ELEMENT_UNSET_COLOR=88 DOCUMENT_ELEMENT_UNSET_COLOR value
+ * @property {number} DOCUMENT_ELEMENT_COLORED_AREA=89 DOCUMENT_ELEMENT_COLORED_AREA value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -32017,6 +32125,9 @@ $root.NodeType = (function() {
     values[valuesById[84] = "DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX"] = 84;
     values[valuesById[85] = "DOCUMENT_ELEMENT_INPUT_FIELD_LABEL"] = 85;
     values[valuesById[86] = "DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN"] = 86;
+    values[valuesById[87] = "DOCUMENT_ELEMENT_SET_COLOR"] = 87;
+    values[valuesById[88] = "DOCUMENT_ELEMENT_UNSET_COLOR"] = 88;
+    values[valuesById[89] = "DOCUMENT_ELEMENT_COLORED_AREA"] = 89;
     return values;
 })();
 
@@ -47084,6 +47195,1207 @@ $root.ProtoInputFieldDropdown = (function() {
     };
 
     return ProtoInputFieldDropdown;
+})();
+
+$root.ProtoColorChoice = (function() {
+
+    /**
+     * Properties of a ProtoColorChoice.
+     * @name IProtoColorChoice
+     * @interface IProtoColorChoice
+     * @property {IProtoColor|null} [color] ProtoColorChoice color
+     * @property {string|null} [colorDefinitionUUID] ProtoColorChoice colorDefinitionUUID
+     */
+
+    /**
+     * Constructs a new ProtoColorChoice.
+     * @name ProtoColorChoice
+     * @classdesc Represents a ProtoColorChoice.
+     * @implements IProtoColorChoice
+     * @constructor
+     * @param {IProtoColorChoice=} [properties] Properties to set
+     */
+    function ProtoColorChoice(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoColorChoice color.
+     * @member {IProtoColor|null|undefined} color
+     * @memberof ProtoColorChoice
+     * @instance
+     */
+    ProtoColorChoice.prototype.color = null;
+
+    /**
+     * ProtoColorChoice colorDefinitionUUID.
+     * @member {string|null|undefined} colorDefinitionUUID
+     * @memberof ProtoColorChoice
+     * @instance
+     */
+    ProtoColorChoice.prototype.colorDefinitionUUID = null;
+
+    // OneOf field names bound to virtual getters and setters
+    var $oneOfFields;
+
+    /**
+     * ProtoColorChoice choice.
+     * @member {"color"|"colorDefinitionUUID"|undefined} choice
+     * @memberof ProtoColorChoice
+     * @instance
+     */
+    Object.defineProperty(ProtoColorChoice.prototype, "choice", {
+        get: $util.oneOfGetter($oneOfFields = ["color", "colorDefinitionUUID"]),
+        set: $util.oneOfSetter($oneOfFields)
+    });
+
+    /**
+     * Creates a new ProtoColorChoice instance using the specified properties.
+     * @function create
+     * @memberof ProtoColorChoice
+     * @static
+     * @param {IProtoColorChoice=} [properties] Properties to set
+     * @returns {ProtoColorChoice} ProtoColorChoice instance
+     */
+    ProtoColorChoice.create = function create(properties) {
+        return new ProtoColorChoice(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoColorChoice message. Does not implicitly {@link ProtoColorChoice.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoColorChoice
+     * @static
+     * @param {IProtoColorChoice} message ProtoColorChoice message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoColorChoice.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.color != null && Object.hasOwnProperty.call(message, "color"))
+            $root.ProtoColor.encode(message.color, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.colorDefinitionUUID != null && Object.hasOwnProperty.call(message, "colorDefinitionUUID"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.colorDefinitionUUID);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoColorChoice message, length delimited. Does not implicitly {@link ProtoColorChoice.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoColorChoice
+     * @static
+     * @param {IProtoColorChoice} message ProtoColorChoice message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoColorChoice.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoColorChoice message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoColorChoice
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoColorChoice} ProtoColorChoice
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoColorChoice.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoColorChoice();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.color = $root.ProtoColor.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.colorDefinitionUUID = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoColorChoice message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoColorChoice
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoColorChoice} ProtoColorChoice
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoColorChoice.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoColorChoice message.
+     * @function verify
+     * @memberof ProtoColorChoice
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoColorChoice.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        var properties = {};
+        if (message.color != null && message.hasOwnProperty("color")) {
+            properties.choice = 1;
+            {
+                var error = $root.ProtoColor.verify(message.color);
+                if (error)
+                    return "color." + error;
+            }
+        }
+        if (message.colorDefinitionUUID != null && message.hasOwnProperty("colorDefinitionUUID")) {
+            if (properties.choice === 1)
+                return "choice: multiple values";
+            properties.choice = 1;
+            if (!$util.isString(message.colorDefinitionUUID))
+                return "colorDefinitionUUID: string expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoColorChoice message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoColorChoice
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoColorChoice} ProtoColorChoice
+     */
+    ProtoColorChoice.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoColorChoice)
+            return object;
+        var message = new $root.ProtoColorChoice();
+        if (object.color != null) {
+            if (typeof object.color !== "object")
+                throw TypeError(".ProtoColorChoice.color: object expected");
+            message.color = $root.ProtoColor.fromObject(object.color);
+        }
+        if (object.colorDefinitionUUID != null)
+            message.colorDefinitionUUID = String(object.colorDefinitionUUID);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoColorChoice message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoColorChoice
+     * @static
+     * @param {ProtoColorChoice} message ProtoColorChoice
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoColorChoice.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (message.color != null && message.hasOwnProperty("color")) {
+            object.color = $root.ProtoColor.toObject(message.color, options);
+            if (options.oneofs)
+                object.choice = "color";
+        }
+        if (message.colorDefinitionUUID != null && message.hasOwnProperty("colorDefinitionUUID")) {
+            object.colorDefinitionUUID = message.colorDefinitionUUID;
+            if (options.oneofs)
+                object.choice = "colorDefinitionUUID";
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoColorChoice to JSON.
+     * @function toJSON
+     * @memberof ProtoColorChoice
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoColorChoice.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoColorChoice
+     * @function getTypeUrl
+     * @memberof ProtoColorChoice
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoColorChoice.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoColorChoice";
+    };
+
+    return ProtoColorChoice;
+})();
+
+$root.ProtoSetColor = (function() {
+
+    /**
+     * Properties of a ProtoSetColor.
+     * @name IProtoSetColor
+     * @interface IProtoSetColor
+     * @property {IProtoDocumentElement|null} [parent] ProtoSetColor parent
+     * @property {IProtoColorChoice|null} [color] ProtoSetColor color
+     * @property {string|null} [uuid] ProtoSetColor uuid
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoSetColor comChannelUUIDs
+     */
+
+    /**
+     * Constructs a new ProtoSetColor.
+     * @name ProtoSetColor
+     * @classdesc Represents a ProtoSetColor.
+     * @implements IProtoSetColor
+     * @constructor
+     * @param {IProtoSetColor=} [properties] Properties to set
+     */
+    function ProtoSetColor(properties) {
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoSetColor parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoSetColor
+     * @instance
+     */
+    ProtoSetColor.prototype.parent = null;
+
+    /**
+     * ProtoSetColor color.
+     * @member {IProtoColorChoice|null|undefined} color
+     * @memberof ProtoSetColor
+     * @instance
+     */
+    ProtoSetColor.prototype.color = null;
+
+    /**
+     * ProtoSetColor uuid.
+     * @member {string} uuid
+     * @memberof ProtoSetColor
+     * @instance
+     */
+    ProtoSetColor.prototype.uuid = "";
+
+    /**
+     * ProtoSetColor comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoSetColor
+     * @instance
+     */
+    ProtoSetColor.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoSetColor instance using the specified properties.
+     * @function create
+     * @memberof ProtoSetColor
+     * @static
+     * @param {IProtoSetColor=} [properties] Properties to set
+     * @returns {ProtoSetColor} ProtoSetColor instance
+     */
+    ProtoSetColor.create = function create(properties) {
+        return new ProtoSetColor(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoSetColor message. Does not implicitly {@link ProtoSetColor.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoSetColor
+     * @static
+     * @param {IProtoSetColor} message ProtoSetColor message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSetColor.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.color != null && Object.hasOwnProperty.call(message, "color"))
+            $root.ProtoColorChoice.encode(message.color, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoSetColor message, length delimited. Does not implicitly {@link ProtoSetColor.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoSetColor
+     * @static
+     * @param {IProtoSetColor} message ProtoSetColor message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSetColor.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoSetColor message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoSetColor
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoSetColor} ProtoSetColor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSetColor.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSetColor();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.color = $root.ProtoColorChoice.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.uuid = reader.string();
+                    break;
+                }
+            case 4: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoSetColor message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoSetColor
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoSetColor} ProtoSetColor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSetColor.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoSetColor message.
+     * @function verify
+     * @memberof ProtoSetColor
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoSetColor.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.color != null && message.hasOwnProperty("color")) {
+            var error = $root.ProtoColorChoice.verify(message.color);
+            if (error)
+                return "color." + error;
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoSetColor message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoSetColor
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoSetColor} ProtoSetColor
+     */
+    ProtoSetColor.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoSetColor)
+            return object;
+        var message = new $root.ProtoSetColor();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoSetColor.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.color != null) {
+            if (typeof object.color !== "object")
+                throw TypeError(".ProtoSetColor.color: object expected");
+            message.color = $root.ProtoColorChoice.fromObject(object.color);
+        }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoSetColor.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoSetColor message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoSetColor
+     * @static
+     * @param {ProtoSetColor} message ProtoSetColor
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoSetColor.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.comChannelUUIDs = [];
+        if (options.defaults) {
+            object.parent = null;
+            object.color = null;
+            object.uuid = "";
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.color != null && message.hasOwnProperty("color"))
+            object.color = $root.ProtoColorChoice.toObject(message.color, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoSetColor to JSON.
+     * @function toJSON
+     * @memberof ProtoSetColor
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoSetColor.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoSetColor
+     * @function getTypeUrl
+     * @memberof ProtoSetColor
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoSetColor.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoSetColor";
+    };
+
+    return ProtoSetColor;
+})();
+
+$root.ProtoUnsetColor = (function() {
+
+    /**
+     * Properties of a ProtoUnsetColor.
+     * @name IProtoUnsetColor
+     * @interface IProtoUnsetColor
+     * @property {IProtoDocumentElement|null} [parent] ProtoUnsetColor parent
+     * @property {IProtoColorChoice|null} [color] ProtoUnsetColor color
+     * @property {string|null} [uuid] ProtoUnsetColor uuid
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoUnsetColor comChannelUUIDs
+     */
+
+    /**
+     * Constructs a new ProtoUnsetColor.
+     * @name ProtoUnsetColor
+     * @classdesc Represents a ProtoUnsetColor.
+     * @implements IProtoUnsetColor
+     * @constructor
+     * @param {IProtoUnsetColor=} [properties] Properties to set
+     */
+    function ProtoUnsetColor(properties) {
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoUnsetColor parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoUnsetColor
+     * @instance
+     */
+    ProtoUnsetColor.prototype.parent = null;
+
+    /**
+     * ProtoUnsetColor color.
+     * @member {IProtoColorChoice|null|undefined} color
+     * @memberof ProtoUnsetColor
+     * @instance
+     */
+    ProtoUnsetColor.prototype.color = null;
+
+    /**
+     * ProtoUnsetColor uuid.
+     * @member {string} uuid
+     * @memberof ProtoUnsetColor
+     * @instance
+     */
+    ProtoUnsetColor.prototype.uuid = "";
+
+    /**
+     * ProtoUnsetColor comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoUnsetColor
+     * @instance
+     */
+    ProtoUnsetColor.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoUnsetColor instance using the specified properties.
+     * @function create
+     * @memberof ProtoUnsetColor
+     * @static
+     * @param {IProtoUnsetColor=} [properties] Properties to set
+     * @returns {ProtoUnsetColor} ProtoUnsetColor instance
+     */
+    ProtoUnsetColor.create = function create(properties) {
+        return new ProtoUnsetColor(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoUnsetColor message. Does not implicitly {@link ProtoUnsetColor.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoUnsetColor
+     * @static
+     * @param {IProtoUnsetColor} message ProtoUnsetColor message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoUnsetColor.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.color != null && Object.hasOwnProperty.call(message, "color"))
+            $root.ProtoColorChoice.encode(message.color, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoUnsetColor message, length delimited. Does not implicitly {@link ProtoUnsetColor.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoUnsetColor
+     * @static
+     * @param {IProtoUnsetColor} message ProtoUnsetColor message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoUnsetColor.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoUnsetColor message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoUnsetColor
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoUnsetColor} ProtoUnsetColor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoUnsetColor.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoUnsetColor();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.color = $root.ProtoColorChoice.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.uuid = reader.string();
+                    break;
+                }
+            case 4: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoUnsetColor message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoUnsetColor
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoUnsetColor} ProtoUnsetColor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoUnsetColor.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoUnsetColor message.
+     * @function verify
+     * @memberof ProtoUnsetColor
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoUnsetColor.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.color != null && message.hasOwnProperty("color")) {
+            var error = $root.ProtoColorChoice.verify(message.color);
+            if (error)
+                return "color." + error;
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoUnsetColor message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoUnsetColor
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoUnsetColor} ProtoUnsetColor
+     */
+    ProtoUnsetColor.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoUnsetColor)
+            return object;
+        var message = new $root.ProtoUnsetColor();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoUnsetColor.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object.color != null) {
+            if (typeof object.color !== "object")
+                throw TypeError(".ProtoUnsetColor.color: object expected");
+            message.color = $root.ProtoColorChoice.fromObject(object.color);
+        }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoUnsetColor.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoUnsetColor message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoUnsetColor
+     * @static
+     * @param {ProtoUnsetColor} message ProtoUnsetColor
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoUnsetColor.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.comChannelUUIDs = [];
+        if (options.defaults) {
+            object.parent = null;
+            object.color = null;
+            object.uuid = "";
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.color != null && message.hasOwnProperty("color"))
+            object.color = $root.ProtoColorChoice.toObject(message.color, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoUnsetColor to JSON.
+     * @function toJSON
+     * @memberof ProtoUnsetColor
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoUnsetColor.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoUnsetColor
+     * @function getTypeUrl
+     * @memberof ProtoUnsetColor
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoUnsetColor.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoUnsetColor";
+    };
+
+    return ProtoUnsetColor;
+})();
+
+$root.ProtoColoredArea = (function() {
+
+    /**
+     * Properties of a ProtoColoredArea.
+     * @name IProtoColoredArea
+     * @interface IProtoColoredArea
+     * @property {IProtoDocumentElement|null} [parent] ProtoColoredArea parent
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoColoredArea _children
+     * @property {IProtoColorChoice|null} [color] ProtoColoredArea color
+     * @property {string|null} [uuid] ProtoColoredArea uuid
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoColoredArea comChannelUUIDs
+     */
+
+    /**
+     * Constructs a new ProtoColoredArea.
+     * @name ProtoColoredArea
+     * @classdesc Represents a ProtoColoredArea.
+     * @implements IProtoColoredArea
+     * @constructor
+     * @param {IProtoColoredArea=} [properties] Properties to set
+     */
+    function ProtoColoredArea(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoColoredArea parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoColoredArea
+     * @instance
+     */
+    ProtoColoredArea.prototype.parent = null;
+
+    /**
+     * ProtoColoredArea _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoColoredArea
+     * @instance
+     */
+    ProtoColoredArea.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoColoredArea color.
+     * @member {IProtoColorChoice|null|undefined} color
+     * @memberof ProtoColoredArea
+     * @instance
+     */
+    ProtoColoredArea.prototype.color = null;
+
+    /**
+     * ProtoColoredArea uuid.
+     * @member {string} uuid
+     * @memberof ProtoColoredArea
+     * @instance
+     */
+    ProtoColoredArea.prototype.uuid = "";
+
+    /**
+     * ProtoColoredArea comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoColoredArea
+     * @instance
+     */
+    ProtoColoredArea.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoColoredArea instance using the specified properties.
+     * @function create
+     * @memberof ProtoColoredArea
+     * @static
+     * @param {IProtoColoredArea=} [properties] Properties to set
+     * @returns {ProtoColoredArea} ProtoColoredArea instance
+     */
+    ProtoColoredArea.create = function create(properties) {
+        return new ProtoColoredArea(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoColoredArea message. Does not implicitly {@link ProtoColoredArea.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoColoredArea
+     * @static
+     * @param {IProtoColoredArea} message ProtoColoredArea message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoColoredArea.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.color != null && Object.hasOwnProperty.call(message, "color"))
+            $root.ProtoColorChoice.encode(message.color, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.comChannelUUIDs[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoColoredArea message, length delimited. Does not implicitly {@link ProtoColoredArea.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoColoredArea
+     * @static
+     * @param {IProtoColoredArea} message ProtoColoredArea message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoColoredArea.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoColoredArea message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoColoredArea
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoColoredArea} ProtoColoredArea
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoColoredArea.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoColoredArea();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 3: {
+                    message.color = $root.ProtoColorChoice.decode(reader, reader.uint32());
+                    break;
+                }
+            case 4: {
+                    message.uuid = reader.string();
+                    break;
+                }
+            case 5: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoColoredArea message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoColoredArea
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoColoredArea} ProtoColoredArea
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoColoredArea.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoColoredArea message.
+     * @function verify
+     * @memberof ProtoColoredArea
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoColoredArea.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent);
+            if (error)
+                return "parent." + error;
+        }
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i]);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.color != null && message.hasOwnProperty("color")) {
+            var error = $root.ProtoColorChoice.verify(message.color);
+            if (error)
+                return "color." + error;
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoColoredArea message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoColoredArea
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoColoredArea} ProtoColoredArea
+     */
+    ProtoColoredArea.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoColoredArea)
+            return object;
+        var message = new $root.ProtoColoredArea();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoColoredArea.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent);
+        }
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoColoredArea._children: array expected");
+            message._children = [];
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoColoredArea._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i]);
+            }
+        }
+        if (object.color != null) {
+            if (typeof object.color !== "object")
+                throw TypeError(".ProtoColoredArea.color: object expected");
+            message.color = $root.ProtoColorChoice.fromObject(object.color);
+        }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoColoredArea.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoColoredArea message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoColoredArea
+     * @static
+     * @param {ProtoColoredArea} message ProtoColoredArea
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoColoredArea.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+        }
+        if (options.defaults) {
+            object.parent = null;
+            object.color = null;
+            object.uuid = "";
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message._children && message._children.length) {
+            object._children = [];
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.color != null && message.hasOwnProperty("color"))
+            object.color = $root.ProtoColorChoice.toObject(message.color, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoColoredArea to JSON.
+     * @function toJSON
+     * @memberof ProtoColoredArea
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoColoredArea.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoColoredArea
+     * @function getTypeUrl
+     * @memberof ProtoColoredArea
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoColoredArea.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoColoredArea";
+    };
+
+    return ProtoColoredArea;
 })();
 
 module.exports = $root;

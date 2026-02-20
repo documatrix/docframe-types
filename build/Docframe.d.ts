@@ -10276,6 +10276,15 @@ export interface INode {
 
     /** Node inputFieldDropdown */
     inputFieldDropdown?: (IProtoInputFieldDropdown|null);
+
+    /** Node setColor */
+    setColor?: (IProtoSetColor|null);
+
+    /** Node unsetColor */
+    unsetColor?: (IProtoUnsetColor|null);
+
+    /** Node coloredArea */
+    coloredArea?: (IProtoColoredArea|null);
 }
 
 /** Represents a Node. */
@@ -10482,8 +10491,17 @@ export class Node implements INode {
     /** Node inputFieldDropdown. */
     public inputFieldDropdown?: (IProtoInputFieldDropdown|null);
 
+    /** Node setColor. */
+    public setColor?: (IProtoSetColor|null);
+
+    /** Node unsetColor. */
+    public unsetColor?: (IProtoUnsetColor|null);
+
+    /** Node coloredArea. */
+    public coloredArea?: (IProtoColoredArea|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault"|"inputFieldText"|"inputFieldDate"|"inputFieldCheckbox"|"inputFieldLabel"|"inputFieldDropdown");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault"|"inputFieldText"|"inputFieldDate"|"inputFieldCheckbox"|"inputFieldLabel"|"inputFieldDropdown"|"setColor"|"unsetColor"|"coloredArea");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -10631,7 +10649,10 @@ export enum NodeType {
     DOCUMENT_ELEMENT_INPUT_FIELD_DATE = 83,
     DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX = 84,
     DOCUMENT_ELEMENT_INPUT_FIELD_LABEL = 85,
-    DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN = 86
+    DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN = 86,
+    DOCUMENT_ELEMENT_SET_COLOR = 87,
+    DOCUMENT_ELEMENT_UNSET_COLOR = 88,
+    DOCUMENT_ELEMENT_COLORED_AREA = 89
 }
 
 /** ProtoImageScaleType enum. */
@@ -15861,6 +15882,463 @@ export class ProtoInputFieldDropdown implements IProtoInputFieldDropdown {
 
     /**
      * Gets the default type url for ProtoInputFieldDropdown
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoColorChoice. */
+export interface IProtoColorChoice {
+
+    /** ProtoColorChoice color */
+    color?: (IProtoColor|null);
+
+    /** ProtoColorChoice colorDefinitionUUID */
+    colorDefinitionUUID?: (string|null);
+}
+
+/** Represents a ProtoColorChoice. */
+export class ProtoColorChoice implements IProtoColorChoice {
+
+    /**
+     * Constructs a new ProtoColorChoice.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoColorChoice);
+
+    /** ProtoColorChoice color. */
+    public color?: (IProtoColor|null);
+
+    /** ProtoColorChoice colorDefinitionUUID. */
+    public colorDefinitionUUID?: (string|null);
+
+    /** ProtoColorChoice choice. */
+    public choice?: ("color"|"colorDefinitionUUID");
+
+    /**
+     * Creates a new ProtoColorChoice instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoColorChoice instance
+     */
+    public static create(properties?: IProtoColorChoice): ProtoColorChoice;
+
+    /**
+     * Encodes the specified ProtoColorChoice message. Does not implicitly {@link ProtoColorChoice.verify|verify} messages.
+     * @param message ProtoColorChoice message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoColorChoice, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoColorChoice message, length delimited. Does not implicitly {@link ProtoColorChoice.verify|verify} messages.
+     * @param message ProtoColorChoice message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoColorChoice, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoColorChoice message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoColorChoice
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoColorChoice;
+
+    /**
+     * Decodes a ProtoColorChoice message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoColorChoice
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoColorChoice;
+
+    /**
+     * Verifies a ProtoColorChoice message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoColorChoice message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoColorChoice
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoColorChoice;
+
+    /**
+     * Creates a plain object from a ProtoColorChoice message. Also converts values to other types if specified.
+     * @param message ProtoColorChoice
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoColorChoice, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoColorChoice to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoColorChoice
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoSetColor. */
+export interface IProtoSetColor {
+
+    /** ProtoSetColor parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSetColor color */
+    color?: (IProtoColorChoice|null);
+
+    /** ProtoSetColor uuid */
+    uuid?: (string|null);
+
+    /** ProtoSetColor comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoSetColor. */
+export class ProtoSetColor implements IProtoSetColor {
+
+    /**
+     * Constructs a new ProtoSetColor.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSetColor);
+
+    /** ProtoSetColor parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSetColor color. */
+    public color?: (IProtoColorChoice|null);
+
+    /** ProtoSetColor uuid. */
+    public uuid: string;
+
+    /** ProtoSetColor comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoSetColor instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSetColor instance
+     */
+    public static create(properties?: IProtoSetColor): ProtoSetColor;
+
+    /**
+     * Encodes the specified ProtoSetColor message. Does not implicitly {@link ProtoSetColor.verify|verify} messages.
+     * @param message ProtoSetColor message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSetColor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSetColor message, length delimited. Does not implicitly {@link ProtoSetColor.verify|verify} messages.
+     * @param message ProtoSetColor message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSetColor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSetColor message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSetColor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSetColor;
+
+    /**
+     * Decodes a ProtoSetColor message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSetColor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSetColor;
+
+    /**
+     * Verifies a ProtoSetColor message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSetColor message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSetColor
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSetColor;
+
+    /**
+     * Creates a plain object from a ProtoSetColor message. Also converts values to other types if specified.
+     * @param message ProtoSetColor
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSetColor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSetColor to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoSetColor
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoUnsetColor. */
+export interface IProtoUnsetColor {
+
+    /** ProtoUnsetColor parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoUnsetColor color */
+    color?: (IProtoColorChoice|null);
+
+    /** ProtoUnsetColor uuid */
+    uuid?: (string|null);
+
+    /** ProtoUnsetColor comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoUnsetColor. */
+export class ProtoUnsetColor implements IProtoUnsetColor {
+
+    /**
+     * Constructs a new ProtoUnsetColor.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoUnsetColor);
+
+    /** ProtoUnsetColor parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoUnsetColor color. */
+    public color?: (IProtoColorChoice|null);
+
+    /** ProtoUnsetColor uuid. */
+    public uuid: string;
+
+    /** ProtoUnsetColor comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoUnsetColor instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoUnsetColor instance
+     */
+    public static create(properties?: IProtoUnsetColor): ProtoUnsetColor;
+
+    /**
+     * Encodes the specified ProtoUnsetColor message. Does not implicitly {@link ProtoUnsetColor.verify|verify} messages.
+     * @param message ProtoUnsetColor message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoUnsetColor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoUnsetColor message, length delimited. Does not implicitly {@link ProtoUnsetColor.verify|verify} messages.
+     * @param message ProtoUnsetColor message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoUnsetColor, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoUnsetColor message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoUnsetColor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoUnsetColor;
+
+    /**
+     * Decodes a ProtoUnsetColor message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoUnsetColor
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoUnsetColor;
+
+    /**
+     * Verifies a ProtoUnsetColor message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoUnsetColor message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoUnsetColor
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoUnsetColor;
+
+    /**
+     * Creates a plain object from a ProtoUnsetColor message. Also converts values to other types if specified.
+     * @param message ProtoUnsetColor
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoUnsetColor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoUnsetColor to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoUnsetColor
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a ProtoColoredArea. */
+export interface IProtoColoredArea {
+
+    /** ProtoColoredArea parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoColoredArea _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoColoredArea color */
+    color?: (IProtoColorChoice|null);
+
+    /** ProtoColoredArea uuid */
+    uuid?: (string|null);
+
+    /** ProtoColoredArea comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+}
+
+/** Represents a ProtoColoredArea. */
+export class ProtoColoredArea implements IProtoColoredArea {
+
+    /**
+     * Constructs a new ProtoColoredArea.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoColoredArea);
+
+    /** ProtoColoredArea parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoColoredArea _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoColoredArea color. */
+    public color?: (IProtoColorChoice|null);
+
+    /** ProtoColoredArea uuid. */
+    public uuid: string;
+
+    /** ProtoColoredArea comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoColoredArea instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoColoredArea instance
+     */
+    public static create(properties?: IProtoColoredArea): ProtoColoredArea;
+
+    /**
+     * Encodes the specified ProtoColoredArea message. Does not implicitly {@link ProtoColoredArea.verify|verify} messages.
+     * @param message ProtoColoredArea message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoColoredArea, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoColoredArea message, length delimited. Does not implicitly {@link ProtoColoredArea.verify|verify} messages.
+     * @param message ProtoColoredArea message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoColoredArea, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoColoredArea message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoColoredArea
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoColoredArea;
+
+    /**
+     * Decodes a ProtoColoredArea message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoColoredArea
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoColoredArea;
+
+    /**
+     * Verifies a ProtoColoredArea message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoColoredArea message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoColoredArea
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoColoredArea;
+
+    /**
+     * Creates a plain object from a ProtoColoredArea message. Also converts values to other types if specified.
+     * @param message ProtoColoredArea
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoColoredArea, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoColoredArea to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoColoredArea
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

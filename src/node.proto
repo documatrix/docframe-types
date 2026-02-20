@@ -68,6 +68,9 @@ message Node {
     ProtoInputFieldCheckbox input_field_checkbox = 78;
     ProtoInputFieldLabel input_field_label = 79;
     ProtoInputFieldDropdown input_field_dropdown = 80;
+    ProtoSetColor set_color = 81;
+    ProtoUnsetColor unset_color = 82;
+    ProtoColoredArea colored_area = 83;
   }
 }
 
@@ -139,4 +142,7 @@ enum NodeType {
   DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOX = 84;
   DOCUMENT_ELEMENT_INPUT_FIELD_LABEL = 85;
   DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN = 86;
+  DOCUMENT_ELEMENT_SET_COLOR = 87;
+  DOCUMENT_ELEMENT_UNSET_COLOR = 88;
+  DOCUMENT_ELEMENT_COLORED_AREA = 89;
 }
