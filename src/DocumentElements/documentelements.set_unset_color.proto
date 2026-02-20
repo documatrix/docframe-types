@@ -1,0 +1,36 @@
+// go-gen:ignore
+message ProtoColorChoice {
+  oneof choice {
+    ProtoColor color = 1;
+    string colorDefinitionUUID = 2;
+  }
+}
+
+message ProtoSetColor {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  ProtoColorChoice color = 2;
+
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+}
+
+message ProtoUnsetColor {
+  // extends DocumentElement
+  ProtoDocumentElement parent = 1;
+  ProtoColorChoice color = 2;
+
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+}
+
+message ProtoColoredArea {
+  // extends BranchDocumentElement
+  ProtoDocumentElement parent = 1;
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 2;
+  ProtoColorChoice color = 3;
+
+  string uuid = 4;
+  repeated string comChannelUUIDs = 5;
+}
