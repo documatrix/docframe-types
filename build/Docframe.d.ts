@@ -6213,6 +6213,9 @@ export interface IProtoTableSettings {
 
     /** ProtoTableSettings ws */
     ws?: (IProtoTableWS|null);
+
+    /** ProtoTableSettings noDocumentStructure */
+    noDocumentStructure?: (IProtoBoxedBool|null);
 }
 
 /** Represents a ProtoTableSettings. */
@@ -6238,6 +6241,9 @@ export class ProtoTableSettings implements IProtoTableSettings {
 
     /** ProtoTableSettings ws. */
     public ws?: (IProtoTableWS|null);
+
+    /** ProtoTableSettings noDocumentStructure. */
+    public noDocumentStructure?: (IProtoBoxedBool|null);
 
     /**
      * Creates a new ProtoTableSettings instance using the specified properties.
