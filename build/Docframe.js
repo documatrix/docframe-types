@@ -16890,6 +16890,7 @@ $root.ProtoTableSettings = (function() {
      * @property {IProtoMeasure|null} [width] ProtoTableSettings width
      * @property {IProtoBoxedUint32|null} [repeatHeader] ProtoTableSettings repeatHeader
      * @property {IProtoTableWS|null} [ws] ProtoTableSettings ws
+     * @property {IProtoBoxedBool|null} [noDocumentStructure] ProtoTableSettings noDocumentStructure
      */
 
     /**
@@ -16948,6 +16949,14 @@ $root.ProtoTableSettings = (function() {
     ProtoTableSettings.prototype.ws = null;
 
     /**
+     * ProtoTableSettings noDocumentStructure.
+     * @member {IProtoBoxedBool|null|undefined} noDocumentStructure
+     * @memberof ProtoTableSettings
+     * @instance
+     */
+    ProtoTableSettings.prototype.noDocumentStructure = null;
+
+    /**
      * Creates a new ProtoTableSettings instance using the specified properties.
      * @function create
      * @memberof ProtoTableSettings
@@ -16981,6 +16990,8 @@ $root.ProtoTableSettings = (function() {
             $root.ProtoBoxedUint32.encode(message.repeatHeader, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
         if (message.ws != null && Object.hasOwnProperty.call(message, "ws"))
             $root.ProtoTableWS.encode(message.ws, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+        if (message.noDocumentStructure != null && Object.hasOwnProperty.call(message, "noDocumentStructure"))
+            $root.ProtoBoxedBool.encode(message.noDocumentStructure, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
         return writer;
     };
 
@@ -17033,6 +17044,10 @@ $root.ProtoTableSettings = (function() {
                 }
             case 5: {
                     message.ws = $root.ProtoTableWS.decode(reader, reader.uint32());
+                    break;
+                }
+            case 6: {
+                    message.noDocumentStructure = $root.ProtoBoxedBool.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -17095,6 +17110,11 @@ $root.ProtoTableSettings = (function() {
             if (error)
                 return "ws." + error;
         }
+        if (message.noDocumentStructure != null && message.hasOwnProperty("noDocumentStructure")) {
+            var error = $root.ProtoBoxedBool.verify(message.noDocumentStructure);
+            if (error)
+                return "noDocumentStructure." + error;
+        }
         return null;
     };
 
@@ -17135,6 +17155,11 @@ $root.ProtoTableSettings = (function() {
                 throw TypeError(".ProtoTableSettings.ws: object expected");
             message.ws = $root.ProtoTableWS.fromObject(object.ws);
         }
+        if (object.noDocumentStructure != null) {
+            if (typeof object.noDocumentStructure !== "object")
+                throw TypeError(".ProtoTableSettings.noDocumentStructure: object expected");
+            message.noDocumentStructure = $root.ProtoBoxedBool.fromObject(object.noDocumentStructure);
+        }
         return message;
     };
 
@@ -17157,6 +17182,7 @@ $root.ProtoTableSettings = (function() {
             object.width = null;
             object.repeatHeader = null;
             object.ws = null;
+            object.noDocumentStructure = null;
         }
         if (message.xOffset != null && message.hasOwnProperty("xOffset"))
             object.xOffset = $root.ProtoMeasure.toObject(message.xOffset, options);
@@ -17168,6 +17194,8 @@ $root.ProtoTableSettings = (function() {
             object.repeatHeader = $root.ProtoBoxedUint32.toObject(message.repeatHeader, options);
         if (message.ws != null && message.hasOwnProperty("ws"))
             object.ws = $root.ProtoTableWS.toObject(message.ws, options);
+        if (message.noDocumentStructure != null && message.hasOwnProperty("noDocumentStructure"))
+            object.noDocumentStructure = $root.ProtoBoxedBool.toObject(message.noDocumentStructure, options);
         return object;
     };
 

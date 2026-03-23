@@ -29,6 +29,7 @@ message ProtoTableSettings {
   ProtoMeasure width = 3;
   ProtoBoxedUint32 repeatHeader = 4;
   ProtoTableWS ws = 5;
+  ProtoBoxedBool noDocumentStructure = 6;
 }
 
 
