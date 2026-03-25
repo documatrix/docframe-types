@@ -32,6 +32,7 @@ message ProtoTableSettings {
   ProtoBoxedUint32 repeatHeader = 4;
   ProtoTableWS ws = 5;
   ProtoBoxedBool noDocumentStructure = 6;
+  ProtoBoxedUint32 repeatSubHeader = 7;
 }
 
 
@@ -289,5 +290,12 @@ message ProtoTableElementProperties {
   Inheritance repeatHeaderInheritance = 85;
   ProtoBoxedUint32 repeatHeader = 86;
   string repeatHeaderCode = 87;
-}
 
+  Inheritance noDocumentStructureInheritance = 88;
+  ProtoBoxedBool noDocumentStructure = 89;
+  string noDocumentStructureCode = 90;
+
+  Inheritance repeatSubHeaderInheritance = 91;
+  ProtoBoxedUint32 repeatSubHeader = 92;
+  string repeatSubHeaderCode = 93;
+}

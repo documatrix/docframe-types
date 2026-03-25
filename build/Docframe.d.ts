@@ -6957,6 +6957,9 @@ export interface IProtoTableSettings {
 
     /** ProtoTableSettings noDocumentStructure */
     noDocumentStructure?: (IProtoBoxedBool|null);
+
+    /** ProtoTableSettings repeatSubHeader */
+    repeatSubHeader?: (IProtoBoxedUint32|null);
 }
 
 /** Represents a ProtoTableSettings. */
@@ -6985,6 +6988,9 @@ export class ProtoTableSettings implements IProtoTableSettings {
 
     /** ProtoTableSettings noDocumentStructure. */
     public noDocumentStructure?: (IProtoBoxedBool|null);
+
+    /** ProtoTableSettings repeatSubHeader. */
+    public repeatSubHeader?: (IProtoBoxedUint32|null);
 
     /**
      * Creates a new ProtoTableSettings instance using the specified properties.
@@ -8782,6 +8788,24 @@ export interface IProtoTableElementProperties {
 
     /** ProtoTableElementProperties repeatHeaderCode */
     repeatHeaderCode?: (string|null);
+
+    /** ProtoTableElementProperties noDocumentStructureInheritance */
+    noDocumentStructureInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties noDocumentStructure */
+    noDocumentStructure?: (IProtoBoxedBool|null);
+
+    /** ProtoTableElementProperties noDocumentStructureCode */
+    noDocumentStructureCode?: (string|null);
+
+    /** ProtoTableElementProperties repeatSubHeaderInheritance */
+    repeatSubHeaderInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties repeatSubHeader */
+    repeatSubHeader?: (IProtoBoxedUint32|null);
+
+    /** ProtoTableElementProperties repeatSubHeaderCode */
+    repeatSubHeaderCode?: (string|null);
 }
 
 /** Represents a ProtoTableElementProperties. */
@@ -9053,6 +9077,24 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
 
     /** ProtoTableElementProperties repeatHeaderCode. */
     public repeatHeaderCode: string;
+
+    /** ProtoTableElementProperties noDocumentStructureInheritance. */
+    public noDocumentStructureInheritance: Inheritance;
+
+    /** ProtoTableElementProperties noDocumentStructure. */
+    public noDocumentStructure?: (IProtoBoxedBool|null);
+
+    /** ProtoTableElementProperties noDocumentStructureCode. */
+    public noDocumentStructureCode: string;
+
+    /** ProtoTableElementProperties repeatSubHeaderInheritance. */
+    public repeatSubHeaderInheritance: Inheritance;
+
+    /** ProtoTableElementProperties repeatSubHeader. */
+    public repeatSubHeader?: (IProtoBoxedUint32|null);
+
+    /** ProtoTableElementProperties repeatSubHeaderCode. */
+    public repeatSubHeaderCode: string;
 
     /**
      * Creates a new ProtoTableElementProperties instance using the specified properties.
