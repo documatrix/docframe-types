@@ -18869,6 +18869,7 @@ $root.ProtoTableSettings = (function() {
      * @property {IProtoBoxedUint32|null} [repeatHeader] ProtoTableSettings repeatHeader
      * @property {IProtoTableWS|null} [ws] ProtoTableSettings ws
      * @property {IProtoBoxedBool|null} [noDocumentStructure] ProtoTableSettings noDocumentStructure
+     * @property {IProtoBoxedUint32|null} [repeatSubHeader] ProtoTableSettings repeatSubHeader
      */
 
     /**
@@ -18935,6 +18936,14 @@ $root.ProtoTableSettings = (function() {
     ProtoTableSettings.prototype.noDocumentStructure = null;
 
     /**
+     * ProtoTableSettings repeatSubHeader.
+     * @member {IProtoBoxedUint32|null|undefined} repeatSubHeader
+     * @memberof ProtoTableSettings
+     * @instance
+     */
+    ProtoTableSettings.prototype.repeatSubHeader = null;
+
+    /**
      * Creates a new ProtoTableSettings instance using the specified properties.
      * @function create
      * @memberof ProtoTableSettings
@@ -18970,6 +18979,8 @@ $root.ProtoTableSettings = (function() {
             $root.ProtoTableWS.encode(message.ws, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
         if (message.noDocumentStructure != null && Object.hasOwnProperty.call(message, "noDocumentStructure"))
             $root.ProtoBoxedBool.encode(message.noDocumentStructure, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+        if (message.repeatSubHeader != null && Object.hasOwnProperty.call(message, "repeatSubHeader"))
+            $root.ProtoBoxedUint32.encode(message.repeatSubHeader, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
         return writer;
     };
 
@@ -19026,6 +19037,10 @@ $root.ProtoTableSettings = (function() {
                 }
             case 6: {
                     message.noDocumentStructure = $root.ProtoBoxedBool.decode(reader, reader.uint32());
+                    break;
+                }
+            case 7: {
+                    message.repeatSubHeader = $root.ProtoBoxedUint32.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -19093,6 +19108,11 @@ $root.ProtoTableSettings = (function() {
             if (error)
                 return "noDocumentStructure." + error;
         }
+        if (message.repeatSubHeader != null && message.hasOwnProperty("repeatSubHeader")) {
+            var error = $root.ProtoBoxedUint32.verify(message.repeatSubHeader);
+            if (error)
+                return "repeatSubHeader." + error;
+        }
         return null;
     };
 
@@ -19138,6 +19158,11 @@ $root.ProtoTableSettings = (function() {
                 throw TypeError(".ProtoTableSettings.noDocumentStructure: object expected");
             message.noDocumentStructure = $root.ProtoBoxedBool.fromObject(object.noDocumentStructure);
         }
+        if (object.repeatSubHeader != null) {
+            if (typeof object.repeatSubHeader !== "object")
+                throw TypeError(".ProtoTableSettings.repeatSubHeader: object expected");
+            message.repeatSubHeader = $root.ProtoBoxedUint32.fromObject(object.repeatSubHeader);
+        }
         return message;
     };
 
@@ -19161,6 +19186,7 @@ $root.ProtoTableSettings = (function() {
             object.repeatHeader = null;
             object.ws = null;
             object.noDocumentStructure = null;
+            object.repeatSubHeader = null;
         }
         if (message.xOffset != null && message.hasOwnProperty("xOffset"))
             object.xOffset = $root.ProtoMeasure.toObject(message.xOffset, options);
@@ -19174,6 +19200,8 @@ $root.ProtoTableSettings = (function() {
             object.ws = $root.ProtoTableWS.toObject(message.ws, options);
         if (message.noDocumentStructure != null && message.hasOwnProperty("noDocumentStructure"))
             object.noDocumentStructure = $root.ProtoBoxedBool.toObject(message.noDocumentStructure, options);
+        if (message.repeatSubHeader != null && message.hasOwnProperty("repeatSubHeader"))
+            object.repeatSubHeader = $root.ProtoBoxedUint32.toObject(message.repeatSubHeader, options);
         return object;
     };
 
@@ -23237,6 +23265,12 @@ $root.ProtoTableElementProperties = (function() {
      * @property {Inheritance|null} [repeatHeaderInheritance] ProtoTableElementProperties repeatHeaderInheritance
      * @property {IProtoBoxedUint32|null} [repeatHeader] ProtoTableElementProperties repeatHeader
      * @property {string|null} [repeatHeaderCode] ProtoTableElementProperties repeatHeaderCode
+     * @property {Inheritance|null} [noDocumentStructureInheritance] ProtoTableElementProperties noDocumentStructureInheritance
+     * @property {IProtoBoxedBool|null} [noDocumentStructure] ProtoTableElementProperties noDocumentStructure
+     * @property {string|null} [noDocumentStructureCode] ProtoTableElementProperties noDocumentStructureCode
+     * @property {Inheritance|null} [repeatSubHeaderInheritance] ProtoTableElementProperties repeatSubHeaderInheritance
+     * @property {IProtoBoxedUint32|null} [repeatSubHeader] ProtoTableElementProperties repeatSubHeader
+     * @property {string|null} [repeatSubHeaderCode] ProtoTableElementProperties repeatSubHeaderCode
      */
 
     /**
@@ -23952,6 +23986,54 @@ $root.ProtoTableElementProperties = (function() {
     ProtoTableElementProperties.prototype.repeatHeaderCode = "";
 
     /**
+     * ProtoTableElementProperties noDocumentStructureInheritance.
+     * @member {Inheritance} noDocumentStructureInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.noDocumentStructureInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties noDocumentStructure.
+     * @member {IProtoBoxedBool|null|undefined} noDocumentStructure
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.noDocumentStructure = null;
+
+    /**
+     * ProtoTableElementProperties noDocumentStructureCode.
+     * @member {string} noDocumentStructureCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.noDocumentStructureCode = "";
+
+    /**
+     * ProtoTableElementProperties repeatSubHeaderInheritance.
+     * @member {Inheritance} repeatSubHeaderInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.repeatSubHeaderInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties repeatSubHeader.
+     * @member {IProtoBoxedUint32|null|undefined} repeatSubHeader
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.repeatSubHeader = null;
+
+    /**
+     * ProtoTableElementProperties repeatSubHeaderCode.
+     * @member {string} repeatSubHeaderCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.repeatSubHeaderCode = "";
+
+    /**
      * Creates a new ProtoTableElementProperties instance using the specified properties.
      * @function create
      * @memberof ProtoTableElementProperties
@@ -24150,6 +24232,18 @@ $root.ProtoTableElementProperties = (function() {
             $root.ProtoBoxedUint32.encode(message.repeatHeader, writer.uint32(/* id 86, wireType 2 =*/690).fork()).ldelim();
         if (message.repeatHeaderCode != null && Object.hasOwnProperty.call(message, "repeatHeaderCode"))
             writer.uint32(/* id 87, wireType 2 =*/698).string(message.repeatHeaderCode);
+        if (message.noDocumentStructureInheritance != null && Object.hasOwnProperty.call(message, "noDocumentStructureInheritance"))
+            writer.uint32(/* id 88, wireType 0 =*/704).int32(message.noDocumentStructureInheritance);
+        if (message.noDocumentStructure != null && Object.hasOwnProperty.call(message, "noDocumentStructure"))
+            $root.ProtoBoxedBool.encode(message.noDocumentStructure, writer.uint32(/* id 89, wireType 2 =*/714).fork()).ldelim();
+        if (message.noDocumentStructureCode != null && Object.hasOwnProperty.call(message, "noDocumentStructureCode"))
+            writer.uint32(/* id 90, wireType 2 =*/722).string(message.noDocumentStructureCode);
+        if (message.repeatSubHeaderInheritance != null && Object.hasOwnProperty.call(message, "repeatSubHeaderInheritance"))
+            writer.uint32(/* id 91, wireType 0 =*/728).int32(message.repeatSubHeaderInheritance);
+        if (message.repeatSubHeader != null && Object.hasOwnProperty.call(message, "repeatSubHeader"))
+            $root.ProtoBoxedUint32.encode(message.repeatSubHeader, writer.uint32(/* id 92, wireType 2 =*/738).fork()).ldelim();
+        if (message.repeatSubHeaderCode != null && Object.hasOwnProperty.call(message, "repeatSubHeaderCode"))
+            writer.uint32(/* id 93, wireType 2 =*/746).string(message.repeatSubHeaderCode);
         return writer;
     };
 
@@ -24532,6 +24626,30 @@ $root.ProtoTableElementProperties = (function() {
                 }
             case 87: {
                     message.repeatHeaderCode = reader.string();
+                    break;
+                }
+            case 88: {
+                    message.noDocumentStructureInheritance = reader.int32();
+                    break;
+                }
+            case 89: {
+                    message.noDocumentStructure = $root.ProtoBoxedBool.decode(reader, reader.uint32());
+                    break;
+                }
+            case 90: {
+                    message.noDocumentStructureCode = reader.string();
+                    break;
+                }
+            case 91: {
+                    message.repeatSubHeaderInheritance = reader.int32();
+                    break;
+                }
+            case 92: {
+                    message.repeatSubHeader = $root.ProtoBoxedUint32.decode(reader, reader.uint32());
+                    break;
+                }
+            case 93: {
+                    message.repeatSubHeaderCode = reader.string();
                     break;
                 }
             default:
@@ -25124,6 +25242,44 @@ $root.ProtoTableElementProperties = (function() {
         if (message.repeatHeaderCode != null && message.hasOwnProperty("repeatHeaderCode"))
             if (!$util.isString(message.repeatHeaderCode))
                 return "repeatHeaderCode: string expected";
+        if (message.noDocumentStructureInheritance != null && message.hasOwnProperty("noDocumentStructureInheritance"))
+            switch (message.noDocumentStructureInheritance) {
+            default:
+                return "noDocumentStructureInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.noDocumentStructure != null && message.hasOwnProperty("noDocumentStructure")) {
+            var error = $root.ProtoBoxedBool.verify(message.noDocumentStructure);
+            if (error)
+                return "noDocumentStructure." + error;
+        }
+        if (message.noDocumentStructureCode != null && message.hasOwnProperty("noDocumentStructureCode"))
+            if (!$util.isString(message.noDocumentStructureCode))
+                return "noDocumentStructureCode: string expected";
+        if (message.repeatSubHeaderInheritance != null && message.hasOwnProperty("repeatSubHeaderInheritance"))
+            switch (message.repeatSubHeaderInheritance) {
+            default:
+                return "repeatSubHeaderInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.repeatSubHeader != null && message.hasOwnProperty("repeatSubHeader")) {
+            var error = $root.ProtoBoxedUint32.verify(message.repeatSubHeader);
+            if (error)
+                return "repeatSubHeader." + error;
+        }
+        if (message.repeatSubHeaderCode != null && message.hasOwnProperty("repeatSubHeaderCode"))
+            if (!$util.isString(message.repeatSubHeaderCode))
+                return "repeatSubHeaderCode: string expected";
         return null;
     };
 
@@ -26159,6 +26315,76 @@ $root.ProtoTableElementProperties = (function() {
         }
         if (object.repeatHeaderCode != null)
             message.repeatHeaderCode = String(object.repeatHeaderCode);
+        switch (object.noDocumentStructureInheritance) {
+        default:
+            if (typeof object.noDocumentStructureInheritance === "number") {
+                message.noDocumentStructureInheritance = object.noDocumentStructureInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.noDocumentStructureInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.noDocumentStructureInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.noDocumentStructureInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.noDocumentStructureInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.noDocumentStructureInheritance = 4;
+            break;
+        }
+        if (object.noDocumentStructure != null) {
+            if (typeof object.noDocumentStructure !== "object")
+                throw TypeError(".ProtoTableElementProperties.noDocumentStructure: object expected");
+            message.noDocumentStructure = $root.ProtoBoxedBool.fromObject(object.noDocumentStructure);
+        }
+        if (object.noDocumentStructureCode != null)
+            message.noDocumentStructureCode = String(object.noDocumentStructureCode);
+        switch (object.repeatSubHeaderInheritance) {
+        default:
+            if (typeof object.repeatSubHeaderInheritance === "number") {
+                message.repeatSubHeaderInheritance = object.repeatSubHeaderInheritance;
+                break;
+            }
+            break;
+        case "INHERITANCE_INHERIT":
+        case 0:
+            message.repeatSubHeaderInheritance = 0;
+            break;
+        case "INHERITANCE_CODE":
+        case 1:
+            message.repeatSubHeaderInheritance = 1;
+            break;
+        case "INHERITANCE_BIND_CODE":
+        case 2:
+            message.repeatSubHeaderInheritance = 2;
+            break;
+        case "INHERITANCE_STATIC":
+        case 3:
+            message.repeatSubHeaderInheritance = 3;
+            break;
+        case "INHERITANCE_RESET":
+        case 4:
+            message.repeatSubHeaderInheritance = 4;
+            break;
+        }
+        if (object.repeatSubHeader != null) {
+            if (typeof object.repeatSubHeader !== "object")
+                throw TypeError(".ProtoTableElementProperties.repeatSubHeader: object expected");
+            message.repeatSubHeader = $root.ProtoBoxedUint32.fromObject(object.repeatSubHeader);
+        }
+        if (object.repeatSubHeaderCode != null)
+            message.repeatSubHeaderCode = String(object.repeatSubHeaderCode);
         return message;
     };
 
@@ -26264,6 +26490,12 @@ $root.ProtoTableElementProperties = (function() {
             object.repeatHeaderInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.repeatHeader = null;
             object.repeatHeaderCode = "";
+            object.noDocumentStructureInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.noDocumentStructure = null;
+            object.noDocumentStructureCode = "";
+            object.repeatSubHeaderInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.repeatSubHeader = null;
+            object.repeatSubHeaderCode = "";
         }
         if (message.widthInheritance != null && message.hasOwnProperty("widthInheritance"))
             object.widthInheritance = options.enums === String ? $root.Inheritance[message.widthInheritance] === undefined ? message.widthInheritance : $root.Inheritance[message.widthInheritance] : message.widthInheritance;
@@ -26442,6 +26674,18 @@ $root.ProtoTableElementProperties = (function() {
             object.repeatHeader = $root.ProtoBoxedUint32.toObject(message.repeatHeader, options);
         if (message.repeatHeaderCode != null && message.hasOwnProperty("repeatHeaderCode"))
             object.repeatHeaderCode = message.repeatHeaderCode;
+        if (message.noDocumentStructureInheritance != null && message.hasOwnProperty("noDocumentStructureInheritance"))
+            object.noDocumentStructureInheritance = options.enums === String ? $root.Inheritance[message.noDocumentStructureInheritance] === undefined ? message.noDocumentStructureInheritance : $root.Inheritance[message.noDocumentStructureInheritance] : message.noDocumentStructureInheritance;
+        if (message.noDocumentStructure != null && message.hasOwnProperty("noDocumentStructure"))
+            object.noDocumentStructure = $root.ProtoBoxedBool.toObject(message.noDocumentStructure, options);
+        if (message.noDocumentStructureCode != null && message.hasOwnProperty("noDocumentStructureCode"))
+            object.noDocumentStructureCode = message.noDocumentStructureCode;
+        if (message.repeatSubHeaderInheritance != null && message.hasOwnProperty("repeatSubHeaderInheritance"))
+            object.repeatSubHeaderInheritance = options.enums === String ? $root.Inheritance[message.repeatSubHeaderInheritance] === undefined ? message.repeatSubHeaderInheritance : $root.Inheritance[message.repeatSubHeaderInheritance] : message.repeatSubHeaderInheritance;
+        if (message.repeatSubHeader != null && message.hasOwnProperty("repeatSubHeader"))
+            object.repeatSubHeader = $root.ProtoBoxedUint32.toObject(message.repeatSubHeader, options);
+        if (message.repeatSubHeaderCode != null && message.hasOwnProperty("repeatSubHeaderCode"))
+            object.repeatSubHeaderCode = message.repeatSubHeaderCode;
         return object;
     };
 
