@@ -1,6 +1,6 @@
 {
   "name": "docframe-types",
-  "version": "0.7.6",
+  "version": "0.8.0",
   "description": "docframe-types contains type definitions for creating documents (e. g. using Deuterium)",
   "keywords": [
     "formatting",
@@ -22,7 +22,8 @@
   },
   "main": "build/Docframe.js",
   "devDependencies": {
-    "protobufjs-cli": "^1.1.0"
+    "npm-check-updates": "^22.0.1",
+    "protobufjs-cli": "^2.0.1"
   },
   "scripts": {
     "commit": "npm run-script build && npm version patch && npm publish && git push",
@@ -32,7 +33,7 @@
   "author": "DocuMatrix <office@documatrix.com>",
   "license": "MIT",
   "dependencies": {
-    "long": "^5.2.1",
-    "protobufjs": "^7.2.1"
+    "long": "^5.3.2",
+    "protobufjs": "^8.0.1"
   }
 }

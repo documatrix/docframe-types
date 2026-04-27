@@ -4528,6 +4528,12 @@ export interface IProtoLink {
 
     /** ProtoLink comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoLink paragraphFormatUUID */
+    paragraphFormatUUID?: (string|null);
+
+    /** ProtoLink paragraphFormatInternalName */
+    paragraphFormatInternalName?: (string|null);
 }
 
 /** Represents a ProtoLink. */
@@ -4547,6 +4553,12 @@ export class ProtoLink implements IProtoLink {
 
     /** ProtoLink comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoLink paragraphFormatUUID. */
+    public paragraphFormatUUID: string;
+
+    /** ProtoLink paragraphFormatInternalName. */
+    public paragraphFormatInternalName: string;
 
     /**
      * Creates a new ProtoLink instance using the specified properties.

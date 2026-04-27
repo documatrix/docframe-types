@@ -105,12 +105,14 @@ $root.ProtoBoxedBool = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedBool.decode = function decode(reader, length) {
+    ProtoBoxedBool.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedBool();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.bool();
@@ -332,12 +334,14 @@ $root.ProtoBoxedDouble = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedDouble.decode = function decode(reader, length) {
+    ProtoBoxedDouble.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedDouble();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.double();
@@ -559,12 +563,14 @@ $root.ProtoBoxedInt32 = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedInt32.decode = function decode(reader, length) {
+    ProtoBoxedInt32.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedInt32();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.int32();
@@ -786,12 +792,14 @@ $root.ProtoBoxedUint32 = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedUint32.decode = function decode(reader, length) {
+    ProtoBoxedUint32.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedUint32();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.uint32();
@@ -1013,12 +1021,14 @@ $root.ProtoBoxedString = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedString.decode = function decode(reader, length) {
+    ProtoBoxedString.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedString();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.string();
@@ -1256,12 +1266,14 @@ $root.ProtoBoxedSPBMode = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedSPBMode.decode = function decode(reader, length) {
+    ProtoBoxedSPBMode.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedSPBMode();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.int32();
@@ -1576,12 +1588,14 @@ $root.ProtoStrikethroughSpec = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoStrikethroughSpec.decode = function decode(reader, length) {
+    ProtoStrikethroughSpec.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoStrikethroughSpec();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.weight = $root.ProtoMeasure.decode(reader, reader.uint32());
@@ -1957,12 +1971,14 @@ $root.ProtoBoxedStrikethroughSpec = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedStrikethroughSpec.decode = function decode(reader, length) {
+    ProtoBoxedStrikethroughSpec.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedStrikethroughSpec();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = $root.ProtoStrikethroughSpec.decode(reader, reader.uint32());
@@ -2211,12 +2227,14 @@ $root.ProtoMeasure = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoMeasure.decode = function decode(reader, length) {
+    ProtoMeasure.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoMeasure();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.double();
@@ -2477,12 +2495,14 @@ $root.ProtoBoxedMeasure = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedMeasure.decode = function decode(reader, length) {
+    ProtoBoxedMeasure.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedMeasure();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = $root.ProtoMeasure.decode(reader, reader.uint32());
@@ -2731,12 +2751,14 @@ $root.ProtoSideMeasures = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoSideMeasures.decode = function decode(reader, length) {
+    ProtoSideMeasures.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSideMeasures();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.top = $root.ProtoMeasure.decode(reader, reader.uint32());
@@ -3022,12 +3044,14 @@ $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedAdvancedIllustrationAreaTextFlowType.decode = function decode(reader, length) {
+    ProtoBoxedAdvancedIllustrationAreaTextFlowType.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.int32();
@@ -3283,12 +3307,14 @@ $root.ProtoAdvancedIllustrationAreaImageSettings = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoAdvancedIllustrationAreaImageSettings.decode = function decode(reader, length) {
+    ProtoAdvancedIllustrationAreaImageSettings.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoAdvancedIllustrationAreaImageSettings();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.textFlow = $root.ProtoBoxedAdvancedIllustrationAreaTextFlowType.decode(reader, reader.uint32());
@@ -3520,12 +3546,14 @@ $root.ProtoFont = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoFont.decode = function decode(reader, length) {
+    ProtoFont.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoFont();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.id = reader.int32();
@@ -3747,12 +3775,14 @@ $root.ProtoBoxedFont = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedFont.decode = function decode(reader, length) {
+    ProtoBoxedFont.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedFont();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = $root.ProtoFont.decode(reader, reader.uint32());
@@ -4072,12 +4102,14 @@ $root.ProtoColor = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoColor.decode = function decode(reader, length) {
+    ProtoColor.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoColor();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.name = $root.ProtoBoxedString.decode(reader, reader.uint32());
@@ -4412,12 +4444,14 @@ $root.ProtoBoxedColor = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedColor.decode = function decode(reader, length) {
+    ProtoBoxedColor.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedColor();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = $root.ProtoColor.decode(reader, reader.uint32());
@@ -4677,12 +4711,14 @@ $root.ProtoRGBColor = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoRGBColor.decode = function decode(reader, length) {
+    ProtoRGBColor.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoRGBColor();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.name = $root.ProtoBoxedString.decode(reader, reader.uint32());
@@ -5013,12 +5049,14 @@ $root.ProtoCMYKColor = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoCMYKColor.decode = function decode(reader, length) {
+    ProtoCMYKColor.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoCMYKColor();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.name = $root.ProtoBoxedString.decode(reader, reader.uint32());
@@ -5355,12 +5393,14 @@ $root.ProtoBoxedHorizontalAlignment = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedHorizontalAlignment.decode = function decode(reader, length) {
+    ProtoBoxedHorizontalAlignment.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedHorizontalAlignment();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.int32();
@@ -5621,12 +5661,14 @@ $root.ProtoBoxedVerticalAlignment = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedVerticalAlignment.decode = function decode(reader, length) {
+    ProtoBoxedVerticalAlignment.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedVerticalAlignment();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.int32();
@@ -5990,12 +6032,14 @@ $root.ProtoSwissQRCreditor = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoSwissQRCreditor.decode = function decode(reader, length) {
+    ProtoSwissQRCreditor.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSwissQRCreditor();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.addressType = reader.string();
@@ -6412,12 +6456,14 @@ $root.ProtoSwissQRDebitor = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoSwissQRDebitor.decode = function decode(reader, length) {
+    ProtoSwissQRDebitor.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSwissQRDebitor();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.addressType = reader.string();
@@ -6747,12 +6793,14 @@ $root.ProtoSwissQRData = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoSwissQRData.decode = function decode(reader, length) {
+    ProtoSwissQRData.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSwissQRData();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.creditor = $root.ProtoSwissQRCreditor.decode(reader, reader.uint32());
@@ -7022,12 +7070,14 @@ $root.ProtoLinebreak = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoLinebreak.decode = function decode(reader, length) {
+    ProtoLinebreak.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoLinebreak();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -7298,12 +7348,14 @@ $root.ProtoBorder = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBorder.decode = function decode(reader, length) {
+    ProtoBorder.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBorder();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.weight = $root.ProtoMeasure.decode(reader, reader.uint32());
@@ -7557,12 +7609,14 @@ $root.ProtoSideBorders = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoSideBorders.decode = function decode(reader, length) {
+    ProtoSideBorders.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSideBorders();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.top = $root.ProtoBorder.decode(reader, reader.uint32());
@@ -7848,12 +7902,14 @@ $root.ProtoBoxedPositionMode = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedPositionMode.decode = function decode(reader, length) {
+    ProtoBoxedPositionMode.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedPositionMode();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.int32();
@@ -8142,12 +8198,14 @@ $root.ProtoColumnSettings = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoColumnSettings.decode = function decode(reader, length) {
+    ProtoColumnSettings.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoColumnSettings();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.width = $root.ProtoBoxedMeasure.decode(reader, reader.uint32());
@@ -8516,12 +8574,14 @@ $root.ProtoGraphicState = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoGraphicState.decode = function decode(reader, length) {
+    ProtoGraphicState.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoGraphicState();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.bold = $root.ProtoBoxedBool.decode(reader, reader.uint32());
@@ -8831,12 +8891,14 @@ $root.ProtoHtmlParser = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoHtmlParser.decode = function decode(reader, length) {
+    ProtoHtmlParser.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoHtmlParser();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             default:
                 reader.skipType(tag & 7);
@@ -9081,12 +9143,14 @@ $root.ProtoUnderlineSpec = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoUnderlineSpec.decode = function decode(reader, length) {
+    ProtoUnderlineSpec.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoUnderlineSpec();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.weight = $root.ProtoMeasure.decode(reader, reader.uint32());
@@ -9462,12 +9526,14 @@ $root.ProtoBoxedUnderlineSpec = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedUnderlineSpec.decode = function decode(reader, length) {
+    ProtoBoxedUnderlineSpec.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedUnderlineSpec();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = $root.ProtoUnderlineSpec.decode(reader, reader.uint32());
@@ -9716,12 +9782,14 @@ $root.ProtoCropSettings = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoCropSettings.decode = function decode(reader, length) {
+    ProtoCropSettings.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoCropSettings();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.x = $root.ProtoBoxedMeasure.decode(reader, reader.uint32());
@@ -9987,12 +10055,14 @@ $root.ProtoFlipSettings = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoFlipSettings.decode = function decode(reader, length) {
+    ProtoFlipSettings.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoFlipSettings();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.x = reader.bool();
@@ -10256,12 +10326,14 @@ $root.ProtoOption = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoOption.decode = function decode(reader, length) {
+    ProtoOption.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoOption();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.key = reader.string();
@@ -10587,12 +10659,14 @@ $root.ProtoBaseInputField = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBaseInputField.decode = function decode(reader, length) {
+    ProtoBaseInputField.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBaseInputField();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.name = reader.string();
@@ -10937,12 +11011,14 @@ $root.ProtoDocumentElement = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoDocumentElement.decode = function decode(reader, length) {
+    ProtoDocumentElement.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoDocumentElement();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -11198,12 +11274,14 @@ $root.ProtoBranchDocumentElement = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBranchDocumentElement.decode = function decode(reader, length) {
+    ProtoBranchDocumentElement.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBranchDocumentElement();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -11389,6 +11467,8 @@ $root.ProtoLink = (function() {
      * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoLink _children
      * @property {string|null} [url] ProtoLink url
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoLink comChannelUUIDs
+     * @property {string|null} [paragraphFormatUUID] ProtoLink paragraphFormatUUID
+     * @property {string|null} [paragraphFormatInternalName] ProtoLink paragraphFormatInternalName
      */
 
     /**
@@ -11433,6 +11513,22 @@ $root.ProtoLink = (function() {
     ProtoLink.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoLink paragraphFormatUUID.
+     * @member {string} paragraphFormatUUID
+     * @memberof ProtoLink
+     * @instance
+     */
+    ProtoLink.prototype.paragraphFormatUUID = "";
+
+    /**
+     * ProtoLink paragraphFormatInternalName.
+     * @member {string} paragraphFormatInternalName
+     * @memberof ProtoLink
+     * @instance
+     */
+    ProtoLink.prototype.paragraphFormatInternalName = "";
+
+    /**
      * Creates a new ProtoLink instance using the specified properties.
      * @function create
      * @memberof ProtoLink
@@ -11464,6 +11560,10 @@ $root.ProtoLink = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.paragraphFormatUUID != null && Object.hasOwnProperty.call(message, "paragraphFormatUUID"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.paragraphFormatUUID);
+        if (message.paragraphFormatInternalName != null && Object.hasOwnProperty.call(message, "paragraphFormatInternalName"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.paragraphFormatInternalName);
         return writer;
     };
 
@@ -11491,12 +11591,14 @@ $root.ProtoLink = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoLink.decode = function decode(reader, length) {
+    ProtoLink.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoLink();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -11512,6 +11614,14 @@ $root.ProtoLink = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 4: {
+                    message.paragraphFormatUUID = reader.string();
+                    break;
+                }
+            case 5: {
+                    message.paragraphFormatInternalName = reader.string();
                     break;
                 }
             default:
@@ -11568,6 +11678,12 @@ $root.ProtoLink = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.paragraphFormatUUID != null && message.hasOwnProperty("paragraphFormatUUID"))
+            if (!$util.isString(message.paragraphFormatUUID))
+                return "paragraphFormatUUID: string expected";
+        if (message.paragraphFormatInternalName != null && message.hasOwnProperty("paragraphFormatInternalName"))
+            if (!$util.isString(message.paragraphFormatInternalName))
+                return "paragraphFormatInternalName: string expected";
         return null;
     };
 
@@ -11602,6 +11718,10 @@ $root.ProtoLink = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.paragraphFormatUUID != null)
+            message.paragraphFormatUUID = String(object.paragraphFormatUUID);
+        if (object.paragraphFormatInternalName != null)
+            message.paragraphFormatInternalName = String(object.paragraphFormatInternalName);
         return message;
     };
 
@@ -11622,8 +11742,11 @@ $root.ProtoLink = (function() {
             object._children = [];
             object.comChannelUUIDs = [];
         }
-        if (options.defaults)
+        if (options.defaults) {
             object.url = "";
+            object.paragraphFormatUUID = "";
+            object.paragraphFormatInternalName = "";
+        }
         if (message._children && message._children.length) {
             object._children = [];
             for (var j = 0; j < message._children.length; ++j)
@@ -11636,6 +11759,10 @@ $root.ProtoLink = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.paragraphFormatUUID != null && message.hasOwnProperty("paragraphFormatUUID"))
+            object.paragraphFormatUUID = message.paragraphFormatUUID;
+        if (message.paragraphFormatInternalName != null && message.hasOwnProperty("paragraphFormatInternalName"))
+            object.paragraphFormatInternalName = message.paragraphFormatInternalName;
         return object;
     };
 
@@ -11965,12 +12092,14 @@ $root.ProtoListLevelSetting = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoListLevelSetting.decode = function decode(reader, length) {
+    ProtoListLevelSetting.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoListLevelSetting();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.listSettingName = reader.string();
@@ -12570,12 +12699,14 @@ $root.ProtoImageListLevelSetting = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoImageListLevelSetting.decode = function decode(reader, length) {
+    ProtoImageListLevelSetting.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoImageListLevelSetting();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.listSettingName = reader.string();
@@ -13088,12 +13219,14 @@ $root.ProtoTextListLevelSetting = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTextListLevelSetting.decode = function decode(reader, length) {
+    ProtoTextListLevelSetting.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTextListLevelSetting();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.listSettingName = reader.string();
@@ -13656,12 +13789,14 @@ $root.ProtoNumberListLevelSetting = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoNumberListLevelSetting.decode = function decode(reader, length) {
+    ProtoNumberListLevelSetting.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoNumberListLevelSetting();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.listSettingName = reader.string();
@@ -14270,12 +14405,14 @@ $root.ProtoUnnumberedListLevelSetting = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoUnnumberedListLevelSetting.decode = function decode(reader, length) {
+    ProtoUnnumberedListLevelSetting.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoUnnumberedListLevelSetting();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.listSettingName = reader.string();
@@ -14744,12 +14881,14 @@ $root.ProtoListSetting = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoListSetting.decode = function decode(reader, length) {
+    ProtoListSetting.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoListSetting();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -15052,12 +15191,14 @@ $root.ProtoBoxedListSetting = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedListSetting.decode = function decode(reader, length) {
+    ProtoBoxedListSetting.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedListSetting();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = $root.ProtoListSetting.decode(reader, reader.uint32());
@@ -15354,12 +15495,14 @@ $root.ProtoNamedString = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoNamedString.decode = function decode(reader, length) {
+    ProtoNamedString.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoNamedString();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -15752,12 +15895,14 @@ $root.ProtoParagraph = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoParagraph.decode = function decode(reader, length) {
+    ProtoParagraph.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoParagraph();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -16388,12 +16533,14 @@ $root.ProtoParagraphFormat = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoParagraphFormat.decode = function decode(reader, length) {
+    ProtoParagraphFormat.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoParagraphFormat();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.baseFormat = $root.ProtoParagraphFormat.decode(reader, reader.uint32());
@@ -17131,12 +17278,14 @@ $root.ProtoSection = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoSection.decode = function decode(reader, length) {
+    ProtoSection.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSection();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -17447,12 +17596,14 @@ $root.ProtoSpaceVertically = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoSpaceVertically.decode = function decode(reader, length) {
+    ProtoSpaceVertically.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSpaceVertically();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -17803,12 +17954,14 @@ $root.ProtoSpan = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoSpan.decode = function decode(reader, length) {
+    ProtoSpan.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSpan();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -18282,12 +18435,14 @@ $root.ProtoTable = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTable.decode = function decode(reader, length) {
+    ProtoTable.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTable();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -18677,12 +18832,14 @@ $root.ProtoTableConfig = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableConfig.decode = function decode(reader, length) {
+    ProtoTableConfig.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableConfig();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -19008,12 +19165,14 @@ $root.ProtoTableSettings = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableSettings.decode = function decode(reader, length) {
+    ProtoTableSettings.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableSettings();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.xOffset = $root.ProtoMeasure.decode(reader, reader.uint32());
@@ -19348,12 +19507,14 @@ $root.ProtoBoxedTableContentGroupType = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedTableContentGroupType.decode = function decode(reader, length) {
+    ProtoBoxedTableContentGroupType.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedTableContentGroupType();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.int32();
@@ -19652,12 +19813,14 @@ $root.ProtoTableContentGroup = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableContentGroup.decode = function decode(reader, length) {
+    ProtoTableContentGroup.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableContentGroup();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -20001,12 +20164,14 @@ $root.ProtoTableContentGroupConfig = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableContentGroupConfig.decode = function decode(reader, length) {
+    ProtoTableContentGroupConfig.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableContentGroupConfig();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -20290,12 +20455,14 @@ $root.ProtoTableContentGroupSettings = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableContentGroupSettings.decode = function decode(reader, length) {
+    ProtoTableContentGroupSettings.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableContentGroupSettings();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.contentGroupType = $root.ProtoBoxedTableContentGroupType.decode(reader, reader.uint32());
@@ -20618,12 +20785,14 @@ $root.ProtoTableRow = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableRow.decode = function decode(reader, length) {
+    ProtoTableRow.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableRow();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -21006,12 +21175,14 @@ $root.ProtoTableRowConfig = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableRowConfig.decode = function decode(reader, length) {
+    ProtoTableRowConfig.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableRowConfig();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -21306,12 +21477,14 @@ $root.ProtoTableRowSettings = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableRowSettings.decode = function decode(reader, length) {
+    ProtoTableRowSettings.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableRowSettings();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.minHeight = $root.ProtoMeasure.decode(reader, reader.uint32());
@@ -21559,12 +21732,14 @@ $root.ProtoBoxedTableCellType = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBoxedTableCellType.decode = function decode(reader, length) {
+    ProtoBoxedTableCellType.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBoxedTableCellType();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.value = reader.int32();
@@ -21891,12 +22066,14 @@ $root.ProtoTableCell = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableCell.decode = function decode(reader, length) {
+    ProtoTableCell.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableCell();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -22292,12 +22469,14 @@ $root.ProtoTableCellConfig = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableCellConfig.decode = function decode(reader, length) {
+    ProtoTableCellConfig.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableCellConfig();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -22662,12 +22841,14 @@ $root.ProtoTableCellSettings = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableCellSettings.decode = function decode(reader, length) {
+    ProtoTableCellSettings.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableCellSettings();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.width = $root.ProtoMeasure.decode(reader, reader.uint32());
@@ -23029,12 +23210,14 @@ $root.ProtoTableWS = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableWS.decode = function decode(reader, length) {
+    ProtoTableWS.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableWS();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.minLinesBefore = reader.uint32();
@@ -24271,12 +24454,14 @@ $root.ProtoTableElementProperties = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTableElementProperties.decode = function decode(reader, length) {
+    ProtoTableElementProperties.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTableElementProperties();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.widthInheritance = reader.int32();
@@ -26827,12 +27012,14 @@ $root.ProtoText = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoText.decode = function decode(reader, length) {
+    ProtoText.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoText();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -27253,12 +27440,14 @@ $root.ProtoBarcode = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBarcode.decode = function decode(reader, length) {
+    ProtoBarcode.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBarcode();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.type = reader.int32();
@@ -27835,12 +28024,14 @@ $root.ProtoBrickReference = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBrickReference.decode = function decode(reader, length) {
+    ProtoBrickReference.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBrickReference();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.internName = reader.string();
@@ -28159,12 +28350,14 @@ $root.ProtoBrick = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoBrick.decode = function decode(reader, length) {
+    ProtoBrick.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBrick();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -28571,12 +28764,14 @@ $root.ProtoTemplate = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTemplate.decode = function decode(reader, length) {
+    ProtoTemplate.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTemplate();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -29020,12 +29215,14 @@ $root.ProtoHeader = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoHeader.decode = function decode(reader, length) {
+    ProtoHeader.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoHeader();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -29407,12 +29604,14 @@ $root.ProtoFooter = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoFooter.decode = function decode(reader, length) {
+    ProtoFooter.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoFooter();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -30448,12 +30647,14 @@ $root.Node = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    Node.decode = function decode(reader, length) {
+    Node.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.Node();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message.children && message.children.length))
@@ -32682,12 +32883,14 @@ $root.ProtoImage = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoImage.decode = function decode(reader, length) {
+    ProtoImage.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoImage();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -33462,12 +33665,14 @@ $root.ProtoDirectory = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoDirectory.decode = function decode(reader, length) {
+    ProtoDirectory.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoDirectory();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -33882,12 +34087,14 @@ $root.ProtoTextBrick = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTextBrick.decode = function decode(reader, length) {
+    ProtoTextBrick.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTextBrick();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -34280,12 +34487,14 @@ $root.ProtoVariable = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoVariable.decode = function decode(reader, length) {
+    ProtoVariable.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoVariable();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -34755,12 +34964,14 @@ $root.ProtoFormatted = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoFormatted.decode = function decode(reader, length) {
+    ProtoFormatted.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoFormatted();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -35088,12 +35299,14 @@ $root.ProtoApplyProtoCDef = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoApplyProtoCDef.decode = function decode(reader, length) {
+    ProtoApplyProtoCDef.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoApplyProtoCDef();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.cDefUuid = reader.string();
@@ -35331,12 +35544,14 @@ $root.ProtoApplyProtoPDef = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoApplyProtoPDef.decode = function decode(reader, length) {
+    ProtoApplyProtoPDef.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoApplyProtoPDef();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.pDefUuid = reader.string();
@@ -35574,12 +35789,14 @@ $root.ProtoApplyPtConfig = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoApplyPtConfig.decode = function decode(reader, length) {
+    ProtoApplyPtConfig.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoApplyPtConfig();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.ptConfigUuid = reader.string();
@@ -35817,12 +36034,14 @@ $root.ProtoApplyUlConfig = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoApplyUlConfig.decode = function decode(reader, length) {
+    ProtoApplyUlConfig.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoApplyUlConfig();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.ulConfigUuid = reader.string();
@@ -36093,12 +36312,14 @@ $root.ProtoCDef = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoCDef.decode = function decode(reader, length) {
+    ProtoCDef.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoCDef();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.columSettings = $root.ProtoColumnSettings.decode(reader, reader.uint32());
@@ -36410,12 +36631,14 @@ $root.ProtoPDef = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoPDef.decode = function decode(reader, length) {
+    ProtoPDef.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoPDef();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.pageWidth = $root.ProtoBoxedMeasure.decode(reader, reader.uint32());
@@ -36732,12 +36955,14 @@ $root.ProtoPtConfig = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoPtConfig.decode = function decode(reader, length) {
+    ProtoPtConfig.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoPtConfig();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.height = $root.ProtoBoxedMeasure.decode(reader, reader.uint32());
@@ -37055,12 +37280,14 @@ $root.ProtoUlConfig = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoUlConfig.decode = function decode(reader, length) {
+    ProtoUlConfig.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoUlConfig();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.mode = reader.int32();
@@ -37458,12 +37685,14 @@ $root.ProtoNewPage = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoNewPage.decode = function decode(reader, length) {
+    ProtoNewPage.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoNewPage();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.uuid = reader.string();
@@ -37890,12 +38119,14 @@ $root.ProtoIndentation = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoIndentation.decode = function decode(reader, length) {
+    ProtoIndentation.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoIndentation();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -38230,12 +38461,14 @@ $root.ProtoCarryOver = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoCarryOver.decode = function decode(reader, length) {
+    ProtoCarryOver.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoCarryOver();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -38556,12 +38789,14 @@ $root.ProtoLoopEntry = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoLoopEntry.decode = function decode(reader, length) {
+    ProtoLoopEntry.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoLoopEntry();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -38922,12 +39157,14 @@ $root.ProtoLoop = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoLoop.decode = function decode(reader, length) {
+    ProtoLoop.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoLoop();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -39287,12 +39524,14 @@ $root.ProtoSubTotal = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoSubTotal.decode = function decode(reader, length) {
+    ProtoSubTotal.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSubTotal();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -39641,12 +39880,14 @@ $root.ProtoWsArea = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoWsArea.decode = function decode(reader, length) {
+    ProtoWsArea.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoWsArea();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -40009,12 +40250,14 @@ $root.ProtoRule = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoRule.decode = function decode(reader, length) {
+    ProtoRule.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoRule();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.xOffset = $root.ProtoMeasure.decode(reader, reader.uint32());
@@ -40484,12 +40727,14 @@ $root.ProtoRuleBoundaries = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoRuleBoundaries.decode = function decode(reader, length) {
+    ProtoRuleBoundaries.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoRuleBoundaries();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.start = $root.ProtoMeasure.decode(reader, reader.uint32());
@@ -40723,12 +40968,14 @@ $root.ProtoColorDef = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoColorDef.decode = function decode(reader, length) {
+    ProtoColorDef.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoColorDef();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.color = $root.ProtoColor.decode(reader, reader.uint32());
@@ -40982,12 +41229,14 @@ $root.ProtoLayout = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoLayout.decode = function decode(reader, length) {
+    ProtoLayout.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoLayout();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -41344,12 +41593,14 @@ $root.ProtoAdvancedIllustrationArea = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoAdvancedIllustrationArea.decode = function decode(reader, length) {
+    ProtoAdvancedIllustrationArea.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoAdvancedIllustrationArea();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -41810,12 +42061,14 @@ $root.ProtoAdjustHorizontally = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoAdjustHorizontally.decode = function decode(reader, length) {
+    ProtoAdjustHorizontally.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoAdjustHorizontally();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -42174,12 +42427,14 @@ $root.ProtoDoctypeScript = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoDoctypeScript.decode = function decode(reader, length) {
+    ProtoDoctypeScript.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoDoctypeScript();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -42505,12 +42760,14 @@ $root.ProtoDmScript = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoDmScript.decode = function decode(reader, length) {
+    ProtoDmScript.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoDmScript();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -42800,12 +43057,14 @@ $root.ProtoDynamicTemplate = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoDynamicTemplate.decode = function decode(reader, length) {
+    ProtoDynamicTemplate.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoDynamicTemplate();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -43152,12 +43411,14 @@ $root.ProtoSelection = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoSelection.decode = function decode(reader, length) {
+    ProtoSelection.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSelection();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -43590,12 +43851,14 @@ $root.ProtoSelectionEntry = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoSelectionEntry.decode = function decode(reader, length) {
+    ProtoSelectionEntry.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoSelectionEntry();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -43976,12 +44239,14 @@ $root.ProtoCondition = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoCondition.decode = function decode(reader, length) {
+    ProtoCondition.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoCondition();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -44340,12 +44605,14 @@ $root.ProtoPageCondition = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoPageCondition.decode = function decode(reader, length) {
+    ProtoPageCondition.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoPageCondition();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -44695,12 +44962,14 @@ $root.ProtoLocale = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoLocale.decode = function decode(reader, length) {
+    ProtoLocale.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoLocale();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     if (!(message._children && message._children.length))
@@ -45097,12 +45366,14 @@ $root.ProtoTag = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoTag.decode = function decode(reader, length) {
+    ProtoTag.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoTag();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -45454,12 +45725,14 @@ $root.ProtoParagraphSetDefault = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoParagraphSetDefault.decode = function decode(reader, length) {
+    ProtoParagraphSetDefault.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoParagraphSetDefault();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -45794,12 +46067,14 @@ $root.ProtoInputFieldText = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoInputFieldText.decode = function decode(reader, length) {
+    ProtoInputFieldText.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoInputFieldText();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -46159,12 +46434,14 @@ $root.ProtoInputFieldDate = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoInputFieldDate.decode = function decode(reader, length) {
+    ProtoInputFieldDate.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoInputFieldDate();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -46459,12 +46736,14 @@ $root.ProtoInputFieldCheckbox = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoInputFieldCheckbox.decode = function decode(reader, length) {
+    ProtoInputFieldCheckbox.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoInputFieldCheckbox();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -46759,12 +47038,14 @@ $root.ProtoInputFieldLabel = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoInputFieldLabel.decode = function decode(reader, length) {
+    ProtoInputFieldLabel.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoInputFieldLabel();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
@@ -47094,12 +47375,14 @@ $root.ProtoInputFieldDropdown = (function() {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    ProtoInputFieldDropdown.decode = function decode(reader, length) {
+    ProtoInputFieldDropdown.decode = function decode(reader, length, error) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
         var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoInputFieldDropdown();
         while (reader.pos < end) {
             var tag = reader.uint32();
+            if (tag === error)
+                break;
             switch (tag >>> 3) {
             case 1: {
                     message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32());
