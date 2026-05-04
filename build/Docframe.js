@@ -10391,15 +10391,17 @@ $root.ProtoOption = (function() {
  * PDFPrintingBehavior enum.
  * @name PDFPrintingBehavior
  * @enum {number}
- * @property {number} PDF_PRINTING_BEHAVIOR_INPUT=0 PDF_PRINTING_BEHAVIOR_INPUT value
- * @property {number} PDF_PRINTING_BEHAVIOR_TEXT=1 PDF_PRINTING_BEHAVIOR_TEXT value
- * @property {number} PDF_PRINTING_BEHAVIOR_INHERIT=2 PDF_PRINTING_BEHAVIOR_INHERIT value
+ * @property {number} PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL=0 PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL value
+ * @property {number} PDF_PRINTING_BEHAVIOR_INPUT=1 PDF_PRINTING_BEHAVIOR_INPUT value
+ * @property {number} PDF_PRINTING_BEHAVIOR_TEXT=2 PDF_PRINTING_BEHAVIOR_TEXT value
+ * @property {number} PDF_PRINTING_BEHAVIOR_INHERIT=3 PDF_PRINTING_BEHAVIOR_INHERIT value
  */
 $root.PDFPrintingBehavior = (function() {
     var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "PDF_PRINTING_BEHAVIOR_INPUT"] = 0;
-    values[valuesById[1] = "PDF_PRINTING_BEHAVIOR_TEXT"] = 1;
-    values[valuesById[2] = "PDF_PRINTING_BEHAVIOR_INHERIT"] = 2;
+    values[valuesById[0] = "PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL"] = 0;
+    values[valuesById[1] = "PDF_PRINTING_BEHAVIOR_INPUT"] = 1;
+    values[valuesById[2] = "PDF_PRINTING_BEHAVIOR_TEXT"] = 2;
+    values[valuesById[3] = "PDF_PRINTING_BEHAVIOR_INHERIT"] = 3;
     return values;
 })();
 
@@ -10419,6 +10421,9 @@ $root.ProtoBaseInputField = (function() {
      * @property {boolean|null} [bindDefaultValue] ProtoBaseInputField bindDefaultValue
      * @property {string|null} [defaultValueCode] ProtoBaseInputField defaultValueCode
      * @property {boolean|null} [readonly] ProtoBaseInputField readonly
+     * @property {PDFPrintingBehavior|null} [pdfPrintingBehavior] ProtoBaseInputField pdfPrintingBehavior
+     * @property {string|null} [pdfFormName] ProtoBaseInputField pdfFormName
+     * @property {string|null} [pdfAltText] ProtoBaseInputField pdfAltText
      */
 
     /**
@@ -10517,6 +10522,30 @@ $root.ProtoBaseInputField = (function() {
     ProtoBaseInputField.prototype.readonly = false;
 
     /**
+     * ProtoBaseInputField pdfPrintingBehavior.
+     * @member {PDFPrintingBehavior} pdfPrintingBehavior
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.pdfPrintingBehavior = 0;
+
+    /**
+     * ProtoBaseInputField pdfFormName.
+     * @member {string} pdfFormName
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.pdfFormName = "";
+
+    /**
+     * ProtoBaseInputField pdfAltText.
+     * @member {string} pdfAltText
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.pdfAltText = "";
+
+    /**
      * Creates a new ProtoBaseInputField instance using the specified properties.
      * @function create
      * @memberof ProtoBaseInputField
@@ -10560,6 +10589,12 @@ $root.ProtoBaseInputField = (function() {
             writer.uint32(/* id 9, wireType 2 =*/74).string(message.defaultValueCode);
         if (message.readonly != null && Object.hasOwnProperty.call(message, "readonly"))
             writer.uint32(/* id 10, wireType 0 =*/80).bool(message.readonly);
+        if (message.pdfPrintingBehavior != null && Object.hasOwnProperty.call(message, "pdfPrintingBehavior"))
+            writer.uint32(/* id 11, wireType 0 =*/88).int32(message.pdfPrintingBehavior);
+        if (message.pdfFormName != null && Object.hasOwnProperty.call(message, "pdfFormName"))
+            writer.uint32(/* id 12, wireType 2 =*/98).string(message.pdfFormName);
+        if (message.pdfAltText != null && Object.hasOwnProperty.call(message, "pdfAltText"))
+            writer.uint32(/* id 13, wireType 2 =*/106).string(message.pdfAltText);
         return writer;
     };
 
@@ -10634,6 +10669,18 @@ $root.ProtoBaseInputField = (function() {
                     message.readonly = reader.bool();
                     break;
                 }
+            case 11: {
+                    message.pdfPrintingBehavior = reader.int32();
+                    break;
+                }
+            case 12: {
+                    message.pdfFormName = reader.string();
+                    break;
+                }
+            case 13: {
+                    message.pdfAltText = reader.string();
+                    break;
+                }
             default:
                 reader.skipType(tag & 7);
                 break;
@@ -10701,6 +10748,22 @@ $root.ProtoBaseInputField = (function() {
         if (message.readonly != null && message.hasOwnProperty("readonly"))
             if (typeof message.readonly !== "boolean")
                 return "readonly: boolean expected";
+        if (message.pdfPrintingBehavior != null && message.hasOwnProperty("pdfPrintingBehavior"))
+            switch (message.pdfPrintingBehavior) {
+            default:
+                return "pdfPrintingBehavior: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                break;
+            }
+        if (message.pdfFormName != null && message.hasOwnProperty("pdfFormName"))
+            if (!$util.isString(message.pdfFormName))
+                return "pdfFormName: string expected";
+        if (message.pdfAltText != null && message.hasOwnProperty("pdfAltText"))
+            if (!$util.isString(message.pdfAltText))
+                return "pdfAltText: string expected";
         return null;
     };
 
@@ -10739,6 +10802,34 @@ $root.ProtoBaseInputField = (function() {
             message.defaultValueCode = String(object.defaultValueCode);
         if (object.readonly != null)
             message.readonly = Boolean(object.readonly);
+        switch (object.pdfPrintingBehavior) {
+        default:
+            if (typeof object.pdfPrintingBehavior === "number") {
+                message.pdfPrintingBehavior = object.pdfPrintingBehavior;
+                break;
+            }
+            break;
+        case "PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL":
+        case 0:
+            message.pdfPrintingBehavior = 0;
+            break;
+        case "PDF_PRINTING_BEHAVIOR_INPUT":
+        case 1:
+            message.pdfPrintingBehavior = 1;
+            break;
+        case "PDF_PRINTING_BEHAVIOR_TEXT":
+        case 2:
+            message.pdfPrintingBehavior = 2;
+            break;
+        case "PDF_PRINTING_BEHAVIOR_INHERIT":
+        case 3:
+            message.pdfPrintingBehavior = 3;
+            break;
+        }
+        if (object.pdfFormName != null)
+            message.pdfFormName = String(object.pdfFormName);
+        if (object.pdfAltText != null)
+            message.pdfAltText = String(object.pdfAltText);
         return message;
     };
 
@@ -10766,6 +10857,9 @@ $root.ProtoBaseInputField = (function() {
             object.bindDefaultValue = false;
             object.defaultValueCode = "";
             object.readonly = false;
+            object.pdfPrintingBehavior = options.enums === String ? "PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL" : 0;
+            object.pdfFormName = "";
+            object.pdfAltText = "";
         }
         if (message.name != null && message.hasOwnProperty("name"))
             object.name = message.name;
@@ -10787,6 +10881,12 @@ $root.ProtoBaseInputField = (function() {
             object.defaultValueCode = message.defaultValueCode;
         if (message.readonly != null && message.hasOwnProperty("readonly"))
             object.readonly = message.readonly;
+        if (message.pdfPrintingBehavior != null && message.hasOwnProperty("pdfPrintingBehavior"))
+            object.pdfPrintingBehavior = options.enums === String ? $root.PDFPrintingBehavior[message.pdfPrintingBehavior] === undefined ? message.pdfPrintingBehavior : $root.PDFPrintingBehavior[message.pdfPrintingBehavior] : message.pdfPrintingBehavior;
+        if (message.pdfFormName != null && message.hasOwnProperty("pdfFormName"))
+            object.pdfFormName = message.pdfFormName;
+        if (message.pdfAltText != null && message.hasOwnProperty("pdfAltText"))
+            object.pdfAltText = message.pdfAltText;
         return object;
     };
 
@@ -45649,12 +45749,10 @@ $root.ProtoInputFieldText = (function() {
      * @interface IProtoInputFieldText
      * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldText parent
      * @property {IProtoBaseInputField|null} [base] ProtoInputFieldText base
-     * @property {PDFPrintingBehavior|null} [pdfPrintingBehavior] ProtoInputFieldText pdfPrintingBehavior
      * @property {IProtoBoxedMeasure|null} [pdfSize] ProtoInputFieldText pdfSize
      * @property {string|null} [pdfFormName] ProtoInputFieldText pdfFormName
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoInputFieldText comChannelUUIDs
      * @property {string|null} [uuid] ProtoInputFieldText uuid
-     * @property {string|null} [pdfAltText] ProtoInputFieldText pdfAltText
      * @property {IProtoBoxedMeasure|null} [pdfInputHeight] ProtoInputFieldText pdfInputHeight
      * @property {boolean|null} [pdfIsReadOnly] ProtoInputFieldText pdfIsReadOnly
      * @property {boolean|null} [pdfIsRequired] ProtoInputFieldText pdfIsRequired
@@ -45701,14 +45799,6 @@ $root.ProtoInputFieldText = (function() {
     ProtoInputFieldText.prototype.base = null;
 
     /**
-     * ProtoInputFieldText pdfPrintingBehavior.
-     * @member {PDFPrintingBehavior} pdfPrintingBehavior
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfPrintingBehavior = 0;
-
-    /**
      * ProtoInputFieldText pdfSize.
      * @member {IProtoBoxedMeasure|null|undefined} pdfSize
      * @memberof ProtoInputFieldText
@@ -45739,14 +45829,6 @@ $root.ProtoInputFieldText = (function() {
      * @instance
      */
     ProtoInputFieldText.prototype.uuid = "";
-
-    /**
-     * ProtoInputFieldText pdfAltText.
-     * @member {string} pdfAltText
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfAltText = "";
 
     /**
      * ProtoInputFieldText pdfInputHeight.
@@ -45864,8 +45946,6 @@ $root.ProtoInputFieldText = (function() {
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.base != null && Object.hasOwnProperty.call(message, "base"))
             $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.pdfPrintingBehavior != null && Object.hasOwnProperty.call(message, "pdfPrintingBehavior"))
-            writer.uint32(/* id 3, wireType 0 =*/24).int32(message.pdfPrintingBehavior);
         if (message.pdfSize != null && Object.hasOwnProperty.call(message, "pdfSize"))
             $root.ProtoBoxedMeasure.encode(message.pdfSize, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
         if (message.pdfFormName != null && Object.hasOwnProperty.call(message, "pdfFormName"))
@@ -45875,8 +45955,6 @@ $root.ProtoInputFieldText = (function() {
                 writer.uint32(/* id 6, wireType 2 =*/50).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 7, wireType 2 =*/58).string(message.uuid);
-        if (message.pdfAltText != null && Object.hasOwnProperty.call(message, "pdfAltText"))
-            writer.uint32(/* id 8, wireType 2 =*/66).string(message.pdfAltText);
         if (message.pdfInputHeight != null && Object.hasOwnProperty.call(message, "pdfInputHeight"))
             $root.ProtoBoxedMeasure.encode(message.pdfInputHeight, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
         if (message.pdfIsReadOnly != null && Object.hasOwnProperty.call(message, "pdfIsReadOnly"))
@@ -45941,10 +46019,6 @@ $root.ProtoInputFieldText = (function() {
                     message.base = $root.ProtoBaseInputField.decode(reader, reader.uint32());
                     break;
                 }
-            case 3: {
-                    message.pdfPrintingBehavior = reader.int32();
-                    break;
-                }
             case 4: {
                     message.pdfSize = $root.ProtoBoxedMeasure.decode(reader, reader.uint32());
                     break;
@@ -45961,10 +46035,6 @@ $root.ProtoInputFieldText = (function() {
                 }
             case 7: {
                     message.uuid = reader.string();
-                    break;
-                }
-            case 8: {
-                    message.pdfAltText = reader.string();
                     break;
                 }
             case 9: {
@@ -46056,15 +46126,6 @@ $root.ProtoInputFieldText = (function() {
             if (error)
                 return "base." + error;
         }
-        if (message.pdfPrintingBehavior != null && message.hasOwnProperty("pdfPrintingBehavior"))
-            switch (message.pdfPrintingBehavior) {
-            default:
-                return "pdfPrintingBehavior: enum value expected";
-            case 0:
-            case 1:
-            case 2:
-                break;
-            }
         if (message.pdfSize != null && message.hasOwnProperty("pdfSize")) {
             var error = $root.ProtoBoxedMeasure.verify(message.pdfSize);
             if (error)
@@ -46083,9 +46144,6 @@ $root.ProtoInputFieldText = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
-        if (message.pdfAltText != null && message.hasOwnProperty("pdfAltText"))
-            if (!$util.isString(message.pdfAltText))
-                return "pdfAltText: string expected";
         if (message.pdfInputHeight != null && message.hasOwnProperty("pdfInputHeight")) {
             var error = $root.ProtoBoxedMeasure.verify(message.pdfInputHeight);
             if (error)
@@ -46146,26 +46204,6 @@ $root.ProtoInputFieldText = (function() {
                 throw TypeError(".ProtoInputFieldText.base: object expected");
             message.base = $root.ProtoBaseInputField.fromObject(object.base);
         }
-        switch (object.pdfPrintingBehavior) {
-        default:
-            if (typeof object.pdfPrintingBehavior === "number") {
-                message.pdfPrintingBehavior = object.pdfPrintingBehavior;
-                break;
-            }
-            break;
-        case "PDF_PRINTING_BEHAVIOR_INPUT":
-        case 0:
-            message.pdfPrintingBehavior = 0;
-            break;
-        case "PDF_PRINTING_BEHAVIOR_TEXT":
-        case 1:
-            message.pdfPrintingBehavior = 1;
-            break;
-        case "PDF_PRINTING_BEHAVIOR_INHERIT":
-        case 2:
-            message.pdfPrintingBehavior = 2;
-            break;
-        }
         if (object.pdfSize != null) {
             if (typeof object.pdfSize !== "object")
                 throw TypeError(".ProtoInputFieldText.pdfSize: object expected");
@@ -46182,8 +46220,6 @@ $root.ProtoInputFieldText = (function() {
         }
         if (object.uuid != null)
             message.uuid = String(object.uuid);
-        if (object.pdfAltText != null)
-            message.pdfAltText = String(object.pdfAltText);
         if (object.pdfInputHeight != null) {
             if (typeof object.pdfInputHeight !== "object")
                 throw TypeError(".ProtoInputFieldText.pdfInputHeight: object expected");
@@ -46230,11 +46266,9 @@ $root.ProtoInputFieldText = (function() {
         if (options.defaults) {
             object.parent = null;
             object.base = null;
-            object.pdfPrintingBehavior = options.enums === String ? "PDF_PRINTING_BEHAVIOR_INPUT" : 0;
             object.pdfSize = null;
             object.pdfFormName = "";
             object.uuid = "";
-            object.pdfAltText = "";
             object.pdfInputHeight = null;
             object.pdfIsReadOnly = false;
             object.pdfIsRequired = false;
@@ -46251,8 +46285,6 @@ $root.ProtoInputFieldText = (function() {
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
         if (message.base != null && message.hasOwnProperty("base"))
             object.base = $root.ProtoBaseInputField.toObject(message.base, options);
-        if (message.pdfPrintingBehavior != null && message.hasOwnProperty("pdfPrintingBehavior"))
-            object.pdfPrintingBehavior = options.enums === String ? $root.PDFPrintingBehavior[message.pdfPrintingBehavior] === undefined ? message.pdfPrintingBehavior : $root.PDFPrintingBehavior[message.pdfPrintingBehavior] : message.pdfPrintingBehavior;
         if (message.pdfSize != null && message.hasOwnProperty("pdfSize"))
             object.pdfSize = $root.ProtoBoxedMeasure.toObject(message.pdfSize, options);
         if (message.pdfFormName != null && message.hasOwnProperty("pdfFormName"))
@@ -46264,8 +46296,6 @@ $root.ProtoInputFieldText = (function() {
         }
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
-        if (message.pdfAltText != null && message.hasOwnProperty("pdfAltText"))
-            object.pdfAltText = message.pdfAltText;
         if (message.pdfInputHeight != null && message.hasOwnProperty("pdfInputHeight"))
             object.pdfInputHeight = $root.ProtoBoxedMeasure.toObject(message.pdfInputHeight, options);
         if (message.pdfIsReadOnly != null && message.hasOwnProperty("pdfIsReadOnly"))
@@ -46630,9 +46660,6 @@ $root.ProtoInputFieldCheckbox = (function() {
      * @property {IProtoBaseInputField|null} [base] ProtoInputFieldCheckbox base
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoInputFieldCheckbox comChannelUUIDs
      * @property {string|null} [uuid] ProtoInputFieldCheckbox uuid
-     * @property {PDFPrintingBehavior|null} [pdfPrintingBehavior] ProtoInputFieldCheckbox pdfPrintingBehavior
-     * @property {string|null} [pdfFormName] ProtoInputFieldCheckbox pdfFormName
-     * @property {string|null} [pdfAltText] ProtoInputFieldCheckbox pdfAltText
      */
 
     /**
@@ -46684,30 +46711,6 @@ $root.ProtoInputFieldCheckbox = (function() {
     ProtoInputFieldCheckbox.prototype.uuid = "";
 
     /**
-     * ProtoInputFieldCheckbox pdfPrintingBehavior.
-     * @member {PDFPrintingBehavior} pdfPrintingBehavior
-     * @memberof ProtoInputFieldCheckbox
-     * @instance
-     */
-    ProtoInputFieldCheckbox.prototype.pdfPrintingBehavior = 0;
-
-    /**
-     * ProtoInputFieldCheckbox pdfFormName.
-     * @member {string} pdfFormName
-     * @memberof ProtoInputFieldCheckbox
-     * @instance
-     */
-    ProtoInputFieldCheckbox.prototype.pdfFormName = "";
-
-    /**
-     * ProtoInputFieldCheckbox pdfAltText.
-     * @member {string} pdfAltText
-     * @memberof ProtoInputFieldCheckbox
-     * @instance
-     */
-    ProtoInputFieldCheckbox.prototype.pdfAltText = "";
-
-    /**
      * Creates a new ProtoInputFieldCheckbox instance using the specified properties.
      * @function create
      * @memberof ProtoInputFieldCheckbox
@@ -46740,12 +46743,6 @@ $root.ProtoInputFieldCheckbox = (function() {
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
-        if (message.pdfPrintingBehavior != null && Object.hasOwnProperty.call(message, "pdfPrintingBehavior"))
-            writer.uint32(/* id 5, wireType 0 =*/40).int32(message.pdfPrintingBehavior);
-        if (message.pdfFormName != null && Object.hasOwnProperty.call(message, "pdfFormName"))
-            writer.uint32(/* id 6, wireType 2 =*/50).string(message.pdfFormName);
-        if (message.pdfAltText != null && Object.hasOwnProperty.call(message, "pdfAltText"))
-            writer.uint32(/* id 7, wireType 2 =*/58).string(message.pdfAltText);
         return writer;
     };
 
@@ -46796,18 +46793,6 @@ $root.ProtoInputFieldCheckbox = (function() {
                 }
             case 4: {
                     message.uuid = reader.string();
-                    break;
-                }
-            case 5: {
-                    message.pdfPrintingBehavior = reader.int32();
-                    break;
-                }
-            case 6: {
-                    message.pdfFormName = reader.string();
-                    break;
-                }
-            case 7: {
-                    message.pdfAltText = reader.string();
                     break;
                 }
             default:
@@ -46865,21 +46850,6 @@ $root.ProtoInputFieldCheckbox = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
-        if (message.pdfPrintingBehavior != null && message.hasOwnProperty("pdfPrintingBehavior"))
-            switch (message.pdfPrintingBehavior) {
-            default:
-                return "pdfPrintingBehavior: enum value expected";
-            case 0:
-            case 1:
-            case 2:
-                break;
-            }
-        if (message.pdfFormName != null && message.hasOwnProperty("pdfFormName"))
-            if (!$util.isString(message.pdfFormName))
-                return "pdfFormName: string expected";
-        if (message.pdfAltText != null && message.hasOwnProperty("pdfAltText"))
-            if (!$util.isString(message.pdfAltText))
-                return "pdfAltText: string expected";
         return null;
     };
 
@@ -46914,30 +46884,6 @@ $root.ProtoInputFieldCheckbox = (function() {
         }
         if (object.uuid != null)
             message.uuid = String(object.uuid);
-        switch (object.pdfPrintingBehavior) {
-        default:
-            if (typeof object.pdfPrintingBehavior === "number") {
-                message.pdfPrintingBehavior = object.pdfPrintingBehavior;
-                break;
-            }
-            break;
-        case "PDF_PRINTING_BEHAVIOR_INPUT":
-        case 0:
-            message.pdfPrintingBehavior = 0;
-            break;
-        case "PDF_PRINTING_BEHAVIOR_TEXT":
-        case 1:
-            message.pdfPrintingBehavior = 1;
-            break;
-        case "PDF_PRINTING_BEHAVIOR_INHERIT":
-        case 2:
-            message.pdfPrintingBehavior = 2;
-            break;
-        }
-        if (object.pdfFormName != null)
-            message.pdfFormName = String(object.pdfFormName);
-        if (object.pdfAltText != null)
-            message.pdfAltText = String(object.pdfAltText);
         return message;
     };
 
@@ -46960,9 +46906,6 @@ $root.ProtoInputFieldCheckbox = (function() {
             object.parent = null;
             object.base = null;
             object.uuid = "";
-            object.pdfPrintingBehavior = options.enums === String ? "PDF_PRINTING_BEHAVIOR_INPUT" : 0;
-            object.pdfFormName = "";
-            object.pdfAltText = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -46975,12 +46918,6 @@ $root.ProtoInputFieldCheckbox = (function() {
         }
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
-        if (message.pdfPrintingBehavior != null && message.hasOwnProperty("pdfPrintingBehavior"))
-            object.pdfPrintingBehavior = options.enums === String ? $root.PDFPrintingBehavior[message.pdfPrintingBehavior] === undefined ? message.pdfPrintingBehavior : $root.PDFPrintingBehavior[message.pdfPrintingBehavior] : message.pdfPrintingBehavior;
-        if (message.pdfFormName != null && message.hasOwnProperty("pdfFormName"))
-            object.pdfFormName = message.pdfFormName;
-        if (message.pdfAltText != null && message.hasOwnProperty("pdfAltText"))
-            object.pdfAltText = message.pdfAltText;
         return object;
     };
 

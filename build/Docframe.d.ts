@@ -4140,9 +4140,10 @@ export class ProtoOption implements IProtoOption {
 
 /** PDFPrintingBehavior enum. */
 export enum PDFPrintingBehavior {
-    PDF_PRINTING_BEHAVIOR_INPUT = 0,
-    PDF_PRINTING_BEHAVIOR_TEXT = 1,
-    PDF_PRINTING_BEHAVIOR_INHERIT = 2
+    PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL = 0,
+    PDF_PRINTING_BEHAVIOR_INPUT = 1,
+    PDF_PRINTING_BEHAVIOR_TEXT = 2,
+    PDF_PRINTING_BEHAVIOR_INHERIT = 3
 }
 
 /** Properties of a ProtoBaseInputField. */
@@ -4177,6 +4178,15 @@ export interface IProtoBaseInputField {
 
     /** ProtoBaseInputField readonly */
     readonly?: (boolean|null);
+
+    /** ProtoBaseInputField pdfPrintingBehavior */
+    pdfPrintingBehavior?: (PDFPrintingBehavior|null);
+
+    /** ProtoBaseInputField pdfFormName */
+    pdfFormName?: (string|null);
+
+    /** ProtoBaseInputField pdfAltText */
+    pdfAltText?: (string|null);
 }
 
 /** Represents a ProtoBaseInputField. */
@@ -4217,6 +4227,15 @@ export class ProtoBaseInputField implements IProtoBaseInputField {
 
     /** ProtoBaseInputField readonly. */
     public readonly: boolean;
+
+    /** ProtoBaseInputField pdfPrintingBehavior. */
+    public pdfPrintingBehavior: PDFPrintingBehavior;
+
+    /** ProtoBaseInputField pdfFormName. */
+    public pdfFormName: string;
+
+    /** ProtoBaseInputField pdfAltText. */
+    public pdfAltText: string;
 
     /**
      * Creates a new ProtoBaseInputField instance using the specified properties.
@@ -15307,9 +15326,6 @@ export interface IProtoInputFieldText {
     /** ProtoInputFieldText base */
     base?: (IProtoBaseInputField|null);
 
-    /** ProtoInputFieldText pdfPrintingBehavior */
-    pdfPrintingBehavior?: (PDFPrintingBehavior|null);
-
     /** ProtoInputFieldText pdfSize */
     pdfSize?: (IProtoBoxedMeasure|null);
 
@@ -15321,9 +15337,6 @@ export interface IProtoInputFieldText {
 
     /** ProtoInputFieldText uuid */
     uuid?: (string|null);
-
-    /** ProtoInputFieldText pdfAltText */
-    pdfAltText?: (string|null);
 
     /** ProtoInputFieldText pdfInputHeight */
     pdfInputHeight?: (IProtoBoxedMeasure|null);
@@ -15374,9 +15387,6 @@ export class ProtoInputFieldText implements IProtoInputFieldText {
     /** ProtoInputFieldText base. */
     public base?: (IProtoBaseInputField|null);
 
-    /** ProtoInputFieldText pdfPrintingBehavior. */
-    public pdfPrintingBehavior: PDFPrintingBehavior;
-
     /** ProtoInputFieldText pdfSize. */
     public pdfSize?: (IProtoBoxedMeasure|null);
 
@@ -15388,9 +15398,6 @@ export class ProtoInputFieldText implements IProtoInputFieldText {
 
     /** ProtoInputFieldText uuid. */
     public uuid: string;
-
-    /** ProtoInputFieldText pdfAltText. */
-    public pdfAltText: string;
 
     /** ProtoInputFieldText pdfInputHeight. */
     public pdfInputHeight?: (IProtoBoxedMeasure|null);
@@ -15632,15 +15639,6 @@ export interface IProtoInputFieldCheckbox {
 
     /** ProtoInputFieldCheckbox uuid */
     uuid?: (string|null);
-
-    /** ProtoInputFieldCheckbox pdfPrintingBehavior */
-    pdfPrintingBehavior?: (PDFPrintingBehavior|null);
-
-    /** ProtoInputFieldCheckbox pdfFormName */
-    pdfFormName?: (string|null);
-
-    /** ProtoInputFieldCheckbox pdfAltText */
-    pdfAltText?: (string|null);
 }
 
 /** Represents a ProtoInputFieldCheckbox. */
@@ -15663,15 +15661,6 @@ export class ProtoInputFieldCheckbox implements IProtoInputFieldCheckbox {
 
     /** ProtoInputFieldCheckbox uuid. */
     public uuid: string;
-
-    /** ProtoInputFieldCheckbox pdfPrintingBehavior. */
-    public pdfPrintingBehavior: PDFPrintingBehavior;
-
-    /** ProtoInputFieldCheckbox pdfFormName. */
-    public pdfFormName: string;
-
-    /** ProtoInputFieldCheckbox pdfAltText. */
-    public pdfAltText: string;
 
     /**
      * Creates a new ProtoInputFieldCheckbox instance using the specified properties.

@@ -328,9 +328,10 @@ string value = 2;
 }
 
 enum PDFPrintingBehavior {
-PDF_PRINTING_BEHAVIOR_INPUT = 0;
-PDF_PRINTING_BEHAVIOR_TEXT = 1;
-PDF_PRINTING_BEHAVIOR_INHERIT = 2;
+PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL = 0;
+PDF_PRINTING_BEHAVIOR_INPUT = 1;
+PDF_PRINTING_BEHAVIOR_TEXT = 2;
+PDF_PRINTING_BEHAVIOR_INHERIT = 3;
 }
 
 message ProtoBaseInputField {
@@ -345,6 +346,11 @@ bool bindDefaultValue = 8;
 string defaultValueCode = 9;
 
 bool readonly = 10;
+
+PDFPrintingBehavior pdfPrintingBehavior = 11;
+
+string pdfFormName = 12;
+string pdfAltText = 13;
 }
 enum Inheritance {
 INHERITANCE_INHERIT = 0;
@@ -1461,12 +1467,10 @@ message ProtoInputFieldText {
 ProtoDocumentElement parent = 1;
 
 ProtoBaseInputField base = 2;
-PDFPrintingBehavior pdf_printing_behavior = 3;
 ProtoBoxedMeasure pdf_size = 4;
 string pdf_form_name = 5;
 repeated string comChannelUUIDs = 6;
 string uuid = 7;
-string pdfAltText = 8;
 ProtoBoxedMeasure pdfInputHeight = 9;
 
 bool pdfIsReadOnly = 10;
@@ -1495,9 +1499,6 @@ ProtoDocumentElement parent = 1;
 ProtoBaseInputField base = 2;
 repeated string comChannelUUIDs = 3;
 string uuid = 4;
-PDFPrintingBehavior pdfPrintingBehavior = 5;
-string pdfFormName = 6;
-string pdfAltText = 7;
 }
 
 message ProtoInputFieldLabel {
@@ -1521,4 +1522,3 @@ string optionsCode = 5;
 repeated string comChannelUUIDs = 6;
 string uuid = 7;
 }
-
