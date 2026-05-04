@@ -351,6 +351,9 @@ PDFPrintingBehavior pdfPrintingBehavior = 11;
 
 string pdfFormName = 12;
 string pdfAltText = 13;
+
+repeated string comChannelUUIDs = 14;
+string uuid = 15;
 }
 enum Inheritance {
 INHERITANCE_INHERIT = 0;
@@ -1463,62 +1466,57 @@ string paragraphFormatUUID = 3;
 string uuid = 4;
 repeated string comChannelUUIDs = 5;
 }
+message ProtoBaseTextInputField {
+ProtoBaseInputField base = 1;
+
+ProtoBoxedMeasure pdf_size = 2;
+
+ProtoBoxedMeasure pdfInputHeight = 3;
+
+bool pdfIsReadOnly = 4;
+bool pdfIsRequired = 5;
+bool pdfIsNotExported = 6;
+bool pdfIsMultiline = 7;
+bool pdfIsPasswordField = 8;
+bool pdfIsFileSelectionField = 9;
+bool pdfDisableSpellCheck = 10;
+bool pdfDisableScrolling = 11;
+bool pdfUseCombFormatting = 12;
+bool pdfIsRichTextEnabled = 13;
+}
+
 message ProtoInputFieldText {
 ProtoDocumentElement parent = 1;
 
-ProtoBaseInputField base = 2;
-ProtoBoxedMeasure pdf_size = 4;
-string pdf_form_name = 5;
-repeated string comChannelUUIDs = 6;
-string uuid = 7;
-ProtoBoxedMeasure pdfInputHeight = 9;
-
-bool pdfIsReadOnly = 10;
-bool pdfIsRequired = 11;
-bool pdfIsNotExported = 12;
-bool pdfIsMultiline = 13;
-bool pdfIsPasswordField = 14;
-bool pdfIsFileSelectionField = 15;
-bool pdfDisableSpellCheck = 16;
-bool pdfDisableScrolling = 17;
-bool pdfUseCombFormatting = 18;
-bool pdfIsRichTextEnabled = 19;
+ProtoBaseTextInputField base = 2;
 }
 
 message ProtoInputFieldDate {
 ProtoDocumentElement parent = 1;
 
-ProtoBaseInputField base = 2;
-repeated string comChannelUUIDs = 3;
-string uuid = 4;
+ProtoBaseTextInputField base = 2;
 }
 
 message ProtoInputFieldCheckbox {
 ProtoDocumentElement parent = 1;
 
 ProtoBaseInputField base = 2;
-repeated string comChannelUUIDs = 3;
-string uuid = 4;
 }
 
 message ProtoInputFieldLabel {
 ProtoDocumentElement parent = 1;
 
-ProtoBaseInputField base = 2;
-repeated string comChannelUUIDs = 3;
-string uuid = 4;
+ProtoBaseTextInputField base = 2;
 }
 
 message ProtoInputFieldDropdown {
 ProtoDocumentElement parent = 1;
 
-ProtoBaseInputField base = 2;
+ProtoBaseTextInputField base = 2;
 
 repeated ProtoOption options = 3;
 
 bool bindOptionsCode = 4;
 
 string optionsCode = 5;
-repeated string comChannelUUIDs = 6;
-string uuid = 7;
 }

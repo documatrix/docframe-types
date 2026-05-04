@@ -35,4 +35,7 @@ message ProtoBaseInputField {
 
     string pdfFormName = 12;
     string pdfAltText = 13;
+
+    repeated string comChannelUUIDs = 14;
+    string uuid = 15;
 }

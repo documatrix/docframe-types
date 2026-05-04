@@ -10424,6 +10424,8 @@ $root.ProtoBaseInputField = (function() {
      * @property {PDFPrintingBehavior|null} [pdfPrintingBehavior] ProtoBaseInputField pdfPrintingBehavior
      * @property {string|null} [pdfFormName] ProtoBaseInputField pdfFormName
      * @property {string|null} [pdfAltText] ProtoBaseInputField pdfAltText
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoBaseInputField comChannelUUIDs
+     * @property {string|null} [uuid] ProtoBaseInputField uuid
      */
 
     /**
@@ -10435,6 +10437,7 @@ $root.ProtoBaseInputField = (function() {
      * @param {IProtoBaseInputField=} [properties] Properties to set
      */
     function ProtoBaseInputField(properties) {
+        this.comChannelUUIDs = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -10546,6 +10549,22 @@ $root.ProtoBaseInputField = (function() {
     ProtoBaseInputField.prototype.pdfAltText = "";
 
     /**
+     * ProtoBaseInputField comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * ProtoBaseInputField uuid.
+     * @member {string} uuid
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.uuid = "";
+
+    /**
      * Creates a new ProtoBaseInputField instance using the specified properties.
      * @function create
      * @memberof ProtoBaseInputField
@@ -10595,6 +10614,11 @@ $root.ProtoBaseInputField = (function() {
             writer.uint32(/* id 12, wireType 2 =*/98).string(message.pdfFormName);
         if (message.pdfAltText != null && Object.hasOwnProperty.call(message, "pdfAltText"))
             writer.uint32(/* id 13, wireType 2 =*/106).string(message.pdfAltText);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 14, wireType 2 =*/114).string(message.comChannelUUIDs[i]);
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 15, wireType 2 =*/122).string(message.uuid);
         return writer;
     };
 
@@ -10681,6 +10705,16 @@ $root.ProtoBaseInputField = (function() {
                     message.pdfAltText = reader.string();
                     break;
                 }
+            case 14: {
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 15: {
+                    message.uuid = reader.string();
+                    break;
+                }
             default:
                 reader.skipType(tag & 7);
                 break;
@@ -10764,6 +10798,16 @@ $root.ProtoBaseInputField = (function() {
         if (message.pdfAltText != null && message.hasOwnProperty("pdfAltText"))
             if (!$util.isString(message.pdfAltText))
                 return "pdfAltText: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
         return null;
     };
 
@@ -10830,6 +10874,15 @@ $root.ProtoBaseInputField = (function() {
             message.pdfFormName = String(object.pdfFormName);
         if (object.pdfAltText != null)
             message.pdfAltText = String(object.pdfAltText);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoBaseInputField.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = [];
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        if (object.uuid != null)
+            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -10846,6 +10899,8 @@ $root.ProtoBaseInputField = (function() {
         if (!options)
             options = {};
         var object = {};
+        if (options.arrays || options.defaults)
+            object.comChannelUUIDs = [];
         if (options.defaults) {
             object.name = "";
             object.meta = false;
@@ -10860,6 +10915,7 @@ $root.ProtoBaseInputField = (function() {
             object.pdfPrintingBehavior = options.enums === String ? "PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL" : 0;
             object.pdfFormName = "";
             object.pdfAltText = "";
+            object.uuid = "";
         }
         if (message.name != null && message.hasOwnProperty("name"))
             object.name = message.name;
@@ -10887,6 +10943,13 @@ $root.ProtoBaseInputField = (function() {
             object.pdfFormName = message.pdfFormName;
         if (message.pdfAltText != null && message.hasOwnProperty("pdfAltText"))
             object.pdfAltText = message.pdfAltText;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = [];
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
         return object;
     };
 
@@ -45741,6 +45804,501 @@ $root.ProtoParagraphSetDefault = (function() {
     return ProtoParagraphSetDefault;
 })();
 
+$root.ProtoBaseTextInputField = (function() {
+
+    /**
+     * Properties of a ProtoBaseTextInputField.
+     * @name IProtoBaseTextInputField
+     * @interface IProtoBaseTextInputField
+     * @property {IProtoBaseInputField|null} [base] ProtoBaseTextInputField base
+     * @property {IProtoBoxedMeasure|null} [pdfSize] ProtoBaseTextInputField pdfSize
+     * @property {IProtoBoxedMeasure|null} [pdfInputHeight] ProtoBaseTextInputField pdfInputHeight
+     * @property {boolean|null} [pdfIsReadOnly] ProtoBaseTextInputField pdfIsReadOnly
+     * @property {boolean|null} [pdfIsRequired] ProtoBaseTextInputField pdfIsRequired
+     * @property {boolean|null} [pdfIsNotExported] ProtoBaseTextInputField pdfIsNotExported
+     * @property {boolean|null} [pdfIsMultiline] ProtoBaseTextInputField pdfIsMultiline
+     * @property {boolean|null} [pdfIsPasswordField] ProtoBaseTextInputField pdfIsPasswordField
+     * @property {boolean|null} [pdfIsFileSelectionField] ProtoBaseTextInputField pdfIsFileSelectionField
+     * @property {boolean|null} [pdfDisableSpellCheck] ProtoBaseTextInputField pdfDisableSpellCheck
+     * @property {boolean|null} [pdfDisableScrolling] ProtoBaseTextInputField pdfDisableScrolling
+     * @property {boolean|null} [pdfUseCombFormatting] ProtoBaseTextInputField pdfUseCombFormatting
+     * @property {boolean|null} [pdfIsRichTextEnabled] ProtoBaseTextInputField pdfIsRichTextEnabled
+     */
+
+    /**
+     * Constructs a new ProtoBaseTextInputField.
+     * @name ProtoBaseTextInputField
+     * @classdesc Represents a ProtoBaseTextInputField.
+     * @implements IProtoBaseTextInputField
+     * @constructor
+     * @param {IProtoBaseTextInputField=} [properties] Properties to set
+     */
+    function ProtoBaseTextInputField(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoBaseTextInputField base.
+     * @member {IProtoBaseInputField|null|undefined} base
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.base = null;
+
+    /**
+     * ProtoBaseTextInputField pdfSize.
+     * @member {IProtoBoxedMeasure|null|undefined} pdfSize
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.pdfSize = null;
+
+    /**
+     * ProtoBaseTextInputField pdfInputHeight.
+     * @member {IProtoBoxedMeasure|null|undefined} pdfInputHeight
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.pdfInputHeight = null;
+
+    /**
+     * ProtoBaseTextInputField pdfIsReadOnly.
+     * @member {boolean} pdfIsReadOnly
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.pdfIsReadOnly = false;
+
+    /**
+     * ProtoBaseTextInputField pdfIsRequired.
+     * @member {boolean} pdfIsRequired
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.pdfIsRequired = false;
+
+    /**
+     * ProtoBaseTextInputField pdfIsNotExported.
+     * @member {boolean} pdfIsNotExported
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.pdfIsNotExported = false;
+
+    /**
+     * ProtoBaseTextInputField pdfIsMultiline.
+     * @member {boolean} pdfIsMultiline
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.pdfIsMultiline = false;
+
+    /**
+     * ProtoBaseTextInputField pdfIsPasswordField.
+     * @member {boolean} pdfIsPasswordField
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.pdfIsPasswordField = false;
+
+    /**
+     * ProtoBaseTextInputField pdfIsFileSelectionField.
+     * @member {boolean} pdfIsFileSelectionField
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.pdfIsFileSelectionField = false;
+
+    /**
+     * ProtoBaseTextInputField pdfDisableSpellCheck.
+     * @member {boolean} pdfDisableSpellCheck
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.pdfDisableSpellCheck = false;
+
+    /**
+     * ProtoBaseTextInputField pdfDisableScrolling.
+     * @member {boolean} pdfDisableScrolling
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.pdfDisableScrolling = false;
+
+    /**
+     * ProtoBaseTextInputField pdfUseCombFormatting.
+     * @member {boolean} pdfUseCombFormatting
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.pdfUseCombFormatting = false;
+
+    /**
+     * ProtoBaseTextInputField pdfIsRichTextEnabled.
+     * @member {boolean} pdfIsRichTextEnabled
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     */
+    ProtoBaseTextInputField.prototype.pdfIsRichTextEnabled = false;
+
+    /**
+     * Creates a new ProtoBaseTextInputField instance using the specified properties.
+     * @function create
+     * @memberof ProtoBaseTextInputField
+     * @static
+     * @param {IProtoBaseTextInputField=} [properties] Properties to set
+     * @returns {ProtoBaseTextInputField} ProtoBaseTextInputField instance
+     */
+    ProtoBaseTextInputField.create = function create(properties) {
+        return new ProtoBaseTextInputField(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoBaseTextInputField message. Does not implicitly {@link ProtoBaseTextInputField.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoBaseTextInputField
+     * @static
+     * @param {IProtoBaseTextInputField} message ProtoBaseTextInputField message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoBaseTextInputField.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.base != null && Object.hasOwnProperty.call(message, "base"))
+            $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.pdfSize != null && Object.hasOwnProperty.call(message, "pdfSize"))
+            $root.ProtoBoxedMeasure.encode(message.pdfSize, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.pdfInputHeight != null && Object.hasOwnProperty.call(message, "pdfInputHeight"))
+            $root.ProtoBoxedMeasure.encode(message.pdfInputHeight, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+        if (message.pdfIsReadOnly != null && Object.hasOwnProperty.call(message, "pdfIsReadOnly"))
+            writer.uint32(/* id 4, wireType 0 =*/32).bool(message.pdfIsReadOnly);
+        if (message.pdfIsRequired != null && Object.hasOwnProperty.call(message, "pdfIsRequired"))
+            writer.uint32(/* id 5, wireType 0 =*/40).bool(message.pdfIsRequired);
+        if (message.pdfIsNotExported != null && Object.hasOwnProperty.call(message, "pdfIsNotExported"))
+            writer.uint32(/* id 6, wireType 0 =*/48).bool(message.pdfIsNotExported);
+        if (message.pdfIsMultiline != null && Object.hasOwnProperty.call(message, "pdfIsMultiline"))
+            writer.uint32(/* id 7, wireType 0 =*/56).bool(message.pdfIsMultiline);
+        if (message.pdfIsPasswordField != null && Object.hasOwnProperty.call(message, "pdfIsPasswordField"))
+            writer.uint32(/* id 8, wireType 0 =*/64).bool(message.pdfIsPasswordField);
+        if (message.pdfIsFileSelectionField != null && Object.hasOwnProperty.call(message, "pdfIsFileSelectionField"))
+            writer.uint32(/* id 9, wireType 0 =*/72).bool(message.pdfIsFileSelectionField);
+        if (message.pdfDisableSpellCheck != null && Object.hasOwnProperty.call(message, "pdfDisableSpellCheck"))
+            writer.uint32(/* id 10, wireType 0 =*/80).bool(message.pdfDisableSpellCheck);
+        if (message.pdfDisableScrolling != null && Object.hasOwnProperty.call(message, "pdfDisableScrolling"))
+            writer.uint32(/* id 11, wireType 0 =*/88).bool(message.pdfDisableScrolling);
+        if (message.pdfUseCombFormatting != null && Object.hasOwnProperty.call(message, "pdfUseCombFormatting"))
+            writer.uint32(/* id 12, wireType 0 =*/96).bool(message.pdfUseCombFormatting);
+        if (message.pdfIsRichTextEnabled != null && Object.hasOwnProperty.call(message, "pdfIsRichTextEnabled"))
+            writer.uint32(/* id 13, wireType 0 =*/104).bool(message.pdfIsRichTextEnabled);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoBaseTextInputField message, length delimited. Does not implicitly {@link ProtoBaseTextInputField.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoBaseTextInputField
+     * @static
+     * @param {IProtoBaseTextInputField} message ProtoBaseTextInputField message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoBaseTextInputField.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoBaseTextInputField message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoBaseTextInputField
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoBaseTextInputField} ProtoBaseTextInputField
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoBaseTextInputField.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoBaseTextInputField();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.base = $root.ProtoBaseInputField.decode(reader, reader.uint32());
+                    break;
+                }
+            case 2: {
+                    message.pdfSize = $root.ProtoBoxedMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 3: {
+                    message.pdfInputHeight = $root.ProtoBoxedMeasure.decode(reader, reader.uint32());
+                    break;
+                }
+            case 4: {
+                    message.pdfIsReadOnly = reader.bool();
+                    break;
+                }
+            case 5: {
+                    message.pdfIsRequired = reader.bool();
+                    break;
+                }
+            case 6: {
+                    message.pdfIsNotExported = reader.bool();
+                    break;
+                }
+            case 7: {
+                    message.pdfIsMultiline = reader.bool();
+                    break;
+                }
+            case 8: {
+                    message.pdfIsPasswordField = reader.bool();
+                    break;
+                }
+            case 9: {
+                    message.pdfIsFileSelectionField = reader.bool();
+                    break;
+                }
+            case 10: {
+                    message.pdfDisableSpellCheck = reader.bool();
+                    break;
+                }
+            case 11: {
+                    message.pdfDisableScrolling = reader.bool();
+                    break;
+                }
+            case 12: {
+                    message.pdfUseCombFormatting = reader.bool();
+                    break;
+                }
+            case 13: {
+                    message.pdfIsRichTextEnabled = reader.bool();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoBaseTextInputField message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoBaseTextInputField
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoBaseTextInputField} ProtoBaseTextInputField
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoBaseTextInputField.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoBaseTextInputField message.
+     * @function verify
+     * @memberof ProtoBaseTextInputField
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoBaseTextInputField.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.base != null && message.hasOwnProperty("base")) {
+            var error = $root.ProtoBaseInputField.verify(message.base);
+            if (error)
+                return "base." + error;
+        }
+        if (message.pdfSize != null && message.hasOwnProperty("pdfSize")) {
+            var error = $root.ProtoBoxedMeasure.verify(message.pdfSize);
+            if (error)
+                return "pdfSize." + error;
+        }
+        if (message.pdfInputHeight != null && message.hasOwnProperty("pdfInputHeight")) {
+            var error = $root.ProtoBoxedMeasure.verify(message.pdfInputHeight);
+            if (error)
+                return "pdfInputHeight." + error;
+        }
+        if (message.pdfIsReadOnly != null && message.hasOwnProperty("pdfIsReadOnly"))
+            if (typeof message.pdfIsReadOnly !== "boolean")
+                return "pdfIsReadOnly: boolean expected";
+        if (message.pdfIsRequired != null && message.hasOwnProperty("pdfIsRequired"))
+            if (typeof message.pdfIsRequired !== "boolean")
+                return "pdfIsRequired: boolean expected";
+        if (message.pdfIsNotExported != null && message.hasOwnProperty("pdfIsNotExported"))
+            if (typeof message.pdfIsNotExported !== "boolean")
+                return "pdfIsNotExported: boolean expected";
+        if (message.pdfIsMultiline != null && message.hasOwnProperty("pdfIsMultiline"))
+            if (typeof message.pdfIsMultiline !== "boolean")
+                return "pdfIsMultiline: boolean expected";
+        if (message.pdfIsPasswordField != null && message.hasOwnProperty("pdfIsPasswordField"))
+            if (typeof message.pdfIsPasswordField !== "boolean")
+                return "pdfIsPasswordField: boolean expected";
+        if (message.pdfIsFileSelectionField != null && message.hasOwnProperty("pdfIsFileSelectionField"))
+            if (typeof message.pdfIsFileSelectionField !== "boolean")
+                return "pdfIsFileSelectionField: boolean expected";
+        if (message.pdfDisableSpellCheck != null && message.hasOwnProperty("pdfDisableSpellCheck"))
+            if (typeof message.pdfDisableSpellCheck !== "boolean")
+                return "pdfDisableSpellCheck: boolean expected";
+        if (message.pdfDisableScrolling != null && message.hasOwnProperty("pdfDisableScrolling"))
+            if (typeof message.pdfDisableScrolling !== "boolean")
+                return "pdfDisableScrolling: boolean expected";
+        if (message.pdfUseCombFormatting != null && message.hasOwnProperty("pdfUseCombFormatting"))
+            if (typeof message.pdfUseCombFormatting !== "boolean")
+                return "pdfUseCombFormatting: boolean expected";
+        if (message.pdfIsRichTextEnabled != null && message.hasOwnProperty("pdfIsRichTextEnabled"))
+            if (typeof message.pdfIsRichTextEnabled !== "boolean")
+                return "pdfIsRichTextEnabled: boolean expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoBaseTextInputField message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoBaseTextInputField
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoBaseTextInputField} ProtoBaseTextInputField
+     */
+    ProtoBaseTextInputField.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoBaseTextInputField)
+            return object;
+        var message = new $root.ProtoBaseTextInputField();
+        if (object.base != null) {
+            if (typeof object.base !== "object")
+                throw TypeError(".ProtoBaseTextInputField.base: object expected");
+            message.base = $root.ProtoBaseInputField.fromObject(object.base);
+        }
+        if (object.pdfSize != null) {
+            if (typeof object.pdfSize !== "object")
+                throw TypeError(".ProtoBaseTextInputField.pdfSize: object expected");
+            message.pdfSize = $root.ProtoBoxedMeasure.fromObject(object.pdfSize);
+        }
+        if (object.pdfInputHeight != null) {
+            if (typeof object.pdfInputHeight !== "object")
+                throw TypeError(".ProtoBaseTextInputField.pdfInputHeight: object expected");
+            message.pdfInputHeight = $root.ProtoBoxedMeasure.fromObject(object.pdfInputHeight);
+        }
+        if (object.pdfIsReadOnly != null)
+            message.pdfIsReadOnly = Boolean(object.pdfIsReadOnly);
+        if (object.pdfIsRequired != null)
+            message.pdfIsRequired = Boolean(object.pdfIsRequired);
+        if (object.pdfIsNotExported != null)
+            message.pdfIsNotExported = Boolean(object.pdfIsNotExported);
+        if (object.pdfIsMultiline != null)
+            message.pdfIsMultiline = Boolean(object.pdfIsMultiline);
+        if (object.pdfIsPasswordField != null)
+            message.pdfIsPasswordField = Boolean(object.pdfIsPasswordField);
+        if (object.pdfIsFileSelectionField != null)
+            message.pdfIsFileSelectionField = Boolean(object.pdfIsFileSelectionField);
+        if (object.pdfDisableSpellCheck != null)
+            message.pdfDisableSpellCheck = Boolean(object.pdfDisableSpellCheck);
+        if (object.pdfDisableScrolling != null)
+            message.pdfDisableScrolling = Boolean(object.pdfDisableScrolling);
+        if (object.pdfUseCombFormatting != null)
+            message.pdfUseCombFormatting = Boolean(object.pdfUseCombFormatting);
+        if (object.pdfIsRichTextEnabled != null)
+            message.pdfIsRichTextEnabled = Boolean(object.pdfIsRichTextEnabled);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoBaseTextInputField message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoBaseTextInputField
+     * @static
+     * @param {ProtoBaseTextInputField} message ProtoBaseTextInputField
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoBaseTextInputField.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.base = null;
+            object.pdfSize = null;
+            object.pdfInputHeight = null;
+            object.pdfIsReadOnly = false;
+            object.pdfIsRequired = false;
+            object.pdfIsNotExported = false;
+            object.pdfIsMultiline = false;
+            object.pdfIsPasswordField = false;
+            object.pdfIsFileSelectionField = false;
+            object.pdfDisableSpellCheck = false;
+            object.pdfDisableScrolling = false;
+            object.pdfUseCombFormatting = false;
+            object.pdfIsRichTextEnabled = false;
+        }
+        if (message.base != null && message.hasOwnProperty("base"))
+            object.base = $root.ProtoBaseInputField.toObject(message.base, options);
+        if (message.pdfSize != null && message.hasOwnProperty("pdfSize"))
+            object.pdfSize = $root.ProtoBoxedMeasure.toObject(message.pdfSize, options);
+        if (message.pdfInputHeight != null && message.hasOwnProperty("pdfInputHeight"))
+            object.pdfInputHeight = $root.ProtoBoxedMeasure.toObject(message.pdfInputHeight, options);
+        if (message.pdfIsReadOnly != null && message.hasOwnProperty("pdfIsReadOnly"))
+            object.pdfIsReadOnly = message.pdfIsReadOnly;
+        if (message.pdfIsRequired != null && message.hasOwnProperty("pdfIsRequired"))
+            object.pdfIsRequired = message.pdfIsRequired;
+        if (message.pdfIsNotExported != null && message.hasOwnProperty("pdfIsNotExported"))
+            object.pdfIsNotExported = message.pdfIsNotExported;
+        if (message.pdfIsMultiline != null && message.hasOwnProperty("pdfIsMultiline"))
+            object.pdfIsMultiline = message.pdfIsMultiline;
+        if (message.pdfIsPasswordField != null && message.hasOwnProperty("pdfIsPasswordField"))
+            object.pdfIsPasswordField = message.pdfIsPasswordField;
+        if (message.pdfIsFileSelectionField != null && message.hasOwnProperty("pdfIsFileSelectionField"))
+            object.pdfIsFileSelectionField = message.pdfIsFileSelectionField;
+        if (message.pdfDisableSpellCheck != null && message.hasOwnProperty("pdfDisableSpellCheck"))
+            object.pdfDisableSpellCheck = message.pdfDisableSpellCheck;
+        if (message.pdfDisableScrolling != null && message.hasOwnProperty("pdfDisableScrolling"))
+            object.pdfDisableScrolling = message.pdfDisableScrolling;
+        if (message.pdfUseCombFormatting != null && message.hasOwnProperty("pdfUseCombFormatting"))
+            object.pdfUseCombFormatting = message.pdfUseCombFormatting;
+        if (message.pdfIsRichTextEnabled != null && message.hasOwnProperty("pdfIsRichTextEnabled"))
+            object.pdfIsRichTextEnabled = message.pdfIsRichTextEnabled;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoBaseTextInputField to JSON.
+     * @function toJSON
+     * @memberof ProtoBaseTextInputField
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoBaseTextInputField.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoBaseTextInputField
+     * @function getTypeUrl
+     * @memberof ProtoBaseTextInputField
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoBaseTextInputField.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoBaseTextInputField";
+    };
+
+    return ProtoBaseTextInputField;
+})();
+
 $root.ProtoInputFieldText = (function() {
 
     /**
@@ -45748,22 +46306,7 @@ $root.ProtoInputFieldText = (function() {
      * @name IProtoInputFieldText
      * @interface IProtoInputFieldText
      * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldText parent
-     * @property {IProtoBaseInputField|null} [base] ProtoInputFieldText base
-     * @property {IProtoBoxedMeasure|null} [pdfSize] ProtoInputFieldText pdfSize
-     * @property {string|null} [pdfFormName] ProtoInputFieldText pdfFormName
-     * @property {Array.<string>|null} [comChannelUUIDs] ProtoInputFieldText comChannelUUIDs
-     * @property {string|null} [uuid] ProtoInputFieldText uuid
-     * @property {IProtoBoxedMeasure|null} [pdfInputHeight] ProtoInputFieldText pdfInputHeight
-     * @property {boolean|null} [pdfIsReadOnly] ProtoInputFieldText pdfIsReadOnly
-     * @property {boolean|null} [pdfIsRequired] ProtoInputFieldText pdfIsRequired
-     * @property {boolean|null} [pdfIsNotExported] ProtoInputFieldText pdfIsNotExported
-     * @property {boolean|null} [pdfIsMultiline] ProtoInputFieldText pdfIsMultiline
-     * @property {boolean|null} [pdfIsPasswordField] ProtoInputFieldText pdfIsPasswordField
-     * @property {boolean|null} [pdfIsFileSelectionField] ProtoInputFieldText pdfIsFileSelectionField
-     * @property {boolean|null} [pdfDisableSpellCheck] ProtoInputFieldText pdfDisableSpellCheck
-     * @property {boolean|null} [pdfDisableScrolling] ProtoInputFieldText pdfDisableScrolling
-     * @property {boolean|null} [pdfUseCombFormatting] ProtoInputFieldText pdfUseCombFormatting
-     * @property {boolean|null} [pdfIsRichTextEnabled] ProtoInputFieldText pdfIsRichTextEnabled
+     * @property {IProtoBaseTextInputField|null} [base] ProtoInputFieldText base
      */
 
     /**
@@ -45775,7 +46318,6 @@ $root.ProtoInputFieldText = (function() {
      * @param {IProtoInputFieldText=} [properties] Properties to set
      */
     function ProtoInputFieldText(properties) {
-        this.comChannelUUIDs = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -45792,131 +46334,11 @@ $root.ProtoInputFieldText = (function() {
 
     /**
      * ProtoInputFieldText base.
-     * @member {IProtoBaseInputField|null|undefined} base
+     * @member {IProtoBaseTextInputField|null|undefined} base
      * @memberof ProtoInputFieldText
      * @instance
      */
     ProtoInputFieldText.prototype.base = null;
-
-    /**
-     * ProtoInputFieldText pdfSize.
-     * @member {IProtoBoxedMeasure|null|undefined} pdfSize
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfSize = null;
-
-    /**
-     * ProtoInputFieldText pdfFormName.
-     * @member {string} pdfFormName
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfFormName = "";
-
-    /**
-     * ProtoInputFieldText comChannelUUIDs.
-     * @member {Array.<string>} comChannelUUIDs
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.comChannelUUIDs = $util.emptyArray;
-
-    /**
-     * ProtoInputFieldText uuid.
-     * @member {string} uuid
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.uuid = "";
-
-    /**
-     * ProtoInputFieldText pdfInputHeight.
-     * @member {IProtoBoxedMeasure|null|undefined} pdfInputHeight
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfInputHeight = null;
-
-    /**
-     * ProtoInputFieldText pdfIsReadOnly.
-     * @member {boolean} pdfIsReadOnly
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfIsReadOnly = false;
-
-    /**
-     * ProtoInputFieldText pdfIsRequired.
-     * @member {boolean} pdfIsRequired
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfIsRequired = false;
-
-    /**
-     * ProtoInputFieldText pdfIsNotExported.
-     * @member {boolean} pdfIsNotExported
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfIsNotExported = false;
-
-    /**
-     * ProtoInputFieldText pdfIsMultiline.
-     * @member {boolean} pdfIsMultiline
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfIsMultiline = false;
-
-    /**
-     * ProtoInputFieldText pdfIsPasswordField.
-     * @member {boolean} pdfIsPasswordField
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfIsPasswordField = false;
-
-    /**
-     * ProtoInputFieldText pdfIsFileSelectionField.
-     * @member {boolean} pdfIsFileSelectionField
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfIsFileSelectionField = false;
-
-    /**
-     * ProtoInputFieldText pdfDisableSpellCheck.
-     * @member {boolean} pdfDisableSpellCheck
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfDisableSpellCheck = false;
-
-    /**
-     * ProtoInputFieldText pdfDisableScrolling.
-     * @member {boolean} pdfDisableScrolling
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfDisableScrolling = false;
-
-    /**
-     * ProtoInputFieldText pdfUseCombFormatting.
-     * @member {boolean} pdfUseCombFormatting
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfUseCombFormatting = false;
-
-    /**
-     * ProtoInputFieldText pdfIsRichTextEnabled.
-     * @member {boolean} pdfIsRichTextEnabled
-     * @memberof ProtoInputFieldText
-     * @instance
-     */
-    ProtoInputFieldText.prototype.pdfIsRichTextEnabled = false;
 
     /**
      * Creates a new ProtoInputFieldText instance using the specified properties.
@@ -45945,38 +46367,7 @@ $root.ProtoInputFieldText = (function() {
         if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.base != null && Object.hasOwnProperty.call(message, "base"))
-            $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.pdfSize != null && Object.hasOwnProperty.call(message, "pdfSize"))
-            $root.ProtoBoxedMeasure.encode(message.pdfSize, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-        if (message.pdfFormName != null && Object.hasOwnProperty.call(message, "pdfFormName"))
-            writer.uint32(/* id 5, wireType 2 =*/42).string(message.pdfFormName);
-        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
-            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                writer.uint32(/* id 6, wireType 2 =*/50).string(message.comChannelUUIDs[i]);
-        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
-            writer.uint32(/* id 7, wireType 2 =*/58).string(message.uuid);
-        if (message.pdfInputHeight != null && Object.hasOwnProperty.call(message, "pdfInputHeight"))
-            $root.ProtoBoxedMeasure.encode(message.pdfInputHeight, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-        if (message.pdfIsReadOnly != null && Object.hasOwnProperty.call(message, "pdfIsReadOnly"))
-            writer.uint32(/* id 10, wireType 0 =*/80).bool(message.pdfIsReadOnly);
-        if (message.pdfIsRequired != null && Object.hasOwnProperty.call(message, "pdfIsRequired"))
-            writer.uint32(/* id 11, wireType 0 =*/88).bool(message.pdfIsRequired);
-        if (message.pdfIsNotExported != null && Object.hasOwnProperty.call(message, "pdfIsNotExported"))
-            writer.uint32(/* id 12, wireType 0 =*/96).bool(message.pdfIsNotExported);
-        if (message.pdfIsMultiline != null && Object.hasOwnProperty.call(message, "pdfIsMultiline"))
-            writer.uint32(/* id 13, wireType 0 =*/104).bool(message.pdfIsMultiline);
-        if (message.pdfIsPasswordField != null && Object.hasOwnProperty.call(message, "pdfIsPasswordField"))
-            writer.uint32(/* id 14, wireType 0 =*/112).bool(message.pdfIsPasswordField);
-        if (message.pdfIsFileSelectionField != null && Object.hasOwnProperty.call(message, "pdfIsFileSelectionField"))
-            writer.uint32(/* id 15, wireType 0 =*/120).bool(message.pdfIsFileSelectionField);
-        if (message.pdfDisableSpellCheck != null && Object.hasOwnProperty.call(message, "pdfDisableSpellCheck"))
-            writer.uint32(/* id 16, wireType 0 =*/128).bool(message.pdfDisableSpellCheck);
-        if (message.pdfDisableScrolling != null && Object.hasOwnProperty.call(message, "pdfDisableScrolling"))
-            writer.uint32(/* id 17, wireType 0 =*/136).bool(message.pdfDisableScrolling);
-        if (message.pdfUseCombFormatting != null && Object.hasOwnProperty.call(message, "pdfUseCombFormatting"))
-            writer.uint32(/* id 18, wireType 0 =*/144).bool(message.pdfUseCombFormatting);
-        if (message.pdfIsRichTextEnabled != null && Object.hasOwnProperty.call(message, "pdfIsRichTextEnabled"))
-            writer.uint32(/* id 19, wireType 0 =*/152).bool(message.pdfIsRichTextEnabled);
+            $root.ProtoBaseTextInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
         return writer;
     };
 
@@ -46016,69 +46407,7 @@ $root.ProtoInputFieldText = (function() {
                     break;
                 }
             case 2: {
-                    message.base = $root.ProtoBaseInputField.decode(reader, reader.uint32());
-                    break;
-                }
-            case 4: {
-                    message.pdfSize = $root.ProtoBoxedMeasure.decode(reader, reader.uint32());
-                    break;
-                }
-            case 5: {
-                    message.pdfFormName = reader.string();
-                    break;
-                }
-            case 6: {
-                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
-                        message.comChannelUUIDs = [];
-                    message.comChannelUUIDs.push(reader.string());
-                    break;
-                }
-            case 7: {
-                    message.uuid = reader.string();
-                    break;
-                }
-            case 9: {
-                    message.pdfInputHeight = $root.ProtoBoxedMeasure.decode(reader, reader.uint32());
-                    break;
-                }
-            case 10: {
-                    message.pdfIsReadOnly = reader.bool();
-                    break;
-                }
-            case 11: {
-                    message.pdfIsRequired = reader.bool();
-                    break;
-                }
-            case 12: {
-                    message.pdfIsNotExported = reader.bool();
-                    break;
-                }
-            case 13: {
-                    message.pdfIsMultiline = reader.bool();
-                    break;
-                }
-            case 14: {
-                    message.pdfIsPasswordField = reader.bool();
-                    break;
-                }
-            case 15: {
-                    message.pdfIsFileSelectionField = reader.bool();
-                    break;
-                }
-            case 16: {
-                    message.pdfDisableSpellCheck = reader.bool();
-                    break;
-                }
-            case 17: {
-                    message.pdfDisableScrolling = reader.bool();
-                    break;
-                }
-            case 18: {
-                    message.pdfUseCombFormatting = reader.bool();
-                    break;
-                }
-            case 19: {
-                    message.pdfIsRichTextEnabled = reader.bool();
+                    message.base = $root.ProtoBaseTextInputField.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -46122,63 +46451,10 @@ $root.ProtoInputFieldText = (function() {
                 return "parent." + error;
         }
         if (message.base != null && message.hasOwnProperty("base")) {
-            var error = $root.ProtoBaseInputField.verify(message.base);
+            var error = $root.ProtoBaseTextInputField.verify(message.base);
             if (error)
                 return "base." + error;
         }
-        if (message.pdfSize != null && message.hasOwnProperty("pdfSize")) {
-            var error = $root.ProtoBoxedMeasure.verify(message.pdfSize);
-            if (error)
-                return "pdfSize." + error;
-        }
-        if (message.pdfFormName != null && message.hasOwnProperty("pdfFormName"))
-            if (!$util.isString(message.pdfFormName))
-                return "pdfFormName: string expected";
-        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
-            if (!Array.isArray(message.comChannelUUIDs))
-                return "comChannelUUIDs: array expected";
-            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                if (!$util.isString(message.comChannelUUIDs[i]))
-                    return "comChannelUUIDs: string[] expected";
-        }
-        if (message.uuid != null && message.hasOwnProperty("uuid"))
-            if (!$util.isString(message.uuid))
-                return "uuid: string expected";
-        if (message.pdfInputHeight != null && message.hasOwnProperty("pdfInputHeight")) {
-            var error = $root.ProtoBoxedMeasure.verify(message.pdfInputHeight);
-            if (error)
-                return "pdfInputHeight." + error;
-        }
-        if (message.pdfIsReadOnly != null && message.hasOwnProperty("pdfIsReadOnly"))
-            if (typeof message.pdfIsReadOnly !== "boolean")
-                return "pdfIsReadOnly: boolean expected";
-        if (message.pdfIsRequired != null && message.hasOwnProperty("pdfIsRequired"))
-            if (typeof message.pdfIsRequired !== "boolean")
-                return "pdfIsRequired: boolean expected";
-        if (message.pdfIsNotExported != null && message.hasOwnProperty("pdfIsNotExported"))
-            if (typeof message.pdfIsNotExported !== "boolean")
-                return "pdfIsNotExported: boolean expected";
-        if (message.pdfIsMultiline != null && message.hasOwnProperty("pdfIsMultiline"))
-            if (typeof message.pdfIsMultiline !== "boolean")
-                return "pdfIsMultiline: boolean expected";
-        if (message.pdfIsPasswordField != null && message.hasOwnProperty("pdfIsPasswordField"))
-            if (typeof message.pdfIsPasswordField !== "boolean")
-                return "pdfIsPasswordField: boolean expected";
-        if (message.pdfIsFileSelectionField != null && message.hasOwnProperty("pdfIsFileSelectionField"))
-            if (typeof message.pdfIsFileSelectionField !== "boolean")
-                return "pdfIsFileSelectionField: boolean expected";
-        if (message.pdfDisableSpellCheck != null && message.hasOwnProperty("pdfDisableSpellCheck"))
-            if (typeof message.pdfDisableSpellCheck !== "boolean")
-                return "pdfDisableSpellCheck: boolean expected";
-        if (message.pdfDisableScrolling != null && message.hasOwnProperty("pdfDisableScrolling"))
-            if (typeof message.pdfDisableScrolling !== "boolean")
-                return "pdfDisableScrolling: boolean expected";
-        if (message.pdfUseCombFormatting != null && message.hasOwnProperty("pdfUseCombFormatting"))
-            if (typeof message.pdfUseCombFormatting !== "boolean")
-                return "pdfUseCombFormatting: boolean expected";
-        if (message.pdfIsRichTextEnabled != null && message.hasOwnProperty("pdfIsRichTextEnabled"))
-            if (typeof message.pdfIsRichTextEnabled !== "boolean")
-                return "pdfIsRichTextEnabled: boolean expected";
         return null;
     };
 
@@ -46202,49 +46478,8 @@ $root.ProtoInputFieldText = (function() {
         if (object.base != null) {
             if (typeof object.base !== "object")
                 throw TypeError(".ProtoInputFieldText.base: object expected");
-            message.base = $root.ProtoBaseInputField.fromObject(object.base);
+            message.base = $root.ProtoBaseTextInputField.fromObject(object.base);
         }
-        if (object.pdfSize != null) {
-            if (typeof object.pdfSize !== "object")
-                throw TypeError(".ProtoInputFieldText.pdfSize: object expected");
-            message.pdfSize = $root.ProtoBoxedMeasure.fromObject(object.pdfSize);
-        }
-        if (object.pdfFormName != null)
-            message.pdfFormName = String(object.pdfFormName);
-        if (object.comChannelUUIDs) {
-            if (!Array.isArray(object.comChannelUUIDs))
-                throw TypeError(".ProtoInputFieldText.comChannelUUIDs: array expected");
-            message.comChannelUUIDs = [];
-            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
-                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
-        }
-        if (object.uuid != null)
-            message.uuid = String(object.uuid);
-        if (object.pdfInputHeight != null) {
-            if (typeof object.pdfInputHeight !== "object")
-                throw TypeError(".ProtoInputFieldText.pdfInputHeight: object expected");
-            message.pdfInputHeight = $root.ProtoBoxedMeasure.fromObject(object.pdfInputHeight);
-        }
-        if (object.pdfIsReadOnly != null)
-            message.pdfIsReadOnly = Boolean(object.pdfIsReadOnly);
-        if (object.pdfIsRequired != null)
-            message.pdfIsRequired = Boolean(object.pdfIsRequired);
-        if (object.pdfIsNotExported != null)
-            message.pdfIsNotExported = Boolean(object.pdfIsNotExported);
-        if (object.pdfIsMultiline != null)
-            message.pdfIsMultiline = Boolean(object.pdfIsMultiline);
-        if (object.pdfIsPasswordField != null)
-            message.pdfIsPasswordField = Boolean(object.pdfIsPasswordField);
-        if (object.pdfIsFileSelectionField != null)
-            message.pdfIsFileSelectionField = Boolean(object.pdfIsFileSelectionField);
-        if (object.pdfDisableSpellCheck != null)
-            message.pdfDisableSpellCheck = Boolean(object.pdfDisableSpellCheck);
-        if (object.pdfDisableScrolling != null)
-            message.pdfDisableScrolling = Boolean(object.pdfDisableScrolling);
-        if (object.pdfUseCombFormatting != null)
-            message.pdfUseCombFormatting = Boolean(object.pdfUseCombFormatting);
-        if (object.pdfIsRichTextEnabled != null)
-            message.pdfIsRichTextEnabled = Boolean(object.pdfIsRichTextEnabled);
         return message;
     };
 
@@ -46261,63 +46496,14 @@ $root.ProtoInputFieldText = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.arrays || options.defaults)
-            object.comChannelUUIDs = [];
         if (options.defaults) {
             object.parent = null;
             object.base = null;
-            object.pdfSize = null;
-            object.pdfFormName = "";
-            object.uuid = "";
-            object.pdfInputHeight = null;
-            object.pdfIsReadOnly = false;
-            object.pdfIsRequired = false;
-            object.pdfIsNotExported = false;
-            object.pdfIsMultiline = false;
-            object.pdfIsPasswordField = false;
-            object.pdfIsFileSelectionField = false;
-            object.pdfDisableSpellCheck = false;
-            object.pdfDisableScrolling = false;
-            object.pdfUseCombFormatting = false;
-            object.pdfIsRichTextEnabled = false;
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
         if (message.base != null && message.hasOwnProperty("base"))
-            object.base = $root.ProtoBaseInputField.toObject(message.base, options);
-        if (message.pdfSize != null && message.hasOwnProperty("pdfSize"))
-            object.pdfSize = $root.ProtoBoxedMeasure.toObject(message.pdfSize, options);
-        if (message.pdfFormName != null && message.hasOwnProperty("pdfFormName"))
-            object.pdfFormName = message.pdfFormName;
-        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
-            object.comChannelUUIDs = [];
-            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
-                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
-        }
-        if (message.uuid != null && message.hasOwnProperty("uuid"))
-            object.uuid = message.uuid;
-        if (message.pdfInputHeight != null && message.hasOwnProperty("pdfInputHeight"))
-            object.pdfInputHeight = $root.ProtoBoxedMeasure.toObject(message.pdfInputHeight, options);
-        if (message.pdfIsReadOnly != null && message.hasOwnProperty("pdfIsReadOnly"))
-            object.pdfIsReadOnly = message.pdfIsReadOnly;
-        if (message.pdfIsRequired != null && message.hasOwnProperty("pdfIsRequired"))
-            object.pdfIsRequired = message.pdfIsRequired;
-        if (message.pdfIsNotExported != null && message.hasOwnProperty("pdfIsNotExported"))
-            object.pdfIsNotExported = message.pdfIsNotExported;
-        if (message.pdfIsMultiline != null && message.hasOwnProperty("pdfIsMultiline"))
-            object.pdfIsMultiline = message.pdfIsMultiline;
-        if (message.pdfIsPasswordField != null && message.hasOwnProperty("pdfIsPasswordField"))
-            object.pdfIsPasswordField = message.pdfIsPasswordField;
-        if (message.pdfIsFileSelectionField != null && message.hasOwnProperty("pdfIsFileSelectionField"))
-            object.pdfIsFileSelectionField = message.pdfIsFileSelectionField;
-        if (message.pdfDisableSpellCheck != null && message.hasOwnProperty("pdfDisableSpellCheck"))
-            object.pdfDisableSpellCheck = message.pdfDisableSpellCheck;
-        if (message.pdfDisableScrolling != null && message.hasOwnProperty("pdfDisableScrolling"))
-            object.pdfDisableScrolling = message.pdfDisableScrolling;
-        if (message.pdfUseCombFormatting != null && message.hasOwnProperty("pdfUseCombFormatting"))
-            object.pdfUseCombFormatting = message.pdfUseCombFormatting;
-        if (message.pdfIsRichTextEnabled != null && message.hasOwnProperty("pdfIsRichTextEnabled"))
-            object.pdfIsRichTextEnabled = message.pdfIsRichTextEnabled;
+            object.base = $root.ProtoBaseTextInputField.toObject(message.base, options);
         return object;
     };
 
@@ -46357,9 +46543,7 @@ $root.ProtoInputFieldDate = (function() {
      * @name IProtoInputFieldDate
      * @interface IProtoInputFieldDate
      * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldDate parent
-     * @property {IProtoBaseInputField|null} [base] ProtoInputFieldDate base
-     * @property {Array.<string>|null} [comChannelUUIDs] ProtoInputFieldDate comChannelUUIDs
-     * @property {string|null} [uuid] ProtoInputFieldDate uuid
+     * @property {IProtoBaseTextInputField|null} [base] ProtoInputFieldDate base
      */
 
     /**
@@ -46371,7 +46555,6 @@ $root.ProtoInputFieldDate = (function() {
      * @param {IProtoInputFieldDate=} [properties] Properties to set
      */
     function ProtoInputFieldDate(properties) {
-        this.comChannelUUIDs = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -46388,27 +46571,11 @@ $root.ProtoInputFieldDate = (function() {
 
     /**
      * ProtoInputFieldDate base.
-     * @member {IProtoBaseInputField|null|undefined} base
+     * @member {IProtoBaseTextInputField|null|undefined} base
      * @memberof ProtoInputFieldDate
      * @instance
      */
     ProtoInputFieldDate.prototype.base = null;
-
-    /**
-     * ProtoInputFieldDate comChannelUUIDs.
-     * @member {Array.<string>} comChannelUUIDs
-     * @memberof ProtoInputFieldDate
-     * @instance
-     */
-    ProtoInputFieldDate.prototype.comChannelUUIDs = $util.emptyArray;
-
-    /**
-     * ProtoInputFieldDate uuid.
-     * @member {string} uuid
-     * @memberof ProtoInputFieldDate
-     * @instance
-     */
-    ProtoInputFieldDate.prototype.uuid = "";
 
     /**
      * Creates a new ProtoInputFieldDate instance using the specified properties.
@@ -46437,12 +46604,7 @@ $root.ProtoInputFieldDate = (function() {
         if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.base != null && Object.hasOwnProperty.call(message, "base"))
-            $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
-            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
-        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
-            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
+            $root.ProtoBaseTextInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
         return writer;
     };
 
@@ -46482,17 +46644,7 @@ $root.ProtoInputFieldDate = (function() {
                     break;
                 }
             case 2: {
-                    message.base = $root.ProtoBaseInputField.decode(reader, reader.uint32());
-                    break;
-                }
-            case 3: {
-                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
-                        message.comChannelUUIDs = [];
-                    message.comChannelUUIDs.push(reader.string());
-                    break;
-                }
-            case 4: {
-                    message.uuid = reader.string();
+                    message.base = $root.ProtoBaseTextInputField.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -46536,20 +46688,10 @@ $root.ProtoInputFieldDate = (function() {
                 return "parent." + error;
         }
         if (message.base != null && message.hasOwnProperty("base")) {
-            var error = $root.ProtoBaseInputField.verify(message.base);
+            var error = $root.ProtoBaseTextInputField.verify(message.base);
             if (error)
                 return "base." + error;
         }
-        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
-            if (!Array.isArray(message.comChannelUUIDs))
-                return "comChannelUUIDs: array expected";
-            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                if (!$util.isString(message.comChannelUUIDs[i]))
-                    return "comChannelUUIDs: string[] expected";
-        }
-        if (message.uuid != null && message.hasOwnProperty("uuid"))
-            if (!$util.isString(message.uuid))
-                return "uuid: string expected";
         return null;
     };
 
@@ -46573,17 +46715,8 @@ $root.ProtoInputFieldDate = (function() {
         if (object.base != null) {
             if (typeof object.base !== "object")
                 throw TypeError(".ProtoInputFieldDate.base: object expected");
-            message.base = $root.ProtoBaseInputField.fromObject(object.base);
+            message.base = $root.ProtoBaseTextInputField.fromObject(object.base);
         }
-        if (object.comChannelUUIDs) {
-            if (!Array.isArray(object.comChannelUUIDs))
-                throw TypeError(".ProtoInputFieldDate.comChannelUUIDs: array expected");
-            message.comChannelUUIDs = [];
-            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
-                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
-        }
-        if (object.uuid != null)
-            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -46600,24 +46733,14 @@ $root.ProtoInputFieldDate = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.arrays || options.defaults)
-            object.comChannelUUIDs = [];
         if (options.defaults) {
             object.parent = null;
             object.base = null;
-            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
         if (message.base != null && message.hasOwnProperty("base"))
-            object.base = $root.ProtoBaseInputField.toObject(message.base, options);
-        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
-            object.comChannelUUIDs = [];
-            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
-                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
-        }
-        if (message.uuid != null && message.hasOwnProperty("uuid"))
-            object.uuid = message.uuid;
+            object.base = $root.ProtoBaseTextInputField.toObject(message.base, options);
         return object;
     };
 
@@ -46658,8 +46781,6 @@ $root.ProtoInputFieldCheckbox = (function() {
      * @interface IProtoInputFieldCheckbox
      * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldCheckbox parent
      * @property {IProtoBaseInputField|null} [base] ProtoInputFieldCheckbox base
-     * @property {Array.<string>|null} [comChannelUUIDs] ProtoInputFieldCheckbox comChannelUUIDs
-     * @property {string|null} [uuid] ProtoInputFieldCheckbox uuid
      */
 
     /**
@@ -46671,7 +46792,6 @@ $root.ProtoInputFieldCheckbox = (function() {
      * @param {IProtoInputFieldCheckbox=} [properties] Properties to set
      */
     function ProtoInputFieldCheckbox(properties) {
-        this.comChannelUUIDs = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -46693,22 +46813,6 @@ $root.ProtoInputFieldCheckbox = (function() {
      * @instance
      */
     ProtoInputFieldCheckbox.prototype.base = null;
-
-    /**
-     * ProtoInputFieldCheckbox comChannelUUIDs.
-     * @member {Array.<string>} comChannelUUIDs
-     * @memberof ProtoInputFieldCheckbox
-     * @instance
-     */
-    ProtoInputFieldCheckbox.prototype.comChannelUUIDs = $util.emptyArray;
-
-    /**
-     * ProtoInputFieldCheckbox uuid.
-     * @member {string} uuid
-     * @memberof ProtoInputFieldCheckbox
-     * @instance
-     */
-    ProtoInputFieldCheckbox.prototype.uuid = "";
 
     /**
      * Creates a new ProtoInputFieldCheckbox instance using the specified properties.
@@ -46738,11 +46842,6 @@ $root.ProtoInputFieldCheckbox = (function() {
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.base != null && Object.hasOwnProperty.call(message, "base"))
             $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
-            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
-        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
-            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
         return writer;
     };
 
@@ -46783,16 +46882,6 @@ $root.ProtoInputFieldCheckbox = (function() {
                 }
             case 2: {
                     message.base = $root.ProtoBaseInputField.decode(reader, reader.uint32());
-                    break;
-                }
-            case 3: {
-                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
-                        message.comChannelUUIDs = [];
-                    message.comChannelUUIDs.push(reader.string());
-                    break;
-                }
-            case 4: {
-                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -46840,16 +46929,6 @@ $root.ProtoInputFieldCheckbox = (function() {
             if (error)
                 return "base." + error;
         }
-        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
-            if (!Array.isArray(message.comChannelUUIDs))
-                return "comChannelUUIDs: array expected";
-            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                if (!$util.isString(message.comChannelUUIDs[i]))
-                    return "comChannelUUIDs: string[] expected";
-        }
-        if (message.uuid != null && message.hasOwnProperty("uuid"))
-            if (!$util.isString(message.uuid))
-                return "uuid: string expected";
         return null;
     };
 
@@ -46875,15 +46954,6 @@ $root.ProtoInputFieldCheckbox = (function() {
                 throw TypeError(".ProtoInputFieldCheckbox.base: object expected");
             message.base = $root.ProtoBaseInputField.fromObject(object.base);
         }
-        if (object.comChannelUUIDs) {
-            if (!Array.isArray(object.comChannelUUIDs))
-                throw TypeError(".ProtoInputFieldCheckbox.comChannelUUIDs: array expected");
-            message.comChannelUUIDs = [];
-            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
-                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
-        }
-        if (object.uuid != null)
-            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -46900,24 +46970,14 @@ $root.ProtoInputFieldCheckbox = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.arrays || options.defaults)
-            object.comChannelUUIDs = [];
         if (options.defaults) {
             object.parent = null;
             object.base = null;
-            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
         if (message.base != null && message.hasOwnProperty("base"))
             object.base = $root.ProtoBaseInputField.toObject(message.base, options);
-        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
-            object.comChannelUUIDs = [];
-            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
-                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
-        }
-        if (message.uuid != null && message.hasOwnProperty("uuid"))
-            object.uuid = message.uuid;
         return object;
     };
 
@@ -46957,9 +47017,7 @@ $root.ProtoInputFieldLabel = (function() {
      * @name IProtoInputFieldLabel
      * @interface IProtoInputFieldLabel
      * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldLabel parent
-     * @property {IProtoBaseInputField|null} [base] ProtoInputFieldLabel base
-     * @property {Array.<string>|null} [comChannelUUIDs] ProtoInputFieldLabel comChannelUUIDs
-     * @property {string|null} [uuid] ProtoInputFieldLabel uuid
+     * @property {IProtoBaseTextInputField|null} [base] ProtoInputFieldLabel base
      */
 
     /**
@@ -46971,7 +47029,6 @@ $root.ProtoInputFieldLabel = (function() {
      * @param {IProtoInputFieldLabel=} [properties] Properties to set
      */
     function ProtoInputFieldLabel(properties) {
-        this.comChannelUUIDs = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -46988,27 +47045,11 @@ $root.ProtoInputFieldLabel = (function() {
 
     /**
      * ProtoInputFieldLabel base.
-     * @member {IProtoBaseInputField|null|undefined} base
+     * @member {IProtoBaseTextInputField|null|undefined} base
      * @memberof ProtoInputFieldLabel
      * @instance
      */
     ProtoInputFieldLabel.prototype.base = null;
-
-    /**
-     * ProtoInputFieldLabel comChannelUUIDs.
-     * @member {Array.<string>} comChannelUUIDs
-     * @memberof ProtoInputFieldLabel
-     * @instance
-     */
-    ProtoInputFieldLabel.prototype.comChannelUUIDs = $util.emptyArray;
-
-    /**
-     * ProtoInputFieldLabel uuid.
-     * @member {string} uuid
-     * @memberof ProtoInputFieldLabel
-     * @instance
-     */
-    ProtoInputFieldLabel.prototype.uuid = "";
 
     /**
      * Creates a new ProtoInputFieldLabel instance using the specified properties.
@@ -47037,12 +47078,7 @@ $root.ProtoInputFieldLabel = (function() {
         if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.base != null && Object.hasOwnProperty.call(message, "base"))
-            $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
-            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
-        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
-            writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
+            $root.ProtoBaseTextInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
         return writer;
     };
 
@@ -47082,17 +47118,7 @@ $root.ProtoInputFieldLabel = (function() {
                     break;
                 }
             case 2: {
-                    message.base = $root.ProtoBaseInputField.decode(reader, reader.uint32());
-                    break;
-                }
-            case 3: {
-                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
-                        message.comChannelUUIDs = [];
-                    message.comChannelUUIDs.push(reader.string());
-                    break;
-                }
-            case 4: {
-                    message.uuid = reader.string();
+                    message.base = $root.ProtoBaseTextInputField.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -47136,20 +47162,10 @@ $root.ProtoInputFieldLabel = (function() {
                 return "parent." + error;
         }
         if (message.base != null && message.hasOwnProperty("base")) {
-            var error = $root.ProtoBaseInputField.verify(message.base);
+            var error = $root.ProtoBaseTextInputField.verify(message.base);
             if (error)
                 return "base." + error;
         }
-        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
-            if (!Array.isArray(message.comChannelUUIDs))
-                return "comChannelUUIDs: array expected";
-            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                if (!$util.isString(message.comChannelUUIDs[i]))
-                    return "comChannelUUIDs: string[] expected";
-        }
-        if (message.uuid != null && message.hasOwnProperty("uuid"))
-            if (!$util.isString(message.uuid))
-                return "uuid: string expected";
         return null;
     };
 
@@ -47173,17 +47189,8 @@ $root.ProtoInputFieldLabel = (function() {
         if (object.base != null) {
             if (typeof object.base !== "object")
                 throw TypeError(".ProtoInputFieldLabel.base: object expected");
-            message.base = $root.ProtoBaseInputField.fromObject(object.base);
+            message.base = $root.ProtoBaseTextInputField.fromObject(object.base);
         }
-        if (object.comChannelUUIDs) {
-            if (!Array.isArray(object.comChannelUUIDs))
-                throw TypeError(".ProtoInputFieldLabel.comChannelUUIDs: array expected");
-            message.comChannelUUIDs = [];
-            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
-                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
-        }
-        if (object.uuid != null)
-            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -47200,24 +47207,14 @@ $root.ProtoInputFieldLabel = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.arrays || options.defaults)
-            object.comChannelUUIDs = [];
         if (options.defaults) {
             object.parent = null;
             object.base = null;
-            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
         if (message.base != null && message.hasOwnProperty("base"))
-            object.base = $root.ProtoBaseInputField.toObject(message.base, options);
-        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
-            object.comChannelUUIDs = [];
-            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
-                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
-        }
-        if (message.uuid != null && message.hasOwnProperty("uuid"))
-            object.uuid = message.uuid;
+            object.base = $root.ProtoBaseTextInputField.toObject(message.base, options);
         return object;
     };
 
@@ -47257,12 +47254,10 @@ $root.ProtoInputFieldDropdown = (function() {
      * @name IProtoInputFieldDropdown
      * @interface IProtoInputFieldDropdown
      * @property {IProtoDocumentElement|null} [parent] ProtoInputFieldDropdown parent
-     * @property {IProtoBaseInputField|null} [base] ProtoInputFieldDropdown base
+     * @property {IProtoBaseTextInputField|null} [base] ProtoInputFieldDropdown base
      * @property {Array.<IProtoOption>|null} [options] ProtoInputFieldDropdown options
      * @property {boolean|null} [bindOptionsCode] ProtoInputFieldDropdown bindOptionsCode
      * @property {string|null} [optionsCode] ProtoInputFieldDropdown optionsCode
-     * @property {Array.<string>|null} [comChannelUUIDs] ProtoInputFieldDropdown comChannelUUIDs
-     * @property {string|null} [uuid] ProtoInputFieldDropdown uuid
      */
 
     /**
@@ -47275,7 +47270,6 @@ $root.ProtoInputFieldDropdown = (function() {
      */
     function ProtoInputFieldDropdown(properties) {
         this.options = [];
-        this.comChannelUUIDs = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -47292,7 +47286,7 @@ $root.ProtoInputFieldDropdown = (function() {
 
     /**
      * ProtoInputFieldDropdown base.
-     * @member {IProtoBaseInputField|null|undefined} base
+     * @member {IProtoBaseTextInputField|null|undefined} base
      * @memberof ProtoInputFieldDropdown
      * @instance
      */
@@ -47323,22 +47317,6 @@ $root.ProtoInputFieldDropdown = (function() {
     ProtoInputFieldDropdown.prototype.optionsCode = "";
 
     /**
-     * ProtoInputFieldDropdown comChannelUUIDs.
-     * @member {Array.<string>} comChannelUUIDs
-     * @memberof ProtoInputFieldDropdown
-     * @instance
-     */
-    ProtoInputFieldDropdown.prototype.comChannelUUIDs = $util.emptyArray;
-
-    /**
-     * ProtoInputFieldDropdown uuid.
-     * @member {string} uuid
-     * @memberof ProtoInputFieldDropdown
-     * @instance
-     */
-    ProtoInputFieldDropdown.prototype.uuid = "";
-
-    /**
      * Creates a new ProtoInputFieldDropdown instance using the specified properties.
      * @function create
      * @memberof ProtoInputFieldDropdown
@@ -47365,7 +47343,7 @@ $root.ProtoInputFieldDropdown = (function() {
         if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
             $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         if (message.base != null && Object.hasOwnProperty.call(message, "base"))
-            $root.ProtoBaseInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            $root.ProtoBaseTextInputField.encode(message.base, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
         if (message.options != null && message.options.length)
             for (var i = 0; i < message.options.length; ++i)
                 $root.ProtoOption.encode(message.options[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
@@ -47373,11 +47351,6 @@ $root.ProtoInputFieldDropdown = (function() {
             writer.uint32(/* id 4, wireType 0 =*/32).bool(message.bindOptionsCode);
         if (message.optionsCode != null && Object.hasOwnProperty.call(message, "optionsCode"))
             writer.uint32(/* id 5, wireType 2 =*/42).string(message.optionsCode);
-        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
-            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                writer.uint32(/* id 6, wireType 2 =*/50).string(message.comChannelUUIDs[i]);
-        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
-            writer.uint32(/* id 7, wireType 2 =*/58).string(message.uuid);
         return writer;
     };
 
@@ -47417,7 +47390,7 @@ $root.ProtoInputFieldDropdown = (function() {
                     break;
                 }
             case 2: {
-                    message.base = $root.ProtoBaseInputField.decode(reader, reader.uint32());
+                    message.base = $root.ProtoBaseTextInputField.decode(reader, reader.uint32());
                     break;
                 }
             case 3: {
@@ -47432,16 +47405,6 @@ $root.ProtoInputFieldDropdown = (function() {
                 }
             case 5: {
                     message.optionsCode = reader.string();
-                    break;
-                }
-            case 6: {
-                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
-                        message.comChannelUUIDs = [];
-                    message.comChannelUUIDs.push(reader.string());
-                    break;
-                }
-            case 7: {
-                    message.uuid = reader.string();
                     break;
                 }
             default:
@@ -47485,7 +47448,7 @@ $root.ProtoInputFieldDropdown = (function() {
                 return "parent." + error;
         }
         if (message.base != null && message.hasOwnProperty("base")) {
-            var error = $root.ProtoBaseInputField.verify(message.base);
+            var error = $root.ProtoBaseTextInputField.verify(message.base);
             if (error)
                 return "base." + error;
         }
@@ -47504,16 +47467,6 @@ $root.ProtoInputFieldDropdown = (function() {
         if (message.optionsCode != null && message.hasOwnProperty("optionsCode"))
             if (!$util.isString(message.optionsCode))
                 return "optionsCode: string expected";
-        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
-            if (!Array.isArray(message.comChannelUUIDs))
-                return "comChannelUUIDs: array expected";
-            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
-                if (!$util.isString(message.comChannelUUIDs[i]))
-                    return "comChannelUUIDs: string[] expected";
-        }
-        if (message.uuid != null && message.hasOwnProperty("uuid"))
-            if (!$util.isString(message.uuid))
-                return "uuid: string expected";
         return null;
     };
 
@@ -47537,7 +47490,7 @@ $root.ProtoInputFieldDropdown = (function() {
         if (object.base != null) {
             if (typeof object.base !== "object")
                 throw TypeError(".ProtoInputFieldDropdown.base: object expected");
-            message.base = $root.ProtoBaseInputField.fromObject(object.base);
+            message.base = $root.ProtoBaseTextInputField.fromObject(object.base);
         }
         if (object.options) {
             if (!Array.isArray(object.options))
@@ -47553,15 +47506,6 @@ $root.ProtoInputFieldDropdown = (function() {
             message.bindOptionsCode = Boolean(object.bindOptionsCode);
         if (object.optionsCode != null)
             message.optionsCode = String(object.optionsCode);
-        if (object.comChannelUUIDs) {
-            if (!Array.isArray(object.comChannelUUIDs))
-                throw TypeError(".ProtoInputFieldDropdown.comChannelUUIDs: array expected");
-            message.comChannelUUIDs = [];
-            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
-                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
-        }
-        if (object.uuid != null)
-            message.uuid = String(object.uuid);
         return message;
     };
 
@@ -47578,21 +47522,18 @@ $root.ProtoInputFieldDropdown = (function() {
         if (!options)
             options = {};
         var object = {};
-        if (options.arrays || options.defaults) {
+        if (options.arrays || options.defaults)
             object.options = [];
-            object.comChannelUUIDs = [];
-        }
         if (options.defaults) {
             object.parent = null;
             object.base = null;
             object.bindOptionsCode = false;
             object.optionsCode = "";
-            object.uuid = "";
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
         if (message.base != null && message.hasOwnProperty("base"))
-            object.base = $root.ProtoBaseInputField.toObject(message.base, options);
+            object.base = $root.ProtoBaseTextInputField.toObject(message.base, options);
         if (message.options && message.options.length) {
             object.options = [];
             for (var j = 0; j < message.options.length; ++j)
@@ -47602,13 +47543,6 @@ $root.ProtoInputFieldDropdown = (function() {
             object.bindOptionsCode = message.bindOptionsCode;
         if (message.optionsCode != null && message.hasOwnProperty("optionsCode"))
             object.optionsCode = message.optionsCode;
-        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
-            object.comChannelUUIDs = [];
-            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
-                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
-        }
-        if (message.uuid != null && message.hasOwnProperty("uuid"))
-            object.uuid = message.uuid;
         return object;
     };
 

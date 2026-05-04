@@ -1,33 +1,34 @@
+message ProtoBaseTextInputField {
+    ProtoBaseInputField base = 1;
+
+    ProtoBoxedMeasure pdf_size = 2;
+
+    ProtoBoxedMeasure pdfInputHeight = 3;
+
+    bool pdfIsReadOnly = 4;
+    bool pdfIsRequired = 5;
+    bool pdfIsNotExported = 6;
+    bool pdfIsMultiline = 7;
+    bool pdfIsPasswordField = 8;
+    bool pdfIsFileSelectionField = 9;
+    bool pdfDisableSpellCheck = 10;
+    bool pdfDisableScrolling = 11;
+    bool pdfUseCombFormatting = 12;
+    bool pdfIsRichTextEnabled = 13;
+}
+
 message ProtoInputFieldText {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
 
-  ProtoBaseInputField base = 2;
-  ProtoBoxedMeasure pdf_size = 4;
-  string pdf_form_name = 5;
-  repeated string comChannelUUIDs = 6;
-  string uuid = 7;
-  ProtoBoxedMeasure pdfInputHeight = 9;
-
-  bool pdfIsReadOnly = 10;
-  bool pdfIsRequired = 11;
-  bool pdfIsNotExported = 12;
-  bool pdfIsMultiline = 13;
-  bool pdfIsPasswordField = 14;
-  bool pdfIsFileSelectionField = 15;
-  bool pdfDisableSpellCheck = 16;
-  bool pdfDisableScrolling = 17;
-  bool pdfUseCombFormatting = 18;
-  bool pdfIsRichTextEnabled = 19;
+  ProtoBaseTextInputField base = 2;
 }
 
 message ProtoInputFieldDate {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
 
-  ProtoBaseInputField base = 2;
-  repeated string comChannelUUIDs = 3;
-  string uuid = 4;
+  ProtoBaseTextInputField base = 2;
 }
 
 message ProtoInputFieldCheckbox {
@@ -35,24 +36,20 @@ message ProtoInputFieldCheckbox {
   ProtoDocumentElement parent = 1;
 
   ProtoBaseInputField base = 2;
-  repeated string comChannelUUIDs = 3;
-  string uuid = 4;
 }
 
 message ProtoInputFieldLabel {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
 
-  ProtoBaseInputField base = 2;
-  repeated string comChannelUUIDs = 3;
-  string uuid = 4;
+  ProtoBaseTextInputField base = 2;
 }
 
 message ProtoInputFieldDropdown {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
 
-  ProtoBaseInputField base = 2;
+  ProtoBaseTextInputField base = 2;
 
   repeated ProtoOption options = 3;
 
@@ -66,6 +63,4 @@ message ProtoInputFieldDropdown {
   // - An array of Hashes with keys "key" (containing the "hidden" key) and "value" (containing the displayed value)
   // - A hash with keys (containing the "hidden" key) and "value" (containing the displayed value)
   string optionsCode = 5;
-  repeated string comChannelUUIDs = 6;
-  string uuid = 7;
 }

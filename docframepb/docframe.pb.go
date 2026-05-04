@@ -4229,6 +4229,8 @@ type ProtoBaseInputField struct {
 	PdfPrintingBehavior PDFPrintingBehavior    `protobuf:"varint,11,opt,name=pdfPrintingBehavior,proto3,enum=PDFPrintingBehavior" json:"pdfPrintingBehavior,omitempty"`
 	PdfFormName         string                 `protobuf:"bytes,12,opt,name=pdfFormName,proto3" json:"pdfFormName,omitempty"`
 	PdfAltText          string                 `protobuf:"bytes,13,opt,name=pdfAltText,proto3" json:"pdfAltText,omitempty"`
+	ComChannelUUIDs     []string               `protobuf:"bytes,14,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid                string                 `protobuf:"bytes,15,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -4350,6 +4352,20 @@ func (x *ProtoBaseInputField) GetPdfFormName() string {
 func (x *ProtoBaseInputField) GetPdfAltText() string {
 	if x != nil {
 		return x.PdfAltText
+	}
+	return ""
+}
+
+func (x *ProtoBaseInputField) GetComChannelUUIDs() []string {
+	if x != nil {
+		return x.ComChannelUUIDs
+	}
+	return nil
+}
+
+func (x *ProtoBaseInputField) GetUuid() string {
+	if x != nil {
+		return x.Uuid
 	}
 	return ""
 }
@@ -12784,32 +12800,157 @@ func (x *ProtoParagraphSetDefault) GetComChannelUUIDs() []string {
 	return nil
 }
 
-type ProtoInputFieldText struct {
+type ProtoBaseTextInputField struct {
 	state                   protoimpl.MessageState `protogen:"open.v1"`
-	Parent                  *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	Base                    *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
-	PdfSize                 *ProtoBoxedMeasure     `protobuf:"bytes,4,opt,name=pdf_size,json=pdfSize,proto3" json:"pdf_size,omitempty"`
-	PdfFormName             string                 `protobuf:"bytes,5,opt,name=pdf_form_name,json=pdfFormName,proto3" json:"pdf_form_name,omitempty"`
-	ComChannelUUIDs         []string               `protobuf:"bytes,6,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	Uuid                    string                 `protobuf:"bytes,7,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	PdfInputHeight          *ProtoBoxedMeasure     `protobuf:"bytes,9,opt,name=pdfInputHeight,proto3" json:"pdfInputHeight,omitempty"`
-	PdfIsReadOnly           bool                   `protobuf:"varint,10,opt,name=pdfIsReadOnly,proto3" json:"pdfIsReadOnly,omitempty"`
-	PdfIsRequired           bool                   `protobuf:"varint,11,opt,name=pdfIsRequired,proto3" json:"pdfIsRequired,omitempty"`
-	PdfIsNotExported        bool                   `protobuf:"varint,12,opt,name=pdfIsNotExported,proto3" json:"pdfIsNotExported,omitempty"`
-	PdfIsMultiline          bool                   `protobuf:"varint,13,opt,name=pdfIsMultiline,proto3" json:"pdfIsMultiline,omitempty"`
-	PdfIsPasswordField      bool                   `protobuf:"varint,14,opt,name=pdfIsPasswordField,proto3" json:"pdfIsPasswordField,omitempty"`
-	PdfIsFileSelectionField bool                   `protobuf:"varint,15,opt,name=pdfIsFileSelectionField,proto3" json:"pdfIsFileSelectionField,omitempty"`
-	PdfDisableSpellCheck    bool                   `protobuf:"varint,16,opt,name=pdfDisableSpellCheck,proto3" json:"pdfDisableSpellCheck,omitempty"`
-	PdfDisableScrolling     bool                   `protobuf:"varint,17,opt,name=pdfDisableScrolling,proto3" json:"pdfDisableScrolling,omitempty"`
-	PdfUseCombFormatting    bool                   `protobuf:"varint,18,opt,name=pdfUseCombFormatting,proto3" json:"pdfUseCombFormatting,omitempty"`
-	PdfIsRichTextEnabled    bool                   `protobuf:"varint,19,opt,name=pdfIsRichTextEnabled,proto3" json:"pdfIsRichTextEnabled,omitempty"`
+	Base                    *ProtoBaseInputField   `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty"`
+	PdfSize                 *ProtoBoxedMeasure     `protobuf:"bytes,2,opt,name=pdf_size,json=pdfSize,proto3" json:"pdf_size,omitempty"`
+	PdfInputHeight          *ProtoBoxedMeasure     `protobuf:"bytes,3,opt,name=pdfInputHeight,proto3" json:"pdfInputHeight,omitempty"`
+	PdfIsReadOnly           bool                   `protobuf:"varint,4,opt,name=pdfIsReadOnly,proto3" json:"pdfIsReadOnly,omitempty"`
+	PdfIsRequired           bool                   `protobuf:"varint,5,opt,name=pdfIsRequired,proto3" json:"pdfIsRequired,omitempty"`
+	PdfIsNotExported        bool                   `protobuf:"varint,6,opt,name=pdfIsNotExported,proto3" json:"pdfIsNotExported,omitempty"`
+	PdfIsMultiline          bool                   `protobuf:"varint,7,opt,name=pdfIsMultiline,proto3" json:"pdfIsMultiline,omitempty"`
+	PdfIsPasswordField      bool                   `protobuf:"varint,8,opt,name=pdfIsPasswordField,proto3" json:"pdfIsPasswordField,omitempty"`
+	PdfIsFileSelectionField bool                   `protobuf:"varint,9,opt,name=pdfIsFileSelectionField,proto3" json:"pdfIsFileSelectionField,omitempty"`
+	PdfDisableSpellCheck    bool                   `protobuf:"varint,10,opt,name=pdfDisableSpellCheck,proto3" json:"pdfDisableSpellCheck,omitempty"`
+	PdfDisableScrolling     bool                   `protobuf:"varint,11,opt,name=pdfDisableScrolling,proto3" json:"pdfDisableScrolling,omitempty"`
+	PdfUseCombFormatting    bool                   `protobuf:"varint,12,opt,name=pdfUseCombFormatting,proto3" json:"pdfUseCombFormatting,omitempty"`
+	PdfIsRichTextEnabled    bool                   `protobuf:"varint,13,opt,name=pdfIsRichTextEnabled,proto3" json:"pdfIsRichTextEnabled,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
 
+func (x *ProtoBaseTextInputField) Reset() {
+	*x = ProtoBaseTextInputField{}
+	mi := &file_build_docframe_proto_msgTypes[113]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProtoBaseTextInputField) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProtoBaseTextInputField) ProtoMessage() {}
+
+func (x *ProtoBaseTextInputField) ProtoReflect() protoreflect.Message {
+	mi := &file_build_docframe_proto_msgTypes[113]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProtoBaseTextInputField.ProtoReflect.Descriptor instead.
+func (*ProtoBaseTextInputField) Descriptor() ([]byte, []int) {
+	return file_build_docframe_proto_rawDescGZIP(), []int{113}
+}
+
+func (x *ProtoBaseTextInputField) GetBase() *ProtoBaseInputField {
+	if x != nil {
+		return x.Base
+	}
+	return nil
+}
+
+func (x *ProtoBaseTextInputField) GetPdfSize() *ProtoBoxedMeasure {
+	if x != nil {
+		return x.PdfSize
+	}
+	return nil
+}
+
+func (x *ProtoBaseTextInputField) GetPdfInputHeight() *ProtoBoxedMeasure {
+	if x != nil {
+		return x.PdfInputHeight
+	}
+	return nil
+}
+
+func (x *ProtoBaseTextInputField) GetPdfIsReadOnly() bool {
+	if x != nil {
+		return x.PdfIsReadOnly
+	}
+	return false
+}
+
+func (x *ProtoBaseTextInputField) GetPdfIsRequired() bool {
+	if x != nil {
+		return x.PdfIsRequired
+	}
+	return false
+}
+
+func (x *ProtoBaseTextInputField) GetPdfIsNotExported() bool {
+	if x != nil {
+		return x.PdfIsNotExported
+	}
+	return false
+}
+
+func (x *ProtoBaseTextInputField) GetPdfIsMultiline() bool {
+	if x != nil {
+		return x.PdfIsMultiline
+	}
+	return false
+}
+
+func (x *ProtoBaseTextInputField) GetPdfIsPasswordField() bool {
+	if x != nil {
+		return x.PdfIsPasswordField
+	}
+	return false
+}
+
+func (x *ProtoBaseTextInputField) GetPdfIsFileSelectionField() bool {
+	if x != nil {
+		return x.PdfIsFileSelectionField
+	}
+	return false
+}
+
+func (x *ProtoBaseTextInputField) GetPdfDisableSpellCheck() bool {
+	if x != nil {
+		return x.PdfDisableSpellCheck
+	}
+	return false
+}
+
+func (x *ProtoBaseTextInputField) GetPdfDisableScrolling() bool {
+	if x != nil {
+		return x.PdfDisableScrolling
+	}
+	return false
+}
+
+func (x *ProtoBaseTextInputField) GetPdfUseCombFormatting() bool {
+	if x != nil {
+		return x.PdfUseCombFormatting
+	}
+	return false
+}
+
+func (x *ProtoBaseTextInputField) GetPdfIsRichTextEnabled() bool {
+	if x != nil {
+		return x.PdfIsRichTextEnabled
+	}
+	return false
+}
+
+type ProtoInputFieldText struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Parent        *ProtoDocumentElement    `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	Base          *ProtoBaseTextInputField `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
 func (x *ProtoInputFieldText) Reset() {
 	*x = ProtoInputFieldText{}
-	mi := &file_build_docframe_proto_msgTypes[113]
+	mi := &file_build_docframe_proto_msgTypes[114]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12821,7 +12962,7 @@ func (x *ProtoInputFieldText) String() string {
 func (*ProtoInputFieldText) ProtoMessage() {}
 
 func (x *ProtoInputFieldText) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[113]
+	mi := &file_build_docframe_proto_msgTypes[114]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12834,7 +12975,7 @@ func (x *ProtoInputFieldText) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldText.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldText) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{113}
+	return file_build_docframe_proto_rawDescGZIP(), []int{114}
 }
 
 func (x *ProtoInputFieldText) GetParent() *ProtoDocumentElement {
@@ -12844,131 +12985,24 @@ func (x *ProtoInputFieldText) GetParent() *ProtoDocumentElement {
 	return nil
 }
 
-func (x *ProtoInputFieldText) GetBase() *ProtoBaseInputField {
+func (x *ProtoInputFieldText) GetBase() *ProtoBaseTextInputField {
 	if x != nil {
 		return x.Base
 	}
 	return nil
 }
 
-func (x *ProtoInputFieldText) GetPdfSize() *ProtoBoxedMeasure {
-	if x != nil {
-		return x.PdfSize
-	}
-	return nil
-}
-
-func (x *ProtoInputFieldText) GetPdfFormName() string {
-	if x != nil {
-		return x.PdfFormName
-	}
-	return ""
-}
-
-func (x *ProtoInputFieldText) GetComChannelUUIDs() []string {
-	if x != nil {
-		return x.ComChannelUUIDs
-	}
-	return nil
-}
-
-func (x *ProtoInputFieldText) GetUuid() string {
-	if x != nil {
-		return x.Uuid
-	}
-	return ""
-}
-
-func (x *ProtoInputFieldText) GetPdfInputHeight() *ProtoBoxedMeasure {
-	if x != nil {
-		return x.PdfInputHeight
-	}
-	return nil
-}
-
-func (x *ProtoInputFieldText) GetPdfIsReadOnly() bool {
-	if x != nil {
-		return x.PdfIsReadOnly
-	}
-	return false
-}
-
-func (x *ProtoInputFieldText) GetPdfIsRequired() bool {
-	if x != nil {
-		return x.PdfIsRequired
-	}
-	return false
-}
-
-func (x *ProtoInputFieldText) GetPdfIsNotExported() bool {
-	if x != nil {
-		return x.PdfIsNotExported
-	}
-	return false
-}
-
-func (x *ProtoInputFieldText) GetPdfIsMultiline() bool {
-	if x != nil {
-		return x.PdfIsMultiline
-	}
-	return false
-}
-
-func (x *ProtoInputFieldText) GetPdfIsPasswordField() bool {
-	if x != nil {
-		return x.PdfIsPasswordField
-	}
-	return false
-}
-
-func (x *ProtoInputFieldText) GetPdfIsFileSelectionField() bool {
-	if x != nil {
-		return x.PdfIsFileSelectionField
-	}
-	return false
-}
-
-func (x *ProtoInputFieldText) GetPdfDisableSpellCheck() bool {
-	if x != nil {
-		return x.PdfDisableSpellCheck
-	}
-	return false
-}
-
-func (x *ProtoInputFieldText) GetPdfDisableScrolling() bool {
-	if x != nil {
-		return x.PdfDisableScrolling
-	}
-	return false
-}
-
-func (x *ProtoInputFieldText) GetPdfUseCombFormatting() bool {
-	if x != nil {
-		return x.PdfUseCombFormatting
-	}
-	return false
-}
-
-func (x *ProtoInputFieldText) GetPdfIsRichTextEnabled() bool {
-	if x != nil {
-		return x.PdfIsRichTextEnabled
-	}
-	return false
-}
-
 type ProtoInputFieldDate struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	Base            *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
-	ComChannelUUIDs []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	Uuid            string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Parent        *ProtoDocumentElement    `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	Base          *ProtoBaseTextInputField `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProtoInputFieldDate) Reset() {
 	*x = ProtoInputFieldDate{}
-	mi := &file_build_docframe_proto_msgTypes[114]
+	mi := &file_build_docframe_proto_msgTypes[115]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12980,7 +13014,7 @@ func (x *ProtoInputFieldDate) String() string {
 func (*ProtoInputFieldDate) ProtoMessage() {}
 
 func (x *ProtoInputFieldDate) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[114]
+	mi := &file_build_docframe_proto_msgTypes[115]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12993,7 +13027,7 @@ func (x *ProtoInputFieldDate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldDate.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldDate) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{114}
+	return file_build_docframe_proto_rawDescGZIP(), []int{115}
 }
 
 func (x *ProtoInputFieldDate) GetParent() *ProtoDocumentElement {
@@ -13003,40 +13037,24 @@ func (x *ProtoInputFieldDate) GetParent() *ProtoDocumentElement {
 	return nil
 }
 
-func (x *ProtoInputFieldDate) GetBase() *ProtoBaseInputField {
+func (x *ProtoInputFieldDate) GetBase() *ProtoBaseTextInputField {
 	if x != nil {
 		return x.Base
 	}
 	return nil
 }
 
-func (x *ProtoInputFieldDate) GetComChannelUUIDs() []string {
-	if x != nil {
-		return x.ComChannelUUIDs
-	}
-	return nil
-}
-
-func (x *ProtoInputFieldDate) GetUuid() string {
-	if x != nil {
-		return x.Uuid
-	}
-	return ""
-}
-
 type ProtoInputFieldCheckbox struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	Base            *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
-	ComChannelUUIDs []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	Uuid            string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Parent        *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	Base          *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProtoInputFieldCheckbox) Reset() {
 	*x = ProtoInputFieldCheckbox{}
-	mi := &file_build_docframe_proto_msgTypes[115]
+	mi := &file_build_docframe_proto_msgTypes[116]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13048,7 +13066,7 @@ func (x *ProtoInputFieldCheckbox) String() string {
 func (*ProtoInputFieldCheckbox) ProtoMessage() {}
 
 func (x *ProtoInputFieldCheckbox) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[115]
+	mi := &file_build_docframe_proto_msgTypes[116]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13061,7 +13079,7 @@ func (x *ProtoInputFieldCheckbox) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldCheckbox.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldCheckbox) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{115}
+	return file_build_docframe_proto_rawDescGZIP(), []int{116}
 }
 
 func (x *ProtoInputFieldCheckbox) GetParent() *ProtoDocumentElement {
@@ -13078,33 +13096,17 @@ func (x *ProtoInputFieldCheckbox) GetBase() *ProtoBaseInputField {
 	return nil
 }
 
-func (x *ProtoInputFieldCheckbox) GetComChannelUUIDs() []string {
-	if x != nil {
-		return x.ComChannelUUIDs
-	}
-	return nil
-}
-
-func (x *ProtoInputFieldCheckbox) GetUuid() string {
-	if x != nil {
-		return x.Uuid
-	}
-	return ""
-}
-
 type ProtoInputFieldLabel struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	Base            *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
-	ComChannelUUIDs []string               `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	Uuid            string                 `protobuf:"bytes,4,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Parent        *ProtoDocumentElement    `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	Base          *ProtoBaseTextInputField `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProtoInputFieldLabel) Reset() {
 	*x = ProtoInputFieldLabel{}
-	mi := &file_build_docframe_proto_msgTypes[116]
+	mi := &file_build_docframe_proto_msgTypes[117]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13116,7 +13118,7 @@ func (x *ProtoInputFieldLabel) String() string {
 func (*ProtoInputFieldLabel) ProtoMessage() {}
 
 func (x *ProtoInputFieldLabel) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[116]
+	mi := &file_build_docframe_proto_msgTypes[117]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13129,7 +13131,7 @@ func (x *ProtoInputFieldLabel) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldLabel.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldLabel) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{116}
+	return file_build_docframe_proto_rawDescGZIP(), []int{117}
 }
 
 func (x *ProtoInputFieldLabel) GetParent() *ProtoDocumentElement {
@@ -13139,43 +13141,27 @@ func (x *ProtoInputFieldLabel) GetParent() *ProtoDocumentElement {
 	return nil
 }
 
-func (x *ProtoInputFieldLabel) GetBase() *ProtoBaseInputField {
+func (x *ProtoInputFieldLabel) GetBase() *ProtoBaseTextInputField {
 	if x != nil {
 		return x.Base
 	}
 	return nil
 }
 
-func (x *ProtoInputFieldLabel) GetComChannelUUIDs() []string {
-	if x != nil {
-		return x.ComChannelUUIDs
-	}
-	return nil
-}
-
-func (x *ProtoInputFieldLabel) GetUuid() string {
-	if x != nil {
-		return x.Uuid
-	}
-	return ""
-}
-
 type ProtoInputFieldDropdown struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	Parent          *ProtoDocumentElement  `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
-	Base            *ProtoBaseInputField   `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
-	Options         []*ProtoOption         `protobuf:"bytes,3,rep,name=options,proto3" json:"options,omitempty"`
-	BindOptionsCode bool                   `protobuf:"varint,4,opt,name=bindOptionsCode,proto3" json:"bindOptionsCode,omitempty"`
-	OptionsCode     string                 `protobuf:"bytes,5,opt,name=optionsCode,proto3" json:"optionsCode,omitempty"`
-	ComChannelUUIDs []string               `protobuf:"bytes,6,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	Uuid            string                 `protobuf:"bytes,7,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	state           protoimpl.MessageState   `protogen:"open.v1"`
+	Parent          *ProtoDocumentElement    `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
+	Base            *ProtoBaseTextInputField `protobuf:"bytes,2,opt,name=base,proto3" json:"base,omitempty"`
+	Options         []*ProtoOption           `protobuf:"bytes,3,rep,name=options,proto3" json:"options,omitempty"`
+	BindOptionsCode bool                     `protobuf:"varint,4,opt,name=bindOptionsCode,proto3" json:"bindOptionsCode,omitempty"`
+	OptionsCode     string                   `protobuf:"bytes,5,opt,name=optionsCode,proto3" json:"optionsCode,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
 
 func (x *ProtoInputFieldDropdown) Reset() {
 	*x = ProtoInputFieldDropdown{}
-	mi := &file_build_docframe_proto_msgTypes[117]
+	mi := &file_build_docframe_proto_msgTypes[118]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13187,7 +13173,7 @@ func (x *ProtoInputFieldDropdown) String() string {
 func (*ProtoInputFieldDropdown) ProtoMessage() {}
 
 func (x *ProtoInputFieldDropdown) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[117]
+	mi := &file_build_docframe_proto_msgTypes[118]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13200,7 +13186,7 @@ func (x *ProtoInputFieldDropdown) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldDropdown.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldDropdown) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{117}
+	return file_build_docframe_proto_rawDescGZIP(), []int{118}
 }
 
 func (x *ProtoInputFieldDropdown) GetParent() *ProtoDocumentElement {
@@ -13210,7 +13196,7 @@ func (x *ProtoInputFieldDropdown) GetParent() *ProtoDocumentElement {
 	return nil
 }
 
-func (x *ProtoInputFieldDropdown) GetBase() *ProtoBaseInputField {
+func (x *ProtoInputFieldDropdown) GetBase() *ProtoBaseTextInputField {
 	if x != nil {
 		return x.Base
 	}
@@ -13234,20 +13220,6 @@ func (x *ProtoInputFieldDropdown) GetBindOptionsCode() bool {
 func (x *ProtoInputFieldDropdown) GetOptionsCode() string {
 	if x != nil {
 		return x.OptionsCode
-	}
-	return ""
-}
-
-func (x *ProtoInputFieldDropdown) GetComChannelUUIDs() []string {
-	if x != nil {
-		return x.ComChannelUUIDs
-	}
-	return nil
-}
-
-func (x *ProtoInputFieldDropdown) GetUuid() string {
-	if x != nil {
-		return x.Uuid
 	}
 	return ""
 }
@@ -13425,7 +13397,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x01y\x18\x02 \x01(\bR\x01y\"5\n" +
 	"\vProtoOption\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\xee\x03\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\xac\x04\n" +
 	"\x13ProtoBaseInputField\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n" +
 	"\x04meta\x18\x02 \x01(\bR\x04meta\x12'\n" +
@@ -13444,7 +13416,9 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\vpdfFormName\x18\f \x01(\tR\vpdfFormName\x12\x1e\n" +
 	"\n" +
 	"pdfAltText\x18\r \x01(\tR\n" +
-	"pdfAltText\"o\n" +
+	"pdfAltText\x12(\n" +
+	"\x0fcomChannelUUIDs\x18\x0e \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
+	"\x04uuid\x18\x0f \x01(\tR\x04uuid\"o\n" +
 	"\x14ProtoDocumentElement\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\"\xa9\x01\n" +
@@ -14255,49 +14229,40 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x120\n" +
 	"\x13paragraphFormatUUID\x18\x03 \x01(\tR\x13paragraphFormatUUID\x12\x12\n" +
 	"\x04uuid\x18\x04 \x01(\tR\x04uuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\x93\x06\n" +
+	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\x86\x05\n" +
+	"\x17ProtoBaseTextInputField\x12(\n" +
+	"\x04base\x18\x01 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12-\n" +
+	"\bpdf_size\x18\x02 \x01(\v2\x12.ProtoBoxedMeasureR\apdfSize\x12:\n" +
+	"\x0epdfInputHeight\x18\x03 \x01(\v2\x12.ProtoBoxedMeasureR\x0epdfInputHeight\x12$\n" +
+	"\rpdfIsReadOnly\x18\x04 \x01(\bR\rpdfIsReadOnly\x12$\n" +
+	"\rpdfIsRequired\x18\x05 \x01(\bR\rpdfIsRequired\x12*\n" +
+	"\x10pdfIsNotExported\x18\x06 \x01(\bR\x10pdfIsNotExported\x12&\n" +
+	"\x0epdfIsMultiline\x18\a \x01(\bR\x0epdfIsMultiline\x12.\n" +
+	"\x12pdfIsPasswordField\x18\b \x01(\bR\x12pdfIsPasswordField\x128\n" +
+	"\x17pdfIsFileSelectionField\x18\t \x01(\bR\x17pdfIsFileSelectionField\x122\n" +
+	"\x14pdfDisableSpellCheck\x18\n" +
+	" \x01(\bR\x14pdfDisableSpellCheck\x120\n" +
+	"\x13pdfDisableScrolling\x18\v \x01(\bR\x13pdfDisableScrolling\x122\n" +
+	"\x14pdfUseCombFormatting\x18\f \x01(\bR\x14pdfUseCombFormatting\x122\n" +
+	"\x14pdfIsRichTextEnabled\x18\r \x01(\bR\x14pdfIsRichTextEnabled\"r\n" +
 	"\x13ProtoInputFieldText\x12-\n" +
-	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
-	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12-\n" +
-	"\bpdf_size\x18\x04 \x01(\v2\x12.ProtoBoxedMeasureR\apdfSize\x12\"\n" +
-	"\rpdf_form_name\x18\x05 \x01(\tR\vpdfFormName\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\a \x01(\tR\x04uuid\x12:\n" +
-	"\x0epdfInputHeight\x18\t \x01(\v2\x12.ProtoBoxedMeasureR\x0epdfInputHeight\x12$\n" +
-	"\rpdfIsReadOnly\x18\n" +
-	" \x01(\bR\rpdfIsReadOnly\x12$\n" +
-	"\rpdfIsRequired\x18\v \x01(\bR\rpdfIsRequired\x12*\n" +
-	"\x10pdfIsNotExported\x18\f \x01(\bR\x10pdfIsNotExported\x12&\n" +
-	"\x0epdfIsMultiline\x18\r \x01(\bR\x0epdfIsMultiline\x12.\n" +
-	"\x12pdfIsPasswordField\x18\x0e \x01(\bR\x12pdfIsPasswordField\x128\n" +
-	"\x17pdfIsFileSelectionField\x18\x0f \x01(\bR\x17pdfIsFileSelectionField\x122\n" +
-	"\x14pdfDisableSpellCheck\x18\x10 \x01(\bR\x14pdfDisableSpellCheck\x120\n" +
-	"\x13pdfDisableScrolling\x18\x11 \x01(\bR\x13pdfDisableScrolling\x122\n" +
-	"\x14pdfUseCombFormatting\x18\x12 \x01(\bR\x14pdfUseCombFormatting\x122\n" +
-	"\x14pdfIsRichTextEnabled\x18\x13 \x01(\bR\x14pdfIsRichTextEnabled\"\xac\x01\n" +
+	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12,\n" +
+	"\x04base\x18\x02 \x01(\v2\x18.ProtoBaseTextInputFieldR\x04base\"r\n" +
 	"\x13ProtoInputFieldDate\x12-\n" +
-	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
-	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xb0\x01\n" +
+	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12,\n" +
+	"\x04base\x18\x02 \x01(\v2\x18.ProtoBaseTextInputFieldR\x04base\"r\n" +
 	"\x17ProtoInputFieldCheckbox\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
-	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xad\x01\n" +
+	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\"s\n" +
 	"\x14ProtoInputFieldLabel\x12-\n" +
-	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
-	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\x04 \x01(\tR\x04uuid\"\xa4\x02\n" +
+	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12,\n" +
+	"\x04base\x18\x02 \x01(\v2\x18.ProtoBaseTextInputFieldR\x04base\"\xea\x01\n" +
 	"\x17ProtoInputFieldDropdown\x12-\n" +
-	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
-	"\x04base\x18\x02 \x01(\v2\x14.ProtoBaseInputFieldR\x04base\x12&\n" +
+	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12,\n" +
+	"\x04base\x18\x02 \x01(\v2\x18.ProtoBaseTextInputFieldR\x04base\x12&\n" +
 	"\aoptions\x18\x03 \x03(\v2\f.ProtoOptionR\aoptions\x12(\n" +
 	"\x0fbindOptionsCode\x18\x04 \x01(\bR\x0fbindOptionsCode\x12 \n" +
-	"\voptionsCode\x18\x05 \x01(\tR\voptionsCode\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x06 \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\a \x01(\tR\x04uuid*8\n" +
+	"\voptionsCode\x18\x05 \x01(\tR\voptionsCode*8\n" +
 	"\fProtoSPBMode\x12\b\n" +
 	"\x04NONE\x10\x00\x12\x0f\n" +
 	"\vSUPERSCRIPT\x10\x01\x12\r\n" +
@@ -14575,7 +14540,7 @@ func file_build_docframe_proto_rawDescGZIP() []byte {
 }
 
 var file_build_docframe_proto_enumTypes = make([]protoimpl.EnumInfo, 32)
-var file_build_docframe_proto_msgTypes = make([]protoimpl.MessageInfo, 118)
+var file_build_docframe_proto_msgTypes = make([]protoimpl.MessageInfo, 119)
 var file_build_docframe_proto_goTypes = []any{
 	(ProtoSPBMode)(0),                                      // 0: ProtoSPBMode
 	(ProtoRuleStyle)(0),                                    // 1: ProtoRuleStyle
@@ -14722,11 +14687,12 @@ var file_build_docframe_proto_goTypes = []any{
 	(*ProtoLocale)(nil),                                    // 142: ProtoLocale
 	(*ProtoTag)(nil),                                       // 143: ProtoTag
 	(*ProtoParagraphSetDefault)(nil),                       // 144: ProtoParagraphSetDefault
-	(*ProtoInputFieldText)(nil),                            // 145: ProtoInputFieldText
-	(*ProtoInputFieldDate)(nil),                            // 146: ProtoInputFieldDate
-	(*ProtoInputFieldCheckbox)(nil),                        // 147: ProtoInputFieldCheckbox
-	(*ProtoInputFieldLabel)(nil),                           // 148: ProtoInputFieldLabel
-	(*ProtoInputFieldDropdown)(nil),                        // 149: ProtoInputFieldDropdown
+	(*ProtoBaseTextInputField)(nil),                        // 145: ProtoBaseTextInputField
+	(*ProtoInputFieldText)(nil),                            // 146: ProtoInputFieldText
+	(*ProtoInputFieldDate)(nil),                            // 147: ProtoInputFieldDate
+	(*ProtoInputFieldCheckbox)(nil),                        // 148: ProtoInputFieldCheckbox
+	(*ProtoInputFieldLabel)(nil),                           // 149: ProtoInputFieldLabel
+	(*ProtoInputFieldDropdown)(nil),                        // 150: ProtoInputFieldDropdown
 }
 var file_build_docframe_proto_depIdxs = []int32{
 	0,   // 0: ProtoBoxedSPBMode.value:type_name -> ProtoSPBMode
@@ -15073,11 +15039,11 @@ var file_build_docframe_proto_depIdxs = []int32{
 	142, // 341: Node.locale:type_name -> ProtoLocale
 	143, // 342: Node.tag:type_name -> ProtoTag
 	144, // 343: Node.paragraph_set_default:type_name -> ProtoParagraphSetDefault
-	145, // 344: Node.input_field_text:type_name -> ProtoInputFieldText
-	146, // 345: Node.input_field_date:type_name -> ProtoInputFieldDate
-	147, // 346: Node.input_field_checkbox:type_name -> ProtoInputFieldCheckbox
-	148, // 347: Node.input_field_label:type_name -> ProtoInputFieldLabel
-	149, // 348: Node.input_field_dropdown:type_name -> ProtoInputFieldDropdown
+	146, // 344: Node.input_field_text:type_name -> ProtoInputFieldText
+	147, // 345: Node.input_field_date:type_name -> ProtoInputFieldDate
+	148, // 346: Node.input_field_checkbox:type_name -> ProtoInputFieldCheckbox
+	149, // 347: Node.input_field_label:type_name -> ProtoInputFieldLabel
+	150, // 348: Node.input_field_dropdown:type_name -> ProtoInputFieldDropdown
 	69,  // 349: ProtoImage.parent:type_name -> ProtoDocumentElement
 	33,  // 350: ProtoImage.scale:type_name -> ProtoBoxedDouble
 	33,  // 351: ProtoImage.columnScale:type_name -> ProtoBoxedDouble
@@ -15169,24 +15135,25 @@ var file_build_docframe_proto_depIdxs = []int32{
 	69,  // 437: ProtoLocale.parent:type_name -> ProtoDocumentElement
 	69,  // 438: ProtoTag.parent:type_name -> ProtoDocumentElement
 	69,  // 439: ProtoParagraphSetDefault.parent:type_name -> ProtoDocumentElement
-	69,  // 440: ProtoInputFieldText.parent:type_name -> ProtoDocumentElement
-	68,  // 441: ProtoInputFieldText.base:type_name -> ProtoBaseInputField
-	41,  // 442: ProtoInputFieldText.pdf_size:type_name -> ProtoBoxedMeasure
-	41,  // 443: ProtoInputFieldText.pdfInputHeight:type_name -> ProtoBoxedMeasure
-	69,  // 444: ProtoInputFieldDate.parent:type_name -> ProtoDocumentElement
-	68,  // 445: ProtoInputFieldDate.base:type_name -> ProtoBaseInputField
-	69,  // 446: ProtoInputFieldCheckbox.parent:type_name -> ProtoDocumentElement
-	68,  // 447: ProtoInputFieldCheckbox.base:type_name -> ProtoBaseInputField
-	69,  // 448: ProtoInputFieldLabel.parent:type_name -> ProtoDocumentElement
-	68,  // 449: ProtoInputFieldLabel.base:type_name -> ProtoBaseInputField
-	69,  // 450: ProtoInputFieldDropdown.parent:type_name -> ProtoDocumentElement
-	68,  // 451: ProtoInputFieldDropdown.base:type_name -> ProtoBaseInputField
-	67,  // 452: ProtoInputFieldDropdown.options:type_name -> ProtoOption
-	453, // [453:453] is the sub-list for method output_type
-	453, // [453:453] is the sub-list for method input_type
-	453, // [453:453] is the sub-list for extension type_name
-	453, // [453:453] is the sub-list for extension extendee
-	0,   // [0:453] is the sub-list for field type_name
+	68,  // 440: ProtoBaseTextInputField.base:type_name -> ProtoBaseInputField
+	41,  // 441: ProtoBaseTextInputField.pdf_size:type_name -> ProtoBoxedMeasure
+	41,  // 442: ProtoBaseTextInputField.pdfInputHeight:type_name -> ProtoBoxedMeasure
+	69,  // 443: ProtoInputFieldText.parent:type_name -> ProtoDocumentElement
+	145, // 444: ProtoInputFieldText.base:type_name -> ProtoBaseTextInputField
+	69,  // 445: ProtoInputFieldDate.parent:type_name -> ProtoDocumentElement
+	145, // 446: ProtoInputFieldDate.base:type_name -> ProtoBaseTextInputField
+	69,  // 447: ProtoInputFieldCheckbox.parent:type_name -> ProtoDocumentElement
+	68,  // 448: ProtoInputFieldCheckbox.base:type_name -> ProtoBaseInputField
+	69,  // 449: ProtoInputFieldLabel.parent:type_name -> ProtoDocumentElement
+	145, // 450: ProtoInputFieldLabel.base:type_name -> ProtoBaseTextInputField
+	69,  // 451: ProtoInputFieldDropdown.parent:type_name -> ProtoDocumentElement
+	145, // 452: ProtoInputFieldDropdown.base:type_name -> ProtoBaseTextInputField
+	67,  // 453: ProtoInputFieldDropdown.options:type_name -> ProtoOption
+	454, // [454:454] is the sub-list for method output_type
+	454, // [454:454] is the sub-list for method input_type
+	454, // [454:454] is the sub-list for extension type_name
+	454, // [454:454] is the sub-list for extension extendee
+	0,   // [0:454] is the sub-list for field type_name
 }
 
 func init() { file_build_docframe_proto_init() }
@@ -15266,7 +15233,7 @@ func file_build_docframe_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_build_docframe_proto_rawDesc), len(file_build_docframe_proto_rawDesc)),
 			NumEnums:      32,
-			NumMessages:   118,
+			NumMessages:   119,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
