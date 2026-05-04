@@ -1466,6 +1466,7 @@ string paragraphFormatUUID = 3;
 string uuid = 4;
 repeated string comChannelUUIDs = 5;
 }
+
 message ProtoBaseTextInputField {
 ProtoBaseInputField base = 1;
 

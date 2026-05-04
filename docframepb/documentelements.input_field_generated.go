@@ -3,22 +3,6 @@
 package docframepb
 
 
-func (baseTextInputField *ProtoBaseTextInputField) ToNode(children ...Message) *Node {
-	nodeChildren := make([]*Node, len(children))
-	for i, c := range children {
-		nodeChildren[i] = c.ToNode()
-	}
-
-	node := &Node{
-		Object: &Node_BaseTextInputField{
-			BaseTextInputField: baseTextInputField,
-		},
-		Children: nodeChildren,
-	}
-
-	return node
-}
-
 func (inputFieldText *ProtoInputFieldText) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {

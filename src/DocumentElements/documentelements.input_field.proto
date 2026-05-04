@@ -1,3 +1,5 @@
+
+// go-gen:ignore
 message ProtoBaseTextInputField {
     ProtoBaseInputField base = 1;
 
