@@ -13784,6 +13784,9 @@ export interface IProtoAdvancedIllustrationArea {
 
     /** ProtoAdvancedIllustrationArea comChannelUUIDs */
     comChannelUUIDs?: (string[]|null);
+
+    /** ProtoAdvancedIllustrationArea noArtifact */
+    noArtifact?: (boolean|null);
 }
 
 /** Represents a ProtoAdvancedIllustrationArea. */
@@ -13827,6 +13830,9 @@ export class ProtoAdvancedIllustrationArea implements IProtoAdvancedIllustration
 
     /** ProtoAdvancedIllustrationArea comChannelUUIDs. */
     public comChannelUUIDs: string[];
+
+    /** ProtoAdvancedIllustrationArea noArtifact. */
+    public noArtifact: boolean;
 
     /**
      * Creates a new ProtoAdvancedIllustrationArea instance using the specified properties.

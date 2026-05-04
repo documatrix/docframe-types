@@ -1356,6 +1356,7 @@ ProtoMeasure y = 8;
 ProtoAdvancedIllustrationAreaTextFlowType textFlow = 9;
 float rotation = 10;
 repeated string comChannelUUIDs = 11;
+bool noArtifact = 12;
 }
 message ProtoAdjustHorizontally {
 repeated ProtoDocumentElement _children = 1;

@@ -13,4 +13,5 @@ message ProtoAdvancedIllustrationArea {
   ProtoAdvancedIllustrationAreaTextFlowType textFlow = 9;
   float rotation = 10;
   repeated string comChannelUUIDs = 11;
+  bool noArtifact = 12;
 }
