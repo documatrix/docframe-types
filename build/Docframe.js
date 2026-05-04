@@ -41162,6 +41162,7 @@ $root.ProtoAdvancedIllustrationArea = (function() {
      * @property {ProtoAdvancedIllustrationAreaTextFlowType|null} [textFlow] ProtoAdvancedIllustrationArea textFlow
      * @property {number|null} [rotation] ProtoAdvancedIllustrationArea rotation
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoAdvancedIllustrationArea comChannelUUIDs
+     * @property {boolean|null} [noArtifact] ProtoAdvancedIllustrationArea noArtifact
      */
 
     /**
@@ -41270,6 +41271,14 @@ $root.ProtoAdvancedIllustrationArea = (function() {
     ProtoAdvancedIllustrationArea.prototype.comChannelUUIDs = $util.emptyArray;
 
     /**
+     * ProtoAdvancedIllustrationArea noArtifact.
+     * @member {boolean} noArtifact
+     * @memberof ProtoAdvancedIllustrationArea
+     * @instance
+     */
+    ProtoAdvancedIllustrationArea.prototype.noArtifact = false;
+
+    /**
      * Creates a new ProtoAdvancedIllustrationArea instance using the specified properties.
      * @function create
      * @memberof ProtoAdvancedIllustrationArea
@@ -41317,6 +41326,8 @@ $root.ProtoAdvancedIllustrationArea = (function() {
         if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
             for (var i = 0; i < message.comChannelUUIDs.length; ++i)
                 writer.uint32(/* id 11, wireType 2 =*/90).string(message.comChannelUUIDs[i]);
+        if (message.noArtifact != null && Object.hasOwnProperty.call(message, "noArtifact"))
+            writer.uint32(/* id 12, wireType 0 =*/96).bool(message.noArtifact);
         return writer;
     };
 
@@ -41397,6 +41408,10 @@ $root.ProtoAdvancedIllustrationArea = (function() {
                     if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
                         message.comChannelUUIDs = [];
                     message.comChannelUUIDs.push(reader.string());
+                    break;
+                }
+            case 12: {
+                    message.noArtifact = reader.bool();
                     break;
                 }
             default:
@@ -41495,6 +41510,9 @@ $root.ProtoAdvancedIllustrationArea = (function() {
                 if (!$util.isString(message.comChannelUUIDs[i]))
                     return "comChannelUUIDs: string[] expected";
         }
+        if (message.noArtifact != null && message.hasOwnProperty("noArtifact"))
+            if (typeof message.noArtifact !== "boolean")
+                return "noArtifact: boolean expected";
         return null;
     };
 
@@ -41586,6 +41604,8 @@ $root.ProtoAdvancedIllustrationArea = (function() {
             for (var i = 0; i < object.comChannelUUIDs.length; ++i)
                 message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
         }
+        if (object.noArtifact != null)
+            message.noArtifact = Boolean(object.noArtifact);
         return message;
     };
 
@@ -41616,6 +41636,7 @@ $root.ProtoAdvancedIllustrationArea = (function() {
             object.y = null;
             object.textFlow = options.enums === String ? "DO_NOT_USE_AT_ALL" : 0;
             object.rotation = 0;
+            object.noArtifact = false;
         }
         if (message._children && message._children.length) {
             object._children = [];
@@ -41645,6 +41666,8 @@ $root.ProtoAdvancedIllustrationArea = (function() {
             for (var j = 0; j < message.comChannelUUIDs.length; ++j)
                 object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
         }
+        if (message.noArtifact != null && message.hasOwnProperty("noArtifact"))
+            object.noArtifact = message.noArtifact;
         return object;
     };
 
