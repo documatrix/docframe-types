@@ -4140,9 +4140,10 @@ export class ProtoOption implements IProtoOption {
 
 /** PDFPrintingBehavior enum. */
 export enum PDFPrintingBehavior {
-    PDF_PRINTING_BEHAVIOR_INPUT = 0,
-    PDF_PRINTING_BEHAVIOR_TEXT = 1,
-    PDF_PRINTING_BEHAVIOR_INHERIT = 2
+    PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL = 0,
+    PDF_PRINTING_BEHAVIOR_INPUT = 1,
+    PDF_PRINTING_BEHAVIOR_TEXT = 2,
+    PDF_PRINTING_BEHAVIOR_INHERIT = 3
 }
 
 /** Properties of a ProtoBaseInputField. */

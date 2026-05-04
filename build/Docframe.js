@@ -10391,15 +10391,17 @@ $root.ProtoOption = (function() {
  * PDFPrintingBehavior enum.
  * @name PDFPrintingBehavior
  * @enum {number}
- * @property {number} PDF_PRINTING_BEHAVIOR_INPUT=0 PDF_PRINTING_BEHAVIOR_INPUT value
- * @property {number} PDF_PRINTING_BEHAVIOR_TEXT=1 PDF_PRINTING_BEHAVIOR_TEXT value
- * @property {number} PDF_PRINTING_BEHAVIOR_INHERIT=2 PDF_PRINTING_BEHAVIOR_INHERIT value
+ * @property {number} PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL=0 PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL value
+ * @property {number} PDF_PRINTING_BEHAVIOR_INPUT=1 PDF_PRINTING_BEHAVIOR_INPUT value
+ * @property {number} PDF_PRINTING_BEHAVIOR_TEXT=2 PDF_PRINTING_BEHAVIOR_TEXT value
+ * @property {number} PDF_PRINTING_BEHAVIOR_INHERIT=3 PDF_PRINTING_BEHAVIOR_INHERIT value
  */
 $root.PDFPrintingBehavior = (function() {
     var valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "PDF_PRINTING_BEHAVIOR_INPUT"] = 0;
-    values[valuesById[1] = "PDF_PRINTING_BEHAVIOR_TEXT"] = 1;
-    values[valuesById[2] = "PDF_PRINTING_BEHAVIOR_INHERIT"] = 2;
+    values[valuesById[0] = "PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL"] = 0;
+    values[valuesById[1] = "PDF_PRINTING_BEHAVIOR_INPUT"] = 1;
+    values[valuesById[2] = "PDF_PRINTING_BEHAVIOR_TEXT"] = 2;
+    values[valuesById[3] = "PDF_PRINTING_BEHAVIOR_INHERIT"] = 3;
     return values;
 })();
 
@@ -45883,6 +45885,7 @@ $root.ProtoInputFieldText = (function() {
             case 0:
             case 1:
             case 2:
+            case 3:
                 break;
             }
         if (message.pdfSize != null && message.hasOwnProperty("pdfSize")) {
@@ -45935,17 +45938,21 @@ $root.ProtoInputFieldText = (function() {
                 break;
             }
             break;
-        case "PDF_PRINTING_BEHAVIOR_INPUT":
+        case "PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL":
         case 0:
             message.pdfPrintingBehavior = 0;
             break;
-        case "PDF_PRINTING_BEHAVIOR_TEXT":
+        case "PDF_PRINTING_BEHAVIOR_INPUT":
         case 1:
             message.pdfPrintingBehavior = 1;
             break;
-        case "PDF_PRINTING_BEHAVIOR_INHERIT":
+        case "PDF_PRINTING_BEHAVIOR_TEXT":
         case 2:
             message.pdfPrintingBehavior = 2;
+            break;
+        case "PDF_PRINTING_BEHAVIOR_INHERIT":
+        case 3:
+            message.pdfPrintingBehavior = 3;
             break;
         }
         if (object.pdfSize != null) {
@@ -45985,7 +45992,7 @@ $root.ProtoInputFieldText = (function() {
         if (options.defaults) {
             object.parent = null;
             object.base = null;
-            object.pdfPrintingBehavior = options.enums === String ? "PDF_PRINTING_BEHAVIOR_INPUT" : 0;
+            object.pdfPrintingBehavior = options.enums === String ? "PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL" : 0;
             object.pdfSize = null;
             object.pdfFormName = "";
             object.uuid = "";

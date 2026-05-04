@@ -760,22 +760,25 @@ func (ProtoSemanticType) EnumDescriptor() ([]byte, []int) {
 type PDFPrintingBehavior int32
 
 const (
-	PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_INPUT   PDFPrintingBehavior = 0
-	PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_TEXT    PDFPrintingBehavior = 1
-	PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_INHERIT PDFPrintingBehavior = 2
+	PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL PDFPrintingBehavior = 0
+	PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_INPUT             PDFPrintingBehavior = 1
+	PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_TEXT              PDFPrintingBehavior = 2
+	PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_INHERIT           PDFPrintingBehavior = 3
 )
 
 // Enum value maps for PDFPrintingBehavior.
 var (
 	PDFPrintingBehavior_name = map[int32]string{
-		0: "PDF_PRINTING_BEHAVIOR_INPUT",
-		1: "PDF_PRINTING_BEHAVIOR_TEXT",
-		2: "PDF_PRINTING_BEHAVIOR_INHERIT",
+		0: "PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL",
+		1: "PDF_PRINTING_BEHAVIOR_INPUT",
+		2: "PDF_PRINTING_BEHAVIOR_TEXT",
+		3: "PDF_PRINTING_BEHAVIOR_INHERIT",
 	}
 	PDFPrintingBehavior_value = map[string]int32{
-		"PDF_PRINTING_BEHAVIOR_INPUT":   0,
-		"PDF_PRINTING_BEHAVIOR_TEXT":    1,
-		"PDF_PRINTING_BEHAVIOR_INHERIT": 2,
+		"PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL": 0,
+		"PDF_PRINTING_BEHAVIOR_INPUT":             1,
+		"PDF_PRINTING_BEHAVIOR_TEXT":              2,
+		"PDF_PRINTING_BEHAVIOR_INHERIT":           3,
 	}
 )
 
@@ -12818,7 +12821,7 @@ func (x *ProtoInputFieldText) GetPdfPrintingBehavior() PDFPrintingBehavior {
 	if x != nil {
 		return x.PdfPrintingBehavior
 	}
-	return PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_INPUT
+	return PDFPrintingBehavior_PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL
 }
 
 func (x *ProtoInputFieldText) GetPdfSize() *ProtoBoxedMeasure {
@@ -14270,11 +14273,12 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x12SEMANTIC_TYPE_PART\x10\x01\x12\x15\n" +
 	"\x11SEMANTIC_TYPE_ART\x10\x02\x12\x16\n" +
 	"\x12SEMANTIC_TYPE_SECT\x10\x03\x12\x15\n" +
-	"\x11SEMANTIC_TYPE_DIV\x10\x04*y\n" +
-	"\x13PDFPrintingBehavior\x12\x1f\n" +
-	"\x1bPDF_PRINTING_BEHAVIOR_INPUT\x10\x00\x12\x1e\n" +
-	"\x1aPDF_PRINTING_BEHAVIOR_TEXT\x10\x01\x12!\n" +
-	"\x1dPDF_PRINTING_BEHAVIOR_INHERIT\x10\x02*\x86\x01\n" +
+	"\x11SEMANTIC_TYPE_DIV\x10\x04*\xa6\x01\n" +
+	"\x13PDFPrintingBehavior\x12+\n" +
+	"'PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL\x10\x00\x12\x1f\n" +
+	"\x1bPDF_PRINTING_BEHAVIOR_INPUT\x10\x01\x12\x1e\n" +
+	"\x1aPDF_PRINTING_BEHAVIOR_TEXT\x10\x02\x12!\n" +
+	"\x1dPDF_PRINTING_BEHAVIOR_INHERIT\x10\x03*\x86\x01\n" +
 	"\vInheritance\x12\x17\n" +
 	"\x13INHERITANCE_INHERIT\x10\x00\x12\x14\n" +
 	"\x10INHERITANCE_CODE\x10\x01\x12\x19\n" +
