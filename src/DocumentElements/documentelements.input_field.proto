@@ -1,22 +1,36 @@
+
+// go-gen:ignore
+message ProtoBaseTextInputField {
+    ProtoBaseInputField base = 1;
+
+    ProtoBoxedMeasure pdf_size = 2;
+
+    ProtoBoxedMeasure pdfInputHeight = 3;
+
+    bool pdfIsReadOnly = 4;
+    bool pdfIsRequired = 5;
+    bool pdfIsNotExported = 6;
+    bool pdfIsMultiline = 7;
+    bool pdfIsPasswordField = 8;
+    bool pdfIsFileSelectionField = 9;
+    bool pdfDisableSpellCheck = 10;
+    bool pdfDisableScrolling = 11;
+    bool pdfUseCombFormatting = 12;
+    bool pdfIsRichTextEnabled = 13;
+}
+
 message ProtoInputFieldText {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
 
-  ProtoBaseInputField base = 2;
-  PDFPrintingBehavior pdf_printing_behavior = 3;
-  ProtoBoxedMeasure pdf_size = 4;
-  string pdf_form_name = 5;
-  repeated string comChannelUUIDs = 6;
-  string uuid = 7;
+  ProtoBaseTextInputField base = 2;
 }
 
 message ProtoInputFieldDate {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
 
-  ProtoBaseInputField base = 2;
-  repeated string comChannelUUIDs = 3;
-  string uuid = 4;
+  ProtoBaseTextInputField base = 2;
 }
 
 message ProtoInputFieldCheckbox {
@@ -24,24 +38,20 @@ message ProtoInputFieldCheckbox {
   ProtoDocumentElement parent = 1;
 
   ProtoBaseInputField base = 2;
-  repeated string comChannelUUIDs = 3;
-  string uuid = 4;
 }
 
 message ProtoInputFieldLabel {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
 
-  ProtoBaseInputField base = 2;
-  repeated string comChannelUUIDs = 3;
-  string uuid = 4;
+  ProtoBaseTextInputField base = 2;
 }
 
 message ProtoInputFieldDropdown {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
 
-  ProtoBaseInputField base = 2;
+  ProtoBaseTextInputField base = 2;
 
   repeated ProtoOption options = 3;
 
@@ -55,7 +65,4 @@ message ProtoInputFieldDropdown {
   // - An array of Hashes with keys "key" (containing the "hidden" key) and "value" (containing the displayed value)
   // - A hash with keys (containing the "hidden" key) and "value" (containing the displayed value)
   string optionsCode = 5;
-  repeated string comChannelUUIDs = 6;
-  string uuid = 7;
 }
-

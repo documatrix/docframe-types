@@ -4140,9 +4140,10 @@ export class ProtoOption implements IProtoOption {
 
 /** PDFPrintingBehavior enum. */
 export enum PDFPrintingBehavior {
-    PDF_PRINTING_BEHAVIOR_INPUT = 0,
-    PDF_PRINTING_BEHAVIOR_TEXT = 1,
-    PDF_PRINTING_BEHAVIOR_INHERIT = 2
+    PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL = 0,
+    PDF_PRINTING_BEHAVIOR_INPUT = 1,
+    PDF_PRINTING_BEHAVIOR_TEXT = 2,
+    PDF_PRINTING_BEHAVIOR_INHERIT = 3
 }
 
 /** Properties of a ProtoBaseInputField. */
@@ -4177,6 +4178,21 @@ export interface IProtoBaseInputField {
 
     /** ProtoBaseInputField readonly */
     readonly?: (boolean|null);
+
+    /** ProtoBaseInputField pdfPrintingBehavior */
+    pdfPrintingBehavior?: (PDFPrintingBehavior|null);
+
+    /** ProtoBaseInputField pdfFormName */
+    pdfFormName?: (string|null);
+
+    /** ProtoBaseInputField pdfAltText */
+    pdfAltText?: (string|null);
+
+    /** ProtoBaseInputField comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoBaseInputField uuid */
+    uuid?: (string|null);
 }
 
 /** Represents a ProtoBaseInputField. */
@@ -4217,6 +4233,21 @@ export class ProtoBaseInputField implements IProtoBaseInputField {
 
     /** ProtoBaseInputField readonly. */
     public readonly: boolean;
+
+    /** ProtoBaseInputField pdfPrintingBehavior. */
+    public pdfPrintingBehavior: PDFPrintingBehavior;
+
+    /** ProtoBaseInputField pdfFormName. */
+    public pdfFormName: string;
+
+    /** ProtoBaseInputField pdfAltText. */
+    public pdfAltText: string;
+
+    /** ProtoBaseInputField comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoBaseInputField uuid. */
+    public uuid: string;
 
     /**
      * Creates a new ProtoBaseInputField instance using the specified properties.
@@ -15298,6 +15329,175 @@ export class ProtoParagraphSetDefault implements IProtoParagraphSetDefault {
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
+/** Properties of a ProtoBaseTextInputField. */
+export interface IProtoBaseTextInputField {
+
+    /** ProtoBaseTextInputField base */
+    base?: (IProtoBaseInputField|null);
+
+    /** ProtoBaseTextInputField pdfSize */
+    pdfSize?: (IProtoBoxedMeasure|null);
+
+    /** ProtoBaseTextInputField pdfInputHeight */
+    pdfInputHeight?: (IProtoBoxedMeasure|null);
+
+    /** ProtoBaseTextInputField pdfIsReadOnly */
+    pdfIsReadOnly?: (boolean|null);
+
+    /** ProtoBaseTextInputField pdfIsRequired */
+    pdfIsRequired?: (boolean|null);
+
+    /** ProtoBaseTextInputField pdfIsNotExported */
+    pdfIsNotExported?: (boolean|null);
+
+    /** ProtoBaseTextInputField pdfIsMultiline */
+    pdfIsMultiline?: (boolean|null);
+
+    /** ProtoBaseTextInputField pdfIsPasswordField */
+    pdfIsPasswordField?: (boolean|null);
+
+    /** ProtoBaseTextInputField pdfIsFileSelectionField */
+    pdfIsFileSelectionField?: (boolean|null);
+
+    /** ProtoBaseTextInputField pdfDisableSpellCheck */
+    pdfDisableSpellCheck?: (boolean|null);
+
+    /** ProtoBaseTextInputField pdfDisableScrolling */
+    pdfDisableScrolling?: (boolean|null);
+
+    /** ProtoBaseTextInputField pdfUseCombFormatting */
+    pdfUseCombFormatting?: (boolean|null);
+
+    /** ProtoBaseTextInputField pdfIsRichTextEnabled */
+    pdfIsRichTextEnabled?: (boolean|null);
+}
+
+/** Represents a ProtoBaseTextInputField. */
+export class ProtoBaseTextInputField implements IProtoBaseTextInputField {
+
+    /**
+     * Constructs a new ProtoBaseTextInputField.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoBaseTextInputField);
+
+    /** ProtoBaseTextInputField base. */
+    public base?: (IProtoBaseInputField|null);
+
+    /** ProtoBaseTextInputField pdfSize. */
+    public pdfSize?: (IProtoBoxedMeasure|null);
+
+    /** ProtoBaseTextInputField pdfInputHeight. */
+    public pdfInputHeight?: (IProtoBoxedMeasure|null);
+
+    /** ProtoBaseTextInputField pdfIsReadOnly. */
+    public pdfIsReadOnly: boolean;
+
+    /** ProtoBaseTextInputField pdfIsRequired. */
+    public pdfIsRequired: boolean;
+
+    /** ProtoBaseTextInputField pdfIsNotExported. */
+    public pdfIsNotExported: boolean;
+
+    /** ProtoBaseTextInputField pdfIsMultiline. */
+    public pdfIsMultiline: boolean;
+
+    /** ProtoBaseTextInputField pdfIsPasswordField. */
+    public pdfIsPasswordField: boolean;
+
+    /** ProtoBaseTextInputField pdfIsFileSelectionField. */
+    public pdfIsFileSelectionField: boolean;
+
+    /** ProtoBaseTextInputField pdfDisableSpellCheck. */
+    public pdfDisableSpellCheck: boolean;
+
+    /** ProtoBaseTextInputField pdfDisableScrolling. */
+    public pdfDisableScrolling: boolean;
+
+    /** ProtoBaseTextInputField pdfUseCombFormatting. */
+    public pdfUseCombFormatting: boolean;
+
+    /** ProtoBaseTextInputField pdfIsRichTextEnabled. */
+    public pdfIsRichTextEnabled: boolean;
+
+    /**
+     * Creates a new ProtoBaseTextInputField instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoBaseTextInputField instance
+     */
+    public static create(properties?: IProtoBaseTextInputField): ProtoBaseTextInputField;
+
+    /**
+     * Encodes the specified ProtoBaseTextInputField message. Does not implicitly {@link ProtoBaseTextInputField.verify|verify} messages.
+     * @param message ProtoBaseTextInputField message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoBaseTextInputField, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoBaseTextInputField message, length delimited. Does not implicitly {@link ProtoBaseTextInputField.verify|verify} messages.
+     * @param message ProtoBaseTextInputField message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoBaseTextInputField, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoBaseTextInputField message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoBaseTextInputField
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoBaseTextInputField;
+
+    /**
+     * Decodes a ProtoBaseTextInputField message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoBaseTextInputField
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoBaseTextInputField;
+
+    /**
+     * Verifies a ProtoBaseTextInputField message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoBaseTextInputField message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoBaseTextInputField
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoBaseTextInputField;
+
+    /**
+     * Creates a plain object from a ProtoBaseTextInputField message. Also converts values to other types if specified.
+     * @param message ProtoBaseTextInputField
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoBaseTextInputField, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoBaseTextInputField to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for ProtoBaseTextInputField
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
 /** Properties of a ProtoInputFieldText. */
 export interface IProtoInputFieldText {
 
@@ -15305,22 +15505,7 @@ export interface IProtoInputFieldText {
     parent?: (IProtoDocumentElement|null);
 
     /** ProtoInputFieldText base */
-    base?: (IProtoBaseInputField|null);
-
-    /** ProtoInputFieldText pdfPrintingBehavior */
-    pdfPrintingBehavior?: (PDFPrintingBehavior|null);
-
-    /** ProtoInputFieldText pdfSize */
-    pdfSize?: (IProtoBoxedMeasure|null);
-
-    /** ProtoInputFieldText pdfFormName */
-    pdfFormName?: (string|null);
-
-    /** ProtoInputFieldText comChannelUUIDs */
-    comChannelUUIDs?: (string[]|null);
-
-    /** ProtoInputFieldText uuid */
-    uuid?: (string|null);
+    base?: (IProtoBaseTextInputField|null);
 }
 
 /** Represents a ProtoInputFieldText. */
@@ -15336,22 +15521,7 @@ export class ProtoInputFieldText implements IProtoInputFieldText {
     public parent?: (IProtoDocumentElement|null);
 
     /** ProtoInputFieldText base. */
-    public base?: (IProtoBaseInputField|null);
-
-    /** ProtoInputFieldText pdfPrintingBehavior. */
-    public pdfPrintingBehavior: PDFPrintingBehavior;
-
-    /** ProtoInputFieldText pdfSize. */
-    public pdfSize?: (IProtoBoxedMeasure|null);
-
-    /** ProtoInputFieldText pdfFormName. */
-    public pdfFormName: string;
-
-    /** ProtoInputFieldText comChannelUUIDs. */
-    public comChannelUUIDs: string[];
-
-    /** ProtoInputFieldText uuid. */
-    public uuid: string;
+    public base?: (IProtoBaseTextInputField|null);
 
     /**
      * Creates a new ProtoInputFieldText instance using the specified properties.
@@ -15438,13 +15608,7 @@ export interface IProtoInputFieldDate {
     parent?: (IProtoDocumentElement|null);
 
     /** ProtoInputFieldDate base */
-    base?: (IProtoBaseInputField|null);
-
-    /** ProtoInputFieldDate comChannelUUIDs */
-    comChannelUUIDs?: (string[]|null);
-
-    /** ProtoInputFieldDate uuid */
-    uuid?: (string|null);
+    base?: (IProtoBaseTextInputField|null);
 }
 
 /** Represents a ProtoInputFieldDate. */
@@ -15460,13 +15624,7 @@ export class ProtoInputFieldDate implements IProtoInputFieldDate {
     public parent?: (IProtoDocumentElement|null);
 
     /** ProtoInputFieldDate base. */
-    public base?: (IProtoBaseInputField|null);
-
-    /** ProtoInputFieldDate comChannelUUIDs. */
-    public comChannelUUIDs: string[];
-
-    /** ProtoInputFieldDate uuid. */
-    public uuid: string;
+    public base?: (IProtoBaseTextInputField|null);
 
     /**
      * Creates a new ProtoInputFieldDate instance using the specified properties.
@@ -15554,12 +15712,6 @@ export interface IProtoInputFieldCheckbox {
 
     /** ProtoInputFieldCheckbox base */
     base?: (IProtoBaseInputField|null);
-
-    /** ProtoInputFieldCheckbox comChannelUUIDs */
-    comChannelUUIDs?: (string[]|null);
-
-    /** ProtoInputFieldCheckbox uuid */
-    uuid?: (string|null);
 }
 
 /** Represents a ProtoInputFieldCheckbox. */
@@ -15576,12 +15728,6 @@ export class ProtoInputFieldCheckbox implements IProtoInputFieldCheckbox {
 
     /** ProtoInputFieldCheckbox base. */
     public base?: (IProtoBaseInputField|null);
-
-    /** ProtoInputFieldCheckbox comChannelUUIDs. */
-    public comChannelUUIDs: string[];
-
-    /** ProtoInputFieldCheckbox uuid. */
-    public uuid: string;
 
     /**
      * Creates a new ProtoInputFieldCheckbox instance using the specified properties.
@@ -15668,13 +15814,7 @@ export interface IProtoInputFieldLabel {
     parent?: (IProtoDocumentElement|null);
 
     /** ProtoInputFieldLabel base */
-    base?: (IProtoBaseInputField|null);
-
-    /** ProtoInputFieldLabel comChannelUUIDs */
-    comChannelUUIDs?: (string[]|null);
-
-    /** ProtoInputFieldLabel uuid */
-    uuid?: (string|null);
+    base?: (IProtoBaseTextInputField|null);
 }
 
 /** Represents a ProtoInputFieldLabel. */
@@ -15690,13 +15830,7 @@ export class ProtoInputFieldLabel implements IProtoInputFieldLabel {
     public parent?: (IProtoDocumentElement|null);
 
     /** ProtoInputFieldLabel base. */
-    public base?: (IProtoBaseInputField|null);
-
-    /** ProtoInputFieldLabel comChannelUUIDs. */
-    public comChannelUUIDs: string[];
-
-    /** ProtoInputFieldLabel uuid. */
-    public uuid: string;
+    public base?: (IProtoBaseTextInputField|null);
 
     /**
      * Creates a new ProtoInputFieldLabel instance using the specified properties.
@@ -15783,7 +15917,7 @@ export interface IProtoInputFieldDropdown {
     parent?: (IProtoDocumentElement|null);
 
     /** ProtoInputFieldDropdown base */
-    base?: (IProtoBaseInputField|null);
+    base?: (IProtoBaseTextInputField|null);
 
     /** ProtoInputFieldDropdown options */
     options?: (IProtoOption[]|null);
@@ -15793,12 +15927,6 @@ export interface IProtoInputFieldDropdown {
 
     /** ProtoInputFieldDropdown optionsCode */
     optionsCode?: (string|null);
-
-    /** ProtoInputFieldDropdown comChannelUUIDs */
-    comChannelUUIDs?: (string[]|null);
-
-    /** ProtoInputFieldDropdown uuid */
-    uuid?: (string|null);
 }
 
 /** Represents a ProtoInputFieldDropdown. */
@@ -15814,7 +15942,7 @@ export class ProtoInputFieldDropdown implements IProtoInputFieldDropdown {
     public parent?: (IProtoDocumentElement|null);
 
     /** ProtoInputFieldDropdown base. */
-    public base?: (IProtoBaseInputField|null);
+    public base?: (IProtoBaseTextInputField|null);
 
     /** ProtoInputFieldDropdown options. */
     public options: IProtoOption[];
@@ -15824,12 +15952,6 @@ export class ProtoInputFieldDropdown implements IProtoInputFieldDropdown {
 
     /** ProtoInputFieldDropdown optionsCode. */
     public optionsCode: string;
-
-    /** ProtoInputFieldDropdown comChannelUUIDs. */
-    public comChannelUUIDs: string[];
-
-    /** ProtoInputFieldDropdown uuid. */
-    public uuid: string;
 
     /**
      * Creates a new ProtoInputFieldDropdown instance using the specified properties.
