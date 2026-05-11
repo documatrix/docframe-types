@@ -4483,12 +4483,16 @@ func (x *ProtoBranchDocumentElement) GetComChannelUUIDs() []string {
 }
 
 type ProtoLink struct {
-	state           protoimpl.MessageState  `protogen:"open.v1"`
-	XChildren       []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
-	Url             string                  `protobuf:"bytes,2,opt,name=url,proto3" json:"url,omitempty"`
-	ComChannelUUIDs []string                `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state                       protoimpl.MessageState  `protogen:"open.v1"`
+	XChildren                   []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
+	Url                         string                  `protobuf:"bytes,2,opt,name=url,proto3" json:"url,omitempty"`
+	ComChannelUUIDs             []string                `protobuf:"bytes,3,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	ParagraphFormatUUID         string                  `protobuf:"bytes,4,opt,name=paragraphFormatUUID,proto3" json:"paragraphFormatUUID,omitempty"`
+	ParagraphFormatInternalName string                  `protobuf:"bytes,5,opt,name=paragraphFormatInternalName,proto3" json:"paragraphFormatInternalName,omitempty"`
+	UrlCode                     string                  `protobuf:"bytes,6,opt,name=urlCode,proto3" json:"urlCode,omitempty"`
+	BindUrlCode                 bool                    `protobuf:"varint,7,opt,name=bindUrlCode,proto3" json:"bindUrlCode,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
 }
 
 func (x *ProtoLink) Reset() {
@@ -4540,6 +4544,34 @@ func (x *ProtoLink) GetComChannelUUIDs() []string {
 		return x.ComChannelUUIDs
 	}
 	return nil
+}
+
+func (x *ProtoLink) GetParagraphFormatUUID() string {
+	if x != nil {
+		return x.ParagraphFormatUUID
+	}
+	return ""
+}
+
+func (x *ProtoLink) GetParagraphFormatInternalName() string {
+	if x != nil {
+		return x.ParagraphFormatInternalName
+	}
+	return ""
+}
+
+func (x *ProtoLink) GetUrlCode() string {
+	if x != nil {
+		return x.UrlCode
+	}
+	return ""
+}
+
+func (x *ProtoLink) GetBindUrlCode() bool {
+	if x != nil {
+		return x.BindUrlCode
+	}
+	return false
 }
 
 type ProtoListLevelSetting struct {
@@ -13425,11 +13457,15 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x1aProtoBranchDocumentElement\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"{\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\xab\x02\n" +
 	"\tProtoLink\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12\x10\n" +
 	"\x03url\x18\x02 \x01(\tR\x03url\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\"\x83\x05\n" +
+	"\x0fcomChannelUUIDs\x18\x03 \x03(\tR\x0fcomChannelUUIDs\x120\n" +
+	"\x13paragraphFormatUUID\x18\x04 \x01(\tR\x13paragraphFormatUUID\x12@\n" +
+	"\x1bparagraphFormatInternalName\x18\x05 \x01(\tR\x1bparagraphFormatInternalName\x12\x18\n" +
+	"\aurlCode\x18\x06 \x01(\tR\aurlCode\x12 \n" +
+	"\vbindUrlCode\x18\a \x01(\bR\vbindUrlCode\"\x83\x05\n" +
 	"\x15ProtoListLevelSetting\x12(\n" +
 	"\x0flistSettingName\x18\x01 \x01(\tR\x0flistSettingName\x12-\n" +
 	"\bfontSize\x18\x02 \x01(\v2\x11.ProtoBoxedUint32R\bfontSize\x12.\n" +
