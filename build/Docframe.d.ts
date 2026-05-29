@@ -4242,7 +4242,10 @@ export enum ProtoSemanticType {
     SEMANTIC_TYPE_PART = 1,
     SEMANTIC_TYPE_ART = 2,
     SEMANTIC_TYPE_SECT = 3,
-    SEMANTIC_TYPE_DIV = 4
+    SEMANTIC_TYPE_DIV = 4,
+    SEMANTIC_TYPE_TOC = 5,
+    SEMANTIC_TYPE_TOCI = 6,
+    SEMANTIC_TYPE_REFERENCE = 7
 }
 
 /** Properties of a ProtoOption. */
@@ -11015,6 +11018,18 @@ export interface INode {
     /** Node coloredArea */
     coloredArea?: (IProtoColoredArea|null);
 
+    /** Node chapter */
+    chapter?: (IProtoChapter|null);
+
+    /** Node tableOfContents */
+    tableOfContents?: (IProtoTableOfContents|null);
+
+    /** Node sectionReference */
+    sectionReference?: (IProtoSectionReference|null);
+
+    /** Node chapterLink */
+    chapterLink?: (IProtoChapterLink|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -11235,8 +11250,20 @@ export class Node implements INode {
     /** Node coloredArea. */
     public coloredArea?: (IProtoColoredArea|null);
 
+    /** Node chapter. */
+    public chapter?: (IProtoChapter|null);
+
+    /** Node tableOfContents. */
+    public tableOfContents?: (IProtoTableOfContents|null);
+
+    /** Node sectionReference. */
+    public sectionReference?: (IProtoSectionReference|null);
+
+    /** Node chapterLink. */
+    public chapterLink?: (IProtoChapterLink|null);
+
     /** Node object. */
-    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault"|"inputFieldText"|"inputFieldDate"|"inputFieldCheckbox"|"inputFieldLabel"|"inputFieldDropdown"|"setColor"|"unsetColor"|"coloredArea");
+    public object?: ("listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault"|"inputFieldText"|"inputFieldDate"|"inputFieldCheckbox"|"inputFieldLabel"|"inputFieldDropdown"|"setColor"|"unsetColor"|"coloredArea"|"chapter"|"tableOfContents"|"sectionReference"|"chapterLink");
 
     /**
      * Creates a new Node instance using the specified properties.
@@ -11387,7 +11414,11 @@ export enum NodeType {
     DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN = 86,
     DOCUMENT_ELEMENT_SET_COLOR = 87,
     DOCUMENT_ELEMENT_UNSET_COLOR = 88,
-    DOCUMENT_ELEMENT_COLORED_AREA = 89
+    DOCUMENT_ELEMENT_COLORED_AREA = 89,
+    DOCUMENT_ELEMENT_CHAPTER = 90,
+    DOCUMENT_ELEMENT_TABLE_OF_CONTENTS = 91,
+    DOCUMENT_ELEMENT_SECTION_REFERENCE = 92,
+    DOCUMENT_ELEMENT_CHAPTER_LINK = 93
 }
 
 /** ProtoImageScaleType enum. */
@@ -17519,6 +17550,544 @@ export class ProtoColoredArea implements IProtoColoredArea {
 
     /**
      * Gets the type url for ProtoColoredArea
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
+     */
+    public static getTypeUrl(prefix?: string): string;
+}
+
+/** Properties of a ProtoChapter. */
+export interface IProtoChapter {
+
+    /** ProtoChapter _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoChapter parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoChapter uuid */
+    uuid?: (string|null);
+
+    /** ProtoChapter comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoChapter title */
+    title?: (string|null);
+
+    /** ProtoChapter tag */
+    tag?: (string|null);
+
+    /** ProtoChapter number */
+    number?: (string[]|null);
+
+    /** ProtoChapter key */
+    key?: (string|null);
+
+    /** ProtoChapter createPageBreak */
+    createPageBreak?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
+}
+
+/** Represents a ProtoChapter. */
+export class ProtoChapter implements IProtoChapter {
+
+    /**
+     * Constructs a new ProtoChapter.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoChapter);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
+    /** ProtoChapter _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoChapter parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoChapter uuid. */
+    public uuid: string;
+
+    /** ProtoChapter comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoChapter title. */
+    public title: string;
+
+    /** ProtoChapter tag. */
+    public tag: string;
+
+    /** ProtoChapter number. */
+    public number: string[];
+
+    /** ProtoChapter key. */
+    public key: string;
+
+    /** ProtoChapter createPageBreak. */
+    public createPageBreak: boolean;
+
+    /**
+     * Creates a new ProtoChapter instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoChapter instance
+     */
+    public static create(properties?: IProtoChapter): ProtoChapter;
+
+    /**
+     * Encodes the specified ProtoChapter message. Does not implicitly {@link ProtoChapter.verify|verify} messages.
+     * @param message ProtoChapter message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoChapter, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoChapter message, length delimited. Does not implicitly {@link ProtoChapter.verify|verify} messages.
+     * @param message ProtoChapter message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoChapter, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoChapter message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoChapter
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoChapter;
+
+    /**
+     * Decodes a ProtoChapter message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoChapter
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoChapter;
+
+    /**
+     * Verifies a ProtoChapter message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoChapter message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoChapter
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoChapter;
+
+    /**
+     * Creates a plain object from a ProtoChapter message. Also converts values to other types if specified.
+     * @param message ProtoChapter
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoChapter, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoChapter to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the type url for ProtoChapter
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
+     */
+    public static getTypeUrl(prefix?: string): string;
+}
+
+/** Properties of a ProtoTableOfContents. */
+export interface IProtoTableOfContents {
+
+    /** ProtoTableOfContents _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoTableOfContents parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoTableOfContents uuid */
+    uuid?: (string|null);
+
+    /** ProtoTableOfContents comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoTableOfContents levels */
+    levels?: (number|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
+}
+
+/** Represents a ProtoTableOfContents. */
+export class ProtoTableOfContents implements IProtoTableOfContents {
+
+    /**
+     * Constructs a new ProtoTableOfContents.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoTableOfContents);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
+    /** ProtoTableOfContents _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoTableOfContents parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoTableOfContents uuid. */
+    public uuid: string;
+
+    /** ProtoTableOfContents comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoTableOfContents levels. */
+    public levels: number;
+
+    /**
+     * Creates a new ProtoTableOfContents instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoTableOfContents instance
+     */
+    public static create(properties?: IProtoTableOfContents): ProtoTableOfContents;
+
+    /**
+     * Encodes the specified ProtoTableOfContents message. Does not implicitly {@link ProtoTableOfContents.verify|verify} messages.
+     * @param message ProtoTableOfContents message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoTableOfContents, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoTableOfContents message, length delimited. Does not implicitly {@link ProtoTableOfContents.verify|verify} messages.
+     * @param message ProtoTableOfContents message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoTableOfContents, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoTableOfContents message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoTableOfContents
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoTableOfContents;
+
+    /**
+     * Decodes a ProtoTableOfContents message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoTableOfContents
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoTableOfContents;
+
+    /**
+     * Verifies a ProtoTableOfContents message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoTableOfContents message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoTableOfContents
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoTableOfContents;
+
+    /**
+     * Creates a plain object from a ProtoTableOfContents message. Also converts values to other types if specified.
+     * @param message ProtoTableOfContents
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoTableOfContents, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoTableOfContents to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the type url for ProtoTableOfContents
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
+     */
+    public static getTypeUrl(prefix?: string): string;
+}
+
+/** Properties of a ProtoSectionReference. */
+export interface IProtoSectionReference {
+
+    /** ProtoSectionReference parent */
+    parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSectionReference uuid */
+    uuid?: (string|null);
+
+    /** ProtoSectionReference comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** ProtoSectionReference tag */
+    tag?: (string|null);
+
+    /** ProtoSectionReference format */
+    format?: (string|null);
+
+    /** ProtoSectionReference content */
+    content?: (string|null);
+
+    /** ProtoSectionReference key */
+    key?: (string|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
+}
+
+/** Represents a ProtoSectionReference. */
+export class ProtoSectionReference implements IProtoSectionReference {
+
+    /**
+     * Constructs a new ProtoSectionReference.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoSectionReference);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
+    /** ProtoSectionReference parent. */
+    public parent?: (IProtoDocumentElement|null);
+
+    /** ProtoSectionReference uuid. */
+    public uuid: string;
+
+    /** ProtoSectionReference comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /** ProtoSectionReference tag. */
+    public tag: string;
+
+    /** ProtoSectionReference format. */
+    public format: string;
+
+    /** ProtoSectionReference content. */
+    public content: string;
+
+    /** ProtoSectionReference key. */
+    public key: string;
+
+    /**
+     * Creates a new ProtoSectionReference instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoSectionReference instance
+     */
+    public static create(properties?: IProtoSectionReference): ProtoSectionReference;
+
+    /**
+     * Encodes the specified ProtoSectionReference message. Does not implicitly {@link ProtoSectionReference.verify|verify} messages.
+     * @param message ProtoSectionReference message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoSectionReference, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoSectionReference message, length delimited. Does not implicitly {@link ProtoSectionReference.verify|verify} messages.
+     * @param message ProtoSectionReference message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoSectionReference, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoSectionReference message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoSectionReference
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoSectionReference;
+
+    /**
+     * Decodes a ProtoSectionReference message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoSectionReference
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoSectionReference;
+
+    /**
+     * Verifies a ProtoSectionReference message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoSectionReference message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoSectionReference
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoSectionReference;
+
+    /**
+     * Creates a plain object from a ProtoSectionReference message. Also converts values to other types if specified.
+     * @param message ProtoSectionReference
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoSectionReference, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoSectionReference to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the type url for ProtoSectionReference
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
+     */
+    public static getTypeUrl(prefix?: string): string;
+}
+
+/** Properties of a ProtoChapterLink. */
+export interface IProtoChapterLink {
+
+    /** ProtoChapterLink _children */
+    _children?: (IProtoDocumentElement[]|null);
+
+    /** ProtoChapterLink uuid */
+    uuid?: (string|null);
+
+    /** ProtoChapterLink name */
+    name?: (string|null);
+
+    /** ProtoChapterLink comChannelUUIDs */
+    comChannelUUIDs?: (string[]|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
+}
+
+/** Represents a ProtoChapterLink. */
+export class ProtoChapterLink implements IProtoChapterLink {
+
+    /**
+     * Constructs a new ProtoChapterLink.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoChapterLink);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
+    /** ProtoChapterLink _children. */
+    public _children: IProtoDocumentElement[];
+
+    /** ProtoChapterLink uuid. */
+    public uuid: string;
+
+    /** ProtoChapterLink name. */
+    public name: string;
+
+    /** ProtoChapterLink comChannelUUIDs. */
+    public comChannelUUIDs: string[];
+
+    /**
+     * Creates a new ProtoChapterLink instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoChapterLink instance
+     */
+    public static create(properties?: IProtoChapterLink): ProtoChapterLink;
+
+    /**
+     * Encodes the specified ProtoChapterLink message. Does not implicitly {@link ProtoChapterLink.verify|verify} messages.
+     * @param message ProtoChapterLink message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoChapterLink, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoChapterLink message, length delimited. Does not implicitly {@link ProtoChapterLink.verify|verify} messages.
+     * @param message ProtoChapterLink message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoChapterLink, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoChapterLink message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoChapterLink
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoChapterLink;
+
+    /**
+     * Decodes a ProtoChapterLink message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoChapterLink
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoChapterLink;
+
+    /**
+     * Verifies a ProtoChapterLink message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoChapterLink message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoChapterLink
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoChapterLink;
+
+    /**
+     * Creates a plain object from a ProtoChapterLink message. Also converts values to other types if specified.
+     * @param message ProtoChapterLink
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoChapterLink, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoChapterLink to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the type url for ProtoChapterLink
      * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
      * @returns The type url
      */

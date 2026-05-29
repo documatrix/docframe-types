@@ -93,6 +93,10 @@ declare -a FileArray=(
   "src/DocumentElements/documentelements.paragraph_set_default.proto"
   "src/DocumentElements/documentelements.input_field.proto"
   "src/DocumentElements/documentelements.set_unset_color.proto"
+  "src/DocumentElements/documentelements.chapter.proto"
+  "src/DocumentElements/documentelements.table_of_contents.proto"
+  "src/DocumentElements/documentelements.section_reference.proto"
+  "src/DocumentElements/documentelements.chapter_link.proto"
 )
 
 for file in ${FileArray[@]}; do

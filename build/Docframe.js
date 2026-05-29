@@ -11536,6 +11536,9 @@ $root.ProtoImageReferencePoint = (function() {
  * @property {number} SEMANTIC_TYPE_ART=2 SEMANTIC_TYPE_ART value
  * @property {number} SEMANTIC_TYPE_SECT=3 SEMANTIC_TYPE_SECT value
  * @property {number} SEMANTIC_TYPE_DIV=4 SEMANTIC_TYPE_DIV value
+ * @property {number} SEMANTIC_TYPE_TOC=5 SEMANTIC_TYPE_TOC value
+ * @property {number} SEMANTIC_TYPE_TOCI=6 SEMANTIC_TYPE_TOCI value
+ * @property {number} SEMANTIC_TYPE_REFERENCE=7 SEMANTIC_TYPE_REFERENCE value
  */
 $root.ProtoSemanticType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -11544,6 +11547,9 @@ $root.ProtoSemanticType = (function() {
     values[valuesById[2] = "SEMANTIC_TYPE_ART"] = 2;
     values[valuesById[3] = "SEMANTIC_TYPE_SECT"] = 3;
     values[valuesById[4] = "SEMANTIC_TYPE_DIV"] = 4;
+    values[valuesById[5] = "SEMANTIC_TYPE_TOC"] = 5;
+    values[valuesById[6] = "SEMANTIC_TYPE_TOCI"] = 6;
+    values[valuesById[7] = "SEMANTIC_TYPE_REFERENCE"] = 7;
     return values;
 })();
 
@@ -33380,6 +33386,9 @@ $root.ProtoTemplate = (function() {
             case 2:
             case 3:
             case 4:
+            case 5:
+            case 6:
+            case 7:
                 break;
             }
         if (message.templateUuid != null && message.hasOwnProperty("templateUuid"))
@@ -33473,6 +33482,18 @@ $root.ProtoTemplate = (function() {
             case "SEMANTIC_TYPE_DIV":
             case 4:
                 message.semanticType = 4;
+                break;
+            case "SEMANTIC_TYPE_TOC":
+            case 5:
+                message.semanticType = 5;
+                break;
+            case "SEMANTIC_TYPE_TOCI":
+            case 6:
+                message.semanticType = 6;
+                break;
+            case "SEMANTIC_TYPE_REFERENCE":
+            case 7:
+                message.semanticType = 7;
                 break;
             }
         if (object.templateUuid != null)
@@ -34502,6 +34523,10 @@ $root.Node = (function() {
      * @property {IProtoSetColor|null} [setColor] Node setColor
      * @property {IProtoUnsetColor|null} [unsetColor] Node unsetColor
      * @property {IProtoColoredArea|null} [coloredArea] Node coloredArea
+     * @property {IProtoChapter|null} [chapter] Node chapter
+     * @property {IProtoTableOfContents|null} [tableOfContents] Node tableOfContents
+     * @property {IProtoSectionReference|null} [sectionReference] Node sectionReference
+     * @property {IProtoChapterLink|null} [chapterLink] Node chapterLink
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -35066,17 +35091,49 @@ $root.Node = (function() {
      */
     Node.prototype.coloredArea = null;
 
+    /**
+     * Node chapter.
+     * @member {IProtoChapter|null|undefined} chapter
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.chapter = null;
+
+    /**
+     * Node tableOfContents.
+     * @member {IProtoTableOfContents|null|undefined} tableOfContents
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.tableOfContents = null;
+
+    /**
+     * Node sectionReference.
+     * @member {IProtoSectionReference|null|undefined} sectionReference
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.sectionReference = null;
+
+    /**
+     * Node chapterLink.
+     * @member {IProtoChapterLink|null|undefined} chapterLink
+     * @memberof Node
+     * @instance
+     */
+    Node.prototype.chapterLink = null;
+
     // OneOf field names bound to virtual getters and setters
     var $oneOfFields;
 
     /**
      * Node object.
-     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault"|"inputFieldText"|"inputFieldDate"|"inputFieldCheckbox"|"inputFieldLabel"|"inputFieldDropdown"|"setColor"|"unsetColor"|"coloredArea"|undefined} object
+     * @member {"listSetting"|"colorDef"|"brick"|"template"|"formatted"|"image"|"paragraphFormat"|"textBrick"|"text"|"linebreak"|"spaceVertically"|"footer"|"header"|"table"|"tableRow"|"tableCell"|"cDef"|"pDef"|"applyCDef"|"applyPDef"|"applyPtConfig"|"applyUlConfig"|"ptConfig"|"ulConfig"|"newPage"|"variable"|"namedString"|"paragraph"|"section"|"span"|"link"|"directory"|"tableContentGroup"|"tableConfig"|"tableCellConfig"|"tableRowConfig"|"tableContentGroupConfig"|"brickReference"|"indentation"|"barcode"|"wsArea"|"carryOver"|"subTotal"|"loop"|"loopEntry"|"rule"|"layout"|"advancedIllustrationArea"|"adjustHorizontally"|"doctypeScript"|"dmScript"|"dynamicTemplate"|"selection"|"selectionEntry"|"condition"|"pageCondition"|"locale"|"tag"|"paragraphSetDefault"|"inputFieldText"|"inputFieldDate"|"inputFieldCheckbox"|"inputFieldLabel"|"inputFieldDropdown"|"setColor"|"unsetColor"|"coloredArea"|"chapter"|"tableOfContents"|"sectionReference"|"chapterLink"|undefined} object
      * @memberof Node
      * @instance
      */
     Object.defineProperty(Node.prototype, "object", {
-        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition", "locale", "tag", "paragraphSetDefault", "inputFieldText", "inputFieldDate", "inputFieldCheckbox", "inputFieldLabel", "inputFieldDropdown", "setColor", "unsetColor", "coloredArea"]),
+        get: $util.oneOfGetter($oneOfFields = ["listSetting", "colorDef", "brick", "template", "formatted", "image", "paragraphFormat", "textBrick", "text", "linebreak", "spaceVertically", "footer", "header", "table", "tableRow", "tableCell", "cDef", "pDef", "applyCDef", "applyPDef", "applyPtConfig", "applyUlConfig", "ptConfig", "ulConfig", "newPage", "variable", "namedString", "paragraph", "section", "span", "link", "directory", "tableContentGroup", "tableConfig", "tableCellConfig", "tableRowConfig", "tableContentGroupConfig", "brickReference", "indentation", "barcode", "wsArea", "carryOver", "subTotal", "loop", "loopEntry", "rule", "layout", "advancedIllustrationArea", "adjustHorizontally", "doctypeScript", "dmScript", "dynamicTemplate", "selection", "selectionEntry", "condition", "pageCondition", "locale", "tag", "paragraphSetDefault", "inputFieldText", "inputFieldDate", "inputFieldCheckbox", "inputFieldLabel", "inputFieldDropdown", "setColor", "unsetColor", "coloredArea", "chapter", "tableOfContents", "sectionReference", "chapterLink"]),
         set: $util.oneOfSetter($oneOfFields)
     });
 
@@ -35241,6 +35298,14 @@ $root.Node = (function() {
             $root.ProtoUnsetColor.encode(message.unsetColor, writer.uint32(/* id 82, wireType 2 =*/658).fork()).ldelim();
         if (message.coloredArea != null && Object.hasOwnProperty.call(message, "coloredArea"))
             $root.ProtoColoredArea.encode(message.coloredArea, writer.uint32(/* id 83, wireType 2 =*/666).fork()).ldelim();
+        if (message.chapter != null && Object.hasOwnProperty.call(message, "chapter"))
+            $root.ProtoChapter.encode(message.chapter, writer.uint32(/* id 84, wireType 2 =*/674).fork()).ldelim();
+        if (message.tableOfContents != null && Object.hasOwnProperty.call(message, "tableOfContents"))
+            $root.ProtoTableOfContents.encode(message.tableOfContents, writer.uint32(/* id 85, wireType 2 =*/682).fork()).ldelim();
+        if (message.sectionReference != null && Object.hasOwnProperty.call(message, "sectionReference"))
+            $root.ProtoSectionReference.encode(message.sectionReference, writer.uint32(/* id 86, wireType 2 =*/690).fork()).ldelim();
+        if (message.chapterLink != null && Object.hasOwnProperty.call(message, "chapterLink"))
+            $root.ProtoChapterLink.encode(message.chapterLink, writer.uint32(/* id 87, wireType 2 =*/698).fork()).ldelim();
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -35763,6 +35828,34 @@ $root.Node = (function() {
                         break;
                     message.coloredArea = $root.ProtoColoredArea.decode(reader, reader.uint32(), undefined, _depth + 1, message.coloredArea);
                     message.object = "coloredArea";
+                    continue;
+                }
+            case 84: {
+                    if (wireType !== 2)
+                        break;
+                    message.chapter = $root.ProtoChapter.decode(reader, reader.uint32(), undefined, _depth + 1, message.chapter);
+                    message.object = "chapter";
+                    continue;
+                }
+            case 85: {
+                    if (wireType !== 2)
+                        break;
+                    message.tableOfContents = $root.ProtoTableOfContents.decode(reader, reader.uint32(), undefined, _depth + 1, message.tableOfContents);
+                    message.object = "tableOfContents";
+                    continue;
+                }
+            case 86: {
+                    if (wireType !== 2)
+                        break;
+                    message.sectionReference = $root.ProtoSectionReference.decode(reader, reader.uint32(), undefined, _depth + 1, message.sectionReference);
+                    message.object = "sectionReference";
+                    continue;
+                }
+            case 87: {
+                    if (wireType !== 2)
+                        break;
+                    message.chapterLink = $root.ProtoChapterLink.decode(reader, reader.uint32(), undefined, _depth + 1, message.chapterLink);
+                    message.object = "chapterLink";
                     continue;
                 }
             }
@@ -36484,6 +36577,46 @@ $root.Node = (function() {
                     return "coloredArea." + error;
             }
         }
+        if (message.chapter != null && message.hasOwnProperty("chapter")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoChapter.verify(message.chapter, _depth + 1);
+                if (error)
+                    return "chapter." + error;
+            }
+        }
+        if (message.tableOfContents != null && message.hasOwnProperty("tableOfContents")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoTableOfContents.verify(message.tableOfContents, _depth + 1);
+                if (error)
+                    return "tableOfContents." + error;
+            }
+        }
+        if (message.sectionReference != null && message.hasOwnProperty("sectionReference")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoSectionReference.verify(message.sectionReference, _depth + 1);
+                if (error)
+                    return "sectionReference." + error;
+            }
+        }
+        if (message.chapterLink != null && message.hasOwnProperty("chapterLink")) {
+            if (properties.object === 1)
+                return "object: multiple values";
+            properties.object = 1;
+            {
+                var error = $root.ProtoChapterLink.verify(message.chapterLink, _depth + 1);
+                if (error)
+                    return "chapterLink." + error;
+            }
+        }
         return null;
     };
 
@@ -36848,6 +36981,26 @@ $root.Node = (function() {
                 throw TypeError(".Node.coloredArea: object expected");
             message.coloredArea = $root.ProtoColoredArea.fromObject(object.coloredArea, _depth + 1);
         }
+        if (object.chapter != null) {
+            if (typeof object.chapter !== "object")
+                throw TypeError(".Node.chapter: object expected");
+            message.chapter = $root.ProtoChapter.fromObject(object.chapter, _depth + 1);
+        }
+        if (object.tableOfContents != null) {
+            if (typeof object.tableOfContents !== "object")
+                throw TypeError(".Node.tableOfContents: object expected");
+            message.tableOfContents = $root.ProtoTableOfContents.fromObject(object.tableOfContents, _depth + 1);
+        }
+        if (object.sectionReference != null) {
+            if (typeof object.sectionReference !== "object")
+                throw TypeError(".Node.sectionReference: object expected");
+            message.sectionReference = $root.ProtoSectionReference.fromObject(object.sectionReference, _depth + 1);
+        }
+        if (object.chapterLink != null) {
+            if (typeof object.chapterLink !== "object")
+                throw TypeError(".Node.chapterLink: object expected");
+            message.chapterLink = $root.ProtoChapterLink.fromObject(object.chapterLink, _depth + 1);
+        }
         return message;
     };
 
@@ -37206,6 +37359,26 @@ $root.Node = (function() {
             if (options.oneofs)
                 object.object = "coloredArea";
         }
+        if (message.chapter != null && message.hasOwnProperty("chapter")) {
+            object.chapter = $root.ProtoChapter.toObject(message.chapter, options);
+            if (options.oneofs)
+                object.object = "chapter";
+        }
+        if (message.tableOfContents != null && message.hasOwnProperty("tableOfContents")) {
+            object.tableOfContents = $root.ProtoTableOfContents.toObject(message.tableOfContents, options);
+            if (options.oneofs)
+                object.object = "tableOfContents";
+        }
+        if (message.sectionReference != null && message.hasOwnProperty("sectionReference")) {
+            object.sectionReference = $root.ProtoSectionReference.toObject(message.sectionReference, options);
+            if (options.oneofs)
+                object.object = "sectionReference";
+        }
+        if (message.chapterLink != null && message.hasOwnProperty("chapterLink")) {
+            object.chapterLink = $root.ProtoChapterLink.toObject(message.chapterLink, options);
+            if (options.oneofs)
+                object.object = "chapterLink";
+        }
         return object;
     };
 
@@ -37311,6 +37484,10 @@ $root.Node = (function() {
  * @property {number} DOCUMENT_ELEMENT_SET_COLOR=87 DOCUMENT_ELEMENT_SET_COLOR value
  * @property {number} DOCUMENT_ELEMENT_UNSET_COLOR=88 DOCUMENT_ELEMENT_UNSET_COLOR value
  * @property {number} DOCUMENT_ELEMENT_COLORED_AREA=89 DOCUMENT_ELEMENT_COLORED_AREA value
+ * @property {number} DOCUMENT_ELEMENT_CHAPTER=90 DOCUMENT_ELEMENT_CHAPTER value
+ * @property {number} DOCUMENT_ELEMENT_TABLE_OF_CONTENTS=91 DOCUMENT_ELEMENT_TABLE_OF_CONTENTS value
+ * @property {number} DOCUMENT_ELEMENT_SECTION_REFERENCE=92 DOCUMENT_ELEMENT_SECTION_REFERENCE value
+ * @property {number} DOCUMENT_ELEMENT_CHAPTER_LINK=93 DOCUMENT_ELEMENT_CHAPTER_LINK value
  */
 $root.NodeType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
@@ -37384,6 +37561,10 @@ $root.NodeType = (function() {
     values[valuesById[87] = "DOCUMENT_ELEMENT_SET_COLOR"] = 87;
     values[valuesById[88] = "DOCUMENT_ELEMENT_UNSET_COLOR"] = 88;
     values[valuesById[89] = "DOCUMENT_ELEMENT_COLORED_AREA"] = 89;
+    values[valuesById[90] = "DOCUMENT_ELEMENT_CHAPTER"] = 90;
+    values[valuesById[91] = "DOCUMENT_ELEMENT_TABLE_OF_CONTENTS"] = 91;
+    values[valuesById[92] = "DOCUMENT_ELEMENT_SECTION_REFERENCE"] = 92;
+    values[valuesById[93] = "DOCUMENT_ELEMENT_CHAPTER_LINK"] = 93;
     return values;
 })();
 
@@ -38867,6 +39048,9 @@ $root.ProtoDirectory = (function() {
             case 2:
             case 3:
             case 4:
+            case 5:
+            case 6:
+            case 7:
                 break;
             }
         if (message.editable != null && message.hasOwnProperty("editable"))
@@ -38946,6 +39130,18 @@ $root.ProtoDirectory = (function() {
             case "SEMANTIC_TYPE_DIV":
             case 4:
                 message.semanticType = 4;
+                break;
+            case "SEMANTIC_TYPE_TOC":
+            case 5:
+                message.semanticType = 5;
+                break;
+            case "SEMANTIC_TYPE_TOCI":
+            case 6:
+                message.semanticType = 6;
+                break;
+            case "SEMANTIC_TYPE_REFERENCE":
+            case 7:
+                message.semanticType = 7;
                 break;
             }
         if (object.editable != null)
@@ -56178,6 +56374,1672 @@ $root.ProtoColoredArea = (function() {
     };
 
     return ProtoColoredArea;
+})();
+
+$root.ProtoChapter = (function() {
+
+    /**
+     * Properties of a ProtoChapter.
+     * @name IProtoChapter
+     * @interface IProtoChapter
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoChapter _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoChapter parent
+     * @property {string|null} [uuid] ProtoChapter uuid
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoChapter comChannelUUIDs
+     * @property {string|null} [title] ProtoChapter title
+     * @property {string|null} [tag] ProtoChapter tag
+     * @property {Array.<string>|null} [number] ProtoChapter number
+     * @property {string|null} [key] ProtoChapter key
+     * @property {boolean|null} [createPageBreak] ProtoChapter createPageBreak
+     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
+     */
+
+    /**
+     * Constructs a new ProtoChapter.
+     * @name ProtoChapter
+     * @classdesc Represents a ProtoChapter.
+     * @implements IProtoChapter
+     * @constructor
+     * @param {IProtoChapter=} [properties] Properties to set
+     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
+     */
+    function ProtoChapter(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        this.number = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null && keys[i] !== "__proto__")
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoChapter _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoChapter
+     * @instance
+     */
+    ProtoChapter.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoChapter parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoChapter
+     * @instance
+     */
+    ProtoChapter.prototype.parent = null;
+
+    /**
+     * ProtoChapter uuid.
+     * @member {string} uuid
+     * @memberof ProtoChapter
+     * @instance
+     */
+    ProtoChapter.prototype.uuid = "";
+
+    /**
+     * ProtoChapter comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoChapter
+     * @instance
+     */
+    ProtoChapter.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * ProtoChapter title.
+     * @member {string} title
+     * @memberof ProtoChapter
+     * @instance
+     */
+    ProtoChapter.prototype.title = "";
+
+    /**
+     * ProtoChapter tag.
+     * @member {string} tag
+     * @memberof ProtoChapter
+     * @instance
+     */
+    ProtoChapter.prototype.tag = "";
+
+    /**
+     * ProtoChapter number.
+     * @member {Array.<string>} number
+     * @memberof ProtoChapter
+     * @instance
+     */
+    ProtoChapter.prototype.number = $util.emptyArray;
+
+    /**
+     * ProtoChapter key.
+     * @member {string} key
+     * @memberof ProtoChapter
+     * @instance
+     */
+    ProtoChapter.prototype.key = "";
+
+    /**
+     * ProtoChapter createPageBreak.
+     * @member {boolean} createPageBreak
+     * @memberof ProtoChapter
+     * @instance
+     */
+    ProtoChapter.prototype.createPageBreak = false;
+
+    /**
+     * Creates a new ProtoChapter instance using the specified properties.
+     * @function create
+     * @memberof ProtoChapter
+     * @static
+     * @param {IProtoChapter=} [properties] Properties to set
+     * @returns {ProtoChapter} ProtoChapter instance
+     */
+    ProtoChapter.create = function create(properties) {
+        return new ProtoChapter(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoChapter message. Does not implicitly {@link ProtoChapter.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoChapter
+     * @static
+     * @param {IProtoChapter} message ProtoChapter message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoChapter.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.title != null && Object.hasOwnProperty.call(message, "title"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.title);
+        if (message.tag != null && Object.hasOwnProperty.call(message, "tag"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.tag);
+        if (message.number != null && message.number.length)
+            for (var i = 0; i < message.number.length; ++i)
+                writer.uint32(/* id 7, wireType 2 =*/58).string(message.number[i]);
+        if (message.key != null && Object.hasOwnProperty.call(message, "key"))
+            writer.uint32(/* id 8, wireType 2 =*/66).string(message.key);
+        if (message.createPageBreak != null && Object.hasOwnProperty.call(message, "createPageBreak"))
+            writer.uint32(/* id 9, wireType 0 =*/72).bool(message.createPageBreak);
+        if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
+            for (var i = 0; i < message.$unknowns.length; ++i)
+                writer.raw(message.$unknowns[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoChapter message, length delimited. Does not implicitly {@link ProtoChapter.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoChapter
+     * @static
+     * @param {IProtoChapter} message ProtoChapter message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoChapter.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoChapter message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoChapter
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoChapter} ProtoChapter
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoChapter.decode = function decode(reader, length, _end, _depth, _target) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $Reader.recursionLimit)
+            throw Error("max depth exceeded");
+        var end = length === undefined ? reader.len : reader.pos + length, message = _target || new $root.ProtoChapter(), value;
+        while (reader.pos < end) {
+            var start = reader.pos;
+            var tag = reader.tag();
+            if (tag === _end) {
+                _end = undefined;
+                break;
+            }
+            var wireType = tag & 7;
+            switch (tag >>>= 3) {
+            case 1: {
+                    if (wireType !== 2)
+                        break;
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32(), undefined, _depth + 1));
+                    continue;
+                }
+            case 2: {
+                    if (wireType !== 2)
+                        break;
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32(), undefined, _depth + 1, message.parent);
+                    continue;
+                }
+            case 3: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.uuid = value;
+                    else
+                        delete message.uuid;
+                    continue;
+                }
+            case 4: {
+                    if (wireType !== 2)
+                        break;
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    continue;
+                }
+            case 5: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.title = value;
+                    else
+                        delete message.title;
+                    continue;
+                }
+            case 6: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.tag = value;
+                    else
+                        delete message.tag;
+                    continue;
+                }
+            case 7: {
+                    if (wireType !== 2)
+                        break;
+                    if (!(message.number && message.number.length))
+                        message.number = [];
+                    message.number.push(reader.string());
+                    continue;
+                }
+            case 8: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.key = value;
+                    else
+                        delete message.key;
+                    continue;
+                }
+            case 9: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.createPageBreak = value;
+                    else
+                        delete message.createPageBreak;
+                    continue;
+                }
+            }
+            reader.skipType(wireType, _depth, tag);
+            $util.makeProp(message, "$unknowns", false);
+            (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+        }
+        if (_end !== undefined)
+            throw Error("missing end group");
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoChapter message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoChapter
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoChapter} ProtoChapter
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoChapter.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoChapter message.
+     * @function verify
+     * @memberof ProtoChapter
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoChapter.verify = function verify(message, _depth) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $util.recursionLimit)
+            return "max depth exceeded";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i], _depth + 1);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent, _depth + 1);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        if (message.title != null && message.hasOwnProperty("title"))
+            if (!$util.isString(message.title))
+                return "title: string expected";
+        if (message.tag != null && message.hasOwnProperty("tag"))
+            if (!$util.isString(message.tag))
+                return "tag: string expected";
+        if (message.number != null && message.hasOwnProperty("number")) {
+            if (!Array.isArray(message.number))
+                return "number: array expected";
+            for (var i = 0; i < message.number.length; ++i)
+                if (!$util.isString(message.number[i]))
+                    return "number: string[] expected";
+        }
+        if (message.key != null && message.hasOwnProperty("key"))
+            if (!$util.isString(message.key))
+                return "key: string expected";
+        if (message.createPageBreak != null && message.hasOwnProperty("createPageBreak"))
+            if (typeof message.createPageBreak !== "boolean")
+                return "createPageBreak: boolean expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoChapter message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoChapter
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoChapter} ProtoChapter
+     */
+    ProtoChapter.fromObject = function fromObject(object, _depth) {
+        if (object instanceof $root.ProtoChapter)
+            return object;
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $util.recursionLimit)
+            throw Error("max depth exceeded");
+        var message = new $root.ProtoChapter();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoChapter._children: array expected");
+            message._children = Array(object._children.length);
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoChapter._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i], _depth + 1);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoChapter.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent, _depth + 1);
+        }
+        if (object.uuid != null)
+            if (typeof object.uuid !== "string" || object.uuid.length)
+                message.uuid = String(object.uuid);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoChapter.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = Array(object.comChannelUUIDs.length);
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        if (object.title != null)
+            if (typeof object.title !== "string" || object.title.length)
+                message.title = String(object.title);
+        if (object.tag != null)
+            if (typeof object.tag !== "string" || object.tag.length)
+                message.tag = String(object.tag);
+        if (object.number) {
+            if (!Array.isArray(object.number))
+                throw TypeError(".ProtoChapter.number: array expected");
+            message.number = Array(object.number.length);
+            for (var i = 0; i < object.number.length; ++i)
+                message.number[i] = String(object.number[i]);
+        }
+        if (object.key != null)
+            if (typeof object.key !== "string" || object.key.length)
+                message.key = String(object.key);
+        if (object.createPageBreak != null)
+            if (object.createPageBreak)
+                message.createPageBreak = Boolean(object.createPageBreak);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoChapter message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoChapter
+     * @static
+     * @param {ProtoChapter} message ProtoChapter
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoChapter.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+            object.number = [];
+        }
+        if (options.defaults) {
+            object.parent = null;
+            object.uuid = "";
+            object.title = "";
+            object.tag = "";
+            object.key = "";
+            object.createPageBreak = false;
+        }
+        if (message._children && message._children.length) {
+            object._children = Array(message._children.length);
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = Array(message.comChannelUUIDs.length);
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        if (message.title != null && message.hasOwnProperty("title"))
+            object.title = message.title;
+        if (message.tag != null && message.hasOwnProperty("tag"))
+            object.tag = message.tag;
+        if (message.number && message.number.length) {
+            object.number = Array(message.number.length);
+            for (var j = 0; j < message.number.length; ++j)
+                object.number[j] = message.number[j];
+        }
+        if (message.key != null && message.hasOwnProperty("key"))
+            object.key = message.key;
+        if (message.createPageBreak != null && message.hasOwnProperty("createPageBreak"))
+            object.createPageBreak = message.createPageBreak;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoChapter to JSON.
+     * @function toJSON
+     * @memberof ProtoChapter
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoChapter.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the type url for ProtoChapter
+     * @function getTypeUrl
+     * @memberof ProtoChapter
+     * @static
+     * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns {string} The type url
+     */
+    ProtoChapter.getTypeUrl = function getTypeUrl(prefix) {
+        if (prefix === undefined)
+            prefix = "type.googleapis.com";
+        return prefix + "/ProtoChapter";
+    };
+
+    return ProtoChapter;
+})();
+
+$root.ProtoTableOfContents = (function() {
+
+    /**
+     * Properties of a ProtoTableOfContents.
+     * @name IProtoTableOfContents
+     * @interface IProtoTableOfContents
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoTableOfContents _children
+     * @property {IProtoDocumentElement|null} [parent] ProtoTableOfContents parent
+     * @property {string|null} [uuid] ProtoTableOfContents uuid
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoTableOfContents comChannelUUIDs
+     * @property {number|null} [levels] ProtoTableOfContents levels
+     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
+     */
+
+    /**
+     * Constructs a new ProtoTableOfContents.
+     * @name ProtoTableOfContents
+     * @classdesc Represents a ProtoTableOfContents.
+     * @implements IProtoTableOfContents
+     * @constructor
+     * @param {IProtoTableOfContents=} [properties] Properties to set
+     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
+     */
+    function ProtoTableOfContents(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null && keys[i] !== "__proto__")
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoTableOfContents _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoTableOfContents
+     * @instance
+     */
+    ProtoTableOfContents.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoTableOfContents parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoTableOfContents
+     * @instance
+     */
+    ProtoTableOfContents.prototype.parent = null;
+
+    /**
+     * ProtoTableOfContents uuid.
+     * @member {string} uuid
+     * @memberof ProtoTableOfContents
+     * @instance
+     */
+    ProtoTableOfContents.prototype.uuid = "";
+
+    /**
+     * ProtoTableOfContents comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoTableOfContents
+     * @instance
+     */
+    ProtoTableOfContents.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * ProtoTableOfContents levels.
+     * @member {number} levels
+     * @memberof ProtoTableOfContents
+     * @instance
+     */
+    ProtoTableOfContents.prototype.levels = 0;
+
+    /**
+     * Creates a new ProtoTableOfContents instance using the specified properties.
+     * @function create
+     * @memberof ProtoTableOfContents
+     * @static
+     * @param {IProtoTableOfContents=} [properties] Properties to set
+     * @returns {ProtoTableOfContents} ProtoTableOfContents instance
+     */
+    ProtoTableOfContents.create = function create(properties) {
+        return new ProtoTableOfContents(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoTableOfContents message. Does not implicitly {@link ProtoTableOfContents.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoTableOfContents
+     * @static
+     * @param {IProtoTableOfContents} message ProtoTableOfContents message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoTableOfContents.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.uuid);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.levels != null && Object.hasOwnProperty.call(message, "levels"))
+            writer.uint32(/* id 5, wireType 0 =*/40).int32(message.levels);
+        if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
+            for (var i = 0; i < message.$unknowns.length; ++i)
+                writer.raw(message.$unknowns[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoTableOfContents message, length delimited. Does not implicitly {@link ProtoTableOfContents.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoTableOfContents
+     * @static
+     * @param {IProtoTableOfContents} message ProtoTableOfContents message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoTableOfContents.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoTableOfContents message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoTableOfContents
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoTableOfContents} ProtoTableOfContents
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoTableOfContents.decode = function decode(reader, length, _end, _depth, _target) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $Reader.recursionLimit)
+            throw Error("max depth exceeded");
+        var end = length === undefined ? reader.len : reader.pos + length, message = _target || new $root.ProtoTableOfContents(), value;
+        while (reader.pos < end) {
+            var start = reader.pos;
+            var tag = reader.tag();
+            if (tag === _end) {
+                _end = undefined;
+                break;
+            }
+            var wireType = tag & 7;
+            switch (tag >>>= 3) {
+            case 1: {
+                    if (wireType !== 2)
+                        break;
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32(), undefined, _depth + 1));
+                    continue;
+                }
+            case 2: {
+                    if (wireType !== 2)
+                        break;
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32(), undefined, _depth + 1, message.parent);
+                    continue;
+                }
+            case 3: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.uuid = value;
+                    else
+                        delete message.uuid;
+                    continue;
+                }
+            case 4: {
+                    if (wireType !== 2)
+                        break;
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    continue;
+                }
+            case 5: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.int32())
+                        message.levels = value;
+                    else
+                        delete message.levels;
+                    continue;
+                }
+            }
+            reader.skipType(wireType, _depth, tag);
+            $util.makeProp(message, "$unknowns", false);
+            (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+        }
+        if (_end !== undefined)
+            throw Error("missing end group");
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoTableOfContents message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoTableOfContents
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoTableOfContents} ProtoTableOfContents
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoTableOfContents.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoTableOfContents message.
+     * @function verify
+     * @memberof ProtoTableOfContents
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoTableOfContents.verify = function verify(message, _depth) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $util.recursionLimit)
+            return "max depth exceeded";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i], _depth + 1);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent, _depth + 1);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        if (message.levels != null && message.hasOwnProperty("levels"))
+            if (!$util.isInteger(message.levels))
+                return "levels: integer expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoTableOfContents message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoTableOfContents
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoTableOfContents} ProtoTableOfContents
+     */
+    ProtoTableOfContents.fromObject = function fromObject(object, _depth) {
+        if (object instanceof $root.ProtoTableOfContents)
+            return object;
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $util.recursionLimit)
+            throw Error("max depth exceeded");
+        var message = new $root.ProtoTableOfContents();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoTableOfContents._children: array expected");
+            message._children = Array(object._children.length);
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoTableOfContents._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i], _depth + 1);
+            }
+        }
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoTableOfContents.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent, _depth + 1);
+        }
+        if (object.uuid != null)
+            if (typeof object.uuid !== "string" || object.uuid.length)
+                message.uuid = String(object.uuid);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoTableOfContents.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = Array(object.comChannelUUIDs.length);
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        if (object.levels != null)
+            if (Number(object.levels) !== 0)
+                message.levels = object.levels | 0;
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoTableOfContents message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoTableOfContents
+     * @static
+     * @param {ProtoTableOfContents} message ProtoTableOfContents
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoTableOfContents.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+        }
+        if (options.defaults) {
+            object.parent = null;
+            object.uuid = "";
+            object.levels = 0;
+        }
+        if (message._children && message._children.length) {
+            object._children = Array(message._children.length);
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = Array(message.comChannelUUIDs.length);
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        if (message.levels != null && message.hasOwnProperty("levels"))
+            object.levels = message.levels;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoTableOfContents to JSON.
+     * @function toJSON
+     * @memberof ProtoTableOfContents
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoTableOfContents.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the type url for ProtoTableOfContents
+     * @function getTypeUrl
+     * @memberof ProtoTableOfContents
+     * @static
+     * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns {string} The type url
+     */
+    ProtoTableOfContents.getTypeUrl = function getTypeUrl(prefix) {
+        if (prefix === undefined)
+            prefix = "type.googleapis.com";
+        return prefix + "/ProtoTableOfContents";
+    };
+
+    return ProtoTableOfContents;
+})();
+
+$root.ProtoSectionReference = (function() {
+
+    /**
+     * Properties of a ProtoSectionReference.
+     * @name IProtoSectionReference
+     * @interface IProtoSectionReference
+     * @property {IProtoDocumentElement|null} [parent] ProtoSectionReference parent
+     * @property {string|null} [uuid] ProtoSectionReference uuid
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoSectionReference comChannelUUIDs
+     * @property {string|null} [tag] ProtoSectionReference tag
+     * @property {string|null} [format] ProtoSectionReference format
+     * @property {string|null} [content] ProtoSectionReference content
+     * @property {string|null} [key] ProtoSectionReference key
+     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
+     */
+
+    /**
+     * Constructs a new ProtoSectionReference.
+     * @name ProtoSectionReference
+     * @classdesc Represents a ProtoSectionReference.
+     * @implements IProtoSectionReference
+     * @constructor
+     * @param {IProtoSectionReference=} [properties] Properties to set
+     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
+     */
+    function ProtoSectionReference(properties) {
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null && keys[i] !== "__proto__")
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoSectionReference parent.
+     * @member {IProtoDocumentElement|null|undefined} parent
+     * @memberof ProtoSectionReference
+     * @instance
+     */
+    ProtoSectionReference.prototype.parent = null;
+
+    /**
+     * ProtoSectionReference uuid.
+     * @member {string} uuid
+     * @memberof ProtoSectionReference
+     * @instance
+     */
+    ProtoSectionReference.prototype.uuid = "";
+
+    /**
+     * ProtoSectionReference comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoSectionReference
+     * @instance
+     */
+    ProtoSectionReference.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * ProtoSectionReference tag.
+     * @member {string} tag
+     * @memberof ProtoSectionReference
+     * @instance
+     */
+    ProtoSectionReference.prototype.tag = "";
+
+    /**
+     * ProtoSectionReference format.
+     * @member {string} format
+     * @memberof ProtoSectionReference
+     * @instance
+     */
+    ProtoSectionReference.prototype.format = "";
+
+    /**
+     * ProtoSectionReference content.
+     * @member {string} content
+     * @memberof ProtoSectionReference
+     * @instance
+     */
+    ProtoSectionReference.prototype.content = "";
+
+    /**
+     * ProtoSectionReference key.
+     * @member {string} key
+     * @memberof ProtoSectionReference
+     * @instance
+     */
+    ProtoSectionReference.prototype.key = "";
+
+    /**
+     * Creates a new ProtoSectionReference instance using the specified properties.
+     * @function create
+     * @memberof ProtoSectionReference
+     * @static
+     * @param {IProtoSectionReference=} [properties] Properties to set
+     * @returns {ProtoSectionReference} ProtoSectionReference instance
+     */
+    ProtoSectionReference.create = function create(properties) {
+        return new ProtoSectionReference(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoSectionReference message. Does not implicitly {@link ProtoSectionReference.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoSectionReference
+     * @static
+     * @param {IProtoSectionReference} message ProtoSectionReference message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSectionReference.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+            $root.ProtoDocumentElement.encode(message.parent, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.uuid);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
+        if (message.tag != null && Object.hasOwnProperty.call(message, "tag"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.tag);
+        if (message.format != null && Object.hasOwnProperty.call(message, "format"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.format);
+        if (message.content != null && Object.hasOwnProperty.call(message, "content"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.content);
+        if (message.key != null && Object.hasOwnProperty.call(message, "key"))
+            writer.uint32(/* id 7, wireType 2 =*/58).string(message.key);
+        if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
+            for (var i = 0; i < message.$unknowns.length; ++i)
+                writer.raw(message.$unknowns[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoSectionReference message, length delimited. Does not implicitly {@link ProtoSectionReference.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoSectionReference
+     * @static
+     * @param {IProtoSectionReference} message ProtoSectionReference message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoSectionReference.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoSectionReference message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoSectionReference
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoSectionReference} ProtoSectionReference
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSectionReference.decode = function decode(reader, length, _end, _depth, _target) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $Reader.recursionLimit)
+            throw Error("max depth exceeded");
+        var end = length === undefined ? reader.len : reader.pos + length, message = _target || new $root.ProtoSectionReference(), value;
+        while (reader.pos < end) {
+            var start = reader.pos;
+            var tag = reader.tag();
+            if (tag === _end) {
+                _end = undefined;
+                break;
+            }
+            var wireType = tag & 7;
+            switch (tag >>>= 3) {
+            case 1: {
+                    if (wireType !== 2)
+                        break;
+                    message.parent = $root.ProtoDocumentElement.decode(reader, reader.uint32(), undefined, _depth + 1, message.parent);
+                    continue;
+                }
+            case 2: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.uuid = value;
+                    else
+                        delete message.uuid;
+                    continue;
+                }
+            case 3: {
+                    if (wireType !== 2)
+                        break;
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    continue;
+                }
+            case 4: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.tag = value;
+                    else
+                        delete message.tag;
+                    continue;
+                }
+            case 5: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.format = value;
+                    else
+                        delete message.format;
+                    continue;
+                }
+            case 6: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.content = value;
+                    else
+                        delete message.content;
+                    continue;
+                }
+            case 7: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.key = value;
+                    else
+                        delete message.key;
+                    continue;
+                }
+            }
+            reader.skipType(wireType, _depth, tag);
+            $util.makeProp(message, "$unknowns", false);
+            (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+        }
+        if (_end !== undefined)
+            throw Error("missing end group");
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoSectionReference message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoSectionReference
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoSectionReference} ProtoSectionReference
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoSectionReference.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoSectionReference message.
+     * @function verify
+     * @memberof ProtoSectionReference
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoSectionReference.verify = function verify(message, _depth) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $util.recursionLimit)
+            return "max depth exceeded";
+        if (message.parent != null && message.hasOwnProperty("parent")) {
+            var error = $root.ProtoDocumentElement.verify(message.parent, _depth + 1);
+            if (error)
+                return "parent." + error;
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        if (message.tag != null && message.hasOwnProperty("tag"))
+            if (!$util.isString(message.tag))
+                return "tag: string expected";
+        if (message.format != null && message.hasOwnProperty("format"))
+            if (!$util.isString(message.format))
+                return "format: string expected";
+        if (message.content != null && message.hasOwnProperty("content"))
+            if (!$util.isString(message.content))
+                return "content: string expected";
+        if (message.key != null && message.hasOwnProperty("key"))
+            if (!$util.isString(message.key))
+                return "key: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoSectionReference message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoSectionReference
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoSectionReference} ProtoSectionReference
+     */
+    ProtoSectionReference.fromObject = function fromObject(object, _depth) {
+        if (object instanceof $root.ProtoSectionReference)
+            return object;
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $util.recursionLimit)
+            throw Error("max depth exceeded");
+        var message = new $root.ProtoSectionReference();
+        if (object.parent != null) {
+            if (typeof object.parent !== "object")
+                throw TypeError(".ProtoSectionReference.parent: object expected");
+            message.parent = $root.ProtoDocumentElement.fromObject(object.parent, _depth + 1);
+        }
+        if (object.uuid != null)
+            if (typeof object.uuid !== "string" || object.uuid.length)
+                message.uuid = String(object.uuid);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoSectionReference.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = Array(object.comChannelUUIDs.length);
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        if (object.tag != null)
+            if (typeof object.tag !== "string" || object.tag.length)
+                message.tag = String(object.tag);
+        if (object.format != null)
+            if (typeof object.format !== "string" || object.format.length)
+                message.format = String(object.format);
+        if (object.content != null)
+            if (typeof object.content !== "string" || object.content.length)
+                message.content = String(object.content);
+        if (object.key != null)
+            if (typeof object.key !== "string" || object.key.length)
+                message.key = String(object.key);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoSectionReference message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoSectionReference
+     * @static
+     * @param {ProtoSectionReference} message ProtoSectionReference
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoSectionReference.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.comChannelUUIDs = [];
+        if (options.defaults) {
+            object.parent = null;
+            object.uuid = "";
+            object.tag = "";
+            object.format = "";
+            object.content = "";
+            object.key = "";
+        }
+        if (message.parent != null && message.hasOwnProperty("parent"))
+            object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = Array(message.comChannelUUIDs.length);
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        if (message.tag != null && message.hasOwnProperty("tag"))
+            object.tag = message.tag;
+        if (message.format != null && message.hasOwnProperty("format"))
+            object.format = message.format;
+        if (message.content != null && message.hasOwnProperty("content"))
+            object.content = message.content;
+        if (message.key != null && message.hasOwnProperty("key"))
+            object.key = message.key;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoSectionReference to JSON.
+     * @function toJSON
+     * @memberof ProtoSectionReference
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoSectionReference.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the type url for ProtoSectionReference
+     * @function getTypeUrl
+     * @memberof ProtoSectionReference
+     * @static
+     * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns {string} The type url
+     */
+    ProtoSectionReference.getTypeUrl = function getTypeUrl(prefix) {
+        if (prefix === undefined)
+            prefix = "type.googleapis.com";
+        return prefix + "/ProtoSectionReference";
+    };
+
+    return ProtoSectionReference;
+})();
+
+$root.ProtoChapterLink = (function() {
+
+    /**
+     * Properties of a ProtoChapterLink.
+     * @name IProtoChapterLink
+     * @interface IProtoChapterLink
+     * @property {Array.<IProtoDocumentElement>|null} [_children] ProtoChapterLink _children
+     * @property {string|null} [uuid] ProtoChapterLink uuid
+     * @property {string|null} [name] ProtoChapterLink name
+     * @property {Array.<string>|null} [comChannelUUIDs] ProtoChapterLink comChannelUUIDs
+     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
+     */
+
+    /**
+     * Constructs a new ProtoChapterLink.
+     * @name ProtoChapterLink
+     * @classdesc Represents a ProtoChapterLink.
+     * @implements IProtoChapterLink
+     * @constructor
+     * @param {IProtoChapterLink=} [properties] Properties to set
+     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
+     */
+    function ProtoChapterLink(properties) {
+        this._children = [];
+        this.comChannelUUIDs = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null && keys[i] !== "__proto__")
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoChapterLink _children.
+     * @member {Array.<IProtoDocumentElement>} _children
+     * @memberof ProtoChapterLink
+     * @instance
+     */
+    ProtoChapterLink.prototype._children = $util.emptyArray;
+
+    /**
+     * ProtoChapterLink uuid.
+     * @member {string} uuid
+     * @memberof ProtoChapterLink
+     * @instance
+     */
+    ProtoChapterLink.prototype.uuid = "";
+
+    /**
+     * ProtoChapterLink name.
+     * @member {string} name
+     * @memberof ProtoChapterLink
+     * @instance
+     */
+    ProtoChapterLink.prototype.name = "";
+
+    /**
+     * ProtoChapterLink comChannelUUIDs.
+     * @member {Array.<string>} comChannelUUIDs
+     * @memberof ProtoChapterLink
+     * @instance
+     */
+    ProtoChapterLink.prototype.comChannelUUIDs = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoChapterLink instance using the specified properties.
+     * @function create
+     * @memberof ProtoChapterLink
+     * @static
+     * @param {IProtoChapterLink=} [properties] Properties to set
+     * @returns {ProtoChapterLink} ProtoChapterLink instance
+     */
+    ProtoChapterLink.create = function create(properties) {
+        return new ProtoChapterLink(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoChapterLink message. Does not implicitly {@link ProtoChapterLink.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoChapterLink
+     * @static
+     * @param {IProtoChapterLink} message ProtoChapterLink message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoChapterLink.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message._children != null && message._children.length)
+            for (var i = 0; i < message._children.length; ++i)
+                $root.ProtoDocumentElement.encode(message._children[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.uuid);
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
+        if (message.comChannelUUIDs != null && message.comChannelUUIDs.length)
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
+        if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
+            for (var i = 0; i < message.$unknowns.length; ++i)
+                writer.raw(message.$unknowns[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoChapterLink message, length delimited. Does not implicitly {@link ProtoChapterLink.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoChapterLink
+     * @static
+     * @param {IProtoChapterLink} message ProtoChapterLink message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoChapterLink.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoChapterLink message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoChapterLink
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoChapterLink} ProtoChapterLink
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoChapterLink.decode = function decode(reader, length, _end, _depth, _target) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $Reader.recursionLimit)
+            throw Error("max depth exceeded");
+        var end = length === undefined ? reader.len : reader.pos + length, message = _target || new $root.ProtoChapterLink(), value;
+        while (reader.pos < end) {
+            var start = reader.pos;
+            var tag = reader.tag();
+            if (tag === _end) {
+                _end = undefined;
+                break;
+            }
+            var wireType = tag & 7;
+            switch (tag >>>= 3) {
+            case 1: {
+                    if (wireType !== 2)
+                        break;
+                    if (!(message._children && message._children.length))
+                        message._children = [];
+                    message._children.push($root.ProtoDocumentElement.decode(reader, reader.uint32(), undefined, _depth + 1));
+                    continue;
+                }
+            case 2: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.uuid = value;
+                    else
+                        delete message.uuid;
+                    continue;
+                }
+            case 3: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.name = value;
+                    else
+                        delete message.name;
+                    continue;
+                }
+            case 4: {
+                    if (wireType !== 2)
+                        break;
+                    if (!(message.comChannelUUIDs && message.comChannelUUIDs.length))
+                        message.comChannelUUIDs = [];
+                    message.comChannelUUIDs.push(reader.string());
+                    continue;
+                }
+            }
+            reader.skipType(wireType, _depth, tag);
+            $util.makeProp(message, "$unknowns", false);
+            (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+        }
+        if (_end !== undefined)
+            throw Error("missing end group");
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoChapterLink message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoChapterLink
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoChapterLink} ProtoChapterLink
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoChapterLink.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoChapterLink message.
+     * @function verify
+     * @memberof ProtoChapterLink
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoChapterLink.verify = function verify(message, _depth) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $util.recursionLimit)
+            return "max depth exceeded";
+        if (message._children != null && message.hasOwnProperty("_children")) {
+            if (!Array.isArray(message._children))
+                return "_children: array expected";
+            for (var i = 0; i < message._children.length; ++i) {
+                var error = $root.ProtoDocumentElement.verify(message._children[i], _depth + 1);
+                if (error)
+                    return "_children." + error;
+            }
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            if (!$util.isString(message.uuid))
+                return "uuid: string expected";
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
+        if (message.comChannelUUIDs != null && message.hasOwnProperty("comChannelUUIDs")) {
+            if (!Array.isArray(message.comChannelUUIDs))
+                return "comChannelUUIDs: array expected";
+            for (var i = 0; i < message.comChannelUUIDs.length; ++i)
+                if (!$util.isString(message.comChannelUUIDs[i]))
+                    return "comChannelUUIDs: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoChapterLink message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoChapterLink
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoChapterLink} ProtoChapterLink
+     */
+    ProtoChapterLink.fromObject = function fromObject(object, _depth) {
+        if (object instanceof $root.ProtoChapterLink)
+            return object;
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $util.recursionLimit)
+            throw Error("max depth exceeded");
+        var message = new $root.ProtoChapterLink();
+        if (object._children) {
+            if (!Array.isArray(object._children))
+                throw TypeError(".ProtoChapterLink._children: array expected");
+            message._children = Array(object._children.length);
+            for (var i = 0; i < object._children.length; ++i) {
+                if (typeof object._children[i] !== "object")
+                    throw TypeError(".ProtoChapterLink._children: object expected");
+                message._children[i] = $root.ProtoDocumentElement.fromObject(object._children[i], _depth + 1);
+            }
+        }
+        if (object.uuid != null)
+            if (typeof object.uuid !== "string" || object.uuid.length)
+                message.uuid = String(object.uuid);
+        if (object.name != null)
+            if (typeof object.name !== "string" || object.name.length)
+                message.name = String(object.name);
+        if (object.comChannelUUIDs) {
+            if (!Array.isArray(object.comChannelUUIDs))
+                throw TypeError(".ProtoChapterLink.comChannelUUIDs: array expected");
+            message.comChannelUUIDs = Array(object.comChannelUUIDs.length);
+            for (var i = 0; i < object.comChannelUUIDs.length; ++i)
+                message.comChannelUUIDs[i] = String(object.comChannelUUIDs[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoChapterLink message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoChapterLink
+     * @static
+     * @param {ProtoChapterLink} message ProtoChapterLink
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoChapterLink.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object._children = [];
+            object.comChannelUUIDs = [];
+        }
+        if (options.defaults) {
+            object.uuid = "";
+            object.name = "";
+        }
+        if (message._children && message._children.length) {
+            object._children = Array(message._children.length);
+            for (var j = 0; j < message._children.length; ++j)
+                object._children[j] = $root.ProtoDocumentElement.toObject(message._children[j], options);
+        }
+        if (message.uuid != null && message.hasOwnProperty("uuid"))
+            object.uuid = message.uuid;
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
+        if (message.comChannelUUIDs && message.comChannelUUIDs.length) {
+            object.comChannelUUIDs = Array(message.comChannelUUIDs.length);
+            for (var j = 0; j < message.comChannelUUIDs.length; ++j)
+                object.comChannelUUIDs[j] = message.comChannelUUIDs[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this ProtoChapterLink to JSON.
+     * @function toJSON
+     * @memberof ProtoChapterLink
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoChapterLink.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the type url for ProtoChapterLink
+     * @function getTypeUrl
+     * @memberof ProtoChapterLink
+     * @static
+     * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns {string} The type url
+     */
+    ProtoChapterLink.getTypeUrl = function getTypeUrl(prefix) {
+        if (prefix === undefined)
+            prefix = "type.googleapis.com";
+        return prefix + "/ProtoChapterLink";
+    };
+
+    return ProtoChapterLink;
 })();
 
 module.exports = $root;

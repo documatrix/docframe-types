@@ -71,6 +71,10 @@ message Node {
     ProtoSetColor set_color = 81;
     ProtoUnsetColor unset_color = 82;
     ProtoColoredArea colored_area = 83;
+    ProtoChapter chapter = 84;
+    ProtoTableOfContents table_of_contents = 85;
+    ProtoSectionReference section_reference = 86;
+    ProtoChapterLink chapter_link = 87;
   }
 }
 
@@ -145,4 +149,8 @@ enum NodeType {
   DOCUMENT_ELEMENT_SET_COLOR = 87;
   DOCUMENT_ELEMENT_UNSET_COLOR = 88;
   DOCUMENT_ELEMENT_COLORED_AREA = 89;
+  DOCUMENT_ELEMENT_CHAPTER = 90;
+  DOCUMENT_ELEMENT_TABLE_OF_CONTENTS = 91;
+  DOCUMENT_ELEMENT_SECTION_REFERENCE = 92;
+  DOCUMENT_ELEMENT_CHAPTER_LINK = 93;
 }
