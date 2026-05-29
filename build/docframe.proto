@@ -321,6 +321,9 @@ SEMANTIC_TYPE_PART = 1;
 SEMANTIC_TYPE_ART = 2;
 SEMANTIC_TYPE_SECT = 3;
 SEMANTIC_TYPE_DIV = 4;
+SEMANTIC_TYPE_TOC = 5;
+SEMANTIC_TYPE_TOCI = 6;
+SEMANTIC_TYPE_REFERENCE = 7;
 }
 message ProtoOption {
 string key = 1;
@@ -1035,6 +1038,10 @@ ProtoInputFieldDropdown input_field_dropdown = 80;
 ProtoSetColor set_color = 81;
 ProtoUnsetColor unset_color = 82;
 ProtoColoredArea colored_area = 83;
+ProtoChapter chapter = 84;
+ProtoTableOfContents table_of_contents = 85;
+ProtoSectionReference section_reference = 86;
+ProtoChapterLink chapter_link = 87;
 }
 }
 
@@ -1109,6 +1116,10 @@ DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWN = 86;
 DOCUMENT_ELEMENT_SET_COLOR = 87;
 DOCUMENT_ELEMENT_UNSET_COLOR = 88;
 DOCUMENT_ELEMENT_COLORED_AREA = 89;
+DOCUMENT_ELEMENT_CHAPTER = 90;
+DOCUMENT_ELEMENT_TABLE_OF_CONTENTS = 91;
+DOCUMENT_ELEMENT_SECTION_REFERENCE = 92;
+DOCUMENT_ELEMENT_CHAPTER_LINK = 93;
 }
 enum ProtoImageScaleType {
 IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
@@ -1593,4 +1604,41 @@ ProtoColorChoice color = 3;
 
 string uuid = 4;
 repeated string comChannelUUIDs = 5;
+}
+message ProtoChapter {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+string uuid = 3;
+repeated string comChannelUUIDs = 4;
+string title = 5;
+string tag = 6;
+repeated string number = 7;
+string key = 8;
+bool createPageBreak = 9;
+}
+message ProtoTableOfContents {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+
+string uuid = 3;
+repeated string comChannelUUIDs = 4;
+int32 levels = 5;
+}
+message ProtoSectionReference {
+ProtoDocumentElement parent = 1;
+
+string uuid = 2;
+repeated string comChannelUUIDs = 3;
+string tag = 4;
+string format = 5;
+string content = 6;
+string key = 7;
+}
+message ProtoChapterLink {
+repeated ProtoDocumentElement _children = 1;
+
+string uuid = 2;
+string name = 3;
+repeated string comChannelUUIDs = 4;
 }

@@ -1,0 +1,9 @@
+message ProtoChapterLink {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  // extends BranchDocumentElement
+
+  string uuid = 2;
+  string name = 3;
+  repeated string comChannelUUIDs = 4;
+}

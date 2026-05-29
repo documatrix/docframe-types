@@ -1,0 +1,14 @@
+message ProtoChapter {
+  // extends BranchDocumentElement
+  repeated ProtoDocumentElement _children = 1;
+  ProtoDocumentElement parent = 2;
+  // extends BranchDocumentElement
+
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+  string title = 5;
+  string tag = 6;
+  repeated string number = 7;
+  string key = 8;
+  bool createPageBreak = 9;
+}
