@@ -500,9 +500,8 @@ message ProtoCustomListLevelSetting {
 string listSettingName = 1;
 ProtoListLevelSettingType type = 2;
 int32 level = 3;
-int32 indentionWidth = 4;
 
-string doctypeCode = 5;
+string doctypeCode = 4;
 }
 message ProtoListSetting {
 ProtoDocumentElement parent = 1;

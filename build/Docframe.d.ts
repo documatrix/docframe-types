@@ -5609,9 +5609,6 @@ export interface IProtoCustomListLevelSetting {
     /** ProtoCustomListLevelSetting level */
     level?: (number|null);
 
-    /** ProtoCustomListLevelSetting indentionWidth */
-    indentionWidth?: (number|null);
-
     /** ProtoCustomListLevelSetting doctypeCode */
     doctypeCode?: (string|null);
 }
@@ -5633,9 +5630,6 @@ export class ProtoCustomListLevelSetting implements IProtoCustomListLevelSetting
 
     /** ProtoCustomListLevelSetting level. */
     public level: number;
-
-    /** ProtoCustomListLevelSetting indentionWidth. */
-    public indentionWidth: number;
 
     /** ProtoCustomListLevelSetting doctypeCode. */
     public doctypeCode: string;
