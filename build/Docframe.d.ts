@@ -4934,7 +4934,8 @@ export enum ProtoNumberType {
 export enum ProtoListLevelSettingType {
     UNNUMBERED = 0,
     NUMERIC = 1,
-    IMAGE = 2
+    IMAGE = 2,
+    CUSTOM = 3
 }
 
 /** Properties of a ProtoListLevelSetting. */
@@ -5057,6 +5058,9 @@ export class ProtoListLevelSetting implements IProtoListLevelSetting {
 
     /** ProtoListLevelSetting character. */
     public character: string;
+
+    /** ProtoListLevelSetting doctypeCode. */
+    public doctypeCode: string;
 
     /**
      * Creates a new ProtoListLevelSetting instance using the specified properties.

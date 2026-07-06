@@ -7,11 +7,12 @@
 package docframepb
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -925,6 +926,7 @@ const (
 	ProtoListLevelSettingType_UNNUMBERED ProtoListLevelSettingType = 0
 	ProtoListLevelSettingType_NUMERIC    ProtoListLevelSettingType = 1
 	ProtoListLevelSettingType_IMAGE      ProtoListLevelSettingType = 2
+	ProtoListLevelSettingType_CUSTOM     ProtoListLevelSettingType = 3
 )
 
 // Enum value maps for ProtoListLevelSettingType.
@@ -933,11 +935,13 @@ var (
 		0: "UNNUMBERED",
 		1: "NUMERIC",
 		2: "IMAGE",
+		3: "CUSTOM",
 	}
 	ProtoListLevelSettingType_value = map[string]int32{
 		"UNNUMBERED": 0,
 		"NUMERIC":    1,
 		"IMAGE":      2,
+		"CUSTOM":     3,
 	}
 )
 
@@ -4602,6 +4606,7 @@ type ProtoListLevelSetting struct {
 	Italic          *ProtoBoxedBool           `protobuf:"bytes,15,opt,name=italic,proto3" json:"italic,omitempty"`
 	NumberType      ProtoNumberType           `protobuf:"varint,16,opt,name=numberType,proto3,enum=ProtoNumberType" json:"numberType,omitempty"`
 	Character       string                    `protobuf:"bytes,17,opt,name=character,proto3" json:"character,omitempty"`
+	DoctypeCode     string                    `protobuf:"bytes,18,opt,name=doctypeCode,proto3" json:"doctypeCode,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -4751,6 +4756,13 @@ func (x *ProtoListLevelSetting) GetNumberType() ProtoNumberType {
 func (x *ProtoListLevelSetting) GetCharacter() string {
 	if x != nil {
 		return x.Character
+	}
+	return ""
+}
+
+func (x *ProtoListLevelSetting) GetDoctypeCode() string {
+	if x != nil {
+		return x.DoctypeCode
 	}
 	return ""
 }
@@ -5347,6 +5359,82 @@ func (x *ProtoUnnumberedListLevelSetting) GetCharacter() string {
 	return ""
 }
 
+type ProtoCustomListLevelSetting struct {
+	state           protoimpl.MessageState    `protogen:"open.v1"`
+	ListSettingName string                    `protobuf:"bytes,1,opt,name=listSettingName,proto3" json:"listSettingName,omitempty"`
+	Type            ProtoListLevelSettingType `protobuf:"varint,2,opt,name=type,proto3,enum=ProtoListLevelSettingType" json:"type,omitempty"`
+	Level           int32                     `protobuf:"varint,3,opt,name=level,proto3" json:"level,omitempty"`
+	IndentionWidth  int32                     `protobuf:"varint,4,opt,name=indentionWidth,proto3" json:"indentionWidth,omitempty"`
+	DoctypeCode     string                    `protobuf:"bytes,5,opt,name=doctypeCode,proto3" json:"doctypeCode,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ProtoCustomListLevelSetting) Reset() {
+	*x = ProtoCustomListLevelSetting{}
+	mi := &file_build_docframe_proto_msgTypes[45]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProtoCustomListLevelSetting) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProtoCustomListLevelSetting) ProtoMessage() {}
+
+func (x *ProtoCustomListLevelSetting) ProtoReflect() protoreflect.Message {
+	mi := &file_build_docframe_proto_msgTypes[45]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProtoCustomListLevelSetting.ProtoReflect.Descriptor instead.
+func (*ProtoCustomListLevelSetting) Descriptor() ([]byte, []int) {
+	return file_build_docframe_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *ProtoCustomListLevelSetting) GetListSettingName() string {
+	if x != nil {
+		return x.ListSettingName
+	}
+	return ""
+}
+
+func (x *ProtoCustomListLevelSetting) GetType() ProtoListLevelSettingType {
+	if x != nil {
+		return x.Type
+	}
+	return ProtoListLevelSettingType_UNNUMBERED
+}
+
+func (x *ProtoCustomListLevelSetting) GetLevel() int32 {
+	if x != nil {
+		return x.Level
+	}
+	return 0
+}
+
+func (x *ProtoCustomListLevelSetting) GetIndentionWidth() int32 {
+	if x != nil {
+		return x.IndentionWidth
+	}
+	return 0
+}
+
+func (x *ProtoCustomListLevelSetting) GetDoctypeCode() string {
+	if x != nil {
+		return x.DoctypeCode
+	}
+	return ""
+}
+
 type ProtoListSetting struct {
 	state                   protoimpl.MessageState   `protogen:"open.v1"`
 	Parent                  *ProtoDocumentElement    `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
@@ -5360,7 +5448,7 @@ type ProtoListSetting struct {
 
 func (x *ProtoListSetting) Reset() {
 	*x = ProtoListSetting{}
-	mi := &file_build_docframe_proto_msgTypes[45]
+	mi := &file_build_docframe_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5372,7 +5460,7 @@ func (x *ProtoListSetting) String() string {
 func (*ProtoListSetting) ProtoMessage() {}
 
 func (x *ProtoListSetting) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[45]
+	mi := &file_build_docframe_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5385,7 +5473,7 @@ func (x *ProtoListSetting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoListSetting.ProtoReflect.Descriptor instead.
 func (*ProtoListSetting) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{45}
+	return file_build_docframe_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *ProtoListSetting) GetParent() *ProtoDocumentElement {
@@ -5433,7 +5521,7 @@ type ProtoBoxedListSetting struct {
 
 func (x *ProtoBoxedListSetting) Reset() {
 	*x = ProtoBoxedListSetting{}
-	mi := &file_build_docframe_proto_msgTypes[46]
+	mi := &file_build_docframe_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5445,7 +5533,7 @@ func (x *ProtoBoxedListSetting) String() string {
 func (*ProtoBoxedListSetting) ProtoMessage() {}
 
 func (x *ProtoBoxedListSetting) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[46]
+	mi := &file_build_docframe_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5458,7 +5546,7 @@ func (x *ProtoBoxedListSetting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBoxedListSetting.ProtoReflect.Descriptor instead.
 func (*ProtoBoxedListSetting) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{46}
+	return file_build_docframe_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *ProtoBoxedListSetting) GetValue() *ProtoListSetting {
@@ -5491,7 +5579,7 @@ type ProtoNamedString struct {
 
 func (x *ProtoNamedString) Reset() {
 	*x = ProtoNamedString{}
-	mi := &file_build_docframe_proto_msgTypes[47]
+	mi := &file_build_docframe_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5503,7 +5591,7 @@ func (x *ProtoNamedString) String() string {
 func (*ProtoNamedString) ProtoMessage() {}
 
 func (x *ProtoNamedString) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[47]
+	mi := &file_build_docframe_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5516,7 +5604,7 @@ func (x *ProtoNamedString) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoNamedString.ProtoReflect.Descriptor instead.
 func (*ProtoNamedString) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{47}
+	return file_build_docframe_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *ProtoNamedString) GetXChildren() []*ProtoDocumentElement {
@@ -5590,7 +5678,7 @@ type ProtoParagraph struct {
 
 func (x *ProtoParagraph) Reset() {
 	*x = ProtoParagraph{}
-	mi := &file_build_docframe_proto_msgTypes[48]
+	mi := &file_build_docframe_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5602,7 +5690,7 @@ func (x *ProtoParagraph) String() string {
 func (*ProtoParagraph) ProtoMessage() {}
 
 func (x *ProtoParagraph) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[48]
+	mi := &file_build_docframe_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5615,7 +5703,7 @@ func (x *ProtoParagraph) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoParagraph.ProtoReflect.Descriptor instead.
 func (*ProtoParagraph) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{48}
+	return file_build_docframe_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *ProtoParagraph) GetXChildren() []*ProtoDocumentElement {
@@ -5704,7 +5792,7 @@ type ProtoParagraphFormat struct {
 
 func (x *ProtoParagraphFormat) Reset() {
 	*x = ProtoParagraphFormat{}
-	mi := &file_build_docframe_proto_msgTypes[49]
+	mi := &file_build_docframe_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5716,7 +5804,7 @@ func (x *ProtoParagraphFormat) String() string {
 func (*ProtoParagraphFormat) ProtoMessage() {}
 
 func (x *ProtoParagraphFormat) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[49]
+	mi := &file_build_docframe_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5729,7 +5817,7 @@ func (x *ProtoParagraphFormat) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoParagraphFormat.ProtoReflect.Descriptor instead.
 func (*ProtoParagraphFormat) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{49}
+	return file_build_docframe_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *ProtoParagraphFormat) GetBaseFormat() *ProtoParagraphFormat {
@@ -5948,7 +6036,7 @@ type ProtoSection struct {
 
 func (x *ProtoSection) Reset() {
 	*x = ProtoSection{}
-	mi := &file_build_docframe_proto_msgTypes[50]
+	mi := &file_build_docframe_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5960,7 +6048,7 @@ func (x *ProtoSection) String() string {
 func (*ProtoSection) ProtoMessage() {}
 
 func (x *ProtoSection) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[50]
+	mi := &file_build_docframe_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5973,7 +6061,7 @@ func (x *ProtoSection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSection.ProtoReflect.Descriptor instead.
 func (*ProtoSection) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{50}
+	return file_build_docframe_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *ProtoSection) GetXChildren() []*ProtoDocumentElement {
@@ -6022,7 +6110,7 @@ type ProtoSpaceVertically struct {
 
 func (x *ProtoSpaceVertically) Reset() {
 	*x = ProtoSpaceVertically{}
-	mi := &file_build_docframe_proto_msgTypes[51]
+	mi := &file_build_docframe_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6034,7 +6122,7 @@ func (x *ProtoSpaceVertically) String() string {
 func (*ProtoSpaceVertically) ProtoMessage() {}
 
 func (x *ProtoSpaceVertically) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[51]
+	mi := &file_build_docframe_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6047,7 +6135,7 @@ func (x *ProtoSpaceVertically) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSpaceVertically.ProtoReflect.Descriptor instead.
 func (*ProtoSpaceVertically) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{51}
+	return file_build_docframe_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *ProtoSpaceVertically) GetParent() *ProtoDocumentElement {
@@ -6089,7 +6177,7 @@ type ProtoSpan struct {
 
 func (x *ProtoSpan) Reset() {
 	*x = ProtoSpan{}
-	mi := &file_build_docframe_proto_msgTypes[52]
+	mi := &file_build_docframe_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6101,7 +6189,7 @@ func (x *ProtoSpan) String() string {
 func (*ProtoSpan) ProtoMessage() {}
 
 func (x *ProtoSpan) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[52]
+	mi := &file_build_docframe_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6114,7 +6202,7 @@ func (x *ProtoSpan) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSpan.ProtoReflect.Descriptor instead.
 func (*ProtoSpan) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{52}
+	return file_build_docframe_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *ProtoSpan) GetXChildren() []*ProtoDocumentElement {
@@ -6204,7 +6292,7 @@ type ProtoTable struct {
 
 func (x *ProtoTable) Reset() {
 	*x = ProtoTable{}
-	mi := &file_build_docframe_proto_msgTypes[53]
+	mi := &file_build_docframe_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6216,7 +6304,7 @@ func (x *ProtoTable) String() string {
 func (*ProtoTable) ProtoMessage() {}
 
 func (x *ProtoTable) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[53]
+	mi := &file_build_docframe_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6229,7 +6317,7 @@ func (x *ProtoTable) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTable.ProtoReflect.Descriptor instead.
 func (*ProtoTable) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{53}
+	return file_build_docframe_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *ProtoTable) GetXChildren() []*ProtoDocumentElement {
@@ -6307,7 +6395,7 @@ type ProtoTableConfig struct {
 
 func (x *ProtoTableConfig) Reset() {
 	*x = ProtoTableConfig{}
-	mi := &file_build_docframe_proto_msgTypes[54]
+	mi := &file_build_docframe_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6319,7 +6407,7 @@ func (x *ProtoTableConfig) String() string {
 func (*ProtoTableConfig) ProtoMessage() {}
 
 func (x *ProtoTableConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[54]
+	mi := &file_build_docframe_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6332,7 +6420,7 @@ func (x *ProtoTableConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableConfig.ProtoReflect.Descriptor instead.
 func (*ProtoTableConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{54}
+	return file_build_docframe_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *ProtoTableConfig) GetParent() *ProtoDocumentElement {
@@ -6378,7 +6466,7 @@ type ProtoTableSettings struct {
 
 func (x *ProtoTableSettings) Reset() {
 	*x = ProtoTableSettings{}
-	mi := &file_build_docframe_proto_msgTypes[55]
+	mi := &file_build_docframe_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6390,7 +6478,7 @@ func (x *ProtoTableSettings) String() string {
 func (*ProtoTableSettings) ProtoMessage() {}
 
 func (x *ProtoTableSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[55]
+	mi := &file_build_docframe_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6403,7 +6491,7 @@ func (x *ProtoTableSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableSettings.ProtoReflect.Descriptor instead.
 func (*ProtoTableSettings) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{55}
+	return file_build_docframe_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *ProtoTableSettings) GetXOffset() *ProtoMeasure {
@@ -6465,7 +6553,7 @@ type ProtoBoxedTableContentGroupType struct {
 
 func (x *ProtoBoxedTableContentGroupType) Reset() {
 	*x = ProtoBoxedTableContentGroupType{}
-	mi := &file_build_docframe_proto_msgTypes[56]
+	mi := &file_build_docframe_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6477,7 +6565,7 @@ func (x *ProtoBoxedTableContentGroupType) String() string {
 func (*ProtoBoxedTableContentGroupType) ProtoMessage() {}
 
 func (x *ProtoBoxedTableContentGroupType) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[56]
+	mi := &file_build_docframe_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6490,7 +6578,7 @@ func (x *ProtoBoxedTableContentGroupType) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBoxedTableContentGroupType.ProtoReflect.Descriptor instead.
 func (*ProtoBoxedTableContentGroupType) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{56}
+	return file_build_docframe_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *ProtoBoxedTableContentGroupType) GetValue() ProtoTableContentGroupType {
@@ -6521,7 +6609,7 @@ type ProtoTableContentGroup struct {
 
 func (x *ProtoTableContentGroup) Reset() {
 	*x = ProtoTableContentGroup{}
-	mi := &file_build_docframe_proto_msgTypes[57]
+	mi := &file_build_docframe_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6533,7 +6621,7 @@ func (x *ProtoTableContentGroup) String() string {
 func (*ProtoTableContentGroup) ProtoMessage() {}
 
 func (x *ProtoTableContentGroup) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[57]
+	mi := &file_build_docframe_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6546,7 +6634,7 @@ func (x *ProtoTableContentGroup) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableContentGroup.ProtoReflect.Descriptor instead.
 func (*ProtoTableContentGroup) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{57}
+	return file_build_docframe_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *ProtoTableContentGroup) GetXChildren() []*ProtoDocumentElement {
@@ -6603,7 +6691,7 @@ type ProtoTableContentGroupConfig struct {
 
 func (x *ProtoTableContentGroupConfig) Reset() {
 	*x = ProtoTableContentGroupConfig{}
-	mi := &file_build_docframe_proto_msgTypes[58]
+	mi := &file_build_docframe_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6615,7 +6703,7 @@ func (x *ProtoTableContentGroupConfig) String() string {
 func (*ProtoTableContentGroupConfig) ProtoMessage() {}
 
 func (x *ProtoTableContentGroupConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[58]
+	mi := &file_build_docframe_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6628,7 +6716,7 @@ func (x *ProtoTableContentGroupConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableContentGroupConfig.ProtoReflect.Descriptor instead.
 func (*ProtoTableContentGroupConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{58}
+	return file_build_docframe_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *ProtoTableContentGroupConfig) GetParent() *ProtoDocumentElement {
@@ -6670,7 +6758,7 @@ type ProtoTableContentGroupSettings struct {
 
 func (x *ProtoTableContentGroupSettings) Reset() {
 	*x = ProtoTableContentGroupSettings{}
-	mi := &file_build_docframe_proto_msgTypes[59]
+	mi := &file_build_docframe_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6682,7 +6770,7 @@ func (x *ProtoTableContentGroupSettings) String() string {
 func (*ProtoTableContentGroupSettings) ProtoMessage() {}
 
 func (x *ProtoTableContentGroupSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[59]
+	mi := &file_build_docframe_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6695,7 +6783,7 @@ func (x *ProtoTableContentGroupSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableContentGroupSettings.ProtoReflect.Descriptor instead.
 func (*ProtoTableContentGroupSettings) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{59}
+	return file_build_docframe_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *ProtoTableContentGroupSettings) GetContentGroupType() *ProtoBoxedTableContentGroupType {
@@ -6734,7 +6822,7 @@ type ProtoTableRow struct {
 
 func (x *ProtoTableRow) Reset() {
 	*x = ProtoTableRow{}
-	mi := &file_build_docframe_proto_msgTypes[60]
+	mi := &file_build_docframe_proto_msgTypes[61]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6746,7 +6834,7 @@ func (x *ProtoTableRow) String() string {
 func (*ProtoTableRow) ProtoMessage() {}
 
 func (x *ProtoTableRow) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[60]
+	mi := &file_build_docframe_proto_msgTypes[61]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6759,7 +6847,7 @@ func (x *ProtoTableRow) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableRow.ProtoReflect.Descriptor instead.
 func (*ProtoTableRow) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{60}
+	return file_build_docframe_proto_rawDescGZIP(), []int{61}
 }
 
 func (x *ProtoTableRow) GetXChildren() []*ProtoDocumentElement {
@@ -6825,7 +6913,7 @@ type ProtoTableRowConfig struct {
 
 func (x *ProtoTableRowConfig) Reset() {
 	*x = ProtoTableRowConfig{}
-	mi := &file_build_docframe_proto_msgTypes[61]
+	mi := &file_build_docframe_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6837,7 +6925,7 @@ func (x *ProtoTableRowConfig) String() string {
 func (*ProtoTableRowConfig) ProtoMessage() {}
 
 func (x *ProtoTableRowConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[61]
+	mi := &file_build_docframe_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6850,7 +6938,7 @@ func (x *ProtoTableRowConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableRowConfig.ProtoReflect.Descriptor instead.
 func (*ProtoTableRowConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{61}
+	return file_build_docframe_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *ProtoTableRowConfig) GetParent() *ProtoDocumentElement {
@@ -6905,7 +6993,7 @@ type ProtoTableRowSettings struct {
 
 func (x *ProtoTableRowSettings) Reset() {
 	*x = ProtoTableRowSettings{}
-	mi := &file_build_docframe_proto_msgTypes[62]
+	mi := &file_build_docframe_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6917,7 +7005,7 @@ func (x *ProtoTableRowSettings) String() string {
 func (*ProtoTableRowSettings) ProtoMessage() {}
 
 func (x *ProtoTableRowSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[62]
+	mi := &file_build_docframe_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6930,7 +7018,7 @@ func (x *ProtoTableRowSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableRowSettings.ProtoReflect.Descriptor instead.
 func (*ProtoTableRowSettings) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{62}
+	return file_build_docframe_proto_rawDescGZIP(), []int{63}
 }
 
 func (x *ProtoTableRowSettings) GetMinHeight() *ProtoMeasure {
@@ -6957,7 +7045,7 @@ type ProtoBoxedTableCellType struct {
 
 func (x *ProtoBoxedTableCellType) Reset() {
 	*x = ProtoBoxedTableCellType{}
-	mi := &file_build_docframe_proto_msgTypes[63]
+	mi := &file_build_docframe_proto_msgTypes[64]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6969,7 +7057,7 @@ func (x *ProtoBoxedTableCellType) String() string {
 func (*ProtoBoxedTableCellType) ProtoMessage() {}
 
 func (x *ProtoBoxedTableCellType) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[63]
+	mi := &file_build_docframe_proto_msgTypes[64]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6982,7 +7070,7 @@ func (x *ProtoBoxedTableCellType) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBoxedTableCellType.ProtoReflect.Descriptor instead.
 func (*ProtoBoxedTableCellType) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{63}
+	return file_build_docframe_proto_rawDescGZIP(), []int{64}
 }
 
 func (x *ProtoBoxedTableCellType) GetValue() ProtoTableCellType {
@@ -7016,7 +7104,7 @@ type ProtoTableCell struct {
 
 func (x *ProtoTableCell) Reset() {
 	*x = ProtoTableCell{}
-	mi := &file_build_docframe_proto_msgTypes[64]
+	mi := &file_build_docframe_proto_msgTypes[65]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7028,7 +7116,7 @@ func (x *ProtoTableCell) String() string {
 func (*ProtoTableCell) ProtoMessage() {}
 
 func (x *ProtoTableCell) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[64]
+	mi := &file_build_docframe_proto_msgTypes[65]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7041,7 +7129,7 @@ func (x *ProtoTableCell) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableCell.ProtoReflect.Descriptor instead.
 func (*ProtoTableCell) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{64}
+	return file_build_docframe_proto_rawDescGZIP(), []int{65}
 }
 
 func (x *ProtoTableCell) GetXChildren() []*ProtoDocumentElement {
@@ -7120,7 +7208,7 @@ type ProtoTableCellConfig struct {
 
 func (x *ProtoTableCellConfig) Reset() {
 	*x = ProtoTableCellConfig{}
-	mi := &file_build_docframe_proto_msgTypes[65]
+	mi := &file_build_docframe_proto_msgTypes[66]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7132,7 +7220,7 @@ func (x *ProtoTableCellConfig) String() string {
 func (*ProtoTableCellConfig) ProtoMessage() {}
 
 func (x *ProtoTableCellConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[65]
+	mi := &file_build_docframe_proto_msgTypes[66]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7145,7 +7233,7 @@ func (x *ProtoTableCellConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableCellConfig.ProtoReflect.Descriptor instead.
 func (*ProtoTableCellConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{65}
+	return file_build_docframe_proto_rawDescGZIP(), []int{66}
 }
 
 func (x *ProtoTableCellConfig) GetParent() *ProtoDocumentElement {
@@ -7200,7 +7288,7 @@ type ProtoTableCellSettings struct {
 
 func (x *ProtoTableCellSettings) Reset() {
 	*x = ProtoTableCellSettings{}
-	mi := &file_build_docframe_proto_msgTypes[66]
+	mi := &file_build_docframe_proto_msgTypes[67]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7212,7 +7300,7 @@ func (x *ProtoTableCellSettings) String() string {
 func (*ProtoTableCellSettings) ProtoMessage() {}
 
 func (x *ProtoTableCellSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[66]
+	mi := &file_build_docframe_proto_msgTypes[67]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7225,7 +7313,7 @@ func (x *ProtoTableCellSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableCellSettings.ProtoReflect.Descriptor instead.
 func (*ProtoTableCellSettings) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{66}
+	return file_build_docframe_proto_rawDescGZIP(), []int{67}
 }
 
 func (x *ProtoTableCellSettings) GetWidth() *ProtoMeasure {
@@ -7302,7 +7390,7 @@ type ProtoTableWS struct {
 
 func (x *ProtoTableWS) Reset() {
 	*x = ProtoTableWS{}
-	mi := &file_build_docframe_proto_msgTypes[67]
+	mi := &file_build_docframe_proto_msgTypes[68]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7314,7 +7402,7 @@ func (x *ProtoTableWS) String() string {
 func (*ProtoTableWS) ProtoMessage() {}
 
 func (x *ProtoTableWS) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[67]
+	mi := &file_build_docframe_proto_msgTypes[68]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7327,7 +7415,7 @@ func (x *ProtoTableWS) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableWS.ProtoReflect.Descriptor instead.
 func (*ProtoTableWS) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{67}
+	return file_build_docframe_proto_rawDescGZIP(), []int{68}
 }
 
 func (x *ProtoTableWS) GetMinLinesBefore() uint32 {
@@ -7452,7 +7540,7 @@ type ProtoTableElementProperties struct {
 
 func (x *ProtoTableElementProperties) Reset() {
 	*x = ProtoTableElementProperties{}
-	mi := &file_build_docframe_proto_msgTypes[68]
+	mi := &file_build_docframe_proto_msgTypes[69]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7464,7 +7552,7 @@ func (x *ProtoTableElementProperties) String() string {
 func (*ProtoTableElementProperties) ProtoMessage() {}
 
 func (x *ProtoTableElementProperties) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[68]
+	mi := &file_build_docframe_proto_msgTypes[69]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7477,7 +7565,7 @@ func (x *ProtoTableElementProperties) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableElementProperties.ProtoReflect.Descriptor instead.
 func (*ProtoTableElementProperties) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{68}
+	return file_build_docframe_proto_rawDescGZIP(), []int{69}
 }
 
 func (x *ProtoTableElementProperties) GetWidthInheritance() Inheritance {
@@ -8142,7 +8230,7 @@ type ProtoText struct {
 
 func (x *ProtoText) Reset() {
 	*x = ProtoText{}
-	mi := &file_build_docframe_proto_msgTypes[69]
+	mi := &file_build_docframe_proto_msgTypes[70]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8154,7 +8242,7 @@ func (x *ProtoText) String() string {
 func (*ProtoText) ProtoMessage() {}
 
 func (x *ProtoText) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[69]
+	mi := &file_build_docframe_proto_msgTypes[70]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8167,7 +8255,7 @@ func (x *ProtoText) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoText.ProtoReflect.Descriptor instead.
 func (*ProtoText) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{69}
+	return file_build_docframe_proto_rawDescGZIP(), []int{70}
 }
 
 func (x *ProtoText) GetParent() *ProtoDocumentElement {
@@ -8216,7 +8304,7 @@ type ProtoBarcode struct {
 
 func (x *ProtoBarcode) Reset() {
 	*x = ProtoBarcode{}
-	mi := &file_build_docframe_proto_msgTypes[70]
+	mi := &file_build_docframe_proto_msgTypes[71]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8228,7 +8316,7 @@ func (x *ProtoBarcode) String() string {
 func (*ProtoBarcode) ProtoMessage() {}
 
 func (x *ProtoBarcode) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[70]
+	mi := &file_build_docframe_proto_msgTypes[71]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8241,7 +8329,7 @@ func (x *ProtoBarcode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBarcode.ProtoReflect.Descriptor instead.
 func (*ProtoBarcode) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{70}
+	return file_build_docframe_proto_rawDescGZIP(), []int{71}
 }
 
 func (x *ProtoBarcode) GetType() ProtoBarcodeType {
@@ -8374,7 +8462,7 @@ type ProtoBrickReference struct {
 
 func (x *ProtoBrickReference) Reset() {
 	*x = ProtoBrickReference{}
-	mi := &file_build_docframe_proto_msgTypes[71]
+	mi := &file_build_docframe_proto_msgTypes[72]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8386,7 +8474,7 @@ func (x *ProtoBrickReference) String() string {
 func (*ProtoBrickReference) ProtoMessage() {}
 
 func (x *ProtoBrickReference) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[71]
+	mi := &file_build_docframe_proto_msgTypes[72]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8399,7 +8487,7 @@ func (x *ProtoBrickReference) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBrickReference.ProtoReflect.Descriptor instead.
 func (*ProtoBrickReference) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{71}
+	return file_build_docframe_proto_rawDescGZIP(), []int{72}
 }
 
 func (x *ProtoBrickReference) GetInternName() string {
@@ -8439,7 +8527,7 @@ type ProtoBrick struct {
 
 func (x *ProtoBrick) Reset() {
 	*x = ProtoBrick{}
-	mi := &file_build_docframe_proto_msgTypes[72]
+	mi := &file_build_docframe_proto_msgTypes[73]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8451,7 +8539,7 @@ func (x *ProtoBrick) String() string {
 func (*ProtoBrick) ProtoMessage() {}
 
 func (x *ProtoBrick) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[72]
+	mi := &file_build_docframe_proto_msgTypes[73]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8464,7 +8552,7 @@ func (x *ProtoBrick) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBrick.ProtoReflect.Descriptor instead.
 func (*ProtoBrick) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{72}
+	return file_build_docframe_proto_rawDescGZIP(), []int{73}
 }
 
 func (x *ProtoBrick) GetXChildren() []*ProtoDocumentElement {
@@ -8538,7 +8626,7 @@ type ProtoTemplate struct {
 
 func (x *ProtoTemplate) Reset() {
 	*x = ProtoTemplate{}
-	mi := &file_build_docframe_proto_msgTypes[73]
+	mi := &file_build_docframe_proto_msgTypes[74]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8550,7 +8638,7 @@ func (x *ProtoTemplate) String() string {
 func (*ProtoTemplate) ProtoMessage() {}
 
 func (x *ProtoTemplate) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[73]
+	mi := &file_build_docframe_proto_msgTypes[74]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8563,7 +8651,7 @@ func (x *ProtoTemplate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTemplate.ProtoReflect.Descriptor instead.
 func (*ProtoTemplate) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{73}
+	return file_build_docframe_proto_rawDescGZIP(), []int{74}
 }
 
 func (x *ProtoTemplate) GetXChildren() []*ProtoDocumentElement {
@@ -8628,7 +8716,7 @@ type ProtoHeader struct {
 
 func (x *ProtoHeader) Reset() {
 	*x = ProtoHeader{}
-	mi := &file_build_docframe_proto_msgTypes[74]
+	mi := &file_build_docframe_proto_msgTypes[75]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8640,7 +8728,7 @@ func (x *ProtoHeader) String() string {
 func (*ProtoHeader) ProtoMessage() {}
 
 func (x *ProtoHeader) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[74]
+	mi := &file_build_docframe_proto_msgTypes[75]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8653,7 +8741,7 @@ func (x *ProtoHeader) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoHeader.ProtoReflect.Descriptor instead.
 func (*ProtoHeader) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{74}
+	return file_build_docframe_proto_rawDescGZIP(), []int{75}
 }
 
 func (x *ProtoHeader) GetXChildren() []*ProtoDocumentElement {
@@ -8704,7 +8792,7 @@ type ProtoFooter struct {
 
 func (x *ProtoFooter) Reset() {
 	*x = ProtoFooter{}
-	mi := &file_build_docframe_proto_msgTypes[75]
+	mi := &file_build_docframe_proto_msgTypes[76]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8716,7 +8804,7 @@ func (x *ProtoFooter) String() string {
 func (*ProtoFooter) ProtoMessage() {}
 
 func (x *ProtoFooter) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[75]
+	mi := &file_build_docframe_proto_msgTypes[76]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8729,7 +8817,7 @@ func (x *ProtoFooter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoFooter.ProtoReflect.Descriptor instead.
 func (*ProtoFooter) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{75}
+	return file_build_docframe_proto_rawDescGZIP(), []int{76}
 }
 
 func (x *ProtoFooter) GetXChildren() []*ProtoDocumentElement {
@@ -8846,7 +8934,7 @@ type Node struct {
 
 func (x *Node) Reset() {
 	*x = Node{}
-	mi := &file_build_docframe_proto_msgTypes[76]
+	mi := &file_build_docframe_proto_msgTypes[77]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8858,7 +8946,7 @@ func (x *Node) String() string {
 func (*Node) ProtoMessage() {}
 
 func (x *Node) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[76]
+	mi := &file_build_docframe_proto_msgTypes[77]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8871,7 +8959,7 @@ func (x *Node) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Node.ProtoReflect.Descriptor instead.
 func (*Node) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{76}
+	return file_build_docframe_proto_rawDescGZIP(), []int{77}
 }
 
 func (x *Node) GetChildren() []*Node {
@@ -9931,7 +10019,7 @@ type ProtoImage struct {
 
 func (x *ProtoImage) Reset() {
 	*x = ProtoImage{}
-	mi := &file_build_docframe_proto_msgTypes[77]
+	mi := &file_build_docframe_proto_msgTypes[78]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9943,7 +10031,7 @@ func (x *ProtoImage) String() string {
 func (*ProtoImage) ProtoMessage() {}
 
 func (x *ProtoImage) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[77]
+	mi := &file_build_docframe_proto_msgTypes[78]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9956,7 +10044,7 @@ func (x *ProtoImage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoImage.ProtoReflect.Descriptor instead.
 func (*ProtoImage) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{77}
+	return file_build_docframe_proto_rawDescGZIP(), []int{78}
 }
 
 func (x *ProtoImage) GetParent() *ProtoDocumentElement {
@@ -10156,7 +10244,7 @@ type ProtoDirectory struct {
 
 func (x *ProtoDirectory) Reset() {
 	*x = ProtoDirectory{}
-	mi := &file_build_docframe_proto_msgTypes[78]
+	mi := &file_build_docframe_proto_msgTypes[79]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10168,7 +10256,7 @@ func (x *ProtoDirectory) String() string {
 func (*ProtoDirectory) ProtoMessage() {}
 
 func (x *ProtoDirectory) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[78]
+	mi := &file_build_docframe_proto_msgTypes[79]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10181,7 +10269,7 @@ func (x *ProtoDirectory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoDirectory.ProtoReflect.Descriptor instead.
 func (*ProtoDirectory) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{78}
+	return file_build_docframe_proto_rawDescGZIP(), []int{79}
 }
 
 func (x *ProtoDirectory) GetXChildren() []*ProtoDocumentElement {
@@ -10248,7 +10336,7 @@ type ProtoTextBrick struct {
 
 func (x *ProtoTextBrick) Reset() {
 	*x = ProtoTextBrick{}
-	mi := &file_build_docframe_proto_msgTypes[79]
+	mi := &file_build_docframe_proto_msgTypes[80]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10260,7 +10348,7 @@ func (x *ProtoTextBrick) String() string {
 func (*ProtoTextBrick) ProtoMessage() {}
 
 func (x *ProtoTextBrick) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[79]
+	mi := &file_build_docframe_proto_msgTypes[80]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10273,7 +10361,7 @@ func (x *ProtoTextBrick) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTextBrick.ProtoReflect.Descriptor instead.
 func (*ProtoTextBrick) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{79}
+	return file_build_docframe_proto_rawDescGZIP(), []int{80}
 }
 
 func (x *ProtoTextBrick) GetXChildren() []*ProtoDocumentElement {
@@ -10340,7 +10428,7 @@ type ProtoVariable struct {
 
 func (x *ProtoVariable) Reset() {
 	*x = ProtoVariable{}
-	mi := &file_build_docframe_proto_msgTypes[80]
+	mi := &file_build_docframe_proto_msgTypes[81]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10352,7 +10440,7 @@ func (x *ProtoVariable) String() string {
 func (*ProtoVariable) ProtoMessage() {}
 
 func (x *ProtoVariable) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[80]
+	mi := &file_build_docframe_proto_msgTypes[81]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10365,7 +10453,7 @@ func (x *ProtoVariable) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoVariable.ProtoReflect.Descriptor instead.
 func (*ProtoVariable) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{80}
+	return file_build_docframe_proto_rawDescGZIP(), []int{81}
 }
 
 func (x *ProtoVariable) GetParent() *ProtoDocumentElement {
@@ -10434,7 +10522,7 @@ type ProtoFormatted struct {
 
 func (x *ProtoFormatted) Reset() {
 	*x = ProtoFormatted{}
-	mi := &file_build_docframe_proto_msgTypes[81]
+	mi := &file_build_docframe_proto_msgTypes[82]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10446,7 +10534,7 @@ func (x *ProtoFormatted) String() string {
 func (*ProtoFormatted) ProtoMessage() {}
 
 func (x *ProtoFormatted) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[81]
+	mi := &file_build_docframe_proto_msgTypes[82]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10459,7 +10547,7 @@ func (x *ProtoFormatted) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoFormatted.ProtoReflect.Descriptor instead.
 func (*ProtoFormatted) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{81}
+	return file_build_docframe_proto_rawDescGZIP(), []int{82}
 }
 
 func (x *ProtoFormatted) GetParent() *ProtoDocumentElement {
@@ -10535,7 +10623,7 @@ type ProtoApplyProtoCDef struct {
 
 func (x *ProtoApplyProtoCDef) Reset() {
 	*x = ProtoApplyProtoCDef{}
-	mi := &file_build_docframe_proto_msgTypes[82]
+	mi := &file_build_docframe_proto_msgTypes[83]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10547,7 +10635,7 @@ func (x *ProtoApplyProtoCDef) String() string {
 func (*ProtoApplyProtoCDef) ProtoMessage() {}
 
 func (x *ProtoApplyProtoCDef) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[82]
+	mi := &file_build_docframe_proto_msgTypes[83]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10560,7 +10648,7 @@ func (x *ProtoApplyProtoCDef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoApplyProtoCDef.ProtoReflect.Descriptor instead.
 func (*ProtoApplyProtoCDef) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{82}
+	return file_build_docframe_proto_rawDescGZIP(), []int{83}
 }
 
 func (x *ProtoApplyProtoCDef) GetCDefUuid() string {
@@ -10587,7 +10675,7 @@ type ProtoApplyProtoPDef struct {
 
 func (x *ProtoApplyProtoPDef) Reset() {
 	*x = ProtoApplyProtoPDef{}
-	mi := &file_build_docframe_proto_msgTypes[83]
+	mi := &file_build_docframe_proto_msgTypes[84]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10599,7 +10687,7 @@ func (x *ProtoApplyProtoPDef) String() string {
 func (*ProtoApplyProtoPDef) ProtoMessage() {}
 
 func (x *ProtoApplyProtoPDef) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[83]
+	mi := &file_build_docframe_proto_msgTypes[84]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10612,7 +10700,7 @@ func (x *ProtoApplyProtoPDef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoApplyProtoPDef.ProtoReflect.Descriptor instead.
 func (*ProtoApplyProtoPDef) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{83}
+	return file_build_docframe_proto_rawDescGZIP(), []int{84}
 }
 
 func (x *ProtoApplyProtoPDef) GetPDefUuid() string {
@@ -10639,7 +10727,7 @@ type ProtoApplyPtConfig struct {
 
 func (x *ProtoApplyPtConfig) Reset() {
 	*x = ProtoApplyPtConfig{}
-	mi := &file_build_docframe_proto_msgTypes[84]
+	mi := &file_build_docframe_proto_msgTypes[85]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10651,7 +10739,7 @@ func (x *ProtoApplyPtConfig) String() string {
 func (*ProtoApplyPtConfig) ProtoMessage() {}
 
 func (x *ProtoApplyPtConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[84]
+	mi := &file_build_docframe_proto_msgTypes[85]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10664,7 +10752,7 @@ func (x *ProtoApplyPtConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoApplyPtConfig.ProtoReflect.Descriptor instead.
 func (*ProtoApplyPtConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{84}
+	return file_build_docframe_proto_rawDescGZIP(), []int{85}
 }
 
 func (x *ProtoApplyPtConfig) GetPtConfigUuid() string {
@@ -10691,7 +10779,7 @@ type ProtoApplyUlConfig struct {
 
 func (x *ProtoApplyUlConfig) Reset() {
 	*x = ProtoApplyUlConfig{}
-	mi := &file_build_docframe_proto_msgTypes[85]
+	mi := &file_build_docframe_proto_msgTypes[86]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10703,7 +10791,7 @@ func (x *ProtoApplyUlConfig) String() string {
 func (*ProtoApplyUlConfig) ProtoMessage() {}
 
 func (x *ProtoApplyUlConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[85]
+	mi := &file_build_docframe_proto_msgTypes[86]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10716,7 +10804,7 @@ func (x *ProtoApplyUlConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoApplyUlConfig.ProtoReflect.Descriptor instead.
 func (*ProtoApplyUlConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{85}
+	return file_build_docframe_proto_rawDescGZIP(), []int{86}
 }
 
 func (x *ProtoApplyUlConfig) GetUlConfigUuid() string {
@@ -10746,7 +10834,7 @@ type ProtoCDef struct {
 
 func (x *ProtoCDef) Reset() {
 	*x = ProtoCDef{}
-	mi := &file_build_docframe_proto_msgTypes[86]
+	mi := &file_build_docframe_proto_msgTypes[87]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10758,7 +10846,7 @@ func (x *ProtoCDef) String() string {
 func (*ProtoCDef) ProtoMessage() {}
 
 func (x *ProtoCDef) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[86]
+	mi := &file_build_docframe_proto_msgTypes[87]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10771,7 +10859,7 @@ func (x *ProtoCDef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoCDef.ProtoReflect.Descriptor instead.
 func (*ProtoCDef) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{86}
+	return file_build_docframe_proto_rawDescGZIP(), []int{87}
 }
 
 func (x *ProtoCDef) GetColumSettings() *ProtoColumnSettings {
@@ -10821,7 +10909,7 @@ type ProtoPDef struct {
 
 func (x *ProtoPDef) Reset() {
 	*x = ProtoPDef{}
-	mi := &file_build_docframe_proto_msgTypes[87]
+	mi := &file_build_docframe_proto_msgTypes[88]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10833,7 +10921,7 @@ func (x *ProtoPDef) String() string {
 func (*ProtoPDef) ProtoMessage() {}
 
 func (x *ProtoPDef) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[87]
+	mi := &file_build_docframe_proto_msgTypes[88]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10846,7 +10934,7 @@ func (x *ProtoPDef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoPDef.ProtoReflect.Descriptor instead.
 func (*ProtoPDef) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{87}
+	return file_build_docframe_proto_rawDescGZIP(), []int{88}
 }
 
 func (x *ProtoPDef) GetPageWidth() *ProtoBoxedMeasure {
@@ -10891,7 +10979,7 @@ type ProtoPtConfig struct {
 
 func (x *ProtoPtConfig) Reset() {
 	*x = ProtoPtConfig{}
-	mi := &file_build_docframe_proto_msgTypes[88]
+	mi := &file_build_docframe_proto_msgTypes[89]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10903,7 +10991,7 @@ func (x *ProtoPtConfig) String() string {
 func (*ProtoPtConfig) ProtoMessage() {}
 
 func (x *ProtoPtConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[88]
+	mi := &file_build_docframe_proto_msgTypes[89]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10916,7 +11004,7 @@ func (x *ProtoPtConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoPtConfig.ProtoReflect.Descriptor instead.
 func (*ProtoPtConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{88}
+	return file_build_docframe_proto_rawDescGZIP(), []int{89}
 }
 
 func (x *ProtoPtConfig) GetHeight() *ProtoBoxedMeasure {
@@ -10972,7 +11060,7 @@ type ProtoUlConfig struct {
 
 func (x *ProtoUlConfig) Reset() {
 	*x = ProtoUlConfig{}
-	mi := &file_build_docframe_proto_msgTypes[89]
+	mi := &file_build_docframe_proto_msgTypes[90]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10984,7 +11072,7 @@ func (x *ProtoUlConfig) String() string {
 func (*ProtoUlConfig) ProtoMessage() {}
 
 func (x *ProtoUlConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[89]
+	mi := &file_build_docframe_proto_msgTypes[90]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10997,7 +11085,7 @@ func (x *ProtoUlConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoUlConfig.ProtoReflect.Descriptor instead.
 func (*ProtoUlConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{89}
+	return file_build_docframe_proto_rawDescGZIP(), []int{90}
 }
 
 func (x *ProtoUlConfig) GetMode() ProtoUnderlineMode {
@@ -11038,7 +11126,7 @@ type ProtoNewPage struct {
 
 func (x *ProtoNewPage) Reset() {
 	*x = ProtoNewPage{}
-	mi := &file_build_docframe_proto_msgTypes[90]
+	mi := &file_build_docframe_proto_msgTypes[91]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11050,7 +11138,7 @@ func (x *ProtoNewPage) String() string {
 func (*ProtoNewPage) ProtoMessage() {}
 
 func (x *ProtoNewPage) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[90]
+	mi := &file_build_docframe_proto_msgTypes[91]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11063,7 +11151,7 @@ func (x *ProtoNewPage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoNewPage.ProtoReflect.Descriptor instead.
 func (*ProtoNewPage) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{90}
+	return file_build_docframe_proto_rawDescGZIP(), []int{91}
 }
 
 func (x *ProtoNewPage) GetUuid() string {
@@ -11143,7 +11231,7 @@ type ProtoIndentation struct {
 
 func (x *ProtoIndentation) Reset() {
 	*x = ProtoIndentation{}
-	mi := &file_build_docframe_proto_msgTypes[91]
+	mi := &file_build_docframe_proto_msgTypes[92]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11155,7 +11243,7 @@ func (x *ProtoIndentation) String() string {
 func (*ProtoIndentation) ProtoMessage() {}
 
 func (x *ProtoIndentation) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[91]
+	mi := &file_build_docframe_proto_msgTypes[92]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11168,7 +11256,7 @@ func (x *ProtoIndentation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoIndentation.ProtoReflect.Descriptor instead.
 func (*ProtoIndentation) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{91}
+	return file_build_docframe_proto_rawDescGZIP(), []int{92}
 }
 
 func (x *ProtoIndentation) GetXChildren() []*ProtoDocumentElement {
@@ -11224,7 +11312,7 @@ type ProtoCarryOver struct {
 
 func (x *ProtoCarryOver) Reset() {
 	*x = ProtoCarryOver{}
-	mi := &file_build_docframe_proto_msgTypes[92]
+	mi := &file_build_docframe_proto_msgTypes[93]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11236,7 +11324,7 @@ func (x *ProtoCarryOver) String() string {
 func (*ProtoCarryOver) ProtoMessage() {}
 
 func (x *ProtoCarryOver) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[92]
+	mi := &file_build_docframe_proto_msgTypes[93]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11249,7 +11337,7 @@ func (x *ProtoCarryOver) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoCarryOver.ProtoReflect.Descriptor instead.
 func (*ProtoCarryOver) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{92}
+	return file_build_docframe_proto_rawDescGZIP(), []int{93}
 }
 
 func (x *ProtoCarryOver) GetXChildren() []*ProtoDocumentElement {
@@ -11287,7 +11375,7 @@ type ProtoLoopEntry struct {
 
 func (x *ProtoLoopEntry) Reset() {
 	*x = ProtoLoopEntry{}
-	mi := &file_build_docframe_proto_msgTypes[93]
+	mi := &file_build_docframe_proto_msgTypes[94]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11299,7 +11387,7 @@ func (x *ProtoLoopEntry) String() string {
 func (*ProtoLoopEntry) ProtoMessage() {}
 
 func (x *ProtoLoopEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[93]
+	mi := &file_build_docframe_proto_msgTypes[94]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11312,7 +11400,7 @@ func (x *ProtoLoopEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoLoopEntry.ProtoReflect.Descriptor instead.
 func (*ProtoLoopEntry) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{93}
+	return file_build_docframe_proto_rawDescGZIP(), []int{94}
 }
 
 func (x *ProtoLoopEntry) GetXChildren() []*ProtoDocumentElement {
@@ -11370,7 +11458,7 @@ type ProtoLoop struct {
 
 func (x *ProtoLoop) Reset() {
 	*x = ProtoLoop{}
-	mi := &file_build_docframe_proto_msgTypes[94]
+	mi := &file_build_docframe_proto_msgTypes[95]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11382,7 +11470,7 @@ func (x *ProtoLoop) String() string {
 func (*ProtoLoop) ProtoMessage() {}
 
 func (x *ProtoLoop) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[94]
+	mi := &file_build_docframe_proto_msgTypes[95]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11395,7 +11483,7 @@ func (x *ProtoLoop) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoLoop.ProtoReflect.Descriptor instead.
 func (*ProtoLoop) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{94}
+	return file_build_docframe_proto_rawDescGZIP(), []int{95}
 }
 
 func (x *ProtoLoop) GetXChildren() []*ProtoDocumentElement {
@@ -11447,7 +11535,7 @@ type ProtoSubTotal struct {
 
 func (x *ProtoSubTotal) Reset() {
 	*x = ProtoSubTotal{}
-	mi := &file_build_docframe_proto_msgTypes[95]
+	mi := &file_build_docframe_proto_msgTypes[96]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11459,7 +11547,7 @@ func (x *ProtoSubTotal) String() string {
 func (*ProtoSubTotal) ProtoMessage() {}
 
 func (x *ProtoSubTotal) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[95]
+	mi := &file_build_docframe_proto_msgTypes[96]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11472,7 +11560,7 @@ func (x *ProtoSubTotal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSubTotal.ProtoReflect.Descriptor instead.
 func (*ProtoSubTotal) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{95}
+	return file_build_docframe_proto_rawDescGZIP(), []int{96}
 }
 
 func (x *ProtoSubTotal) GetXChildren() []*ProtoDocumentElement {
@@ -11528,7 +11616,7 @@ type ProtoWsArea struct {
 
 func (x *ProtoWsArea) Reset() {
 	*x = ProtoWsArea{}
-	mi := &file_build_docframe_proto_msgTypes[96]
+	mi := &file_build_docframe_proto_msgTypes[97]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11540,7 +11628,7 @@ func (x *ProtoWsArea) String() string {
 func (*ProtoWsArea) ProtoMessage() {}
 
 func (x *ProtoWsArea) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[96]
+	mi := &file_build_docframe_proto_msgTypes[97]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11553,7 +11641,7 @@ func (x *ProtoWsArea) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoWsArea.ProtoReflect.Descriptor instead.
 func (*ProtoWsArea) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{96}
+	return file_build_docframe_proto_rawDescGZIP(), []int{97}
 }
 
 func (x *ProtoWsArea) GetXChildren() []*ProtoDocumentElement {
@@ -11595,7 +11683,7 @@ type ProtoRule struct {
 
 func (x *ProtoRule) Reset() {
 	*x = ProtoRule{}
-	mi := &file_build_docframe_proto_msgTypes[97]
+	mi := &file_build_docframe_proto_msgTypes[98]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11607,7 +11695,7 @@ func (x *ProtoRule) String() string {
 func (*ProtoRule) ProtoMessage() {}
 
 func (x *ProtoRule) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[97]
+	mi := &file_build_docframe_proto_msgTypes[98]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11620,7 +11708,7 @@ func (x *ProtoRule) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoRule.ProtoReflect.Descriptor instead.
 func (*ProtoRule) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{97}
+	return file_build_docframe_proto_rawDescGZIP(), []int{98}
 }
 
 func (x *ProtoRule) GetXOffset() *ProtoMeasure {
@@ -11703,7 +11791,7 @@ type ProtoRuleBoundaries struct {
 
 func (x *ProtoRuleBoundaries) Reset() {
 	*x = ProtoRuleBoundaries{}
-	mi := &file_build_docframe_proto_msgTypes[98]
+	mi := &file_build_docframe_proto_msgTypes[99]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11715,7 +11803,7 @@ func (x *ProtoRuleBoundaries) String() string {
 func (*ProtoRuleBoundaries) ProtoMessage() {}
 
 func (x *ProtoRuleBoundaries) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[98]
+	mi := &file_build_docframe_proto_msgTypes[99]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11728,7 +11816,7 @@ func (x *ProtoRuleBoundaries) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoRuleBoundaries.ProtoReflect.Descriptor instead.
 func (*ProtoRuleBoundaries) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{98}
+	return file_build_docframe_proto_rawDescGZIP(), []int{99}
 }
 
 func (x *ProtoRuleBoundaries) GetStart() *ProtoMeasure {
@@ -11755,7 +11843,7 @@ type ProtoColorDef struct {
 
 func (x *ProtoColorDef) Reset() {
 	*x = ProtoColorDef{}
-	mi := &file_build_docframe_proto_msgTypes[99]
+	mi := &file_build_docframe_proto_msgTypes[100]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11767,7 +11855,7 @@ func (x *ProtoColorDef) String() string {
 func (*ProtoColorDef) ProtoMessage() {}
 
 func (x *ProtoColorDef) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[99]
+	mi := &file_build_docframe_proto_msgTypes[100]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11780,7 +11868,7 @@ func (x *ProtoColorDef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoColorDef.ProtoReflect.Descriptor instead.
 func (*ProtoColorDef) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{99}
+	return file_build_docframe_proto_rawDescGZIP(), []int{100}
 }
 
 func (x *ProtoColorDef) GetColor() *ProtoColor {
@@ -11808,7 +11896,7 @@ type ProtoLayout struct {
 
 func (x *ProtoLayout) Reset() {
 	*x = ProtoLayout{}
-	mi := &file_build_docframe_proto_msgTypes[100]
+	mi := &file_build_docframe_proto_msgTypes[101]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11820,7 +11908,7 @@ func (x *ProtoLayout) String() string {
 func (*ProtoLayout) ProtoMessage() {}
 
 func (x *ProtoLayout) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[100]
+	mi := &file_build_docframe_proto_msgTypes[101]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11833,7 +11921,7 @@ func (x *ProtoLayout) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoLayout.ProtoReflect.Descriptor instead.
 func (*ProtoLayout) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{100}
+	return file_build_docframe_proto_rawDescGZIP(), []int{101}
 }
 
 func (x *ProtoLayout) GetParent() *ProtoDocumentElement {
@@ -11877,7 +11965,7 @@ type ProtoAdvancedIllustrationArea struct {
 
 func (x *ProtoAdvancedIllustrationArea) Reset() {
 	*x = ProtoAdvancedIllustrationArea{}
-	mi := &file_build_docframe_proto_msgTypes[101]
+	mi := &file_build_docframe_proto_msgTypes[102]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11889,7 +11977,7 @@ func (x *ProtoAdvancedIllustrationArea) String() string {
 func (*ProtoAdvancedIllustrationArea) ProtoMessage() {}
 
 func (x *ProtoAdvancedIllustrationArea) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[101]
+	mi := &file_build_docframe_proto_msgTypes[102]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11902,7 +11990,7 @@ func (x *ProtoAdvancedIllustrationArea) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoAdvancedIllustrationArea.ProtoReflect.Descriptor instead.
 func (*ProtoAdvancedIllustrationArea) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{101}
+	return file_build_docframe_proto_rawDescGZIP(), []int{102}
 }
 
 func (x *ProtoAdvancedIllustrationArea) GetXChildren() []*ProtoDocumentElement {
@@ -12002,7 +12090,7 @@ type ProtoAdjustHorizontally struct {
 
 func (x *ProtoAdjustHorizontally) Reset() {
 	*x = ProtoAdjustHorizontally{}
-	mi := &file_build_docframe_proto_msgTypes[102]
+	mi := &file_build_docframe_proto_msgTypes[103]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12014,7 +12102,7 @@ func (x *ProtoAdjustHorizontally) String() string {
 func (*ProtoAdjustHorizontally) ProtoMessage() {}
 
 func (x *ProtoAdjustHorizontally) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[102]
+	mi := &file_build_docframe_proto_msgTypes[103]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12027,7 +12115,7 @@ func (x *ProtoAdjustHorizontally) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoAdjustHorizontally.ProtoReflect.Descriptor instead.
 func (*ProtoAdjustHorizontally) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{102}
+	return file_build_docframe_proto_rawDescGZIP(), []int{103}
 }
 
 func (x *ProtoAdjustHorizontally) GetXChildren() []*ProtoDocumentElement {
@@ -12078,7 +12166,7 @@ type ProtoDoctypeScript struct {
 
 func (x *ProtoDoctypeScript) Reset() {
 	*x = ProtoDoctypeScript{}
-	mi := &file_build_docframe_proto_msgTypes[103]
+	mi := &file_build_docframe_proto_msgTypes[104]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12090,7 +12178,7 @@ func (x *ProtoDoctypeScript) String() string {
 func (*ProtoDoctypeScript) ProtoMessage() {}
 
 func (x *ProtoDoctypeScript) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[103]
+	mi := &file_build_docframe_proto_msgTypes[104]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12103,7 +12191,7 @@ func (x *ProtoDoctypeScript) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoDoctypeScript.ProtoReflect.Descriptor instead.
 func (*ProtoDoctypeScript) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{103}
+	return file_build_docframe_proto_rawDescGZIP(), []int{104}
 }
 
 func (x *ProtoDoctypeScript) GetParent() *ProtoDocumentElement {
@@ -12153,7 +12241,7 @@ type ProtoDmScript struct {
 
 func (x *ProtoDmScript) Reset() {
 	*x = ProtoDmScript{}
-	mi := &file_build_docframe_proto_msgTypes[104]
+	mi := &file_build_docframe_proto_msgTypes[105]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12165,7 +12253,7 @@ func (x *ProtoDmScript) String() string {
 func (*ProtoDmScript) ProtoMessage() {}
 
 func (x *ProtoDmScript) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[104]
+	mi := &file_build_docframe_proto_msgTypes[105]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12178,7 +12266,7 @@ func (x *ProtoDmScript) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoDmScript.ProtoReflect.Descriptor instead.
 func (*ProtoDmScript) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{104}
+	return file_build_docframe_proto_rawDescGZIP(), []int{105}
 }
 
 func (x *ProtoDmScript) GetParent() *ProtoDocumentElement {
@@ -12221,7 +12309,7 @@ type ProtoDynamicTemplate struct {
 
 func (x *ProtoDynamicTemplate) Reset() {
 	*x = ProtoDynamicTemplate{}
-	mi := &file_build_docframe_proto_msgTypes[105]
+	mi := &file_build_docframe_proto_msgTypes[106]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12233,7 +12321,7 @@ func (x *ProtoDynamicTemplate) String() string {
 func (*ProtoDynamicTemplate) ProtoMessage() {}
 
 func (x *ProtoDynamicTemplate) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[105]
+	mi := &file_build_docframe_proto_msgTypes[106]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12246,7 +12334,7 @@ func (x *ProtoDynamicTemplate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoDynamicTemplate.ProtoReflect.Descriptor instead.
 func (*ProtoDynamicTemplate) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{105}
+	return file_build_docframe_proto_rawDescGZIP(), []int{106}
 }
 
 func (x *ProtoDynamicTemplate) GetParent() *ProtoDocumentElement {
@@ -12294,7 +12382,7 @@ type ProtoSelection struct {
 
 func (x *ProtoSelection) Reset() {
 	*x = ProtoSelection{}
-	mi := &file_build_docframe_proto_msgTypes[106]
+	mi := &file_build_docframe_proto_msgTypes[107]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12306,7 +12394,7 @@ func (x *ProtoSelection) String() string {
 func (*ProtoSelection) ProtoMessage() {}
 
 func (x *ProtoSelection) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[106]
+	mi := &file_build_docframe_proto_msgTypes[107]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12319,7 +12407,7 @@ func (x *ProtoSelection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSelection.ProtoReflect.Descriptor instead.
 func (*ProtoSelection) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{106}
+	return file_build_docframe_proto_rawDescGZIP(), []int{107}
 }
 
 func (x *ProtoSelection) GetXChildren() []*ProtoDocumentElement {
@@ -12400,7 +12488,7 @@ type ProtoSelectionEntry struct {
 
 func (x *ProtoSelectionEntry) Reset() {
 	*x = ProtoSelectionEntry{}
-	mi := &file_build_docframe_proto_msgTypes[107]
+	mi := &file_build_docframe_proto_msgTypes[108]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12412,7 +12500,7 @@ func (x *ProtoSelectionEntry) String() string {
 func (*ProtoSelectionEntry) ProtoMessage() {}
 
 func (x *ProtoSelectionEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[107]
+	mi := &file_build_docframe_proto_msgTypes[108]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12425,7 +12513,7 @@ func (x *ProtoSelectionEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSelectionEntry.ProtoReflect.Descriptor instead.
 func (*ProtoSelectionEntry) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{107}
+	return file_build_docframe_proto_rawDescGZIP(), []int{108}
 }
 
 func (x *ProtoSelectionEntry) GetXChildren() []*ProtoDocumentElement {
@@ -12492,7 +12580,7 @@ type ProtoCondition struct {
 
 func (x *ProtoCondition) Reset() {
 	*x = ProtoCondition{}
-	mi := &file_build_docframe_proto_msgTypes[108]
+	mi := &file_build_docframe_proto_msgTypes[109]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12504,7 +12592,7 @@ func (x *ProtoCondition) String() string {
 func (*ProtoCondition) ProtoMessage() {}
 
 func (x *ProtoCondition) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[108]
+	mi := &file_build_docframe_proto_msgTypes[109]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12517,7 +12605,7 @@ func (x *ProtoCondition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoCondition.ProtoReflect.Descriptor instead.
 func (*ProtoCondition) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{108}
+	return file_build_docframe_proto_rawDescGZIP(), []int{109}
 }
 
 func (x *ProtoCondition) GetXChildren() []*ProtoDocumentElement {
@@ -12582,7 +12670,7 @@ type ProtoPageCondition struct {
 
 func (x *ProtoPageCondition) Reset() {
 	*x = ProtoPageCondition{}
-	mi := &file_build_docframe_proto_msgTypes[109]
+	mi := &file_build_docframe_proto_msgTypes[110]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12594,7 +12682,7 @@ func (x *ProtoPageCondition) String() string {
 func (*ProtoPageCondition) ProtoMessage() {}
 
 func (x *ProtoPageCondition) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[109]
+	mi := &file_build_docframe_proto_msgTypes[110]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12607,7 +12695,7 @@ func (x *ProtoPageCondition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoPageCondition.ProtoReflect.Descriptor instead.
 func (*ProtoPageCondition) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{109}
+	return file_build_docframe_proto_rawDescGZIP(), []int{110}
 }
 
 func (x *ProtoPageCondition) GetXChildren() []*ProtoDocumentElement {
@@ -12659,7 +12747,7 @@ type ProtoLocale struct {
 
 func (x *ProtoLocale) Reset() {
 	*x = ProtoLocale{}
-	mi := &file_build_docframe_proto_msgTypes[110]
+	mi := &file_build_docframe_proto_msgTypes[111]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12671,7 +12759,7 @@ func (x *ProtoLocale) String() string {
 func (*ProtoLocale) ProtoMessage() {}
 
 func (x *ProtoLocale) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[110]
+	mi := &file_build_docframe_proto_msgTypes[111]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12684,7 +12772,7 @@ func (x *ProtoLocale) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoLocale.ProtoReflect.Descriptor instead.
 func (*ProtoLocale) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{110}
+	return file_build_docframe_proto_rawDescGZIP(), []int{111}
 }
 
 func (x *ProtoLocale) GetXChildren() []*ProtoDocumentElement {
@@ -12744,7 +12832,7 @@ type ProtoTag struct {
 
 func (x *ProtoTag) Reset() {
 	*x = ProtoTag{}
-	mi := &file_build_docframe_proto_msgTypes[111]
+	mi := &file_build_docframe_proto_msgTypes[112]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12756,7 +12844,7 @@ func (x *ProtoTag) String() string {
 func (*ProtoTag) ProtoMessage() {}
 
 func (x *ProtoTag) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[111]
+	mi := &file_build_docframe_proto_msgTypes[112]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12769,7 +12857,7 @@ func (x *ProtoTag) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTag.ProtoReflect.Descriptor instead.
 func (*ProtoTag) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{111}
+	return file_build_docframe_proto_rawDescGZIP(), []int{112}
 }
 
 func (x *ProtoTag) GetParent() *ProtoDocumentElement {
@@ -12834,7 +12922,7 @@ type ProtoParagraphSetDefault struct {
 
 func (x *ProtoParagraphSetDefault) Reset() {
 	*x = ProtoParagraphSetDefault{}
-	mi := &file_build_docframe_proto_msgTypes[112]
+	mi := &file_build_docframe_proto_msgTypes[113]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12846,7 +12934,7 @@ func (x *ProtoParagraphSetDefault) String() string {
 func (*ProtoParagraphSetDefault) ProtoMessage() {}
 
 func (x *ProtoParagraphSetDefault) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[112]
+	mi := &file_build_docframe_proto_msgTypes[113]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12859,7 +12947,7 @@ func (x *ProtoParagraphSetDefault) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoParagraphSetDefault.ProtoReflect.Descriptor instead.
 func (*ProtoParagraphSetDefault) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{112}
+	return file_build_docframe_proto_rawDescGZIP(), []int{113}
 }
 
 func (x *ProtoParagraphSetDefault) GetParent() *ProtoDocumentElement {
@@ -12918,7 +13006,7 @@ type ProtoBaseTextInputField struct {
 
 func (x *ProtoBaseTextInputField) Reset() {
 	*x = ProtoBaseTextInputField{}
-	mi := &file_build_docframe_proto_msgTypes[113]
+	mi := &file_build_docframe_proto_msgTypes[114]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12930,7 +13018,7 @@ func (x *ProtoBaseTextInputField) String() string {
 func (*ProtoBaseTextInputField) ProtoMessage() {}
 
 func (x *ProtoBaseTextInputField) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[113]
+	mi := &file_build_docframe_proto_msgTypes[114]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12943,7 +13031,7 @@ func (x *ProtoBaseTextInputField) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBaseTextInputField.ProtoReflect.Descriptor instead.
 func (*ProtoBaseTextInputField) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{113}
+	return file_build_docframe_proto_rawDescGZIP(), []int{114}
 }
 
 func (x *ProtoBaseTextInputField) GetBase() *ProtoBaseInputField {
@@ -13047,7 +13135,7 @@ type ProtoInputFieldText struct {
 
 func (x *ProtoInputFieldText) Reset() {
 	*x = ProtoInputFieldText{}
-	mi := &file_build_docframe_proto_msgTypes[114]
+	mi := &file_build_docframe_proto_msgTypes[115]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13059,7 +13147,7 @@ func (x *ProtoInputFieldText) String() string {
 func (*ProtoInputFieldText) ProtoMessage() {}
 
 func (x *ProtoInputFieldText) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[114]
+	mi := &file_build_docframe_proto_msgTypes[115]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13072,7 +13160,7 @@ func (x *ProtoInputFieldText) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldText.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldText) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{114}
+	return file_build_docframe_proto_rawDescGZIP(), []int{115}
 }
 
 func (x *ProtoInputFieldText) GetParent() *ProtoDocumentElement {
@@ -13099,7 +13187,7 @@ type ProtoInputFieldDate struct {
 
 func (x *ProtoInputFieldDate) Reset() {
 	*x = ProtoInputFieldDate{}
-	mi := &file_build_docframe_proto_msgTypes[115]
+	mi := &file_build_docframe_proto_msgTypes[116]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13111,7 +13199,7 @@ func (x *ProtoInputFieldDate) String() string {
 func (*ProtoInputFieldDate) ProtoMessage() {}
 
 func (x *ProtoInputFieldDate) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[115]
+	mi := &file_build_docframe_proto_msgTypes[116]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13124,7 +13212,7 @@ func (x *ProtoInputFieldDate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldDate.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldDate) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{115}
+	return file_build_docframe_proto_rawDescGZIP(), []int{116}
 }
 
 func (x *ProtoInputFieldDate) GetParent() *ProtoDocumentElement {
@@ -13151,7 +13239,7 @@ type ProtoInputFieldCheckbox struct {
 
 func (x *ProtoInputFieldCheckbox) Reset() {
 	*x = ProtoInputFieldCheckbox{}
-	mi := &file_build_docframe_proto_msgTypes[116]
+	mi := &file_build_docframe_proto_msgTypes[117]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13163,7 +13251,7 @@ func (x *ProtoInputFieldCheckbox) String() string {
 func (*ProtoInputFieldCheckbox) ProtoMessage() {}
 
 func (x *ProtoInputFieldCheckbox) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[116]
+	mi := &file_build_docframe_proto_msgTypes[117]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13176,7 +13264,7 @@ func (x *ProtoInputFieldCheckbox) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldCheckbox.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldCheckbox) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{116}
+	return file_build_docframe_proto_rawDescGZIP(), []int{117}
 }
 
 func (x *ProtoInputFieldCheckbox) GetParent() *ProtoDocumentElement {
@@ -13203,7 +13291,7 @@ type ProtoInputFieldLabel struct {
 
 func (x *ProtoInputFieldLabel) Reset() {
 	*x = ProtoInputFieldLabel{}
-	mi := &file_build_docframe_proto_msgTypes[117]
+	mi := &file_build_docframe_proto_msgTypes[118]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13215,7 +13303,7 @@ func (x *ProtoInputFieldLabel) String() string {
 func (*ProtoInputFieldLabel) ProtoMessage() {}
 
 func (x *ProtoInputFieldLabel) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[117]
+	mi := &file_build_docframe_proto_msgTypes[118]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13228,7 +13316,7 @@ func (x *ProtoInputFieldLabel) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldLabel.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldLabel) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{117}
+	return file_build_docframe_proto_rawDescGZIP(), []int{118}
 }
 
 func (x *ProtoInputFieldLabel) GetParent() *ProtoDocumentElement {
@@ -13258,7 +13346,7 @@ type ProtoInputFieldDropdown struct {
 
 func (x *ProtoInputFieldDropdown) Reset() {
 	*x = ProtoInputFieldDropdown{}
-	mi := &file_build_docframe_proto_msgTypes[118]
+	mi := &file_build_docframe_proto_msgTypes[119]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13270,7 +13358,7 @@ func (x *ProtoInputFieldDropdown) String() string {
 func (*ProtoInputFieldDropdown) ProtoMessage() {}
 
 func (x *ProtoInputFieldDropdown) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[118]
+	mi := &file_build_docframe_proto_msgTypes[119]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13283,7 +13371,7 @@ func (x *ProtoInputFieldDropdown) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldDropdown.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldDropdown) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{118}
+	return file_build_docframe_proto_rawDescGZIP(), []int{119}
 }
 
 func (x *ProtoInputFieldDropdown) GetParent() *ProtoDocumentElement {
@@ -13849,7 +13937,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\n" +
 	"numberType\x18\x10 \x01(\x0e2\x10.ProtoNumberTypeR\n" +
 	"numberType\x12\x1c\n" +
-	"\tcharacter\x18\x11 \x01(\tR\tcharacter\"\xbe\x03\n" +
+	"\tcharacter\x18\x11 \x01(\tR\tcharacter\x12 \n" +
+	"\vdoctypeCode\x18\x12 \x01(\tR\vdoctypeCode\"\xbe\x03\n" +
 	"\x1aProtoImageListLevelSetting\x12(\n" +
 	"\x0flistSettingName\x18\x01 \x01(\tR\x0flistSettingName\x12-\n" +
 	"\bfontSize\x18\x02 \x01(\v2\x11.ProtoBoxedUint32R\bfontSize\x12.\n" +
@@ -13928,7 +14017,13 @@ const file_build_docframe_proto_rawDesc = "" +
 	"fontFamily\x12#\n" +
 	"\x04bold\x18\r \x01(\v2\x0f.ProtoBoxedBoolR\x04bold\x12'\n" +
 	"\x06italic\x18\x0e \x01(\v2\x0f.ProtoBoxedBoolR\x06italic\x12\x1c\n" +
-	"\tcharacter\x18\x0f \x01(\tR\tcharacter\"\x97\x02\n" +
+	"\tcharacter\x18\x0f \x01(\tR\tcharacter\"\xd7\x01\n" +
+	"\x1bprotoCustomListLevelSetting\x12(\n" +
+	"\x0flistSettingName\x18\x01 \x01(\tR\x0flistSettingName\x12.\n" +
+	"\x04type\x18\x02 \x01(\x0e2\x1a.ProtoListLevelSettingTypeR\x04type\x12\x14\n" +
+	"\x05level\x18\x03 \x01(\x05R\x05level\x12&\n" +
+	"\x0eindentionWidth\x18\x04 \x01(\x05R\x0eindentionWidth\x12 \n" +
+	"\vdoctypeCode\x18\x05 \x01(\tR\vdoctypeCode\"\x97\x02\n" +
 	"\x10ProtoListSetting\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12D\n" +
@@ -14798,12 +14893,14 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\rROM_UPPERCASE\x10\x01\x12\x11\n" +
 	"\rROM_LOWERCASE\x10\x02\x12\x14\n" +
 	"\x10LETTER_UPPERCASE\x10\x03\x12\x14\n" +
-	"\x10LETTER_LOWERCASE\x10\x04*C\n" +
+	"\x10LETTER_LOWERCASE\x10\x04*O\n" +
 	"\x19ProtoListLevelSettingType\x12\x0e\n" +
 	"\n" +
 	"UNNUMBERED\x10\x00\x12\v\n" +
 	"\aNUMERIC\x10\x01\x12\t\n" +
-	"\x05IMAGE\x10\x02*N\n" +
+	"\x05IMAGE\x10\x02\x12\n" +
+	"\n" +
+	"\x06CUSTOM\x10\x03*N\n" +
 	"\x1aProtoTableContentGroupType\x12\n" +
 	"\n" +
 	"\x06HEADER\x10\x00\x12\b\n" +
@@ -15601,7 +15698,7 @@ func file_build_docframe_proto_init() {
 	if File_build_docframe_proto != nil {
 		return
 	}
-	file_build_docframe_proto_msgTypes[76].OneofWrappers = []any{
+	file_build_docframe_proto_msgTypes[77].OneofWrappers = []any{
 		(*Node_ListSetting)(nil),
 		(*Node_ColorDef)(nil),
 		(*Node_Brick)(nil),

@@ -13596,12 +13596,14 @@ $root.ProtoNumberType = (function() {
  * @property {number} UNNUMBERED=0 UNNUMBERED value
  * @property {number} NUMERIC=1 NUMERIC value
  * @property {number} IMAGE=2 IMAGE value
+ * @property {number} CUSTOM=3 CUSTOM value
  */
 $root.ProtoListLevelSettingType = (function() {
     var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "UNNUMBERED"] = 0;
     values[valuesById[1] = "NUMERIC"] = 1;
     values[valuesById[2] = "IMAGE"] = 2;
+    values[valuesById[3] = "CUSTOM"] = 3;
     return values;
 })();
 
@@ -13628,7 +13630,6 @@ $root.ProtoListLevelSetting = (function() {
      * @property {IProtoBoxedBool|null} [italic] ProtoListLevelSetting italic
      * @property {ProtoNumberType|null} [numberType] ProtoListLevelSetting numberType
      * @property {string|null} [character] ProtoListLevelSetting character
-     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
     /**
@@ -13784,6 +13785,14 @@ $root.ProtoListLevelSetting = (function() {
     ProtoListLevelSetting.prototype.character = "";
 
     /**
+     * ProtoListLevelSetting doctypeCode.
+     * @member {string} doctypeCode
+     * @memberof ProtoListLevelSetting
+     * @instance
+     */
+    ProtoListLevelSetting.prototype.doctypeCode = "";
+
+    /**
      * Creates a new ProtoListLevelSetting instance using the specified properties.
      * @function create
      * @memberof ProtoListLevelSetting
@@ -13841,9 +13850,6 @@ $root.ProtoListLevelSetting = (function() {
             writer.uint32(/* id 16, wireType 0 =*/128).int32(message.numberType);
         if (message.character != null && Object.hasOwnProperty.call(message, "character"))
             writer.uint32(/* id 17, wireType 2 =*/138).string(message.character);
-        if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
-            for (var i = 0; i < message.$unknowns.length; ++i)
-                writer.raw(message.$unknowns[i]);
         return writer;
     };
 
@@ -14023,6 +14029,9 @@ $root.ProtoListLevelSetting = (function() {
                         delete message.character;
                     continue;
                 }
+            default:
+                reader.skipType(tag & 7);
+                break;
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -14079,6 +14088,7 @@ $root.ProtoListLevelSetting = (function() {
             case 0:
             case 1:
             case 2:
+            case 3:
                 break;
             }
         if (message.level != null && message.hasOwnProperty("level"))
@@ -14141,6 +14151,9 @@ $root.ProtoListLevelSetting = (function() {
         if (message.character != null && message.hasOwnProperty("character"))
             if (!$util.isString(message.character))
                 return "character: string expected";
+        if (message.doctypeCode != null && message.hasOwnProperty("doctypeCode"))
+            if (!$util.isString(message.doctypeCode))
+                return "doctypeCode: string expected";
         return null;
     };
 
@@ -14168,27 +14181,26 @@ $root.ProtoListLevelSetting = (function() {
                 throw TypeError(".ProtoListLevelSetting.fontSize: object expected");
             message.fontSize = $root.ProtoBoxedUint32.fromObject(object.fontSize, _depth + 1);
         }
-        if (object.type !== 0 && (typeof object.type !== "string" || $root.ProtoListLevelSettingType[object.type] !== 0))
-            switch (object.type) {
-            default:
-                if (typeof object.type === "number") {
-                    message.type = object.type;
-                    break;
-                }
-                break;
-            case "UNNUMBERED":
-            case 0:
-                message.type = 0;
-                break;
-            case "NUMERIC":
-            case 1:
-                message.type = 1;
-                break;
-            case "IMAGE":
-            case 2:
-                message.type = 2;
+        switch (object.type) {
+        default:
+            if (typeof object.type === "number") {
+                message.type = object.type;
                 break;
             }
+            break;
+        case "UNNUMBERED":
+        case 0:
+            message.type = 0;
+            break;
+        case "NUMERIC":
+        case 1:
+            message.type = 1;
+            break;
+        case "IMAGE":
+        case 2:
+            message.type = 2;
+            break;
+        }
         if (object.level != null)
             if (Number(object.level) !== 0)
                 message.level = object.level | 0;
@@ -14265,8 +14277,7 @@ $root.ProtoListLevelSetting = (function() {
                 break;
             }
         if (object.character != null)
-            if (typeof object.character !== "string" || object.character.length)
-                message.character = String(object.character);
+            message.character = String(object.character);
         return message;
     };
 
@@ -14301,6 +14312,7 @@ $root.ProtoListLevelSetting = (function() {
             object.italic = null;
             object.numberType = options.enums === String ? "ARABIC" : 0;
             object.character = "";
+            object.doctypeCode = "";
         }
         if (message.listSettingName != null && message.hasOwnProperty("listSettingName"))
             object.listSettingName = message.listSettingName;
@@ -14336,6 +14348,8 @@ $root.ProtoListLevelSetting = (function() {
             object.numberType = options.enums === String ? $root.ProtoNumberType[message.numberType] === undefined ? message.numberType : $root.ProtoNumberType[message.numberType] : message.numberType;
         if (message.character != null && message.hasOwnProperty("character"))
             object.character = message.character;
+        if (message.doctypeCode != null && message.hasOwnProperty("doctypeCode"))
+            object.doctypeCode = message.doctypeCode;
         return object;
     };
 
@@ -14750,6 +14764,7 @@ $root.ProtoImageListLevelSetting = (function() {
             case 0:
             case 1:
             case 2:
+            case 3:
                 break;
             }
         if (message.level != null && message.hasOwnProperty("level"))
@@ -14810,27 +14825,26 @@ $root.ProtoImageListLevelSetting = (function() {
                 throw TypeError(".ProtoImageListLevelSetting.fontSize: object expected");
             message.fontSize = $root.ProtoBoxedUint32.fromObject(object.fontSize, _depth + 1);
         }
-        if (object.type !== 0 && (typeof object.type !== "string" || $root.ProtoListLevelSettingType[object.type] !== 0))
-            switch (object.type) {
-            default:
-                if (typeof object.type === "number") {
-                    message.type = object.type;
-                    break;
-                }
-                break;
-            case "UNNUMBERED":
-            case 0:
-                message.type = 0;
-                break;
-            case "NUMERIC":
-            case 1:
-                message.type = 1;
-                break;
-            case "IMAGE":
-            case 2:
-                message.type = 2;
+        switch (object.type) {
+        default:
+            if (typeof object.type === "number") {
+                message.type = object.type;
                 break;
             }
+            break;
+        case "UNNUMBERED":
+        case 0:
+            message.type = 0;
+            break;
+        case "NUMERIC":
+        case 1:
+            message.type = 1;
+            break;
+        case "IMAGE":
+        case 2:
+            message.type = 2;
+            break;
+        }
         if (object.level != null)
             if (Number(object.level) !== 0)
                 message.level = object.level | 0;
@@ -15361,6 +15375,7 @@ $root.ProtoTextListLevelSetting = (function() {
             case 0:
             case 1:
             case 2:
+            case 3:
                 break;
             }
         if (message.level != null && message.hasOwnProperty("level"))
@@ -15433,27 +15448,26 @@ $root.ProtoTextListLevelSetting = (function() {
                 throw TypeError(".ProtoTextListLevelSetting.fontSize: object expected");
             message.fontSize = $root.ProtoBoxedUint32.fromObject(object.fontSize, _depth + 1);
         }
-        if (object.type !== 0 && (typeof object.type !== "string" || $root.ProtoListLevelSettingType[object.type] !== 0))
-            switch (object.type) {
-            default:
-                if (typeof object.type === "number") {
-                    message.type = object.type;
-                    break;
-                }
-                break;
-            case "UNNUMBERED":
-            case 0:
-                message.type = 0;
-                break;
-            case "NUMERIC":
-            case 1:
-                message.type = 1;
-                break;
-            case "IMAGE":
-            case 2:
-                message.type = 2;
+        switch (object.type) {
+        default:
+            if (typeof object.type === "number") {
+                message.type = object.type;
                 break;
             }
+            break;
+        case "UNNUMBERED":
+        case 0:
+            message.type = 0;
+            break;
+        case "NUMERIC":
+        case 1:
+            message.type = 1;
+            break;
+        case "IMAGE":
+        case 2:
+            message.type = 2;
+            break;
+        }
         if (object.level != null)
             if (Number(object.level) !== 0)
                 message.level = object.level | 0;
@@ -16022,6 +16036,7 @@ $root.ProtoNumberListLevelSetting = (function() {
             case 0:
             case 1:
             case 2:
+            case 3:
                 break;
             }
         if (message.level != null && message.hasOwnProperty("level"))
@@ -16105,27 +16120,26 @@ $root.ProtoNumberListLevelSetting = (function() {
                 throw TypeError(".ProtoNumberListLevelSetting.fontSize: object expected");
             message.fontSize = $root.ProtoBoxedUint32.fromObject(object.fontSize, _depth + 1);
         }
-        if (object.type !== 0 && (typeof object.type !== "string" || $root.ProtoListLevelSettingType[object.type] !== 0))
-            switch (object.type) {
-            default:
-                if (typeof object.type === "number") {
-                    message.type = object.type;
-                    break;
-                }
-                break;
-            case "UNNUMBERED":
-            case 0:
-                message.type = 0;
-                break;
-            case "NUMERIC":
-            case 1:
-                message.type = 1;
-                break;
-            case "IMAGE":
-            case 2:
-                message.type = 2;
+        switch (object.type) {
+        default:
+            if (typeof object.type === "number") {
+                message.type = object.type;
                 break;
             }
+            break;
+        case "UNNUMBERED":
+        case 0:
+            message.type = 0;
+            break;
+        case "NUMERIC":
+        case 1:
+            message.type = 1;
+            break;
+        case "IMAGE":
+        case 2:
+            message.type = 2;
+            break;
+        }
         if (object.level != null)
             if (Number(object.level) !== 0)
                 message.level = object.level | 0;
@@ -16726,6 +16740,7 @@ $root.ProtoUnnumberedListLevelSetting = (function() {
             case 0:
             case 1:
             case 2:
+            case 3:
                 break;
             }
         if (message.level != null && message.hasOwnProperty("level"))
@@ -16801,27 +16816,26 @@ $root.ProtoUnnumberedListLevelSetting = (function() {
                 throw TypeError(".ProtoUnnumberedListLevelSetting.fontSize: object expected");
             message.fontSize = $root.ProtoBoxedUint32.fromObject(object.fontSize, _depth + 1);
         }
-        if (object.type !== 0 && (typeof object.type !== "string" || $root.ProtoListLevelSettingType[object.type] !== 0))
-            switch (object.type) {
-            default:
-                if (typeof object.type === "number") {
-                    message.type = object.type;
-                    break;
-                }
-                break;
-            case "UNNUMBERED":
-            case 0:
-                message.type = 0;
-                break;
-            case "NUMERIC":
-            case 1:
-                message.type = 1;
-                break;
-            case "IMAGE":
-            case 2:
-                message.type = 2;
+        switch (object.type) {
+        default:
+            if (typeof object.type === "number") {
+                message.type = object.type;
                 break;
             }
+            break;
+        case "UNNUMBERED":
+        case 0:
+            message.type = 0;
+            break;
+        case "NUMERIC":
+        case 1:
+            message.type = 1;
+            break;
+        case "IMAGE":
+        case 2:
+            message.type = 2;
+            break;
+        }
         if (object.level != null)
             if (Number(object.level) !== 0)
                 message.level = object.level | 0;
@@ -16960,6 +16974,331 @@ $root.ProtoUnnumberedListLevelSetting = (function() {
     };
 
     return ProtoUnnumberedListLevelSetting;
+})();
+
+$root.protoCustomListLevelSetting = (function() {
+
+    /**
+     * Properties of a protoCustomListLevelSetting.
+     * @name IprotoCustomListLevelSetting
+     * @interface IprotoCustomListLevelSetting
+     * @property {string|null} [listSettingName] protoCustomListLevelSetting listSettingName
+     * @property {ProtoListLevelSettingType|null} [type] protoCustomListLevelSetting type
+     * @property {number|null} [level] protoCustomListLevelSetting level
+     * @property {number|null} [indentionWidth] protoCustomListLevelSetting indentionWidth
+     * @property {string|null} [doctypeCode] protoCustomListLevelSetting doctypeCode
+     */
+
+    /**
+     * Constructs a new protoCustomListLevelSetting.
+     * @name protoCustomListLevelSetting
+     * @classdesc Represents a protoCustomListLevelSetting.
+     * @implements IprotoCustomListLevelSetting
+     * @constructor
+     * @param {IprotoCustomListLevelSetting=} [properties] Properties to set
+     */
+    function protoCustomListLevelSetting(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * protoCustomListLevelSetting listSettingName.
+     * @member {string} listSettingName
+     * @memberof protoCustomListLevelSetting
+     * @instance
+     */
+    protoCustomListLevelSetting.prototype.listSettingName = "";
+
+    /**
+     * protoCustomListLevelSetting type.
+     * @member {ProtoListLevelSettingType} type
+     * @memberof protoCustomListLevelSetting
+     * @instance
+     */
+    protoCustomListLevelSetting.prototype.type = 0;
+
+    /**
+     * protoCustomListLevelSetting level.
+     * @member {number} level
+     * @memberof protoCustomListLevelSetting
+     * @instance
+     */
+    protoCustomListLevelSetting.prototype.level = 0;
+
+    /**
+     * protoCustomListLevelSetting indentionWidth.
+     * @member {number} indentionWidth
+     * @memberof protoCustomListLevelSetting
+     * @instance
+     */
+    protoCustomListLevelSetting.prototype.indentionWidth = 0;
+
+    /**
+     * protoCustomListLevelSetting doctypeCode.
+     * @member {string} doctypeCode
+     * @memberof protoCustomListLevelSetting
+     * @instance
+     */
+    protoCustomListLevelSetting.prototype.doctypeCode = "";
+
+    /**
+     * Creates a new protoCustomListLevelSetting instance using the specified properties.
+     * @function create
+     * @memberof protoCustomListLevelSetting
+     * @static
+     * @param {IprotoCustomListLevelSetting=} [properties] Properties to set
+     * @returns {protoCustomListLevelSetting} protoCustomListLevelSetting instance
+     */
+    protoCustomListLevelSetting.create = function create(properties) {
+        return new protoCustomListLevelSetting(properties);
+    };
+
+    /**
+     * Encodes the specified protoCustomListLevelSetting message. Does not implicitly {@link protoCustomListLevelSetting.verify|verify} messages.
+     * @function encode
+     * @memberof protoCustomListLevelSetting
+     * @static
+     * @param {IprotoCustomListLevelSetting} message protoCustomListLevelSetting message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    protoCustomListLevelSetting.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.listSettingName != null && Object.hasOwnProperty.call(message, "listSettingName"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.listSettingName);
+        if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+            writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
+        if (message.level != null && Object.hasOwnProperty.call(message, "level"))
+            writer.uint32(/* id 3, wireType 0 =*/24).int32(message.level);
+        if (message.indentionWidth != null && Object.hasOwnProperty.call(message, "indentionWidth"))
+            writer.uint32(/* id 4, wireType 0 =*/32).int32(message.indentionWidth);
+        if (message.doctypeCode != null && Object.hasOwnProperty.call(message, "doctypeCode"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.doctypeCode);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified protoCustomListLevelSetting message, length delimited. Does not implicitly {@link protoCustomListLevelSetting.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof protoCustomListLevelSetting
+     * @static
+     * @param {IprotoCustomListLevelSetting} message protoCustomListLevelSetting message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    protoCustomListLevelSetting.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a protoCustomListLevelSetting message from the specified reader or buffer.
+     * @function decode
+     * @memberof protoCustomListLevelSetting
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {protoCustomListLevelSetting} protoCustomListLevelSetting
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    protoCustomListLevelSetting.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.protoCustomListLevelSetting();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.listSettingName = reader.string();
+                    break;
+                }
+            case 2: {
+                    message.type = reader.int32();
+                    break;
+                }
+            case 3: {
+                    message.level = reader.int32();
+                    break;
+                }
+            case 4: {
+                    message.indentionWidth = reader.int32();
+                    break;
+                }
+            case 5: {
+                    message.doctypeCode = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a protoCustomListLevelSetting message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof protoCustomListLevelSetting
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {protoCustomListLevelSetting} protoCustomListLevelSetting
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    protoCustomListLevelSetting.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a protoCustomListLevelSetting message.
+     * @function verify
+     * @memberof protoCustomListLevelSetting
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    protoCustomListLevelSetting.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.listSettingName != null && message.hasOwnProperty("listSettingName"))
+            if (!$util.isString(message.listSettingName))
+                return "listSettingName: string expected";
+        if (message.type != null && message.hasOwnProperty("type"))
+            switch (message.type) {
+            default:
+                return "type: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                break;
+            }
+        if (message.level != null && message.hasOwnProperty("level"))
+            if (!$util.isInteger(message.level))
+                return "level: integer expected";
+        if (message.indentionWidth != null && message.hasOwnProperty("indentionWidth"))
+            if (!$util.isInteger(message.indentionWidth))
+                return "indentionWidth: integer expected";
+        if (message.doctypeCode != null && message.hasOwnProperty("doctypeCode"))
+            if (!$util.isString(message.doctypeCode))
+                return "doctypeCode: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a protoCustomListLevelSetting message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof protoCustomListLevelSetting
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {protoCustomListLevelSetting} protoCustomListLevelSetting
+     */
+    protoCustomListLevelSetting.fromObject = function fromObject(object) {
+        if (object instanceof $root.protoCustomListLevelSetting)
+            return object;
+        var message = new $root.protoCustomListLevelSetting();
+        if (object.listSettingName != null)
+            message.listSettingName = String(object.listSettingName);
+        switch (object.type) {
+        default:
+            if (typeof object.type === "number") {
+                message.type = object.type;
+                break;
+            }
+            break;
+        case "UNNUMBERED":
+        case 0:
+            message.type = 0;
+            break;
+        case "NUMERIC":
+        case 1:
+            message.type = 1;
+            break;
+        case "IMAGE":
+        case 2:
+            message.type = 2;
+            break;
+        case "CUSTOM":
+        case 3:
+            message.type = 3;
+            break;
+        }
+        if (object.level != null)
+            message.level = object.level | 0;
+        if (object.indentionWidth != null)
+            message.indentionWidth = object.indentionWidth | 0;
+        if (object.doctypeCode != null)
+            message.doctypeCode = String(object.doctypeCode);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a protoCustomListLevelSetting message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof protoCustomListLevelSetting
+     * @static
+     * @param {protoCustomListLevelSetting} message protoCustomListLevelSetting
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    protoCustomListLevelSetting.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.listSettingName = "";
+            object.type = options.enums === String ? "UNNUMBERED" : 0;
+            object.level = 0;
+            object.indentionWidth = 0;
+            object.doctypeCode = "";
+        }
+        if (message.listSettingName != null && message.hasOwnProperty("listSettingName"))
+            object.listSettingName = message.listSettingName;
+        if (message.type != null && message.hasOwnProperty("type"))
+            object.type = options.enums === String ? $root.ProtoListLevelSettingType[message.type] === undefined ? message.type : $root.ProtoListLevelSettingType[message.type] : message.type;
+        if (message.level != null && message.hasOwnProperty("level"))
+            object.level = message.level;
+        if (message.indentionWidth != null && message.hasOwnProperty("indentionWidth"))
+            object.indentionWidth = message.indentionWidth;
+        if (message.doctypeCode != null && message.hasOwnProperty("doctypeCode"))
+            object.doctypeCode = message.doctypeCode;
+        return object;
+    };
+
+    /**
+     * Converts this protoCustomListLevelSetting to JSON.
+     * @function toJSON
+     * @memberof protoCustomListLevelSetting
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    protoCustomListLevelSetting.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for protoCustomListLevelSetting
+     * @function getTypeUrl
+     * @memberof protoCustomListLevelSetting
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    protoCustomListLevelSetting.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/protoCustomListLevelSetting";
+    };
+
+    return protoCustomListLevelSetting;
 })();
 
 $root.ProtoListSetting = (function() {

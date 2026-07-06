@@ -395,6 +395,7 @@ enum ProtoListLevelSettingType {
 UNNUMBERED = 0;
 NUMERIC = 1;
 IMAGE = 2;
+CUSTOM = 3;
 }
 
 message ProtoListLevelSetting {
@@ -419,6 +420,8 @@ ProtoBoxedBool italic = 15;
 ProtoNumberType numberType = 16;
 
 string character = 17;
+
+string doctypeCode = 18;
 }
 
 message ProtoImageListLevelSetting {
@@ -491,6 +494,15 @@ ProtoBoxedBool bold = 13;
 ProtoBoxedBool italic = 14;
 
 string character = 15;
+}
+
+message protoCustomListLevelSetting {
+string listSettingName = 1;
+ProtoListLevelSettingType type = 2;
+int32 level = 3;
+int32 indentionWidth = 4;
+
+string doctypeCode = 5;
 }
 message ProtoListSetting {
 ProtoDocumentElement parent = 1;

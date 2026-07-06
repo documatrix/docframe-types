@@ -836,6 +836,7 @@ namespace Docframe {
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoTextListLevelSetting), global::Docframe.ProtoTextListLevelSetting.Parser, new[]{ "ListSettingName", "FontSize", "Type", "Level", "Prefix", "Suffix", "FixFontFamily", "FixBold", "FixItalic", "IndentionWidth", "Color", "FontFamily", "Bold", "Italic" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoNumberListLevelSetting), global::Docframe.ProtoNumberListLevelSetting.Parser, new[]{ "ListSettingName", "FontSize", "Type", "Level", "Prefix", "Suffix", "FixFontFamily", "FixBold", "FixItalic", "IndentionWidth", "Color", "FontFamily", "Bold", "Italic", "NumberType" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoUnnumberedListLevelSetting), global::Docframe.ProtoUnnumberedListLevelSetting.Parser, new[]{ "ListSettingName", "FontSize", "Type", "Level", "Prefix", "Suffix", "FixFontFamily", "FixBold", "FixItalic", "IndentionWidth", "Color", "FontFamily", "Bold", "Italic", "Character" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.protoCustomListLevelSetting), global::Docframe.protoCustomListLevelSetting.Parser, new[]{ "ListSettingName", "Type", "Level", "IndentionWidth", "DoctypeCode" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoListSetting), global::Docframe.ProtoListSetting.Parser, new[]{ "Parent", "Name", "ListLevelSettings", "DefaultListLevelSetting", "ComChannelUUIDs" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoBoxedListSetting), global::Docframe.ProtoBoxedListSetting.Parser, new[]{ "Value", "IsNull" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoNamedString), global::Docframe.ProtoNamedString.Parser, new[]{ "Children", "Parent", "Name", "ComChannelUUIDs", "Uuid", "Description", "NameCode", "CodeMode" }, null, null, null, null),
@@ -1067,6 +1068,7 @@ namespace Docframe {
     [pbr::OriginalName("UNNUMBERED")] Unnumbered = 0,
     [pbr::OriginalName("NUMERIC")] Numeric = 1,
     [pbr::OriginalName("IMAGE")] Image = 2,
+    [pbr::OriginalName("CUSTOM")] Custom = 3,
   }
 
   public enum ProtoTableContentGroupType {
@@ -13610,6 +13612,7 @@ namespace Docframe {
       italic_ = other.italic_ != null ? other.italic_.Clone() : null;
       numberType_ = other.numberType_;
       character_ = other.character_;
+      doctypeCode_ = other.doctypeCode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -13823,6 +13826,18 @@ namespace Docframe {
       }
     }
 
+    /// <summary>Field number for the "doctypeCode" field.</summary>
+    public const int DoctypeCodeFieldNumber = 18;
+    private string doctypeCode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DoctypeCode {
+      get { return doctypeCode_; }
+      set {
+        doctypeCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -13855,6 +13870,7 @@ namespace Docframe {
       if (!object.Equals(Italic, other.Italic)) return false;
       if (NumberType != other.NumberType) return false;
       if (Character != other.Character) return false;
+      if (DoctypeCode != other.DoctypeCode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -13879,6 +13895,7 @@ namespace Docframe {
       if (italic_ != null) hash ^= Italic.GetHashCode();
       if (NumberType != global::Docframe.ProtoNumberType.Arabic) hash ^= NumberType.GetHashCode();
       if (Character.Length != 0) hash ^= Character.GetHashCode();
+      if (DoctypeCode.Length != 0) hash ^= DoctypeCode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -13965,6 +13982,10 @@ namespace Docframe {
         output.WriteRawTag(138, 1);
         output.WriteString(Character);
       }
+      if (DoctypeCode.Length != 0) {
+        output.WriteRawTag(146, 1);
+        output.WriteString(DoctypeCode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -14043,6 +14064,10 @@ namespace Docframe {
         output.WriteRawTag(138, 1);
         output.WriteString(Character);
       }
+      if (DoctypeCode.Length != 0) {
+        output.WriteRawTag(146, 1);
+        output.WriteString(DoctypeCode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -14103,6 +14128,9 @@ namespace Docframe {
       }
       if (Character.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(Character);
+      }
+      if (DoctypeCode.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(DoctypeCode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -14184,6 +14212,9 @@ namespace Docframe {
       }
       if (other.Character.Length != 0) {
         Character = other.Character;
+      }
+      if (other.DoctypeCode.Length != 0) {
+        DoctypeCode = other.DoctypeCode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -14290,6 +14321,10 @@ namespace Docframe {
             Character = input.ReadString();
             break;
           }
+          case 146: {
+            DoctypeCode = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -14393,6 +14428,10 @@ namespace Docframe {
           }
           case 138: {
             Character = input.ReadString();
+            break;
+          }
+          case 146: {
+            DoctypeCode = input.ReadString();
             break;
           }
         }
@@ -17308,6 +17347,352 @@ namespace Docframe {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class protoCustomListLevelSetting : pb::IMessage<protoCustomListLevelSetting>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<protoCustomListLevelSetting> _parser = new pb::MessageParser<protoCustomListLevelSetting>(() => new protoCustomListLevelSetting());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<protoCustomListLevelSetting> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[45]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public protoCustomListLevelSetting() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public protoCustomListLevelSetting(protoCustomListLevelSetting other) : this() {
+      listSettingName_ = other.listSettingName_;
+      type_ = other.type_;
+      level_ = other.level_;
+      indentionWidth_ = other.indentionWidth_;
+      doctypeCode_ = other.doctypeCode_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public protoCustomListLevelSetting Clone() {
+      return new protoCustomListLevelSetting(this);
+    }
+
+    /// <summary>Field number for the "listSettingName" field.</summary>
+    public const int ListSettingNameFieldNumber = 1;
+    private string listSettingName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ListSettingName {
+      get { return listSettingName_; }
+      set {
+        listSettingName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 2;
+    private global::Docframe.ProtoListLevelSettingType type_ = global::Docframe.ProtoListLevelSettingType.Unnumbered;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Docframe.ProtoListLevelSettingType Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 3;
+    private int level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "indentionWidth" field.</summary>
+    public const int IndentionWidthFieldNumber = 4;
+    private int indentionWidth_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int IndentionWidth {
+      get { return indentionWidth_; }
+      set {
+        indentionWidth_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "doctypeCode" field.</summary>
+    public const int DoctypeCodeFieldNumber = 5;
+    private string doctypeCode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DoctypeCode {
+      get { return doctypeCode_; }
+      set {
+        doctypeCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as protoCustomListLevelSetting);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(protoCustomListLevelSetting other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ListSettingName != other.ListSettingName) return false;
+      if (Type != other.Type) return false;
+      if (Level != other.Level) return false;
+      if (IndentionWidth != other.IndentionWidth) return false;
+      if (DoctypeCode != other.DoctypeCode) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ListSettingName.Length != 0) hash ^= ListSettingName.GetHashCode();
+      if (Type != global::Docframe.ProtoListLevelSettingType.Unnumbered) hash ^= Type.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (IndentionWidth != 0) hash ^= IndentionWidth.GetHashCode();
+      if (DoctypeCode.Length != 0) hash ^= DoctypeCode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ListSettingName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ListSettingName);
+      }
+      if (Type != global::Docframe.ProtoListLevelSettingType.Unnumbered) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Type);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Level);
+      }
+      if (IndentionWidth != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(IndentionWidth);
+      }
+      if (DoctypeCode.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(DoctypeCode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ListSettingName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ListSettingName);
+      }
+      if (Type != global::Docframe.ProtoListLevelSettingType.Unnumbered) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Type);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Level);
+      }
+      if (IndentionWidth != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(IndentionWidth);
+      }
+      if (DoctypeCode.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(DoctypeCode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ListSettingName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ListSettingName);
+      }
+      if (Type != global::Docframe.ProtoListLevelSettingType.Unnumbered) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
+      }
+      if (IndentionWidth != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IndentionWidth);
+      }
+      if (DoctypeCode.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DoctypeCode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(protoCustomListLevelSetting other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ListSettingName.Length != 0) {
+        ListSettingName = other.ListSettingName;
+      }
+      if (other.Type != global::Docframe.ProtoListLevelSettingType.Unnumbered) {
+        Type = other.Type;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      if (other.IndentionWidth != 0) {
+        IndentionWidth = other.IndentionWidth;
+      }
+      if (other.DoctypeCode.Length != 0) {
+        DoctypeCode = other.DoctypeCode;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            ListSettingName = input.ReadString();
+            break;
+          }
+          case 16: {
+            Type = (global::Docframe.ProtoListLevelSettingType) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            Level = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            IndentionWidth = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            DoctypeCode = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            ListSettingName = input.ReadString();
+            break;
+          }
+          case 16: {
+            Type = (global::Docframe.ProtoListLevelSettingType) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            Level = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            IndentionWidth = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            DoctypeCode = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoListSetting : pb::IMessage<ProtoListSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -17322,7 +17707,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[45]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[46]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17664,7 +18049,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[46]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[47]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17908,7 +18293,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[47]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[48]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18352,7 +18737,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[48]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[49]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18777,7 +19162,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[49]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[50]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -20252,7 +20637,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[50]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[51]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -20585,7 +20970,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[51]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[52]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -20864,7 +21249,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[52]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[53]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -21445,7 +21830,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[53]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[54]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -21962,7 +22347,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[54]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[55]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -22278,7 +22663,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[55]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[56]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -22761,7 +23146,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[56]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[57]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -22996,7 +23381,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[57]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[58]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23384,7 +23769,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[58]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[59]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23700,7 +24085,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[59]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[60]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23979,7 +24364,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[60]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[61]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -24413,7 +24798,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[61]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[62]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -24803,7 +25188,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[62]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[63]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -25056,7 +25441,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[63]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[64]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -25291,7 +25676,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[64]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[65]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -25799,7 +26184,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[65]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[66]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -26161,7 +26546,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[66]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[67]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -26736,7 +27121,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[67]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[68]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -27008,7 +27393,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[68]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[69]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -30869,7 +31254,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[69]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[70]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -31139,7 +31524,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[70]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[71]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -31972,7 +32357,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[71]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[72]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -32233,7 +32618,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[72]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[73]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -32677,7 +33062,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[73]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[74]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -33084,7 +33469,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[74]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[75]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -33417,7 +33802,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[75]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[76]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -33750,7 +34135,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[76]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[77]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -37515,7 +37900,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[77]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[78]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -38735,7 +39120,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[78]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[79]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -39142,7 +39527,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[79]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[80]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -39549,7 +39934,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[80]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[81]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -39970,7 +40355,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[81]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[82]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -40462,7 +40847,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[82]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[83]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -40686,7 +41071,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[83]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[84]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -40910,7 +41295,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[84]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[85]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -41134,7 +41519,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[85]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[86]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -41358,7 +41743,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[86]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[87]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -41720,7 +42105,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[87]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[88]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -42036,7 +42421,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[88]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[89]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -42444,7 +42829,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[89]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[90]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -42705,7 +43090,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[90]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[91]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -43188,7 +43573,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[91]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[92]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -43576,7 +43961,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[92]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[93]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -43835,7 +44220,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[93]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[94]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -44205,7 +44590,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[94]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[95]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -44538,7 +44923,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[95]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[96]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -44917,7 +45302,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[96]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[97]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -45176,7 +45561,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[97]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[98]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -45750,7 +46135,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[98]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[99]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -46003,7 +46388,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[99]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[100]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -46236,7 +46621,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[100]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[101]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -46506,7 +46891,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[101]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[102]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -47134,7 +47519,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[102]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[103]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -47485,7 +47870,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[103]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[104]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -47829,7 +48214,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[104]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[105]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -48136,7 +48521,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[105]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[106]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -48443,7 +48828,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[106]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[107]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -48924,7 +49309,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[107]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[108]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -49331,7 +49716,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[108]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[109]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -49738,7 +50123,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[109]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[110]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -50071,7 +50456,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[110]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[111]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -50419,7 +50804,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[111]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[112]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -50826,7 +51211,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[112]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[113]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -51170,7 +51555,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[113]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[114]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -51839,7 +52224,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[114]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[115]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -52092,7 +52477,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[115]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[116]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -52345,7 +52730,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[116]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[117]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -52598,7 +52983,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[117]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[118]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -52851,7 +53236,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[118]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[119]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
