@@ -10,6 +10,7 @@ enum ProtoListLevelSettingType {
   UNNUMBERED = 0;
   NUMERIC = 1;
   IMAGE = 2;
+  CUSTOM = 3;
 }
 
 // go-gen:ignore
@@ -35,6 +36,8 @@ message ProtoListLevelSetting {
   ProtoNumberType numberType = 16;
 
   string character = 17;
+
+  string doctypeCode = 18;
 }
 
 // go-gen:ignore
@@ -119,4 +122,14 @@ message ProtoUnnumberedListLevelSetting {
   // extends TextListLevelSetting
 
   string character = 15;
+}
+
+// go-gen:ignore
+message ProtoCustomListLevelSetting {
+  string listSettingName = 1;
+  ProtoListLevelSettingType type = 2;
+  int32 level = 3;
+  int32 indentionWidth = 4;
+
+  string doctypeCode = 5;
 }
