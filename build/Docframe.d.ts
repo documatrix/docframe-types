@@ -5597,121 +5597,121 @@ export class ProtoUnnumberedListLevelSetting implements IProtoUnnumberedListLeve
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-/** Properties of a protoCustomListLevelSetting. */
-export interface IprotoCustomListLevelSetting {
+/** Properties of a ProtoCustomListLevelSetting. */
+export interface IProtoCustomListLevelSetting {
 
-    /** protoCustomListLevelSetting listSettingName */
+    /** ProtoCustomListLevelSetting listSettingName */
     listSettingName?: (string|null);
 
-    /** protoCustomListLevelSetting type */
+    /** ProtoCustomListLevelSetting type */
     type?: (ProtoListLevelSettingType|null);
 
-    /** protoCustomListLevelSetting level */
+    /** ProtoCustomListLevelSetting level */
     level?: (number|null);
 
-    /** protoCustomListLevelSetting indentionWidth */
+    /** ProtoCustomListLevelSetting indentionWidth */
     indentionWidth?: (number|null);
 
-    /** protoCustomListLevelSetting doctypeCode */
+    /** ProtoCustomListLevelSetting doctypeCode */
     doctypeCode?: (string|null);
 }
 
-/** Represents a protoCustomListLevelSetting. */
-export class protoCustomListLevelSetting implements IprotoCustomListLevelSetting {
+/** Represents a ProtoCustomListLevelSetting. */
+export class ProtoCustomListLevelSetting implements IProtoCustomListLevelSetting {
 
     /**
-     * Constructs a new protoCustomListLevelSetting.
+     * Constructs a new ProtoCustomListLevelSetting.
      * @param [properties] Properties to set
      */
-    constructor(properties?: IprotoCustomListLevelSetting);
+    constructor(properties?: IProtoCustomListLevelSetting);
 
-    /** protoCustomListLevelSetting listSettingName. */
+    /** ProtoCustomListLevelSetting listSettingName. */
     public listSettingName: string;
 
-    /** protoCustomListLevelSetting type. */
+    /** ProtoCustomListLevelSetting type. */
     public type: ProtoListLevelSettingType;
 
-    /** protoCustomListLevelSetting level. */
+    /** ProtoCustomListLevelSetting level. */
     public level: number;
 
-    /** protoCustomListLevelSetting indentionWidth. */
+    /** ProtoCustomListLevelSetting indentionWidth. */
     public indentionWidth: number;
 
-    /** protoCustomListLevelSetting doctypeCode. */
+    /** ProtoCustomListLevelSetting doctypeCode. */
     public doctypeCode: string;
 
     /**
-     * Creates a new protoCustomListLevelSetting instance using the specified properties.
+     * Creates a new ProtoCustomListLevelSetting instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns protoCustomListLevelSetting instance
+     * @returns ProtoCustomListLevelSetting instance
      */
-    public static create(properties?: IprotoCustomListLevelSetting): protoCustomListLevelSetting;
+    public static create(properties?: IProtoCustomListLevelSetting): ProtoCustomListLevelSetting;
 
     /**
-     * Encodes the specified protoCustomListLevelSetting message. Does not implicitly {@link protoCustomListLevelSetting.verify|verify} messages.
-     * @param message protoCustomListLevelSetting message or plain object to encode
+     * Encodes the specified ProtoCustomListLevelSetting message. Does not implicitly {@link ProtoCustomListLevelSetting.verify|verify} messages.
+     * @param message ProtoCustomListLevelSetting message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: IprotoCustomListLevelSetting, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IProtoCustomListLevelSetting, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified protoCustomListLevelSetting message, length delimited. Does not implicitly {@link protoCustomListLevelSetting.verify|verify} messages.
-     * @param message protoCustomListLevelSetting message or plain object to encode
+     * Encodes the specified ProtoCustomListLevelSetting message, length delimited. Does not implicitly {@link ProtoCustomListLevelSetting.verify|verify} messages.
+     * @param message ProtoCustomListLevelSetting message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: IprotoCustomListLevelSetting, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IProtoCustomListLevelSetting, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a protoCustomListLevelSetting message from the specified reader or buffer.
+     * Decodes a ProtoCustomListLevelSetting message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns protoCustomListLevelSetting
+     * @returns ProtoCustomListLevelSetting
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): protoCustomListLevelSetting;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoCustomListLevelSetting;
 
     /**
-     * Decodes a protoCustomListLevelSetting message from the specified reader or buffer, length delimited.
+     * Decodes a ProtoCustomListLevelSetting message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns protoCustomListLevelSetting
+     * @returns ProtoCustomListLevelSetting
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): protoCustomListLevelSetting;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoCustomListLevelSetting;
 
     /**
-     * Verifies a protoCustomListLevelSetting message.
+     * Verifies a ProtoCustomListLevelSetting message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a protoCustomListLevelSetting message from a plain object. Also converts values to their respective internal types.
+     * Creates a ProtoCustomListLevelSetting message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns protoCustomListLevelSetting
+     * @returns ProtoCustomListLevelSetting
      */
-    public static fromObject(object: { [k: string]: any }): protoCustomListLevelSetting;
+    public static fromObject(object: { [k: string]: any }): ProtoCustomListLevelSetting;
 
     /**
-     * Creates a plain object from a protoCustomListLevelSetting message. Also converts values to other types if specified.
-     * @param message protoCustomListLevelSetting
+     * Creates a plain object from a ProtoCustomListLevelSetting message. Also converts values to other types if specified.
+     * @param message ProtoCustomListLevelSetting
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: protoCustomListLevelSetting, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: ProtoCustomListLevelSetting, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this protoCustomListLevelSetting to JSON.
+     * Converts this ProtoCustomListLevelSetting to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for protoCustomListLevelSetting
+     * Gets the default type url for ProtoCustomListLevelSetting
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */

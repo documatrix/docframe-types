@@ -14917,28 +14917,28 @@ $root.ProtoUnnumberedListLevelSetting = (function() {
     return ProtoUnnumberedListLevelSetting;
 })();
 
-$root.protoCustomListLevelSetting = (function() {
+$root.ProtoCustomListLevelSetting = (function() {
 
     /**
-     * Properties of a protoCustomListLevelSetting.
-     * @name IprotoCustomListLevelSetting
-     * @interface IprotoCustomListLevelSetting
-     * @property {string|null} [listSettingName] protoCustomListLevelSetting listSettingName
-     * @property {ProtoListLevelSettingType|null} [type] protoCustomListLevelSetting type
-     * @property {number|null} [level] protoCustomListLevelSetting level
-     * @property {number|null} [indentionWidth] protoCustomListLevelSetting indentionWidth
-     * @property {string|null} [doctypeCode] protoCustomListLevelSetting doctypeCode
+     * Properties of a ProtoCustomListLevelSetting.
+     * @name IProtoCustomListLevelSetting
+     * @interface IProtoCustomListLevelSetting
+     * @property {string|null} [listSettingName] ProtoCustomListLevelSetting listSettingName
+     * @property {ProtoListLevelSettingType|null} [type] ProtoCustomListLevelSetting type
+     * @property {number|null} [level] ProtoCustomListLevelSetting level
+     * @property {number|null} [indentionWidth] ProtoCustomListLevelSetting indentionWidth
+     * @property {string|null} [doctypeCode] ProtoCustomListLevelSetting doctypeCode
      */
 
     /**
-     * Constructs a new protoCustomListLevelSetting.
-     * @name protoCustomListLevelSetting
-     * @classdesc Represents a protoCustomListLevelSetting.
-     * @implements IprotoCustomListLevelSetting
+     * Constructs a new ProtoCustomListLevelSetting.
+     * @name ProtoCustomListLevelSetting
+     * @classdesc Represents a ProtoCustomListLevelSetting.
+     * @implements IProtoCustomListLevelSetting
      * @constructor
-     * @param {IprotoCustomListLevelSetting=} [properties] Properties to set
+     * @param {IProtoCustomListLevelSetting=} [properties] Properties to set
      */
-    function protoCustomListLevelSetting(properties) {
+    function ProtoCustomListLevelSetting(properties) {
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -14946,67 +14946,67 @@ $root.protoCustomListLevelSetting = (function() {
     }
 
     /**
-     * protoCustomListLevelSetting listSettingName.
+     * ProtoCustomListLevelSetting listSettingName.
      * @member {string} listSettingName
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @instance
      */
-    protoCustomListLevelSetting.prototype.listSettingName = "";
+    ProtoCustomListLevelSetting.prototype.listSettingName = "";
 
     /**
-     * protoCustomListLevelSetting type.
+     * ProtoCustomListLevelSetting type.
      * @member {ProtoListLevelSettingType} type
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @instance
      */
-    protoCustomListLevelSetting.prototype.type = 0;
+    ProtoCustomListLevelSetting.prototype.type = 0;
 
     /**
-     * protoCustomListLevelSetting level.
+     * ProtoCustomListLevelSetting level.
      * @member {number} level
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @instance
      */
-    protoCustomListLevelSetting.prototype.level = 0;
+    ProtoCustomListLevelSetting.prototype.level = 0;
 
     /**
-     * protoCustomListLevelSetting indentionWidth.
+     * ProtoCustomListLevelSetting indentionWidth.
      * @member {number} indentionWidth
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @instance
      */
-    protoCustomListLevelSetting.prototype.indentionWidth = 0;
+    ProtoCustomListLevelSetting.prototype.indentionWidth = 0;
 
     /**
-     * protoCustomListLevelSetting doctypeCode.
+     * ProtoCustomListLevelSetting doctypeCode.
      * @member {string} doctypeCode
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @instance
      */
-    protoCustomListLevelSetting.prototype.doctypeCode = "";
+    ProtoCustomListLevelSetting.prototype.doctypeCode = "";
 
     /**
-     * Creates a new protoCustomListLevelSetting instance using the specified properties.
+     * Creates a new ProtoCustomListLevelSetting instance using the specified properties.
      * @function create
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @static
-     * @param {IprotoCustomListLevelSetting=} [properties] Properties to set
-     * @returns {protoCustomListLevelSetting} protoCustomListLevelSetting instance
+     * @param {IProtoCustomListLevelSetting=} [properties] Properties to set
+     * @returns {ProtoCustomListLevelSetting} ProtoCustomListLevelSetting instance
      */
-    protoCustomListLevelSetting.create = function create(properties) {
-        return new protoCustomListLevelSetting(properties);
+    ProtoCustomListLevelSetting.create = function create(properties) {
+        return new ProtoCustomListLevelSetting(properties);
     };
 
     /**
-     * Encodes the specified protoCustomListLevelSetting message. Does not implicitly {@link protoCustomListLevelSetting.verify|verify} messages.
+     * Encodes the specified ProtoCustomListLevelSetting message. Does not implicitly {@link ProtoCustomListLevelSetting.verify|verify} messages.
      * @function encode
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @static
-     * @param {IprotoCustomListLevelSetting} message protoCustomListLevelSetting message or plain object to encode
+     * @param {IProtoCustomListLevelSetting} message ProtoCustomListLevelSetting message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    protoCustomListLevelSetting.encode = function encode(message, writer) {
+    ProtoCustomListLevelSetting.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
         if (message.listSettingName != null && Object.hasOwnProperty.call(message, "listSettingName"))
@@ -15023,33 +15023,33 @@ $root.protoCustomListLevelSetting = (function() {
     };
 
     /**
-     * Encodes the specified protoCustomListLevelSetting message, length delimited. Does not implicitly {@link protoCustomListLevelSetting.verify|verify} messages.
+     * Encodes the specified ProtoCustomListLevelSetting message, length delimited. Does not implicitly {@link ProtoCustomListLevelSetting.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @static
-     * @param {IprotoCustomListLevelSetting} message protoCustomListLevelSetting message or plain object to encode
+     * @param {IProtoCustomListLevelSetting} message ProtoCustomListLevelSetting message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    protoCustomListLevelSetting.encodeDelimited = function encodeDelimited(message, writer) {
+    ProtoCustomListLevelSetting.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a protoCustomListLevelSetting message from the specified reader or buffer.
+     * Decodes a ProtoCustomListLevelSetting message from the specified reader or buffer.
      * @function decode
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {protoCustomListLevelSetting} protoCustomListLevelSetting
+     * @returns {ProtoCustomListLevelSetting} ProtoCustomListLevelSetting
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    protoCustomListLevelSetting.decode = function decode(reader, length) {
+    ProtoCustomListLevelSetting.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.protoCustomListLevelSetting();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoCustomListLevelSetting();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -15082,30 +15082,30 @@ $root.protoCustomListLevelSetting = (function() {
     };
 
     /**
-     * Decodes a protoCustomListLevelSetting message from the specified reader or buffer, length delimited.
+     * Decodes a ProtoCustomListLevelSetting message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {protoCustomListLevelSetting} protoCustomListLevelSetting
+     * @returns {ProtoCustomListLevelSetting} ProtoCustomListLevelSetting
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    protoCustomListLevelSetting.decodeDelimited = function decodeDelimited(reader) {
+    ProtoCustomListLevelSetting.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a protoCustomListLevelSetting message.
+     * Verifies a ProtoCustomListLevelSetting message.
      * @function verify
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    protoCustomListLevelSetting.verify = function verify(message) {
+    ProtoCustomListLevelSetting.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
         if (message.listSettingName != null && message.hasOwnProperty("listSettingName"))
@@ -15134,17 +15134,17 @@ $root.protoCustomListLevelSetting = (function() {
     };
 
     /**
-     * Creates a protoCustomListLevelSetting message from a plain object. Also converts values to their respective internal types.
+     * Creates a ProtoCustomListLevelSetting message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {protoCustomListLevelSetting} protoCustomListLevelSetting
+     * @returns {ProtoCustomListLevelSetting} ProtoCustomListLevelSetting
      */
-    protoCustomListLevelSetting.fromObject = function fromObject(object) {
-        if (object instanceof $root.protoCustomListLevelSetting)
+    ProtoCustomListLevelSetting.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoCustomListLevelSetting)
             return object;
-        var message = new $root.protoCustomListLevelSetting();
+        var message = new $root.ProtoCustomListLevelSetting();
         if (object.listSettingName != null)
             message.listSettingName = String(object.listSettingName);
         switch (object.type) {
@@ -15181,15 +15181,15 @@ $root.protoCustomListLevelSetting = (function() {
     };
 
     /**
-     * Creates a plain object from a protoCustomListLevelSetting message. Also converts values to other types if specified.
+     * Creates a plain object from a ProtoCustomListLevelSetting message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @static
-     * @param {protoCustomListLevelSetting} message protoCustomListLevelSetting
+     * @param {ProtoCustomListLevelSetting} message ProtoCustomListLevelSetting
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    protoCustomListLevelSetting.toObject = function toObject(message, options) {
+    ProtoCustomListLevelSetting.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
@@ -15214,32 +15214,32 @@ $root.protoCustomListLevelSetting = (function() {
     };
 
     /**
-     * Converts this protoCustomListLevelSetting to JSON.
+     * Converts this ProtoCustomListLevelSetting to JSON.
      * @function toJSON
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    protoCustomListLevelSetting.prototype.toJSON = function toJSON() {
+    ProtoCustomListLevelSetting.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
     /**
-     * Gets the default type url for protoCustomListLevelSetting
+     * Gets the default type url for ProtoCustomListLevelSetting
      * @function getTypeUrl
-     * @memberof protoCustomListLevelSetting
+     * @memberof ProtoCustomListLevelSetting
      * @static
      * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns {string} The default type url
      */
-    protoCustomListLevelSetting.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+    ProtoCustomListLevelSetting.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
         if (typeUrlPrefix === undefined) {
             typeUrlPrefix = "type.googleapis.com";
         }
-        return typeUrlPrefix + "/protoCustomListLevelSetting";
+        return typeUrlPrefix + "/ProtoCustomListLevelSetting";
     };
 
-    return protoCustomListLevelSetting;
+    return ProtoCustomListLevelSetting;
 })();
 
 $root.ProtoListSetting = (function() {

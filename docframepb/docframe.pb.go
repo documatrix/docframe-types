@@ -14017,7 +14017,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x04bold\x18\r \x01(\v2\x0f.ProtoBoxedBoolR\x04bold\x12'\n" +
 	"\x06italic\x18\x0e \x01(\v2\x0f.ProtoBoxedBoolR\x06italic\x12\x1c\n" +
 	"\tcharacter\x18\x0f \x01(\tR\tcharacter\"\xd7\x01\n" +
-	"\x1bprotoCustomListLevelSetting\x12(\n" +
+	"\x1bProtoCustomListLevelSetting\x12(\n" +
 	"\x0flistSettingName\x18\x01 \x01(\tR\x0flistSettingName\x12.\n" +
 	"\x04type\x18\x02 \x01(\x0e2\x1a.ProtoListLevelSettingTypeR\x04type\x12\x14\n" +
 	"\x05level\x18\x03 \x01(\x05R\x05level\x12&\n" +
@@ -15140,7 +15140,7 @@ var file_build_docframe_proto_goTypes = []any{
 	(*ProtoTextListLevelSetting)(nil),                      // 74: ProtoTextListLevelSetting
 	(*ProtoNumberListLevelSetting)(nil),                    // 75: ProtoNumberListLevelSetting
 	(*ProtoUnnumberedListLevelSetting)(nil),                // 76: ProtoUnnumberedListLevelSetting
-	(*ProtoCustomListLevelSetting)(nil),                    // 77: protoCustomListLevelSetting
+	(*ProtoCustomListLevelSetting)(nil),                    // 77: ProtoCustomListLevelSetting
 	(*ProtoListSetting)(nil),                               // 78: ProtoListSetting
 	(*ProtoBoxedListSetting)(nil),                          // 79: ProtoBoxedListSetting
 	(*ProtoNamedString)(nil),                               // 80: ProtoNamedString
@@ -15318,7 +15318,7 @@ var file_build_docframe_proto_depIdxs = []int32{
 	45,  // 94: ProtoUnnumberedListLevelSetting.fontFamily:type_name -> ProtoFont
 	32,  // 95: ProtoUnnumberedListLevelSetting.bold:type_name -> ProtoBoxedBool
 	32,  // 96: ProtoUnnumberedListLevelSetting.italic:type_name -> ProtoBoxedBool
-	16,  // 97: protoCustomListLevelSetting.type:type_name -> ProtoListLevelSettingType
+	16,  // 97: ProtoCustomListLevelSetting.type:type_name -> ProtoListLevelSettingType
 	69,  // 98: ProtoListSetting.parent:type_name -> ProtoDocumentElement
 	72,  // 99: ProtoListSetting.listLevelSettings:type_name -> ProtoListLevelSetting
 	72,  // 100: ProtoListSetting.defaultListLevelSetting:type_name -> ProtoListLevelSetting

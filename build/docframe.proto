@@ -496,7 +496,7 @@ ProtoBoxedBool italic = 14;
 string character = 15;
 }
 
-message protoCustomListLevelSetting {
+message ProtoCustomListLevelSetting {
 string listSettingName = 1;
 ProtoListLevelSettingType type = 2;
 int32 level = 3;

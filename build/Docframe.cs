@@ -175,7 +175,7 @@ namespace Docframe {
             "EhoKBWNvbG9yGAsgASgLMgsuUHJvdG9Db2xvchIeCgpmb250RmFtaWx5GAwg",
             "ASgLMgouUHJvdG9Gb250Eh0KBGJvbGQYDSABKAsyDy5Qcm90b0JveGVkQm9v",
             "bBIfCgZpdGFsaWMYDiABKAsyDy5Qcm90b0JveGVkQm9vbBIRCgljaGFyYWN0",
-            "ZXIYDyABKAkinAEKG3Byb3RvQ3VzdG9tTGlzdExldmVsU2V0dGluZxIXCg9s",
+            "ZXIYDyABKAkinAEKG1Byb3RvQ3VzdG9tTGlzdExldmVsU2V0dGluZxIXCg9s",
             "aXN0U2V0dGluZ05hbWUYASABKAkSKAoEdHlwZRgCIAEoDjIaLlByb3RvTGlz",
             "dExldmVsU2V0dGluZ1R5cGUSDQoFbGV2ZWwYAyABKAUSFgoOaW5kZW50aW9u",
             "V2lkdGgYBCABKAUSEwoLZG9jdHlwZUNvZGUYBSABKAkizAEKEFByb3RvTGlz",
@@ -840,7 +840,7 @@ namespace Docframe {
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoTextListLevelSetting), global::Docframe.ProtoTextListLevelSetting.Parser, new[]{ "ListSettingName", "FontSize", "Type", "Level", "Prefix", "Suffix", "FixFontFamily", "FixBold", "FixItalic", "IndentionWidth", "Color", "FontFamily", "Bold", "Italic" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoNumberListLevelSetting), global::Docframe.ProtoNumberListLevelSetting.Parser, new[]{ "ListSettingName", "FontSize", "Type", "Level", "Prefix", "Suffix", "FixFontFamily", "FixBold", "FixItalic", "IndentionWidth", "Color", "FontFamily", "Bold", "Italic", "NumberType" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoUnnumberedListLevelSetting), global::Docframe.ProtoUnnumberedListLevelSetting.Parser, new[]{ "ListSettingName", "FontSize", "Type", "Level", "Prefix", "Suffix", "FixFontFamily", "FixBold", "FixItalic", "IndentionWidth", "Color", "FontFamily", "Bold", "Italic", "Character" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.protoCustomListLevelSetting), global::Docframe.protoCustomListLevelSetting.Parser, new[]{ "ListSettingName", "Type", "Level", "IndentionWidth", "DoctypeCode" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoCustomListLevelSetting), global::Docframe.ProtoCustomListLevelSetting.Parser, new[]{ "ListSettingName", "Type", "Level", "IndentionWidth", "DoctypeCode" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoListSetting), global::Docframe.ProtoListSetting.Parser, new[]{ "Parent", "Name", "ListLevelSettings", "DefaultListLevelSetting", "ComChannelUUIDs" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoBoxedListSetting), global::Docframe.ProtoBoxedListSetting.Parser, new[]{ "Value", "IsNull" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoNamedString), global::Docframe.ProtoNamedString.Parser, new[]{ "Children", "Parent", "Name", "ComChannelUUIDs", "Uuid", "Description", "NameCode", "CodeMode" }, null, null, null, null),
@@ -17351,16 +17351,16 @@ namespace Docframe {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class protoCustomListLevelSetting : pb::IMessage<protoCustomListLevelSetting>
+  public sealed partial class ProtoCustomListLevelSetting : pb::IMessage<ProtoCustomListLevelSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<protoCustomListLevelSetting> _parser = new pb::MessageParser<protoCustomListLevelSetting>(() => new protoCustomListLevelSetting());
+    private static readonly pb::MessageParser<ProtoCustomListLevelSetting> _parser = new pb::MessageParser<ProtoCustomListLevelSetting>(() => new ProtoCustomListLevelSetting());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<protoCustomListLevelSetting> Parser { get { return _parser; } }
+    public static pb::MessageParser<ProtoCustomListLevelSetting> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -17376,7 +17376,7 @@ namespace Docframe {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public protoCustomListLevelSetting() {
+    public ProtoCustomListLevelSetting() {
       OnConstruction();
     }
 
@@ -17384,7 +17384,7 @@ namespace Docframe {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public protoCustomListLevelSetting(protoCustomListLevelSetting other) : this() {
+    public ProtoCustomListLevelSetting(ProtoCustomListLevelSetting other) : this() {
       listSettingName_ = other.listSettingName_;
       type_ = other.type_;
       level_ = other.level_;
@@ -17395,8 +17395,8 @@ namespace Docframe {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public protoCustomListLevelSetting Clone() {
-      return new protoCustomListLevelSetting(this);
+    public ProtoCustomListLevelSetting Clone() {
+      return new ProtoCustomListLevelSetting(this);
     }
 
     /// <summary>Field number for the "listSettingName" field.</summary>
@@ -17462,12 +17462,12 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as protoCustomListLevelSetting);
+      return Equals(other as ProtoCustomListLevelSetting);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(protoCustomListLevelSetting other) {
+    public bool Equals(ProtoCustomListLevelSetting other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -17592,7 +17592,7 @@ namespace Docframe {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(protoCustomListLevelSetting other) {
+    public void MergeFrom(ProtoCustomListLevelSetting other) {
       if (other == null) {
         return;
       }

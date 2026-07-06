@@ -125,7 +125,7 @@ message ProtoUnnumberedListLevelSetting {
 }
 
 // go-gen:ignore
-message protoCustomListLevelSetting {
+message ProtoCustomListLevelSetting {
   string listSettingName = 1;
   ProtoListLevelSettingType type = 2;
   int32 level = 3;
