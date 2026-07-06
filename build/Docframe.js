@@ -14926,7 +14926,6 @@ $root.ProtoCustomListLevelSetting = (function() {
      * @property {string|null} [listSettingName] ProtoCustomListLevelSetting listSettingName
      * @property {ProtoListLevelSettingType|null} [type] ProtoCustomListLevelSetting type
      * @property {number|null} [level] ProtoCustomListLevelSetting level
-     * @property {number|null} [indentionWidth] ProtoCustomListLevelSetting indentionWidth
      * @property {string|null} [doctypeCode] ProtoCustomListLevelSetting doctypeCode
      */
 
@@ -14970,14 +14969,6 @@ $root.ProtoCustomListLevelSetting = (function() {
     ProtoCustomListLevelSetting.prototype.level = 0;
 
     /**
-     * ProtoCustomListLevelSetting indentionWidth.
-     * @member {number} indentionWidth
-     * @memberof ProtoCustomListLevelSetting
-     * @instance
-     */
-    ProtoCustomListLevelSetting.prototype.indentionWidth = 0;
-
-    /**
      * ProtoCustomListLevelSetting doctypeCode.
      * @member {string} doctypeCode
      * @memberof ProtoCustomListLevelSetting
@@ -15015,10 +15006,8 @@ $root.ProtoCustomListLevelSetting = (function() {
             writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
         if (message.level != null && Object.hasOwnProperty.call(message, "level"))
             writer.uint32(/* id 3, wireType 0 =*/24).int32(message.level);
-        if (message.indentionWidth != null && Object.hasOwnProperty.call(message, "indentionWidth"))
-            writer.uint32(/* id 4, wireType 0 =*/32).int32(message.indentionWidth);
         if (message.doctypeCode != null && Object.hasOwnProperty.call(message, "doctypeCode"))
-            writer.uint32(/* id 5, wireType 2 =*/42).string(message.doctypeCode);
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.doctypeCode);
         return writer;
     };
 
@@ -15066,10 +15055,6 @@ $root.ProtoCustomListLevelSetting = (function() {
                     break;
                 }
             case 4: {
-                    message.indentionWidth = reader.int32();
-                    break;
-                }
-            case 5: {
                     message.doctypeCode = reader.string();
                     break;
                 }
@@ -15124,9 +15109,6 @@ $root.ProtoCustomListLevelSetting = (function() {
         if (message.level != null && message.hasOwnProperty("level"))
             if (!$util.isInteger(message.level))
                 return "level: integer expected";
-        if (message.indentionWidth != null && message.hasOwnProperty("indentionWidth"))
-            if (!$util.isInteger(message.indentionWidth))
-                return "indentionWidth: integer expected";
         if (message.doctypeCode != null && message.hasOwnProperty("doctypeCode"))
             if (!$util.isString(message.doctypeCode))
                 return "doctypeCode: string expected";
@@ -15173,8 +15155,6 @@ $root.ProtoCustomListLevelSetting = (function() {
         }
         if (object.level != null)
             message.level = object.level | 0;
-        if (object.indentionWidth != null)
-            message.indentionWidth = object.indentionWidth | 0;
         if (object.doctypeCode != null)
             message.doctypeCode = String(object.doctypeCode);
         return message;
@@ -15197,7 +15177,6 @@ $root.ProtoCustomListLevelSetting = (function() {
             object.listSettingName = "";
             object.type = options.enums === String ? "UNNUMBERED" : 0;
             object.level = 0;
-            object.indentionWidth = 0;
             object.doctypeCode = "";
         }
         if (message.listSettingName != null && message.hasOwnProperty("listSettingName"))
@@ -15206,8 +15185,6 @@ $root.ProtoCustomListLevelSetting = (function() {
             object.type = options.enums === String ? $root.ProtoListLevelSettingType[message.type] === undefined ? message.type : $root.ProtoListLevelSettingType[message.type] : message.type;
         if (message.level != null && message.hasOwnProperty("level"))
             object.level = message.level;
-        if (message.indentionWidth != null && message.hasOwnProperty("indentionWidth"))
-            object.indentionWidth = message.indentionWidth;
         if (message.doctypeCode != null && message.hasOwnProperty("doctypeCode"))
             object.doctypeCode = message.doctypeCode;
         return object;

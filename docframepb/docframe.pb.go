@@ -5363,8 +5363,7 @@ type ProtoCustomListLevelSetting struct {
 	ListSettingName string                    `protobuf:"bytes,1,opt,name=listSettingName,proto3" json:"listSettingName,omitempty"`
 	Type            ProtoListLevelSettingType `protobuf:"varint,2,opt,name=type,proto3,enum=ProtoListLevelSettingType" json:"type,omitempty"`
 	Level           int32                     `protobuf:"varint,3,opt,name=level,proto3" json:"level,omitempty"`
-	IndentionWidth  int32                     `protobuf:"varint,4,opt,name=indentionWidth,proto3" json:"indentionWidth,omitempty"`
-	DoctypeCode     string                    `protobuf:"bytes,5,opt,name=doctypeCode,proto3" json:"doctypeCode,omitempty"`
+	DoctypeCode     string                    `protobuf:"bytes,4,opt,name=doctypeCode,proto3" json:"doctypeCode,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -5416,13 +5415,6 @@ func (x *ProtoCustomListLevelSetting) GetType() ProtoListLevelSettingType {
 func (x *ProtoCustomListLevelSetting) GetLevel() int32 {
 	if x != nil {
 		return x.Level
-	}
-	return 0
-}
-
-func (x *ProtoCustomListLevelSetting) GetIndentionWidth() int32 {
-	if x != nil {
-		return x.IndentionWidth
 	}
 	return 0
 }
@@ -14016,13 +14008,12 @@ const file_build_docframe_proto_rawDesc = "" +
 	"fontFamily\x12#\n" +
 	"\x04bold\x18\r \x01(\v2\x0f.ProtoBoxedBoolR\x04bold\x12'\n" +
 	"\x06italic\x18\x0e \x01(\v2\x0f.ProtoBoxedBoolR\x06italic\x12\x1c\n" +
-	"\tcharacter\x18\x0f \x01(\tR\tcharacter\"\xd7\x01\n" +
+	"\tcharacter\x18\x0f \x01(\tR\tcharacter\"\xaf\x01\n" +
 	"\x1bProtoCustomListLevelSetting\x12(\n" +
 	"\x0flistSettingName\x18\x01 \x01(\tR\x0flistSettingName\x12.\n" +
 	"\x04type\x18\x02 \x01(\x0e2\x1a.ProtoListLevelSettingTypeR\x04type\x12\x14\n" +
-	"\x05level\x18\x03 \x01(\x05R\x05level\x12&\n" +
-	"\x0eindentionWidth\x18\x04 \x01(\x05R\x0eindentionWidth\x12 \n" +
-	"\vdoctypeCode\x18\x05 \x01(\tR\vdoctypeCode\"\x97\x02\n" +
+	"\x05level\x18\x03 \x01(\x05R\x05level\x12 \n" +
+	"\vdoctypeCode\x18\x04 \x01(\tR\vdoctypeCode\"\x97\x02\n" +
 	"\x10ProtoListSetting\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12D\n" +
