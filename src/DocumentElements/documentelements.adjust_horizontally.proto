@@ -7,4 +7,5 @@ message ProtoAdjustHorizontally {
   ProtoMeasure minFontSize = 3;
   ProtoMeasure maxFontSize = 4;
   repeated string comChannelUUIDs = 5;
+  string uuid = 6;
 }

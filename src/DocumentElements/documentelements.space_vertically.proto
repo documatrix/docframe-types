@@ -5,4 +5,5 @@ message ProtoSpaceVertically {
 
   ProtoMeasure space = 2;
   repeated string comChannelUUIDs = 3;
+  string uuid = 4;
 }
