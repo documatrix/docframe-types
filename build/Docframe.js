@@ -13682,6 +13682,7 @@ $root.ProtoListLevelSetting = (function() {
      * @property {ProtoNumberType|null} [numberType] ProtoListLevelSetting numberType
      * @property {string|null} [character] ProtoListLevelSetting character
      * @property {string|null} [doctypeCode] ProtoListLevelSetting doctypeCode
+     * @property {ProtoNumberedLevelDisplayType|null} [levelDisplayType] ProtoListLevelSetting levelDisplayType
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -13846,6 +13847,14 @@ $root.ProtoListLevelSetting = (function() {
     ProtoListLevelSetting.prototype.doctypeCode = "";
 
     /**
+     * ProtoListLevelSetting levelDisplayType.
+     * @member {ProtoNumberedLevelDisplayType} levelDisplayType
+     * @memberof ProtoListLevelSetting
+     * @instance
+     */
+    ProtoListLevelSetting.prototype.levelDisplayType = 0;
+
+    /**
      * Creates a new ProtoListLevelSetting instance using the specified properties.
      * @function create
      * @memberof ProtoListLevelSetting
@@ -13905,6 +13914,8 @@ $root.ProtoListLevelSetting = (function() {
             writer.uint32(/* id 17, wireType 2 =*/138).string(message.character);
         if (message.doctypeCode != null && Object.hasOwnProperty.call(message, "doctypeCode"))
             writer.uint32(/* id 18, wireType 2 =*/146).string(message.doctypeCode);
+        if (message.levelDisplayType != null && Object.hasOwnProperty.call(message, "levelDisplayType"))
+            writer.uint32(/* id 19, wireType 0 =*/152).int32(message.levelDisplayType);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -14096,6 +14107,15 @@ $root.ProtoListLevelSetting = (function() {
                         delete message.doctypeCode;
                     continue;
                 }
+            case 19: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.int32())
+                        message.levelDisplayType = value;
+                    else
+                        delete message.levelDisplayType;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -14218,6 +14238,15 @@ $root.ProtoListLevelSetting = (function() {
         if (message.doctypeCode != null && message.hasOwnProperty("doctypeCode"))
             if (!$util.isString(message.doctypeCode))
                 return "doctypeCode: string expected";
+        if (message.levelDisplayType != null && message.hasOwnProperty("levelDisplayType"))
+            switch (message.levelDisplayType) {
+            default:
+                return "levelDisplayType: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+                break;
+            }
         return null;
     };
 
@@ -14351,6 +14380,27 @@ $root.ProtoListLevelSetting = (function() {
         if (object.doctypeCode != null)
             if (typeof object.doctypeCode !== "string" || object.doctypeCode.length)
                 message.doctypeCode = String(object.doctypeCode);
+        if (object.levelDisplayType !== 0 && (typeof object.levelDisplayType !== "string" || $root.ProtoNumberedLevelDisplayType[object.levelDisplayType] !== 0))
+            switch (object.levelDisplayType) {
+            default:
+                if (typeof object.levelDisplayType === "number") {
+                    message.levelDisplayType = object.levelDisplayType;
+                    break;
+                }
+                break;
+            case "ALL_PARENT_LEVELS":
+            case 0:
+                message.levelDisplayType = 0;
+                break;
+            case "NUMBERED_PARENT_LEVELS":
+            case 1:
+                message.levelDisplayType = 1;
+                break;
+            case "NO_PARENT_LEVELS":
+            case 2:
+                message.levelDisplayType = 2;
+                break;
+            }
         return message;
     };
 
@@ -14386,6 +14436,7 @@ $root.ProtoListLevelSetting = (function() {
             object.numberType = options.enums === String ? "ARABIC" : 0;
             object.character = "";
             object.doctypeCode = "";
+            object.levelDisplayType = options.enums === String ? "ALL_PARENT_LEVELS" : 0;
         }
         if (message.listSettingName != null && message.hasOwnProperty("listSettingName"))
             object.listSettingName = message.listSettingName;
@@ -14423,6 +14474,8 @@ $root.ProtoListLevelSetting = (function() {
             object.character = message.character;
         if (message.doctypeCode != null && message.hasOwnProperty("doctypeCode"))
             object.doctypeCode = message.doctypeCode;
+        if (message.levelDisplayType != null && message.hasOwnProperty("levelDisplayType"))
+            object.levelDisplayType = options.enums === String ? $root.ProtoNumberedLevelDisplayType[message.levelDisplayType] === undefined ? message.levelDisplayType : $root.ProtoNumberedLevelDisplayType[message.levelDisplayType] : message.levelDisplayType;
         return object;
     };
 

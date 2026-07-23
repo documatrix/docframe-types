@@ -44,6 +44,8 @@ message ProtoListLevelSetting {
   string character = 17;
 
   string doctypeCode = 18;
+
+  ProtoNumberedLevelDisplayType levelDisplayType = 19;
 }
 
 // go-gen:ignore
