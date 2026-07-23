@@ -13,6 +13,12 @@ enum ProtoListLevelSettingType {
   CUSTOM = 3;
 }
 
+enum ProtoNumberedLevelDisplayType {
+  ALL_PARENT_LEVELS = 0;
+  NUMBERED_PARENT_LEVELS = 1;
+  NO_PARENT_LEVELS = 2;
+}
+
 // go-gen:ignore
 message ProtoListLevelSetting {
   string listSettingName = 1;
@@ -100,6 +106,7 @@ message ProtoNumberListLevelSetting {
   // extends TextListLevelSetting
 
   ProtoNumberType numberType = 15;
+  ProtoNumberedLevelDisplayType levelDisplayType = 16;
 }
 
 // go-gen:ignore

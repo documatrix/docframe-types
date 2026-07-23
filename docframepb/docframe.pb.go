@@ -980,6 +980,55 @@ func (ProtoListLevelSettingType) EnumDescriptor() ([]byte, []int) {
 	return file_build_docframe_proto_rawDescGZIP(), []int{16}
 }
 
+type ProtoNumberedLevelDisplayType int32
+
+const (
+	ProtoNumberedLevelDisplayType_ALL_PARENT_LEVELS      ProtoNumberedLevelDisplayType = 0
+	ProtoNumberedLevelDisplayType_NUMBERED_PARENT_LEVELS ProtoNumberedLevelDisplayType = 1
+	ProtoNumberedLevelDisplayType_NO_PARENT_LEVELS       ProtoNumberedLevelDisplayType = 2
+)
+
+// Enum value maps for ProtoNumberedLevelDisplayType.
+var (
+	ProtoNumberedLevelDisplayType_name = map[int32]string{
+		0: "ALL_PARENT_LEVELS",
+		1: "NUMBERED_PARENT_LEVELS",
+		2: "NO_PARENT_LEVELS",
+	}
+	ProtoNumberedLevelDisplayType_value = map[string]int32{
+		"ALL_PARENT_LEVELS":      0,
+		"NUMBERED_PARENT_LEVELS": 1,
+		"NO_PARENT_LEVELS":       2,
+	}
+)
+
+func (x ProtoNumberedLevelDisplayType) Enum() *ProtoNumberedLevelDisplayType {
+	p := new(ProtoNumberedLevelDisplayType)
+	*p = x
+	return p
+}
+
+func (x ProtoNumberedLevelDisplayType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ProtoNumberedLevelDisplayType) Descriptor() protoreflect.EnumDescriptor {
+	return file_build_docframe_proto_enumTypes[17].Descriptor()
+}
+
+func (ProtoNumberedLevelDisplayType) Type() protoreflect.EnumType {
+	return &file_build_docframe_proto_enumTypes[17]
+}
+
+func (x ProtoNumberedLevelDisplayType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ProtoNumberedLevelDisplayType.Descriptor instead.
+func (ProtoNumberedLevelDisplayType) EnumDescriptor() ([]byte, []int) {
+	return file_build_docframe_proto_rawDescGZIP(), []int{17}
+}
+
 type ProtoTableContentGroupType int32
 
 const (
@@ -1016,11 +1065,11 @@ func (x ProtoTableContentGroupType) String() string {
 }
 
 func (ProtoTableContentGroupType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[17].Descriptor()
+	return file_build_docframe_proto_enumTypes[18].Descriptor()
 }
 
 func (ProtoTableContentGroupType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[17]
+	return &file_build_docframe_proto_enumTypes[18]
 }
 
 func (x ProtoTableContentGroupType) Number() protoreflect.EnumNumber {
@@ -1029,7 +1078,7 @@ func (x ProtoTableContentGroupType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoTableContentGroupType.Descriptor instead.
 func (ProtoTableContentGroupType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{17}
+	return file_build_docframe_proto_rawDescGZIP(), []int{18}
 }
 
 type ProtoTableCellType int32
@@ -1065,11 +1114,11 @@ func (x ProtoTableCellType) String() string {
 }
 
 func (ProtoTableCellType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[18].Descriptor()
+	return file_build_docframe_proto_enumTypes[19].Descriptor()
 }
 
 func (ProtoTableCellType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[18]
+	return &file_build_docframe_proto_enumTypes[19]
 }
 
 func (x ProtoTableCellType) Number() protoreflect.EnumNumber {
@@ -1078,7 +1127,7 @@ func (x ProtoTableCellType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoTableCellType.Descriptor instead.
 func (ProtoTableCellType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{18}
+	return file_build_docframe_proto_rawDescGZIP(), []int{19}
 }
 
 type ColumnBalancing int32
@@ -1111,11 +1160,11 @@ func (x ColumnBalancing) String() string {
 }
 
 func (ColumnBalancing) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[19].Descriptor()
+	return file_build_docframe_proto_enumTypes[20].Descriptor()
 }
 
 func (ColumnBalancing) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[19]
+	return &file_build_docframe_proto_enumTypes[20]
 }
 
 func (x ColumnBalancing) Number() protoreflect.EnumNumber {
@@ -1124,7 +1173,7 @@ func (x ColumnBalancing) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ColumnBalancing.Descriptor instead.
 func (ColumnBalancing) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{19}
+	return file_build_docframe_proto_rawDescGZIP(), []int{20}
 }
 
 type ProtoHeaderMode int32
@@ -1163,11 +1212,11 @@ func (x ProtoHeaderMode) String() string {
 }
 
 func (ProtoHeaderMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[20].Descriptor()
+	return file_build_docframe_proto_enumTypes[21].Descriptor()
 }
 
 func (ProtoHeaderMode) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[20]
+	return &file_build_docframe_proto_enumTypes[21]
 }
 
 func (x ProtoHeaderMode) Number() protoreflect.EnumNumber {
@@ -1176,7 +1225,7 @@ func (x ProtoHeaderMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoHeaderMode.Descriptor instead.
 func (ProtoHeaderMode) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{20}
+	return file_build_docframe_proto_rawDescGZIP(), []int{21}
 }
 
 type ProtoFooterMode int32
@@ -1215,11 +1264,11 @@ func (x ProtoFooterMode) String() string {
 }
 
 func (ProtoFooterMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[21].Descriptor()
+	return file_build_docframe_proto_enumTypes[22].Descriptor()
 }
 
 func (ProtoFooterMode) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[21]
+	return &file_build_docframe_proto_enumTypes[22]
 }
 
 func (x ProtoFooterMode) Number() protoreflect.EnumNumber {
@@ -1228,7 +1277,7 @@ func (x ProtoFooterMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoFooterMode.Descriptor instead.
 func (ProtoFooterMode) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{21}
+	return file_build_docframe_proto_rawDescGZIP(), []int{22}
 }
 
 type NodeType int32
@@ -1477,11 +1526,11 @@ func (x NodeType) String() string {
 }
 
 func (NodeType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[22].Descriptor()
+	return file_build_docframe_proto_enumTypes[23].Descriptor()
 }
 
 func (NodeType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[22]
+	return &file_build_docframe_proto_enumTypes[23]
 }
 
 func (x NodeType) Number() protoreflect.EnumNumber {
@@ -1490,7 +1539,7 @@ func (x NodeType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NodeType.Descriptor instead.
 func (NodeType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{22}
+	return file_build_docframe_proto_rawDescGZIP(), []int{23}
 }
 
 type ProtoImageScaleType int32
@@ -1529,11 +1578,11 @@ func (x ProtoImageScaleType) String() string {
 }
 
 func (ProtoImageScaleType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[23].Descriptor()
+	return file_build_docframe_proto_enumTypes[24].Descriptor()
 }
 
 func (ProtoImageScaleType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[23]
+	return &file_build_docframe_proto_enumTypes[24]
 }
 
 func (x ProtoImageScaleType) Number() protoreflect.EnumNumber {
@@ -1542,7 +1591,7 @@ func (x ProtoImageScaleType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoImageScaleType.Descriptor instead.
 func (ProtoImageScaleType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{23}
+	return file_build_docframe_proto_rawDescGZIP(), []int{24}
 }
 
 type ProtoImageUAMode int32
@@ -1581,11 +1630,11 @@ func (x ProtoImageUAMode) String() string {
 }
 
 func (ProtoImageUAMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[24].Descriptor()
+	return file_build_docframe_proto_enumTypes[25].Descriptor()
 }
 
 func (ProtoImageUAMode) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[24]
+	return &file_build_docframe_proto_enumTypes[25]
 }
 
 func (x ProtoImageUAMode) Number() protoreflect.EnumNumber {
@@ -1594,7 +1643,7 @@ func (x ProtoImageUAMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoImageUAMode.Descriptor instead.
 func (ProtoImageUAMode) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{24}
+	return file_build_docframe_proto_rawDescGZIP(), []int{25}
 }
 
 type ProtoImageContentType int32
@@ -1636,11 +1685,11 @@ func (x ProtoImageContentType) String() string {
 }
 
 func (ProtoImageContentType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[25].Descriptor()
+	return file_build_docframe_proto_enumTypes[26].Descriptor()
 }
 
 func (ProtoImageContentType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[25]
+	return &file_build_docframe_proto_enumTypes[26]
 }
 
 func (x ProtoImageContentType) Number() protoreflect.EnumNumber {
@@ -1649,7 +1698,7 @@ func (x ProtoImageContentType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoImageContentType.Descriptor instead.
 func (ProtoImageContentType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{25}
+	return file_build_docframe_proto_rawDescGZIP(), []int{26}
 }
 
 type ProtoVariableSpecialType int32
@@ -1706,11 +1755,11 @@ func (x ProtoVariableSpecialType) String() string {
 }
 
 func (ProtoVariableSpecialType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[26].Descriptor()
+	return file_build_docframe_proto_enumTypes[27].Descriptor()
 }
 
 func (ProtoVariableSpecialType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[26]
+	return &file_build_docframe_proto_enumTypes[27]
 }
 
 func (x ProtoVariableSpecialType) Number() protoreflect.EnumNumber {
@@ -1719,7 +1768,7 @@ func (x ProtoVariableSpecialType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoVariableSpecialType.Descriptor instead.
 func (ProtoVariableSpecialType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{26}
+	return file_build_docframe_proto_rawDescGZIP(), []int{27}
 }
 
 type ProtoPageMode int32
@@ -1755,11 +1804,11 @@ func (x ProtoPageMode) String() string {
 }
 
 func (ProtoPageMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[27].Descriptor()
+	return file_build_docframe_proto_enumTypes[28].Descriptor()
 }
 
 func (ProtoPageMode) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[27]
+	return &file_build_docframe_proto_enumTypes[28]
 }
 
 func (x ProtoPageMode) Number() protoreflect.EnumNumber {
@@ -1768,7 +1817,7 @@ func (x ProtoPageMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoPageMode.Descriptor instead.
 func (ProtoPageMode) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{27}
+	return file_build_docframe_proto_rawDescGZIP(), []int{28}
 }
 
 type ProtoPageOrientation int32
@@ -1810,11 +1859,11 @@ func (x ProtoPageOrientation) String() string {
 }
 
 func (ProtoPageOrientation) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[28].Descriptor()
+	return file_build_docframe_proto_enumTypes[29].Descriptor()
 }
 
 func (ProtoPageOrientation) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[28]
+	return &file_build_docframe_proto_enumTypes[29]
 }
 
 func (x ProtoPageOrientation) Number() protoreflect.EnumNumber {
@@ -1823,7 +1872,7 @@ func (x ProtoPageOrientation) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoPageOrientation.Descriptor instead.
 func (ProtoPageOrientation) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{28}
+	return file_build_docframe_proto_rawDescGZIP(), []int{29}
 }
 
 type ProtoSubTotalPosition int32
@@ -1856,11 +1905,11 @@ func (x ProtoSubTotalPosition) String() string {
 }
 
 func (ProtoSubTotalPosition) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[29].Descriptor()
+	return file_build_docframe_proto_enumTypes[30].Descriptor()
 }
 
 func (ProtoSubTotalPosition) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[29]
+	return &file_build_docframe_proto_enumTypes[30]
 }
 
 func (x ProtoSubTotalPosition) Number() protoreflect.EnumNumber {
@@ -1869,7 +1918,7 @@ func (x ProtoSubTotalPosition) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoSubTotalPosition.Descriptor instead.
 func (ProtoSubTotalPosition) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{29}
+	return file_build_docframe_proto_rawDescGZIP(), []int{30}
 }
 
 type ProtoRuleMode int32
@@ -1902,11 +1951,11 @@ func (x ProtoRuleMode) String() string {
 }
 
 func (ProtoRuleMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[30].Descriptor()
+	return file_build_docframe_proto_enumTypes[31].Descriptor()
 }
 
 func (ProtoRuleMode) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[30]
+	return &file_build_docframe_proto_enumTypes[31]
 }
 
 func (x ProtoRuleMode) Number() protoreflect.EnumNumber {
@@ -1915,7 +1964,7 @@ func (x ProtoRuleMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoRuleMode.Descriptor instead.
 func (ProtoRuleMode) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{30}
+	return file_build_docframe_proto_rawDescGZIP(), []int{31}
 }
 
 type ProtoDoctypeOutputMode int32
@@ -1951,11 +2000,11 @@ func (x ProtoDoctypeOutputMode) String() string {
 }
 
 func (ProtoDoctypeOutputMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[31].Descriptor()
+	return file_build_docframe_proto_enumTypes[32].Descriptor()
 }
 
 func (ProtoDoctypeOutputMode) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[31]
+	return &file_build_docframe_proto_enumTypes[32]
 }
 
 func (x ProtoDoctypeOutputMode) Number() protoreflect.EnumNumber {
@@ -1964,7 +2013,7 @@ func (x ProtoDoctypeOutputMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoDoctypeOutputMode.Descriptor instead.
 func (ProtoDoctypeOutputMode) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{31}
+	return file_build_docframe_proto_rawDescGZIP(), []int{32}
 }
 
 type ProtoBoxedBool struct {
@@ -5076,24 +5125,25 @@ func (x *ProtoTextListLevelSetting) GetItalic() *ProtoBoxedBool {
 }
 
 type ProtoNumberListLevelSetting struct {
-	state           protoimpl.MessageState    `protogen:"open.v1"`
-	ListSettingName string                    `protobuf:"bytes,1,opt,name=listSettingName,proto3" json:"listSettingName,omitempty"`
-	FontSize        *ProtoBoxedUint32         `protobuf:"bytes,2,opt,name=fontSize,proto3" json:"fontSize,omitempty"`
-	Type            ProtoListLevelSettingType `protobuf:"varint,3,opt,name=type,proto3,enum=ProtoListLevelSettingType" json:"type,omitempty"`
-	Level           int32                     `protobuf:"varint,4,opt,name=level,proto3" json:"level,omitempty"`
-	Prefix          string                    `protobuf:"bytes,5,opt,name=prefix,proto3" json:"prefix,omitempty"`
-	Suffix          string                    `protobuf:"bytes,6,opt,name=suffix,proto3" json:"suffix,omitempty"`
-	FixFontFamily   *ProtoFont                `protobuf:"bytes,7,opt,name=fixFontFamily,proto3" json:"fixFontFamily,omitempty"`
-	FixBold         bool                      `protobuf:"varint,8,opt,name=fixBold,proto3" json:"fixBold,omitempty"`
-	FixItalic       bool                      `protobuf:"varint,9,opt,name=fixItalic,proto3" json:"fixItalic,omitempty"`
-	IndentionWidth  int32                     `protobuf:"varint,10,opt,name=indentionWidth,proto3" json:"indentionWidth,omitempty"`
-	Color           *ProtoColor               `protobuf:"bytes,11,opt,name=color,proto3" json:"color,omitempty"`
-	FontFamily      *ProtoFont                `protobuf:"bytes,12,opt,name=fontFamily,proto3" json:"fontFamily,omitempty"`
-	Bold            *ProtoBoxedBool           `protobuf:"bytes,13,opt,name=bold,proto3" json:"bold,omitempty"`
-	Italic          *ProtoBoxedBool           `protobuf:"bytes,14,opt,name=italic,proto3" json:"italic,omitempty"`
-	NumberType      ProtoNumberType           `protobuf:"varint,15,opt,name=numberType,proto3,enum=ProtoNumberType" json:"numberType,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state            protoimpl.MessageState        `protogen:"open.v1"`
+	ListSettingName  string                        `protobuf:"bytes,1,opt,name=listSettingName,proto3" json:"listSettingName,omitempty"`
+	FontSize         *ProtoBoxedUint32             `protobuf:"bytes,2,opt,name=fontSize,proto3" json:"fontSize,omitempty"`
+	Type             ProtoListLevelSettingType     `protobuf:"varint,3,opt,name=type,proto3,enum=ProtoListLevelSettingType" json:"type,omitempty"`
+	Level            int32                         `protobuf:"varint,4,opt,name=level,proto3" json:"level,omitempty"`
+	Prefix           string                        `protobuf:"bytes,5,opt,name=prefix,proto3" json:"prefix,omitempty"`
+	Suffix           string                        `protobuf:"bytes,6,opt,name=suffix,proto3" json:"suffix,omitempty"`
+	FixFontFamily    *ProtoFont                    `protobuf:"bytes,7,opt,name=fixFontFamily,proto3" json:"fixFontFamily,omitempty"`
+	FixBold          bool                          `protobuf:"varint,8,opt,name=fixBold,proto3" json:"fixBold,omitempty"`
+	FixItalic        bool                          `protobuf:"varint,9,opt,name=fixItalic,proto3" json:"fixItalic,omitempty"`
+	IndentionWidth   int32                         `protobuf:"varint,10,opt,name=indentionWidth,proto3" json:"indentionWidth,omitempty"`
+	Color            *ProtoColor                   `protobuf:"bytes,11,opt,name=color,proto3" json:"color,omitempty"`
+	FontFamily       *ProtoFont                    `protobuf:"bytes,12,opt,name=fontFamily,proto3" json:"fontFamily,omitempty"`
+	Bold             *ProtoBoxedBool               `protobuf:"bytes,13,opt,name=bold,proto3" json:"bold,omitempty"`
+	Italic           *ProtoBoxedBool               `protobuf:"bytes,14,opt,name=italic,proto3" json:"italic,omitempty"`
+	NumberType       ProtoNumberType               `protobuf:"varint,15,opt,name=numberType,proto3,enum=ProtoNumberType" json:"numberType,omitempty"`
+	LevelDisplayType ProtoNumberedLevelDisplayType `protobuf:"varint,16,opt,name=levelDisplayType,proto3,enum=ProtoNumberedLevelDisplayType" json:"levelDisplayType,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *ProtoNumberListLevelSetting) Reset() {
@@ -5229,6 +5279,13 @@ func (x *ProtoNumberListLevelSetting) GetNumberType() ProtoNumberType {
 		return x.NumberType
 	}
 	return ProtoNumberType_ARABIC
+}
+
+func (x *ProtoNumberListLevelSetting) GetLevelDisplayType() ProtoNumberedLevelDisplayType {
+	if x != nil {
+		return x.LevelDisplayType
+	}
+	return ProtoNumberedLevelDisplayType_ALL_PARENT_LEVELS
 }
 
 type ProtoUnnumberedListLevelSetting struct {
@@ -14554,7 +14611,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	".ProtoFontR\n" +
 	"fontFamily\x12#\n" +
 	"\x04bold\x18\r \x01(\v2\x0f.ProtoBoxedBoolR\x04bold\x12'\n" +
-	"\x06italic\x18\x0e \x01(\v2\x0f.ProtoBoxedBoolR\x06italic\"\xcd\x04\n" +
+	"\x06italic\x18\x0e \x01(\v2\x0f.ProtoBoxedBoolR\x06italic\"\x99\x05\n" +
 	"\x1bProtoNumberListLevelSetting\x12(\n" +
 	"\x0flistSettingName\x18\x01 \x01(\tR\x0flistSettingName\x12-\n" +
 	"\bfontSize\x18\x02 \x01(\v2\x11.ProtoBoxedUint32R\bfontSize\x12.\n" +
@@ -14577,7 +14634,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x06italic\x18\x0e \x01(\v2\x0f.ProtoBoxedBoolR\x06italic\x120\n" +
 	"\n" +
 	"numberType\x18\x0f \x01(\x0e2\x10.ProtoNumberTypeR\n" +
-	"numberType\"\xbd\x04\n" +
+	"numberType\x12J\n" +
+	"\x10levelDisplayType\x18\x10 \x01(\x0e2\x1e.ProtoNumberedLevelDisplayTypeR\x10levelDisplayType\"\xbd\x04\n" +
 	"\x1fProtoUnnumberedListLevelSetting\x12(\n" +
 	"\x0flistSettingName\x18\x01 \x01(\tR\x0flistSettingName\x12-\n" +
 	"\bfontSize\x18\x02 \x01(\v2\x11.ProtoBoxedUint32R\bfontSize\x12.\n" +
@@ -15536,7 +15594,11 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\aNUMERIC\x10\x01\x12\t\n" +
 	"\x05IMAGE\x10\x02\x12\n" +
 	"\n" +
-	"\x06CUSTOM\x10\x03*N\n" +
+	"\x06CUSTOM\x10\x03*h\n" +
+	"\x1dProtoNumberedLevelDisplayType\x12\x15\n" +
+	"\x11ALL_PARENT_LEVELS\x10\x00\x12\x1a\n" +
+	"\x16NUMBERED_PARENT_LEVELS\x10\x01\x12\x14\n" +
+	"\x10NO_PARENT_LEVELS\x10\x02*N\n" +
 	"\x1aProtoTableContentGroupType\x12\n" +
 	"\n" +
 	"\x06HEADER\x10\x00\x12\b\n" +
@@ -15701,7 +15763,7 @@ func file_build_docframe_proto_rawDescGZIP() []byte {
 	return file_build_docframe_proto_rawDescData
 }
 
-var file_build_docframe_proto_enumTypes = make([]protoimpl.EnumInfo, 32)
+var file_build_docframe_proto_enumTypes = make([]protoimpl.EnumInfo, 33)
 var file_build_docframe_proto_msgTypes = make([]protoimpl.MessageInfo, 128)
 var file_build_docframe_proto_goTypes = []any{
 	(ProtoSPBMode)(0),                                      // 0: ProtoSPBMode
@@ -15721,632 +15783,634 @@ var file_build_docframe_proto_goTypes = []any{
 	(Inheritance)(0),                                       // 14: Inheritance
 	(ProtoNumberType)(0),                                   // 15: ProtoNumberType
 	(ProtoListLevelSettingType)(0),                         // 16: ProtoListLevelSettingType
-	(ProtoTableContentGroupType)(0),                        // 17: ProtoTableContentGroupType
-	(ProtoTableCellType)(0),                                // 18: ProtoTableCellType
-	(ColumnBalancing)(0),                                   // 19: ColumnBalancing
-	(ProtoHeaderMode)(0),                                   // 20: ProtoHeaderMode
-	(ProtoFooterMode)(0),                                   // 21: ProtoFooterMode
-	(NodeType)(0),                                          // 22: NodeType
-	(ProtoImageScaleType)(0),                               // 23: ProtoImageScaleType
-	(ProtoImageUAMode)(0),                                  // 24: ProtoImageUAMode
-	(ProtoImageContentType)(0),                             // 25: ProtoImageContentType
-	(ProtoVariableSpecialType)(0),                          // 26: ProtoVariableSpecialType
-	(ProtoPageMode)(0),                                     // 27: ProtoPageMode
-	(ProtoPageOrientation)(0),                              // 28: ProtoPageOrientation
-	(ProtoSubTotalPosition)(0),                             // 29: ProtoSubTotalPosition
-	(ProtoRuleMode)(0),                                     // 30: ProtoRuleMode
-	(ProtoDoctypeOutputMode)(0),                            // 31: ProtoDoctypeOutputMode
-	(*ProtoBoxedBool)(nil),                                 // 32: ProtoBoxedBool
-	(*ProtoBoxedDouble)(nil),                               // 33: ProtoBoxedDouble
-	(*ProtoBoxedInt32)(nil),                                // 34: ProtoBoxedInt32
-	(*ProtoBoxedUint32)(nil),                               // 35: ProtoBoxedUint32
-	(*ProtoBoxedString)(nil),                               // 36: ProtoBoxedString
-	(*ProtoBoxedSPBMode)(nil),                              // 37: ProtoBoxedSPBMode
-	(*ProtoStrikethroughSpec)(nil),                         // 38: ProtoStrikethroughSpec
-	(*ProtoBoxedStrikethroughSpec)(nil),                    // 39: ProtoBoxedStrikethroughSpec
-	(*ProtoMeasure)(nil),                                   // 40: ProtoMeasure
-	(*ProtoBoxedMeasure)(nil),                              // 41: ProtoBoxedMeasure
-	(*ProtoSideMeasures)(nil),                              // 42: ProtoSideMeasures
-	(*ProtoBoxedAdvancedIllustrationAreaTextFlowType)(nil), // 43: ProtoBoxedAdvancedIllustrationAreaTextFlowType
-	(*ProtoAdvancedIllustrationAreaImageSettings)(nil),     // 44: ProtoAdvancedIllustrationAreaImageSettings
-	(*ProtoFont)(nil),                                      // 45: ProtoFont
-	(*ProtoBoxedFont)(nil),                                 // 46: ProtoBoxedFont
-	(*ProtoColor)(nil),                                     // 47: ProtoColor
-	(*ProtoBoxedColor)(nil),                                // 48: ProtoBoxedColor
-	(*ProtoRGBColor)(nil),                                  // 49: ProtoRGBColor
-	(*ProtoCMYKColor)(nil),                                 // 50: ProtoCMYKColor
-	(*ProtoBoxedHorizontalAlignment)(nil),                  // 51: ProtoBoxedHorizontalAlignment
-	(*ProtoBoxedVerticalAlignment)(nil),                    // 52: ProtoBoxedVerticalAlignment
-	(*ProtoSwissQRCreditor)(nil),                           // 53: ProtoSwissQRCreditor
-	(*ProtoSwissQRDebitor)(nil),                            // 54: ProtoSwissQRDebitor
-	(*ProtoSwissQRData)(nil),                               // 55: ProtoSwissQRData
-	(*ProtoLinebreak)(nil),                                 // 56: ProtoLinebreak
-	(*ProtoBorder)(nil),                                    // 57: ProtoBorder
-	(*ProtoSideBorders)(nil),                               // 58: ProtoSideBorders
-	(*ProtoBoxedPositionMode)(nil),                         // 59: ProtoBoxedPositionMode
-	(*ProtoColumnSettings)(nil),                            // 60: ProtoColumnSettings
-	(*ProtoGraphicState)(nil),                              // 61: ProtoGraphicState
-	(*ProtoHtmlParser)(nil),                                // 62: ProtoHtmlParser
-	(*ProtoUnderlineSpec)(nil),                             // 63: ProtoUnderlineSpec
-	(*ProtoBoxedUnderlineSpec)(nil),                        // 64: ProtoBoxedUnderlineSpec
-	(*ProtoCropSettings)(nil),                              // 65: ProtoCropSettings
-	(*ProtoFlipSettings)(nil),                              // 66: ProtoFlipSettings
-	(*ProtoOption)(nil),                                    // 67: ProtoOption
-	(*ProtoBaseInputField)(nil),                            // 68: ProtoBaseInputField
-	(*ProtoDocumentElement)(nil),                           // 69: ProtoDocumentElement
-	(*ProtoBranchDocumentElement)(nil),                     // 70: ProtoBranchDocumentElement
-	(*ProtoLink)(nil),                                      // 71: ProtoLink
-	(*ProtoListLevelSetting)(nil),                          // 72: ProtoListLevelSetting
-	(*ProtoImageListLevelSetting)(nil),                     // 73: ProtoImageListLevelSetting
-	(*ProtoTextListLevelSetting)(nil),                      // 74: ProtoTextListLevelSetting
-	(*ProtoNumberListLevelSetting)(nil),                    // 75: ProtoNumberListLevelSetting
-	(*ProtoUnnumberedListLevelSetting)(nil),                // 76: ProtoUnnumberedListLevelSetting
-	(*ProtoCustomListLevelSetting)(nil),                    // 77: ProtoCustomListLevelSetting
-	(*ProtoListSetting)(nil),                               // 78: ProtoListSetting
-	(*ProtoBoxedListSetting)(nil),                          // 79: ProtoBoxedListSetting
-	(*ProtoNamedString)(nil),                               // 80: ProtoNamedString
-	(*ProtoParagraph)(nil),                                 // 81: ProtoParagraph
-	(*ProtoParagraphFormat)(nil),                           // 82: ProtoParagraphFormat
-	(*ProtoSection)(nil),                                   // 83: ProtoSection
-	(*ProtoSpaceVertically)(nil),                           // 84: ProtoSpaceVertically
-	(*ProtoSpan)(nil),                                      // 85: ProtoSpan
-	(*ProtoTable)(nil),                                     // 86: ProtoTable
-	(*ProtoTableConfig)(nil),                               // 87: ProtoTableConfig
-	(*ProtoTableSettings)(nil),                             // 88: ProtoTableSettings
-	(*ProtoBoxedTableContentGroupType)(nil),                // 89: ProtoBoxedTableContentGroupType
-	(*ProtoTableContentGroup)(nil),                         // 90: ProtoTableContentGroup
-	(*ProtoTableContentGroupConfig)(nil),                   // 91: ProtoTableContentGroupConfig
-	(*ProtoTableContentGroupSettings)(nil),                 // 92: ProtoTableContentGroupSettings
-	(*ProtoTableRow)(nil),                                  // 93: ProtoTableRow
-	(*ProtoTableRowConfig)(nil),                            // 94: ProtoTableRowConfig
-	(*ProtoTableRowSettings)(nil),                          // 95: ProtoTableRowSettings
-	(*ProtoBoxedTableCellType)(nil),                        // 96: ProtoBoxedTableCellType
-	(*ProtoTableCell)(nil),                                 // 97: ProtoTableCell
-	(*ProtoTableCellConfig)(nil),                           // 98: ProtoTableCellConfig
-	(*ProtoTableCellSettings)(nil),                         // 99: ProtoTableCellSettings
-	(*ProtoTableWS)(nil),                                   // 100: ProtoTableWS
-	(*ProtoTableElementProperties)(nil),                    // 101: ProtoTableElementProperties
-	(*ProtoText)(nil),                                      // 102: ProtoText
-	(*ProtoBarcode)(nil),                                   // 103: ProtoBarcode
-	(*ProtoBrickReference)(nil),                            // 104: ProtoBrickReference
-	(*ProtoBrick)(nil),                                     // 105: ProtoBrick
-	(*ProtoTemplate)(nil),                                  // 106: ProtoTemplate
-	(*ProtoHeader)(nil),                                    // 107: ProtoHeader
-	(*ProtoFooter)(nil),                                    // 108: ProtoFooter
-	(*Node)(nil),                                           // 109: Node
-	(*ProtoImage)(nil),                                     // 110: ProtoImage
-	(*ProtoDirectory)(nil),                                 // 111: ProtoDirectory
-	(*ProtoTextBrick)(nil),                                 // 112: ProtoTextBrick
-	(*ProtoVariable)(nil),                                  // 113: ProtoVariable
-	(*ProtoFormatted)(nil),                                 // 114: ProtoFormatted
-	(*ProtoApplyProtoCDef)(nil),                            // 115: ProtoApplyProtoCDef
-	(*ProtoApplyProtoPDef)(nil),                            // 116: ProtoApplyProtoPDef
-	(*ProtoApplyPtConfig)(nil),                             // 117: ProtoApplyPtConfig
-	(*ProtoApplyUlConfig)(nil),                             // 118: ProtoApplyUlConfig
-	(*ProtoCDef)(nil),                                      // 119: ProtoCDef
-	(*ProtoPDef)(nil),                                      // 120: ProtoPDef
-	(*ProtoPtConfig)(nil),                                  // 121: ProtoPtConfig
-	(*ProtoUlConfig)(nil),                                  // 122: ProtoUlConfig
-	(*ProtoNewPage)(nil),                                   // 123: ProtoNewPage
-	(*ProtoIndentation)(nil),                               // 124: ProtoIndentation
-	(*ProtoCarryOver)(nil),                                 // 125: ProtoCarryOver
-	(*ProtoLoopEntry)(nil),                                 // 126: ProtoLoopEntry
-	(*ProtoLoop)(nil),                                      // 127: ProtoLoop
-	(*ProtoSubTotal)(nil),                                  // 128: ProtoSubTotal
-	(*ProtoWsArea)(nil),                                    // 129: ProtoWsArea
-	(*ProtoRule)(nil),                                      // 130: ProtoRule
-	(*ProtoRuleBoundaries)(nil),                            // 131: ProtoRuleBoundaries
-	(*ProtoColorDef)(nil),                                  // 132: ProtoColorDef
-	(*ProtoLayout)(nil),                                    // 133: ProtoLayout
-	(*ProtoAdvancedIllustrationArea)(nil),                  // 134: ProtoAdvancedIllustrationArea
-	(*ProtoAdjustHorizontally)(nil),                        // 135: ProtoAdjustHorizontally
-	(*ProtoDoctypeScript)(nil),                             // 136: ProtoDoctypeScript
-	(*ProtoDmScript)(nil),                                  // 137: ProtoDmScript
-	(*ProtoDynamicTemplate)(nil),                           // 138: ProtoDynamicTemplate
-	(*ProtoSelection)(nil),                                 // 139: ProtoSelection
-	(*ProtoSelectionEntry)(nil),                            // 140: ProtoSelectionEntry
-	(*ProtoCondition)(nil),                                 // 141: ProtoCondition
-	(*ProtoPageCondition)(nil),                             // 142: ProtoPageCondition
-	(*ProtoLocale)(nil),                                    // 143: ProtoLocale
-	(*ProtoTag)(nil),                                       // 144: ProtoTag
-	(*ProtoParagraphSetDefault)(nil),                       // 145: ProtoParagraphSetDefault
-	(*ProtoBaseTextInputField)(nil),                        // 146: ProtoBaseTextInputField
-	(*ProtoInputFieldText)(nil),                            // 147: ProtoInputFieldText
-	(*ProtoInputFieldDate)(nil),                            // 148: ProtoInputFieldDate
-	(*ProtoInputFieldCheckbox)(nil),                        // 149: ProtoInputFieldCheckbox
-	(*ProtoInputFieldLabel)(nil),                           // 150: ProtoInputFieldLabel
-	(*ProtoInputFieldDropdown)(nil),                        // 151: ProtoInputFieldDropdown
-	(*ProtoColorChoice)(nil),                               // 152: ProtoColorChoice
-	(*ProtoSetColor)(nil),                                  // 153: ProtoSetColor
-	(*ProtoUnsetColor)(nil),                                // 154: ProtoUnsetColor
-	(*ProtoColoredArea)(nil),                               // 155: ProtoColoredArea
-	(*ProtoChapter)(nil),                                   // 156: ProtoChapter
-	(*ProtoTableOfContents)(nil),                           // 157: ProtoTableOfContents
-	(*ProtoSectionReference)(nil),                          // 158: ProtoSectionReference
-	(*ProtoChapterLink)(nil),                               // 159: ProtoChapterLink
+	(ProtoNumberedLevelDisplayType)(0),                     // 17: ProtoNumberedLevelDisplayType
+	(ProtoTableContentGroupType)(0),                        // 18: ProtoTableContentGroupType
+	(ProtoTableCellType)(0),                                // 19: ProtoTableCellType
+	(ColumnBalancing)(0),                                   // 20: ColumnBalancing
+	(ProtoHeaderMode)(0),                                   // 21: ProtoHeaderMode
+	(ProtoFooterMode)(0),                                   // 22: ProtoFooterMode
+	(NodeType)(0),                                          // 23: NodeType
+	(ProtoImageScaleType)(0),                               // 24: ProtoImageScaleType
+	(ProtoImageUAMode)(0),                                  // 25: ProtoImageUAMode
+	(ProtoImageContentType)(0),                             // 26: ProtoImageContentType
+	(ProtoVariableSpecialType)(0),                          // 27: ProtoVariableSpecialType
+	(ProtoPageMode)(0),                                     // 28: ProtoPageMode
+	(ProtoPageOrientation)(0),                              // 29: ProtoPageOrientation
+	(ProtoSubTotalPosition)(0),                             // 30: ProtoSubTotalPosition
+	(ProtoRuleMode)(0),                                     // 31: ProtoRuleMode
+	(ProtoDoctypeOutputMode)(0),                            // 32: ProtoDoctypeOutputMode
+	(*ProtoBoxedBool)(nil),                                 // 33: ProtoBoxedBool
+	(*ProtoBoxedDouble)(nil),                               // 34: ProtoBoxedDouble
+	(*ProtoBoxedInt32)(nil),                                // 35: ProtoBoxedInt32
+	(*ProtoBoxedUint32)(nil),                               // 36: ProtoBoxedUint32
+	(*ProtoBoxedString)(nil),                               // 37: ProtoBoxedString
+	(*ProtoBoxedSPBMode)(nil),                              // 38: ProtoBoxedSPBMode
+	(*ProtoStrikethroughSpec)(nil),                         // 39: ProtoStrikethroughSpec
+	(*ProtoBoxedStrikethroughSpec)(nil),                    // 40: ProtoBoxedStrikethroughSpec
+	(*ProtoMeasure)(nil),                                   // 41: ProtoMeasure
+	(*ProtoBoxedMeasure)(nil),                              // 42: ProtoBoxedMeasure
+	(*ProtoSideMeasures)(nil),                              // 43: ProtoSideMeasures
+	(*ProtoBoxedAdvancedIllustrationAreaTextFlowType)(nil), // 44: ProtoBoxedAdvancedIllustrationAreaTextFlowType
+	(*ProtoAdvancedIllustrationAreaImageSettings)(nil),     // 45: ProtoAdvancedIllustrationAreaImageSettings
+	(*ProtoFont)(nil),                                      // 46: ProtoFont
+	(*ProtoBoxedFont)(nil),                                 // 47: ProtoBoxedFont
+	(*ProtoColor)(nil),                                     // 48: ProtoColor
+	(*ProtoBoxedColor)(nil),                                // 49: ProtoBoxedColor
+	(*ProtoRGBColor)(nil),                                  // 50: ProtoRGBColor
+	(*ProtoCMYKColor)(nil),                                 // 51: ProtoCMYKColor
+	(*ProtoBoxedHorizontalAlignment)(nil),                  // 52: ProtoBoxedHorizontalAlignment
+	(*ProtoBoxedVerticalAlignment)(nil),                    // 53: ProtoBoxedVerticalAlignment
+	(*ProtoSwissQRCreditor)(nil),                           // 54: ProtoSwissQRCreditor
+	(*ProtoSwissQRDebitor)(nil),                            // 55: ProtoSwissQRDebitor
+	(*ProtoSwissQRData)(nil),                               // 56: ProtoSwissQRData
+	(*ProtoLinebreak)(nil),                                 // 57: ProtoLinebreak
+	(*ProtoBorder)(nil),                                    // 58: ProtoBorder
+	(*ProtoSideBorders)(nil),                               // 59: ProtoSideBorders
+	(*ProtoBoxedPositionMode)(nil),                         // 60: ProtoBoxedPositionMode
+	(*ProtoColumnSettings)(nil),                            // 61: ProtoColumnSettings
+	(*ProtoGraphicState)(nil),                              // 62: ProtoGraphicState
+	(*ProtoHtmlParser)(nil),                                // 63: ProtoHtmlParser
+	(*ProtoUnderlineSpec)(nil),                             // 64: ProtoUnderlineSpec
+	(*ProtoBoxedUnderlineSpec)(nil),                        // 65: ProtoBoxedUnderlineSpec
+	(*ProtoCropSettings)(nil),                              // 66: ProtoCropSettings
+	(*ProtoFlipSettings)(nil),                              // 67: ProtoFlipSettings
+	(*ProtoOption)(nil),                                    // 68: ProtoOption
+	(*ProtoBaseInputField)(nil),                            // 69: ProtoBaseInputField
+	(*ProtoDocumentElement)(nil),                           // 70: ProtoDocumentElement
+	(*ProtoBranchDocumentElement)(nil),                     // 71: ProtoBranchDocumentElement
+	(*ProtoLink)(nil),                                      // 72: ProtoLink
+	(*ProtoListLevelSetting)(nil),                          // 73: ProtoListLevelSetting
+	(*ProtoImageListLevelSetting)(nil),                     // 74: ProtoImageListLevelSetting
+	(*ProtoTextListLevelSetting)(nil),                      // 75: ProtoTextListLevelSetting
+	(*ProtoNumberListLevelSetting)(nil),                    // 76: ProtoNumberListLevelSetting
+	(*ProtoUnnumberedListLevelSetting)(nil),                // 77: ProtoUnnumberedListLevelSetting
+	(*ProtoCustomListLevelSetting)(nil),                    // 78: ProtoCustomListLevelSetting
+	(*ProtoListSetting)(nil),                               // 79: ProtoListSetting
+	(*ProtoBoxedListSetting)(nil),                          // 80: ProtoBoxedListSetting
+	(*ProtoNamedString)(nil),                               // 81: ProtoNamedString
+	(*ProtoParagraph)(nil),                                 // 82: ProtoParagraph
+	(*ProtoParagraphFormat)(nil),                           // 83: ProtoParagraphFormat
+	(*ProtoSection)(nil),                                   // 84: ProtoSection
+	(*ProtoSpaceVertically)(nil),                           // 85: ProtoSpaceVertically
+	(*ProtoSpan)(nil),                                      // 86: ProtoSpan
+	(*ProtoTable)(nil),                                     // 87: ProtoTable
+	(*ProtoTableConfig)(nil),                               // 88: ProtoTableConfig
+	(*ProtoTableSettings)(nil),                             // 89: ProtoTableSettings
+	(*ProtoBoxedTableContentGroupType)(nil),                // 90: ProtoBoxedTableContentGroupType
+	(*ProtoTableContentGroup)(nil),                         // 91: ProtoTableContentGroup
+	(*ProtoTableContentGroupConfig)(nil),                   // 92: ProtoTableContentGroupConfig
+	(*ProtoTableContentGroupSettings)(nil),                 // 93: ProtoTableContentGroupSettings
+	(*ProtoTableRow)(nil),                                  // 94: ProtoTableRow
+	(*ProtoTableRowConfig)(nil),                            // 95: ProtoTableRowConfig
+	(*ProtoTableRowSettings)(nil),                          // 96: ProtoTableRowSettings
+	(*ProtoBoxedTableCellType)(nil),                        // 97: ProtoBoxedTableCellType
+	(*ProtoTableCell)(nil),                                 // 98: ProtoTableCell
+	(*ProtoTableCellConfig)(nil),                           // 99: ProtoTableCellConfig
+	(*ProtoTableCellSettings)(nil),                         // 100: ProtoTableCellSettings
+	(*ProtoTableWS)(nil),                                   // 101: ProtoTableWS
+	(*ProtoTableElementProperties)(nil),                    // 102: ProtoTableElementProperties
+	(*ProtoText)(nil),                                      // 103: ProtoText
+	(*ProtoBarcode)(nil),                                   // 104: ProtoBarcode
+	(*ProtoBrickReference)(nil),                            // 105: ProtoBrickReference
+	(*ProtoBrick)(nil),                                     // 106: ProtoBrick
+	(*ProtoTemplate)(nil),                                  // 107: ProtoTemplate
+	(*ProtoHeader)(nil),                                    // 108: ProtoHeader
+	(*ProtoFooter)(nil),                                    // 109: ProtoFooter
+	(*Node)(nil),                                           // 110: Node
+	(*ProtoImage)(nil),                                     // 111: ProtoImage
+	(*ProtoDirectory)(nil),                                 // 112: ProtoDirectory
+	(*ProtoTextBrick)(nil),                                 // 113: ProtoTextBrick
+	(*ProtoVariable)(nil),                                  // 114: ProtoVariable
+	(*ProtoFormatted)(nil),                                 // 115: ProtoFormatted
+	(*ProtoApplyProtoCDef)(nil),                            // 116: ProtoApplyProtoCDef
+	(*ProtoApplyProtoPDef)(nil),                            // 117: ProtoApplyProtoPDef
+	(*ProtoApplyPtConfig)(nil),                             // 118: ProtoApplyPtConfig
+	(*ProtoApplyUlConfig)(nil),                             // 119: ProtoApplyUlConfig
+	(*ProtoCDef)(nil),                                      // 120: ProtoCDef
+	(*ProtoPDef)(nil),                                      // 121: ProtoPDef
+	(*ProtoPtConfig)(nil),                                  // 122: ProtoPtConfig
+	(*ProtoUlConfig)(nil),                                  // 123: ProtoUlConfig
+	(*ProtoNewPage)(nil),                                   // 124: ProtoNewPage
+	(*ProtoIndentation)(nil),                               // 125: ProtoIndentation
+	(*ProtoCarryOver)(nil),                                 // 126: ProtoCarryOver
+	(*ProtoLoopEntry)(nil),                                 // 127: ProtoLoopEntry
+	(*ProtoLoop)(nil),                                      // 128: ProtoLoop
+	(*ProtoSubTotal)(nil),                                  // 129: ProtoSubTotal
+	(*ProtoWsArea)(nil),                                    // 130: ProtoWsArea
+	(*ProtoRule)(nil),                                      // 131: ProtoRule
+	(*ProtoRuleBoundaries)(nil),                            // 132: ProtoRuleBoundaries
+	(*ProtoColorDef)(nil),                                  // 133: ProtoColorDef
+	(*ProtoLayout)(nil),                                    // 134: ProtoLayout
+	(*ProtoAdvancedIllustrationArea)(nil),                  // 135: ProtoAdvancedIllustrationArea
+	(*ProtoAdjustHorizontally)(nil),                        // 136: ProtoAdjustHorizontally
+	(*ProtoDoctypeScript)(nil),                             // 137: ProtoDoctypeScript
+	(*ProtoDmScript)(nil),                                  // 138: ProtoDmScript
+	(*ProtoDynamicTemplate)(nil),                           // 139: ProtoDynamicTemplate
+	(*ProtoSelection)(nil),                                 // 140: ProtoSelection
+	(*ProtoSelectionEntry)(nil),                            // 141: ProtoSelectionEntry
+	(*ProtoCondition)(nil),                                 // 142: ProtoCondition
+	(*ProtoPageCondition)(nil),                             // 143: ProtoPageCondition
+	(*ProtoLocale)(nil),                                    // 144: ProtoLocale
+	(*ProtoTag)(nil),                                       // 145: ProtoTag
+	(*ProtoParagraphSetDefault)(nil),                       // 146: ProtoParagraphSetDefault
+	(*ProtoBaseTextInputField)(nil),                        // 147: ProtoBaseTextInputField
+	(*ProtoInputFieldText)(nil),                            // 148: ProtoInputFieldText
+	(*ProtoInputFieldDate)(nil),                            // 149: ProtoInputFieldDate
+	(*ProtoInputFieldCheckbox)(nil),                        // 150: ProtoInputFieldCheckbox
+	(*ProtoInputFieldLabel)(nil),                           // 151: ProtoInputFieldLabel
+	(*ProtoInputFieldDropdown)(nil),                        // 152: ProtoInputFieldDropdown
+	(*ProtoColorChoice)(nil),                               // 153: ProtoColorChoice
+	(*ProtoSetColor)(nil),                                  // 154: ProtoSetColor
+	(*ProtoUnsetColor)(nil),                                // 155: ProtoUnsetColor
+	(*ProtoColoredArea)(nil),                               // 156: ProtoColoredArea
+	(*ProtoChapter)(nil),                                   // 157: ProtoChapter
+	(*ProtoTableOfContents)(nil),                           // 158: ProtoTableOfContents
+	(*ProtoSectionReference)(nil),                          // 159: ProtoSectionReference
+	(*ProtoChapterLink)(nil),                               // 160: ProtoChapterLink
 }
 var file_build_docframe_proto_depIdxs = []int32{
 	0,   // 0: ProtoBoxedSPBMode.value:type_name -> ProtoSPBMode
-	40,  // 1: ProtoStrikethroughSpec.weight:type_name -> ProtoMeasure
+	41,  // 1: ProtoStrikethroughSpec.weight:type_name -> ProtoMeasure
 	10,  // 2: ProtoStrikethroughSpec.mode:type_name -> ProtoUnderlineMode
-	47,  // 3: ProtoStrikethroughSpec.color:type_name -> ProtoColor
+	48,  // 3: ProtoStrikethroughSpec.color:type_name -> ProtoColor
 	1,   // 4: ProtoStrikethroughSpec.style:type_name -> ProtoRuleStyle
-	38,  // 5: ProtoBoxedStrikethroughSpec.value:type_name -> ProtoStrikethroughSpec
+	39,  // 5: ProtoBoxedStrikethroughSpec.value:type_name -> ProtoStrikethroughSpec
 	2,   // 6: ProtoMeasure.mtype:type_name -> ProtoMeasureType
-	40,  // 7: ProtoBoxedMeasure.value:type_name -> ProtoMeasure
-	40,  // 8: ProtoSideMeasures.top:type_name -> ProtoMeasure
-	40,  // 9: ProtoSideMeasures.right:type_name -> ProtoMeasure
-	40,  // 10: ProtoSideMeasures.bottom:type_name -> ProtoMeasure
-	40,  // 11: ProtoSideMeasures.left:type_name -> ProtoMeasure
+	41,  // 7: ProtoBoxedMeasure.value:type_name -> ProtoMeasure
+	41,  // 8: ProtoSideMeasures.top:type_name -> ProtoMeasure
+	41,  // 9: ProtoSideMeasures.right:type_name -> ProtoMeasure
+	41,  // 10: ProtoSideMeasures.bottom:type_name -> ProtoMeasure
+	41,  // 11: ProtoSideMeasures.left:type_name -> ProtoMeasure
 	3,   // 12: ProtoBoxedAdvancedIllustrationAreaTextFlowType.value:type_name -> ProtoAdvancedIllustrationAreaTextFlowType
-	43,  // 13: ProtoAdvancedIllustrationAreaImageSettings.textFlow:type_name -> ProtoBoxedAdvancedIllustrationAreaTextFlowType
-	42,  // 14: ProtoAdvancedIllustrationAreaImageSettings.margin:type_name -> ProtoSideMeasures
-	45,  // 15: ProtoBoxedFont.value:type_name -> ProtoFont
-	36,  // 16: ProtoColor.name:type_name -> ProtoBoxedString
+	44,  // 13: ProtoAdvancedIllustrationAreaImageSettings.textFlow:type_name -> ProtoBoxedAdvancedIllustrationAreaTextFlowType
+	43,  // 14: ProtoAdvancedIllustrationAreaImageSettings.margin:type_name -> ProtoSideMeasures
+	46,  // 15: ProtoBoxedFont.value:type_name -> ProtoFont
+	37,  // 16: ProtoColor.name:type_name -> ProtoBoxedString
 	4,   // 17: ProtoColor.type:type_name -> ProtoColorType
-	47,  // 18: ProtoBoxedColor.value:type_name -> ProtoColor
-	36,  // 19: ProtoRGBColor.name:type_name -> ProtoBoxedString
+	48,  // 18: ProtoBoxedColor.value:type_name -> ProtoColor
+	37,  // 19: ProtoRGBColor.name:type_name -> ProtoBoxedString
 	4,   // 20: ProtoRGBColor.type:type_name -> ProtoColorType
-	36,  // 21: ProtoCMYKColor.name:type_name -> ProtoBoxedString
+	37,  // 21: ProtoCMYKColor.name:type_name -> ProtoBoxedString
 	4,   // 22: ProtoCMYKColor.type:type_name -> ProtoColorType
 	5,   // 23: ProtoBoxedHorizontalAlignment.value:type_name -> ProtoHorizontalAlignment
 	6,   // 24: ProtoBoxedVerticalAlignment.value:type_name -> ProtoVerticalAlignment
-	53,  // 25: ProtoSwissQRData.creditor:type_name -> ProtoSwissQRCreditor
-	54,  // 26: ProtoSwissQRData.debitor:type_name -> ProtoSwissQRDebitor
-	69,  // 27: ProtoLinebreak.parent:type_name -> ProtoDocumentElement
-	35,  // 28: ProtoLinebreak.count:type_name -> ProtoBoxedUint32
-	40,  // 29: ProtoBorder.weight:type_name -> ProtoMeasure
-	47,  // 30: ProtoBorder.color:type_name -> ProtoColor
-	57,  // 31: ProtoSideBorders.top:type_name -> ProtoBorder
-	57,  // 32: ProtoSideBorders.right:type_name -> ProtoBorder
-	57,  // 33: ProtoSideBorders.bottom:type_name -> ProtoBorder
-	57,  // 34: ProtoSideBorders.left:type_name -> ProtoBorder
+	54,  // 25: ProtoSwissQRData.creditor:type_name -> ProtoSwissQRCreditor
+	55,  // 26: ProtoSwissQRData.debitor:type_name -> ProtoSwissQRDebitor
+	70,  // 27: ProtoLinebreak.parent:type_name -> ProtoDocumentElement
+	36,  // 28: ProtoLinebreak.count:type_name -> ProtoBoxedUint32
+	41,  // 29: ProtoBorder.weight:type_name -> ProtoMeasure
+	48,  // 30: ProtoBorder.color:type_name -> ProtoColor
+	58,  // 31: ProtoSideBorders.top:type_name -> ProtoBorder
+	58,  // 32: ProtoSideBorders.right:type_name -> ProtoBorder
+	58,  // 33: ProtoSideBorders.bottom:type_name -> ProtoBorder
+	58,  // 34: ProtoSideBorders.left:type_name -> ProtoBorder
 	9,   // 35: ProtoBoxedPositionMode.value:type_name -> ProtoPositionMode
-	41,  // 36: ProtoColumnSettings.width:type_name -> ProtoBoxedMeasure
-	41,  // 37: ProtoColumnSettings.interColumnSpace:type_name -> ProtoBoxedMeasure
-	41,  // 38: ProtoColumnSettings.positionOffset:type_name -> ProtoBoxedMeasure
+	42,  // 36: ProtoColumnSettings.width:type_name -> ProtoBoxedMeasure
+	42,  // 37: ProtoColumnSettings.interColumnSpace:type_name -> ProtoBoxedMeasure
+	42,  // 38: ProtoColumnSettings.positionOffset:type_name -> ProtoBoxedMeasure
 	9,   // 39: ProtoColumnSettings.positionMode:type_name -> ProtoPositionMode
-	41,  // 40: ProtoColumnSettings.outsideMargin:type_name -> ProtoBoxedMeasure
-	32,  // 41: ProtoGraphicState.bold:type_name -> ProtoBoxedBool
-	32,  // 42: ProtoGraphicState.italic:type_name -> ProtoBoxedBool
-	47,  // 43: ProtoGraphicState.colorStack:type_name -> ProtoColor
-	32,  // 44: ProtoGraphicState.subscript:type_name -> ProtoBoxedBool
-	32,  // 45: ProtoGraphicState.superscript:type_name -> ProtoBoxedBool
-	32,  // 46: ProtoGraphicState.underline:type_name -> ProtoBoxedBool
-	32,  // 47: ProtoGraphicState.strikethrough:type_name -> ProtoBoxedBool
-	40,  // 48: ProtoUnderlineSpec.weight:type_name -> ProtoMeasure
+	42,  // 40: ProtoColumnSettings.outsideMargin:type_name -> ProtoBoxedMeasure
+	33,  // 41: ProtoGraphicState.bold:type_name -> ProtoBoxedBool
+	33,  // 42: ProtoGraphicState.italic:type_name -> ProtoBoxedBool
+	48,  // 43: ProtoGraphicState.colorStack:type_name -> ProtoColor
+	33,  // 44: ProtoGraphicState.subscript:type_name -> ProtoBoxedBool
+	33,  // 45: ProtoGraphicState.superscript:type_name -> ProtoBoxedBool
+	33,  // 46: ProtoGraphicState.underline:type_name -> ProtoBoxedBool
+	33,  // 47: ProtoGraphicState.strikethrough:type_name -> ProtoBoxedBool
+	41,  // 48: ProtoUnderlineSpec.weight:type_name -> ProtoMeasure
 	10,  // 49: ProtoUnderlineSpec.mode:type_name -> ProtoUnderlineMode
-	47,  // 50: ProtoUnderlineSpec.color:type_name -> ProtoColor
+	48,  // 50: ProtoUnderlineSpec.color:type_name -> ProtoColor
 	1,   // 51: ProtoUnderlineSpec.style:type_name -> ProtoRuleStyle
-	63,  // 52: ProtoBoxedUnderlineSpec.value:type_name -> ProtoUnderlineSpec
-	41,  // 53: ProtoCropSettings.x:type_name -> ProtoBoxedMeasure
-	41,  // 54: ProtoCropSettings.y:type_name -> ProtoBoxedMeasure
-	41,  // 55: ProtoCropSettings.width:type_name -> ProtoBoxedMeasure
-	41,  // 56: ProtoCropSettings.height:type_name -> ProtoBoxedMeasure
-	36,  // 57: ProtoBaseInputField.value:type_name -> ProtoBoxedString
+	64,  // 52: ProtoBoxedUnderlineSpec.value:type_name -> ProtoUnderlineSpec
+	42,  // 53: ProtoCropSettings.x:type_name -> ProtoBoxedMeasure
+	42,  // 54: ProtoCropSettings.y:type_name -> ProtoBoxedMeasure
+	42,  // 55: ProtoCropSettings.width:type_name -> ProtoBoxedMeasure
+	42,  // 56: ProtoCropSettings.height:type_name -> ProtoBoxedMeasure
+	37,  // 57: ProtoBaseInputField.value:type_name -> ProtoBoxedString
 	13,  // 58: ProtoBaseInputField.pdfPrintingBehavior:type_name -> PDFPrintingBehavior
-	69,  // 59: ProtoDocumentElement.parent:type_name -> ProtoDocumentElement
-	69,  // 60: ProtoBranchDocumentElement._children:type_name -> ProtoDocumentElement
-	69,  // 61: ProtoBranchDocumentElement.parent:type_name -> ProtoDocumentElement
-	69,  // 62: ProtoLink._children:type_name -> ProtoDocumentElement
-	35,  // 63: ProtoListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
+	70,  // 59: ProtoDocumentElement.parent:type_name -> ProtoDocumentElement
+	70,  // 60: ProtoBranchDocumentElement._children:type_name -> ProtoDocumentElement
+	70,  // 61: ProtoBranchDocumentElement.parent:type_name -> ProtoDocumentElement
+	70,  // 62: ProtoLink._children:type_name -> ProtoDocumentElement
+	36,  // 63: ProtoListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
 	16,  // 64: ProtoListLevelSetting.type:type_name -> ProtoListLevelSettingType
-	45,  // 65: ProtoListLevelSetting.fixFontFamily:type_name -> ProtoFont
-	47,  // 66: ProtoListLevelSetting.color:type_name -> ProtoColor
-	45,  // 67: ProtoListLevelSetting.fontFamily:type_name -> ProtoFont
-	32,  // 68: ProtoListLevelSetting.bold:type_name -> ProtoBoxedBool
-	32,  // 69: ProtoListLevelSetting.italic:type_name -> ProtoBoxedBool
+	46,  // 65: ProtoListLevelSetting.fixFontFamily:type_name -> ProtoFont
+	48,  // 66: ProtoListLevelSetting.color:type_name -> ProtoColor
+	46,  // 67: ProtoListLevelSetting.fontFamily:type_name -> ProtoFont
+	33,  // 68: ProtoListLevelSetting.bold:type_name -> ProtoBoxedBool
+	33,  // 69: ProtoListLevelSetting.italic:type_name -> ProtoBoxedBool
 	15,  // 70: ProtoListLevelSetting.numberType:type_name -> ProtoNumberType
-	35,  // 71: ProtoImageListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
+	36,  // 71: ProtoImageListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
 	16,  // 72: ProtoImageListLevelSetting.type:type_name -> ProtoListLevelSettingType
-	45,  // 73: ProtoImageListLevelSetting.fixFontFamily:type_name -> ProtoFont
-	47,  // 74: ProtoImageListLevelSetting.color:type_name -> ProtoColor
-	35,  // 75: ProtoTextListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
+	46,  // 73: ProtoImageListLevelSetting.fixFontFamily:type_name -> ProtoFont
+	48,  // 74: ProtoImageListLevelSetting.color:type_name -> ProtoColor
+	36,  // 75: ProtoTextListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
 	16,  // 76: ProtoTextListLevelSetting.type:type_name -> ProtoListLevelSettingType
-	45,  // 77: ProtoTextListLevelSetting.fixFontFamily:type_name -> ProtoFont
-	47,  // 78: ProtoTextListLevelSetting.color:type_name -> ProtoColor
-	45,  // 79: ProtoTextListLevelSetting.fontFamily:type_name -> ProtoFont
-	32,  // 80: ProtoTextListLevelSetting.bold:type_name -> ProtoBoxedBool
-	32,  // 81: ProtoTextListLevelSetting.italic:type_name -> ProtoBoxedBool
-	35,  // 82: ProtoNumberListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
+	46,  // 77: ProtoTextListLevelSetting.fixFontFamily:type_name -> ProtoFont
+	48,  // 78: ProtoTextListLevelSetting.color:type_name -> ProtoColor
+	46,  // 79: ProtoTextListLevelSetting.fontFamily:type_name -> ProtoFont
+	33,  // 80: ProtoTextListLevelSetting.bold:type_name -> ProtoBoxedBool
+	33,  // 81: ProtoTextListLevelSetting.italic:type_name -> ProtoBoxedBool
+	36,  // 82: ProtoNumberListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
 	16,  // 83: ProtoNumberListLevelSetting.type:type_name -> ProtoListLevelSettingType
-	45,  // 84: ProtoNumberListLevelSetting.fixFontFamily:type_name -> ProtoFont
-	47,  // 85: ProtoNumberListLevelSetting.color:type_name -> ProtoColor
-	45,  // 86: ProtoNumberListLevelSetting.fontFamily:type_name -> ProtoFont
-	32,  // 87: ProtoNumberListLevelSetting.bold:type_name -> ProtoBoxedBool
-	32,  // 88: ProtoNumberListLevelSetting.italic:type_name -> ProtoBoxedBool
+	46,  // 84: ProtoNumberListLevelSetting.fixFontFamily:type_name -> ProtoFont
+	48,  // 85: ProtoNumberListLevelSetting.color:type_name -> ProtoColor
+	46,  // 86: ProtoNumberListLevelSetting.fontFamily:type_name -> ProtoFont
+	33,  // 87: ProtoNumberListLevelSetting.bold:type_name -> ProtoBoxedBool
+	33,  // 88: ProtoNumberListLevelSetting.italic:type_name -> ProtoBoxedBool
 	15,  // 89: ProtoNumberListLevelSetting.numberType:type_name -> ProtoNumberType
-	35,  // 90: ProtoUnnumberedListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
-	16,  // 91: ProtoUnnumberedListLevelSetting.type:type_name -> ProtoListLevelSettingType
-	45,  // 92: ProtoUnnumberedListLevelSetting.fixFontFamily:type_name -> ProtoFont
-	47,  // 93: ProtoUnnumberedListLevelSetting.color:type_name -> ProtoColor
-	45,  // 94: ProtoUnnumberedListLevelSetting.fontFamily:type_name -> ProtoFont
-	32,  // 95: ProtoUnnumberedListLevelSetting.bold:type_name -> ProtoBoxedBool
-	32,  // 96: ProtoUnnumberedListLevelSetting.italic:type_name -> ProtoBoxedBool
-	16,  // 97: ProtoCustomListLevelSetting.type:type_name -> ProtoListLevelSettingType
-	69,  // 98: ProtoListSetting.parent:type_name -> ProtoDocumentElement
-	72,  // 99: ProtoListSetting.listLevelSettings:type_name -> ProtoListLevelSetting
-	72,  // 100: ProtoListSetting.defaultListLevelSetting:type_name -> ProtoListLevelSetting
-	78,  // 101: ProtoBoxedListSetting.value:type_name -> ProtoListSetting
-	69,  // 102: ProtoNamedString._children:type_name -> ProtoDocumentElement
-	69,  // 103: ProtoNamedString.parent:type_name -> ProtoDocumentElement
-	69,  // 104: ProtoParagraph._children:type_name -> ProtoDocumentElement
-	69,  // 105: ProtoParagraph.parent:type_name -> ProtoDocumentElement
-	82,  // 106: ProtoParagraph.format:type_name -> ProtoParagraphFormat
-	82,  // 107: ProtoParagraph.overwrite:type_name -> ProtoParagraphFormat
-	82,  // 108: ProtoParagraphFormat.baseFormat:type_name -> ProtoParagraphFormat
-	36,  // 109: ProtoParagraphFormat.name:type_name -> ProtoBoxedString
-	32,  // 110: ProtoParagraphFormat.default:type_name -> ProtoBoxedBool
-	46,  // 111: ProtoParagraphFormat.font:type_name -> ProtoBoxedFont
-	32,  // 112: ProtoParagraphFormat.bold:type_name -> ProtoBoxedBool
-	32,  // 113: ProtoParagraphFormat.italic:type_name -> ProtoBoxedBool
-	48,  // 114: ProtoParagraphFormat.fontColor:type_name -> ProtoBoxedColor
-	64,  // 115: ProtoParagraphFormat.underline:type_name -> ProtoBoxedUnderlineSpec
-	41,  // 116: ProtoParagraphFormat.fontSize:type_name -> ProtoBoxedMeasure
-	41,  // 117: ProtoParagraphFormat.characterWidth:type_name -> ProtoBoxedMeasure
-	41,  // 118: ProtoParagraphFormat.characterSpacing:type_name -> ProtoBoxedMeasure
-	41,  // 119: ProtoParagraphFormat.lineFeed:type_name -> ProtoBoxedMeasure
-	51,  // 120: ProtoParagraphFormat.alignment:type_name -> ProtoBoxedHorizontalAlignment
-	41,  // 121: ProtoParagraphFormat.indentionWidth:type_name -> ProtoBoxedMeasure
-	34,  // 122: ProtoParagraphFormat.indentionLevel:type_name -> ProtoBoxedInt32
-	41,  // 123: ProtoParagraphFormat.spaceAbove:type_name -> ProtoBoxedMeasure
-	41,  // 124: ProtoParagraphFormat.spaceBelow:type_name -> ProtoBoxedMeasure
-	34,  // 125: ProtoParagraphFormat.widowSetting:type_name -> ProtoBoxedInt32
-	34,  // 126: ProtoParagraphFormat.orphanSetting:type_name -> ProtoBoxedInt32
-	34,  // 127: ProtoParagraphFormat.widowPriority:type_name -> ProtoBoxedInt32
-	39,  // 128: ProtoParagraphFormat.strikethrough:type_name -> ProtoBoxedStrikethroughSpec
-	37,  // 129: ProtoParagraphFormat.superscriptSubscript:type_name -> ProtoBoxedSPBMode
-	48,  // 130: ProtoParagraphFormat.backgroundColor:type_name -> ProtoBoxedColor
-	79,  // 131: ProtoParagraphFormat.listSetting:type_name -> ProtoBoxedListSetting
-	32,  // 132: ProtoParagraphFormat.hyphenation:type_name -> ProtoBoxedBool
-	36,  // 133: ProtoParagraphFormat.preNamedString:type_name -> ProtoBoxedString
-	36,  // 134: ProtoParagraphFormat.postNamedString:type_name -> ProtoBoxedString
-	36,  // 135: ProtoParagraphFormat.semanticType:type_name -> ProtoBoxedString
-	69,  // 136: ProtoSection._children:type_name -> ProtoDocumentElement
-	69,  // 137: ProtoSection.parent:type_name -> ProtoDocumentElement
-	69,  // 138: ProtoSpaceVertically.parent:type_name -> ProtoDocumentElement
-	40,  // 139: ProtoSpaceVertically.space:type_name -> ProtoMeasure
-	69,  // 140: ProtoSpan._children:type_name -> ProtoDocumentElement
-	69,  // 141: ProtoSpan.parent:type_name -> ProtoDocumentElement
-	32,  // 142: ProtoSpan.bold:type_name -> ProtoBoxedBool
-	32,  // 143: ProtoSpan.italic:type_name -> ProtoBoxedBool
-	47,  // 144: ProtoSpan.color:type_name -> ProtoColor
-	32,  // 145: ProtoSpan.subscript:type_name -> ProtoBoxedBool
-	32,  // 146: ProtoSpan.superscript:type_name -> ProtoBoxedBool
-	32,  // 147: ProtoSpan.underline:type_name -> ProtoBoxedBool
-	32,  // 148: ProtoSpan.strikethrough:type_name -> ProtoBoxedBool
-	69,  // 149: ProtoTable._children:type_name -> ProtoDocumentElement
-	69,  // 150: ProtoTable.parent:type_name -> ProtoDocumentElement
-	88,  // 151: ProtoTable.settings:type_name -> ProtoTableSettings
-	109, // 152: ProtoTable.carryOver:type_name -> Node
-	109, // 153: ProtoTable.subTotal:type_name -> Node
-	101, // 154: ProtoTable.elementProperties:type_name -> ProtoTableElementProperties
-	69,  // 155: ProtoTableConfig.parent:type_name -> ProtoDocumentElement
-	88,  // 156: ProtoTableConfig.settings:type_name -> ProtoTableSettings
-	40,  // 157: ProtoTableSettings.xOffset:type_name -> ProtoMeasure
-	32,  // 158: ProtoTableSettings.leftMeasure:type_name -> ProtoBoxedBool
-	40,  // 159: ProtoTableSettings.width:type_name -> ProtoMeasure
-	35,  // 160: ProtoTableSettings.repeatHeader:type_name -> ProtoBoxedUint32
-	100, // 161: ProtoTableSettings.ws:type_name -> ProtoTableWS
-	32,  // 162: ProtoTableSettings.noDocumentStructure:type_name -> ProtoBoxedBool
-	35,  // 163: ProtoTableSettings.repeatSubHeader:type_name -> ProtoBoxedUint32
-	17,  // 164: ProtoBoxedTableContentGroupType.value:type_name -> ProtoTableContentGroupType
-	69,  // 165: ProtoTableContentGroup._children:type_name -> ProtoDocumentElement
-	69,  // 166: ProtoTableContentGroup.parent:type_name -> ProtoDocumentElement
-	92,  // 167: ProtoTableContentGroup.settings:type_name -> ProtoTableContentGroupSettings
-	101, // 168: ProtoTableContentGroup.elementProperties:type_name -> ProtoTableElementProperties
-	69,  // 169: ProtoTableContentGroupConfig.parent:type_name -> ProtoDocumentElement
-	92,  // 170: ProtoTableContentGroupConfig.settings:type_name -> ProtoTableContentGroupSettings
-	89,  // 171: ProtoTableContentGroupSettings.contentGroupType:type_name -> ProtoBoxedTableContentGroupType
-	47,  // 172: ProtoTableContentGroupSettings.backgroundColors:type_name -> ProtoColor
-	100, // 173: ProtoTableContentGroupSettings.ws:type_name -> ProtoTableWS
-	69,  // 174: ProtoTableRow._children:type_name -> ProtoDocumentElement
-	69,  // 175: ProtoTableRow.parent:type_name -> ProtoDocumentElement
-	95,  // 176: ProtoTableRow.settings:type_name -> ProtoTableRowSettings
-	35,  // 177: ProtoTableRow.rowConfigNumber:type_name -> ProtoBoxedUint32
-	101, // 178: ProtoTableRow.elementProperties:type_name -> ProtoTableElementProperties
-	69,  // 179: ProtoTableRowConfig.parent:type_name -> ProtoDocumentElement
-	95,  // 180: ProtoTableRowConfig.settings:type_name -> ProtoTableRowSettings
-	40,  // 181: ProtoTableRowSettings.minHeight:type_name -> ProtoMeasure
-	100, // 182: ProtoTableRowSettings.ws:type_name -> ProtoTableWS
-	18,  // 183: ProtoBoxedTableCellType.value:type_name -> ProtoTableCellType
-	69,  // 184: ProtoTableCell._children:type_name -> ProtoDocumentElement
-	69,  // 185: ProtoTableCell.parent:type_name -> ProtoDocumentElement
-	99,  // 186: ProtoTableCell.settings:type_name -> ProtoTableCellSettings
-	35,  // 187: ProtoTableCell.cellConfigNumber:type_name -> ProtoBoxedUint32
-	101, // 188: ProtoTableCell.elementProperties:type_name -> ProtoTableElementProperties
-	69,  // 189: ProtoTableCellConfig.parent:type_name -> ProtoDocumentElement
-	99,  // 190: ProtoTableCellConfig.settings:type_name -> ProtoTableCellSettings
-	96,  // 191: ProtoTableCellConfig.cellType:type_name -> ProtoBoxedTableCellType
-	40,  // 192: ProtoTableCellSettings.width:type_name -> ProtoMeasure
-	51,  // 193: ProtoTableCellSettings.align:type_name -> ProtoBoxedHorizontalAlignment
-	52,  // 194: ProtoTableCellSettings.valign:type_name -> ProtoBoxedVerticalAlignment
-	47,  // 195: ProtoTableCellSettings.backgroundColor:type_name -> ProtoColor
-	42,  // 196: ProtoTableCellSettings.padding:type_name -> ProtoSideMeasures
-	58,  // 197: ProtoTableCellSettings.border:type_name -> ProtoSideBorders
-	42,  // 198: ProtoTableCellSettings.margin:type_name -> ProtoSideMeasures
-	33,  // 199: ProtoTableCellSettings.rotation:type_name -> ProtoBoxedDouble
-	36,  // 200: ProtoTableCellSettings.defaultParagraphFormat:type_name -> ProtoBoxedString
-	14,  // 201: ProtoTableElementProperties.widthInheritance:type_name -> Inheritance
-	40,  // 202: ProtoTableElementProperties.width:type_name -> ProtoMeasure
-	14,  // 203: ProtoTableElementProperties.alignInheritance:type_name -> Inheritance
-	51,  // 204: ProtoTableElementProperties.align:type_name -> ProtoBoxedHorizontalAlignment
-	14,  // 205: ProtoTableElementProperties.valignInheritance:type_name -> Inheritance
-	52,  // 206: ProtoTableElementProperties.valign:type_name -> ProtoBoxedVerticalAlignment
-	14,  // 207: ProtoTableElementProperties.backgroundColorInheritance:type_name -> Inheritance
-	47,  // 208: ProtoTableElementProperties.backgroundColor:type_name -> ProtoColor
-	14,  // 209: ProtoTableElementProperties.paddingTopInheritance:type_name -> Inheritance
-	40,  // 210: ProtoTableElementProperties.paddingTop:type_name -> ProtoMeasure
-	14,  // 211: ProtoTableElementProperties.paddingRightInheritance:type_name -> Inheritance
-	40,  // 212: ProtoTableElementProperties.paddingRight:type_name -> ProtoMeasure
-	14,  // 213: ProtoTableElementProperties.paddingBottomInheritance:type_name -> Inheritance
-	40,  // 214: ProtoTableElementProperties.paddingBottom:type_name -> ProtoMeasure
-	14,  // 215: ProtoTableElementProperties.paddingLeftInheritance:type_name -> Inheritance
-	40,  // 216: ProtoTableElementProperties.paddingLeft:type_name -> ProtoMeasure
-	14,  // 217: ProtoTableElementProperties.borderTopColorInheritance:type_name -> Inheritance
-	47,  // 218: ProtoTableElementProperties.borderTopColor:type_name -> ProtoColor
-	14,  // 219: ProtoTableElementProperties.borderTopWeightInheritance:type_name -> Inheritance
-	40,  // 220: ProtoTableElementProperties.borderTopWeight:type_name -> ProtoMeasure
-	14,  // 221: ProtoTableElementProperties.borderRightColorInheritance:type_name -> Inheritance
-	47,  // 222: ProtoTableElementProperties.borderRightColor:type_name -> ProtoColor
-	14,  // 223: ProtoTableElementProperties.borderRightWeightInheritance:type_name -> Inheritance
-	40,  // 224: ProtoTableElementProperties.borderRightWeight:type_name -> ProtoMeasure
-	14,  // 225: ProtoTableElementProperties.borderBottomColorInheritance:type_name -> Inheritance
-	47,  // 226: ProtoTableElementProperties.borderBottomColor:type_name -> ProtoColor
-	14,  // 227: ProtoTableElementProperties.borderBottomWeightInheritance:type_name -> Inheritance
-	40,  // 228: ProtoTableElementProperties.borderBottomWeight:type_name -> ProtoMeasure
-	14,  // 229: ProtoTableElementProperties.borderLeftColorInheritance:type_name -> Inheritance
-	47,  // 230: ProtoTableElementProperties.borderLeftColor:type_name -> ProtoColor
-	14,  // 231: ProtoTableElementProperties.borderLeftWeightInheritance:type_name -> Inheritance
-	40,  // 232: ProtoTableElementProperties.borderLeftWeight:type_name -> ProtoMeasure
-	14,  // 233: ProtoTableElementProperties.marginTopInheritance:type_name -> Inheritance
-	40,  // 234: ProtoTableElementProperties.marginTop:type_name -> ProtoMeasure
-	14,  // 235: ProtoTableElementProperties.marginRightInheritance:type_name -> Inheritance
-	40,  // 236: ProtoTableElementProperties.marginRight:type_name -> ProtoMeasure
-	14,  // 237: ProtoTableElementProperties.marginBottomInheritance:type_name -> Inheritance
-	40,  // 238: ProtoTableElementProperties.marginBottom:type_name -> ProtoMeasure
-	14,  // 239: ProtoTableElementProperties.marginLeftInheritance:type_name -> Inheritance
-	40,  // 240: ProtoTableElementProperties.marginLeft:type_name -> ProtoMeasure
-	14,  // 241: ProtoTableElementProperties.rotationInheritance:type_name -> Inheritance
-	33,  // 242: ProtoTableElementProperties.rotation:type_name -> ProtoBoxedDouble
-	14,  // 243: ProtoTableElementProperties.defaultParagraphFormatUUIDInheritance:type_name -> Inheritance
-	36,  // 244: ProtoTableElementProperties.defaultParagraphFormatUUID:type_name -> ProtoBoxedString
-	14,  // 245: ProtoTableElementProperties.tableContentGroupTypeInheritance:type_name -> Inheritance
-	89,  // 246: ProtoTableElementProperties.tableContentGroupType:type_name -> ProtoBoxedTableContentGroupType
-	14,  // 247: ProtoTableElementProperties.cellTypeInheritance:type_name -> Inheritance
-	96,  // 248: ProtoTableElementProperties.cellType:type_name -> ProtoBoxedTableCellType
-	14,  // 249: ProtoTableElementProperties.minRowHeightInheritance:type_name -> Inheritance
-	40,  // 250: ProtoTableElementProperties.minRowHeight:type_name -> ProtoMeasure
-	14,  // 251: ProtoTableElementProperties.wsInheritance:type_name -> Inheritance
-	100, // 252: ProtoTableElementProperties.ws:type_name -> ProtoTableWS
-	14,  // 253: ProtoTableElementProperties.xOffsetInheritance:type_name -> Inheritance
-	40,  // 254: ProtoTableElementProperties.xOffset:type_name -> ProtoMeasure
-	14,  // 255: ProtoTableElementProperties.leftMeasureInheritance:type_name -> Inheritance
-	32,  // 256: ProtoTableElementProperties.leftMeasure:type_name -> ProtoBoxedBool
-	14,  // 257: ProtoTableElementProperties.repeatHeaderInheritance:type_name -> Inheritance
-	35,  // 258: ProtoTableElementProperties.repeatHeader:type_name -> ProtoBoxedUint32
-	14,  // 259: ProtoTableElementProperties.noDocumentStructureInheritance:type_name -> Inheritance
-	32,  // 260: ProtoTableElementProperties.noDocumentStructure:type_name -> ProtoBoxedBool
-	14,  // 261: ProtoTableElementProperties.repeatSubHeaderInheritance:type_name -> Inheritance
-	35,  // 262: ProtoTableElementProperties.repeatSubHeader:type_name -> ProtoBoxedUint32
-	69,  // 263: ProtoText.parent:type_name -> ProtoDocumentElement
-	7,   // 264: ProtoBarcode.type:type_name -> ProtoBarcodeType
-	40,  // 265: ProtoBarcode.x:type_name -> ProtoMeasure
-	40,  // 266: ProtoBarcode.y:type_name -> ProtoMeasure
-	11,  // 267: ProtoBarcode.referencePoint:type_name -> ProtoImageReferencePoint
-	40,  // 268: ProtoBarcode.width:type_name -> ProtoMeasure
-	40,  // 269: ProtoBarcode.height:type_name -> ProtoMeasure
-	40,  // 270: ProtoBarcode.padding:type_name -> ProtoMeasure
-	55,  // 271: ProtoBarcode.swissQRData:type_name -> ProtoSwissQRData
-	8,   // 272: ProtoBarcode.uaMode:type_name -> ProtoBarcodeUAMode
-	69,  // 273: ProtoBrick._children:type_name -> ProtoDocumentElement
-	69,  // 274: ProtoBrick.parent:type_name -> ProtoDocumentElement
-	69,  // 275: ProtoTemplate._children:type_name -> ProtoDocumentElement
-	69,  // 276: ProtoTemplate.parent:type_name -> ProtoDocumentElement
-	19,  // 277: ProtoTemplate.columnBalancing:type_name -> ColumnBalancing
-	12,  // 278: ProtoTemplate.semanticType:type_name -> ProtoSemanticType
-	69,  // 279: ProtoHeader._children:type_name -> ProtoDocumentElement
-	69,  // 280: ProtoHeader.parent:type_name -> ProtoDocumentElement
-	20,  // 281: ProtoHeader.mode:type_name -> ProtoHeaderMode
-	69,  // 282: ProtoFooter._children:type_name -> ProtoDocumentElement
-	69,  // 283: ProtoFooter.parent:type_name -> ProtoDocumentElement
-	21,  // 284: ProtoFooter.mode:type_name -> ProtoFooterMode
-	109, // 285: Node.children:type_name -> Node
-	78,  // 286: Node.list_setting:type_name -> ProtoListSetting
-	132, // 287: Node.colorDef:type_name -> ProtoColorDef
-	105, // 288: Node.brick:type_name -> ProtoBrick
-	106, // 289: Node.template:type_name -> ProtoTemplate
-	114, // 290: Node.formatted:type_name -> ProtoFormatted
-	110, // 291: Node.image:type_name -> ProtoImage
-	82,  // 292: Node.paragraph_format:type_name -> ProtoParagraphFormat
-	112, // 293: Node.text_brick:type_name -> ProtoTextBrick
-	102, // 294: Node.text:type_name -> ProtoText
-	56,  // 295: Node.linebreak:type_name -> ProtoLinebreak
-	84,  // 296: Node.space_vertically:type_name -> ProtoSpaceVertically
-	108, // 297: Node.footer:type_name -> ProtoFooter
-	107, // 298: Node.header:type_name -> ProtoHeader
-	86,  // 299: Node.table:type_name -> ProtoTable
-	93,  // 300: Node.table_row:type_name -> ProtoTableRow
-	97,  // 301: Node.table_cell:type_name -> ProtoTableCell
-	119, // 302: Node.c_def:type_name -> ProtoCDef
-	120, // 303: Node.p_def:type_name -> ProtoPDef
-	115, // 304: Node.apply_c_def:type_name -> ProtoApplyProtoCDef
-	116, // 305: Node.apply_p_def:type_name -> ProtoApplyProtoPDef
-	117, // 306: Node.apply_pt_config:type_name -> ProtoApplyPtConfig
-	118, // 307: Node.apply_ul_config:type_name -> ProtoApplyUlConfig
-	121, // 308: Node.pt_config:type_name -> ProtoPtConfig
-	122, // 309: Node.ul_config:type_name -> ProtoUlConfig
-	123, // 310: Node.new_page:type_name -> ProtoNewPage
-	113, // 311: Node.variable:type_name -> ProtoVariable
-	80,  // 312: Node.named_string:type_name -> ProtoNamedString
-	81,  // 313: Node.paragraph:type_name -> ProtoParagraph
-	83,  // 314: Node.section:type_name -> ProtoSection
-	85,  // 315: Node.span:type_name -> ProtoSpan
-	71,  // 316: Node.link:type_name -> ProtoLink
-	111, // 317: Node.directory:type_name -> ProtoDirectory
-	90,  // 318: Node.table_content_group:type_name -> ProtoTableContentGroup
-	87,  // 319: Node.table_config:type_name -> ProtoTableConfig
-	98,  // 320: Node.table_cell_config:type_name -> ProtoTableCellConfig
-	94,  // 321: Node.table_row_config:type_name -> ProtoTableRowConfig
-	91,  // 322: Node.table_content_group_config:type_name -> ProtoTableContentGroupConfig
-	104, // 323: Node.brick_reference:type_name -> ProtoBrickReference
-	124, // 324: Node.indentation:type_name -> ProtoIndentation
-	103, // 325: Node.barcode:type_name -> ProtoBarcode
-	129, // 326: Node.ws_area:type_name -> ProtoWsArea
-	125, // 327: Node.carry_over:type_name -> ProtoCarryOver
-	128, // 328: Node.sub_total:type_name -> ProtoSubTotal
-	127, // 329: Node.loop:type_name -> ProtoLoop
-	126, // 330: Node.loop_entry:type_name -> ProtoLoopEntry
-	130, // 331: Node.rule:type_name -> ProtoRule
-	133, // 332: Node.layout:type_name -> ProtoLayout
-	134, // 333: Node.advanced_illustration_area:type_name -> ProtoAdvancedIllustrationArea
-	135, // 334: Node.adjust_horizontally:type_name -> ProtoAdjustHorizontally
-	136, // 335: Node.doctypeScript:type_name -> ProtoDoctypeScript
-	137, // 336: Node.dmScript:type_name -> ProtoDmScript
-	138, // 337: Node.dynamic_template:type_name -> ProtoDynamicTemplate
-	139, // 338: Node.selection:type_name -> ProtoSelection
-	140, // 339: Node.selection_entry:type_name -> ProtoSelectionEntry
-	141, // 340: Node.condition:type_name -> ProtoCondition
-	142, // 341: Node.page_condition:type_name -> ProtoPageCondition
-	143, // 342: Node.locale:type_name -> ProtoLocale
-	144, // 343: Node.tag:type_name -> ProtoTag
-	145, // 344: Node.paragraph_set_default:type_name -> ProtoParagraphSetDefault
-	147, // 345: Node.input_field_text:type_name -> ProtoInputFieldText
-	148, // 346: Node.input_field_date:type_name -> ProtoInputFieldDate
-	149, // 347: Node.input_field_checkbox:type_name -> ProtoInputFieldCheckbox
-	150, // 348: Node.input_field_label:type_name -> ProtoInputFieldLabel
-	151, // 349: Node.input_field_dropdown:type_name -> ProtoInputFieldDropdown
-	153, // 350: Node.set_color:type_name -> ProtoSetColor
-	154, // 351: Node.unset_color:type_name -> ProtoUnsetColor
-	155, // 352: Node.colored_area:type_name -> ProtoColoredArea
-	156, // 353: Node.chapter:type_name -> ProtoChapter
-	157, // 354: Node.table_of_contents:type_name -> ProtoTableOfContents
-	158, // 355: Node.section_reference:type_name -> ProtoSectionReference
-	159, // 356: Node.chapter_link:type_name -> ProtoChapterLink
-	69,  // 357: ProtoImage.parent:type_name -> ProtoDocumentElement
-	33,  // 358: ProtoImage.scale:type_name -> ProtoBoxedDouble
-	33,  // 359: ProtoImage.columnScale:type_name -> ProtoBoxedDouble
-	41,  // 360: ProtoImage.width:type_name -> ProtoBoxedMeasure
-	41,  // 361: ProtoImage.height:type_name -> ProtoBoxedMeasure
-	41,  // 362: ProtoImage.x:type_name -> ProtoBoxedMeasure
-	41,  // 363: ProtoImage.y:type_name -> ProtoBoxedMeasure
-	32,  // 364: ProtoImage.positionAbsolute:type_name -> ProtoBoxedBool
-	66,  // 365: ProtoImage.flipSettings:type_name -> ProtoFlipSettings
-	65,  // 366: ProtoImage.cropSettings:type_name -> ProtoCropSettings
-	44,  // 367: ProtoImage.aia:type_name -> ProtoAdvancedIllustrationAreaImageSettings
-	11,  // 368: ProtoImage.referencePoint:type_name -> ProtoImageReferencePoint
-	25,  // 369: ProtoImage.imageContentType:type_name -> ProtoImageContentType
-	23,  // 370: ProtoImage.scaleType:type_name -> ProtoImageScaleType
-	24,  // 371: ProtoImage.uaMode:type_name -> ProtoImageUAMode
-	32,  // 372: ProtoImage.leftBorderIsLeftMeasure:type_name -> ProtoBoxedBool
-	69,  // 373: ProtoDirectory._children:type_name -> ProtoDocumentElement
-	69,  // 374: ProtoDirectory.parent:type_name -> ProtoDocumentElement
-	12,  // 375: ProtoDirectory.semanticType:type_name -> ProtoSemanticType
-	69,  // 376: ProtoTextBrick._children:type_name -> ProtoDocumentElement
-	69,  // 377: ProtoTextBrick.parent:type_name -> ProtoDocumentElement
-	69,  // 378: ProtoVariable.parent:type_name -> ProtoDocumentElement
-	26,  // 379: ProtoVariable.specialType:type_name -> ProtoVariableSpecialType
-	69,  // 380: ProtoFormatted.parent:type_name -> ProtoDocumentElement
-	60,  // 381: ProtoCDef.columSettings:type_name -> ProtoColumnSettings
-	32,  // 382: ProtoCDef.applyToHeaderFooter:type_name -> ProtoBoxedBool
-	32,  // 383: ProtoCDef.applyImmediate:type_name -> ProtoBoxedBool
-	41,  // 384: ProtoPDef.pageWidth:type_name -> ProtoBoxedMeasure
-	41,  // 385: ProtoPDef.pageDepth:type_name -> ProtoBoxedMeasure
-	41,  // 386: ProtoPtConfig.height:type_name -> ProtoBoxedMeasure
-	41,  // 387: ProtoPtConfig.lineFeed:type_name -> ProtoBoxedMeasure
-	41,  // 388: ProtoPtConfig.characterWidth:type_name -> ProtoBoxedMeasure
-	41,  // 389: ProtoPtConfig.spaceWidth:type_name -> ProtoBoxedMeasure
-	10,  // 390: ProtoUlConfig.mode:type_name -> ProtoUnderlineMode
-	27,  // 391: ProtoNewPage.pageMode:type_name -> ProtoPageMode
-	28,  // 392: ProtoNewPage.pageOrientation:type_name -> ProtoPageOrientation
-	69,  // 393: ProtoIndentation._children:type_name -> ProtoDocumentElement
-	69,  // 394: ProtoIndentation.parent:type_name -> ProtoDocumentElement
-	41,  // 395: ProtoIndentation.left:type_name -> ProtoBoxedMeasure
-	41,  // 396: ProtoIndentation.right:type_name -> ProtoBoxedMeasure
-	69,  // 397: ProtoCarryOver._children:type_name -> ProtoDocumentElement
-	69,  // 398: ProtoCarryOver.parent:type_name -> ProtoDocumentElement
-	69,  // 399: ProtoLoopEntry._children:type_name -> ProtoDocumentElement
-	69,  // 400: ProtoLoopEntry.parent:type_name -> ProtoDocumentElement
-	69,  // 401: ProtoLoop._children:type_name -> ProtoDocumentElement
-	69,  // 402: ProtoLoop.parent:type_name -> ProtoDocumentElement
-	69,  // 403: ProtoSubTotal._children:type_name -> ProtoDocumentElement
-	69,  // 404: ProtoSubTotal.parent:type_name -> ProtoDocumentElement
-	29,  // 405: ProtoSubTotal.position:type_name -> ProtoSubTotalPosition
-	40,  // 406: ProtoSubTotal.height:type_name -> ProtoMeasure
-	69,  // 407: ProtoWsArea._children:type_name -> ProtoDocumentElement
-	69,  // 408: ProtoWsArea.parent:type_name -> ProtoDocumentElement
-	40,  // 409: ProtoRule.xOffset:type_name -> ProtoMeasure
-	40,  // 410: ProtoRule.yOffset:type_name -> ProtoMeasure
-	40,  // 411: ProtoRule.width:type_name -> ProtoMeasure
-	40,  // 412: ProtoRule.thickness:type_name -> ProtoMeasure
-	47,  // 413: ProtoRule.color:type_name -> ProtoColor
-	1,   // 414: ProtoRule.style:type_name -> ProtoRuleStyle
-	30,  // 415: ProtoRule.mode:type_name -> ProtoRuleMode
-	131, // 416: ProtoRule.boundaries:type_name -> ProtoRuleBoundaries
-	40,  // 417: ProtoRuleBoundaries.start:type_name -> ProtoMeasure
-	40,  // 418: ProtoRuleBoundaries.end:type_name -> ProtoMeasure
-	47,  // 419: ProtoColorDef.color:type_name -> ProtoColor
-	69,  // 420: ProtoLayout.parent:type_name -> ProtoDocumentElement
-	69,  // 421: ProtoAdvancedIllustrationArea._children:type_name -> ProtoDocumentElement
-	69,  // 422: ProtoAdvancedIllustrationArea.parent:type_name -> ProtoDocumentElement
-	40,  // 423: ProtoAdvancedIllustrationArea.width:type_name -> ProtoMeasure
-	40,  // 424: ProtoAdvancedIllustrationArea.height:type_name -> ProtoMeasure
-	40,  // 425: ProtoAdvancedIllustrationArea.x:type_name -> ProtoMeasure
-	40,  // 426: ProtoAdvancedIllustrationArea.y:type_name -> ProtoMeasure
-	3,   // 427: ProtoAdvancedIllustrationArea.textFlow:type_name -> ProtoAdvancedIllustrationAreaTextFlowType
-	69,  // 428: ProtoAdjustHorizontally._children:type_name -> ProtoDocumentElement
-	69,  // 429: ProtoAdjustHorizontally.parent:type_name -> ProtoDocumentElement
-	40,  // 430: ProtoAdjustHorizontally.minFontSize:type_name -> ProtoMeasure
-	40,  // 431: ProtoAdjustHorizontally.maxFontSize:type_name -> ProtoMeasure
-	69,  // 432: ProtoDoctypeScript.parent:type_name -> ProtoDocumentElement
-	31,  // 433: ProtoDoctypeScript.outputMode:type_name -> ProtoDoctypeOutputMode
-	69,  // 434: ProtoDmScript.parent:type_name -> ProtoDocumentElement
-	69,  // 435: ProtoDynamicTemplate.parent:type_name -> ProtoDocumentElement
-	69,  // 436: ProtoSelection._children:type_name -> ProtoDocumentElement
-	69,  // 437: ProtoSelection.parent:type_name -> ProtoDocumentElement
-	69,  // 438: ProtoSelectionEntry._children:type_name -> ProtoDocumentElement
-	69,  // 439: ProtoSelectionEntry.parent:type_name -> ProtoDocumentElement
-	69,  // 440: ProtoCondition._children:type_name -> ProtoDocumentElement
-	69,  // 441: ProtoCondition.parent:type_name -> ProtoDocumentElement
-	69,  // 442: ProtoPageCondition._children:type_name -> ProtoDocumentElement
-	69,  // 443: ProtoPageCondition.parent:type_name -> ProtoDocumentElement
-	69,  // 444: ProtoLocale._children:type_name -> ProtoDocumentElement
-	69,  // 445: ProtoLocale.parent:type_name -> ProtoDocumentElement
-	69,  // 446: ProtoTag.parent:type_name -> ProtoDocumentElement
-	69,  // 447: ProtoParagraphSetDefault.parent:type_name -> ProtoDocumentElement
-	68,  // 448: ProtoBaseTextInputField.base:type_name -> ProtoBaseInputField
-	41,  // 449: ProtoBaseTextInputField.pdf_size:type_name -> ProtoBoxedMeasure
-	41,  // 450: ProtoBaseTextInputField.pdfInputHeight:type_name -> ProtoBoxedMeasure
-	69,  // 451: ProtoInputFieldText.parent:type_name -> ProtoDocumentElement
-	146, // 452: ProtoInputFieldText.base:type_name -> ProtoBaseTextInputField
-	69,  // 453: ProtoInputFieldDate.parent:type_name -> ProtoDocumentElement
-	146, // 454: ProtoInputFieldDate.base:type_name -> ProtoBaseTextInputField
-	69,  // 455: ProtoInputFieldCheckbox.parent:type_name -> ProtoDocumentElement
-	68,  // 456: ProtoInputFieldCheckbox.base:type_name -> ProtoBaseInputField
-	69,  // 457: ProtoInputFieldLabel.parent:type_name -> ProtoDocumentElement
-	146, // 458: ProtoInputFieldLabel.base:type_name -> ProtoBaseTextInputField
-	69,  // 459: ProtoInputFieldDropdown.parent:type_name -> ProtoDocumentElement
-	146, // 460: ProtoInputFieldDropdown.base:type_name -> ProtoBaseTextInputField
-	67,  // 461: ProtoInputFieldDropdown.options:type_name -> ProtoOption
-	47,  // 462: ProtoColorChoice.color:type_name -> ProtoColor
-	69,  // 463: ProtoSetColor.parent:type_name -> ProtoDocumentElement
-	152, // 464: ProtoSetColor.color:type_name -> ProtoColorChoice
-	69,  // 465: ProtoUnsetColor.parent:type_name -> ProtoDocumentElement
-	152, // 466: ProtoUnsetColor.color:type_name -> ProtoColorChoice
-	69,  // 467: ProtoColoredArea.parent:type_name -> ProtoDocumentElement
-	69,  // 468: ProtoColoredArea._children:type_name -> ProtoDocumentElement
-	152, // 469: ProtoColoredArea.color:type_name -> ProtoColorChoice
-	69,  // 470: ProtoChapter._children:type_name -> ProtoDocumentElement
-	69,  // 471: ProtoChapter.parent:type_name -> ProtoDocumentElement
-	69,  // 472: ProtoTableOfContents._children:type_name -> ProtoDocumentElement
-	69,  // 473: ProtoTableOfContents.parent:type_name -> ProtoDocumentElement
-	69,  // 474: ProtoSectionReference.parent:type_name -> ProtoDocumentElement
-	69,  // 475: ProtoChapterLink._children:type_name -> ProtoDocumentElement
-	476, // [476:476] is the sub-list for method output_type
-	476, // [476:476] is the sub-list for method input_type
-	476, // [476:476] is the sub-list for extension type_name
-	476, // [476:476] is the sub-list for extension extendee
-	0,   // [0:476] is the sub-list for field type_name
+	17,  // 90: ProtoNumberListLevelSetting.levelDisplayType:type_name -> ProtoNumberedLevelDisplayType
+	36,  // 91: ProtoUnnumberedListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
+	16,  // 92: ProtoUnnumberedListLevelSetting.type:type_name -> ProtoListLevelSettingType
+	46,  // 93: ProtoUnnumberedListLevelSetting.fixFontFamily:type_name -> ProtoFont
+	48,  // 94: ProtoUnnumberedListLevelSetting.color:type_name -> ProtoColor
+	46,  // 95: ProtoUnnumberedListLevelSetting.fontFamily:type_name -> ProtoFont
+	33,  // 96: ProtoUnnumberedListLevelSetting.bold:type_name -> ProtoBoxedBool
+	33,  // 97: ProtoUnnumberedListLevelSetting.italic:type_name -> ProtoBoxedBool
+	16,  // 98: ProtoCustomListLevelSetting.type:type_name -> ProtoListLevelSettingType
+	70,  // 99: ProtoListSetting.parent:type_name -> ProtoDocumentElement
+	73,  // 100: ProtoListSetting.listLevelSettings:type_name -> ProtoListLevelSetting
+	73,  // 101: ProtoListSetting.defaultListLevelSetting:type_name -> ProtoListLevelSetting
+	79,  // 102: ProtoBoxedListSetting.value:type_name -> ProtoListSetting
+	70,  // 103: ProtoNamedString._children:type_name -> ProtoDocumentElement
+	70,  // 104: ProtoNamedString.parent:type_name -> ProtoDocumentElement
+	70,  // 105: ProtoParagraph._children:type_name -> ProtoDocumentElement
+	70,  // 106: ProtoParagraph.parent:type_name -> ProtoDocumentElement
+	83,  // 107: ProtoParagraph.format:type_name -> ProtoParagraphFormat
+	83,  // 108: ProtoParagraph.overwrite:type_name -> ProtoParagraphFormat
+	83,  // 109: ProtoParagraphFormat.baseFormat:type_name -> ProtoParagraphFormat
+	37,  // 110: ProtoParagraphFormat.name:type_name -> ProtoBoxedString
+	33,  // 111: ProtoParagraphFormat.default:type_name -> ProtoBoxedBool
+	47,  // 112: ProtoParagraphFormat.font:type_name -> ProtoBoxedFont
+	33,  // 113: ProtoParagraphFormat.bold:type_name -> ProtoBoxedBool
+	33,  // 114: ProtoParagraphFormat.italic:type_name -> ProtoBoxedBool
+	49,  // 115: ProtoParagraphFormat.fontColor:type_name -> ProtoBoxedColor
+	65,  // 116: ProtoParagraphFormat.underline:type_name -> ProtoBoxedUnderlineSpec
+	42,  // 117: ProtoParagraphFormat.fontSize:type_name -> ProtoBoxedMeasure
+	42,  // 118: ProtoParagraphFormat.characterWidth:type_name -> ProtoBoxedMeasure
+	42,  // 119: ProtoParagraphFormat.characterSpacing:type_name -> ProtoBoxedMeasure
+	42,  // 120: ProtoParagraphFormat.lineFeed:type_name -> ProtoBoxedMeasure
+	52,  // 121: ProtoParagraphFormat.alignment:type_name -> ProtoBoxedHorizontalAlignment
+	42,  // 122: ProtoParagraphFormat.indentionWidth:type_name -> ProtoBoxedMeasure
+	35,  // 123: ProtoParagraphFormat.indentionLevel:type_name -> ProtoBoxedInt32
+	42,  // 124: ProtoParagraphFormat.spaceAbove:type_name -> ProtoBoxedMeasure
+	42,  // 125: ProtoParagraphFormat.spaceBelow:type_name -> ProtoBoxedMeasure
+	35,  // 126: ProtoParagraphFormat.widowSetting:type_name -> ProtoBoxedInt32
+	35,  // 127: ProtoParagraphFormat.orphanSetting:type_name -> ProtoBoxedInt32
+	35,  // 128: ProtoParagraphFormat.widowPriority:type_name -> ProtoBoxedInt32
+	40,  // 129: ProtoParagraphFormat.strikethrough:type_name -> ProtoBoxedStrikethroughSpec
+	38,  // 130: ProtoParagraphFormat.superscriptSubscript:type_name -> ProtoBoxedSPBMode
+	49,  // 131: ProtoParagraphFormat.backgroundColor:type_name -> ProtoBoxedColor
+	80,  // 132: ProtoParagraphFormat.listSetting:type_name -> ProtoBoxedListSetting
+	33,  // 133: ProtoParagraphFormat.hyphenation:type_name -> ProtoBoxedBool
+	37,  // 134: ProtoParagraphFormat.preNamedString:type_name -> ProtoBoxedString
+	37,  // 135: ProtoParagraphFormat.postNamedString:type_name -> ProtoBoxedString
+	37,  // 136: ProtoParagraphFormat.semanticType:type_name -> ProtoBoxedString
+	70,  // 137: ProtoSection._children:type_name -> ProtoDocumentElement
+	70,  // 138: ProtoSection.parent:type_name -> ProtoDocumentElement
+	70,  // 139: ProtoSpaceVertically.parent:type_name -> ProtoDocumentElement
+	41,  // 140: ProtoSpaceVertically.space:type_name -> ProtoMeasure
+	70,  // 141: ProtoSpan._children:type_name -> ProtoDocumentElement
+	70,  // 142: ProtoSpan.parent:type_name -> ProtoDocumentElement
+	33,  // 143: ProtoSpan.bold:type_name -> ProtoBoxedBool
+	33,  // 144: ProtoSpan.italic:type_name -> ProtoBoxedBool
+	48,  // 145: ProtoSpan.color:type_name -> ProtoColor
+	33,  // 146: ProtoSpan.subscript:type_name -> ProtoBoxedBool
+	33,  // 147: ProtoSpan.superscript:type_name -> ProtoBoxedBool
+	33,  // 148: ProtoSpan.underline:type_name -> ProtoBoxedBool
+	33,  // 149: ProtoSpan.strikethrough:type_name -> ProtoBoxedBool
+	70,  // 150: ProtoTable._children:type_name -> ProtoDocumentElement
+	70,  // 151: ProtoTable.parent:type_name -> ProtoDocumentElement
+	89,  // 152: ProtoTable.settings:type_name -> ProtoTableSettings
+	110, // 153: ProtoTable.carryOver:type_name -> Node
+	110, // 154: ProtoTable.subTotal:type_name -> Node
+	102, // 155: ProtoTable.elementProperties:type_name -> ProtoTableElementProperties
+	70,  // 156: ProtoTableConfig.parent:type_name -> ProtoDocumentElement
+	89,  // 157: ProtoTableConfig.settings:type_name -> ProtoTableSettings
+	41,  // 158: ProtoTableSettings.xOffset:type_name -> ProtoMeasure
+	33,  // 159: ProtoTableSettings.leftMeasure:type_name -> ProtoBoxedBool
+	41,  // 160: ProtoTableSettings.width:type_name -> ProtoMeasure
+	36,  // 161: ProtoTableSettings.repeatHeader:type_name -> ProtoBoxedUint32
+	101, // 162: ProtoTableSettings.ws:type_name -> ProtoTableWS
+	33,  // 163: ProtoTableSettings.noDocumentStructure:type_name -> ProtoBoxedBool
+	36,  // 164: ProtoTableSettings.repeatSubHeader:type_name -> ProtoBoxedUint32
+	18,  // 165: ProtoBoxedTableContentGroupType.value:type_name -> ProtoTableContentGroupType
+	70,  // 166: ProtoTableContentGroup._children:type_name -> ProtoDocumentElement
+	70,  // 167: ProtoTableContentGroup.parent:type_name -> ProtoDocumentElement
+	93,  // 168: ProtoTableContentGroup.settings:type_name -> ProtoTableContentGroupSettings
+	102, // 169: ProtoTableContentGroup.elementProperties:type_name -> ProtoTableElementProperties
+	70,  // 170: ProtoTableContentGroupConfig.parent:type_name -> ProtoDocumentElement
+	93,  // 171: ProtoTableContentGroupConfig.settings:type_name -> ProtoTableContentGroupSettings
+	90,  // 172: ProtoTableContentGroupSettings.contentGroupType:type_name -> ProtoBoxedTableContentGroupType
+	48,  // 173: ProtoTableContentGroupSettings.backgroundColors:type_name -> ProtoColor
+	101, // 174: ProtoTableContentGroupSettings.ws:type_name -> ProtoTableWS
+	70,  // 175: ProtoTableRow._children:type_name -> ProtoDocumentElement
+	70,  // 176: ProtoTableRow.parent:type_name -> ProtoDocumentElement
+	96,  // 177: ProtoTableRow.settings:type_name -> ProtoTableRowSettings
+	36,  // 178: ProtoTableRow.rowConfigNumber:type_name -> ProtoBoxedUint32
+	102, // 179: ProtoTableRow.elementProperties:type_name -> ProtoTableElementProperties
+	70,  // 180: ProtoTableRowConfig.parent:type_name -> ProtoDocumentElement
+	96,  // 181: ProtoTableRowConfig.settings:type_name -> ProtoTableRowSettings
+	41,  // 182: ProtoTableRowSettings.minHeight:type_name -> ProtoMeasure
+	101, // 183: ProtoTableRowSettings.ws:type_name -> ProtoTableWS
+	19,  // 184: ProtoBoxedTableCellType.value:type_name -> ProtoTableCellType
+	70,  // 185: ProtoTableCell._children:type_name -> ProtoDocumentElement
+	70,  // 186: ProtoTableCell.parent:type_name -> ProtoDocumentElement
+	100, // 187: ProtoTableCell.settings:type_name -> ProtoTableCellSettings
+	36,  // 188: ProtoTableCell.cellConfigNumber:type_name -> ProtoBoxedUint32
+	102, // 189: ProtoTableCell.elementProperties:type_name -> ProtoTableElementProperties
+	70,  // 190: ProtoTableCellConfig.parent:type_name -> ProtoDocumentElement
+	100, // 191: ProtoTableCellConfig.settings:type_name -> ProtoTableCellSettings
+	97,  // 192: ProtoTableCellConfig.cellType:type_name -> ProtoBoxedTableCellType
+	41,  // 193: ProtoTableCellSettings.width:type_name -> ProtoMeasure
+	52,  // 194: ProtoTableCellSettings.align:type_name -> ProtoBoxedHorizontalAlignment
+	53,  // 195: ProtoTableCellSettings.valign:type_name -> ProtoBoxedVerticalAlignment
+	48,  // 196: ProtoTableCellSettings.backgroundColor:type_name -> ProtoColor
+	43,  // 197: ProtoTableCellSettings.padding:type_name -> ProtoSideMeasures
+	59,  // 198: ProtoTableCellSettings.border:type_name -> ProtoSideBorders
+	43,  // 199: ProtoTableCellSettings.margin:type_name -> ProtoSideMeasures
+	34,  // 200: ProtoTableCellSettings.rotation:type_name -> ProtoBoxedDouble
+	37,  // 201: ProtoTableCellSettings.defaultParagraphFormat:type_name -> ProtoBoxedString
+	14,  // 202: ProtoTableElementProperties.widthInheritance:type_name -> Inheritance
+	41,  // 203: ProtoTableElementProperties.width:type_name -> ProtoMeasure
+	14,  // 204: ProtoTableElementProperties.alignInheritance:type_name -> Inheritance
+	52,  // 205: ProtoTableElementProperties.align:type_name -> ProtoBoxedHorizontalAlignment
+	14,  // 206: ProtoTableElementProperties.valignInheritance:type_name -> Inheritance
+	53,  // 207: ProtoTableElementProperties.valign:type_name -> ProtoBoxedVerticalAlignment
+	14,  // 208: ProtoTableElementProperties.backgroundColorInheritance:type_name -> Inheritance
+	48,  // 209: ProtoTableElementProperties.backgroundColor:type_name -> ProtoColor
+	14,  // 210: ProtoTableElementProperties.paddingTopInheritance:type_name -> Inheritance
+	41,  // 211: ProtoTableElementProperties.paddingTop:type_name -> ProtoMeasure
+	14,  // 212: ProtoTableElementProperties.paddingRightInheritance:type_name -> Inheritance
+	41,  // 213: ProtoTableElementProperties.paddingRight:type_name -> ProtoMeasure
+	14,  // 214: ProtoTableElementProperties.paddingBottomInheritance:type_name -> Inheritance
+	41,  // 215: ProtoTableElementProperties.paddingBottom:type_name -> ProtoMeasure
+	14,  // 216: ProtoTableElementProperties.paddingLeftInheritance:type_name -> Inheritance
+	41,  // 217: ProtoTableElementProperties.paddingLeft:type_name -> ProtoMeasure
+	14,  // 218: ProtoTableElementProperties.borderTopColorInheritance:type_name -> Inheritance
+	48,  // 219: ProtoTableElementProperties.borderTopColor:type_name -> ProtoColor
+	14,  // 220: ProtoTableElementProperties.borderTopWeightInheritance:type_name -> Inheritance
+	41,  // 221: ProtoTableElementProperties.borderTopWeight:type_name -> ProtoMeasure
+	14,  // 222: ProtoTableElementProperties.borderRightColorInheritance:type_name -> Inheritance
+	48,  // 223: ProtoTableElementProperties.borderRightColor:type_name -> ProtoColor
+	14,  // 224: ProtoTableElementProperties.borderRightWeightInheritance:type_name -> Inheritance
+	41,  // 225: ProtoTableElementProperties.borderRightWeight:type_name -> ProtoMeasure
+	14,  // 226: ProtoTableElementProperties.borderBottomColorInheritance:type_name -> Inheritance
+	48,  // 227: ProtoTableElementProperties.borderBottomColor:type_name -> ProtoColor
+	14,  // 228: ProtoTableElementProperties.borderBottomWeightInheritance:type_name -> Inheritance
+	41,  // 229: ProtoTableElementProperties.borderBottomWeight:type_name -> ProtoMeasure
+	14,  // 230: ProtoTableElementProperties.borderLeftColorInheritance:type_name -> Inheritance
+	48,  // 231: ProtoTableElementProperties.borderLeftColor:type_name -> ProtoColor
+	14,  // 232: ProtoTableElementProperties.borderLeftWeightInheritance:type_name -> Inheritance
+	41,  // 233: ProtoTableElementProperties.borderLeftWeight:type_name -> ProtoMeasure
+	14,  // 234: ProtoTableElementProperties.marginTopInheritance:type_name -> Inheritance
+	41,  // 235: ProtoTableElementProperties.marginTop:type_name -> ProtoMeasure
+	14,  // 236: ProtoTableElementProperties.marginRightInheritance:type_name -> Inheritance
+	41,  // 237: ProtoTableElementProperties.marginRight:type_name -> ProtoMeasure
+	14,  // 238: ProtoTableElementProperties.marginBottomInheritance:type_name -> Inheritance
+	41,  // 239: ProtoTableElementProperties.marginBottom:type_name -> ProtoMeasure
+	14,  // 240: ProtoTableElementProperties.marginLeftInheritance:type_name -> Inheritance
+	41,  // 241: ProtoTableElementProperties.marginLeft:type_name -> ProtoMeasure
+	14,  // 242: ProtoTableElementProperties.rotationInheritance:type_name -> Inheritance
+	34,  // 243: ProtoTableElementProperties.rotation:type_name -> ProtoBoxedDouble
+	14,  // 244: ProtoTableElementProperties.defaultParagraphFormatUUIDInheritance:type_name -> Inheritance
+	37,  // 245: ProtoTableElementProperties.defaultParagraphFormatUUID:type_name -> ProtoBoxedString
+	14,  // 246: ProtoTableElementProperties.tableContentGroupTypeInheritance:type_name -> Inheritance
+	90,  // 247: ProtoTableElementProperties.tableContentGroupType:type_name -> ProtoBoxedTableContentGroupType
+	14,  // 248: ProtoTableElementProperties.cellTypeInheritance:type_name -> Inheritance
+	97,  // 249: ProtoTableElementProperties.cellType:type_name -> ProtoBoxedTableCellType
+	14,  // 250: ProtoTableElementProperties.minRowHeightInheritance:type_name -> Inheritance
+	41,  // 251: ProtoTableElementProperties.minRowHeight:type_name -> ProtoMeasure
+	14,  // 252: ProtoTableElementProperties.wsInheritance:type_name -> Inheritance
+	101, // 253: ProtoTableElementProperties.ws:type_name -> ProtoTableWS
+	14,  // 254: ProtoTableElementProperties.xOffsetInheritance:type_name -> Inheritance
+	41,  // 255: ProtoTableElementProperties.xOffset:type_name -> ProtoMeasure
+	14,  // 256: ProtoTableElementProperties.leftMeasureInheritance:type_name -> Inheritance
+	33,  // 257: ProtoTableElementProperties.leftMeasure:type_name -> ProtoBoxedBool
+	14,  // 258: ProtoTableElementProperties.repeatHeaderInheritance:type_name -> Inheritance
+	36,  // 259: ProtoTableElementProperties.repeatHeader:type_name -> ProtoBoxedUint32
+	14,  // 260: ProtoTableElementProperties.noDocumentStructureInheritance:type_name -> Inheritance
+	33,  // 261: ProtoTableElementProperties.noDocumentStructure:type_name -> ProtoBoxedBool
+	14,  // 262: ProtoTableElementProperties.repeatSubHeaderInheritance:type_name -> Inheritance
+	36,  // 263: ProtoTableElementProperties.repeatSubHeader:type_name -> ProtoBoxedUint32
+	70,  // 264: ProtoText.parent:type_name -> ProtoDocumentElement
+	7,   // 265: ProtoBarcode.type:type_name -> ProtoBarcodeType
+	41,  // 266: ProtoBarcode.x:type_name -> ProtoMeasure
+	41,  // 267: ProtoBarcode.y:type_name -> ProtoMeasure
+	11,  // 268: ProtoBarcode.referencePoint:type_name -> ProtoImageReferencePoint
+	41,  // 269: ProtoBarcode.width:type_name -> ProtoMeasure
+	41,  // 270: ProtoBarcode.height:type_name -> ProtoMeasure
+	41,  // 271: ProtoBarcode.padding:type_name -> ProtoMeasure
+	56,  // 272: ProtoBarcode.swissQRData:type_name -> ProtoSwissQRData
+	8,   // 273: ProtoBarcode.uaMode:type_name -> ProtoBarcodeUAMode
+	70,  // 274: ProtoBrick._children:type_name -> ProtoDocumentElement
+	70,  // 275: ProtoBrick.parent:type_name -> ProtoDocumentElement
+	70,  // 276: ProtoTemplate._children:type_name -> ProtoDocumentElement
+	70,  // 277: ProtoTemplate.parent:type_name -> ProtoDocumentElement
+	20,  // 278: ProtoTemplate.columnBalancing:type_name -> ColumnBalancing
+	12,  // 279: ProtoTemplate.semanticType:type_name -> ProtoSemanticType
+	70,  // 280: ProtoHeader._children:type_name -> ProtoDocumentElement
+	70,  // 281: ProtoHeader.parent:type_name -> ProtoDocumentElement
+	21,  // 282: ProtoHeader.mode:type_name -> ProtoHeaderMode
+	70,  // 283: ProtoFooter._children:type_name -> ProtoDocumentElement
+	70,  // 284: ProtoFooter.parent:type_name -> ProtoDocumentElement
+	22,  // 285: ProtoFooter.mode:type_name -> ProtoFooterMode
+	110, // 286: Node.children:type_name -> Node
+	79,  // 287: Node.list_setting:type_name -> ProtoListSetting
+	133, // 288: Node.colorDef:type_name -> ProtoColorDef
+	106, // 289: Node.brick:type_name -> ProtoBrick
+	107, // 290: Node.template:type_name -> ProtoTemplate
+	115, // 291: Node.formatted:type_name -> ProtoFormatted
+	111, // 292: Node.image:type_name -> ProtoImage
+	83,  // 293: Node.paragraph_format:type_name -> ProtoParagraphFormat
+	113, // 294: Node.text_brick:type_name -> ProtoTextBrick
+	103, // 295: Node.text:type_name -> ProtoText
+	57,  // 296: Node.linebreak:type_name -> ProtoLinebreak
+	85,  // 297: Node.space_vertically:type_name -> ProtoSpaceVertically
+	109, // 298: Node.footer:type_name -> ProtoFooter
+	108, // 299: Node.header:type_name -> ProtoHeader
+	87,  // 300: Node.table:type_name -> ProtoTable
+	94,  // 301: Node.table_row:type_name -> ProtoTableRow
+	98,  // 302: Node.table_cell:type_name -> ProtoTableCell
+	120, // 303: Node.c_def:type_name -> ProtoCDef
+	121, // 304: Node.p_def:type_name -> ProtoPDef
+	116, // 305: Node.apply_c_def:type_name -> ProtoApplyProtoCDef
+	117, // 306: Node.apply_p_def:type_name -> ProtoApplyProtoPDef
+	118, // 307: Node.apply_pt_config:type_name -> ProtoApplyPtConfig
+	119, // 308: Node.apply_ul_config:type_name -> ProtoApplyUlConfig
+	122, // 309: Node.pt_config:type_name -> ProtoPtConfig
+	123, // 310: Node.ul_config:type_name -> ProtoUlConfig
+	124, // 311: Node.new_page:type_name -> ProtoNewPage
+	114, // 312: Node.variable:type_name -> ProtoVariable
+	81,  // 313: Node.named_string:type_name -> ProtoNamedString
+	82,  // 314: Node.paragraph:type_name -> ProtoParagraph
+	84,  // 315: Node.section:type_name -> ProtoSection
+	86,  // 316: Node.span:type_name -> ProtoSpan
+	72,  // 317: Node.link:type_name -> ProtoLink
+	112, // 318: Node.directory:type_name -> ProtoDirectory
+	91,  // 319: Node.table_content_group:type_name -> ProtoTableContentGroup
+	88,  // 320: Node.table_config:type_name -> ProtoTableConfig
+	99,  // 321: Node.table_cell_config:type_name -> ProtoTableCellConfig
+	95,  // 322: Node.table_row_config:type_name -> ProtoTableRowConfig
+	92,  // 323: Node.table_content_group_config:type_name -> ProtoTableContentGroupConfig
+	105, // 324: Node.brick_reference:type_name -> ProtoBrickReference
+	125, // 325: Node.indentation:type_name -> ProtoIndentation
+	104, // 326: Node.barcode:type_name -> ProtoBarcode
+	130, // 327: Node.ws_area:type_name -> ProtoWsArea
+	126, // 328: Node.carry_over:type_name -> ProtoCarryOver
+	129, // 329: Node.sub_total:type_name -> ProtoSubTotal
+	128, // 330: Node.loop:type_name -> ProtoLoop
+	127, // 331: Node.loop_entry:type_name -> ProtoLoopEntry
+	131, // 332: Node.rule:type_name -> ProtoRule
+	134, // 333: Node.layout:type_name -> ProtoLayout
+	135, // 334: Node.advanced_illustration_area:type_name -> ProtoAdvancedIllustrationArea
+	136, // 335: Node.adjust_horizontally:type_name -> ProtoAdjustHorizontally
+	137, // 336: Node.doctypeScript:type_name -> ProtoDoctypeScript
+	138, // 337: Node.dmScript:type_name -> ProtoDmScript
+	139, // 338: Node.dynamic_template:type_name -> ProtoDynamicTemplate
+	140, // 339: Node.selection:type_name -> ProtoSelection
+	141, // 340: Node.selection_entry:type_name -> ProtoSelectionEntry
+	142, // 341: Node.condition:type_name -> ProtoCondition
+	143, // 342: Node.page_condition:type_name -> ProtoPageCondition
+	144, // 343: Node.locale:type_name -> ProtoLocale
+	145, // 344: Node.tag:type_name -> ProtoTag
+	146, // 345: Node.paragraph_set_default:type_name -> ProtoParagraphSetDefault
+	148, // 346: Node.input_field_text:type_name -> ProtoInputFieldText
+	149, // 347: Node.input_field_date:type_name -> ProtoInputFieldDate
+	150, // 348: Node.input_field_checkbox:type_name -> ProtoInputFieldCheckbox
+	151, // 349: Node.input_field_label:type_name -> ProtoInputFieldLabel
+	152, // 350: Node.input_field_dropdown:type_name -> ProtoInputFieldDropdown
+	154, // 351: Node.set_color:type_name -> ProtoSetColor
+	155, // 352: Node.unset_color:type_name -> ProtoUnsetColor
+	156, // 353: Node.colored_area:type_name -> ProtoColoredArea
+	157, // 354: Node.chapter:type_name -> ProtoChapter
+	158, // 355: Node.table_of_contents:type_name -> ProtoTableOfContents
+	159, // 356: Node.section_reference:type_name -> ProtoSectionReference
+	160, // 357: Node.chapter_link:type_name -> ProtoChapterLink
+	70,  // 358: ProtoImage.parent:type_name -> ProtoDocumentElement
+	34,  // 359: ProtoImage.scale:type_name -> ProtoBoxedDouble
+	34,  // 360: ProtoImage.columnScale:type_name -> ProtoBoxedDouble
+	42,  // 361: ProtoImage.width:type_name -> ProtoBoxedMeasure
+	42,  // 362: ProtoImage.height:type_name -> ProtoBoxedMeasure
+	42,  // 363: ProtoImage.x:type_name -> ProtoBoxedMeasure
+	42,  // 364: ProtoImage.y:type_name -> ProtoBoxedMeasure
+	33,  // 365: ProtoImage.positionAbsolute:type_name -> ProtoBoxedBool
+	67,  // 366: ProtoImage.flipSettings:type_name -> ProtoFlipSettings
+	66,  // 367: ProtoImage.cropSettings:type_name -> ProtoCropSettings
+	45,  // 368: ProtoImage.aia:type_name -> ProtoAdvancedIllustrationAreaImageSettings
+	11,  // 369: ProtoImage.referencePoint:type_name -> ProtoImageReferencePoint
+	26,  // 370: ProtoImage.imageContentType:type_name -> ProtoImageContentType
+	24,  // 371: ProtoImage.scaleType:type_name -> ProtoImageScaleType
+	25,  // 372: ProtoImage.uaMode:type_name -> ProtoImageUAMode
+	33,  // 373: ProtoImage.leftBorderIsLeftMeasure:type_name -> ProtoBoxedBool
+	70,  // 374: ProtoDirectory._children:type_name -> ProtoDocumentElement
+	70,  // 375: ProtoDirectory.parent:type_name -> ProtoDocumentElement
+	12,  // 376: ProtoDirectory.semanticType:type_name -> ProtoSemanticType
+	70,  // 377: ProtoTextBrick._children:type_name -> ProtoDocumentElement
+	70,  // 378: ProtoTextBrick.parent:type_name -> ProtoDocumentElement
+	70,  // 379: ProtoVariable.parent:type_name -> ProtoDocumentElement
+	27,  // 380: ProtoVariable.specialType:type_name -> ProtoVariableSpecialType
+	70,  // 381: ProtoFormatted.parent:type_name -> ProtoDocumentElement
+	61,  // 382: ProtoCDef.columSettings:type_name -> ProtoColumnSettings
+	33,  // 383: ProtoCDef.applyToHeaderFooter:type_name -> ProtoBoxedBool
+	33,  // 384: ProtoCDef.applyImmediate:type_name -> ProtoBoxedBool
+	42,  // 385: ProtoPDef.pageWidth:type_name -> ProtoBoxedMeasure
+	42,  // 386: ProtoPDef.pageDepth:type_name -> ProtoBoxedMeasure
+	42,  // 387: ProtoPtConfig.height:type_name -> ProtoBoxedMeasure
+	42,  // 388: ProtoPtConfig.lineFeed:type_name -> ProtoBoxedMeasure
+	42,  // 389: ProtoPtConfig.characterWidth:type_name -> ProtoBoxedMeasure
+	42,  // 390: ProtoPtConfig.spaceWidth:type_name -> ProtoBoxedMeasure
+	10,  // 391: ProtoUlConfig.mode:type_name -> ProtoUnderlineMode
+	28,  // 392: ProtoNewPage.pageMode:type_name -> ProtoPageMode
+	29,  // 393: ProtoNewPage.pageOrientation:type_name -> ProtoPageOrientation
+	70,  // 394: ProtoIndentation._children:type_name -> ProtoDocumentElement
+	70,  // 395: ProtoIndentation.parent:type_name -> ProtoDocumentElement
+	42,  // 396: ProtoIndentation.left:type_name -> ProtoBoxedMeasure
+	42,  // 397: ProtoIndentation.right:type_name -> ProtoBoxedMeasure
+	70,  // 398: ProtoCarryOver._children:type_name -> ProtoDocumentElement
+	70,  // 399: ProtoCarryOver.parent:type_name -> ProtoDocumentElement
+	70,  // 400: ProtoLoopEntry._children:type_name -> ProtoDocumentElement
+	70,  // 401: ProtoLoopEntry.parent:type_name -> ProtoDocumentElement
+	70,  // 402: ProtoLoop._children:type_name -> ProtoDocumentElement
+	70,  // 403: ProtoLoop.parent:type_name -> ProtoDocumentElement
+	70,  // 404: ProtoSubTotal._children:type_name -> ProtoDocumentElement
+	70,  // 405: ProtoSubTotal.parent:type_name -> ProtoDocumentElement
+	30,  // 406: ProtoSubTotal.position:type_name -> ProtoSubTotalPosition
+	41,  // 407: ProtoSubTotal.height:type_name -> ProtoMeasure
+	70,  // 408: ProtoWsArea._children:type_name -> ProtoDocumentElement
+	70,  // 409: ProtoWsArea.parent:type_name -> ProtoDocumentElement
+	41,  // 410: ProtoRule.xOffset:type_name -> ProtoMeasure
+	41,  // 411: ProtoRule.yOffset:type_name -> ProtoMeasure
+	41,  // 412: ProtoRule.width:type_name -> ProtoMeasure
+	41,  // 413: ProtoRule.thickness:type_name -> ProtoMeasure
+	48,  // 414: ProtoRule.color:type_name -> ProtoColor
+	1,   // 415: ProtoRule.style:type_name -> ProtoRuleStyle
+	31,  // 416: ProtoRule.mode:type_name -> ProtoRuleMode
+	132, // 417: ProtoRule.boundaries:type_name -> ProtoRuleBoundaries
+	41,  // 418: ProtoRuleBoundaries.start:type_name -> ProtoMeasure
+	41,  // 419: ProtoRuleBoundaries.end:type_name -> ProtoMeasure
+	48,  // 420: ProtoColorDef.color:type_name -> ProtoColor
+	70,  // 421: ProtoLayout.parent:type_name -> ProtoDocumentElement
+	70,  // 422: ProtoAdvancedIllustrationArea._children:type_name -> ProtoDocumentElement
+	70,  // 423: ProtoAdvancedIllustrationArea.parent:type_name -> ProtoDocumentElement
+	41,  // 424: ProtoAdvancedIllustrationArea.width:type_name -> ProtoMeasure
+	41,  // 425: ProtoAdvancedIllustrationArea.height:type_name -> ProtoMeasure
+	41,  // 426: ProtoAdvancedIllustrationArea.x:type_name -> ProtoMeasure
+	41,  // 427: ProtoAdvancedIllustrationArea.y:type_name -> ProtoMeasure
+	3,   // 428: ProtoAdvancedIllustrationArea.textFlow:type_name -> ProtoAdvancedIllustrationAreaTextFlowType
+	70,  // 429: ProtoAdjustHorizontally._children:type_name -> ProtoDocumentElement
+	70,  // 430: ProtoAdjustHorizontally.parent:type_name -> ProtoDocumentElement
+	41,  // 431: ProtoAdjustHorizontally.minFontSize:type_name -> ProtoMeasure
+	41,  // 432: ProtoAdjustHorizontally.maxFontSize:type_name -> ProtoMeasure
+	70,  // 433: ProtoDoctypeScript.parent:type_name -> ProtoDocumentElement
+	32,  // 434: ProtoDoctypeScript.outputMode:type_name -> ProtoDoctypeOutputMode
+	70,  // 435: ProtoDmScript.parent:type_name -> ProtoDocumentElement
+	70,  // 436: ProtoDynamicTemplate.parent:type_name -> ProtoDocumentElement
+	70,  // 437: ProtoSelection._children:type_name -> ProtoDocumentElement
+	70,  // 438: ProtoSelection.parent:type_name -> ProtoDocumentElement
+	70,  // 439: ProtoSelectionEntry._children:type_name -> ProtoDocumentElement
+	70,  // 440: ProtoSelectionEntry.parent:type_name -> ProtoDocumentElement
+	70,  // 441: ProtoCondition._children:type_name -> ProtoDocumentElement
+	70,  // 442: ProtoCondition.parent:type_name -> ProtoDocumentElement
+	70,  // 443: ProtoPageCondition._children:type_name -> ProtoDocumentElement
+	70,  // 444: ProtoPageCondition.parent:type_name -> ProtoDocumentElement
+	70,  // 445: ProtoLocale._children:type_name -> ProtoDocumentElement
+	70,  // 446: ProtoLocale.parent:type_name -> ProtoDocumentElement
+	70,  // 447: ProtoTag.parent:type_name -> ProtoDocumentElement
+	70,  // 448: ProtoParagraphSetDefault.parent:type_name -> ProtoDocumentElement
+	69,  // 449: ProtoBaseTextInputField.base:type_name -> ProtoBaseInputField
+	42,  // 450: ProtoBaseTextInputField.pdf_size:type_name -> ProtoBoxedMeasure
+	42,  // 451: ProtoBaseTextInputField.pdfInputHeight:type_name -> ProtoBoxedMeasure
+	70,  // 452: ProtoInputFieldText.parent:type_name -> ProtoDocumentElement
+	147, // 453: ProtoInputFieldText.base:type_name -> ProtoBaseTextInputField
+	70,  // 454: ProtoInputFieldDate.parent:type_name -> ProtoDocumentElement
+	147, // 455: ProtoInputFieldDate.base:type_name -> ProtoBaseTextInputField
+	70,  // 456: ProtoInputFieldCheckbox.parent:type_name -> ProtoDocumentElement
+	69,  // 457: ProtoInputFieldCheckbox.base:type_name -> ProtoBaseInputField
+	70,  // 458: ProtoInputFieldLabel.parent:type_name -> ProtoDocumentElement
+	147, // 459: ProtoInputFieldLabel.base:type_name -> ProtoBaseTextInputField
+	70,  // 460: ProtoInputFieldDropdown.parent:type_name -> ProtoDocumentElement
+	147, // 461: ProtoInputFieldDropdown.base:type_name -> ProtoBaseTextInputField
+	68,  // 462: ProtoInputFieldDropdown.options:type_name -> ProtoOption
+	48,  // 463: ProtoColorChoice.color:type_name -> ProtoColor
+	70,  // 464: ProtoSetColor.parent:type_name -> ProtoDocumentElement
+	153, // 465: ProtoSetColor.color:type_name -> ProtoColorChoice
+	70,  // 466: ProtoUnsetColor.parent:type_name -> ProtoDocumentElement
+	153, // 467: ProtoUnsetColor.color:type_name -> ProtoColorChoice
+	70,  // 468: ProtoColoredArea.parent:type_name -> ProtoDocumentElement
+	70,  // 469: ProtoColoredArea._children:type_name -> ProtoDocumentElement
+	153, // 470: ProtoColoredArea.color:type_name -> ProtoColorChoice
+	70,  // 471: ProtoChapter._children:type_name -> ProtoDocumentElement
+	70,  // 472: ProtoChapter.parent:type_name -> ProtoDocumentElement
+	70,  // 473: ProtoTableOfContents._children:type_name -> ProtoDocumentElement
+	70,  // 474: ProtoTableOfContents.parent:type_name -> ProtoDocumentElement
+	70,  // 475: ProtoSectionReference.parent:type_name -> ProtoDocumentElement
+	70,  // 476: ProtoChapterLink._children:type_name -> ProtoDocumentElement
+	477, // [477:477] is the sub-list for method output_type
+	477, // [477:477] is the sub-list for method input_type
+	477, // [477:477] is the sub-list for extension type_name
+	477, // [477:477] is the sub-list for extension extendee
+	0,   // [0:477] is the sub-list for field type_name
 }
 
 func init() { file_build_docframe_proto_init() }
@@ -16436,7 +16500,7 @@ func file_build_docframe_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_build_docframe_proto_rawDesc), len(file_build_docframe_proto_rawDesc)),
-			NumEnums:      32,
+			NumEnums:      33,
 			NumMessages:   128,
 			NumExtensions: 0,
 			NumServices:   0,
