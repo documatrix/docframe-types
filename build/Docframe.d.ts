@@ -5011,6 +5011,9 @@ export interface IProtoListLevelSetting {
     /** ProtoListLevelSetting doctypeCode */
     doctypeCode?: (string|null);
 
+    /** ProtoListLevelSetting levelDisplayType */
+    levelDisplayType?: (ProtoNumberedLevelDisplayType|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -5080,6 +5083,9 @@ export class ProtoListLevelSetting implements IProtoListLevelSetting {
 
     /** ProtoListLevelSetting doctypeCode. */
     public doctypeCode: string;
+
+    /** ProtoListLevelSetting levelDisplayType. */
+    public levelDisplayType: ProtoNumberedLevelDisplayType;
 
     /**
      * Creates a new ProtoListLevelSetting instance using the specified properties.

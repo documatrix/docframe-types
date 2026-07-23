@@ -432,6 +432,8 @@ ProtoNumberType numberType = 16;
 string character = 17;
 
 string doctypeCode = 18;
+
+ProtoNumberedLevelDisplayType levelDisplayType = 19;
 }
 
 message ProtoImageListLevelSetting {
