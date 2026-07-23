@@ -13642,6 +13642,22 @@ $root.ProtoListLevelSettingType = (function() {
     return values;
 })();
 
+/**
+ * ProtoNumberedLevelDisplayType enum.
+ * @name ProtoNumberedLevelDisplayType
+ * @enum {number}
+ * @property {number} ALL_PARENT_LEVELS=0 ALL_PARENT_LEVELS value
+ * @property {number} NUMBERED_PARENT_LEVELS=1 NUMBERED_PARENT_LEVELS value
+ * @property {number} NO_PARENT_LEVELS=2 NO_PARENT_LEVELS value
+ */
+$root.ProtoNumberedLevelDisplayType = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "ALL_PARENT_LEVELS"] = 0;
+    values[valuesById[1] = "NUMBERED_PARENT_LEVELS"] = 1;
+    values[valuesById[2] = "NO_PARENT_LEVELS"] = 2;
+    return values;
+})();
+
 $root.ProtoListLevelSetting = (function() {
 
     /**
@@ -15690,6 +15706,7 @@ $root.ProtoNumberListLevelSetting = (function() {
      * @property {IProtoBoxedBool|null} [bold] ProtoNumberListLevelSetting bold
      * @property {IProtoBoxedBool|null} [italic] ProtoNumberListLevelSetting italic
      * @property {ProtoNumberType|null} [numberType] ProtoNumberListLevelSetting numberType
+     * @property {ProtoNumberedLevelDisplayType|null} [levelDisplayType] ProtoNumberListLevelSetting levelDisplayType
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -15830,6 +15847,14 @@ $root.ProtoNumberListLevelSetting = (function() {
     ProtoNumberListLevelSetting.prototype.numberType = 0;
 
     /**
+     * ProtoNumberListLevelSetting levelDisplayType.
+     * @member {ProtoNumberedLevelDisplayType} levelDisplayType
+     * @memberof ProtoNumberListLevelSetting
+     * @instance
+     */
+    ProtoNumberListLevelSetting.prototype.levelDisplayType = 0;
+
+    /**
      * Creates a new ProtoNumberListLevelSetting instance using the specified properties.
      * @function create
      * @memberof ProtoNumberListLevelSetting
@@ -15883,6 +15908,8 @@ $root.ProtoNumberListLevelSetting = (function() {
             $root.ProtoBoxedBool.encode(message.italic, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
         if (message.numberType != null && Object.hasOwnProperty.call(message, "numberType"))
             writer.uint32(/* id 15, wireType 0 =*/120).int32(message.numberType);
+        if (message.levelDisplayType != null && Object.hasOwnProperty.call(message, "levelDisplayType"))
+            writer.uint32(/* id 16, wireType 0 =*/128).int32(message.levelDisplayType);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -16047,6 +16074,15 @@ $root.ProtoNumberListLevelSetting = (function() {
                         delete message.numberType;
                     continue;
                 }
+            case 16: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.int32())
+                        message.levelDisplayType = value;
+                    else
+                        delete message.levelDisplayType;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -16158,6 +16194,15 @@ $root.ProtoNumberListLevelSetting = (function() {
             case 2:
             case 3:
             case 4:
+                break;
+            }
+        if (message.levelDisplayType != null && message.hasOwnProperty("levelDisplayType"))
+            switch (message.levelDisplayType) {
+            default:
+                return "levelDisplayType: enum value expected";
+            case 0:
+            case 1:
+            case 2:
                 break;
             }
         return null;
@@ -16284,6 +16329,27 @@ $root.ProtoNumberListLevelSetting = (function() {
                 message.numberType = 4;
                 break;
             }
+        if (object.levelDisplayType !== 0 && (typeof object.levelDisplayType !== "string" || $root.ProtoNumberedLevelDisplayType[object.levelDisplayType] !== 0))
+            switch (object.levelDisplayType) {
+            default:
+                if (typeof object.levelDisplayType === "number") {
+                    message.levelDisplayType = object.levelDisplayType;
+                    break;
+                }
+                break;
+            case "ALL_PARENT_LEVELS":
+            case 0:
+                message.levelDisplayType = 0;
+                break;
+            case "NUMBERED_PARENT_LEVELS":
+            case 1:
+                message.levelDisplayType = 1;
+                break;
+            case "NO_PARENT_LEVELS":
+            case 2:
+                message.levelDisplayType = 2;
+                break;
+            }
         return message;
     };
 
@@ -16316,6 +16382,7 @@ $root.ProtoNumberListLevelSetting = (function() {
             object.bold = null;
             object.italic = null;
             object.numberType = options.enums === String ? "ARABIC" : 0;
+            object.levelDisplayType = options.enums === String ? "ALL_PARENT_LEVELS" : 0;
         }
         if (message.listSettingName != null && message.hasOwnProperty("listSettingName"))
             object.listSettingName = message.listSettingName;
@@ -16347,6 +16414,8 @@ $root.ProtoNumberListLevelSetting = (function() {
             object.italic = $root.ProtoBoxedBool.toObject(message.italic, options);
         if (message.numberType != null && message.hasOwnProperty("numberType"))
             object.numberType = options.enums === String ? $root.ProtoNumberType[message.numberType] === undefined ? message.numberType : $root.ProtoNumberType[message.numberType] : message.numberType;
+        if (message.levelDisplayType != null && message.hasOwnProperty("levelDisplayType"))
+            object.levelDisplayType = options.enums === String ? $root.ProtoNumberedLevelDisplayType[message.levelDisplayType] === undefined ? message.levelDisplayType : $root.ProtoNumberedLevelDisplayType[message.levelDisplayType] : message.levelDisplayType;
         return object;
     };
 

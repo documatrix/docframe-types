@@ -4947,6 +4947,13 @@ export enum ProtoListLevelSettingType {
     CUSTOM = 3
 }
 
+/** ProtoNumberedLevelDisplayType enum. */
+export enum ProtoNumberedLevelDisplayType {
+    ALL_PARENT_LEVELS = 0,
+    NUMBERED_PARENT_LEVELS = 1,
+    NO_PARENT_LEVELS = 2
+}
+
 /** Properties of a ProtoListLevelSetting. */
 export interface IProtoListLevelSetting {
 
@@ -5550,6 +5557,9 @@ export interface IProtoNumberListLevelSetting {
     /** ProtoNumberListLevelSetting numberType */
     numberType?: (ProtoNumberType|null);
 
+    /** ProtoNumberListLevelSetting levelDisplayType */
+    levelDisplayType?: (ProtoNumberedLevelDisplayType|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -5610,6 +5620,9 @@ export class ProtoNumberListLevelSetting implements IProtoNumberListLevelSetting
 
     /** ProtoNumberListLevelSetting numberType. */
     public numberType: ProtoNumberType;
+
+    /** ProtoNumberListLevelSetting levelDisplayType. */
+    public levelDisplayType: ProtoNumberedLevelDisplayType;
 
     /**
      * Creates a new ProtoNumberListLevelSetting instance using the specified properties.
