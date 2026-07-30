@@ -6542,6 +6542,121 @@ export class ProtoParagraph implements IProtoParagraph {
     public static getTypeUrl(prefix?: string): string;
 }
 
+/** Properties of a ProtoBoxedBookmarkIndentationMode. */
+export interface IProtoBoxedBookmarkIndentationMode {
+
+    /** ProtoBoxedBookmarkIndentationMode value */
+    value?: (ProtoBookmarkIndentationMode|null);
+
+    /** ProtoBoxedBookmarkIndentationMode isNull */
+    isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
+}
+
+/** Represents a ProtoBoxedBookmarkIndentationMode. */
+export class ProtoBoxedBookmarkIndentationMode implements IProtoBoxedBookmarkIndentationMode {
+
+    /**
+     * Constructs a new ProtoBoxedBookmarkIndentationMode.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoBoxedBookmarkIndentationMode);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
+    /** ProtoBoxedBookmarkIndentationMode value. */
+    public value: ProtoBookmarkIndentationMode;
+
+    /** ProtoBoxedBookmarkIndentationMode isNull. */
+    public isNull: boolean;
+
+    /**
+     * Creates a new ProtoBoxedBookmarkIndentationMode instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoBoxedBookmarkIndentationMode instance
+     */
+    public static create(properties?: IProtoBoxedBookmarkIndentationMode): ProtoBoxedBookmarkIndentationMode;
+
+    /**
+     * Encodes the specified ProtoBoxedBookmarkIndentationMode message. Does not implicitly {@link ProtoBoxedBookmarkIndentationMode.verify|verify} messages.
+     * @param message ProtoBoxedBookmarkIndentationMode message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoBoxedBookmarkIndentationMode, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoBoxedBookmarkIndentationMode message, length delimited. Does not implicitly {@link ProtoBoxedBookmarkIndentationMode.verify|verify} messages.
+     * @param message ProtoBoxedBookmarkIndentationMode message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoBoxedBookmarkIndentationMode, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoBoxedBookmarkIndentationMode message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoBoxedBookmarkIndentationMode
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoBoxedBookmarkIndentationMode;
+
+    /**
+     * Decodes a ProtoBoxedBookmarkIndentationMode message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoBoxedBookmarkIndentationMode
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoBoxedBookmarkIndentationMode;
+
+    /**
+     * Verifies a ProtoBoxedBookmarkIndentationMode message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoBoxedBookmarkIndentationMode message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoBoxedBookmarkIndentationMode
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoBoxedBookmarkIndentationMode;
+
+    /**
+     * Creates a plain object from a ProtoBoxedBookmarkIndentationMode message. Also converts values to other types if specified.
+     * @param message ProtoBoxedBookmarkIndentationMode
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoBoxedBookmarkIndentationMode, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoBoxedBookmarkIndentationMode to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the type url for ProtoBoxedBookmarkIndentationMode
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
+     */
+    public static getTypeUrl(prefix?: string): string;
+}
+
+/** ProtoBookmarkIndentationMode enum. */
+export enum ProtoBookmarkIndentationMode {
+    BOOKMARK_INDENTATION_MODE_ABSOLUTE = 0,
+    BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER = 1
+}
+
 /** Properties of a ProtoParagraphFormat. */
 export interface IProtoParagraphFormat {
 
@@ -6634,6 +6749,15 @@ export interface IProtoParagraphFormat {
 
     /** ProtoParagraphFormat uuid */
     uuid?: (string|null);
+
+    /** ProtoParagraphFormat bookmarkIndentationLevel */
+    bookmarkIndentationLevel?: (IProtoBoxedInt32|null);
+
+    /** ProtoParagraphFormat bookmarkIndentationMode */
+    bookmarkIndentationMode?: (IProtoBoxedBookmarkIndentationMode|null);
+
+    /** ProtoParagraphFormat skipSpaceOnStartOfColumn */
+    skipSpaceOnStartOfColumn?: (IProtoBoxedBool|null);
 
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
@@ -6740,6 +6864,15 @@ export class ProtoParagraphFormat implements IProtoParagraphFormat {
 
     /** ProtoParagraphFormat uuid. */
     public uuid: string;
+
+    /** ProtoParagraphFormat bookmarkIndentationLevel. */
+    public bookmarkIndentationLevel?: (IProtoBoxedInt32|null);
+
+    /** ProtoParagraphFormat bookmarkIndentationMode. */
+    public bookmarkIndentationMode?: (IProtoBoxedBookmarkIndentationMode|null);
+
+    /** ProtoParagraphFormat skipSpaceOnStartOfColumn. */
+    public skipSpaceOnStartOfColumn?: (IProtoBoxedBool|null);
 
     /**
      * Creates a new ProtoParagraphFormat instance using the specified properties.
@@ -17605,6 +17738,15 @@ export interface IProtoChapter {
     /** ProtoChapter createPageBreak */
     createPageBreak?: (boolean|null);
 
+    /** ProtoChapter createDestination */
+    createDestination?: (boolean|null);
+
+    /** ProtoChapter createInToc */
+    createInToc?: (boolean|null);
+
+    /** ProtoChapter indentationLevel */
+    indentationLevel?: (number|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -17647,6 +17789,15 @@ export class ProtoChapter implements IProtoChapter {
 
     /** ProtoChapter createPageBreak. */
     public createPageBreak: boolean;
+
+    /** ProtoChapter createDestination. */
+    public createDestination: boolean;
+
+    /** ProtoChapter createInToc. */
+    public createInToc: boolean;
+
+    /** ProtoChapter indentationLevel. */
+    public indentationLevel: number;
 
     /**
      * Creates a new ProtoChapter instance using the specified properties.

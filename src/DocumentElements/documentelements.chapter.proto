@@ -11,4 +11,7 @@ message ProtoChapter {
   repeated string number = 7;
   string key = 8;
   bool createPageBreak = 9;
+  bool createDestination = 10;
+  bool createInToc = 11;
+  int32 indentationLevel = 12;
 }

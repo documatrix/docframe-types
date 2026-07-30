@@ -551,6 +551,16 @@ repeated string comChannelUUIDs = 5;
 string paragraphFormatUUID = 6;
 string uuid = 7;
 }
+message ProtoBoxedBookmarkIndentationMode {
+ProtoBookmarkIndentationMode value = 1;
+bool isNull = 2;
+}
+
+enum ProtoBookmarkIndentationMode {
+BOOKMARK_INDENTATION_MODE_ABSOLUTE = 0;
+BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER = 1;
+}
+
 message ProtoParagraphFormat {
 ProtoParagraphFormat baseFormat = 1;
 ProtoBoxedString name = 2;
@@ -582,6 +592,9 @@ ProtoBoxedString postNamedString = 27;
 ProtoBoxedString semanticType = 28;
 repeated string comChannelUUIDs = 29;
 string uuid = 30;
+ProtoBoxedInt32 bookmarkIndentationLevel = 31;
+ProtoBoxedBookmarkIndentationMode bookmarkIndentationMode = 32;
+ProtoBoxedBool skipSpaceOnStartOfColumn = 33;
 }
 message ProtoSection {
 repeated ProtoDocumentElement _children = 1;
@@ -1625,6 +1638,9 @@ string tag = 6;
 repeated string number = 7;
 string key = 8;
 bool createPageBreak = 9;
+bool createDestination = 10;
+bool createInToc = 11;
+int32 indentationLevel = 12;
 }
 message ProtoTableOfContents {
 repeated ProtoDocumentElement _children = 1;

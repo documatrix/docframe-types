@@ -19112,6 +19112,302 @@ $root.ProtoParagraph = (function() {
     return ProtoParagraph;
 })();
 
+$root.ProtoBoxedBookmarkIndentationMode = (function() {
+
+    /**
+     * Properties of a ProtoBoxedBookmarkIndentationMode.
+     * @name IProtoBoxedBookmarkIndentationMode
+     * @interface IProtoBoxedBookmarkIndentationMode
+     * @property {ProtoBookmarkIndentationMode|null} [value] ProtoBoxedBookmarkIndentationMode value
+     * @property {boolean|null} [isNull] ProtoBoxedBookmarkIndentationMode isNull
+     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
+     */
+
+    /**
+     * Constructs a new ProtoBoxedBookmarkIndentationMode.
+     * @name ProtoBoxedBookmarkIndentationMode
+     * @classdesc Represents a ProtoBoxedBookmarkIndentationMode.
+     * @implements IProtoBoxedBookmarkIndentationMode
+     * @constructor
+     * @param {IProtoBoxedBookmarkIndentationMode=} [properties] Properties to set
+     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
+     */
+    function ProtoBoxedBookmarkIndentationMode(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null && keys[i] !== "__proto__")
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoBoxedBookmarkIndentationMode value.
+     * @member {ProtoBookmarkIndentationMode} value
+     * @memberof ProtoBoxedBookmarkIndentationMode
+     * @instance
+     */
+    ProtoBoxedBookmarkIndentationMode.prototype.value = 0;
+
+    /**
+     * ProtoBoxedBookmarkIndentationMode isNull.
+     * @member {boolean} isNull
+     * @memberof ProtoBoxedBookmarkIndentationMode
+     * @instance
+     */
+    ProtoBoxedBookmarkIndentationMode.prototype.isNull = false;
+
+    /**
+     * Creates a new ProtoBoxedBookmarkIndentationMode instance using the specified properties.
+     * @function create
+     * @memberof ProtoBoxedBookmarkIndentationMode
+     * @static
+     * @param {IProtoBoxedBookmarkIndentationMode=} [properties] Properties to set
+     * @returns {ProtoBoxedBookmarkIndentationMode} ProtoBoxedBookmarkIndentationMode instance
+     */
+    ProtoBoxedBookmarkIndentationMode.create = function create(properties) {
+        return new ProtoBoxedBookmarkIndentationMode(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoBoxedBookmarkIndentationMode message. Does not implicitly {@link ProtoBoxedBookmarkIndentationMode.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoBoxedBookmarkIndentationMode
+     * @static
+     * @param {IProtoBoxedBookmarkIndentationMode} message ProtoBoxedBookmarkIndentationMode message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoBoxedBookmarkIndentationMode.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.value != null && Object.hasOwnProperty.call(message, "value"))
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.value);
+        if (message.isNull != null && Object.hasOwnProperty.call(message, "isNull"))
+            writer.uint32(/* id 2, wireType 0 =*/16).bool(message.isNull);
+        if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
+            for (var i = 0; i < message.$unknowns.length; ++i)
+                writer.raw(message.$unknowns[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoBoxedBookmarkIndentationMode message, length delimited. Does not implicitly {@link ProtoBoxedBookmarkIndentationMode.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoBoxedBookmarkIndentationMode
+     * @static
+     * @param {IProtoBoxedBookmarkIndentationMode} message ProtoBoxedBookmarkIndentationMode message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoBoxedBookmarkIndentationMode.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoBoxedBookmarkIndentationMode message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoBoxedBookmarkIndentationMode
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoBoxedBookmarkIndentationMode} ProtoBoxedBookmarkIndentationMode
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoBoxedBookmarkIndentationMode.decode = function decode(reader, length, _end, _depth, _target) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $Reader.recursionLimit)
+            throw Error("max depth exceeded");
+        var end = length === undefined ? reader.len : reader.pos + length, message = _target || new $root.ProtoBoxedBookmarkIndentationMode(), value;
+        while (reader.pos < end) {
+            var start = reader.pos;
+            var tag = reader.tag();
+            if (tag === _end) {
+                _end = undefined;
+                break;
+            }
+            var wireType = tag & 7;
+            switch (tag >>>= 3) {
+            case 1: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.int32())
+                        message.value = value;
+                    else
+                        delete message.value;
+                    continue;
+                }
+            case 2: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.isNull = value;
+                    else
+                        delete message.isNull;
+                    continue;
+                }
+            }
+            reader.skipType(wireType, _depth, tag);
+            $util.makeProp(message, "$unknowns", false);
+            (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+        }
+        if (_end !== undefined)
+            throw Error("missing end group");
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoBoxedBookmarkIndentationMode message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoBoxedBookmarkIndentationMode
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoBoxedBookmarkIndentationMode} ProtoBoxedBookmarkIndentationMode
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoBoxedBookmarkIndentationMode.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoBoxedBookmarkIndentationMode message.
+     * @function verify
+     * @memberof ProtoBoxedBookmarkIndentationMode
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoBoxedBookmarkIndentationMode.verify = function verify(message, _depth) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $util.recursionLimit)
+            return "max depth exceeded";
+        if (message.value != null && message.hasOwnProperty("value"))
+            switch (message.value) {
+            default:
+                return "value: enum value expected";
+            case 0:
+            case 1:
+                break;
+            }
+        if (message.isNull != null && message.hasOwnProperty("isNull"))
+            if (typeof message.isNull !== "boolean")
+                return "isNull: boolean expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoBoxedBookmarkIndentationMode message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoBoxedBookmarkIndentationMode
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoBoxedBookmarkIndentationMode} ProtoBoxedBookmarkIndentationMode
+     */
+    ProtoBoxedBookmarkIndentationMode.fromObject = function fromObject(object, _depth) {
+        if (object instanceof $root.ProtoBoxedBookmarkIndentationMode)
+            return object;
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $util.recursionLimit)
+            throw Error("max depth exceeded");
+        var message = new $root.ProtoBoxedBookmarkIndentationMode();
+        if (object.value !== 0 && (typeof object.value !== "string" || $root.ProtoBookmarkIndentationMode[object.value] !== 0))
+            switch (object.value) {
+            default:
+                if (typeof object.value === "number") {
+                    message.value = object.value;
+                    break;
+                }
+                break;
+            case "BOOKMARK_INDENTATION_MODE_ABSOLUTE":
+            case 0:
+                message.value = 0;
+                break;
+            case "BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER":
+            case 1:
+                message.value = 1;
+                break;
+            }
+        if (object.isNull != null)
+            if (object.isNull)
+                message.isNull = Boolean(object.isNull);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoBoxedBookmarkIndentationMode message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoBoxedBookmarkIndentationMode
+     * @static
+     * @param {ProtoBoxedBookmarkIndentationMode} message ProtoBoxedBookmarkIndentationMode
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoBoxedBookmarkIndentationMode.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.value = options.enums === String ? "BOOKMARK_INDENTATION_MODE_ABSOLUTE" : 0;
+            object.isNull = false;
+        }
+        if (message.value != null && message.hasOwnProperty("value"))
+            object.value = options.enums === String ? $root.ProtoBookmarkIndentationMode[message.value] === undefined ? message.value : $root.ProtoBookmarkIndentationMode[message.value] : message.value;
+        if (message.isNull != null && message.hasOwnProperty("isNull"))
+            object.isNull = message.isNull;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoBoxedBookmarkIndentationMode to JSON.
+     * @function toJSON
+     * @memberof ProtoBoxedBookmarkIndentationMode
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoBoxedBookmarkIndentationMode.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the type url for ProtoBoxedBookmarkIndentationMode
+     * @function getTypeUrl
+     * @memberof ProtoBoxedBookmarkIndentationMode
+     * @static
+     * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns {string} The type url
+     */
+    ProtoBoxedBookmarkIndentationMode.getTypeUrl = function getTypeUrl(prefix) {
+        if (prefix === undefined)
+            prefix = "type.googleapis.com";
+        return prefix + "/ProtoBoxedBookmarkIndentationMode";
+    };
+
+    return ProtoBoxedBookmarkIndentationMode;
+})();
+
+/**
+ * ProtoBookmarkIndentationMode enum.
+ * @name ProtoBookmarkIndentationMode
+ * @enum {number}
+ * @property {number} BOOKMARK_INDENTATION_MODE_ABSOLUTE=0 BOOKMARK_INDENTATION_MODE_ABSOLUTE value
+ * @property {number} BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER=1 BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER value
+ */
+$root.ProtoBookmarkIndentationMode = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "BOOKMARK_INDENTATION_MODE_ABSOLUTE"] = 0;
+    values[valuesById[1] = "BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER"] = 1;
+    return values;
+})();
+
 $root.ProtoParagraphFormat = (function() {
 
     /**
@@ -19148,6 +19444,9 @@ $root.ProtoParagraphFormat = (function() {
      * @property {IProtoBoxedString|null} [semanticType] ProtoParagraphFormat semanticType
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoParagraphFormat comChannelUUIDs
      * @property {string|null} [uuid] ProtoParagraphFormat uuid
+     * @property {IProtoBoxedInt32|null} [bookmarkIndentationLevel] ProtoParagraphFormat bookmarkIndentationLevel
+     * @property {IProtoBoxedBookmarkIndentationMode|null} [bookmarkIndentationMode] ProtoParagraphFormat bookmarkIndentationMode
+     * @property {IProtoBoxedBool|null} [skipSpaceOnStartOfColumn] ProtoParagraphFormat skipSpaceOnStartOfColumn
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -19409,6 +19708,30 @@ $root.ProtoParagraphFormat = (function() {
     ProtoParagraphFormat.prototype.uuid = "";
 
     /**
+     * ProtoParagraphFormat bookmarkIndentationLevel.
+     * @member {IProtoBoxedInt32|null|undefined} bookmarkIndentationLevel
+     * @memberof ProtoParagraphFormat
+     * @instance
+     */
+    ProtoParagraphFormat.prototype.bookmarkIndentationLevel = null;
+
+    /**
+     * ProtoParagraphFormat bookmarkIndentationMode.
+     * @member {IProtoBoxedBookmarkIndentationMode|null|undefined} bookmarkIndentationMode
+     * @memberof ProtoParagraphFormat
+     * @instance
+     */
+    ProtoParagraphFormat.prototype.bookmarkIndentationMode = null;
+
+    /**
+     * ProtoParagraphFormat skipSpaceOnStartOfColumn.
+     * @member {IProtoBoxedBool|null|undefined} skipSpaceOnStartOfColumn
+     * @memberof ProtoParagraphFormat
+     * @instance
+     */
+    ProtoParagraphFormat.prototype.skipSpaceOnStartOfColumn = null;
+
+    /**
      * Creates a new ProtoParagraphFormat instance using the specified properties.
      * @function create
      * @memberof ProtoParagraphFormat
@@ -19493,6 +19816,12 @@ $root.ProtoParagraphFormat = (function() {
                 writer.uint32(/* id 29, wireType 2 =*/234).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 30, wireType 2 =*/242).string(message.uuid);
+        if (message.bookmarkIndentationLevel != null && Object.hasOwnProperty.call(message, "bookmarkIndentationLevel"))
+            $root.ProtoBoxedInt32.encode(message.bookmarkIndentationLevel, writer.uint32(/* id 31, wireType 2 =*/250).fork()).ldelim();
+        if (message.bookmarkIndentationMode != null && Object.hasOwnProperty.call(message, "bookmarkIndentationMode"))
+            $root.ProtoBoxedBookmarkIndentationMode.encode(message.bookmarkIndentationMode, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
+        if (message.skipSpaceOnStartOfColumn != null && Object.hasOwnProperty.call(message, "skipSpaceOnStartOfColumn"))
+            $root.ProtoBoxedBool.encode(message.skipSpaceOnStartOfColumn, writer.uint32(/* id 33, wireType 2 =*/266).fork()).ldelim();
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -19725,6 +20054,24 @@ $root.ProtoParagraphFormat = (function() {
                         delete message.uuid;
                     continue;
                 }
+            case 31: {
+                    if (wireType !== 2)
+                        break;
+                    message.bookmarkIndentationLevel = $root.ProtoBoxedInt32.decode(reader, reader.uint32(), undefined, _depth + 1, message.bookmarkIndentationLevel);
+                    continue;
+                }
+            case 32: {
+                    if (wireType !== 2)
+                        break;
+                    message.bookmarkIndentationMode = $root.ProtoBoxedBookmarkIndentationMode.decode(reader, reader.uint32(), undefined, _depth + 1, message.bookmarkIndentationMode);
+                    continue;
+                }
+            case 33: {
+                    if (wireType !== 2)
+                        break;
+                    message.skipSpaceOnStartOfColumn = $root.ProtoBoxedBool.decode(reader, reader.uint32(), undefined, _depth + 1, message.skipSpaceOnStartOfColumn);
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -19916,6 +20263,21 @@ $root.ProtoParagraphFormat = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
+        if (message.bookmarkIndentationLevel != null && message.hasOwnProperty("bookmarkIndentationLevel")) {
+            var error = $root.ProtoBoxedInt32.verify(message.bookmarkIndentationLevel, _depth + 1);
+            if (error)
+                return "bookmarkIndentationLevel." + error;
+        }
+        if (message.bookmarkIndentationMode != null && message.hasOwnProperty("bookmarkIndentationMode")) {
+            var error = $root.ProtoBoxedBookmarkIndentationMode.verify(message.bookmarkIndentationMode, _depth + 1);
+            if (error)
+                return "bookmarkIndentationMode." + error;
+        }
+        if (message.skipSpaceOnStartOfColumn != null && message.hasOwnProperty("skipSpaceOnStartOfColumn")) {
+            var error = $root.ProtoBoxedBool.verify(message.skipSpaceOnStartOfColumn, _depth + 1);
+            if (error)
+                return "skipSpaceOnStartOfColumn." + error;
+        }
         return null;
     };
 
@@ -20085,6 +20447,21 @@ $root.ProtoParagraphFormat = (function() {
         if (object.uuid != null)
             if (typeof object.uuid !== "string" || object.uuid.length)
                 message.uuid = String(object.uuid);
+        if (object.bookmarkIndentationLevel != null) {
+            if (typeof object.bookmarkIndentationLevel !== "object")
+                throw TypeError(".ProtoParagraphFormat.bookmarkIndentationLevel: object expected");
+            message.bookmarkIndentationLevel = $root.ProtoBoxedInt32.fromObject(object.bookmarkIndentationLevel, _depth + 1);
+        }
+        if (object.bookmarkIndentationMode != null) {
+            if (typeof object.bookmarkIndentationMode !== "object")
+                throw TypeError(".ProtoParagraphFormat.bookmarkIndentationMode: object expected");
+            message.bookmarkIndentationMode = $root.ProtoBoxedBookmarkIndentationMode.fromObject(object.bookmarkIndentationMode, _depth + 1);
+        }
+        if (object.skipSpaceOnStartOfColumn != null) {
+            if (typeof object.skipSpaceOnStartOfColumn !== "object")
+                throw TypeError(".ProtoParagraphFormat.skipSpaceOnStartOfColumn: object expected");
+            message.skipSpaceOnStartOfColumn = $root.ProtoBoxedBool.fromObject(object.skipSpaceOnStartOfColumn, _depth + 1);
+        }
         return message;
     };
 
@@ -20133,6 +20510,9 @@ $root.ProtoParagraphFormat = (function() {
             object.postNamedString = null;
             object.semanticType = null;
             object.uuid = "";
+            object.bookmarkIndentationLevel = null;
+            object.bookmarkIndentationMode = null;
+            object.skipSpaceOnStartOfColumn = null;
         }
         if (message.baseFormat != null && message.hasOwnProperty("baseFormat"))
             object.baseFormat = $root.ProtoParagraphFormat.toObject(message.baseFormat, options);
@@ -20197,6 +20577,12 @@ $root.ProtoParagraphFormat = (function() {
         }
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
+        if (message.bookmarkIndentationLevel != null && message.hasOwnProperty("bookmarkIndentationLevel"))
+            object.bookmarkIndentationLevel = $root.ProtoBoxedInt32.toObject(message.bookmarkIndentationLevel, options);
+        if (message.bookmarkIndentationMode != null && message.hasOwnProperty("bookmarkIndentationMode"))
+            object.bookmarkIndentationMode = $root.ProtoBoxedBookmarkIndentationMode.toObject(message.bookmarkIndentationMode, options);
+        if (message.skipSpaceOnStartOfColumn != null && message.hasOwnProperty("skipSpaceOnStartOfColumn"))
+            object.skipSpaceOnStartOfColumn = $root.ProtoBoxedBool.toObject(message.skipSpaceOnStartOfColumn, options);
         return object;
     };
 
@@ -56513,6 +56899,9 @@ $root.ProtoChapter = (function() {
      * @property {Array.<string>|null} [number] ProtoChapter number
      * @property {string|null} [key] ProtoChapter key
      * @property {boolean|null} [createPageBreak] ProtoChapter createPageBreak
+     * @property {boolean|null} [createDestination] ProtoChapter createDestination
+     * @property {boolean|null} [createInToc] ProtoChapter createInToc
+     * @property {number|null} [indentationLevel] ProtoChapter indentationLevel
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -56608,6 +56997,30 @@ $root.ProtoChapter = (function() {
     ProtoChapter.prototype.createPageBreak = false;
 
     /**
+     * ProtoChapter createDestination.
+     * @member {boolean} createDestination
+     * @memberof ProtoChapter
+     * @instance
+     */
+    ProtoChapter.prototype.createDestination = false;
+
+    /**
+     * ProtoChapter createInToc.
+     * @member {boolean} createInToc
+     * @memberof ProtoChapter
+     * @instance
+     */
+    ProtoChapter.prototype.createInToc = false;
+
+    /**
+     * ProtoChapter indentationLevel.
+     * @member {number} indentationLevel
+     * @memberof ProtoChapter
+     * @instance
+     */
+    ProtoChapter.prototype.indentationLevel = 0;
+
+    /**
      * Creates a new ProtoChapter instance using the specified properties.
      * @function create
      * @memberof ProtoChapter
@@ -56652,6 +57065,12 @@ $root.ProtoChapter = (function() {
             writer.uint32(/* id 8, wireType 2 =*/66).string(message.key);
         if (message.createPageBreak != null && Object.hasOwnProperty.call(message, "createPageBreak"))
             writer.uint32(/* id 9, wireType 0 =*/72).bool(message.createPageBreak);
+        if (message.createDestination != null && Object.hasOwnProperty.call(message, "createDestination"))
+            writer.uint32(/* id 10, wireType 0 =*/80).bool(message.createDestination);
+        if (message.createInToc != null && Object.hasOwnProperty.call(message, "createInToc"))
+            writer.uint32(/* id 11, wireType 0 =*/88).bool(message.createInToc);
+        if (message.indentationLevel != null && Object.hasOwnProperty.call(message, "indentationLevel"))
+            writer.uint32(/* id 12, wireType 0 =*/96).int32(message.indentationLevel);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -56774,6 +57193,33 @@ $root.ProtoChapter = (function() {
                         delete message.createPageBreak;
                     continue;
                 }
+            case 10: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.createDestination = value;
+                    else
+                        delete message.createDestination;
+                    continue;
+                }
+            case 11: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.createInToc = value;
+                    else
+                        delete message.createInToc;
+                    continue;
+                }
+            case 12: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.int32())
+                        message.indentationLevel = value;
+                    else
+                        delete message.indentationLevel;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -56858,6 +57304,15 @@ $root.ProtoChapter = (function() {
         if (message.createPageBreak != null && message.hasOwnProperty("createPageBreak"))
             if (typeof message.createPageBreak !== "boolean")
                 return "createPageBreak: boolean expected";
+        if (message.createDestination != null && message.hasOwnProperty("createDestination"))
+            if (typeof message.createDestination !== "boolean")
+                return "createDestination: boolean expected";
+        if (message.createInToc != null && message.hasOwnProperty("createInToc"))
+            if (typeof message.createInToc !== "boolean")
+                return "createInToc: boolean expected";
+        if (message.indentationLevel != null && message.hasOwnProperty("indentationLevel"))
+            if (!$util.isInteger(message.indentationLevel))
+                return "indentationLevel: integer expected";
         return null;
     };
 
@@ -56921,6 +57376,15 @@ $root.ProtoChapter = (function() {
         if (object.createPageBreak != null)
             if (object.createPageBreak)
                 message.createPageBreak = Boolean(object.createPageBreak);
+        if (object.createDestination != null)
+            if (object.createDestination)
+                message.createDestination = Boolean(object.createDestination);
+        if (object.createInToc != null)
+            if (object.createInToc)
+                message.createInToc = Boolean(object.createInToc);
+        if (object.indentationLevel != null)
+            if (Number(object.indentationLevel) !== 0)
+                message.indentationLevel = object.indentationLevel | 0;
         return message;
     };
 
@@ -56949,6 +57413,9 @@ $root.ProtoChapter = (function() {
             object.tag = "";
             object.key = "";
             object.createPageBreak = false;
+            object.createDestination = false;
+            object.createInToc = false;
+            object.indentationLevel = 0;
         }
         if (message._children && message._children.length) {
             object._children = Array(message._children.length);
@@ -56977,6 +57444,12 @@ $root.ProtoChapter = (function() {
             object.key = message.key;
         if (message.createPageBreak != null && message.hasOwnProperty("createPageBreak"))
             object.createPageBreak = message.createPageBreak;
+        if (message.createDestination != null && message.hasOwnProperty("createDestination"))
+            object.createDestination = message.createDestination;
+        if (message.createInToc != null && message.hasOwnProperty("createInToc"))
+            object.createInToc = message.createInToc;
+        if (message.indentationLevel != null && message.hasOwnProperty("indentationLevel"))
+            object.indentationLevel = message.indentationLevel;
         return object;
     };
 
