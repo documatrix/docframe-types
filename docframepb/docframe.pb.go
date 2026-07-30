@@ -1029,6 +1029,52 @@ func (ProtoNumberedLevelDisplayType) EnumDescriptor() ([]byte, []int) {
 	return file_build_docframe_proto_rawDescGZIP(), []int{17}
 }
 
+type ProtoBookmarkIndentationMode int32
+
+const (
+	ProtoBookmarkIndentationMode_BOOKMARK_INDENTATION_MODE_ABSOLUTE            ProtoBookmarkIndentationMode = 0
+	ProtoBookmarkIndentationMode_BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER ProtoBookmarkIndentationMode = 1
+)
+
+// Enum value maps for ProtoBookmarkIndentationMode.
+var (
+	ProtoBookmarkIndentationMode_name = map[int32]string{
+		0: "BOOKMARK_INDENTATION_MODE_ABSOLUTE",
+		1: "BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER",
+	}
+	ProtoBookmarkIndentationMode_value = map[string]int32{
+		"BOOKMARK_INDENTATION_MODE_ABSOLUTE":            0,
+		"BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER": 1,
+	}
+)
+
+func (x ProtoBookmarkIndentationMode) Enum() *ProtoBookmarkIndentationMode {
+	p := new(ProtoBookmarkIndentationMode)
+	*p = x
+	return p
+}
+
+func (x ProtoBookmarkIndentationMode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ProtoBookmarkIndentationMode) Descriptor() protoreflect.EnumDescriptor {
+	return file_build_docframe_proto_enumTypes[18].Descriptor()
+}
+
+func (ProtoBookmarkIndentationMode) Type() protoreflect.EnumType {
+	return &file_build_docframe_proto_enumTypes[18]
+}
+
+func (x ProtoBookmarkIndentationMode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ProtoBookmarkIndentationMode.Descriptor instead.
+func (ProtoBookmarkIndentationMode) EnumDescriptor() ([]byte, []int) {
+	return file_build_docframe_proto_rawDescGZIP(), []int{18}
+}
+
 type ProtoTableContentGroupType int32
 
 const (
@@ -1065,11 +1111,11 @@ func (x ProtoTableContentGroupType) String() string {
 }
 
 func (ProtoTableContentGroupType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[18].Descriptor()
+	return file_build_docframe_proto_enumTypes[19].Descriptor()
 }
 
 func (ProtoTableContentGroupType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[18]
+	return &file_build_docframe_proto_enumTypes[19]
 }
 
 func (x ProtoTableContentGroupType) Number() protoreflect.EnumNumber {
@@ -1078,7 +1124,7 @@ func (x ProtoTableContentGroupType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoTableContentGroupType.Descriptor instead.
 func (ProtoTableContentGroupType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{18}
+	return file_build_docframe_proto_rawDescGZIP(), []int{19}
 }
 
 type ProtoTableCellType int32
@@ -1114,11 +1160,11 @@ func (x ProtoTableCellType) String() string {
 }
 
 func (ProtoTableCellType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[19].Descriptor()
+	return file_build_docframe_proto_enumTypes[20].Descriptor()
 }
 
 func (ProtoTableCellType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[19]
+	return &file_build_docframe_proto_enumTypes[20]
 }
 
 func (x ProtoTableCellType) Number() protoreflect.EnumNumber {
@@ -1127,7 +1173,7 @@ func (x ProtoTableCellType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoTableCellType.Descriptor instead.
 func (ProtoTableCellType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{19}
+	return file_build_docframe_proto_rawDescGZIP(), []int{20}
 }
 
 type ColumnBalancing int32
@@ -1160,11 +1206,11 @@ func (x ColumnBalancing) String() string {
 }
 
 func (ColumnBalancing) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[20].Descriptor()
+	return file_build_docframe_proto_enumTypes[21].Descriptor()
 }
 
 func (ColumnBalancing) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[20]
+	return &file_build_docframe_proto_enumTypes[21]
 }
 
 func (x ColumnBalancing) Number() protoreflect.EnumNumber {
@@ -1173,7 +1219,7 @@ func (x ColumnBalancing) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ColumnBalancing.Descriptor instead.
 func (ColumnBalancing) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{20}
+	return file_build_docframe_proto_rawDescGZIP(), []int{21}
 }
 
 type ProtoHeaderMode int32
@@ -1212,11 +1258,11 @@ func (x ProtoHeaderMode) String() string {
 }
 
 func (ProtoHeaderMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[21].Descriptor()
+	return file_build_docframe_proto_enumTypes[22].Descriptor()
 }
 
 func (ProtoHeaderMode) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[21]
+	return &file_build_docframe_proto_enumTypes[22]
 }
 
 func (x ProtoHeaderMode) Number() protoreflect.EnumNumber {
@@ -1225,7 +1271,7 @@ func (x ProtoHeaderMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoHeaderMode.Descriptor instead.
 func (ProtoHeaderMode) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{21}
+	return file_build_docframe_proto_rawDescGZIP(), []int{22}
 }
 
 type ProtoFooterMode int32
@@ -1264,11 +1310,11 @@ func (x ProtoFooterMode) String() string {
 }
 
 func (ProtoFooterMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[22].Descriptor()
+	return file_build_docframe_proto_enumTypes[23].Descriptor()
 }
 
 func (ProtoFooterMode) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[22]
+	return &file_build_docframe_proto_enumTypes[23]
 }
 
 func (x ProtoFooterMode) Number() protoreflect.EnumNumber {
@@ -1277,7 +1323,7 @@ func (x ProtoFooterMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoFooterMode.Descriptor instead.
 func (ProtoFooterMode) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{22}
+	return file_build_docframe_proto_rawDescGZIP(), []int{23}
 }
 
 type NodeType int32
@@ -1526,11 +1572,11 @@ func (x NodeType) String() string {
 }
 
 func (NodeType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[23].Descriptor()
+	return file_build_docframe_proto_enumTypes[24].Descriptor()
 }
 
 func (NodeType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[23]
+	return &file_build_docframe_proto_enumTypes[24]
 }
 
 func (x NodeType) Number() protoreflect.EnumNumber {
@@ -1539,7 +1585,7 @@ func (x NodeType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NodeType.Descriptor instead.
 func (NodeType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{23}
+	return file_build_docframe_proto_rawDescGZIP(), []int{24}
 }
 
 type ProtoImageScaleType int32
@@ -1578,11 +1624,11 @@ func (x ProtoImageScaleType) String() string {
 }
 
 func (ProtoImageScaleType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[24].Descriptor()
+	return file_build_docframe_proto_enumTypes[25].Descriptor()
 }
 
 func (ProtoImageScaleType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[24]
+	return &file_build_docframe_proto_enumTypes[25]
 }
 
 func (x ProtoImageScaleType) Number() protoreflect.EnumNumber {
@@ -1591,7 +1637,7 @@ func (x ProtoImageScaleType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoImageScaleType.Descriptor instead.
 func (ProtoImageScaleType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{24}
+	return file_build_docframe_proto_rawDescGZIP(), []int{25}
 }
 
 type ProtoImageUAMode int32
@@ -1630,11 +1676,11 @@ func (x ProtoImageUAMode) String() string {
 }
 
 func (ProtoImageUAMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[25].Descriptor()
+	return file_build_docframe_proto_enumTypes[26].Descriptor()
 }
 
 func (ProtoImageUAMode) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[25]
+	return &file_build_docframe_proto_enumTypes[26]
 }
 
 func (x ProtoImageUAMode) Number() protoreflect.EnumNumber {
@@ -1643,7 +1689,7 @@ func (x ProtoImageUAMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoImageUAMode.Descriptor instead.
 func (ProtoImageUAMode) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{25}
+	return file_build_docframe_proto_rawDescGZIP(), []int{26}
 }
 
 type ProtoImageContentType int32
@@ -1685,11 +1731,11 @@ func (x ProtoImageContentType) String() string {
 }
 
 func (ProtoImageContentType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[26].Descriptor()
+	return file_build_docframe_proto_enumTypes[27].Descriptor()
 }
 
 func (ProtoImageContentType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[26]
+	return &file_build_docframe_proto_enumTypes[27]
 }
 
 func (x ProtoImageContentType) Number() protoreflect.EnumNumber {
@@ -1698,7 +1744,7 @@ func (x ProtoImageContentType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoImageContentType.Descriptor instead.
 func (ProtoImageContentType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{26}
+	return file_build_docframe_proto_rawDescGZIP(), []int{27}
 }
 
 type ProtoVariableSpecialType int32
@@ -1755,11 +1801,11 @@ func (x ProtoVariableSpecialType) String() string {
 }
 
 func (ProtoVariableSpecialType) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[27].Descriptor()
+	return file_build_docframe_proto_enumTypes[28].Descriptor()
 }
 
 func (ProtoVariableSpecialType) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[27]
+	return &file_build_docframe_proto_enumTypes[28]
 }
 
 func (x ProtoVariableSpecialType) Number() protoreflect.EnumNumber {
@@ -1768,7 +1814,7 @@ func (x ProtoVariableSpecialType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoVariableSpecialType.Descriptor instead.
 func (ProtoVariableSpecialType) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{27}
+	return file_build_docframe_proto_rawDescGZIP(), []int{28}
 }
 
 type ProtoPageMode int32
@@ -1804,11 +1850,11 @@ func (x ProtoPageMode) String() string {
 }
 
 func (ProtoPageMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[28].Descriptor()
+	return file_build_docframe_proto_enumTypes[29].Descriptor()
 }
 
 func (ProtoPageMode) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[28]
+	return &file_build_docframe_proto_enumTypes[29]
 }
 
 func (x ProtoPageMode) Number() protoreflect.EnumNumber {
@@ -1817,7 +1863,7 @@ func (x ProtoPageMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoPageMode.Descriptor instead.
 func (ProtoPageMode) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{28}
+	return file_build_docframe_proto_rawDescGZIP(), []int{29}
 }
 
 type ProtoPageOrientation int32
@@ -1859,11 +1905,11 @@ func (x ProtoPageOrientation) String() string {
 }
 
 func (ProtoPageOrientation) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[29].Descriptor()
+	return file_build_docframe_proto_enumTypes[30].Descriptor()
 }
 
 func (ProtoPageOrientation) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[29]
+	return &file_build_docframe_proto_enumTypes[30]
 }
 
 func (x ProtoPageOrientation) Number() protoreflect.EnumNumber {
@@ -1872,7 +1918,7 @@ func (x ProtoPageOrientation) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoPageOrientation.Descriptor instead.
 func (ProtoPageOrientation) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{29}
+	return file_build_docframe_proto_rawDescGZIP(), []int{30}
 }
 
 type ProtoSubTotalPosition int32
@@ -1905,11 +1951,11 @@ func (x ProtoSubTotalPosition) String() string {
 }
 
 func (ProtoSubTotalPosition) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[30].Descriptor()
+	return file_build_docframe_proto_enumTypes[31].Descriptor()
 }
 
 func (ProtoSubTotalPosition) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[30]
+	return &file_build_docframe_proto_enumTypes[31]
 }
 
 func (x ProtoSubTotalPosition) Number() protoreflect.EnumNumber {
@@ -1918,7 +1964,7 @@ func (x ProtoSubTotalPosition) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoSubTotalPosition.Descriptor instead.
 func (ProtoSubTotalPosition) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{30}
+	return file_build_docframe_proto_rawDescGZIP(), []int{31}
 }
 
 type ProtoRuleMode int32
@@ -1951,11 +1997,11 @@ func (x ProtoRuleMode) String() string {
 }
 
 func (ProtoRuleMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[31].Descriptor()
+	return file_build_docframe_proto_enumTypes[32].Descriptor()
 }
 
 func (ProtoRuleMode) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[31]
+	return &file_build_docframe_proto_enumTypes[32]
 }
 
 func (x ProtoRuleMode) Number() protoreflect.EnumNumber {
@@ -1964,7 +2010,7 @@ func (x ProtoRuleMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoRuleMode.Descriptor instead.
 func (ProtoRuleMode) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{31}
+	return file_build_docframe_proto_rawDescGZIP(), []int{32}
 }
 
 type ProtoDoctypeOutputMode int32
@@ -2000,11 +2046,11 @@ func (x ProtoDoctypeOutputMode) String() string {
 }
 
 func (ProtoDoctypeOutputMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_build_docframe_proto_enumTypes[32].Descriptor()
+	return file_build_docframe_proto_enumTypes[33].Descriptor()
 }
 
 func (ProtoDoctypeOutputMode) Type() protoreflect.EnumType {
-	return &file_build_docframe_proto_enumTypes[32]
+	return &file_build_docframe_proto_enumTypes[33]
 }
 
 func (x ProtoDoctypeOutputMode) Number() protoreflect.EnumNumber {
@@ -2013,7 +2059,7 @@ func (x ProtoDoctypeOutputMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ProtoDoctypeOutputMode.Descriptor instead.
 func (ProtoDoctypeOutputMode) EnumDescriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{32}
+	return file_build_docframe_proto_rawDescGZIP(), []int{33}
 }
 
 type ProtoBoxedBool struct {
@@ -5848,45 +5894,100 @@ func (x *ProtoParagraph) GetUuid() string {
 	return ""
 }
 
+type ProtoBoxedBookmarkIndentationMode struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Value         ProtoBookmarkIndentationMode `protobuf:"varint,1,opt,name=value,proto3,enum=ProtoBookmarkIndentationMode" json:"value,omitempty"`
+	IsNull        bool                         `protobuf:"varint,2,opt,name=isNull,proto3" json:"isNull,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProtoBoxedBookmarkIndentationMode) Reset() {
+	*x = ProtoBoxedBookmarkIndentationMode{}
+	mi := &file_build_docframe_proto_msgTypes[50]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProtoBoxedBookmarkIndentationMode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProtoBoxedBookmarkIndentationMode) ProtoMessage() {}
+
+func (x *ProtoBoxedBookmarkIndentationMode) ProtoReflect() protoreflect.Message {
+	mi := &file_build_docframe_proto_msgTypes[50]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProtoBoxedBookmarkIndentationMode.ProtoReflect.Descriptor instead.
+func (*ProtoBoxedBookmarkIndentationMode) Descriptor() ([]byte, []int) {
+	return file_build_docframe_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *ProtoBoxedBookmarkIndentationMode) GetValue() ProtoBookmarkIndentationMode {
+	if x != nil {
+		return x.Value
+	}
+	return ProtoBookmarkIndentationMode_BOOKMARK_INDENTATION_MODE_ABSOLUTE
+}
+
+func (x *ProtoBoxedBookmarkIndentationMode) GetIsNull() bool {
+	if x != nil {
+		return x.IsNull
+	}
+	return false
+}
+
 type ProtoParagraphFormat struct {
-	state                protoimpl.MessageState         `protogen:"open.v1"`
-	BaseFormat           *ProtoParagraphFormat          `protobuf:"bytes,1,opt,name=baseFormat,proto3" json:"baseFormat,omitempty"`
-	Name                 *ProtoBoxedString              `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Default              *ProtoBoxedBool                `protobuf:"bytes,3,opt,name=default,proto3" json:"default,omitempty"`
-	Font                 *ProtoBoxedFont                `protobuf:"bytes,4,opt,name=font,proto3" json:"font,omitempty"`
-	Bold                 *ProtoBoxedBool                `protobuf:"bytes,5,opt,name=bold,proto3" json:"bold,omitempty"`
-	Italic               *ProtoBoxedBool                `protobuf:"bytes,6,opt,name=italic,proto3" json:"italic,omitempty"`
-	FontColor            *ProtoBoxedColor               `protobuf:"bytes,7,opt,name=fontColor,proto3" json:"fontColor,omitempty"`
-	Underline            *ProtoBoxedUnderlineSpec       `protobuf:"bytes,8,opt,name=underline,proto3" json:"underline,omitempty"`
-	FontSize             *ProtoBoxedMeasure             `protobuf:"bytes,9,opt,name=fontSize,proto3" json:"fontSize,omitempty"`
-	CharacterWidth       *ProtoBoxedMeasure             `protobuf:"bytes,10,opt,name=characterWidth,proto3" json:"characterWidth,omitempty"`
-	CharacterSpacing     *ProtoBoxedMeasure             `protobuf:"bytes,11,opt,name=characterSpacing,proto3" json:"characterSpacing,omitempty"`
-	LineFeed             *ProtoBoxedMeasure             `protobuf:"bytes,12,opt,name=lineFeed,proto3" json:"lineFeed,omitempty"`
-	Alignment            *ProtoBoxedHorizontalAlignment `protobuf:"bytes,13,opt,name=alignment,proto3" json:"alignment,omitempty"`
-	IndentionWidth       *ProtoBoxedMeasure             `protobuf:"bytes,14,opt,name=indentionWidth,proto3" json:"indentionWidth,omitempty"`
-	IndentionLevel       *ProtoBoxedInt32               `protobuf:"bytes,15,opt,name=indentionLevel,proto3" json:"indentionLevel,omitempty"`
-	SpaceAbove           *ProtoBoxedMeasure             `protobuf:"bytes,16,opt,name=spaceAbove,proto3" json:"spaceAbove,omitempty"`
-	SpaceBelow           *ProtoBoxedMeasure             `protobuf:"bytes,17,opt,name=spaceBelow,proto3" json:"spaceBelow,omitempty"`
-	WidowSetting         *ProtoBoxedInt32               `protobuf:"bytes,18,opt,name=widowSetting,proto3" json:"widowSetting,omitempty"`
-	OrphanSetting        *ProtoBoxedInt32               `protobuf:"bytes,19,opt,name=orphanSetting,proto3" json:"orphanSetting,omitempty"`
-	WidowPriority        *ProtoBoxedInt32               `protobuf:"bytes,20,opt,name=widowPriority,proto3" json:"widowPriority,omitempty"`
-	Strikethrough        *ProtoBoxedStrikethroughSpec   `protobuf:"bytes,21,opt,name=strikethrough,proto3" json:"strikethrough,omitempty"`
-	SuperscriptSubscript *ProtoBoxedSPBMode             `protobuf:"bytes,22,opt,name=superscriptSubscript,proto3" json:"superscriptSubscript,omitempty"`
-	BackgroundColor      *ProtoBoxedColor               `protobuf:"bytes,23,opt,name=backgroundColor,proto3" json:"backgroundColor,omitempty"`
-	ListSetting          *ProtoBoxedListSetting         `protobuf:"bytes,24,opt,name=listSetting,proto3" json:"listSetting,omitempty"`
-	Hyphenation          *ProtoBoxedBool                `protobuf:"bytes,25,opt,name=hyphenation,proto3" json:"hyphenation,omitempty"`
-	PreNamedString       *ProtoBoxedString              `protobuf:"bytes,26,opt,name=preNamedString,proto3" json:"preNamedString,omitempty"`
-	PostNamedString      *ProtoBoxedString              `protobuf:"bytes,27,opt,name=postNamedString,proto3" json:"postNamedString,omitempty"`
-	SemanticType         *ProtoBoxedString              `protobuf:"bytes,28,opt,name=semanticType,proto3" json:"semanticType,omitempty"`
-	ComChannelUUIDs      []string                       `protobuf:"bytes,29,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	Uuid                 string                         `protobuf:"bytes,30,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	unknownFields        protoimpl.UnknownFields
-	sizeCache            protoimpl.SizeCache
+	state                    protoimpl.MessageState             `protogen:"open.v1"`
+	BaseFormat               *ProtoParagraphFormat              `protobuf:"bytes,1,opt,name=baseFormat,proto3" json:"baseFormat,omitempty"`
+	Name                     *ProtoBoxedString                  `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Default                  *ProtoBoxedBool                    `protobuf:"bytes,3,opt,name=default,proto3" json:"default,omitempty"`
+	Font                     *ProtoBoxedFont                    `protobuf:"bytes,4,opt,name=font,proto3" json:"font,omitempty"`
+	Bold                     *ProtoBoxedBool                    `protobuf:"bytes,5,opt,name=bold,proto3" json:"bold,omitempty"`
+	Italic                   *ProtoBoxedBool                    `protobuf:"bytes,6,opt,name=italic,proto3" json:"italic,omitempty"`
+	FontColor                *ProtoBoxedColor                   `protobuf:"bytes,7,opt,name=fontColor,proto3" json:"fontColor,omitempty"`
+	Underline                *ProtoBoxedUnderlineSpec           `protobuf:"bytes,8,opt,name=underline,proto3" json:"underline,omitempty"`
+	FontSize                 *ProtoBoxedMeasure                 `protobuf:"bytes,9,opt,name=fontSize,proto3" json:"fontSize,omitempty"`
+	CharacterWidth           *ProtoBoxedMeasure                 `protobuf:"bytes,10,opt,name=characterWidth,proto3" json:"characterWidth,omitempty"`
+	CharacterSpacing         *ProtoBoxedMeasure                 `protobuf:"bytes,11,opt,name=characterSpacing,proto3" json:"characterSpacing,omitempty"`
+	LineFeed                 *ProtoBoxedMeasure                 `protobuf:"bytes,12,opt,name=lineFeed,proto3" json:"lineFeed,omitempty"`
+	Alignment                *ProtoBoxedHorizontalAlignment     `protobuf:"bytes,13,opt,name=alignment,proto3" json:"alignment,omitempty"`
+	IndentionWidth           *ProtoBoxedMeasure                 `protobuf:"bytes,14,opt,name=indentionWidth,proto3" json:"indentionWidth,omitempty"`
+	IndentionLevel           *ProtoBoxedInt32                   `protobuf:"bytes,15,opt,name=indentionLevel,proto3" json:"indentionLevel,omitempty"`
+	SpaceAbove               *ProtoBoxedMeasure                 `protobuf:"bytes,16,opt,name=spaceAbove,proto3" json:"spaceAbove,omitempty"`
+	SpaceBelow               *ProtoBoxedMeasure                 `protobuf:"bytes,17,opt,name=spaceBelow,proto3" json:"spaceBelow,omitempty"`
+	WidowSetting             *ProtoBoxedInt32                   `protobuf:"bytes,18,opt,name=widowSetting,proto3" json:"widowSetting,omitempty"`
+	OrphanSetting            *ProtoBoxedInt32                   `protobuf:"bytes,19,opt,name=orphanSetting,proto3" json:"orphanSetting,omitempty"`
+	WidowPriority            *ProtoBoxedInt32                   `protobuf:"bytes,20,opt,name=widowPriority,proto3" json:"widowPriority,omitempty"`
+	Strikethrough            *ProtoBoxedStrikethroughSpec       `protobuf:"bytes,21,opt,name=strikethrough,proto3" json:"strikethrough,omitempty"`
+	SuperscriptSubscript     *ProtoBoxedSPBMode                 `protobuf:"bytes,22,opt,name=superscriptSubscript,proto3" json:"superscriptSubscript,omitempty"`
+	BackgroundColor          *ProtoBoxedColor                   `protobuf:"bytes,23,opt,name=backgroundColor,proto3" json:"backgroundColor,omitempty"`
+	ListSetting              *ProtoBoxedListSetting             `protobuf:"bytes,24,opt,name=listSetting,proto3" json:"listSetting,omitempty"`
+	Hyphenation              *ProtoBoxedBool                    `protobuf:"bytes,25,opt,name=hyphenation,proto3" json:"hyphenation,omitempty"`
+	PreNamedString           *ProtoBoxedString                  `protobuf:"bytes,26,opt,name=preNamedString,proto3" json:"preNamedString,omitempty"`
+	PostNamedString          *ProtoBoxedString                  `protobuf:"bytes,27,opt,name=postNamedString,proto3" json:"postNamedString,omitempty"`
+	SemanticType             *ProtoBoxedString                  `protobuf:"bytes,28,opt,name=semanticType,proto3" json:"semanticType,omitempty"`
+	ComChannelUUIDs          []string                           `protobuf:"bytes,29,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Uuid                     string                             `protobuf:"bytes,30,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	BookmarkIndentationLevel *ProtoBoxedInt32                   `protobuf:"bytes,31,opt,name=bookmarkIndentationLevel,proto3" json:"bookmarkIndentationLevel,omitempty"`
+	BookmarkIndentationMode  *ProtoBoxedBookmarkIndentationMode `protobuf:"bytes,32,opt,name=bookmarkIndentationMode,proto3" json:"bookmarkIndentationMode,omitempty"`
+	SkipSpaceOnStartOfColumn *ProtoBoxedBool                    `protobuf:"bytes,33,opt,name=skipSpaceOnStartOfColumn,proto3" json:"skipSpaceOnStartOfColumn,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
 }
 
 func (x *ProtoParagraphFormat) Reset() {
 	*x = ProtoParagraphFormat{}
-	mi := &file_build_docframe_proto_msgTypes[50]
+	mi := &file_build_docframe_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5898,7 +5999,7 @@ func (x *ProtoParagraphFormat) String() string {
 func (*ProtoParagraphFormat) ProtoMessage() {}
 
 func (x *ProtoParagraphFormat) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[50]
+	mi := &file_build_docframe_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5911,7 +6012,7 @@ func (x *ProtoParagraphFormat) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoParagraphFormat.ProtoReflect.Descriptor instead.
 func (*ProtoParagraphFormat) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{50}
+	return file_build_docframe_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *ProtoParagraphFormat) GetBaseFormat() *ProtoParagraphFormat {
@@ -6124,6 +6225,27 @@ func (x *ProtoParagraphFormat) GetUuid() string {
 	return ""
 }
 
+func (x *ProtoParagraphFormat) GetBookmarkIndentationLevel() *ProtoBoxedInt32 {
+	if x != nil {
+		return x.BookmarkIndentationLevel
+	}
+	return nil
+}
+
+func (x *ProtoParagraphFormat) GetBookmarkIndentationMode() *ProtoBoxedBookmarkIndentationMode {
+	if x != nil {
+		return x.BookmarkIndentationMode
+	}
+	return nil
+}
+
+func (x *ProtoParagraphFormat) GetSkipSpaceOnStartOfColumn() *ProtoBoxedBool {
+	if x != nil {
+		return x.SkipSpaceOnStartOfColumn
+	}
+	return nil
+}
+
 type ProtoSection struct {
 	state           protoimpl.MessageState  `protogen:"open.v1"`
 	XChildren       []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
@@ -6137,7 +6259,7 @@ type ProtoSection struct {
 
 func (x *ProtoSection) Reset() {
 	*x = ProtoSection{}
-	mi := &file_build_docframe_proto_msgTypes[51]
+	mi := &file_build_docframe_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6149,7 +6271,7 @@ func (x *ProtoSection) String() string {
 func (*ProtoSection) ProtoMessage() {}
 
 func (x *ProtoSection) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[51]
+	mi := &file_build_docframe_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6162,7 +6284,7 @@ func (x *ProtoSection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSection.ProtoReflect.Descriptor instead.
 func (*ProtoSection) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{51}
+	return file_build_docframe_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *ProtoSection) GetXChildren() []*ProtoDocumentElement {
@@ -6212,7 +6334,7 @@ type ProtoSpaceVertically struct {
 
 func (x *ProtoSpaceVertically) Reset() {
 	*x = ProtoSpaceVertically{}
-	mi := &file_build_docframe_proto_msgTypes[52]
+	mi := &file_build_docframe_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6224,7 +6346,7 @@ func (x *ProtoSpaceVertically) String() string {
 func (*ProtoSpaceVertically) ProtoMessage() {}
 
 func (x *ProtoSpaceVertically) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[52]
+	mi := &file_build_docframe_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6237,7 +6359,7 @@ func (x *ProtoSpaceVertically) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSpaceVertically.ProtoReflect.Descriptor instead.
 func (*ProtoSpaceVertically) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{52}
+	return file_build_docframe_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *ProtoSpaceVertically) GetParent() *ProtoDocumentElement {
@@ -6286,7 +6408,7 @@ type ProtoSpan struct {
 
 func (x *ProtoSpan) Reset() {
 	*x = ProtoSpan{}
-	mi := &file_build_docframe_proto_msgTypes[53]
+	mi := &file_build_docframe_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6298,7 +6420,7 @@ func (x *ProtoSpan) String() string {
 func (*ProtoSpan) ProtoMessage() {}
 
 func (x *ProtoSpan) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[53]
+	mi := &file_build_docframe_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6311,7 +6433,7 @@ func (x *ProtoSpan) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSpan.ProtoReflect.Descriptor instead.
 func (*ProtoSpan) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{53}
+	return file_build_docframe_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *ProtoSpan) GetXChildren() []*ProtoDocumentElement {
@@ -6401,7 +6523,7 @@ type ProtoTable struct {
 
 func (x *ProtoTable) Reset() {
 	*x = ProtoTable{}
-	mi := &file_build_docframe_proto_msgTypes[54]
+	mi := &file_build_docframe_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6413,7 +6535,7 @@ func (x *ProtoTable) String() string {
 func (*ProtoTable) ProtoMessage() {}
 
 func (x *ProtoTable) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[54]
+	mi := &file_build_docframe_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6426,7 +6548,7 @@ func (x *ProtoTable) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTable.ProtoReflect.Descriptor instead.
 func (*ProtoTable) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{54}
+	return file_build_docframe_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *ProtoTable) GetXChildren() []*ProtoDocumentElement {
@@ -6505,7 +6627,7 @@ type ProtoTableConfig struct {
 
 func (x *ProtoTableConfig) Reset() {
 	*x = ProtoTableConfig{}
-	mi := &file_build_docframe_proto_msgTypes[55]
+	mi := &file_build_docframe_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6517,7 +6639,7 @@ func (x *ProtoTableConfig) String() string {
 func (*ProtoTableConfig) ProtoMessage() {}
 
 func (x *ProtoTableConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[55]
+	mi := &file_build_docframe_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6530,7 +6652,7 @@ func (x *ProtoTableConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableConfig.ProtoReflect.Descriptor instead.
 func (*ProtoTableConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{55}
+	return file_build_docframe_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *ProtoTableConfig) GetParent() *ProtoDocumentElement {
@@ -6583,7 +6705,7 @@ type ProtoTableSettings struct {
 
 func (x *ProtoTableSettings) Reset() {
 	*x = ProtoTableSettings{}
-	mi := &file_build_docframe_proto_msgTypes[56]
+	mi := &file_build_docframe_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6595,7 +6717,7 @@ func (x *ProtoTableSettings) String() string {
 func (*ProtoTableSettings) ProtoMessage() {}
 
 func (x *ProtoTableSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[56]
+	mi := &file_build_docframe_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6608,7 +6730,7 @@ func (x *ProtoTableSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableSettings.ProtoReflect.Descriptor instead.
 func (*ProtoTableSettings) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{56}
+	return file_build_docframe_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *ProtoTableSettings) GetXOffset() *ProtoMeasure {
@@ -6670,7 +6792,7 @@ type ProtoBoxedTableContentGroupType struct {
 
 func (x *ProtoBoxedTableContentGroupType) Reset() {
 	*x = ProtoBoxedTableContentGroupType{}
-	mi := &file_build_docframe_proto_msgTypes[57]
+	mi := &file_build_docframe_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6682,7 +6804,7 @@ func (x *ProtoBoxedTableContentGroupType) String() string {
 func (*ProtoBoxedTableContentGroupType) ProtoMessage() {}
 
 func (x *ProtoBoxedTableContentGroupType) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[57]
+	mi := &file_build_docframe_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6695,7 +6817,7 @@ func (x *ProtoBoxedTableContentGroupType) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBoxedTableContentGroupType.ProtoReflect.Descriptor instead.
 func (*ProtoBoxedTableContentGroupType) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{57}
+	return file_build_docframe_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *ProtoBoxedTableContentGroupType) GetValue() ProtoTableContentGroupType {
@@ -6726,7 +6848,7 @@ type ProtoTableContentGroup struct {
 
 func (x *ProtoTableContentGroup) Reset() {
 	*x = ProtoTableContentGroup{}
-	mi := &file_build_docframe_proto_msgTypes[58]
+	mi := &file_build_docframe_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6738,7 +6860,7 @@ func (x *ProtoTableContentGroup) String() string {
 func (*ProtoTableContentGroup) ProtoMessage() {}
 
 func (x *ProtoTableContentGroup) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[58]
+	mi := &file_build_docframe_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6751,7 +6873,7 @@ func (x *ProtoTableContentGroup) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableContentGroup.ProtoReflect.Descriptor instead.
 func (*ProtoTableContentGroup) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{58}
+	return file_build_docframe_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *ProtoTableContentGroup) GetXChildren() []*ProtoDocumentElement {
@@ -6809,7 +6931,7 @@ type ProtoTableContentGroupConfig struct {
 
 func (x *ProtoTableContentGroupConfig) Reset() {
 	*x = ProtoTableContentGroupConfig{}
-	mi := &file_build_docframe_proto_msgTypes[59]
+	mi := &file_build_docframe_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6821,7 +6943,7 @@ func (x *ProtoTableContentGroupConfig) String() string {
 func (*ProtoTableContentGroupConfig) ProtoMessage() {}
 
 func (x *ProtoTableContentGroupConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[59]
+	mi := &file_build_docframe_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6834,7 +6956,7 @@ func (x *ProtoTableContentGroupConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableContentGroupConfig.ProtoReflect.Descriptor instead.
 func (*ProtoTableContentGroupConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{59}
+	return file_build_docframe_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *ProtoTableContentGroupConfig) GetParent() *ProtoDocumentElement {
@@ -6883,7 +7005,7 @@ type ProtoTableContentGroupSettings struct {
 
 func (x *ProtoTableContentGroupSettings) Reset() {
 	*x = ProtoTableContentGroupSettings{}
-	mi := &file_build_docframe_proto_msgTypes[60]
+	mi := &file_build_docframe_proto_msgTypes[61]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6895,7 +7017,7 @@ func (x *ProtoTableContentGroupSettings) String() string {
 func (*ProtoTableContentGroupSettings) ProtoMessage() {}
 
 func (x *ProtoTableContentGroupSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[60]
+	mi := &file_build_docframe_proto_msgTypes[61]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6908,7 +7030,7 @@ func (x *ProtoTableContentGroupSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableContentGroupSettings.ProtoReflect.Descriptor instead.
 func (*ProtoTableContentGroupSettings) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{60}
+	return file_build_docframe_proto_rawDescGZIP(), []int{61}
 }
 
 func (x *ProtoTableContentGroupSettings) GetContentGroupType() *ProtoBoxedTableContentGroupType {
@@ -6947,7 +7069,7 @@ type ProtoTableRow struct {
 
 func (x *ProtoTableRow) Reset() {
 	*x = ProtoTableRow{}
-	mi := &file_build_docframe_proto_msgTypes[61]
+	mi := &file_build_docframe_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -6959,7 +7081,7 @@ func (x *ProtoTableRow) String() string {
 func (*ProtoTableRow) ProtoMessage() {}
 
 func (x *ProtoTableRow) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[61]
+	mi := &file_build_docframe_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -6972,7 +7094,7 @@ func (x *ProtoTableRow) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableRow.ProtoReflect.Descriptor instead.
 func (*ProtoTableRow) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{61}
+	return file_build_docframe_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *ProtoTableRow) GetXChildren() []*ProtoDocumentElement {
@@ -7039,7 +7161,7 @@ type ProtoTableRowConfig struct {
 
 func (x *ProtoTableRowConfig) Reset() {
 	*x = ProtoTableRowConfig{}
-	mi := &file_build_docframe_proto_msgTypes[62]
+	mi := &file_build_docframe_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7051,7 +7173,7 @@ func (x *ProtoTableRowConfig) String() string {
 func (*ProtoTableRowConfig) ProtoMessage() {}
 
 func (x *ProtoTableRowConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[62]
+	mi := &file_build_docframe_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7064,7 +7186,7 @@ func (x *ProtoTableRowConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableRowConfig.ProtoReflect.Descriptor instead.
 func (*ProtoTableRowConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{62}
+	return file_build_docframe_proto_rawDescGZIP(), []int{63}
 }
 
 func (x *ProtoTableRowConfig) GetParent() *ProtoDocumentElement {
@@ -7126,7 +7248,7 @@ type ProtoTableRowSettings struct {
 
 func (x *ProtoTableRowSettings) Reset() {
 	*x = ProtoTableRowSettings{}
-	mi := &file_build_docframe_proto_msgTypes[63]
+	mi := &file_build_docframe_proto_msgTypes[64]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7138,7 +7260,7 @@ func (x *ProtoTableRowSettings) String() string {
 func (*ProtoTableRowSettings) ProtoMessage() {}
 
 func (x *ProtoTableRowSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[63]
+	mi := &file_build_docframe_proto_msgTypes[64]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7151,7 +7273,7 @@ func (x *ProtoTableRowSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableRowSettings.ProtoReflect.Descriptor instead.
 func (*ProtoTableRowSettings) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{63}
+	return file_build_docframe_proto_rawDescGZIP(), []int{64}
 }
 
 func (x *ProtoTableRowSettings) GetMinHeight() *ProtoMeasure {
@@ -7178,7 +7300,7 @@ type ProtoBoxedTableCellType struct {
 
 func (x *ProtoBoxedTableCellType) Reset() {
 	*x = ProtoBoxedTableCellType{}
-	mi := &file_build_docframe_proto_msgTypes[64]
+	mi := &file_build_docframe_proto_msgTypes[65]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7190,7 +7312,7 @@ func (x *ProtoBoxedTableCellType) String() string {
 func (*ProtoBoxedTableCellType) ProtoMessage() {}
 
 func (x *ProtoBoxedTableCellType) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[64]
+	mi := &file_build_docframe_proto_msgTypes[65]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7203,7 +7325,7 @@ func (x *ProtoBoxedTableCellType) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBoxedTableCellType.ProtoReflect.Descriptor instead.
 func (*ProtoBoxedTableCellType) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{64}
+	return file_build_docframe_proto_rawDescGZIP(), []int{65}
 }
 
 func (x *ProtoBoxedTableCellType) GetValue() ProtoTableCellType {
@@ -7237,7 +7359,7 @@ type ProtoTableCell struct {
 
 func (x *ProtoTableCell) Reset() {
 	*x = ProtoTableCell{}
-	mi := &file_build_docframe_proto_msgTypes[65]
+	mi := &file_build_docframe_proto_msgTypes[66]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7249,7 +7371,7 @@ func (x *ProtoTableCell) String() string {
 func (*ProtoTableCell) ProtoMessage() {}
 
 func (x *ProtoTableCell) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[65]
+	mi := &file_build_docframe_proto_msgTypes[66]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7262,7 +7384,7 @@ func (x *ProtoTableCell) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableCell.ProtoReflect.Descriptor instead.
 func (*ProtoTableCell) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{65}
+	return file_build_docframe_proto_rawDescGZIP(), []int{66}
 }
 
 func (x *ProtoTableCell) GetXChildren() []*ProtoDocumentElement {
@@ -7342,7 +7464,7 @@ type ProtoTableCellConfig struct {
 
 func (x *ProtoTableCellConfig) Reset() {
 	*x = ProtoTableCellConfig{}
-	mi := &file_build_docframe_proto_msgTypes[66]
+	mi := &file_build_docframe_proto_msgTypes[67]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7354,7 +7476,7 @@ func (x *ProtoTableCellConfig) String() string {
 func (*ProtoTableCellConfig) ProtoMessage() {}
 
 func (x *ProtoTableCellConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[66]
+	mi := &file_build_docframe_proto_msgTypes[67]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7367,7 +7489,7 @@ func (x *ProtoTableCellConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableCellConfig.ProtoReflect.Descriptor instead.
 func (*ProtoTableCellConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{66}
+	return file_build_docframe_proto_rawDescGZIP(), []int{67}
 }
 
 func (x *ProtoTableCellConfig) GetParent() *ProtoDocumentElement {
@@ -7429,7 +7551,7 @@ type ProtoTableCellSettings struct {
 
 func (x *ProtoTableCellSettings) Reset() {
 	*x = ProtoTableCellSettings{}
-	mi := &file_build_docframe_proto_msgTypes[67]
+	mi := &file_build_docframe_proto_msgTypes[68]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7441,7 +7563,7 @@ func (x *ProtoTableCellSettings) String() string {
 func (*ProtoTableCellSettings) ProtoMessage() {}
 
 func (x *ProtoTableCellSettings) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[67]
+	mi := &file_build_docframe_proto_msgTypes[68]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7454,7 +7576,7 @@ func (x *ProtoTableCellSettings) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableCellSettings.ProtoReflect.Descriptor instead.
 func (*ProtoTableCellSettings) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{67}
+	return file_build_docframe_proto_rawDescGZIP(), []int{68}
 }
 
 func (x *ProtoTableCellSettings) GetWidth() *ProtoMeasure {
@@ -7531,7 +7653,7 @@ type ProtoTableWS struct {
 
 func (x *ProtoTableWS) Reset() {
 	*x = ProtoTableWS{}
-	mi := &file_build_docframe_proto_msgTypes[68]
+	mi := &file_build_docframe_proto_msgTypes[69]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7543,7 +7665,7 @@ func (x *ProtoTableWS) String() string {
 func (*ProtoTableWS) ProtoMessage() {}
 
 func (x *ProtoTableWS) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[68]
+	mi := &file_build_docframe_proto_msgTypes[69]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7556,7 +7678,7 @@ func (x *ProtoTableWS) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableWS.ProtoReflect.Descriptor instead.
 func (*ProtoTableWS) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{68}
+	return file_build_docframe_proto_rawDescGZIP(), []int{69}
 }
 
 func (x *ProtoTableWS) GetMinLinesBefore() uint32 {
@@ -7681,7 +7803,7 @@ type ProtoTableElementProperties struct {
 
 func (x *ProtoTableElementProperties) Reset() {
 	*x = ProtoTableElementProperties{}
-	mi := &file_build_docframe_proto_msgTypes[69]
+	mi := &file_build_docframe_proto_msgTypes[70]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -7693,7 +7815,7 @@ func (x *ProtoTableElementProperties) String() string {
 func (*ProtoTableElementProperties) ProtoMessage() {}
 
 func (x *ProtoTableElementProperties) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[69]
+	mi := &file_build_docframe_proto_msgTypes[70]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -7706,7 +7828,7 @@ func (x *ProtoTableElementProperties) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableElementProperties.ProtoReflect.Descriptor instead.
 func (*ProtoTableElementProperties) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{69}
+	return file_build_docframe_proto_rawDescGZIP(), []int{70}
 }
 
 func (x *ProtoTableElementProperties) GetWidthInheritance() Inheritance {
@@ -8371,7 +8493,7 @@ type ProtoText struct {
 
 func (x *ProtoText) Reset() {
 	*x = ProtoText{}
-	mi := &file_build_docframe_proto_msgTypes[70]
+	mi := &file_build_docframe_proto_msgTypes[71]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8383,7 +8505,7 @@ func (x *ProtoText) String() string {
 func (*ProtoText) ProtoMessage() {}
 
 func (x *ProtoText) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[70]
+	mi := &file_build_docframe_proto_msgTypes[71]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8396,7 +8518,7 @@ func (x *ProtoText) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoText.ProtoReflect.Descriptor instead.
 func (*ProtoText) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{70}
+	return file_build_docframe_proto_rawDescGZIP(), []int{71}
 }
 
 func (x *ProtoText) GetParent() *ProtoDocumentElement {
@@ -8445,7 +8567,7 @@ type ProtoBarcode struct {
 
 func (x *ProtoBarcode) Reset() {
 	*x = ProtoBarcode{}
-	mi := &file_build_docframe_proto_msgTypes[71]
+	mi := &file_build_docframe_proto_msgTypes[72]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8457,7 +8579,7 @@ func (x *ProtoBarcode) String() string {
 func (*ProtoBarcode) ProtoMessage() {}
 
 func (x *ProtoBarcode) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[71]
+	mi := &file_build_docframe_proto_msgTypes[72]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8470,7 +8592,7 @@ func (x *ProtoBarcode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBarcode.ProtoReflect.Descriptor instead.
 func (*ProtoBarcode) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{71}
+	return file_build_docframe_proto_rawDescGZIP(), []int{72}
 }
 
 func (x *ProtoBarcode) GetType() ProtoBarcodeType {
@@ -8603,7 +8725,7 @@ type ProtoBrickReference struct {
 
 func (x *ProtoBrickReference) Reset() {
 	*x = ProtoBrickReference{}
-	mi := &file_build_docframe_proto_msgTypes[72]
+	mi := &file_build_docframe_proto_msgTypes[73]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8615,7 +8737,7 @@ func (x *ProtoBrickReference) String() string {
 func (*ProtoBrickReference) ProtoMessage() {}
 
 func (x *ProtoBrickReference) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[72]
+	mi := &file_build_docframe_proto_msgTypes[73]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8628,7 +8750,7 @@ func (x *ProtoBrickReference) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBrickReference.ProtoReflect.Descriptor instead.
 func (*ProtoBrickReference) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{72}
+	return file_build_docframe_proto_rawDescGZIP(), []int{73}
 }
 
 func (x *ProtoBrickReference) GetInternName() string {
@@ -8668,7 +8790,7 @@ type ProtoBrick struct {
 
 func (x *ProtoBrick) Reset() {
 	*x = ProtoBrick{}
-	mi := &file_build_docframe_proto_msgTypes[73]
+	mi := &file_build_docframe_proto_msgTypes[74]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8680,7 +8802,7 @@ func (x *ProtoBrick) String() string {
 func (*ProtoBrick) ProtoMessage() {}
 
 func (x *ProtoBrick) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[73]
+	mi := &file_build_docframe_proto_msgTypes[74]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8693,7 +8815,7 @@ func (x *ProtoBrick) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBrick.ProtoReflect.Descriptor instead.
 func (*ProtoBrick) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{73}
+	return file_build_docframe_proto_rawDescGZIP(), []int{74}
 }
 
 func (x *ProtoBrick) GetXChildren() []*ProtoDocumentElement {
@@ -8767,7 +8889,7 @@ type ProtoTemplate struct {
 
 func (x *ProtoTemplate) Reset() {
 	*x = ProtoTemplate{}
-	mi := &file_build_docframe_proto_msgTypes[74]
+	mi := &file_build_docframe_proto_msgTypes[75]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8779,7 +8901,7 @@ func (x *ProtoTemplate) String() string {
 func (*ProtoTemplate) ProtoMessage() {}
 
 func (x *ProtoTemplate) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[74]
+	mi := &file_build_docframe_proto_msgTypes[75]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8792,7 +8914,7 @@ func (x *ProtoTemplate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTemplate.ProtoReflect.Descriptor instead.
 func (*ProtoTemplate) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{74}
+	return file_build_docframe_proto_rawDescGZIP(), []int{75}
 }
 
 func (x *ProtoTemplate) GetXChildren() []*ProtoDocumentElement {
@@ -8857,7 +8979,7 @@ type ProtoHeader struct {
 
 func (x *ProtoHeader) Reset() {
 	*x = ProtoHeader{}
-	mi := &file_build_docframe_proto_msgTypes[75]
+	mi := &file_build_docframe_proto_msgTypes[76]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8869,7 +8991,7 @@ func (x *ProtoHeader) String() string {
 func (*ProtoHeader) ProtoMessage() {}
 
 func (x *ProtoHeader) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[75]
+	mi := &file_build_docframe_proto_msgTypes[76]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8882,7 +9004,7 @@ func (x *ProtoHeader) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoHeader.ProtoReflect.Descriptor instead.
 func (*ProtoHeader) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{75}
+	return file_build_docframe_proto_rawDescGZIP(), []int{76}
 }
 
 func (x *ProtoHeader) GetXChildren() []*ProtoDocumentElement {
@@ -8933,7 +9055,7 @@ type ProtoFooter struct {
 
 func (x *ProtoFooter) Reset() {
 	*x = ProtoFooter{}
-	mi := &file_build_docframe_proto_msgTypes[76]
+	mi := &file_build_docframe_proto_msgTypes[77]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8945,7 +9067,7 @@ func (x *ProtoFooter) String() string {
 func (*ProtoFooter) ProtoMessage() {}
 
 func (x *ProtoFooter) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[76]
+	mi := &file_build_docframe_proto_msgTypes[77]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8958,7 +9080,7 @@ func (x *ProtoFooter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoFooter.ProtoReflect.Descriptor instead.
 func (*ProtoFooter) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{76}
+	return file_build_docframe_proto_rawDescGZIP(), []int{77}
 }
 
 func (x *ProtoFooter) GetXChildren() []*ProtoDocumentElement {
@@ -9079,7 +9201,7 @@ type Node struct {
 
 func (x *Node) Reset() {
 	*x = Node{}
-	mi := &file_build_docframe_proto_msgTypes[77]
+	mi := &file_build_docframe_proto_msgTypes[78]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -9091,7 +9213,7 @@ func (x *Node) String() string {
 func (*Node) ProtoMessage() {}
 
 func (x *Node) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[77]
+	mi := &file_build_docframe_proto_msgTypes[78]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -9104,7 +9226,7 @@ func (x *Node) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Node.ProtoReflect.Descriptor instead.
 func (*Node) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{77}
+	return file_build_docframe_proto_rawDescGZIP(), []int{78}
 }
 
 func (x *Node) GetChildren() []*Node {
@@ -10224,7 +10346,7 @@ type ProtoImage struct {
 
 func (x *ProtoImage) Reset() {
 	*x = ProtoImage{}
-	mi := &file_build_docframe_proto_msgTypes[78]
+	mi := &file_build_docframe_proto_msgTypes[79]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10236,7 +10358,7 @@ func (x *ProtoImage) String() string {
 func (*ProtoImage) ProtoMessage() {}
 
 func (x *ProtoImage) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[78]
+	mi := &file_build_docframe_proto_msgTypes[79]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10249,7 +10371,7 @@ func (x *ProtoImage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoImage.ProtoReflect.Descriptor instead.
 func (*ProtoImage) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{78}
+	return file_build_docframe_proto_rawDescGZIP(), []int{79}
 }
 
 func (x *ProtoImage) GetParent() *ProtoDocumentElement {
@@ -10449,7 +10571,7 @@ type ProtoDirectory struct {
 
 func (x *ProtoDirectory) Reset() {
 	*x = ProtoDirectory{}
-	mi := &file_build_docframe_proto_msgTypes[79]
+	mi := &file_build_docframe_proto_msgTypes[80]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10461,7 +10583,7 @@ func (x *ProtoDirectory) String() string {
 func (*ProtoDirectory) ProtoMessage() {}
 
 func (x *ProtoDirectory) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[79]
+	mi := &file_build_docframe_proto_msgTypes[80]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10474,7 +10596,7 @@ func (x *ProtoDirectory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoDirectory.ProtoReflect.Descriptor instead.
 func (*ProtoDirectory) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{79}
+	return file_build_docframe_proto_rawDescGZIP(), []int{80}
 }
 
 func (x *ProtoDirectory) GetXChildren() []*ProtoDocumentElement {
@@ -10541,7 +10663,7 @@ type ProtoTextBrick struct {
 
 func (x *ProtoTextBrick) Reset() {
 	*x = ProtoTextBrick{}
-	mi := &file_build_docframe_proto_msgTypes[80]
+	mi := &file_build_docframe_proto_msgTypes[81]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10553,7 +10675,7 @@ func (x *ProtoTextBrick) String() string {
 func (*ProtoTextBrick) ProtoMessage() {}
 
 func (x *ProtoTextBrick) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[80]
+	mi := &file_build_docframe_proto_msgTypes[81]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10566,7 +10688,7 @@ func (x *ProtoTextBrick) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTextBrick.ProtoReflect.Descriptor instead.
 func (*ProtoTextBrick) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{80}
+	return file_build_docframe_proto_rawDescGZIP(), []int{81}
 }
 
 func (x *ProtoTextBrick) GetXChildren() []*ProtoDocumentElement {
@@ -10633,7 +10755,7 @@ type ProtoVariable struct {
 
 func (x *ProtoVariable) Reset() {
 	*x = ProtoVariable{}
-	mi := &file_build_docframe_proto_msgTypes[81]
+	mi := &file_build_docframe_proto_msgTypes[82]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10645,7 +10767,7 @@ func (x *ProtoVariable) String() string {
 func (*ProtoVariable) ProtoMessage() {}
 
 func (x *ProtoVariable) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[81]
+	mi := &file_build_docframe_proto_msgTypes[82]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10658,7 +10780,7 @@ func (x *ProtoVariable) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoVariable.ProtoReflect.Descriptor instead.
 func (*ProtoVariable) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{81}
+	return file_build_docframe_proto_rawDescGZIP(), []int{82}
 }
 
 func (x *ProtoVariable) GetParent() *ProtoDocumentElement {
@@ -10728,7 +10850,7 @@ type ProtoFormatted struct {
 
 func (x *ProtoFormatted) Reset() {
 	*x = ProtoFormatted{}
-	mi := &file_build_docframe_proto_msgTypes[82]
+	mi := &file_build_docframe_proto_msgTypes[83]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10740,7 +10862,7 @@ func (x *ProtoFormatted) String() string {
 func (*ProtoFormatted) ProtoMessage() {}
 
 func (x *ProtoFormatted) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[82]
+	mi := &file_build_docframe_proto_msgTypes[83]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10753,7 +10875,7 @@ func (x *ProtoFormatted) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoFormatted.ProtoReflect.Descriptor instead.
 func (*ProtoFormatted) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{82}
+	return file_build_docframe_proto_rawDescGZIP(), []int{83}
 }
 
 func (x *ProtoFormatted) GetParent() *ProtoDocumentElement {
@@ -10837,7 +10959,7 @@ type ProtoApplyProtoCDef struct {
 
 func (x *ProtoApplyProtoCDef) Reset() {
 	*x = ProtoApplyProtoCDef{}
-	mi := &file_build_docframe_proto_msgTypes[83]
+	mi := &file_build_docframe_proto_msgTypes[84]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10849,7 +10971,7 @@ func (x *ProtoApplyProtoCDef) String() string {
 func (*ProtoApplyProtoCDef) ProtoMessage() {}
 
 func (x *ProtoApplyProtoCDef) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[83]
+	mi := &file_build_docframe_proto_msgTypes[84]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10862,7 +10984,7 @@ func (x *ProtoApplyProtoCDef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoApplyProtoCDef.ProtoReflect.Descriptor instead.
 func (*ProtoApplyProtoCDef) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{83}
+	return file_build_docframe_proto_rawDescGZIP(), []int{84}
 }
 
 func (x *ProtoApplyProtoCDef) GetCDefUuid() string {
@@ -10897,7 +11019,7 @@ type ProtoApplyProtoPDef struct {
 
 func (x *ProtoApplyProtoPDef) Reset() {
 	*x = ProtoApplyProtoPDef{}
-	mi := &file_build_docframe_proto_msgTypes[84]
+	mi := &file_build_docframe_proto_msgTypes[85]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10909,7 +11031,7 @@ func (x *ProtoApplyProtoPDef) String() string {
 func (*ProtoApplyProtoPDef) ProtoMessage() {}
 
 func (x *ProtoApplyProtoPDef) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[84]
+	mi := &file_build_docframe_proto_msgTypes[85]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10922,7 +11044,7 @@ func (x *ProtoApplyProtoPDef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoApplyProtoPDef.ProtoReflect.Descriptor instead.
 func (*ProtoApplyProtoPDef) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{84}
+	return file_build_docframe_proto_rawDescGZIP(), []int{85}
 }
 
 func (x *ProtoApplyProtoPDef) GetPDefUuid() string {
@@ -10957,7 +11079,7 @@ type ProtoApplyPtConfig struct {
 
 func (x *ProtoApplyPtConfig) Reset() {
 	*x = ProtoApplyPtConfig{}
-	mi := &file_build_docframe_proto_msgTypes[85]
+	mi := &file_build_docframe_proto_msgTypes[86]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -10969,7 +11091,7 @@ func (x *ProtoApplyPtConfig) String() string {
 func (*ProtoApplyPtConfig) ProtoMessage() {}
 
 func (x *ProtoApplyPtConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[85]
+	mi := &file_build_docframe_proto_msgTypes[86]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -10982,7 +11104,7 @@ func (x *ProtoApplyPtConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoApplyPtConfig.ProtoReflect.Descriptor instead.
 func (*ProtoApplyPtConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{85}
+	return file_build_docframe_proto_rawDescGZIP(), []int{86}
 }
 
 func (x *ProtoApplyPtConfig) GetPtConfigUuid() string {
@@ -11017,7 +11139,7 @@ type ProtoApplyUlConfig struct {
 
 func (x *ProtoApplyUlConfig) Reset() {
 	*x = ProtoApplyUlConfig{}
-	mi := &file_build_docframe_proto_msgTypes[86]
+	mi := &file_build_docframe_proto_msgTypes[87]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11029,7 +11151,7 @@ func (x *ProtoApplyUlConfig) String() string {
 func (*ProtoApplyUlConfig) ProtoMessage() {}
 
 func (x *ProtoApplyUlConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[86]
+	mi := &file_build_docframe_proto_msgTypes[87]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11042,7 +11164,7 @@ func (x *ProtoApplyUlConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoApplyUlConfig.ProtoReflect.Descriptor instead.
 func (*ProtoApplyUlConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{86}
+	return file_build_docframe_proto_rawDescGZIP(), []int{87}
 }
 
 func (x *ProtoApplyUlConfig) GetUlConfigUuid() string {
@@ -11079,7 +11201,7 @@ type ProtoCDef struct {
 
 func (x *ProtoCDef) Reset() {
 	*x = ProtoCDef{}
-	mi := &file_build_docframe_proto_msgTypes[87]
+	mi := &file_build_docframe_proto_msgTypes[88]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11091,7 +11213,7 @@ func (x *ProtoCDef) String() string {
 func (*ProtoCDef) ProtoMessage() {}
 
 func (x *ProtoCDef) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[87]
+	mi := &file_build_docframe_proto_msgTypes[88]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11104,7 +11226,7 @@ func (x *ProtoCDef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoCDef.ProtoReflect.Descriptor instead.
 func (*ProtoCDef) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{87}
+	return file_build_docframe_proto_rawDescGZIP(), []int{88}
 }
 
 func (x *ProtoCDef) GetColumSettings() *ProtoColumnSettings {
@@ -11154,7 +11276,7 @@ type ProtoPDef struct {
 
 func (x *ProtoPDef) Reset() {
 	*x = ProtoPDef{}
-	mi := &file_build_docframe_proto_msgTypes[88]
+	mi := &file_build_docframe_proto_msgTypes[89]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11166,7 +11288,7 @@ func (x *ProtoPDef) String() string {
 func (*ProtoPDef) ProtoMessage() {}
 
 func (x *ProtoPDef) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[88]
+	mi := &file_build_docframe_proto_msgTypes[89]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11179,7 +11301,7 @@ func (x *ProtoPDef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoPDef.ProtoReflect.Descriptor instead.
 func (*ProtoPDef) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{88}
+	return file_build_docframe_proto_rawDescGZIP(), []int{89}
 }
 
 func (x *ProtoPDef) GetPageWidth() *ProtoBoxedMeasure {
@@ -11224,7 +11346,7 @@ type ProtoPtConfig struct {
 
 func (x *ProtoPtConfig) Reset() {
 	*x = ProtoPtConfig{}
-	mi := &file_build_docframe_proto_msgTypes[89]
+	mi := &file_build_docframe_proto_msgTypes[90]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11236,7 +11358,7 @@ func (x *ProtoPtConfig) String() string {
 func (*ProtoPtConfig) ProtoMessage() {}
 
 func (x *ProtoPtConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[89]
+	mi := &file_build_docframe_proto_msgTypes[90]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11249,7 +11371,7 @@ func (x *ProtoPtConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoPtConfig.ProtoReflect.Descriptor instead.
 func (*ProtoPtConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{89}
+	return file_build_docframe_proto_rawDescGZIP(), []int{90}
 }
 
 func (x *ProtoPtConfig) GetHeight() *ProtoBoxedMeasure {
@@ -11305,7 +11427,7 @@ type ProtoUlConfig struct {
 
 func (x *ProtoUlConfig) Reset() {
 	*x = ProtoUlConfig{}
-	mi := &file_build_docframe_proto_msgTypes[90]
+	mi := &file_build_docframe_proto_msgTypes[91]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11317,7 +11439,7 @@ func (x *ProtoUlConfig) String() string {
 func (*ProtoUlConfig) ProtoMessage() {}
 
 func (x *ProtoUlConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[90]
+	mi := &file_build_docframe_proto_msgTypes[91]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11330,7 +11452,7 @@ func (x *ProtoUlConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoUlConfig.ProtoReflect.Descriptor instead.
 func (*ProtoUlConfig) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{90}
+	return file_build_docframe_proto_rawDescGZIP(), []int{91}
 }
 
 func (x *ProtoUlConfig) GetMode() ProtoUnderlineMode {
@@ -11371,7 +11493,7 @@ type ProtoNewPage struct {
 
 func (x *ProtoNewPage) Reset() {
 	*x = ProtoNewPage{}
-	mi := &file_build_docframe_proto_msgTypes[91]
+	mi := &file_build_docframe_proto_msgTypes[92]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11383,7 +11505,7 @@ func (x *ProtoNewPage) String() string {
 func (*ProtoNewPage) ProtoMessage() {}
 
 func (x *ProtoNewPage) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[91]
+	mi := &file_build_docframe_proto_msgTypes[92]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11396,7 +11518,7 @@ func (x *ProtoNewPage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoNewPage.ProtoReflect.Descriptor instead.
 func (*ProtoNewPage) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{91}
+	return file_build_docframe_proto_rawDescGZIP(), []int{92}
 }
 
 func (x *ProtoNewPage) GetUuid() string {
@@ -11476,7 +11598,7 @@ type ProtoIndentation struct {
 
 func (x *ProtoIndentation) Reset() {
 	*x = ProtoIndentation{}
-	mi := &file_build_docframe_proto_msgTypes[92]
+	mi := &file_build_docframe_proto_msgTypes[93]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11488,7 +11610,7 @@ func (x *ProtoIndentation) String() string {
 func (*ProtoIndentation) ProtoMessage() {}
 
 func (x *ProtoIndentation) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[92]
+	mi := &file_build_docframe_proto_msgTypes[93]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11501,7 +11623,7 @@ func (x *ProtoIndentation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoIndentation.ProtoReflect.Descriptor instead.
 func (*ProtoIndentation) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{92}
+	return file_build_docframe_proto_rawDescGZIP(), []int{93}
 }
 
 func (x *ProtoIndentation) GetXChildren() []*ProtoDocumentElement {
@@ -11558,7 +11680,7 @@ type ProtoCarryOver struct {
 
 func (x *ProtoCarryOver) Reset() {
 	*x = ProtoCarryOver{}
-	mi := &file_build_docframe_proto_msgTypes[93]
+	mi := &file_build_docframe_proto_msgTypes[94]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11570,7 +11692,7 @@ func (x *ProtoCarryOver) String() string {
 func (*ProtoCarryOver) ProtoMessage() {}
 
 func (x *ProtoCarryOver) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[93]
+	mi := &file_build_docframe_proto_msgTypes[94]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11583,7 +11705,7 @@ func (x *ProtoCarryOver) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoCarryOver.ProtoReflect.Descriptor instead.
 func (*ProtoCarryOver) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{93}
+	return file_build_docframe_proto_rawDescGZIP(), []int{94}
 }
 
 func (x *ProtoCarryOver) GetXChildren() []*ProtoDocumentElement {
@@ -11628,7 +11750,7 @@ type ProtoLoopEntry struct {
 
 func (x *ProtoLoopEntry) Reset() {
 	*x = ProtoLoopEntry{}
-	mi := &file_build_docframe_proto_msgTypes[94]
+	mi := &file_build_docframe_proto_msgTypes[95]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11640,7 +11762,7 @@ func (x *ProtoLoopEntry) String() string {
 func (*ProtoLoopEntry) ProtoMessage() {}
 
 func (x *ProtoLoopEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[94]
+	mi := &file_build_docframe_proto_msgTypes[95]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11653,7 +11775,7 @@ func (x *ProtoLoopEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoLoopEntry.ProtoReflect.Descriptor instead.
 func (*ProtoLoopEntry) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{94}
+	return file_build_docframe_proto_rawDescGZIP(), []int{95}
 }
 
 func (x *ProtoLoopEntry) GetXChildren() []*ProtoDocumentElement {
@@ -11711,7 +11833,7 @@ type ProtoLoop struct {
 
 func (x *ProtoLoop) Reset() {
 	*x = ProtoLoop{}
-	mi := &file_build_docframe_proto_msgTypes[95]
+	mi := &file_build_docframe_proto_msgTypes[96]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11723,7 +11845,7 @@ func (x *ProtoLoop) String() string {
 func (*ProtoLoop) ProtoMessage() {}
 
 func (x *ProtoLoop) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[95]
+	mi := &file_build_docframe_proto_msgTypes[96]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11736,7 +11858,7 @@ func (x *ProtoLoop) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoLoop.ProtoReflect.Descriptor instead.
 func (*ProtoLoop) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{95}
+	return file_build_docframe_proto_rawDescGZIP(), []int{96}
 }
 
 func (x *ProtoLoop) GetXChildren() []*ProtoDocumentElement {
@@ -11789,7 +11911,7 @@ type ProtoSubTotal struct {
 
 func (x *ProtoSubTotal) Reset() {
 	*x = ProtoSubTotal{}
-	mi := &file_build_docframe_proto_msgTypes[96]
+	mi := &file_build_docframe_proto_msgTypes[97]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11801,7 +11923,7 @@ func (x *ProtoSubTotal) String() string {
 func (*ProtoSubTotal) ProtoMessage() {}
 
 func (x *ProtoSubTotal) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[96]
+	mi := &file_build_docframe_proto_msgTypes[97]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11814,7 +11936,7 @@ func (x *ProtoSubTotal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSubTotal.ProtoReflect.Descriptor instead.
 func (*ProtoSubTotal) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{96}
+	return file_build_docframe_proto_rawDescGZIP(), []int{97}
 }
 
 func (x *ProtoSubTotal) GetXChildren() []*ProtoDocumentElement {
@@ -11878,7 +12000,7 @@ type ProtoWsArea struct {
 
 func (x *ProtoWsArea) Reset() {
 	*x = ProtoWsArea{}
-	mi := &file_build_docframe_proto_msgTypes[97]
+	mi := &file_build_docframe_proto_msgTypes[98]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11890,7 +12012,7 @@ func (x *ProtoWsArea) String() string {
 func (*ProtoWsArea) ProtoMessage() {}
 
 func (x *ProtoWsArea) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[97]
+	mi := &file_build_docframe_proto_msgTypes[98]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11903,7 +12025,7 @@ func (x *ProtoWsArea) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoWsArea.ProtoReflect.Descriptor instead.
 func (*ProtoWsArea) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{97}
+	return file_build_docframe_proto_rawDescGZIP(), []int{98}
 }
 
 func (x *ProtoWsArea) GetXChildren() []*ProtoDocumentElement {
@@ -11953,7 +12075,7 @@ type ProtoRule struct {
 
 func (x *ProtoRule) Reset() {
 	*x = ProtoRule{}
-	mi := &file_build_docframe_proto_msgTypes[98]
+	mi := &file_build_docframe_proto_msgTypes[99]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -11965,7 +12087,7 @@ func (x *ProtoRule) String() string {
 func (*ProtoRule) ProtoMessage() {}
 
 func (x *ProtoRule) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[98]
+	mi := &file_build_docframe_proto_msgTypes[99]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -11978,7 +12100,7 @@ func (x *ProtoRule) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoRule.ProtoReflect.Descriptor instead.
 func (*ProtoRule) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{98}
+	return file_build_docframe_proto_rawDescGZIP(), []int{99}
 }
 
 func (x *ProtoRule) GetXOffset() *ProtoMeasure {
@@ -12068,7 +12190,7 @@ type ProtoRuleBoundaries struct {
 
 func (x *ProtoRuleBoundaries) Reset() {
 	*x = ProtoRuleBoundaries{}
-	mi := &file_build_docframe_proto_msgTypes[99]
+	mi := &file_build_docframe_proto_msgTypes[100]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12080,7 +12202,7 @@ func (x *ProtoRuleBoundaries) String() string {
 func (*ProtoRuleBoundaries) ProtoMessage() {}
 
 func (x *ProtoRuleBoundaries) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[99]
+	mi := &file_build_docframe_proto_msgTypes[100]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12093,7 +12215,7 @@ func (x *ProtoRuleBoundaries) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoRuleBoundaries.ProtoReflect.Descriptor instead.
 func (*ProtoRuleBoundaries) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{99}
+	return file_build_docframe_proto_rawDescGZIP(), []int{100}
 }
 
 func (x *ProtoRuleBoundaries) GetStart() *ProtoMeasure {
@@ -12121,7 +12243,7 @@ type ProtoColorDef struct {
 
 func (x *ProtoColorDef) Reset() {
 	*x = ProtoColorDef{}
-	mi := &file_build_docframe_proto_msgTypes[100]
+	mi := &file_build_docframe_proto_msgTypes[101]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12133,7 +12255,7 @@ func (x *ProtoColorDef) String() string {
 func (*ProtoColorDef) ProtoMessage() {}
 
 func (x *ProtoColorDef) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[100]
+	mi := &file_build_docframe_proto_msgTypes[101]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12146,7 +12268,7 @@ func (x *ProtoColorDef) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoColorDef.ProtoReflect.Descriptor instead.
 func (*ProtoColorDef) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{100}
+	return file_build_docframe_proto_rawDescGZIP(), []int{101}
 }
 
 func (x *ProtoColorDef) GetColor() *ProtoColor {
@@ -12182,7 +12304,7 @@ type ProtoLayout struct {
 
 func (x *ProtoLayout) Reset() {
 	*x = ProtoLayout{}
-	mi := &file_build_docframe_proto_msgTypes[101]
+	mi := &file_build_docframe_proto_msgTypes[102]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12194,7 +12316,7 @@ func (x *ProtoLayout) String() string {
 func (*ProtoLayout) ProtoMessage() {}
 
 func (x *ProtoLayout) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[101]
+	mi := &file_build_docframe_proto_msgTypes[102]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12207,7 +12329,7 @@ func (x *ProtoLayout) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoLayout.ProtoReflect.Descriptor instead.
 func (*ProtoLayout) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{101}
+	return file_build_docframe_proto_rawDescGZIP(), []int{102}
 }
 
 func (x *ProtoLayout) GetParent() *ProtoDocumentElement {
@@ -12258,7 +12380,7 @@ type ProtoAdvancedIllustrationArea struct {
 
 func (x *ProtoAdvancedIllustrationArea) Reset() {
 	*x = ProtoAdvancedIllustrationArea{}
-	mi := &file_build_docframe_proto_msgTypes[102]
+	mi := &file_build_docframe_proto_msgTypes[103]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12270,7 +12392,7 @@ func (x *ProtoAdvancedIllustrationArea) String() string {
 func (*ProtoAdvancedIllustrationArea) ProtoMessage() {}
 
 func (x *ProtoAdvancedIllustrationArea) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[102]
+	mi := &file_build_docframe_proto_msgTypes[103]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12283,7 +12405,7 @@ func (x *ProtoAdvancedIllustrationArea) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoAdvancedIllustrationArea.ProtoReflect.Descriptor instead.
 func (*ProtoAdvancedIllustrationArea) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{102}
+	return file_build_docframe_proto_rawDescGZIP(), []int{103}
 }
 
 func (x *ProtoAdvancedIllustrationArea) GetXChildren() []*ProtoDocumentElement {
@@ -12384,7 +12506,7 @@ type ProtoAdjustHorizontally struct {
 
 func (x *ProtoAdjustHorizontally) Reset() {
 	*x = ProtoAdjustHorizontally{}
-	mi := &file_build_docframe_proto_msgTypes[103]
+	mi := &file_build_docframe_proto_msgTypes[104]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12396,7 +12518,7 @@ func (x *ProtoAdjustHorizontally) String() string {
 func (*ProtoAdjustHorizontally) ProtoMessage() {}
 
 func (x *ProtoAdjustHorizontally) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[103]
+	mi := &file_build_docframe_proto_msgTypes[104]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12409,7 +12531,7 @@ func (x *ProtoAdjustHorizontally) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoAdjustHorizontally.ProtoReflect.Descriptor instead.
 func (*ProtoAdjustHorizontally) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{103}
+	return file_build_docframe_proto_rawDescGZIP(), []int{104}
 }
 
 func (x *ProtoAdjustHorizontally) GetXChildren() []*ProtoDocumentElement {
@@ -12467,7 +12589,7 @@ type ProtoDoctypeScript struct {
 
 func (x *ProtoDoctypeScript) Reset() {
 	*x = ProtoDoctypeScript{}
-	mi := &file_build_docframe_proto_msgTypes[104]
+	mi := &file_build_docframe_proto_msgTypes[105]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12479,7 +12601,7 @@ func (x *ProtoDoctypeScript) String() string {
 func (*ProtoDoctypeScript) ProtoMessage() {}
 
 func (x *ProtoDoctypeScript) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[104]
+	mi := &file_build_docframe_proto_msgTypes[105]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12492,7 +12614,7 @@ func (x *ProtoDoctypeScript) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoDoctypeScript.ProtoReflect.Descriptor instead.
 func (*ProtoDoctypeScript) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{104}
+	return file_build_docframe_proto_rawDescGZIP(), []int{105}
 }
 
 func (x *ProtoDoctypeScript) GetParent() *ProtoDocumentElement {
@@ -12542,7 +12664,7 @@ type ProtoDmScript struct {
 
 func (x *ProtoDmScript) Reset() {
 	*x = ProtoDmScript{}
-	mi := &file_build_docframe_proto_msgTypes[105]
+	mi := &file_build_docframe_proto_msgTypes[106]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12554,7 +12676,7 @@ func (x *ProtoDmScript) String() string {
 func (*ProtoDmScript) ProtoMessage() {}
 
 func (x *ProtoDmScript) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[105]
+	mi := &file_build_docframe_proto_msgTypes[106]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12567,7 +12689,7 @@ func (x *ProtoDmScript) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoDmScript.ProtoReflect.Descriptor instead.
 func (*ProtoDmScript) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{105}
+	return file_build_docframe_proto_rawDescGZIP(), []int{106}
 }
 
 func (x *ProtoDmScript) GetParent() *ProtoDocumentElement {
@@ -12610,7 +12732,7 @@ type ProtoDynamicTemplate struct {
 
 func (x *ProtoDynamicTemplate) Reset() {
 	*x = ProtoDynamicTemplate{}
-	mi := &file_build_docframe_proto_msgTypes[106]
+	mi := &file_build_docframe_proto_msgTypes[107]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12622,7 +12744,7 @@ func (x *ProtoDynamicTemplate) String() string {
 func (*ProtoDynamicTemplate) ProtoMessage() {}
 
 func (x *ProtoDynamicTemplate) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[106]
+	mi := &file_build_docframe_proto_msgTypes[107]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12635,7 +12757,7 @@ func (x *ProtoDynamicTemplate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoDynamicTemplate.ProtoReflect.Descriptor instead.
 func (*ProtoDynamicTemplate) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{106}
+	return file_build_docframe_proto_rawDescGZIP(), []int{107}
 }
 
 func (x *ProtoDynamicTemplate) GetParent() *ProtoDocumentElement {
@@ -12683,7 +12805,7 @@ type ProtoSelection struct {
 
 func (x *ProtoSelection) Reset() {
 	*x = ProtoSelection{}
-	mi := &file_build_docframe_proto_msgTypes[107]
+	mi := &file_build_docframe_proto_msgTypes[108]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12695,7 +12817,7 @@ func (x *ProtoSelection) String() string {
 func (*ProtoSelection) ProtoMessage() {}
 
 func (x *ProtoSelection) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[107]
+	mi := &file_build_docframe_proto_msgTypes[108]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12708,7 +12830,7 @@ func (x *ProtoSelection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSelection.ProtoReflect.Descriptor instead.
 func (*ProtoSelection) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{107}
+	return file_build_docframe_proto_rawDescGZIP(), []int{108}
 }
 
 func (x *ProtoSelection) GetXChildren() []*ProtoDocumentElement {
@@ -12789,7 +12911,7 @@ type ProtoSelectionEntry struct {
 
 func (x *ProtoSelectionEntry) Reset() {
 	*x = ProtoSelectionEntry{}
-	mi := &file_build_docframe_proto_msgTypes[108]
+	mi := &file_build_docframe_proto_msgTypes[109]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12801,7 +12923,7 @@ func (x *ProtoSelectionEntry) String() string {
 func (*ProtoSelectionEntry) ProtoMessage() {}
 
 func (x *ProtoSelectionEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[108]
+	mi := &file_build_docframe_proto_msgTypes[109]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12814,7 +12936,7 @@ func (x *ProtoSelectionEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSelectionEntry.ProtoReflect.Descriptor instead.
 func (*ProtoSelectionEntry) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{108}
+	return file_build_docframe_proto_rawDescGZIP(), []int{109}
 }
 
 func (x *ProtoSelectionEntry) GetXChildren() []*ProtoDocumentElement {
@@ -12881,7 +13003,7 @@ type ProtoCondition struct {
 
 func (x *ProtoCondition) Reset() {
 	*x = ProtoCondition{}
-	mi := &file_build_docframe_proto_msgTypes[109]
+	mi := &file_build_docframe_proto_msgTypes[110]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12893,7 +13015,7 @@ func (x *ProtoCondition) String() string {
 func (*ProtoCondition) ProtoMessage() {}
 
 func (x *ProtoCondition) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[109]
+	mi := &file_build_docframe_proto_msgTypes[110]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12906,7 +13028,7 @@ func (x *ProtoCondition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoCondition.ProtoReflect.Descriptor instead.
 func (*ProtoCondition) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{109}
+	return file_build_docframe_proto_rawDescGZIP(), []int{110}
 }
 
 func (x *ProtoCondition) GetXChildren() []*ProtoDocumentElement {
@@ -12971,7 +13093,7 @@ type ProtoPageCondition struct {
 
 func (x *ProtoPageCondition) Reset() {
 	*x = ProtoPageCondition{}
-	mi := &file_build_docframe_proto_msgTypes[110]
+	mi := &file_build_docframe_proto_msgTypes[111]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -12983,7 +13105,7 @@ func (x *ProtoPageCondition) String() string {
 func (*ProtoPageCondition) ProtoMessage() {}
 
 func (x *ProtoPageCondition) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[110]
+	mi := &file_build_docframe_proto_msgTypes[111]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -12996,7 +13118,7 @@ func (x *ProtoPageCondition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoPageCondition.ProtoReflect.Descriptor instead.
 func (*ProtoPageCondition) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{110}
+	return file_build_docframe_proto_rawDescGZIP(), []int{111}
 }
 
 func (x *ProtoPageCondition) GetXChildren() []*ProtoDocumentElement {
@@ -13048,7 +13170,7 @@ type ProtoLocale struct {
 
 func (x *ProtoLocale) Reset() {
 	*x = ProtoLocale{}
-	mi := &file_build_docframe_proto_msgTypes[111]
+	mi := &file_build_docframe_proto_msgTypes[112]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13060,7 +13182,7 @@ func (x *ProtoLocale) String() string {
 func (*ProtoLocale) ProtoMessage() {}
 
 func (x *ProtoLocale) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[111]
+	mi := &file_build_docframe_proto_msgTypes[112]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13073,7 +13195,7 @@ func (x *ProtoLocale) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoLocale.ProtoReflect.Descriptor instead.
 func (*ProtoLocale) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{111}
+	return file_build_docframe_proto_rawDescGZIP(), []int{112}
 }
 
 func (x *ProtoLocale) GetXChildren() []*ProtoDocumentElement {
@@ -13133,7 +13255,7 @@ type ProtoTag struct {
 
 func (x *ProtoTag) Reset() {
 	*x = ProtoTag{}
-	mi := &file_build_docframe_proto_msgTypes[112]
+	mi := &file_build_docframe_proto_msgTypes[113]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13145,7 +13267,7 @@ func (x *ProtoTag) String() string {
 func (*ProtoTag) ProtoMessage() {}
 
 func (x *ProtoTag) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[112]
+	mi := &file_build_docframe_proto_msgTypes[113]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13158,7 +13280,7 @@ func (x *ProtoTag) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTag.ProtoReflect.Descriptor instead.
 func (*ProtoTag) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{112}
+	return file_build_docframe_proto_rawDescGZIP(), []int{113}
 }
 
 func (x *ProtoTag) GetParent() *ProtoDocumentElement {
@@ -13223,7 +13345,7 @@ type ProtoParagraphSetDefault struct {
 
 func (x *ProtoParagraphSetDefault) Reset() {
 	*x = ProtoParagraphSetDefault{}
-	mi := &file_build_docframe_proto_msgTypes[113]
+	mi := &file_build_docframe_proto_msgTypes[114]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13235,7 +13357,7 @@ func (x *ProtoParagraphSetDefault) String() string {
 func (*ProtoParagraphSetDefault) ProtoMessage() {}
 
 func (x *ProtoParagraphSetDefault) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[113]
+	mi := &file_build_docframe_proto_msgTypes[114]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13248,7 +13370,7 @@ func (x *ProtoParagraphSetDefault) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoParagraphSetDefault.ProtoReflect.Descriptor instead.
 func (*ProtoParagraphSetDefault) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{113}
+	return file_build_docframe_proto_rawDescGZIP(), []int{114}
 }
 
 func (x *ProtoParagraphSetDefault) GetParent() *ProtoDocumentElement {
@@ -13307,7 +13429,7 @@ type ProtoBaseTextInputField struct {
 
 func (x *ProtoBaseTextInputField) Reset() {
 	*x = ProtoBaseTextInputField{}
-	mi := &file_build_docframe_proto_msgTypes[114]
+	mi := &file_build_docframe_proto_msgTypes[115]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13319,7 +13441,7 @@ func (x *ProtoBaseTextInputField) String() string {
 func (*ProtoBaseTextInputField) ProtoMessage() {}
 
 func (x *ProtoBaseTextInputField) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[114]
+	mi := &file_build_docframe_proto_msgTypes[115]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13332,7 +13454,7 @@ func (x *ProtoBaseTextInputField) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoBaseTextInputField.ProtoReflect.Descriptor instead.
 func (*ProtoBaseTextInputField) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{114}
+	return file_build_docframe_proto_rawDescGZIP(), []int{115}
 }
 
 func (x *ProtoBaseTextInputField) GetBase() *ProtoBaseInputField {
@@ -13436,7 +13558,7 @@ type ProtoInputFieldText struct {
 
 func (x *ProtoInputFieldText) Reset() {
 	*x = ProtoInputFieldText{}
-	mi := &file_build_docframe_proto_msgTypes[115]
+	mi := &file_build_docframe_proto_msgTypes[116]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13448,7 +13570,7 @@ func (x *ProtoInputFieldText) String() string {
 func (*ProtoInputFieldText) ProtoMessage() {}
 
 func (x *ProtoInputFieldText) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[115]
+	mi := &file_build_docframe_proto_msgTypes[116]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13461,7 +13583,7 @@ func (x *ProtoInputFieldText) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldText.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldText) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{115}
+	return file_build_docframe_proto_rawDescGZIP(), []int{116}
 }
 
 func (x *ProtoInputFieldText) GetParent() *ProtoDocumentElement {
@@ -13488,7 +13610,7 @@ type ProtoInputFieldDate struct {
 
 func (x *ProtoInputFieldDate) Reset() {
 	*x = ProtoInputFieldDate{}
-	mi := &file_build_docframe_proto_msgTypes[116]
+	mi := &file_build_docframe_proto_msgTypes[117]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13500,7 +13622,7 @@ func (x *ProtoInputFieldDate) String() string {
 func (*ProtoInputFieldDate) ProtoMessage() {}
 
 func (x *ProtoInputFieldDate) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[116]
+	mi := &file_build_docframe_proto_msgTypes[117]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13513,7 +13635,7 @@ func (x *ProtoInputFieldDate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldDate.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldDate) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{116}
+	return file_build_docframe_proto_rawDescGZIP(), []int{117}
 }
 
 func (x *ProtoInputFieldDate) GetParent() *ProtoDocumentElement {
@@ -13540,7 +13662,7 @@ type ProtoInputFieldCheckbox struct {
 
 func (x *ProtoInputFieldCheckbox) Reset() {
 	*x = ProtoInputFieldCheckbox{}
-	mi := &file_build_docframe_proto_msgTypes[117]
+	mi := &file_build_docframe_proto_msgTypes[118]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13552,7 +13674,7 @@ func (x *ProtoInputFieldCheckbox) String() string {
 func (*ProtoInputFieldCheckbox) ProtoMessage() {}
 
 func (x *ProtoInputFieldCheckbox) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[117]
+	mi := &file_build_docframe_proto_msgTypes[118]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13565,7 +13687,7 @@ func (x *ProtoInputFieldCheckbox) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldCheckbox.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldCheckbox) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{117}
+	return file_build_docframe_proto_rawDescGZIP(), []int{118}
 }
 
 func (x *ProtoInputFieldCheckbox) GetParent() *ProtoDocumentElement {
@@ -13592,7 +13714,7 @@ type ProtoInputFieldLabel struct {
 
 func (x *ProtoInputFieldLabel) Reset() {
 	*x = ProtoInputFieldLabel{}
-	mi := &file_build_docframe_proto_msgTypes[118]
+	mi := &file_build_docframe_proto_msgTypes[119]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13604,7 +13726,7 @@ func (x *ProtoInputFieldLabel) String() string {
 func (*ProtoInputFieldLabel) ProtoMessage() {}
 
 func (x *ProtoInputFieldLabel) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[118]
+	mi := &file_build_docframe_proto_msgTypes[119]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13617,7 +13739,7 @@ func (x *ProtoInputFieldLabel) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldLabel.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldLabel) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{118}
+	return file_build_docframe_proto_rawDescGZIP(), []int{119}
 }
 
 func (x *ProtoInputFieldLabel) GetParent() *ProtoDocumentElement {
@@ -13647,7 +13769,7 @@ type ProtoInputFieldDropdown struct {
 
 func (x *ProtoInputFieldDropdown) Reset() {
 	*x = ProtoInputFieldDropdown{}
-	mi := &file_build_docframe_proto_msgTypes[119]
+	mi := &file_build_docframe_proto_msgTypes[120]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13659,7 +13781,7 @@ func (x *ProtoInputFieldDropdown) String() string {
 func (*ProtoInputFieldDropdown) ProtoMessage() {}
 
 func (x *ProtoInputFieldDropdown) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[119]
+	mi := &file_build_docframe_proto_msgTypes[120]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13672,7 +13794,7 @@ func (x *ProtoInputFieldDropdown) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoInputFieldDropdown.ProtoReflect.Descriptor instead.
 func (*ProtoInputFieldDropdown) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{119}
+	return file_build_docframe_proto_rawDescGZIP(), []int{120}
 }
 
 func (x *ProtoInputFieldDropdown) GetParent() *ProtoDocumentElement {
@@ -13723,7 +13845,7 @@ type ProtoColorChoice struct {
 
 func (x *ProtoColorChoice) Reset() {
 	*x = ProtoColorChoice{}
-	mi := &file_build_docframe_proto_msgTypes[120]
+	mi := &file_build_docframe_proto_msgTypes[121]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13735,7 +13857,7 @@ func (x *ProtoColorChoice) String() string {
 func (*ProtoColorChoice) ProtoMessage() {}
 
 func (x *ProtoColorChoice) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[120]
+	mi := &file_build_docframe_proto_msgTypes[121]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13748,7 +13870,7 @@ func (x *ProtoColorChoice) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoColorChoice.ProtoReflect.Descriptor instead.
 func (*ProtoColorChoice) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{120}
+	return file_build_docframe_proto_rawDescGZIP(), []int{121}
 }
 
 func (x *ProtoColorChoice) GetChoice() isProtoColorChoice_Choice {
@@ -13804,7 +13926,7 @@ type ProtoSetColor struct {
 
 func (x *ProtoSetColor) Reset() {
 	*x = ProtoSetColor{}
-	mi := &file_build_docframe_proto_msgTypes[121]
+	mi := &file_build_docframe_proto_msgTypes[122]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13816,7 +13938,7 @@ func (x *ProtoSetColor) String() string {
 func (*ProtoSetColor) ProtoMessage() {}
 
 func (x *ProtoSetColor) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[121]
+	mi := &file_build_docframe_proto_msgTypes[122]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13829,7 +13951,7 @@ func (x *ProtoSetColor) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSetColor.ProtoReflect.Descriptor instead.
 func (*ProtoSetColor) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{121}
+	return file_build_docframe_proto_rawDescGZIP(), []int{122}
 }
 
 func (x *ProtoSetColor) GetParent() *ProtoDocumentElement {
@@ -13872,7 +13994,7 @@ type ProtoUnsetColor struct {
 
 func (x *ProtoUnsetColor) Reset() {
 	*x = ProtoUnsetColor{}
-	mi := &file_build_docframe_proto_msgTypes[122]
+	mi := &file_build_docframe_proto_msgTypes[123]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13884,7 +14006,7 @@ func (x *ProtoUnsetColor) String() string {
 func (*ProtoUnsetColor) ProtoMessage() {}
 
 func (x *ProtoUnsetColor) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[122]
+	mi := &file_build_docframe_proto_msgTypes[123]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13897,7 +14019,7 @@ func (x *ProtoUnsetColor) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoUnsetColor.ProtoReflect.Descriptor instead.
 func (*ProtoUnsetColor) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{122}
+	return file_build_docframe_proto_rawDescGZIP(), []int{123}
 }
 
 func (x *ProtoUnsetColor) GetParent() *ProtoDocumentElement {
@@ -13941,7 +14063,7 @@ type ProtoColoredArea struct {
 
 func (x *ProtoColoredArea) Reset() {
 	*x = ProtoColoredArea{}
-	mi := &file_build_docframe_proto_msgTypes[123]
+	mi := &file_build_docframe_proto_msgTypes[124]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -13953,7 +14075,7 @@ func (x *ProtoColoredArea) String() string {
 func (*ProtoColoredArea) ProtoMessage() {}
 
 func (x *ProtoColoredArea) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[123]
+	mi := &file_build_docframe_proto_msgTypes[124]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -13966,7 +14088,7 @@ func (x *ProtoColoredArea) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoColoredArea.ProtoReflect.Descriptor instead.
 func (*ProtoColoredArea) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{123}
+	return file_build_docframe_proto_rawDescGZIP(), []int{124}
 }
 
 func (x *ProtoColoredArea) GetParent() *ProtoDocumentElement {
@@ -14005,23 +14127,26 @@ func (x *ProtoColoredArea) GetComChannelUUIDs() []string {
 }
 
 type ProtoChapter struct {
-	state           protoimpl.MessageState  `protogen:"open.v1"`
-	XChildren       []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
-	Parent          *ProtoDocumentElement   `protobuf:"bytes,2,opt,name=parent,proto3" json:"parent,omitempty"`
-	Uuid            string                  `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
-	ComChannelUUIDs []string                `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
-	Title           string                  `protobuf:"bytes,5,opt,name=title,proto3" json:"title,omitempty"`
-	Tag             string                  `protobuf:"bytes,6,opt,name=tag,proto3" json:"tag,omitempty"`
-	Number          []string                `protobuf:"bytes,7,rep,name=number,proto3" json:"number,omitempty"`
-	Key             string                  `protobuf:"bytes,8,opt,name=key,proto3" json:"key,omitempty"`
-	CreatePageBreak bool                    `protobuf:"varint,9,opt,name=createPageBreak,proto3" json:"createPageBreak,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state             protoimpl.MessageState  `protogen:"open.v1"`
+	XChildren         []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
+	Parent            *ProtoDocumentElement   `protobuf:"bytes,2,opt,name=parent,proto3" json:"parent,omitempty"`
+	Uuid              string                  `protobuf:"bytes,3,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	ComChannelUUIDs   []string                `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
+	Title             string                  `protobuf:"bytes,5,opt,name=title,proto3" json:"title,omitempty"`
+	Tag               string                  `protobuf:"bytes,6,opt,name=tag,proto3" json:"tag,omitempty"`
+	Number            []string                `protobuf:"bytes,7,rep,name=number,proto3" json:"number,omitempty"`
+	Key               string                  `protobuf:"bytes,8,opt,name=key,proto3" json:"key,omitempty"`
+	CreatePageBreak   bool                    `protobuf:"varint,9,opt,name=createPageBreak,proto3" json:"createPageBreak,omitempty"`
+	CreateDestination bool                    `protobuf:"varint,10,opt,name=createDestination,proto3" json:"createDestination,omitempty"`
+	CreateInToc       bool                    `protobuf:"varint,11,opt,name=createInToc,proto3" json:"createInToc,omitempty"`
+	IndentationLevel  int32                   `protobuf:"varint,12,opt,name=indentationLevel,proto3" json:"indentationLevel,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *ProtoChapter) Reset() {
 	*x = ProtoChapter{}
-	mi := &file_build_docframe_proto_msgTypes[124]
+	mi := &file_build_docframe_proto_msgTypes[125]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14033,7 +14158,7 @@ func (x *ProtoChapter) String() string {
 func (*ProtoChapter) ProtoMessage() {}
 
 func (x *ProtoChapter) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[124]
+	mi := &file_build_docframe_proto_msgTypes[125]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14046,7 +14171,7 @@ func (x *ProtoChapter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoChapter.ProtoReflect.Descriptor instead.
 func (*ProtoChapter) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{124}
+	return file_build_docframe_proto_rawDescGZIP(), []int{125}
 }
 
 func (x *ProtoChapter) GetXChildren() []*ProtoDocumentElement {
@@ -14112,6 +14237,27 @@ func (x *ProtoChapter) GetCreatePageBreak() bool {
 	return false
 }
 
+func (x *ProtoChapter) GetCreateDestination() bool {
+	if x != nil {
+		return x.CreateDestination
+	}
+	return false
+}
+
+func (x *ProtoChapter) GetCreateInToc() bool {
+	if x != nil {
+		return x.CreateInToc
+	}
+	return false
+}
+
+func (x *ProtoChapter) GetIndentationLevel() int32 {
+	if x != nil {
+		return x.IndentationLevel
+	}
+	return 0
+}
+
 type ProtoTableOfContents struct {
 	state           protoimpl.MessageState  `protogen:"open.v1"`
 	XChildren       []*ProtoDocumentElement `protobuf:"bytes,1,rep,name=_children,json=Children,proto3" json:"_children,omitempty"`
@@ -14125,7 +14271,7 @@ type ProtoTableOfContents struct {
 
 func (x *ProtoTableOfContents) Reset() {
 	*x = ProtoTableOfContents{}
-	mi := &file_build_docframe_proto_msgTypes[125]
+	mi := &file_build_docframe_proto_msgTypes[126]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14137,7 +14283,7 @@ func (x *ProtoTableOfContents) String() string {
 func (*ProtoTableOfContents) ProtoMessage() {}
 
 func (x *ProtoTableOfContents) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[125]
+	mi := &file_build_docframe_proto_msgTypes[126]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14150,7 +14296,7 @@ func (x *ProtoTableOfContents) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoTableOfContents.ProtoReflect.Descriptor instead.
 func (*ProtoTableOfContents) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{125}
+	return file_build_docframe_proto_rawDescGZIP(), []int{126}
 }
 
 func (x *ProtoTableOfContents) GetXChildren() []*ProtoDocumentElement {
@@ -14203,7 +14349,7 @@ type ProtoSectionReference struct {
 
 func (x *ProtoSectionReference) Reset() {
 	*x = ProtoSectionReference{}
-	mi := &file_build_docframe_proto_msgTypes[126]
+	mi := &file_build_docframe_proto_msgTypes[127]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14215,7 +14361,7 @@ func (x *ProtoSectionReference) String() string {
 func (*ProtoSectionReference) ProtoMessage() {}
 
 func (x *ProtoSectionReference) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[126]
+	mi := &file_build_docframe_proto_msgTypes[127]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14228,7 +14374,7 @@ func (x *ProtoSectionReference) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoSectionReference.ProtoReflect.Descriptor instead.
 func (*ProtoSectionReference) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{126}
+	return file_build_docframe_proto_rawDescGZIP(), []int{127}
 }
 
 func (x *ProtoSectionReference) GetParent() *ProtoDocumentElement {
@@ -14292,7 +14438,7 @@ type ProtoChapterLink struct {
 
 func (x *ProtoChapterLink) Reset() {
 	*x = ProtoChapterLink{}
-	mi := &file_build_docframe_proto_msgTypes[127]
+	mi := &file_build_docframe_proto_msgTypes[128]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -14304,7 +14450,7 @@ func (x *ProtoChapterLink) String() string {
 func (*ProtoChapterLink) ProtoMessage() {}
 
 func (x *ProtoChapterLink) ProtoReflect() protoreflect.Message {
-	mi := &file_build_docframe_proto_msgTypes[127]
+	mi := &file_build_docframe_proto_msgTypes[128]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -14317,7 +14463,7 @@ func (x *ProtoChapterLink) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProtoChapterLink.ProtoReflect.Descriptor instead.
 func (*ProtoChapterLink) Descriptor() ([]byte, []int) {
-	return file_build_docframe_proto_rawDescGZIP(), []int{127}
+	return file_build_docframe_proto_rawDescGZIP(), []int{128}
 }
 
 func (x *ProtoChapterLink) GetXChildren() []*ProtoDocumentElement {
@@ -14697,7 +14843,10 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\toverwrite\x18\x04 \x01(\v2\x15.ProtoParagraphFormatR\toverwrite\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\x120\n" +
 	"\x13paragraphFormatUUID\x18\x06 \x01(\tR\x13paragraphFormatUUID\x12\x12\n" +
-	"\x04uuid\x18\a \x01(\tR\x04uuid\"\xba\f\n" +
+	"\x04uuid\x18\a \x01(\tR\x04uuid\"p\n" +
+	"!ProtoBoxedBookmarkIndentationMode\x123\n" +
+	"\x05value\x18\x01 \x01(\x0e2\x1d.ProtoBookmarkIndentationModeR\x05value\x12\x16\n" +
+	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xb3\x0e\n" +
 	"\x14ProtoParagraphFormat\x125\n" +
 	"\n" +
 	"baseFormat\x18\x01 \x01(\v2\x15.ProtoParagraphFormatR\n" +
@@ -14735,7 +14884,10 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0fpostNamedString\x18\x1b \x01(\v2\x11.ProtoBoxedStringR\x0fpostNamedString\x125\n" +
 	"\fsemanticType\x18\x1c \x01(\v2\x11.ProtoBoxedStringR\fsemanticType\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x1d \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\x1e \x01(\tR\x04uuid\"\xcb\x01\n" +
+	"\x04uuid\x18\x1e \x01(\tR\x04uuid\x12L\n" +
+	"\x18bookmarkIndentationLevel\x18\x1f \x01(\v2\x10.ProtoBoxedInt32R\x18bookmarkIndentationLevel\x12\\\n" +
+	"\x17bookmarkIndentationMode\x18  \x01(\v2\".ProtoBoxedBookmarkIndentationModeR\x17bookmarkIndentationMode\x12K\n" +
+	"\x18skipSpaceOnStartOfColumn\x18! \x01(\v2\x0f.ProtoBoxedBoolR\x18skipSpaceOnStartOfColumn\"\xcb\x01\n" +
 	"\fProtoSection\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
@@ -15450,7 +15602,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\t_children\x18\x02 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12'\n" +
 	"\x05color\x18\x03 \x01(\v2\x11.ProtoColorChoiceR\x05color\x12\x12\n" +
 	"\x04uuid\x18\x04 \x01(\tR\x04uuid\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\xab\x02\n" +
+	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\"\xa7\x03\n" +
 	"\fProtoChapter\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
@@ -15460,7 +15612,11 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x03tag\x18\x06 \x01(\tR\x03tag\x12\x16\n" +
 	"\x06number\x18\a \x03(\tR\x06number\x12\x10\n" +
 	"\x03key\x18\b \x01(\tR\x03key\x12(\n" +
-	"\x0fcreatePageBreak\x18\t \x01(\bR\x0fcreatePageBreak\"\xcf\x01\n" +
+	"\x0fcreatePageBreak\x18\t \x01(\bR\x0fcreatePageBreak\x12,\n" +
+	"\x11createDestination\x18\n" +
+	" \x01(\bR\x11createDestination\x12 \n" +
+	"\vcreateInToc\x18\v \x01(\bR\vcreateInToc\x12*\n" +
+	"\x10indentationLevel\x18\f \x01(\x05R\x10indentationLevel\"\xcf\x01\n" +
 	"\x14ProtoTableOfContents\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
@@ -15607,7 +15763,10 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x1dProtoNumberedLevelDisplayType\x12\x15\n" +
 	"\x11ALL_PARENT_LEVELS\x10\x00\x12\x1a\n" +
 	"\x16NUMBERED_PARENT_LEVELS\x10\x01\x12\x14\n" +
-	"\x10NO_PARENT_LEVELS\x10\x02*N\n" +
+	"\x10NO_PARENT_LEVELS\x10\x02*y\n" +
+	"\x1cProtoBookmarkIndentationMode\x12&\n" +
+	"\"BOOKMARK_INDENTATION_MODE_ABSOLUTE\x10\x00\x121\n" +
+	"-BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER\x10\x01*N\n" +
 	"\x1aProtoTableContentGroupType\x12\n" +
 	"\n" +
 	"\x06HEADER\x10\x00\x12\b\n" +
@@ -15772,8 +15931,8 @@ func file_build_docframe_proto_rawDescGZIP() []byte {
 	return file_build_docframe_proto_rawDescData
 }
 
-var file_build_docframe_proto_enumTypes = make([]protoimpl.EnumInfo, 33)
-var file_build_docframe_proto_msgTypes = make([]protoimpl.MessageInfo, 128)
+var file_build_docframe_proto_enumTypes = make([]protoimpl.EnumInfo, 34)
+var file_build_docframe_proto_msgTypes = make([]protoimpl.MessageInfo, 129)
 var file_build_docframe_proto_goTypes = []any{
 	(ProtoSPBMode)(0),                                      // 0: ProtoSPBMode
 	(ProtoRuleStyle)(0),                                    // 1: ProtoRuleStyle
@@ -15793,634 +15952,640 @@ var file_build_docframe_proto_goTypes = []any{
 	(ProtoNumberType)(0),                                   // 15: ProtoNumberType
 	(ProtoListLevelSettingType)(0),                         // 16: ProtoListLevelSettingType
 	(ProtoNumberedLevelDisplayType)(0),                     // 17: ProtoNumberedLevelDisplayType
-	(ProtoTableContentGroupType)(0),                        // 18: ProtoTableContentGroupType
-	(ProtoTableCellType)(0),                                // 19: ProtoTableCellType
-	(ColumnBalancing)(0),                                   // 20: ColumnBalancing
-	(ProtoHeaderMode)(0),                                   // 21: ProtoHeaderMode
-	(ProtoFooterMode)(0),                                   // 22: ProtoFooterMode
-	(NodeType)(0),                                          // 23: NodeType
-	(ProtoImageScaleType)(0),                               // 24: ProtoImageScaleType
-	(ProtoImageUAMode)(0),                                  // 25: ProtoImageUAMode
-	(ProtoImageContentType)(0),                             // 26: ProtoImageContentType
-	(ProtoVariableSpecialType)(0),                          // 27: ProtoVariableSpecialType
-	(ProtoPageMode)(0),                                     // 28: ProtoPageMode
-	(ProtoPageOrientation)(0),                              // 29: ProtoPageOrientation
-	(ProtoSubTotalPosition)(0),                             // 30: ProtoSubTotalPosition
-	(ProtoRuleMode)(0),                                     // 31: ProtoRuleMode
-	(ProtoDoctypeOutputMode)(0),                            // 32: ProtoDoctypeOutputMode
-	(*ProtoBoxedBool)(nil),                                 // 33: ProtoBoxedBool
-	(*ProtoBoxedDouble)(nil),                               // 34: ProtoBoxedDouble
-	(*ProtoBoxedInt32)(nil),                                // 35: ProtoBoxedInt32
-	(*ProtoBoxedUint32)(nil),                               // 36: ProtoBoxedUint32
-	(*ProtoBoxedString)(nil),                               // 37: ProtoBoxedString
-	(*ProtoBoxedSPBMode)(nil),                              // 38: ProtoBoxedSPBMode
-	(*ProtoStrikethroughSpec)(nil),                         // 39: ProtoStrikethroughSpec
-	(*ProtoBoxedStrikethroughSpec)(nil),                    // 40: ProtoBoxedStrikethroughSpec
-	(*ProtoMeasure)(nil),                                   // 41: ProtoMeasure
-	(*ProtoBoxedMeasure)(nil),                              // 42: ProtoBoxedMeasure
-	(*ProtoSideMeasures)(nil),                              // 43: ProtoSideMeasures
-	(*ProtoBoxedAdvancedIllustrationAreaTextFlowType)(nil), // 44: ProtoBoxedAdvancedIllustrationAreaTextFlowType
-	(*ProtoAdvancedIllustrationAreaImageSettings)(nil),     // 45: ProtoAdvancedIllustrationAreaImageSettings
-	(*ProtoFont)(nil),                                      // 46: ProtoFont
-	(*ProtoBoxedFont)(nil),                                 // 47: ProtoBoxedFont
-	(*ProtoColor)(nil),                                     // 48: ProtoColor
-	(*ProtoBoxedColor)(nil),                                // 49: ProtoBoxedColor
-	(*ProtoRGBColor)(nil),                                  // 50: ProtoRGBColor
-	(*ProtoCMYKColor)(nil),                                 // 51: ProtoCMYKColor
-	(*ProtoBoxedHorizontalAlignment)(nil),                  // 52: ProtoBoxedHorizontalAlignment
-	(*ProtoBoxedVerticalAlignment)(nil),                    // 53: ProtoBoxedVerticalAlignment
-	(*ProtoSwissQRCreditor)(nil),                           // 54: ProtoSwissQRCreditor
-	(*ProtoSwissQRDebitor)(nil),                            // 55: ProtoSwissQRDebitor
-	(*ProtoSwissQRData)(nil),                               // 56: ProtoSwissQRData
-	(*ProtoLinebreak)(nil),                                 // 57: ProtoLinebreak
-	(*ProtoBorder)(nil),                                    // 58: ProtoBorder
-	(*ProtoSideBorders)(nil),                               // 59: ProtoSideBorders
-	(*ProtoBoxedPositionMode)(nil),                         // 60: ProtoBoxedPositionMode
-	(*ProtoColumnSettings)(nil),                            // 61: ProtoColumnSettings
-	(*ProtoGraphicState)(nil),                              // 62: ProtoGraphicState
-	(*ProtoHtmlParser)(nil),                                // 63: ProtoHtmlParser
-	(*ProtoUnderlineSpec)(nil),                             // 64: ProtoUnderlineSpec
-	(*ProtoBoxedUnderlineSpec)(nil),                        // 65: ProtoBoxedUnderlineSpec
-	(*ProtoCropSettings)(nil),                              // 66: ProtoCropSettings
-	(*ProtoFlipSettings)(nil),                              // 67: ProtoFlipSettings
-	(*ProtoOption)(nil),                                    // 68: ProtoOption
-	(*ProtoBaseInputField)(nil),                            // 69: ProtoBaseInputField
-	(*ProtoDocumentElement)(nil),                           // 70: ProtoDocumentElement
-	(*ProtoBranchDocumentElement)(nil),                     // 71: ProtoBranchDocumentElement
-	(*ProtoLink)(nil),                                      // 72: ProtoLink
-	(*ProtoListLevelSetting)(nil),                          // 73: ProtoListLevelSetting
-	(*ProtoImageListLevelSetting)(nil),                     // 74: ProtoImageListLevelSetting
-	(*ProtoTextListLevelSetting)(nil),                      // 75: ProtoTextListLevelSetting
-	(*ProtoNumberListLevelSetting)(nil),                    // 76: ProtoNumberListLevelSetting
-	(*ProtoUnnumberedListLevelSetting)(nil),                // 77: ProtoUnnumberedListLevelSetting
-	(*ProtoCustomListLevelSetting)(nil),                    // 78: ProtoCustomListLevelSetting
-	(*ProtoListSetting)(nil),                               // 79: ProtoListSetting
-	(*ProtoBoxedListSetting)(nil),                          // 80: ProtoBoxedListSetting
-	(*ProtoNamedString)(nil),                               // 81: ProtoNamedString
-	(*ProtoParagraph)(nil),                                 // 82: ProtoParagraph
-	(*ProtoParagraphFormat)(nil),                           // 83: ProtoParagraphFormat
-	(*ProtoSection)(nil),                                   // 84: ProtoSection
-	(*ProtoSpaceVertically)(nil),                           // 85: ProtoSpaceVertically
-	(*ProtoSpan)(nil),                                      // 86: ProtoSpan
-	(*ProtoTable)(nil),                                     // 87: ProtoTable
-	(*ProtoTableConfig)(nil),                               // 88: ProtoTableConfig
-	(*ProtoTableSettings)(nil),                             // 89: ProtoTableSettings
-	(*ProtoBoxedTableContentGroupType)(nil),                // 90: ProtoBoxedTableContentGroupType
-	(*ProtoTableContentGroup)(nil),                         // 91: ProtoTableContentGroup
-	(*ProtoTableContentGroupConfig)(nil),                   // 92: ProtoTableContentGroupConfig
-	(*ProtoTableContentGroupSettings)(nil),                 // 93: ProtoTableContentGroupSettings
-	(*ProtoTableRow)(nil),                                  // 94: ProtoTableRow
-	(*ProtoTableRowConfig)(nil),                            // 95: ProtoTableRowConfig
-	(*ProtoTableRowSettings)(nil),                          // 96: ProtoTableRowSettings
-	(*ProtoBoxedTableCellType)(nil),                        // 97: ProtoBoxedTableCellType
-	(*ProtoTableCell)(nil),                                 // 98: ProtoTableCell
-	(*ProtoTableCellConfig)(nil),                           // 99: ProtoTableCellConfig
-	(*ProtoTableCellSettings)(nil),                         // 100: ProtoTableCellSettings
-	(*ProtoTableWS)(nil),                                   // 101: ProtoTableWS
-	(*ProtoTableElementProperties)(nil),                    // 102: ProtoTableElementProperties
-	(*ProtoText)(nil),                                      // 103: ProtoText
-	(*ProtoBarcode)(nil),                                   // 104: ProtoBarcode
-	(*ProtoBrickReference)(nil),                            // 105: ProtoBrickReference
-	(*ProtoBrick)(nil),                                     // 106: ProtoBrick
-	(*ProtoTemplate)(nil),                                  // 107: ProtoTemplate
-	(*ProtoHeader)(nil),                                    // 108: ProtoHeader
-	(*ProtoFooter)(nil),                                    // 109: ProtoFooter
-	(*Node)(nil),                                           // 110: Node
-	(*ProtoImage)(nil),                                     // 111: ProtoImage
-	(*ProtoDirectory)(nil),                                 // 112: ProtoDirectory
-	(*ProtoTextBrick)(nil),                                 // 113: ProtoTextBrick
-	(*ProtoVariable)(nil),                                  // 114: ProtoVariable
-	(*ProtoFormatted)(nil),                                 // 115: ProtoFormatted
-	(*ProtoApplyProtoCDef)(nil),                            // 116: ProtoApplyProtoCDef
-	(*ProtoApplyProtoPDef)(nil),                            // 117: ProtoApplyProtoPDef
-	(*ProtoApplyPtConfig)(nil),                             // 118: ProtoApplyPtConfig
-	(*ProtoApplyUlConfig)(nil),                             // 119: ProtoApplyUlConfig
-	(*ProtoCDef)(nil),                                      // 120: ProtoCDef
-	(*ProtoPDef)(nil),                                      // 121: ProtoPDef
-	(*ProtoPtConfig)(nil),                                  // 122: ProtoPtConfig
-	(*ProtoUlConfig)(nil),                                  // 123: ProtoUlConfig
-	(*ProtoNewPage)(nil),                                   // 124: ProtoNewPage
-	(*ProtoIndentation)(nil),                               // 125: ProtoIndentation
-	(*ProtoCarryOver)(nil),                                 // 126: ProtoCarryOver
-	(*ProtoLoopEntry)(nil),                                 // 127: ProtoLoopEntry
-	(*ProtoLoop)(nil),                                      // 128: ProtoLoop
-	(*ProtoSubTotal)(nil),                                  // 129: ProtoSubTotal
-	(*ProtoWsArea)(nil),                                    // 130: ProtoWsArea
-	(*ProtoRule)(nil),                                      // 131: ProtoRule
-	(*ProtoRuleBoundaries)(nil),                            // 132: ProtoRuleBoundaries
-	(*ProtoColorDef)(nil),                                  // 133: ProtoColorDef
-	(*ProtoLayout)(nil),                                    // 134: ProtoLayout
-	(*ProtoAdvancedIllustrationArea)(nil),                  // 135: ProtoAdvancedIllustrationArea
-	(*ProtoAdjustHorizontally)(nil),                        // 136: ProtoAdjustHorizontally
-	(*ProtoDoctypeScript)(nil),                             // 137: ProtoDoctypeScript
-	(*ProtoDmScript)(nil),                                  // 138: ProtoDmScript
-	(*ProtoDynamicTemplate)(nil),                           // 139: ProtoDynamicTemplate
-	(*ProtoSelection)(nil),                                 // 140: ProtoSelection
-	(*ProtoSelectionEntry)(nil),                            // 141: ProtoSelectionEntry
-	(*ProtoCondition)(nil),                                 // 142: ProtoCondition
-	(*ProtoPageCondition)(nil),                             // 143: ProtoPageCondition
-	(*ProtoLocale)(nil),                                    // 144: ProtoLocale
-	(*ProtoTag)(nil),                                       // 145: ProtoTag
-	(*ProtoParagraphSetDefault)(nil),                       // 146: ProtoParagraphSetDefault
-	(*ProtoBaseTextInputField)(nil),                        // 147: ProtoBaseTextInputField
-	(*ProtoInputFieldText)(nil),                            // 148: ProtoInputFieldText
-	(*ProtoInputFieldDate)(nil),                            // 149: ProtoInputFieldDate
-	(*ProtoInputFieldCheckbox)(nil),                        // 150: ProtoInputFieldCheckbox
-	(*ProtoInputFieldLabel)(nil),                           // 151: ProtoInputFieldLabel
-	(*ProtoInputFieldDropdown)(nil),                        // 152: ProtoInputFieldDropdown
-	(*ProtoColorChoice)(nil),                               // 153: ProtoColorChoice
-	(*ProtoSetColor)(nil),                                  // 154: ProtoSetColor
-	(*ProtoUnsetColor)(nil),                                // 155: ProtoUnsetColor
-	(*ProtoColoredArea)(nil),                               // 156: ProtoColoredArea
-	(*ProtoChapter)(nil),                                   // 157: ProtoChapter
-	(*ProtoTableOfContents)(nil),                           // 158: ProtoTableOfContents
-	(*ProtoSectionReference)(nil),                          // 159: ProtoSectionReference
-	(*ProtoChapterLink)(nil),                               // 160: ProtoChapterLink
+	(ProtoBookmarkIndentationMode)(0),                      // 18: ProtoBookmarkIndentationMode
+	(ProtoTableContentGroupType)(0),                        // 19: ProtoTableContentGroupType
+	(ProtoTableCellType)(0),                                // 20: ProtoTableCellType
+	(ColumnBalancing)(0),                                   // 21: ColumnBalancing
+	(ProtoHeaderMode)(0),                                   // 22: ProtoHeaderMode
+	(ProtoFooterMode)(0),                                   // 23: ProtoFooterMode
+	(NodeType)(0),                                          // 24: NodeType
+	(ProtoImageScaleType)(0),                               // 25: ProtoImageScaleType
+	(ProtoImageUAMode)(0),                                  // 26: ProtoImageUAMode
+	(ProtoImageContentType)(0),                             // 27: ProtoImageContentType
+	(ProtoVariableSpecialType)(0),                          // 28: ProtoVariableSpecialType
+	(ProtoPageMode)(0),                                     // 29: ProtoPageMode
+	(ProtoPageOrientation)(0),                              // 30: ProtoPageOrientation
+	(ProtoSubTotalPosition)(0),                             // 31: ProtoSubTotalPosition
+	(ProtoRuleMode)(0),                                     // 32: ProtoRuleMode
+	(ProtoDoctypeOutputMode)(0),                            // 33: ProtoDoctypeOutputMode
+	(*ProtoBoxedBool)(nil),                                 // 34: ProtoBoxedBool
+	(*ProtoBoxedDouble)(nil),                               // 35: ProtoBoxedDouble
+	(*ProtoBoxedInt32)(nil),                                // 36: ProtoBoxedInt32
+	(*ProtoBoxedUint32)(nil),                               // 37: ProtoBoxedUint32
+	(*ProtoBoxedString)(nil),                               // 38: ProtoBoxedString
+	(*ProtoBoxedSPBMode)(nil),                              // 39: ProtoBoxedSPBMode
+	(*ProtoStrikethroughSpec)(nil),                         // 40: ProtoStrikethroughSpec
+	(*ProtoBoxedStrikethroughSpec)(nil),                    // 41: ProtoBoxedStrikethroughSpec
+	(*ProtoMeasure)(nil),                                   // 42: ProtoMeasure
+	(*ProtoBoxedMeasure)(nil),                              // 43: ProtoBoxedMeasure
+	(*ProtoSideMeasures)(nil),                              // 44: ProtoSideMeasures
+	(*ProtoBoxedAdvancedIllustrationAreaTextFlowType)(nil), // 45: ProtoBoxedAdvancedIllustrationAreaTextFlowType
+	(*ProtoAdvancedIllustrationAreaImageSettings)(nil),     // 46: ProtoAdvancedIllustrationAreaImageSettings
+	(*ProtoFont)(nil),                                      // 47: ProtoFont
+	(*ProtoBoxedFont)(nil),                                 // 48: ProtoBoxedFont
+	(*ProtoColor)(nil),                                     // 49: ProtoColor
+	(*ProtoBoxedColor)(nil),                                // 50: ProtoBoxedColor
+	(*ProtoRGBColor)(nil),                                  // 51: ProtoRGBColor
+	(*ProtoCMYKColor)(nil),                                 // 52: ProtoCMYKColor
+	(*ProtoBoxedHorizontalAlignment)(nil),                  // 53: ProtoBoxedHorizontalAlignment
+	(*ProtoBoxedVerticalAlignment)(nil),                    // 54: ProtoBoxedVerticalAlignment
+	(*ProtoSwissQRCreditor)(nil),                           // 55: ProtoSwissQRCreditor
+	(*ProtoSwissQRDebitor)(nil),                            // 56: ProtoSwissQRDebitor
+	(*ProtoSwissQRData)(nil),                               // 57: ProtoSwissQRData
+	(*ProtoLinebreak)(nil),                                 // 58: ProtoLinebreak
+	(*ProtoBorder)(nil),                                    // 59: ProtoBorder
+	(*ProtoSideBorders)(nil),                               // 60: ProtoSideBorders
+	(*ProtoBoxedPositionMode)(nil),                         // 61: ProtoBoxedPositionMode
+	(*ProtoColumnSettings)(nil),                            // 62: ProtoColumnSettings
+	(*ProtoGraphicState)(nil),                              // 63: ProtoGraphicState
+	(*ProtoHtmlParser)(nil),                                // 64: ProtoHtmlParser
+	(*ProtoUnderlineSpec)(nil),                             // 65: ProtoUnderlineSpec
+	(*ProtoBoxedUnderlineSpec)(nil),                        // 66: ProtoBoxedUnderlineSpec
+	(*ProtoCropSettings)(nil),                              // 67: ProtoCropSettings
+	(*ProtoFlipSettings)(nil),                              // 68: ProtoFlipSettings
+	(*ProtoOption)(nil),                                    // 69: ProtoOption
+	(*ProtoBaseInputField)(nil),                            // 70: ProtoBaseInputField
+	(*ProtoDocumentElement)(nil),                           // 71: ProtoDocumentElement
+	(*ProtoBranchDocumentElement)(nil),                     // 72: ProtoBranchDocumentElement
+	(*ProtoLink)(nil),                                      // 73: ProtoLink
+	(*ProtoListLevelSetting)(nil),                          // 74: ProtoListLevelSetting
+	(*ProtoImageListLevelSetting)(nil),                     // 75: ProtoImageListLevelSetting
+	(*ProtoTextListLevelSetting)(nil),                      // 76: ProtoTextListLevelSetting
+	(*ProtoNumberListLevelSetting)(nil),                    // 77: ProtoNumberListLevelSetting
+	(*ProtoUnnumberedListLevelSetting)(nil),                // 78: ProtoUnnumberedListLevelSetting
+	(*ProtoCustomListLevelSetting)(nil),                    // 79: ProtoCustomListLevelSetting
+	(*ProtoListSetting)(nil),                               // 80: ProtoListSetting
+	(*ProtoBoxedListSetting)(nil),                          // 81: ProtoBoxedListSetting
+	(*ProtoNamedString)(nil),                               // 82: ProtoNamedString
+	(*ProtoParagraph)(nil),                                 // 83: ProtoParagraph
+	(*ProtoBoxedBookmarkIndentationMode)(nil),              // 84: ProtoBoxedBookmarkIndentationMode
+	(*ProtoParagraphFormat)(nil),                           // 85: ProtoParagraphFormat
+	(*ProtoSection)(nil),                                   // 86: ProtoSection
+	(*ProtoSpaceVertically)(nil),                           // 87: ProtoSpaceVertically
+	(*ProtoSpan)(nil),                                      // 88: ProtoSpan
+	(*ProtoTable)(nil),                                     // 89: ProtoTable
+	(*ProtoTableConfig)(nil),                               // 90: ProtoTableConfig
+	(*ProtoTableSettings)(nil),                             // 91: ProtoTableSettings
+	(*ProtoBoxedTableContentGroupType)(nil),                // 92: ProtoBoxedTableContentGroupType
+	(*ProtoTableContentGroup)(nil),                         // 93: ProtoTableContentGroup
+	(*ProtoTableContentGroupConfig)(nil),                   // 94: ProtoTableContentGroupConfig
+	(*ProtoTableContentGroupSettings)(nil),                 // 95: ProtoTableContentGroupSettings
+	(*ProtoTableRow)(nil),                                  // 96: ProtoTableRow
+	(*ProtoTableRowConfig)(nil),                            // 97: ProtoTableRowConfig
+	(*ProtoTableRowSettings)(nil),                          // 98: ProtoTableRowSettings
+	(*ProtoBoxedTableCellType)(nil),                        // 99: ProtoBoxedTableCellType
+	(*ProtoTableCell)(nil),                                 // 100: ProtoTableCell
+	(*ProtoTableCellConfig)(nil),                           // 101: ProtoTableCellConfig
+	(*ProtoTableCellSettings)(nil),                         // 102: ProtoTableCellSettings
+	(*ProtoTableWS)(nil),                                   // 103: ProtoTableWS
+	(*ProtoTableElementProperties)(nil),                    // 104: ProtoTableElementProperties
+	(*ProtoText)(nil),                                      // 105: ProtoText
+	(*ProtoBarcode)(nil),                                   // 106: ProtoBarcode
+	(*ProtoBrickReference)(nil),                            // 107: ProtoBrickReference
+	(*ProtoBrick)(nil),                                     // 108: ProtoBrick
+	(*ProtoTemplate)(nil),                                  // 109: ProtoTemplate
+	(*ProtoHeader)(nil),                                    // 110: ProtoHeader
+	(*ProtoFooter)(nil),                                    // 111: ProtoFooter
+	(*Node)(nil),                                           // 112: Node
+	(*ProtoImage)(nil),                                     // 113: ProtoImage
+	(*ProtoDirectory)(nil),                                 // 114: ProtoDirectory
+	(*ProtoTextBrick)(nil),                                 // 115: ProtoTextBrick
+	(*ProtoVariable)(nil),                                  // 116: ProtoVariable
+	(*ProtoFormatted)(nil),                                 // 117: ProtoFormatted
+	(*ProtoApplyProtoCDef)(nil),                            // 118: ProtoApplyProtoCDef
+	(*ProtoApplyProtoPDef)(nil),                            // 119: ProtoApplyProtoPDef
+	(*ProtoApplyPtConfig)(nil),                             // 120: ProtoApplyPtConfig
+	(*ProtoApplyUlConfig)(nil),                             // 121: ProtoApplyUlConfig
+	(*ProtoCDef)(nil),                                      // 122: ProtoCDef
+	(*ProtoPDef)(nil),                                      // 123: ProtoPDef
+	(*ProtoPtConfig)(nil),                                  // 124: ProtoPtConfig
+	(*ProtoUlConfig)(nil),                                  // 125: ProtoUlConfig
+	(*ProtoNewPage)(nil),                                   // 126: ProtoNewPage
+	(*ProtoIndentation)(nil),                               // 127: ProtoIndentation
+	(*ProtoCarryOver)(nil),                                 // 128: ProtoCarryOver
+	(*ProtoLoopEntry)(nil),                                 // 129: ProtoLoopEntry
+	(*ProtoLoop)(nil),                                      // 130: ProtoLoop
+	(*ProtoSubTotal)(nil),                                  // 131: ProtoSubTotal
+	(*ProtoWsArea)(nil),                                    // 132: ProtoWsArea
+	(*ProtoRule)(nil),                                      // 133: ProtoRule
+	(*ProtoRuleBoundaries)(nil),                            // 134: ProtoRuleBoundaries
+	(*ProtoColorDef)(nil),                                  // 135: ProtoColorDef
+	(*ProtoLayout)(nil),                                    // 136: ProtoLayout
+	(*ProtoAdvancedIllustrationArea)(nil),                  // 137: ProtoAdvancedIllustrationArea
+	(*ProtoAdjustHorizontally)(nil),                        // 138: ProtoAdjustHorizontally
+	(*ProtoDoctypeScript)(nil),                             // 139: ProtoDoctypeScript
+	(*ProtoDmScript)(nil),                                  // 140: ProtoDmScript
+	(*ProtoDynamicTemplate)(nil),                           // 141: ProtoDynamicTemplate
+	(*ProtoSelection)(nil),                                 // 142: ProtoSelection
+	(*ProtoSelectionEntry)(nil),                            // 143: ProtoSelectionEntry
+	(*ProtoCondition)(nil),                                 // 144: ProtoCondition
+	(*ProtoPageCondition)(nil),                             // 145: ProtoPageCondition
+	(*ProtoLocale)(nil),                                    // 146: ProtoLocale
+	(*ProtoTag)(nil),                                       // 147: ProtoTag
+	(*ProtoParagraphSetDefault)(nil),                       // 148: ProtoParagraphSetDefault
+	(*ProtoBaseTextInputField)(nil),                        // 149: ProtoBaseTextInputField
+	(*ProtoInputFieldText)(nil),                            // 150: ProtoInputFieldText
+	(*ProtoInputFieldDate)(nil),                            // 151: ProtoInputFieldDate
+	(*ProtoInputFieldCheckbox)(nil),                        // 152: ProtoInputFieldCheckbox
+	(*ProtoInputFieldLabel)(nil),                           // 153: ProtoInputFieldLabel
+	(*ProtoInputFieldDropdown)(nil),                        // 154: ProtoInputFieldDropdown
+	(*ProtoColorChoice)(nil),                               // 155: ProtoColorChoice
+	(*ProtoSetColor)(nil),                                  // 156: ProtoSetColor
+	(*ProtoUnsetColor)(nil),                                // 157: ProtoUnsetColor
+	(*ProtoColoredArea)(nil),                               // 158: ProtoColoredArea
+	(*ProtoChapter)(nil),                                   // 159: ProtoChapter
+	(*ProtoTableOfContents)(nil),                           // 160: ProtoTableOfContents
+	(*ProtoSectionReference)(nil),                          // 161: ProtoSectionReference
+	(*ProtoChapterLink)(nil),                               // 162: ProtoChapterLink
 }
 var file_build_docframe_proto_depIdxs = []int32{
 	0,   // 0: ProtoBoxedSPBMode.value:type_name -> ProtoSPBMode
-	41,  // 1: ProtoStrikethroughSpec.weight:type_name -> ProtoMeasure
+	42,  // 1: ProtoStrikethroughSpec.weight:type_name -> ProtoMeasure
 	10,  // 2: ProtoStrikethroughSpec.mode:type_name -> ProtoUnderlineMode
-	48,  // 3: ProtoStrikethroughSpec.color:type_name -> ProtoColor
+	49,  // 3: ProtoStrikethroughSpec.color:type_name -> ProtoColor
 	1,   // 4: ProtoStrikethroughSpec.style:type_name -> ProtoRuleStyle
-	39,  // 5: ProtoBoxedStrikethroughSpec.value:type_name -> ProtoStrikethroughSpec
+	40,  // 5: ProtoBoxedStrikethroughSpec.value:type_name -> ProtoStrikethroughSpec
 	2,   // 6: ProtoMeasure.mtype:type_name -> ProtoMeasureType
-	41,  // 7: ProtoBoxedMeasure.value:type_name -> ProtoMeasure
-	41,  // 8: ProtoSideMeasures.top:type_name -> ProtoMeasure
-	41,  // 9: ProtoSideMeasures.right:type_name -> ProtoMeasure
-	41,  // 10: ProtoSideMeasures.bottom:type_name -> ProtoMeasure
-	41,  // 11: ProtoSideMeasures.left:type_name -> ProtoMeasure
+	42,  // 7: ProtoBoxedMeasure.value:type_name -> ProtoMeasure
+	42,  // 8: ProtoSideMeasures.top:type_name -> ProtoMeasure
+	42,  // 9: ProtoSideMeasures.right:type_name -> ProtoMeasure
+	42,  // 10: ProtoSideMeasures.bottom:type_name -> ProtoMeasure
+	42,  // 11: ProtoSideMeasures.left:type_name -> ProtoMeasure
 	3,   // 12: ProtoBoxedAdvancedIllustrationAreaTextFlowType.value:type_name -> ProtoAdvancedIllustrationAreaTextFlowType
-	44,  // 13: ProtoAdvancedIllustrationAreaImageSettings.textFlow:type_name -> ProtoBoxedAdvancedIllustrationAreaTextFlowType
-	43,  // 14: ProtoAdvancedIllustrationAreaImageSettings.margin:type_name -> ProtoSideMeasures
-	46,  // 15: ProtoBoxedFont.value:type_name -> ProtoFont
-	37,  // 16: ProtoColor.name:type_name -> ProtoBoxedString
+	45,  // 13: ProtoAdvancedIllustrationAreaImageSettings.textFlow:type_name -> ProtoBoxedAdvancedIllustrationAreaTextFlowType
+	44,  // 14: ProtoAdvancedIllustrationAreaImageSettings.margin:type_name -> ProtoSideMeasures
+	47,  // 15: ProtoBoxedFont.value:type_name -> ProtoFont
+	38,  // 16: ProtoColor.name:type_name -> ProtoBoxedString
 	4,   // 17: ProtoColor.type:type_name -> ProtoColorType
-	48,  // 18: ProtoBoxedColor.value:type_name -> ProtoColor
-	37,  // 19: ProtoRGBColor.name:type_name -> ProtoBoxedString
+	49,  // 18: ProtoBoxedColor.value:type_name -> ProtoColor
+	38,  // 19: ProtoRGBColor.name:type_name -> ProtoBoxedString
 	4,   // 20: ProtoRGBColor.type:type_name -> ProtoColorType
-	37,  // 21: ProtoCMYKColor.name:type_name -> ProtoBoxedString
+	38,  // 21: ProtoCMYKColor.name:type_name -> ProtoBoxedString
 	4,   // 22: ProtoCMYKColor.type:type_name -> ProtoColorType
 	5,   // 23: ProtoBoxedHorizontalAlignment.value:type_name -> ProtoHorizontalAlignment
 	6,   // 24: ProtoBoxedVerticalAlignment.value:type_name -> ProtoVerticalAlignment
-	54,  // 25: ProtoSwissQRData.creditor:type_name -> ProtoSwissQRCreditor
-	55,  // 26: ProtoSwissQRData.debitor:type_name -> ProtoSwissQRDebitor
-	70,  // 27: ProtoLinebreak.parent:type_name -> ProtoDocumentElement
-	36,  // 28: ProtoLinebreak.count:type_name -> ProtoBoxedUint32
-	41,  // 29: ProtoBorder.weight:type_name -> ProtoMeasure
-	48,  // 30: ProtoBorder.color:type_name -> ProtoColor
-	58,  // 31: ProtoSideBorders.top:type_name -> ProtoBorder
-	58,  // 32: ProtoSideBorders.right:type_name -> ProtoBorder
-	58,  // 33: ProtoSideBorders.bottom:type_name -> ProtoBorder
-	58,  // 34: ProtoSideBorders.left:type_name -> ProtoBorder
+	55,  // 25: ProtoSwissQRData.creditor:type_name -> ProtoSwissQRCreditor
+	56,  // 26: ProtoSwissQRData.debitor:type_name -> ProtoSwissQRDebitor
+	71,  // 27: ProtoLinebreak.parent:type_name -> ProtoDocumentElement
+	37,  // 28: ProtoLinebreak.count:type_name -> ProtoBoxedUint32
+	42,  // 29: ProtoBorder.weight:type_name -> ProtoMeasure
+	49,  // 30: ProtoBorder.color:type_name -> ProtoColor
+	59,  // 31: ProtoSideBorders.top:type_name -> ProtoBorder
+	59,  // 32: ProtoSideBorders.right:type_name -> ProtoBorder
+	59,  // 33: ProtoSideBorders.bottom:type_name -> ProtoBorder
+	59,  // 34: ProtoSideBorders.left:type_name -> ProtoBorder
 	9,   // 35: ProtoBoxedPositionMode.value:type_name -> ProtoPositionMode
-	42,  // 36: ProtoColumnSettings.width:type_name -> ProtoBoxedMeasure
-	42,  // 37: ProtoColumnSettings.interColumnSpace:type_name -> ProtoBoxedMeasure
-	42,  // 38: ProtoColumnSettings.positionOffset:type_name -> ProtoBoxedMeasure
+	43,  // 36: ProtoColumnSettings.width:type_name -> ProtoBoxedMeasure
+	43,  // 37: ProtoColumnSettings.interColumnSpace:type_name -> ProtoBoxedMeasure
+	43,  // 38: ProtoColumnSettings.positionOffset:type_name -> ProtoBoxedMeasure
 	9,   // 39: ProtoColumnSettings.positionMode:type_name -> ProtoPositionMode
-	42,  // 40: ProtoColumnSettings.outsideMargin:type_name -> ProtoBoxedMeasure
-	33,  // 41: ProtoGraphicState.bold:type_name -> ProtoBoxedBool
-	33,  // 42: ProtoGraphicState.italic:type_name -> ProtoBoxedBool
-	48,  // 43: ProtoGraphicState.colorStack:type_name -> ProtoColor
-	33,  // 44: ProtoGraphicState.subscript:type_name -> ProtoBoxedBool
-	33,  // 45: ProtoGraphicState.superscript:type_name -> ProtoBoxedBool
-	33,  // 46: ProtoGraphicState.underline:type_name -> ProtoBoxedBool
-	33,  // 47: ProtoGraphicState.strikethrough:type_name -> ProtoBoxedBool
-	41,  // 48: ProtoUnderlineSpec.weight:type_name -> ProtoMeasure
+	43,  // 40: ProtoColumnSettings.outsideMargin:type_name -> ProtoBoxedMeasure
+	34,  // 41: ProtoGraphicState.bold:type_name -> ProtoBoxedBool
+	34,  // 42: ProtoGraphicState.italic:type_name -> ProtoBoxedBool
+	49,  // 43: ProtoGraphicState.colorStack:type_name -> ProtoColor
+	34,  // 44: ProtoGraphicState.subscript:type_name -> ProtoBoxedBool
+	34,  // 45: ProtoGraphicState.superscript:type_name -> ProtoBoxedBool
+	34,  // 46: ProtoGraphicState.underline:type_name -> ProtoBoxedBool
+	34,  // 47: ProtoGraphicState.strikethrough:type_name -> ProtoBoxedBool
+	42,  // 48: ProtoUnderlineSpec.weight:type_name -> ProtoMeasure
 	10,  // 49: ProtoUnderlineSpec.mode:type_name -> ProtoUnderlineMode
-	48,  // 50: ProtoUnderlineSpec.color:type_name -> ProtoColor
+	49,  // 50: ProtoUnderlineSpec.color:type_name -> ProtoColor
 	1,   // 51: ProtoUnderlineSpec.style:type_name -> ProtoRuleStyle
-	64,  // 52: ProtoBoxedUnderlineSpec.value:type_name -> ProtoUnderlineSpec
-	42,  // 53: ProtoCropSettings.x:type_name -> ProtoBoxedMeasure
-	42,  // 54: ProtoCropSettings.y:type_name -> ProtoBoxedMeasure
-	42,  // 55: ProtoCropSettings.width:type_name -> ProtoBoxedMeasure
-	42,  // 56: ProtoCropSettings.height:type_name -> ProtoBoxedMeasure
-	37,  // 57: ProtoBaseInputField.value:type_name -> ProtoBoxedString
+	65,  // 52: ProtoBoxedUnderlineSpec.value:type_name -> ProtoUnderlineSpec
+	43,  // 53: ProtoCropSettings.x:type_name -> ProtoBoxedMeasure
+	43,  // 54: ProtoCropSettings.y:type_name -> ProtoBoxedMeasure
+	43,  // 55: ProtoCropSettings.width:type_name -> ProtoBoxedMeasure
+	43,  // 56: ProtoCropSettings.height:type_name -> ProtoBoxedMeasure
+	38,  // 57: ProtoBaseInputField.value:type_name -> ProtoBoxedString
 	13,  // 58: ProtoBaseInputField.pdfPrintingBehavior:type_name -> PDFPrintingBehavior
-	70,  // 59: ProtoDocumentElement.parent:type_name -> ProtoDocumentElement
-	70,  // 60: ProtoBranchDocumentElement._children:type_name -> ProtoDocumentElement
-	70,  // 61: ProtoBranchDocumentElement.parent:type_name -> ProtoDocumentElement
-	70,  // 62: ProtoLink._children:type_name -> ProtoDocumentElement
-	36,  // 63: ProtoListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
+	71,  // 59: ProtoDocumentElement.parent:type_name -> ProtoDocumentElement
+	71,  // 60: ProtoBranchDocumentElement._children:type_name -> ProtoDocumentElement
+	71,  // 61: ProtoBranchDocumentElement.parent:type_name -> ProtoDocumentElement
+	71,  // 62: ProtoLink._children:type_name -> ProtoDocumentElement
+	37,  // 63: ProtoListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
 	16,  // 64: ProtoListLevelSetting.type:type_name -> ProtoListLevelSettingType
-	46,  // 65: ProtoListLevelSetting.fixFontFamily:type_name -> ProtoFont
-	48,  // 66: ProtoListLevelSetting.color:type_name -> ProtoColor
-	46,  // 67: ProtoListLevelSetting.fontFamily:type_name -> ProtoFont
-	33,  // 68: ProtoListLevelSetting.bold:type_name -> ProtoBoxedBool
-	33,  // 69: ProtoListLevelSetting.italic:type_name -> ProtoBoxedBool
+	47,  // 65: ProtoListLevelSetting.fixFontFamily:type_name -> ProtoFont
+	49,  // 66: ProtoListLevelSetting.color:type_name -> ProtoColor
+	47,  // 67: ProtoListLevelSetting.fontFamily:type_name -> ProtoFont
+	34,  // 68: ProtoListLevelSetting.bold:type_name -> ProtoBoxedBool
+	34,  // 69: ProtoListLevelSetting.italic:type_name -> ProtoBoxedBool
 	15,  // 70: ProtoListLevelSetting.numberType:type_name -> ProtoNumberType
 	17,  // 71: ProtoListLevelSetting.levelDisplayType:type_name -> ProtoNumberedLevelDisplayType
-	36,  // 72: ProtoImageListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
+	37,  // 72: ProtoImageListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
 	16,  // 73: ProtoImageListLevelSetting.type:type_name -> ProtoListLevelSettingType
-	46,  // 74: ProtoImageListLevelSetting.fixFontFamily:type_name -> ProtoFont
-	48,  // 75: ProtoImageListLevelSetting.color:type_name -> ProtoColor
-	36,  // 76: ProtoTextListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
+	47,  // 74: ProtoImageListLevelSetting.fixFontFamily:type_name -> ProtoFont
+	49,  // 75: ProtoImageListLevelSetting.color:type_name -> ProtoColor
+	37,  // 76: ProtoTextListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
 	16,  // 77: ProtoTextListLevelSetting.type:type_name -> ProtoListLevelSettingType
-	46,  // 78: ProtoTextListLevelSetting.fixFontFamily:type_name -> ProtoFont
-	48,  // 79: ProtoTextListLevelSetting.color:type_name -> ProtoColor
-	46,  // 80: ProtoTextListLevelSetting.fontFamily:type_name -> ProtoFont
-	33,  // 81: ProtoTextListLevelSetting.bold:type_name -> ProtoBoxedBool
-	33,  // 82: ProtoTextListLevelSetting.italic:type_name -> ProtoBoxedBool
-	36,  // 83: ProtoNumberListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
+	47,  // 78: ProtoTextListLevelSetting.fixFontFamily:type_name -> ProtoFont
+	49,  // 79: ProtoTextListLevelSetting.color:type_name -> ProtoColor
+	47,  // 80: ProtoTextListLevelSetting.fontFamily:type_name -> ProtoFont
+	34,  // 81: ProtoTextListLevelSetting.bold:type_name -> ProtoBoxedBool
+	34,  // 82: ProtoTextListLevelSetting.italic:type_name -> ProtoBoxedBool
+	37,  // 83: ProtoNumberListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
 	16,  // 84: ProtoNumberListLevelSetting.type:type_name -> ProtoListLevelSettingType
-	46,  // 85: ProtoNumberListLevelSetting.fixFontFamily:type_name -> ProtoFont
-	48,  // 86: ProtoNumberListLevelSetting.color:type_name -> ProtoColor
-	46,  // 87: ProtoNumberListLevelSetting.fontFamily:type_name -> ProtoFont
-	33,  // 88: ProtoNumberListLevelSetting.bold:type_name -> ProtoBoxedBool
-	33,  // 89: ProtoNumberListLevelSetting.italic:type_name -> ProtoBoxedBool
+	47,  // 85: ProtoNumberListLevelSetting.fixFontFamily:type_name -> ProtoFont
+	49,  // 86: ProtoNumberListLevelSetting.color:type_name -> ProtoColor
+	47,  // 87: ProtoNumberListLevelSetting.fontFamily:type_name -> ProtoFont
+	34,  // 88: ProtoNumberListLevelSetting.bold:type_name -> ProtoBoxedBool
+	34,  // 89: ProtoNumberListLevelSetting.italic:type_name -> ProtoBoxedBool
 	15,  // 90: ProtoNumberListLevelSetting.numberType:type_name -> ProtoNumberType
 	17,  // 91: ProtoNumberListLevelSetting.levelDisplayType:type_name -> ProtoNumberedLevelDisplayType
-	36,  // 92: ProtoUnnumberedListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
+	37,  // 92: ProtoUnnumberedListLevelSetting.fontSize:type_name -> ProtoBoxedUint32
 	16,  // 93: ProtoUnnumberedListLevelSetting.type:type_name -> ProtoListLevelSettingType
-	46,  // 94: ProtoUnnumberedListLevelSetting.fixFontFamily:type_name -> ProtoFont
-	48,  // 95: ProtoUnnumberedListLevelSetting.color:type_name -> ProtoColor
-	46,  // 96: ProtoUnnumberedListLevelSetting.fontFamily:type_name -> ProtoFont
-	33,  // 97: ProtoUnnumberedListLevelSetting.bold:type_name -> ProtoBoxedBool
-	33,  // 98: ProtoUnnumberedListLevelSetting.italic:type_name -> ProtoBoxedBool
+	47,  // 94: ProtoUnnumberedListLevelSetting.fixFontFamily:type_name -> ProtoFont
+	49,  // 95: ProtoUnnumberedListLevelSetting.color:type_name -> ProtoColor
+	47,  // 96: ProtoUnnumberedListLevelSetting.fontFamily:type_name -> ProtoFont
+	34,  // 97: ProtoUnnumberedListLevelSetting.bold:type_name -> ProtoBoxedBool
+	34,  // 98: ProtoUnnumberedListLevelSetting.italic:type_name -> ProtoBoxedBool
 	16,  // 99: ProtoCustomListLevelSetting.type:type_name -> ProtoListLevelSettingType
-	70,  // 100: ProtoListSetting.parent:type_name -> ProtoDocumentElement
-	73,  // 101: ProtoListSetting.listLevelSettings:type_name -> ProtoListLevelSetting
-	73,  // 102: ProtoListSetting.defaultListLevelSetting:type_name -> ProtoListLevelSetting
-	79,  // 103: ProtoBoxedListSetting.value:type_name -> ProtoListSetting
-	70,  // 104: ProtoNamedString._children:type_name -> ProtoDocumentElement
-	70,  // 105: ProtoNamedString.parent:type_name -> ProtoDocumentElement
-	70,  // 106: ProtoParagraph._children:type_name -> ProtoDocumentElement
-	70,  // 107: ProtoParagraph.parent:type_name -> ProtoDocumentElement
-	83,  // 108: ProtoParagraph.format:type_name -> ProtoParagraphFormat
-	83,  // 109: ProtoParagraph.overwrite:type_name -> ProtoParagraphFormat
-	83,  // 110: ProtoParagraphFormat.baseFormat:type_name -> ProtoParagraphFormat
-	37,  // 111: ProtoParagraphFormat.name:type_name -> ProtoBoxedString
-	33,  // 112: ProtoParagraphFormat.default:type_name -> ProtoBoxedBool
-	47,  // 113: ProtoParagraphFormat.font:type_name -> ProtoBoxedFont
-	33,  // 114: ProtoParagraphFormat.bold:type_name -> ProtoBoxedBool
-	33,  // 115: ProtoParagraphFormat.italic:type_name -> ProtoBoxedBool
-	49,  // 116: ProtoParagraphFormat.fontColor:type_name -> ProtoBoxedColor
-	65,  // 117: ProtoParagraphFormat.underline:type_name -> ProtoBoxedUnderlineSpec
-	42,  // 118: ProtoParagraphFormat.fontSize:type_name -> ProtoBoxedMeasure
-	42,  // 119: ProtoParagraphFormat.characterWidth:type_name -> ProtoBoxedMeasure
-	42,  // 120: ProtoParagraphFormat.characterSpacing:type_name -> ProtoBoxedMeasure
-	42,  // 121: ProtoParagraphFormat.lineFeed:type_name -> ProtoBoxedMeasure
-	52,  // 122: ProtoParagraphFormat.alignment:type_name -> ProtoBoxedHorizontalAlignment
-	42,  // 123: ProtoParagraphFormat.indentionWidth:type_name -> ProtoBoxedMeasure
-	35,  // 124: ProtoParagraphFormat.indentionLevel:type_name -> ProtoBoxedInt32
-	42,  // 125: ProtoParagraphFormat.spaceAbove:type_name -> ProtoBoxedMeasure
-	42,  // 126: ProtoParagraphFormat.spaceBelow:type_name -> ProtoBoxedMeasure
-	35,  // 127: ProtoParagraphFormat.widowSetting:type_name -> ProtoBoxedInt32
-	35,  // 128: ProtoParagraphFormat.orphanSetting:type_name -> ProtoBoxedInt32
-	35,  // 129: ProtoParagraphFormat.widowPriority:type_name -> ProtoBoxedInt32
-	40,  // 130: ProtoParagraphFormat.strikethrough:type_name -> ProtoBoxedStrikethroughSpec
-	38,  // 131: ProtoParagraphFormat.superscriptSubscript:type_name -> ProtoBoxedSPBMode
-	49,  // 132: ProtoParagraphFormat.backgroundColor:type_name -> ProtoBoxedColor
-	80,  // 133: ProtoParagraphFormat.listSetting:type_name -> ProtoBoxedListSetting
-	33,  // 134: ProtoParagraphFormat.hyphenation:type_name -> ProtoBoxedBool
-	37,  // 135: ProtoParagraphFormat.preNamedString:type_name -> ProtoBoxedString
-	37,  // 136: ProtoParagraphFormat.postNamedString:type_name -> ProtoBoxedString
-	37,  // 137: ProtoParagraphFormat.semanticType:type_name -> ProtoBoxedString
-	70,  // 138: ProtoSection._children:type_name -> ProtoDocumentElement
-	70,  // 139: ProtoSection.parent:type_name -> ProtoDocumentElement
-	70,  // 140: ProtoSpaceVertically.parent:type_name -> ProtoDocumentElement
-	41,  // 141: ProtoSpaceVertically.space:type_name -> ProtoMeasure
-	70,  // 142: ProtoSpan._children:type_name -> ProtoDocumentElement
-	70,  // 143: ProtoSpan.parent:type_name -> ProtoDocumentElement
-	33,  // 144: ProtoSpan.bold:type_name -> ProtoBoxedBool
-	33,  // 145: ProtoSpan.italic:type_name -> ProtoBoxedBool
-	48,  // 146: ProtoSpan.color:type_name -> ProtoColor
-	33,  // 147: ProtoSpan.subscript:type_name -> ProtoBoxedBool
-	33,  // 148: ProtoSpan.superscript:type_name -> ProtoBoxedBool
-	33,  // 149: ProtoSpan.underline:type_name -> ProtoBoxedBool
-	33,  // 150: ProtoSpan.strikethrough:type_name -> ProtoBoxedBool
-	70,  // 151: ProtoTable._children:type_name -> ProtoDocumentElement
-	70,  // 152: ProtoTable.parent:type_name -> ProtoDocumentElement
-	89,  // 153: ProtoTable.settings:type_name -> ProtoTableSettings
-	110, // 154: ProtoTable.carryOver:type_name -> Node
-	110, // 155: ProtoTable.subTotal:type_name -> Node
-	102, // 156: ProtoTable.elementProperties:type_name -> ProtoTableElementProperties
-	70,  // 157: ProtoTableConfig.parent:type_name -> ProtoDocumentElement
-	89,  // 158: ProtoTableConfig.settings:type_name -> ProtoTableSettings
-	41,  // 159: ProtoTableSettings.xOffset:type_name -> ProtoMeasure
-	33,  // 160: ProtoTableSettings.leftMeasure:type_name -> ProtoBoxedBool
-	41,  // 161: ProtoTableSettings.width:type_name -> ProtoMeasure
-	36,  // 162: ProtoTableSettings.repeatHeader:type_name -> ProtoBoxedUint32
-	101, // 163: ProtoTableSettings.ws:type_name -> ProtoTableWS
-	33,  // 164: ProtoTableSettings.noDocumentStructure:type_name -> ProtoBoxedBool
-	36,  // 165: ProtoTableSettings.repeatSubHeader:type_name -> ProtoBoxedUint32
-	18,  // 166: ProtoBoxedTableContentGroupType.value:type_name -> ProtoTableContentGroupType
-	70,  // 167: ProtoTableContentGroup._children:type_name -> ProtoDocumentElement
-	70,  // 168: ProtoTableContentGroup.parent:type_name -> ProtoDocumentElement
-	93,  // 169: ProtoTableContentGroup.settings:type_name -> ProtoTableContentGroupSettings
-	102, // 170: ProtoTableContentGroup.elementProperties:type_name -> ProtoTableElementProperties
-	70,  // 171: ProtoTableContentGroupConfig.parent:type_name -> ProtoDocumentElement
-	93,  // 172: ProtoTableContentGroupConfig.settings:type_name -> ProtoTableContentGroupSettings
-	90,  // 173: ProtoTableContentGroupSettings.contentGroupType:type_name -> ProtoBoxedTableContentGroupType
-	48,  // 174: ProtoTableContentGroupSettings.backgroundColors:type_name -> ProtoColor
-	101, // 175: ProtoTableContentGroupSettings.ws:type_name -> ProtoTableWS
-	70,  // 176: ProtoTableRow._children:type_name -> ProtoDocumentElement
-	70,  // 177: ProtoTableRow.parent:type_name -> ProtoDocumentElement
-	96,  // 178: ProtoTableRow.settings:type_name -> ProtoTableRowSettings
-	36,  // 179: ProtoTableRow.rowConfigNumber:type_name -> ProtoBoxedUint32
-	102, // 180: ProtoTableRow.elementProperties:type_name -> ProtoTableElementProperties
-	70,  // 181: ProtoTableRowConfig.parent:type_name -> ProtoDocumentElement
-	96,  // 182: ProtoTableRowConfig.settings:type_name -> ProtoTableRowSettings
-	41,  // 183: ProtoTableRowSettings.minHeight:type_name -> ProtoMeasure
-	101, // 184: ProtoTableRowSettings.ws:type_name -> ProtoTableWS
-	19,  // 185: ProtoBoxedTableCellType.value:type_name -> ProtoTableCellType
-	70,  // 186: ProtoTableCell._children:type_name -> ProtoDocumentElement
-	70,  // 187: ProtoTableCell.parent:type_name -> ProtoDocumentElement
-	100, // 188: ProtoTableCell.settings:type_name -> ProtoTableCellSettings
-	36,  // 189: ProtoTableCell.cellConfigNumber:type_name -> ProtoBoxedUint32
-	102, // 190: ProtoTableCell.elementProperties:type_name -> ProtoTableElementProperties
-	70,  // 191: ProtoTableCellConfig.parent:type_name -> ProtoDocumentElement
-	100, // 192: ProtoTableCellConfig.settings:type_name -> ProtoTableCellSettings
-	97,  // 193: ProtoTableCellConfig.cellType:type_name -> ProtoBoxedTableCellType
-	41,  // 194: ProtoTableCellSettings.width:type_name -> ProtoMeasure
-	52,  // 195: ProtoTableCellSettings.align:type_name -> ProtoBoxedHorizontalAlignment
-	53,  // 196: ProtoTableCellSettings.valign:type_name -> ProtoBoxedVerticalAlignment
-	48,  // 197: ProtoTableCellSettings.backgroundColor:type_name -> ProtoColor
-	43,  // 198: ProtoTableCellSettings.padding:type_name -> ProtoSideMeasures
-	59,  // 199: ProtoTableCellSettings.border:type_name -> ProtoSideBorders
-	43,  // 200: ProtoTableCellSettings.margin:type_name -> ProtoSideMeasures
-	34,  // 201: ProtoTableCellSettings.rotation:type_name -> ProtoBoxedDouble
-	37,  // 202: ProtoTableCellSettings.defaultParagraphFormat:type_name -> ProtoBoxedString
-	14,  // 203: ProtoTableElementProperties.widthInheritance:type_name -> Inheritance
-	41,  // 204: ProtoTableElementProperties.width:type_name -> ProtoMeasure
-	14,  // 205: ProtoTableElementProperties.alignInheritance:type_name -> Inheritance
-	52,  // 206: ProtoTableElementProperties.align:type_name -> ProtoBoxedHorizontalAlignment
-	14,  // 207: ProtoTableElementProperties.valignInheritance:type_name -> Inheritance
-	53,  // 208: ProtoTableElementProperties.valign:type_name -> ProtoBoxedVerticalAlignment
-	14,  // 209: ProtoTableElementProperties.backgroundColorInheritance:type_name -> Inheritance
-	48,  // 210: ProtoTableElementProperties.backgroundColor:type_name -> ProtoColor
-	14,  // 211: ProtoTableElementProperties.paddingTopInheritance:type_name -> Inheritance
-	41,  // 212: ProtoTableElementProperties.paddingTop:type_name -> ProtoMeasure
-	14,  // 213: ProtoTableElementProperties.paddingRightInheritance:type_name -> Inheritance
-	41,  // 214: ProtoTableElementProperties.paddingRight:type_name -> ProtoMeasure
-	14,  // 215: ProtoTableElementProperties.paddingBottomInheritance:type_name -> Inheritance
-	41,  // 216: ProtoTableElementProperties.paddingBottom:type_name -> ProtoMeasure
-	14,  // 217: ProtoTableElementProperties.paddingLeftInheritance:type_name -> Inheritance
-	41,  // 218: ProtoTableElementProperties.paddingLeft:type_name -> ProtoMeasure
-	14,  // 219: ProtoTableElementProperties.borderTopColorInheritance:type_name -> Inheritance
-	48,  // 220: ProtoTableElementProperties.borderTopColor:type_name -> ProtoColor
-	14,  // 221: ProtoTableElementProperties.borderTopWeightInheritance:type_name -> Inheritance
-	41,  // 222: ProtoTableElementProperties.borderTopWeight:type_name -> ProtoMeasure
-	14,  // 223: ProtoTableElementProperties.borderRightColorInheritance:type_name -> Inheritance
-	48,  // 224: ProtoTableElementProperties.borderRightColor:type_name -> ProtoColor
-	14,  // 225: ProtoTableElementProperties.borderRightWeightInheritance:type_name -> Inheritance
-	41,  // 226: ProtoTableElementProperties.borderRightWeight:type_name -> ProtoMeasure
-	14,  // 227: ProtoTableElementProperties.borderBottomColorInheritance:type_name -> Inheritance
-	48,  // 228: ProtoTableElementProperties.borderBottomColor:type_name -> ProtoColor
-	14,  // 229: ProtoTableElementProperties.borderBottomWeightInheritance:type_name -> Inheritance
-	41,  // 230: ProtoTableElementProperties.borderBottomWeight:type_name -> ProtoMeasure
-	14,  // 231: ProtoTableElementProperties.borderLeftColorInheritance:type_name -> Inheritance
-	48,  // 232: ProtoTableElementProperties.borderLeftColor:type_name -> ProtoColor
-	14,  // 233: ProtoTableElementProperties.borderLeftWeightInheritance:type_name -> Inheritance
-	41,  // 234: ProtoTableElementProperties.borderLeftWeight:type_name -> ProtoMeasure
-	14,  // 235: ProtoTableElementProperties.marginTopInheritance:type_name -> Inheritance
-	41,  // 236: ProtoTableElementProperties.marginTop:type_name -> ProtoMeasure
-	14,  // 237: ProtoTableElementProperties.marginRightInheritance:type_name -> Inheritance
-	41,  // 238: ProtoTableElementProperties.marginRight:type_name -> ProtoMeasure
-	14,  // 239: ProtoTableElementProperties.marginBottomInheritance:type_name -> Inheritance
-	41,  // 240: ProtoTableElementProperties.marginBottom:type_name -> ProtoMeasure
-	14,  // 241: ProtoTableElementProperties.marginLeftInheritance:type_name -> Inheritance
-	41,  // 242: ProtoTableElementProperties.marginLeft:type_name -> ProtoMeasure
-	14,  // 243: ProtoTableElementProperties.rotationInheritance:type_name -> Inheritance
-	34,  // 244: ProtoTableElementProperties.rotation:type_name -> ProtoBoxedDouble
-	14,  // 245: ProtoTableElementProperties.defaultParagraphFormatUUIDInheritance:type_name -> Inheritance
-	37,  // 246: ProtoTableElementProperties.defaultParagraphFormatUUID:type_name -> ProtoBoxedString
-	14,  // 247: ProtoTableElementProperties.tableContentGroupTypeInheritance:type_name -> Inheritance
-	90,  // 248: ProtoTableElementProperties.tableContentGroupType:type_name -> ProtoBoxedTableContentGroupType
-	14,  // 249: ProtoTableElementProperties.cellTypeInheritance:type_name -> Inheritance
-	97,  // 250: ProtoTableElementProperties.cellType:type_name -> ProtoBoxedTableCellType
-	14,  // 251: ProtoTableElementProperties.minRowHeightInheritance:type_name -> Inheritance
-	41,  // 252: ProtoTableElementProperties.minRowHeight:type_name -> ProtoMeasure
-	14,  // 253: ProtoTableElementProperties.wsInheritance:type_name -> Inheritance
-	101, // 254: ProtoTableElementProperties.ws:type_name -> ProtoTableWS
-	14,  // 255: ProtoTableElementProperties.xOffsetInheritance:type_name -> Inheritance
-	41,  // 256: ProtoTableElementProperties.xOffset:type_name -> ProtoMeasure
-	14,  // 257: ProtoTableElementProperties.leftMeasureInheritance:type_name -> Inheritance
-	33,  // 258: ProtoTableElementProperties.leftMeasure:type_name -> ProtoBoxedBool
-	14,  // 259: ProtoTableElementProperties.repeatHeaderInheritance:type_name -> Inheritance
-	36,  // 260: ProtoTableElementProperties.repeatHeader:type_name -> ProtoBoxedUint32
-	14,  // 261: ProtoTableElementProperties.noDocumentStructureInheritance:type_name -> Inheritance
-	33,  // 262: ProtoTableElementProperties.noDocumentStructure:type_name -> ProtoBoxedBool
-	14,  // 263: ProtoTableElementProperties.repeatSubHeaderInheritance:type_name -> Inheritance
-	36,  // 264: ProtoTableElementProperties.repeatSubHeader:type_name -> ProtoBoxedUint32
-	70,  // 265: ProtoText.parent:type_name -> ProtoDocumentElement
-	7,   // 266: ProtoBarcode.type:type_name -> ProtoBarcodeType
-	41,  // 267: ProtoBarcode.x:type_name -> ProtoMeasure
-	41,  // 268: ProtoBarcode.y:type_name -> ProtoMeasure
-	11,  // 269: ProtoBarcode.referencePoint:type_name -> ProtoImageReferencePoint
-	41,  // 270: ProtoBarcode.width:type_name -> ProtoMeasure
-	41,  // 271: ProtoBarcode.height:type_name -> ProtoMeasure
-	41,  // 272: ProtoBarcode.padding:type_name -> ProtoMeasure
-	56,  // 273: ProtoBarcode.swissQRData:type_name -> ProtoSwissQRData
-	8,   // 274: ProtoBarcode.uaMode:type_name -> ProtoBarcodeUAMode
-	70,  // 275: ProtoBrick._children:type_name -> ProtoDocumentElement
-	70,  // 276: ProtoBrick.parent:type_name -> ProtoDocumentElement
-	70,  // 277: ProtoTemplate._children:type_name -> ProtoDocumentElement
-	70,  // 278: ProtoTemplate.parent:type_name -> ProtoDocumentElement
-	20,  // 279: ProtoTemplate.columnBalancing:type_name -> ColumnBalancing
-	12,  // 280: ProtoTemplate.semanticType:type_name -> ProtoSemanticType
-	70,  // 281: ProtoHeader._children:type_name -> ProtoDocumentElement
-	70,  // 282: ProtoHeader.parent:type_name -> ProtoDocumentElement
-	21,  // 283: ProtoHeader.mode:type_name -> ProtoHeaderMode
-	70,  // 284: ProtoFooter._children:type_name -> ProtoDocumentElement
-	70,  // 285: ProtoFooter.parent:type_name -> ProtoDocumentElement
-	22,  // 286: ProtoFooter.mode:type_name -> ProtoFooterMode
-	110, // 287: Node.children:type_name -> Node
-	79,  // 288: Node.list_setting:type_name -> ProtoListSetting
-	133, // 289: Node.colorDef:type_name -> ProtoColorDef
-	106, // 290: Node.brick:type_name -> ProtoBrick
-	107, // 291: Node.template:type_name -> ProtoTemplate
-	115, // 292: Node.formatted:type_name -> ProtoFormatted
-	111, // 293: Node.image:type_name -> ProtoImage
-	83,  // 294: Node.paragraph_format:type_name -> ProtoParagraphFormat
-	113, // 295: Node.text_brick:type_name -> ProtoTextBrick
-	103, // 296: Node.text:type_name -> ProtoText
-	57,  // 297: Node.linebreak:type_name -> ProtoLinebreak
-	85,  // 298: Node.space_vertically:type_name -> ProtoSpaceVertically
-	109, // 299: Node.footer:type_name -> ProtoFooter
-	108, // 300: Node.header:type_name -> ProtoHeader
-	87,  // 301: Node.table:type_name -> ProtoTable
-	94,  // 302: Node.table_row:type_name -> ProtoTableRow
-	98,  // 303: Node.table_cell:type_name -> ProtoTableCell
-	120, // 304: Node.c_def:type_name -> ProtoCDef
-	121, // 305: Node.p_def:type_name -> ProtoPDef
-	116, // 306: Node.apply_c_def:type_name -> ProtoApplyProtoCDef
-	117, // 307: Node.apply_p_def:type_name -> ProtoApplyProtoPDef
-	118, // 308: Node.apply_pt_config:type_name -> ProtoApplyPtConfig
-	119, // 309: Node.apply_ul_config:type_name -> ProtoApplyUlConfig
-	122, // 310: Node.pt_config:type_name -> ProtoPtConfig
-	123, // 311: Node.ul_config:type_name -> ProtoUlConfig
-	124, // 312: Node.new_page:type_name -> ProtoNewPage
-	114, // 313: Node.variable:type_name -> ProtoVariable
-	81,  // 314: Node.named_string:type_name -> ProtoNamedString
-	82,  // 315: Node.paragraph:type_name -> ProtoParagraph
-	84,  // 316: Node.section:type_name -> ProtoSection
-	86,  // 317: Node.span:type_name -> ProtoSpan
-	72,  // 318: Node.link:type_name -> ProtoLink
-	112, // 319: Node.directory:type_name -> ProtoDirectory
-	91,  // 320: Node.table_content_group:type_name -> ProtoTableContentGroup
-	88,  // 321: Node.table_config:type_name -> ProtoTableConfig
-	99,  // 322: Node.table_cell_config:type_name -> ProtoTableCellConfig
-	95,  // 323: Node.table_row_config:type_name -> ProtoTableRowConfig
-	92,  // 324: Node.table_content_group_config:type_name -> ProtoTableContentGroupConfig
-	105, // 325: Node.brick_reference:type_name -> ProtoBrickReference
-	125, // 326: Node.indentation:type_name -> ProtoIndentation
-	104, // 327: Node.barcode:type_name -> ProtoBarcode
-	130, // 328: Node.ws_area:type_name -> ProtoWsArea
-	126, // 329: Node.carry_over:type_name -> ProtoCarryOver
-	129, // 330: Node.sub_total:type_name -> ProtoSubTotal
-	128, // 331: Node.loop:type_name -> ProtoLoop
-	127, // 332: Node.loop_entry:type_name -> ProtoLoopEntry
-	131, // 333: Node.rule:type_name -> ProtoRule
-	134, // 334: Node.layout:type_name -> ProtoLayout
-	135, // 335: Node.advanced_illustration_area:type_name -> ProtoAdvancedIllustrationArea
-	136, // 336: Node.adjust_horizontally:type_name -> ProtoAdjustHorizontally
-	137, // 337: Node.doctypeScript:type_name -> ProtoDoctypeScript
-	138, // 338: Node.dmScript:type_name -> ProtoDmScript
-	139, // 339: Node.dynamic_template:type_name -> ProtoDynamicTemplate
-	140, // 340: Node.selection:type_name -> ProtoSelection
-	141, // 341: Node.selection_entry:type_name -> ProtoSelectionEntry
-	142, // 342: Node.condition:type_name -> ProtoCondition
-	143, // 343: Node.page_condition:type_name -> ProtoPageCondition
-	144, // 344: Node.locale:type_name -> ProtoLocale
-	145, // 345: Node.tag:type_name -> ProtoTag
-	146, // 346: Node.paragraph_set_default:type_name -> ProtoParagraphSetDefault
-	148, // 347: Node.input_field_text:type_name -> ProtoInputFieldText
-	149, // 348: Node.input_field_date:type_name -> ProtoInputFieldDate
-	150, // 349: Node.input_field_checkbox:type_name -> ProtoInputFieldCheckbox
-	151, // 350: Node.input_field_label:type_name -> ProtoInputFieldLabel
-	152, // 351: Node.input_field_dropdown:type_name -> ProtoInputFieldDropdown
-	154, // 352: Node.set_color:type_name -> ProtoSetColor
-	155, // 353: Node.unset_color:type_name -> ProtoUnsetColor
-	156, // 354: Node.colored_area:type_name -> ProtoColoredArea
-	157, // 355: Node.chapter:type_name -> ProtoChapter
-	158, // 356: Node.table_of_contents:type_name -> ProtoTableOfContents
-	159, // 357: Node.section_reference:type_name -> ProtoSectionReference
-	160, // 358: Node.chapter_link:type_name -> ProtoChapterLink
-	70,  // 359: ProtoImage.parent:type_name -> ProtoDocumentElement
-	34,  // 360: ProtoImage.scale:type_name -> ProtoBoxedDouble
-	34,  // 361: ProtoImage.columnScale:type_name -> ProtoBoxedDouble
-	42,  // 362: ProtoImage.width:type_name -> ProtoBoxedMeasure
-	42,  // 363: ProtoImage.height:type_name -> ProtoBoxedMeasure
-	42,  // 364: ProtoImage.x:type_name -> ProtoBoxedMeasure
-	42,  // 365: ProtoImage.y:type_name -> ProtoBoxedMeasure
-	33,  // 366: ProtoImage.positionAbsolute:type_name -> ProtoBoxedBool
-	67,  // 367: ProtoImage.flipSettings:type_name -> ProtoFlipSettings
-	66,  // 368: ProtoImage.cropSettings:type_name -> ProtoCropSettings
-	45,  // 369: ProtoImage.aia:type_name -> ProtoAdvancedIllustrationAreaImageSettings
-	11,  // 370: ProtoImage.referencePoint:type_name -> ProtoImageReferencePoint
-	26,  // 371: ProtoImage.imageContentType:type_name -> ProtoImageContentType
-	24,  // 372: ProtoImage.scaleType:type_name -> ProtoImageScaleType
-	25,  // 373: ProtoImage.uaMode:type_name -> ProtoImageUAMode
-	33,  // 374: ProtoImage.leftBorderIsLeftMeasure:type_name -> ProtoBoxedBool
-	70,  // 375: ProtoDirectory._children:type_name -> ProtoDocumentElement
-	70,  // 376: ProtoDirectory.parent:type_name -> ProtoDocumentElement
-	12,  // 377: ProtoDirectory.semanticType:type_name -> ProtoSemanticType
-	70,  // 378: ProtoTextBrick._children:type_name -> ProtoDocumentElement
-	70,  // 379: ProtoTextBrick.parent:type_name -> ProtoDocumentElement
-	70,  // 380: ProtoVariable.parent:type_name -> ProtoDocumentElement
-	27,  // 381: ProtoVariable.specialType:type_name -> ProtoVariableSpecialType
-	70,  // 382: ProtoFormatted.parent:type_name -> ProtoDocumentElement
-	61,  // 383: ProtoCDef.columSettings:type_name -> ProtoColumnSettings
-	33,  // 384: ProtoCDef.applyToHeaderFooter:type_name -> ProtoBoxedBool
-	33,  // 385: ProtoCDef.applyImmediate:type_name -> ProtoBoxedBool
-	42,  // 386: ProtoPDef.pageWidth:type_name -> ProtoBoxedMeasure
-	42,  // 387: ProtoPDef.pageDepth:type_name -> ProtoBoxedMeasure
-	42,  // 388: ProtoPtConfig.height:type_name -> ProtoBoxedMeasure
-	42,  // 389: ProtoPtConfig.lineFeed:type_name -> ProtoBoxedMeasure
-	42,  // 390: ProtoPtConfig.characterWidth:type_name -> ProtoBoxedMeasure
-	42,  // 391: ProtoPtConfig.spaceWidth:type_name -> ProtoBoxedMeasure
-	10,  // 392: ProtoUlConfig.mode:type_name -> ProtoUnderlineMode
-	28,  // 393: ProtoNewPage.pageMode:type_name -> ProtoPageMode
-	29,  // 394: ProtoNewPage.pageOrientation:type_name -> ProtoPageOrientation
-	70,  // 395: ProtoIndentation._children:type_name -> ProtoDocumentElement
-	70,  // 396: ProtoIndentation.parent:type_name -> ProtoDocumentElement
-	42,  // 397: ProtoIndentation.left:type_name -> ProtoBoxedMeasure
-	42,  // 398: ProtoIndentation.right:type_name -> ProtoBoxedMeasure
-	70,  // 399: ProtoCarryOver._children:type_name -> ProtoDocumentElement
-	70,  // 400: ProtoCarryOver.parent:type_name -> ProtoDocumentElement
-	70,  // 401: ProtoLoopEntry._children:type_name -> ProtoDocumentElement
-	70,  // 402: ProtoLoopEntry.parent:type_name -> ProtoDocumentElement
-	70,  // 403: ProtoLoop._children:type_name -> ProtoDocumentElement
-	70,  // 404: ProtoLoop.parent:type_name -> ProtoDocumentElement
-	70,  // 405: ProtoSubTotal._children:type_name -> ProtoDocumentElement
-	70,  // 406: ProtoSubTotal.parent:type_name -> ProtoDocumentElement
-	30,  // 407: ProtoSubTotal.position:type_name -> ProtoSubTotalPosition
-	41,  // 408: ProtoSubTotal.height:type_name -> ProtoMeasure
-	70,  // 409: ProtoWsArea._children:type_name -> ProtoDocumentElement
-	70,  // 410: ProtoWsArea.parent:type_name -> ProtoDocumentElement
-	41,  // 411: ProtoRule.xOffset:type_name -> ProtoMeasure
-	41,  // 412: ProtoRule.yOffset:type_name -> ProtoMeasure
-	41,  // 413: ProtoRule.width:type_name -> ProtoMeasure
-	41,  // 414: ProtoRule.thickness:type_name -> ProtoMeasure
-	48,  // 415: ProtoRule.color:type_name -> ProtoColor
-	1,   // 416: ProtoRule.style:type_name -> ProtoRuleStyle
-	31,  // 417: ProtoRule.mode:type_name -> ProtoRuleMode
-	132, // 418: ProtoRule.boundaries:type_name -> ProtoRuleBoundaries
-	41,  // 419: ProtoRuleBoundaries.start:type_name -> ProtoMeasure
-	41,  // 420: ProtoRuleBoundaries.end:type_name -> ProtoMeasure
-	48,  // 421: ProtoColorDef.color:type_name -> ProtoColor
-	70,  // 422: ProtoLayout.parent:type_name -> ProtoDocumentElement
-	70,  // 423: ProtoAdvancedIllustrationArea._children:type_name -> ProtoDocumentElement
-	70,  // 424: ProtoAdvancedIllustrationArea.parent:type_name -> ProtoDocumentElement
-	41,  // 425: ProtoAdvancedIllustrationArea.width:type_name -> ProtoMeasure
-	41,  // 426: ProtoAdvancedIllustrationArea.height:type_name -> ProtoMeasure
-	41,  // 427: ProtoAdvancedIllustrationArea.x:type_name -> ProtoMeasure
-	41,  // 428: ProtoAdvancedIllustrationArea.y:type_name -> ProtoMeasure
-	3,   // 429: ProtoAdvancedIllustrationArea.textFlow:type_name -> ProtoAdvancedIllustrationAreaTextFlowType
-	70,  // 430: ProtoAdjustHorizontally._children:type_name -> ProtoDocumentElement
-	70,  // 431: ProtoAdjustHorizontally.parent:type_name -> ProtoDocumentElement
-	41,  // 432: ProtoAdjustHorizontally.minFontSize:type_name -> ProtoMeasure
-	41,  // 433: ProtoAdjustHorizontally.maxFontSize:type_name -> ProtoMeasure
-	70,  // 434: ProtoDoctypeScript.parent:type_name -> ProtoDocumentElement
-	32,  // 435: ProtoDoctypeScript.outputMode:type_name -> ProtoDoctypeOutputMode
-	70,  // 436: ProtoDmScript.parent:type_name -> ProtoDocumentElement
-	70,  // 437: ProtoDynamicTemplate.parent:type_name -> ProtoDocumentElement
-	70,  // 438: ProtoSelection._children:type_name -> ProtoDocumentElement
-	70,  // 439: ProtoSelection.parent:type_name -> ProtoDocumentElement
-	70,  // 440: ProtoSelectionEntry._children:type_name -> ProtoDocumentElement
-	70,  // 441: ProtoSelectionEntry.parent:type_name -> ProtoDocumentElement
-	70,  // 442: ProtoCondition._children:type_name -> ProtoDocumentElement
-	70,  // 443: ProtoCondition.parent:type_name -> ProtoDocumentElement
-	70,  // 444: ProtoPageCondition._children:type_name -> ProtoDocumentElement
-	70,  // 445: ProtoPageCondition.parent:type_name -> ProtoDocumentElement
-	70,  // 446: ProtoLocale._children:type_name -> ProtoDocumentElement
-	70,  // 447: ProtoLocale.parent:type_name -> ProtoDocumentElement
-	70,  // 448: ProtoTag.parent:type_name -> ProtoDocumentElement
-	70,  // 449: ProtoParagraphSetDefault.parent:type_name -> ProtoDocumentElement
-	69,  // 450: ProtoBaseTextInputField.base:type_name -> ProtoBaseInputField
-	42,  // 451: ProtoBaseTextInputField.pdf_size:type_name -> ProtoBoxedMeasure
-	42,  // 452: ProtoBaseTextInputField.pdfInputHeight:type_name -> ProtoBoxedMeasure
-	70,  // 453: ProtoInputFieldText.parent:type_name -> ProtoDocumentElement
-	147, // 454: ProtoInputFieldText.base:type_name -> ProtoBaseTextInputField
-	70,  // 455: ProtoInputFieldDate.parent:type_name -> ProtoDocumentElement
-	147, // 456: ProtoInputFieldDate.base:type_name -> ProtoBaseTextInputField
-	70,  // 457: ProtoInputFieldCheckbox.parent:type_name -> ProtoDocumentElement
-	69,  // 458: ProtoInputFieldCheckbox.base:type_name -> ProtoBaseInputField
-	70,  // 459: ProtoInputFieldLabel.parent:type_name -> ProtoDocumentElement
-	147, // 460: ProtoInputFieldLabel.base:type_name -> ProtoBaseTextInputField
-	70,  // 461: ProtoInputFieldDropdown.parent:type_name -> ProtoDocumentElement
-	147, // 462: ProtoInputFieldDropdown.base:type_name -> ProtoBaseTextInputField
-	68,  // 463: ProtoInputFieldDropdown.options:type_name -> ProtoOption
-	48,  // 464: ProtoColorChoice.color:type_name -> ProtoColor
-	70,  // 465: ProtoSetColor.parent:type_name -> ProtoDocumentElement
-	153, // 466: ProtoSetColor.color:type_name -> ProtoColorChoice
-	70,  // 467: ProtoUnsetColor.parent:type_name -> ProtoDocumentElement
-	153, // 468: ProtoUnsetColor.color:type_name -> ProtoColorChoice
-	70,  // 469: ProtoColoredArea.parent:type_name -> ProtoDocumentElement
-	70,  // 470: ProtoColoredArea._children:type_name -> ProtoDocumentElement
-	153, // 471: ProtoColoredArea.color:type_name -> ProtoColorChoice
-	70,  // 472: ProtoChapter._children:type_name -> ProtoDocumentElement
-	70,  // 473: ProtoChapter.parent:type_name -> ProtoDocumentElement
-	70,  // 474: ProtoTableOfContents._children:type_name -> ProtoDocumentElement
-	70,  // 475: ProtoTableOfContents.parent:type_name -> ProtoDocumentElement
-	70,  // 476: ProtoSectionReference.parent:type_name -> ProtoDocumentElement
-	70,  // 477: ProtoChapterLink._children:type_name -> ProtoDocumentElement
-	478, // [478:478] is the sub-list for method output_type
-	478, // [478:478] is the sub-list for method input_type
-	478, // [478:478] is the sub-list for extension type_name
-	478, // [478:478] is the sub-list for extension extendee
-	0,   // [0:478] is the sub-list for field type_name
+	71,  // 100: ProtoListSetting.parent:type_name -> ProtoDocumentElement
+	74,  // 101: ProtoListSetting.listLevelSettings:type_name -> ProtoListLevelSetting
+	74,  // 102: ProtoListSetting.defaultListLevelSetting:type_name -> ProtoListLevelSetting
+	80,  // 103: ProtoBoxedListSetting.value:type_name -> ProtoListSetting
+	71,  // 104: ProtoNamedString._children:type_name -> ProtoDocumentElement
+	71,  // 105: ProtoNamedString.parent:type_name -> ProtoDocumentElement
+	71,  // 106: ProtoParagraph._children:type_name -> ProtoDocumentElement
+	71,  // 107: ProtoParagraph.parent:type_name -> ProtoDocumentElement
+	85,  // 108: ProtoParagraph.format:type_name -> ProtoParagraphFormat
+	85,  // 109: ProtoParagraph.overwrite:type_name -> ProtoParagraphFormat
+	18,  // 110: ProtoBoxedBookmarkIndentationMode.value:type_name -> ProtoBookmarkIndentationMode
+	85,  // 111: ProtoParagraphFormat.baseFormat:type_name -> ProtoParagraphFormat
+	38,  // 112: ProtoParagraphFormat.name:type_name -> ProtoBoxedString
+	34,  // 113: ProtoParagraphFormat.default:type_name -> ProtoBoxedBool
+	48,  // 114: ProtoParagraphFormat.font:type_name -> ProtoBoxedFont
+	34,  // 115: ProtoParagraphFormat.bold:type_name -> ProtoBoxedBool
+	34,  // 116: ProtoParagraphFormat.italic:type_name -> ProtoBoxedBool
+	50,  // 117: ProtoParagraphFormat.fontColor:type_name -> ProtoBoxedColor
+	66,  // 118: ProtoParagraphFormat.underline:type_name -> ProtoBoxedUnderlineSpec
+	43,  // 119: ProtoParagraphFormat.fontSize:type_name -> ProtoBoxedMeasure
+	43,  // 120: ProtoParagraphFormat.characterWidth:type_name -> ProtoBoxedMeasure
+	43,  // 121: ProtoParagraphFormat.characterSpacing:type_name -> ProtoBoxedMeasure
+	43,  // 122: ProtoParagraphFormat.lineFeed:type_name -> ProtoBoxedMeasure
+	53,  // 123: ProtoParagraphFormat.alignment:type_name -> ProtoBoxedHorizontalAlignment
+	43,  // 124: ProtoParagraphFormat.indentionWidth:type_name -> ProtoBoxedMeasure
+	36,  // 125: ProtoParagraphFormat.indentionLevel:type_name -> ProtoBoxedInt32
+	43,  // 126: ProtoParagraphFormat.spaceAbove:type_name -> ProtoBoxedMeasure
+	43,  // 127: ProtoParagraphFormat.spaceBelow:type_name -> ProtoBoxedMeasure
+	36,  // 128: ProtoParagraphFormat.widowSetting:type_name -> ProtoBoxedInt32
+	36,  // 129: ProtoParagraphFormat.orphanSetting:type_name -> ProtoBoxedInt32
+	36,  // 130: ProtoParagraphFormat.widowPriority:type_name -> ProtoBoxedInt32
+	41,  // 131: ProtoParagraphFormat.strikethrough:type_name -> ProtoBoxedStrikethroughSpec
+	39,  // 132: ProtoParagraphFormat.superscriptSubscript:type_name -> ProtoBoxedSPBMode
+	50,  // 133: ProtoParagraphFormat.backgroundColor:type_name -> ProtoBoxedColor
+	81,  // 134: ProtoParagraphFormat.listSetting:type_name -> ProtoBoxedListSetting
+	34,  // 135: ProtoParagraphFormat.hyphenation:type_name -> ProtoBoxedBool
+	38,  // 136: ProtoParagraphFormat.preNamedString:type_name -> ProtoBoxedString
+	38,  // 137: ProtoParagraphFormat.postNamedString:type_name -> ProtoBoxedString
+	38,  // 138: ProtoParagraphFormat.semanticType:type_name -> ProtoBoxedString
+	36,  // 139: ProtoParagraphFormat.bookmarkIndentationLevel:type_name -> ProtoBoxedInt32
+	84,  // 140: ProtoParagraphFormat.bookmarkIndentationMode:type_name -> ProtoBoxedBookmarkIndentationMode
+	34,  // 141: ProtoParagraphFormat.skipSpaceOnStartOfColumn:type_name -> ProtoBoxedBool
+	71,  // 142: ProtoSection._children:type_name -> ProtoDocumentElement
+	71,  // 143: ProtoSection.parent:type_name -> ProtoDocumentElement
+	71,  // 144: ProtoSpaceVertically.parent:type_name -> ProtoDocumentElement
+	42,  // 145: ProtoSpaceVertically.space:type_name -> ProtoMeasure
+	71,  // 146: ProtoSpan._children:type_name -> ProtoDocumentElement
+	71,  // 147: ProtoSpan.parent:type_name -> ProtoDocumentElement
+	34,  // 148: ProtoSpan.bold:type_name -> ProtoBoxedBool
+	34,  // 149: ProtoSpan.italic:type_name -> ProtoBoxedBool
+	49,  // 150: ProtoSpan.color:type_name -> ProtoColor
+	34,  // 151: ProtoSpan.subscript:type_name -> ProtoBoxedBool
+	34,  // 152: ProtoSpan.superscript:type_name -> ProtoBoxedBool
+	34,  // 153: ProtoSpan.underline:type_name -> ProtoBoxedBool
+	34,  // 154: ProtoSpan.strikethrough:type_name -> ProtoBoxedBool
+	71,  // 155: ProtoTable._children:type_name -> ProtoDocumentElement
+	71,  // 156: ProtoTable.parent:type_name -> ProtoDocumentElement
+	91,  // 157: ProtoTable.settings:type_name -> ProtoTableSettings
+	112, // 158: ProtoTable.carryOver:type_name -> Node
+	112, // 159: ProtoTable.subTotal:type_name -> Node
+	104, // 160: ProtoTable.elementProperties:type_name -> ProtoTableElementProperties
+	71,  // 161: ProtoTableConfig.parent:type_name -> ProtoDocumentElement
+	91,  // 162: ProtoTableConfig.settings:type_name -> ProtoTableSettings
+	42,  // 163: ProtoTableSettings.xOffset:type_name -> ProtoMeasure
+	34,  // 164: ProtoTableSettings.leftMeasure:type_name -> ProtoBoxedBool
+	42,  // 165: ProtoTableSettings.width:type_name -> ProtoMeasure
+	37,  // 166: ProtoTableSettings.repeatHeader:type_name -> ProtoBoxedUint32
+	103, // 167: ProtoTableSettings.ws:type_name -> ProtoTableWS
+	34,  // 168: ProtoTableSettings.noDocumentStructure:type_name -> ProtoBoxedBool
+	37,  // 169: ProtoTableSettings.repeatSubHeader:type_name -> ProtoBoxedUint32
+	19,  // 170: ProtoBoxedTableContentGroupType.value:type_name -> ProtoTableContentGroupType
+	71,  // 171: ProtoTableContentGroup._children:type_name -> ProtoDocumentElement
+	71,  // 172: ProtoTableContentGroup.parent:type_name -> ProtoDocumentElement
+	95,  // 173: ProtoTableContentGroup.settings:type_name -> ProtoTableContentGroupSettings
+	104, // 174: ProtoTableContentGroup.elementProperties:type_name -> ProtoTableElementProperties
+	71,  // 175: ProtoTableContentGroupConfig.parent:type_name -> ProtoDocumentElement
+	95,  // 176: ProtoTableContentGroupConfig.settings:type_name -> ProtoTableContentGroupSettings
+	92,  // 177: ProtoTableContentGroupSettings.contentGroupType:type_name -> ProtoBoxedTableContentGroupType
+	49,  // 178: ProtoTableContentGroupSettings.backgroundColors:type_name -> ProtoColor
+	103, // 179: ProtoTableContentGroupSettings.ws:type_name -> ProtoTableWS
+	71,  // 180: ProtoTableRow._children:type_name -> ProtoDocumentElement
+	71,  // 181: ProtoTableRow.parent:type_name -> ProtoDocumentElement
+	98,  // 182: ProtoTableRow.settings:type_name -> ProtoTableRowSettings
+	37,  // 183: ProtoTableRow.rowConfigNumber:type_name -> ProtoBoxedUint32
+	104, // 184: ProtoTableRow.elementProperties:type_name -> ProtoTableElementProperties
+	71,  // 185: ProtoTableRowConfig.parent:type_name -> ProtoDocumentElement
+	98,  // 186: ProtoTableRowConfig.settings:type_name -> ProtoTableRowSettings
+	42,  // 187: ProtoTableRowSettings.minHeight:type_name -> ProtoMeasure
+	103, // 188: ProtoTableRowSettings.ws:type_name -> ProtoTableWS
+	20,  // 189: ProtoBoxedTableCellType.value:type_name -> ProtoTableCellType
+	71,  // 190: ProtoTableCell._children:type_name -> ProtoDocumentElement
+	71,  // 191: ProtoTableCell.parent:type_name -> ProtoDocumentElement
+	102, // 192: ProtoTableCell.settings:type_name -> ProtoTableCellSettings
+	37,  // 193: ProtoTableCell.cellConfigNumber:type_name -> ProtoBoxedUint32
+	104, // 194: ProtoTableCell.elementProperties:type_name -> ProtoTableElementProperties
+	71,  // 195: ProtoTableCellConfig.parent:type_name -> ProtoDocumentElement
+	102, // 196: ProtoTableCellConfig.settings:type_name -> ProtoTableCellSettings
+	99,  // 197: ProtoTableCellConfig.cellType:type_name -> ProtoBoxedTableCellType
+	42,  // 198: ProtoTableCellSettings.width:type_name -> ProtoMeasure
+	53,  // 199: ProtoTableCellSettings.align:type_name -> ProtoBoxedHorizontalAlignment
+	54,  // 200: ProtoTableCellSettings.valign:type_name -> ProtoBoxedVerticalAlignment
+	49,  // 201: ProtoTableCellSettings.backgroundColor:type_name -> ProtoColor
+	44,  // 202: ProtoTableCellSettings.padding:type_name -> ProtoSideMeasures
+	60,  // 203: ProtoTableCellSettings.border:type_name -> ProtoSideBorders
+	44,  // 204: ProtoTableCellSettings.margin:type_name -> ProtoSideMeasures
+	35,  // 205: ProtoTableCellSettings.rotation:type_name -> ProtoBoxedDouble
+	38,  // 206: ProtoTableCellSettings.defaultParagraphFormat:type_name -> ProtoBoxedString
+	14,  // 207: ProtoTableElementProperties.widthInheritance:type_name -> Inheritance
+	42,  // 208: ProtoTableElementProperties.width:type_name -> ProtoMeasure
+	14,  // 209: ProtoTableElementProperties.alignInheritance:type_name -> Inheritance
+	53,  // 210: ProtoTableElementProperties.align:type_name -> ProtoBoxedHorizontalAlignment
+	14,  // 211: ProtoTableElementProperties.valignInheritance:type_name -> Inheritance
+	54,  // 212: ProtoTableElementProperties.valign:type_name -> ProtoBoxedVerticalAlignment
+	14,  // 213: ProtoTableElementProperties.backgroundColorInheritance:type_name -> Inheritance
+	49,  // 214: ProtoTableElementProperties.backgroundColor:type_name -> ProtoColor
+	14,  // 215: ProtoTableElementProperties.paddingTopInheritance:type_name -> Inheritance
+	42,  // 216: ProtoTableElementProperties.paddingTop:type_name -> ProtoMeasure
+	14,  // 217: ProtoTableElementProperties.paddingRightInheritance:type_name -> Inheritance
+	42,  // 218: ProtoTableElementProperties.paddingRight:type_name -> ProtoMeasure
+	14,  // 219: ProtoTableElementProperties.paddingBottomInheritance:type_name -> Inheritance
+	42,  // 220: ProtoTableElementProperties.paddingBottom:type_name -> ProtoMeasure
+	14,  // 221: ProtoTableElementProperties.paddingLeftInheritance:type_name -> Inheritance
+	42,  // 222: ProtoTableElementProperties.paddingLeft:type_name -> ProtoMeasure
+	14,  // 223: ProtoTableElementProperties.borderTopColorInheritance:type_name -> Inheritance
+	49,  // 224: ProtoTableElementProperties.borderTopColor:type_name -> ProtoColor
+	14,  // 225: ProtoTableElementProperties.borderTopWeightInheritance:type_name -> Inheritance
+	42,  // 226: ProtoTableElementProperties.borderTopWeight:type_name -> ProtoMeasure
+	14,  // 227: ProtoTableElementProperties.borderRightColorInheritance:type_name -> Inheritance
+	49,  // 228: ProtoTableElementProperties.borderRightColor:type_name -> ProtoColor
+	14,  // 229: ProtoTableElementProperties.borderRightWeightInheritance:type_name -> Inheritance
+	42,  // 230: ProtoTableElementProperties.borderRightWeight:type_name -> ProtoMeasure
+	14,  // 231: ProtoTableElementProperties.borderBottomColorInheritance:type_name -> Inheritance
+	49,  // 232: ProtoTableElementProperties.borderBottomColor:type_name -> ProtoColor
+	14,  // 233: ProtoTableElementProperties.borderBottomWeightInheritance:type_name -> Inheritance
+	42,  // 234: ProtoTableElementProperties.borderBottomWeight:type_name -> ProtoMeasure
+	14,  // 235: ProtoTableElementProperties.borderLeftColorInheritance:type_name -> Inheritance
+	49,  // 236: ProtoTableElementProperties.borderLeftColor:type_name -> ProtoColor
+	14,  // 237: ProtoTableElementProperties.borderLeftWeightInheritance:type_name -> Inheritance
+	42,  // 238: ProtoTableElementProperties.borderLeftWeight:type_name -> ProtoMeasure
+	14,  // 239: ProtoTableElementProperties.marginTopInheritance:type_name -> Inheritance
+	42,  // 240: ProtoTableElementProperties.marginTop:type_name -> ProtoMeasure
+	14,  // 241: ProtoTableElementProperties.marginRightInheritance:type_name -> Inheritance
+	42,  // 242: ProtoTableElementProperties.marginRight:type_name -> ProtoMeasure
+	14,  // 243: ProtoTableElementProperties.marginBottomInheritance:type_name -> Inheritance
+	42,  // 244: ProtoTableElementProperties.marginBottom:type_name -> ProtoMeasure
+	14,  // 245: ProtoTableElementProperties.marginLeftInheritance:type_name -> Inheritance
+	42,  // 246: ProtoTableElementProperties.marginLeft:type_name -> ProtoMeasure
+	14,  // 247: ProtoTableElementProperties.rotationInheritance:type_name -> Inheritance
+	35,  // 248: ProtoTableElementProperties.rotation:type_name -> ProtoBoxedDouble
+	14,  // 249: ProtoTableElementProperties.defaultParagraphFormatUUIDInheritance:type_name -> Inheritance
+	38,  // 250: ProtoTableElementProperties.defaultParagraphFormatUUID:type_name -> ProtoBoxedString
+	14,  // 251: ProtoTableElementProperties.tableContentGroupTypeInheritance:type_name -> Inheritance
+	92,  // 252: ProtoTableElementProperties.tableContentGroupType:type_name -> ProtoBoxedTableContentGroupType
+	14,  // 253: ProtoTableElementProperties.cellTypeInheritance:type_name -> Inheritance
+	99,  // 254: ProtoTableElementProperties.cellType:type_name -> ProtoBoxedTableCellType
+	14,  // 255: ProtoTableElementProperties.minRowHeightInheritance:type_name -> Inheritance
+	42,  // 256: ProtoTableElementProperties.minRowHeight:type_name -> ProtoMeasure
+	14,  // 257: ProtoTableElementProperties.wsInheritance:type_name -> Inheritance
+	103, // 258: ProtoTableElementProperties.ws:type_name -> ProtoTableWS
+	14,  // 259: ProtoTableElementProperties.xOffsetInheritance:type_name -> Inheritance
+	42,  // 260: ProtoTableElementProperties.xOffset:type_name -> ProtoMeasure
+	14,  // 261: ProtoTableElementProperties.leftMeasureInheritance:type_name -> Inheritance
+	34,  // 262: ProtoTableElementProperties.leftMeasure:type_name -> ProtoBoxedBool
+	14,  // 263: ProtoTableElementProperties.repeatHeaderInheritance:type_name -> Inheritance
+	37,  // 264: ProtoTableElementProperties.repeatHeader:type_name -> ProtoBoxedUint32
+	14,  // 265: ProtoTableElementProperties.noDocumentStructureInheritance:type_name -> Inheritance
+	34,  // 266: ProtoTableElementProperties.noDocumentStructure:type_name -> ProtoBoxedBool
+	14,  // 267: ProtoTableElementProperties.repeatSubHeaderInheritance:type_name -> Inheritance
+	37,  // 268: ProtoTableElementProperties.repeatSubHeader:type_name -> ProtoBoxedUint32
+	71,  // 269: ProtoText.parent:type_name -> ProtoDocumentElement
+	7,   // 270: ProtoBarcode.type:type_name -> ProtoBarcodeType
+	42,  // 271: ProtoBarcode.x:type_name -> ProtoMeasure
+	42,  // 272: ProtoBarcode.y:type_name -> ProtoMeasure
+	11,  // 273: ProtoBarcode.referencePoint:type_name -> ProtoImageReferencePoint
+	42,  // 274: ProtoBarcode.width:type_name -> ProtoMeasure
+	42,  // 275: ProtoBarcode.height:type_name -> ProtoMeasure
+	42,  // 276: ProtoBarcode.padding:type_name -> ProtoMeasure
+	57,  // 277: ProtoBarcode.swissQRData:type_name -> ProtoSwissQRData
+	8,   // 278: ProtoBarcode.uaMode:type_name -> ProtoBarcodeUAMode
+	71,  // 279: ProtoBrick._children:type_name -> ProtoDocumentElement
+	71,  // 280: ProtoBrick.parent:type_name -> ProtoDocumentElement
+	71,  // 281: ProtoTemplate._children:type_name -> ProtoDocumentElement
+	71,  // 282: ProtoTemplate.parent:type_name -> ProtoDocumentElement
+	21,  // 283: ProtoTemplate.columnBalancing:type_name -> ColumnBalancing
+	12,  // 284: ProtoTemplate.semanticType:type_name -> ProtoSemanticType
+	71,  // 285: ProtoHeader._children:type_name -> ProtoDocumentElement
+	71,  // 286: ProtoHeader.parent:type_name -> ProtoDocumentElement
+	22,  // 287: ProtoHeader.mode:type_name -> ProtoHeaderMode
+	71,  // 288: ProtoFooter._children:type_name -> ProtoDocumentElement
+	71,  // 289: ProtoFooter.parent:type_name -> ProtoDocumentElement
+	23,  // 290: ProtoFooter.mode:type_name -> ProtoFooterMode
+	112, // 291: Node.children:type_name -> Node
+	80,  // 292: Node.list_setting:type_name -> ProtoListSetting
+	135, // 293: Node.colorDef:type_name -> ProtoColorDef
+	108, // 294: Node.brick:type_name -> ProtoBrick
+	109, // 295: Node.template:type_name -> ProtoTemplate
+	117, // 296: Node.formatted:type_name -> ProtoFormatted
+	113, // 297: Node.image:type_name -> ProtoImage
+	85,  // 298: Node.paragraph_format:type_name -> ProtoParagraphFormat
+	115, // 299: Node.text_brick:type_name -> ProtoTextBrick
+	105, // 300: Node.text:type_name -> ProtoText
+	58,  // 301: Node.linebreak:type_name -> ProtoLinebreak
+	87,  // 302: Node.space_vertically:type_name -> ProtoSpaceVertically
+	111, // 303: Node.footer:type_name -> ProtoFooter
+	110, // 304: Node.header:type_name -> ProtoHeader
+	89,  // 305: Node.table:type_name -> ProtoTable
+	96,  // 306: Node.table_row:type_name -> ProtoTableRow
+	100, // 307: Node.table_cell:type_name -> ProtoTableCell
+	122, // 308: Node.c_def:type_name -> ProtoCDef
+	123, // 309: Node.p_def:type_name -> ProtoPDef
+	118, // 310: Node.apply_c_def:type_name -> ProtoApplyProtoCDef
+	119, // 311: Node.apply_p_def:type_name -> ProtoApplyProtoPDef
+	120, // 312: Node.apply_pt_config:type_name -> ProtoApplyPtConfig
+	121, // 313: Node.apply_ul_config:type_name -> ProtoApplyUlConfig
+	124, // 314: Node.pt_config:type_name -> ProtoPtConfig
+	125, // 315: Node.ul_config:type_name -> ProtoUlConfig
+	126, // 316: Node.new_page:type_name -> ProtoNewPage
+	116, // 317: Node.variable:type_name -> ProtoVariable
+	82,  // 318: Node.named_string:type_name -> ProtoNamedString
+	83,  // 319: Node.paragraph:type_name -> ProtoParagraph
+	86,  // 320: Node.section:type_name -> ProtoSection
+	88,  // 321: Node.span:type_name -> ProtoSpan
+	73,  // 322: Node.link:type_name -> ProtoLink
+	114, // 323: Node.directory:type_name -> ProtoDirectory
+	93,  // 324: Node.table_content_group:type_name -> ProtoTableContentGroup
+	90,  // 325: Node.table_config:type_name -> ProtoTableConfig
+	101, // 326: Node.table_cell_config:type_name -> ProtoTableCellConfig
+	97,  // 327: Node.table_row_config:type_name -> ProtoTableRowConfig
+	94,  // 328: Node.table_content_group_config:type_name -> ProtoTableContentGroupConfig
+	107, // 329: Node.brick_reference:type_name -> ProtoBrickReference
+	127, // 330: Node.indentation:type_name -> ProtoIndentation
+	106, // 331: Node.barcode:type_name -> ProtoBarcode
+	132, // 332: Node.ws_area:type_name -> ProtoWsArea
+	128, // 333: Node.carry_over:type_name -> ProtoCarryOver
+	131, // 334: Node.sub_total:type_name -> ProtoSubTotal
+	130, // 335: Node.loop:type_name -> ProtoLoop
+	129, // 336: Node.loop_entry:type_name -> ProtoLoopEntry
+	133, // 337: Node.rule:type_name -> ProtoRule
+	136, // 338: Node.layout:type_name -> ProtoLayout
+	137, // 339: Node.advanced_illustration_area:type_name -> ProtoAdvancedIllustrationArea
+	138, // 340: Node.adjust_horizontally:type_name -> ProtoAdjustHorizontally
+	139, // 341: Node.doctypeScript:type_name -> ProtoDoctypeScript
+	140, // 342: Node.dmScript:type_name -> ProtoDmScript
+	141, // 343: Node.dynamic_template:type_name -> ProtoDynamicTemplate
+	142, // 344: Node.selection:type_name -> ProtoSelection
+	143, // 345: Node.selection_entry:type_name -> ProtoSelectionEntry
+	144, // 346: Node.condition:type_name -> ProtoCondition
+	145, // 347: Node.page_condition:type_name -> ProtoPageCondition
+	146, // 348: Node.locale:type_name -> ProtoLocale
+	147, // 349: Node.tag:type_name -> ProtoTag
+	148, // 350: Node.paragraph_set_default:type_name -> ProtoParagraphSetDefault
+	150, // 351: Node.input_field_text:type_name -> ProtoInputFieldText
+	151, // 352: Node.input_field_date:type_name -> ProtoInputFieldDate
+	152, // 353: Node.input_field_checkbox:type_name -> ProtoInputFieldCheckbox
+	153, // 354: Node.input_field_label:type_name -> ProtoInputFieldLabel
+	154, // 355: Node.input_field_dropdown:type_name -> ProtoInputFieldDropdown
+	156, // 356: Node.set_color:type_name -> ProtoSetColor
+	157, // 357: Node.unset_color:type_name -> ProtoUnsetColor
+	158, // 358: Node.colored_area:type_name -> ProtoColoredArea
+	159, // 359: Node.chapter:type_name -> ProtoChapter
+	160, // 360: Node.table_of_contents:type_name -> ProtoTableOfContents
+	161, // 361: Node.section_reference:type_name -> ProtoSectionReference
+	162, // 362: Node.chapter_link:type_name -> ProtoChapterLink
+	71,  // 363: ProtoImage.parent:type_name -> ProtoDocumentElement
+	35,  // 364: ProtoImage.scale:type_name -> ProtoBoxedDouble
+	35,  // 365: ProtoImage.columnScale:type_name -> ProtoBoxedDouble
+	43,  // 366: ProtoImage.width:type_name -> ProtoBoxedMeasure
+	43,  // 367: ProtoImage.height:type_name -> ProtoBoxedMeasure
+	43,  // 368: ProtoImage.x:type_name -> ProtoBoxedMeasure
+	43,  // 369: ProtoImage.y:type_name -> ProtoBoxedMeasure
+	34,  // 370: ProtoImage.positionAbsolute:type_name -> ProtoBoxedBool
+	68,  // 371: ProtoImage.flipSettings:type_name -> ProtoFlipSettings
+	67,  // 372: ProtoImage.cropSettings:type_name -> ProtoCropSettings
+	46,  // 373: ProtoImage.aia:type_name -> ProtoAdvancedIllustrationAreaImageSettings
+	11,  // 374: ProtoImage.referencePoint:type_name -> ProtoImageReferencePoint
+	27,  // 375: ProtoImage.imageContentType:type_name -> ProtoImageContentType
+	25,  // 376: ProtoImage.scaleType:type_name -> ProtoImageScaleType
+	26,  // 377: ProtoImage.uaMode:type_name -> ProtoImageUAMode
+	34,  // 378: ProtoImage.leftBorderIsLeftMeasure:type_name -> ProtoBoxedBool
+	71,  // 379: ProtoDirectory._children:type_name -> ProtoDocumentElement
+	71,  // 380: ProtoDirectory.parent:type_name -> ProtoDocumentElement
+	12,  // 381: ProtoDirectory.semanticType:type_name -> ProtoSemanticType
+	71,  // 382: ProtoTextBrick._children:type_name -> ProtoDocumentElement
+	71,  // 383: ProtoTextBrick.parent:type_name -> ProtoDocumentElement
+	71,  // 384: ProtoVariable.parent:type_name -> ProtoDocumentElement
+	28,  // 385: ProtoVariable.specialType:type_name -> ProtoVariableSpecialType
+	71,  // 386: ProtoFormatted.parent:type_name -> ProtoDocumentElement
+	62,  // 387: ProtoCDef.columSettings:type_name -> ProtoColumnSettings
+	34,  // 388: ProtoCDef.applyToHeaderFooter:type_name -> ProtoBoxedBool
+	34,  // 389: ProtoCDef.applyImmediate:type_name -> ProtoBoxedBool
+	43,  // 390: ProtoPDef.pageWidth:type_name -> ProtoBoxedMeasure
+	43,  // 391: ProtoPDef.pageDepth:type_name -> ProtoBoxedMeasure
+	43,  // 392: ProtoPtConfig.height:type_name -> ProtoBoxedMeasure
+	43,  // 393: ProtoPtConfig.lineFeed:type_name -> ProtoBoxedMeasure
+	43,  // 394: ProtoPtConfig.characterWidth:type_name -> ProtoBoxedMeasure
+	43,  // 395: ProtoPtConfig.spaceWidth:type_name -> ProtoBoxedMeasure
+	10,  // 396: ProtoUlConfig.mode:type_name -> ProtoUnderlineMode
+	29,  // 397: ProtoNewPage.pageMode:type_name -> ProtoPageMode
+	30,  // 398: ProtoNewPage.pageOrientation:type_name -> ProtoPageOrientation
+	71,  // 399: ProtoIndentation._children:type_name -> ProtoDocumentElement
+	71,  // 400: ProtoIndentation.parent:type_name -> ProtoDocumentElement
+	43,  // 401: ProtoIndentation.left:type_name -> ProtoBoxedMeasure
+	43,  // 402: ProtoIndentation.right:type_name -> ProtoBoxedMeasure
+	71,  // 403: ProtoCarryOver._children:type_name -> ProtoDocumentElement
+	71,  // 404: ProtoCarryOver.parent:type_name -> ProtoDocumentElement
+	71,  // 405: ProtoLoopEntry._children:type_name -> ProtoDocumentElement
+	71,  // 406: ProtoLoopEntry.parent:type_name -> ProtoDocumentElement
+	71,  // 407: ProtoLoop._children:type_name -> ProtoDocumentElement
+	71,  // 408: ProtoLoop.parent:type_name -> ProtoDocumentElement
+	71,  // 409: ProtoSubTotal._children:type_name -> ProtoDocumentElement
+	71,  // 410: ProtoSubTotal.parent:type_name -> ProtoDocumentElement
+	31,  // 411: ProtoSubTotal.position:type_name -> ProtoSubTotalPosition
+	42,  // 412: ProtoSubTotal.height:type_name -> ProtoMeasure
+	71,  // 413: ProtoWsArea._children:type_name -> ProtoDocumentElement
+	71,  // 414: ProtoWsArea.parent:type_name -> ProtoDocumentElement
+	42,  // 415: ProtoRule.xOffset:type_name -> ProtoMeasure
+	42,  // 416: ProtoRule.yOffset:type_name -> ProtoMeasure
+	42,  // 417: ProtoRule.width:type_name -> ProtoMeasure
+	42,  // 418: ProtoRule.thickness:type_name -> ProtoMeasure
+	49,  // 419: ProtoRule.color:type_name -> ProtoColor
+	1,   // 420: ProtoRule.style:type_name -> ProtoRuleStyle
+	32,  // 421: ProtoRule.mode:type_name -> ProtoRuleMode
+	134, // 422: ProtoRule.boundaries:type_name -> ProtoRuleBoundaries
+	42,  // 423: ProtoRuleBoundaries.start:type_name -> ProtoMeasure
+	42,  // 424: ProtoRuleBoundaries.end:type_name -> ProtoMeasure
+	49,  // 425: ProtoColorDef.color:type_name -> ProtoColor
+	71,  // 426: ProtoLayout.parent:type_name -> ProtoDocumentElement
+	71,  // 427: ProtoAdvancedIllustrationArea._children:type_name -> ProtoDocumentElement
+	71,  // 428: ProtoAdvancedIllustrationArea.parent:type_name -> ProtoDocumentElement
+	42,  // 429: ProtoAdvancedIllustrationArea.width:type_name -> ProtoMeasure
+	42,  // 430: ProtoAdvancedIllustrationArea.height:type_name -> ProtoMeasure
+	42,  // 431: ProtoAdvancedIllustrationArea.x:type_name -> ProtoMeasure
+	42,  // 432: ProtoAdvancedIllustrationArea.y:type_name -> ProtoMeasure
+	3,   // 433: ProtoAdvancedIllustrationArea.textFlow:type_name -> ProtoAdvancedIllustrationAreaTextFlowType
+	71,  // 434: ProtoAdjustHorizontally._children:type_name -> ProtoDocumentElement
+	71,  // 435: ProtoAdjustHorizontally.parent:type_name -> ProtoDocumentElement
+	42,  // 436: ProtoAdjustHorizontally.minFontSize:type_name -> ProtoMeasure
+	42,  // 437: ProtoAdjustHorizontally.maxFontSize:type_name -> ProtoMeasure
+	71,  // 438: ProtoDoctypeScript.parent:type_name -> ProtoDocumentElement
+	33,  // 439: ProtoDoctypeScript.outputMode:type_name -> ProtoDoctypeOutputMode
+	71,  // 440: ProtoDmScript.parent:type_name -> ProtoDocumentElement
+	71,  // 441: ProtoDynamicTemplate.parent:type_name -> ProtoDocumentElement
+	71,  // 442: ProtoSelection._children:type_name -> ProtoDocumentElement
+	71,  // 443: ProtoSelection.parent:type_name -> ProtoDocumentElement
+	71,  // 444: ProtoSelectionEntry._children:type_name -> ProtoDocumentElement
+	71,  // 445: ProtoSelectionEntry.parent:type_name -> ProtoDocumentElement
+	71,  // 446: ProtoCondition._children:type_name -> ProtoDocumentElement
+	71,  // 447: ProtoCondition.parent:type_name -> ProtoDocumentElement
+	71,  // 448: ProtoPageCondition._children:type_name -> ProtoDocumentElement
+	71,  // 449: ProtoPageCondition.parent:type_name -> ProtoDocumentElement
+	71,  // 450: ProtoLocale._children:type_name -> ProtoDocumentElement
+	71,  // 451: ProtoLocale.parent:type_name -> ProtoDocumentElement
+	71,  // 452: ProtoTag.parent:type_name -> ProtoDocumentElement
+	71,  // 453: ProtoParagraphSetDefault.parent:type_name -> ProtoDocumentElement
+	70,  // 454: ProtoBaseTextInputField.base:type_name -> ProtoBaseInputField
+	43,  // 455: ProtoBaseTextInputField.pdf_size:type_name -> ProtoBoxedMeasure
+	43,  // 456: ProtoBaseTextInputField.pdfInputHeight:type_name -> ProtoBoxedMeasure
+	71,  // 457: ProtoInputFieldText.parent:type_name -> ProtoDocumentElement
+	149, // 458: ProtoInputFieldText.base:type_name -> ProtoBaseTextInputField
+	71,  // 459: ProtoInputFieldDate.parent:type_name -> ProtoDocumentElement
+	149, // 460: ProtoInputFieldDate.base:type_name -> ProtoBaseTextInputField
+	71,  // 461: ProtoInputFieldCheckbox.parent:type_name -> ProtoDocumentElement
+	70,  // 462: ProtoInputFieldCheckbox.base:type_name -> ProtoBaseInputField
+	71,  // 463: ProtoInputFieldLabel.parent:type_name -> ProtoDocumentElement
+	149, // 464: ProtoInputFieldLabel.base:type_name -> ProtoBaseTextInputField
+	71,  // 465: ProtoInputFieldDropdown.parent:type_name -> ProtoDocumentElement
+	149, // 466: ProtoInputFieldDropdown.base:type_name -> ProtoBaseTextInputField
+	69,  // 467: ProtoInputFieldDropdown.options:type_name -> ProtoOption
+	49,  // 468: ProtoColorChoice.color:type_name -> ProtoColor
+	71,  // 469: ProtoSetColor.parent:type_name -> ProtoDocumentElement
+	155, // 470: ProtoSetColor.color:type_name -> ProtoColorChoice
+	71,  // 471: ProtoUnsetColor.parent:type_name -> ProtoDocumentElement
+	155, // 472: ProtoUnsetColor.color:type_name -> ProtoColorChoice
+	71,  // 473: ProtoColoredArea.parent:type_name -> ProtoDocumentElement
+	71,  // 474: ProtoColoredArea._children:type_name -> ProtoDocumentElement
+	155, // 475: ProtoColoredArea.color:type_name -> ProtoColorChoice
+	71,  // 476: ProtoChapter._children:type_name -> ProtoDocumentElement
+	71,  // 477: ProtoChapter.parent:type_name -> ProtoDocumentElement
+	71,  // 478: ProtoTableOfContents._children:type_name -> ProtoDocumentElement
+	71,  // 479: ProtoTableOfContents.parent:type_name -> ProtoDocumentElement
+	71,  // 480: ProtoSectionReference.parent:type_name -> ProtoDocumentElement
+	71,  // 481: ProtoChapterLink._children:type_name -> ProtoDocumentElement
+	482, // [482:482] is the sub-list for method output_type
+	482, // [482:482] is the sub-list for method input_type
+	482, // [482:482] is the sub-list for extension type_name
+	482, // [482:482] is the sub-list for extension extendee
+	0,   // [0:482] is the sub-list for field type_name
 }
 
 func init() { file_build_docframe_proto_init() }
@@ -16428,7 +16593,7 @@ func file_build_docframe_proto_init() {
 	if File_build_docframe_proto != nil {
 		return
 	}
-	file_build_docframe_proto_msgTypes[77].OneofWrappers = []any{
+	file_build_docframe_proto_msgTypes[78].OneofWrappers = []any{
 		(*Node_ListSetting)(nil),
 		(*Node_ColorDef)(nil),
 		(*Node_Brick)(nil),
@@ -16501,7 +16666,7 @@ func file_build_docframe_proto_init() {
 		(*Node_SectionReference)(nil),
 		(*Node_ChapterLink)(nil),
 	}
-	file_build_docframe_proto_msgTypes[120].OneofWrappers = []any{
+	file_build_docframe_proto_msgTypes[121].OneofWrappers = []any{
 		(*ProtoColorChoice_Color)(nil),
 		(*ProtoColorChoice_ColorDefinitionUUID)(nil),
 	}
@@ -16510,8 +16675,8 @@ func file_build_docframe_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_build_docframe_proto_rawDesc), len(file_build_docframe_proto_rawDesc)),
-			NumEnums:      33,
-			NumMessages:   128,
+			NumEnums:      34,
+			NumMessages:   129,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
