@@ -119,88 +119,88 @@ namespace Docframe {
             "b2RlGAkgASgJEhAKCHJlYWRvbmx5GAogASgIEjEKE3BkZlByaW50aW5nQmVo",
             "YXZpb3IYCyABKA4yFC5QREZQcmludGluZ0JlaGF2aW9yEhMKC3BkZkZvcm1O",
             "YW1lGAwgASgJEhIKCnBkZkFsdFRleHQYDSABKAkSFwoPY29tQ2hhbm5lbFVV",
-            "SURzGA4gAygJEgwKBHV1aWQYDyABKAkiVgoUUHJvdG9Eb2N1bWVudEVsZW1l",
-            "bnQSJQoGcGFyZW50GAEgASgLMhUuUHJvdG9Eb2N1bWVudEVsZW1lbnQSFwoP",
-            "Y29tQ2hhbm5lbFVVSURzGAIgAygJIoYBChpQcm90b0JyYW5jaERvY3VtZW50",
-            "RWxlbWVudBIoCglfY2hpbGRyZW4YASADKAsyFS5Qcm90b0RvY3VtZW50RWxl",
-            "bWVudBIlCgZwYXJlbnQYAiABKAsyFS5Qcm90b0RvY3VtZW50RWxlbWVudBIX",
-            "Cg9jb21DaGFubmVsVVVJRHMYAyADKAki0QEKCVByb3RvTGluaxIoCglfY2hp",
-            "bGRyZW4YASADKAsyFS5Qcm90b0RvY3VtZW50RWxlbWVudBILCgN1cmwYAiAB",
-            "KAkSFwoPY29tQ2hhbm5lbFVVSURzGAMgAygJEhsKE3BhcmFncmFwaEZvcm1h",
-            "dFVVSUQYBCABKAkSIwobcGFyYWdyYXBoRm9ybWF0SW50ZXJuYWxOYW1lGAUg",
-            "ASgJEg8KB3VybENvZGUYBiABKAkSEwoLYmluZFVybENvZGUYByABKAgSDAoE",
-            "dXVpZBgIIAEoCSKkBAoVUHJvdG9MaXN0TGV2ZWxTZXR0aW5nEhcKD2xpc3RT",
-            "ZXR0aW5nTmFtZRgBIAEoCRIjCghmb250U2l6ZRgCIAEoCzIRLlByb3RvQm94",
-            "ZWRVaW50MzISKAoEdHlwZRgDIAEoDjIaLlByb3RvTGlzdExldmVsU2V0dGlu",
-            "Z1R5cGUSDQoFbGV2ZWwYBCABKAUSDgoGcHJlZml4GAUgASgJEg4KBnN1ZmZp",
-            "eBgGIAEoCRIhCg1maXhGb250RmFtaWx5GAcgASgLMgouUHJvdG9Gb250Eg8K",
-            "B2ZpeEJvbGQYCCABKAgSEQoJZml4SXRhbGljGAkgASgIEhYKDmluZGVudGlv",
-            "bldpZHRoGAogASgFEhoKBWNvbG9yGAsgASgLMgsuUHJvdG9Db2xvchIRCglp",
-            "bWFnZU5hbWUYDCABKAkSHgoKZm9udEZhbWlseRgNIAEoCzIKLlByb3RvRm9u",
-            "dBIdCgRib2xkGA4gASgLMg8uUHJvdG9Cb3hlZEJvb2wSHwoGaXRhbGljGA8g",
-            "ASgLMg8uUHJvdG9Cb3hlZEJvb2wSJAoKbnVtYmVyVHlwZRgQIAEoDjIQLlBy",
-            "b3RvTnVtYmVyVHlwZRIRCgljaGFyYWN0ZXIYESABKAkSEwoLZG9jdHlwZUNv",
-            "ZGUYEiABKAkSOAoQbGV2ZWxEaXNwbGF5VHlwZRgTIAEoDjIeLlByb3RvTnVt",
-            "YmVyZWRMZXZlbERpc3BsYXlUeXBlIsECChpQcm90b0ltYWdlTGlzdExldmVs",
-            "U2V0dGluZxIXCg9saXN0U2V0dGluZ05hbWUYASABKAkSIwoIZm9udFNpemUY",
-            "AiABKAsyES5Qcm90b0JveGVkVWludDMyEigKBHR5cGUYAyABKA4yGi5Qcm90",
-            "b0xpc3RMZXZlbFNldHRpbmdUeXBlEg0KBWxldmVsGAQgASgFEg4KBnByZWZp",
-            "eBgFIAEoCRIOCgZzdWZmaXgYBiABKAkSIQoNZml4Rm9udEZhbWlseRgHIAEo",
-            "CzIKLlByb3RvRm9udBIPCgdmaXhCb2xkGAggASgIEhEKCWZpeEl0YWxpYxgJ",
-            "IAEoCBIWCg5pbmRlbnRpb25XaWR0aBgKIAEoBRIaCgVjb2xvchgLIAEoCzIL",
-            "LlByb3RvQ29sb3ISEQoJaW1hZ2VOYW1lGAwgASgJIo0DChlQcm90b1RleHRM",
-            "aXN0TGV2ZWxTZXR0aW5nEhcKD2xpc3RTZXR0aW5nTmFtZRgBIAEoCRIjCghm",
-            "b250U2l6ZRgCIAEoCzIRLlByb3RvQm94ZWRVaW50MzISKAoEdHlwZRgDIAEo",
-            "DjIaLlByb3RvTGlzdExldmVsU2V0dGluZ1R5cGUSDQoFbGV2ZWwYBCABKAUS",
-            "DgoGcHJlZml4GAUgASgJEg4KBnN1ZmZpeBgGIAEoCRIhCg1maXhGb250RmFt",
-            "aWx5GAcgASgLMgouUHJvdG9Gb250Eg8KB2ZpeEJvbGQYCCABKAgSEQoJZml4",
-            "SXRhbGljGAkgASgIEhYKDmluZGVudGlvbldpZHRoGAogASgFEhoKBWNvbG9y",
-            "GAsgASgLMgsuUHJvdG9Db2xvchIeCgpmb250RmFtaWx5GAwgASgLMgouUHJv",
-            "dG9Gb250Eh0KBGJvbGQYDSABKAsyDy5Qcm90b0JveGVkQm9vbBIfCgZpdGFs",
-            "aWMYDiABKAsyDy5Qcm90b0JveGVkQm9vbCLvAwobUHJvdG9OdW1iZXJMaXN0",
-            "TGV2ZWxTZXR0aW5nEhcKD2xpc3RTZXR0aW5nTmFtZRgBIAEoCRIjCghmb250",
-            "U2l6ZRgCIAEoCzIRLlByb3RvQm94ZWRVaW50MzISKAoEdHlwZRgDIAEoDjIa",
-            "LlByb3RvTGlzdExldmVsU2V0dGluZ1R5cGUSDQoFbGV2ZWwYBCABKAUSDgoG",
-            "cHJlZml4GAUgASgJEg4KBnN1ZmZpeBgGIAEoCRIhCg1maXhGb250RmFtaWx5",
-            "GAcgASgLMgouUHJvdG9Gb250Eg8KB2ZpeEJvbGQYCCABKAgSEQoJZml4SXRh",
-            "bGljGAkgASgIEhYKDmluZGVudGlvbldpZHRoGAogASgFEhoKBWNvbG9yGAsg",
-            "ASgLMgsuUHJvdG9Db2xvchIeCgpmb250RmFtaWx5GAwgASgLMgouUHJvdG9G",
-            "b250Eh0KBGJvbGQYDSABKAsyDy5Qcm90b0JveGVkQm9vbBIfCgZpdGFsaWMY",
-            "DiABKAsyDy5Qcm90b0JveGVkQm9vbBIkCgpudW1iZXJUeXBlGA8gASgOMhAu",
-            "UHJvdG9OdW1iZXJUeXBlEjgKEGxldmVsRGlzcGxheVR5cGUYECABKA4yHi5Q",
-            "cm90b051bWJlcmVkTGV2ZWxEaXNwbGF5VHlwZSKmAwofUHJvdG9Vbm51bWJl",
-            "cmVkTGlzdExldmVsU2V0dGluZxIXCg9saXN0U2V0dGluZ05hbWUYASABKAkS",
-            "IwoIZm9udFNpemUYAiABKAsyES5Qcm90b0JveGVkVWludDMyEigKBHR5cGUY",
-            "AyABKA4yGi5Qcm90b0xpc3RMZXZlbFNldHRpbmdUeXBlEg0KBWxldmVsGAQg",
-            "ASgFEg4KBnByZWZpeBgFIAEoCRIOCgZzdWZmaXgYBiABKAkSIQoNZml4Rm9u",
-            "dEZhbWlseRgHIAEoCzIKLlByb3RvRm9udBIPCgdmaXhCb2xkGAggASgIEhEK",
-            "CWZpeEl0YWxpYxgJIAEoCBIWCg5pbmRlbnRpb25XaWR0aBgKIAEoBRIaCgVj",
-            "b2xvchgLIAEoCzILLlByb3RvQ29sb3ISHgoKZm9udEZhbWlseRgMIAEoCzIK",
-            "LlByb3RvRm9udBIdCgRib2xkGA0gASgLMg8uUHJvdG9Cb3hlZEJvb2wSHwoG",
-            "aXRhbGljGA4gASgLMg8uUHJvdG9Cb3hlZEJvb2wSEQoJY2hhcmFjdGVyGA8g",
-            "ASgJIoQBChtQcm90b0N1c3RvbUxpc3RMZXZlbFNldHRpbmcSFwoPbGlzdFNl",
-            "dHRpbmdOYW1lGAEgASgJEigKBHR5cGUYAiABKA4yGi5Qcm90b0xpc3RMZXZl",
-            "bFNldHRpbmdUeXBlEg0KBWxldmVsGAMgASgFEhMKC2RvY3R5cGVDb2RlGAQg",
-            "ASgJItoBChBQcm90b0xpc3RTZXR0aW5nEiUKBnBhcmVudBgBIAEoCzIVLlBy",
-            "b3RvRG9jdW1lbnRFbGVtZW50EgwKBG5hbWUYAiABKAkSMQoRbGlzdExldmVs",
-            "U2V0dGluZ3MYAyADKAsyFi5Qcm90b0xpc3RMZXZlbFNldHRpbmcSNwoXZGVm",
-            "YXVsdExpc3RMZXZlbFNldHRpbmcYBCABKAsyFi5Qcm90b0xpc3RMZXZlbFNl",
-            "dHRpbmcSFwoPY29tQ2hhbm5lbFVVSURzGAUgAygJEgwKBHV1aWQYBiABKAki",
-            "SQoVUHJvdG9Cb3hlZExpc3RTZXR0aW5nEiAKBXZhbHVlGAEgASgLMhEuUHJv",
-            "dG9MaXN0U2V0dGluZxIOCgZpc051bGwYAiABKAgi0QEKEFByb3RvTmFtZWRT",
-            "dHJpbmcSKAoJX2NoaWxkcmVuGAEgAygLMhUuUHJvdG9Eb2N1bWVudEVsZW1l",
-            "bnQSJQoGcGFyZW50GAIgASgLMhUuUHJvdG9Eb2N1bWVudEVsZW1lbnQSDAoE",
-            "bmFtZRgDIAEoCRIXCg9jb21DaGFubmVsVVVJRHMYBCADKAkSDAoEdXVpZBgF",
-            "IAEoCRITCgtkZXNjcmlwdGlvbhgGIAEoCRIQCghuYW1lQ29kZRgHIAEoCRIQ",
-            "Cghjb2RlTW9kZRgIIAEoCCL2AQoOUHJvdG9QYXJhZ3JhcGgSKAoJX2NoaWxk",
-            "cmVuGAEgAygLMhUuUHJvdG9Eb2N1bWVudEVsZW1lbnQSJQoGcGFyZW50GAIg",
-            "ASgLMhUuUHJvdG9Eb2N1bWVudEVsZW1lbnQSJQoGZm9ybWF0GAMgASgLMhUu",
-            "UHJvdG9QYXJhZ3JhcGhGb3JtYXQSKAoJb3ZlcndyaXRlGAQgASgLMhUuUHJv",
-            "dG9QYXJhZ3JhcGhGb3JtYXQSFwoPY29tQ2hhbm5lbFVVSURzGAUgAygJEhsK",
-            "E3BhcmFncmFwaEZvcm1hdFVVSUQYBiABKAkSDAoEdXVpZBgHIAEoCSJhCiFQ",
-            "cm90b0JveGVkQm9va21hcmtJbmRlbnRhdGlvbk1vZGUSLAoFdmFsdWUYASAB",
-            "KA4yHS5Qcm90b0Jvb2ttYXJrSW5kZW50YXRpb25Nb2RlEg4KBmlzTnVsbBgC",
-            "IAEoCCLmCgoUUHJvdG9QYXJhZ3JhcGhGb3JtYXQSKQoKYmFzZUZvcm1hdBgB",
+            "SURzGA4gAygJEgwKBHV1aWQYDyABKAkiYQohUHJvdG9Cb3hlZEJvb2ttYXJr",
+            "SW5kZW50YXRpb25Nb2RlEiwKBXZhbHVlGAEgASgOMh0uUHJvdG9Cb29rbWFy",
+            "a0luZGVudGF0aW9uTW9kZRIOCgZpc051bGwYAiABKAgiVgoUUHJvdG9Eb2N1",
+            "bWVudEVsZW1lbnQSJQoGcGFyZW50GAEgASgLMhUuUHJvdG9Eb2N1bWVudEVs",
+            "ZW1lbnQSFwoPY29tQ2hhbm5lbFVVSURzGAIgAygJIoYBChpQcm90b0JyYW5j",
+            "aERvY3VtZW50RWxlbWVudBIoCglfY2hpbGRyZW4YASADKAsyFS5Qcm90b0Rv",
+            "Y3VtZW50RWxlbWVudBIlCgZwYXJlbnQYAiABKAsyFS5Qcm90b0RvY3VtZW50",
+            "RWxlbWVudBIXCg9jb21DaGFubmVsVVVJRHMYAyADKAki0QEKCVByb3RvTGlu",
+            "axIoCglfY2hpbGRyZW4YASADKAsyFS5Qcm90b0RvY3VtZW50RWxlbWVudBIL",
+            "CgN1cmwYAiABKAkSFwoPY29tQ2hhbm5lbFVVSURzGAMgAygJEhsKE3BhcmFn",
+            "cmFwaEZvcm1hdFVVSUQYBCABKAkSIwobcGFyYWdyYXBoRm9ybWF0SW50ZXJu",
+            "YWxOYW1lGAUgASgJEg8KB3VybENvZGUYBiABKAkSEwoLYmluZFVybENvZGUY",
+            "ByABKAgSDAoEdXVpZBgIIAEoCSKkBAoVUHJvdG9MaXN0TGV2ZWxTZXR0aW5n",
+            "EhcKD2xpc3RTZXR0aW5nTmFtZRgBIAEoCRIjCghmb250U2l6ZRgCIAEoCzIR",
+            "LlByb3RvQm94ZWRVaW50MzISKAoEdHlwZRgDIAEoDjIaLlByb3RvTGlzdExl",
+            "dmVsU2V0dGluZ1R5cGUSDQoFbGV2ZWwYBCABKAUSDgoGcHJlZml4GAUgASgJ",
+            "Eg4KBnN1ZmZpeBgGIAEoCRIhCg1maXhGb250RmFtaWx5GAcgASgLMgouUHJv",
+            "dG9Gb250Eg8KB2ZpeEJvbGQYCCABKAgSEQoJZml4SXRhbGljGAkgASgIEhYK",
+            "DmluZGVudGlvbldpZHRoGAogASgFEhoKBWNvbG9yGAsgASgLMgsuUHJvdG9D",
+            "b2xvchIRCglpbWFnZU5hbWUYDCABKAkSHgoKZm9udEZhbWlseRgNIAEoCzIK",
+            "LlByb3RvRm9udBIdCgRib2xkGA4gASgLMg8uUHJvdG9Cb3hlZEJvb2wSHwoG",
+            "aXRhbGljGA8gASgLMg8uUHJvdG9Cb3hlZEJvb2wSJAoKbnVtYmVyVHlwZRgQ",
+            "IAEoDjIQLlByb3RvTnVtYmVyVHlwZRIRCgljaGFyYWN0ZXIYESABKAkSEwoL",
+            "ZG9jdHlwZUNvZGUYEiABKAkSOAoQbGV2ZWxEaXNwbGF5VHlwZRgTIAEoDjIe",
+            "LlByb3RvTnVtYmVyZWRMZXZlbERpc3BsYXlUeXBlIsECChpQcm90b0ltYWdl",
+            "TGlzdExldmVsU2V0dGluZxIXCg9saXN0U2V0dGluZ05hbWUYASABKAkSIwoI",
+            "Zm9udFNpemUYAiABKAsyES5Qcm90b0JveGVkVWludDMyEigKBHR5cGUYAyAB",
+            "KA4yGi5Qcm90b0xpc3RMZXZlbFNldHRpbmdUeXBlEg0KBWxldmVsGAQgASgF",
+            "Eg4KBnByZWZpeBgFIAEoCRIOCgZzdWZmaXgYBiABKAkSIQoNZml4Rm9udEZh",
+            "bWlseRgHIAEoCzIKLlByb3RvRm9udBIPCgdmaXhCb2xkGAggASgIEhEKCWZp",
+            "eEl0YWxpYxgJIAEoCBIWCg5pbmRlbnRpb25XaWR0aBgKIAEoBRIaCgVjb2xv",
+            "chgLIAEoCzILLlByb3RvQ29sb3ISEQoJaW1hZ2VOYW1lGAwgASgJIo0DChlQ",
+            "cm90b1RleHRMaXN0TGV2ZWxTZXR0aW5nEhcKD2xpc3RTZXR0aW5nTmFtZRgB",
+            "IAEoCRIjCghmb250U2l6ZRgCIAEoCzIRLlByb3RvQm94ZWRVaW50MzISKAoE",
+            "dHlwZRgDIAEoDjIaLlByb3RvTGlzdExldmVsU2V0dGluZ1R5cGUSDQoFbGV2",
+            "ZWwYBCABKAUSDgoGcHJlZml4GAUgASgJEg4KBnN1ZmZpeBgGIAEoCRIhCg1m",
+            "aXhGb250RmFtaWx5GAcgASgLMgouUHJvdG9Gb250Eg8KB2ZpeEJvbGQYCCAB",
+            "KAgSEQoJZml4SXRhbGljGAkgASgIEhYKDmluZGVudGlvbldpZHRoGAogASgF",
+            "EhoKBWNvbG9yGAsgASgLMgsuUHJvdG9Db2xvchIeCgpmb250RmFtaWx5GAwg",
+            "ASgLMgouUHJvdG9Gb250Eh0KBGJvbGQYDSABKAsyDy5Qcm90b0JveGVkQm9v",
+            "bBIfCgZpdGFsaWMYDiABKAsyDy5Qcm90b0JveGVkQm9vbCLvAwobUHJvdG9O",
+            "dW1iZXJMaXN0TGV2ZWxTZXR0aW5nEhcKD2xpc3RTZXR0aW5nTmFtZRgBIAEo",
+            "CRIjCghmb250U2l6ZRgCIAEoCzIRLlByb3RvQm94ZWRVaW50MzISKAoEdHlw",
+            "ZRgDIAEoDjIaLlByb3RvTGlzdExldmVsU2V0dGluZ1R5cGUSDQoFbGV2ZWwY",
+            "BCABKAUSDgoGcHJlZml4GAUgASgJEg4KBnN1ZmZpeBgGIAEoCRIhCg1maXhG",
+            "b250RmFtaWx5GAcgASgLMgouUHJvdG9Gb250Eg8KB2ZpeEJvbGQYCCABKAgS",
+            "EQoJZml4SXRhbGljGAkgASgIEhYKDmluZGVudGlvbldpZHRoGAogASgFEhoK",
+            "BWNvbG9yGAsgASgLMgsuUHJvdG9Db2xvchIeCgpmb250RmFtaWx5GAwgASgL",
+            "MgouUHJvdG9Gb250Eh0KBGJvbGQYDSABKAsyDy5Qcm90b0JveGVkQm9vbBIf",
+            "CgZpdGFsaWMYDiABKAsyDy5Qcm90b0JveGVkQm9vbBIkCgpudW1iZXJUeXBl",
+            "GA8gASgOMhAuUHJvdG9OdW1iZXJUeXBlEjgKEGxldmVsRGlzcGxheVR5cGUY",
+            "ECABKA4yHi5Qcm90b051bWJlcmVkTGV2ZWxEaXNwbGF5VHlwZSKmAwofUHJv",
+            "dG9Vbm51bWJlcmVkTGlzdExldmVsU2V0dGluZxIXCg9saXN0U2V0dGluZ05h",
+            "bWUYASABKAkSIwoIZm9udFNpemUYAiABKAsyES5Qcm90b0JveGVkVWludDMy",
+            "EigKBHR5cGUYAyABKA4yGi5Qcm90b0xpc3RMZXZlbFNldHRpbmdUeXBlEg0K",
+            "BWxldmVsGAQgASgFEg4KBnByZWZpeBgFIAEoCRIOCgZzdWZmaXgYBiABKAkS",
+            "IQoNZml4Rm9udEZhbWlseRgHIAEoCzIKLlByb3RvRm9udBIPCgdmaXhCb2xk",
+            "GAggASgIEhEKCWZpeEl0YWxpYxgJIAEoCBIWCg5pbmRlbnRpb25XaWR0aBgK",
+            "IAEoBRIaCgVjb2xvchgLIAEoCzILLlByb3RvQ29sb3ISHgoKZm9udEZhbWls",
+            "eRgMIAEoCzIKLlByb3RvRm9udBIdCgRib2xkGA0gASgLMg8uUHJvdG9Cb3hl",
+            "ZEJvb2wSHwoGaXRhbGljGA4gASgLMg8uUHJvdG9Cb3hlZEJvb2wSEQoJY2hh",
+            "cmFjdGVyGA8gASgJIoQBChtQcm90b0N1c3RvbUxpc3RMZXZlbFNldHRpbmcS",
+            "FwoPbGlzdFNldHRpbmdOYW1lGAEgASgJEigKBHR5cGUYAiABKA4yGi5Qcm90",
+            "b0xpc3RMZXZlbFNldHRpbmdUeXBlEg0KBWxldmVsGAMgASgFEhMKC2RvY3R5",
+            "cGVDb2RlGAQgASgJItoBChBQcm90b0xpc3RTZXR0aW5nEiUKBnBhcmVudBgB",
+            "IAEoCzIVLlByb3RvRG9jdW1lbnRFbGVtZW50EgwKBG5hbWUYAiABKAkSMQoR",
+            "bGlzdExldmVsU2V0dGluZ3MYAyADKAsyFi5Qcm90b0xpc3RMZXZlbFNldHRp",
+            "bmcSNwoXZGVmYXVsdExpc3RMZXZlbFNldHRpbmcYBCABKAsyFi5Qcm90b0xp",
+            "c3RMZXZlbFNldHRpbmcSFwoPY29tQ2hhbm5lbFVVSURzGAUgAygJEgwKBHV1",
+            "aWQYBiABKAkiSQoVUHJvdG9Cb3hlZExpc3RTZXR0aW5nEiAKBXZhbHVlGAEg",
+            "ASgLMhEuUHJvdG9MaXN0U2V0dGluZxIOCgZpc051bGwYAiABKAgi0QEKEFBy",
+            "b3RvTmFtZWRTdHJpbmcSKAoJX2NoaWxkcmVuGAEgAygLMhUuUHJvdG9Eb2N1",
+            "bWVudEVsZW1lbnQSJQoGcGFyZW50GAIgASgLMhUuUHJvdG9Eb2N1bWVudEVs",
+            "ZW1lbnQSDAoEbmFtZRgDIAEoCRIXCg9jb21DaGFubmVsVVVJRHMYBCADKAkS",
+            "DAoEdXVpZBgFIAEoCRITCgtkZXNjcmlwdGlvbhgGIAEoCRIQCghuYW1lQ29k",
+            "ZRgHIAEoCRIQCghjb2RlTW9kZRgIIAEoCCL2AQoOUHJvdG9QYXJhZ3JhcGgS",
+            "KAoJX2NoaWxkcmVuGAEgAygLMhUuUHJvdG9Eb2N1bWVudEVsZW1lbnQSJQoG",
+            "cGFyZW50GAIgASgLMhUuUHJvdG9Eb2N1bWVudEVsZW1lbnQSJQoGZm9ybWF0",
+            "GAMgASgLMhUuUHJvdG9QYXJhZ3JhcGhGb3JtYXQSKAoJb3ZlcndyaXRlGAQg",
+            "ASgLMhUuUHJvdG9QYXJhZ3JhcGhGb3JtYXQSFwoPY29tQ2hhbm5lbFVVSURz",
+            "GAUgAygJEhsKE3BhcmFncmFwaEZvcm1hdFVVSUQYBiABKAkSDAoEdXVpZBgH",
+            "IAEoCSLmCgoUUHJvdG9QYXJhZ3JhcGhGb3JtYXQSKQoKYmFzZUZvcm1hdBgB",
             "IAEoCzIVLlByb3RvUGFyYWdyYXBoRm9ybWF0Eh8KBG5hbWUYAiABKAsyES5Q",
             "cm90b0JveGVkU3RyaW5nEiAKB2RlZmF1bHQYAyABKAsyDy5Qcm90b0JveGVk",
             "Qm9vbBIdCgRmb250GAQgASgLMg8uUHJvdG9Cb3hlZEZvbnQSHQoEYm9sZBgF",
@@ -734,17 +734,17 @@ namespace Docframe {
             "Rl9QUklOVElOR19CRUhBVklPUl9JTkhFUklUEAMqhgEKC0luaGVyaXRhbmNl",
             "EhcKE0lOSEVSSVRBTkNFX0lOSEVSSVQQABIUChBJTkhFUklUQU5DRV9DT0RF",
             "EAESGQoVSU5IRVJJVEFOQ0VfQklORF9DT0RFEAISFgoSSU5IRVJJVEFOQ0Vf",
-            "U1RBVElDEAMSFQoRSU5IRVJJVEFOQ0VfUkVTRVQQBCpvCg9Qcm90b051bWJl",
-            "clR5cGUSCgoGQVJBQklDEAASEQoNUk9NX1VQUEVSQ0FTRRABEhEKDVJPTV9M",
-            "T1dFUkNBU0UQAhIUChBMRVRURVJfVVBQRVJDQVNFEAMSFAoQTEVUVEVSX0xP",
-            "V0VSQ0FTRRAEKk8KGVByb3RvTGlzdExldmVsU2V0dGluZ1R5cGUSDgoKVU5O",
-            "VU1CRVJFRBAAEgsKB05VTUVSSUMQARIJCgVJTUFHRRACEgoKBkNVU1RPTRAD",
-            "KmgKHVByb3RvTnVtYmVyZWRMZXZlbERpc3BsYXlUeXBlEhUKEUFMTF9QQVJF",
-            "TlRfTEVWRUxTEAASGgoWTlVNQkVSRURfUEFSRU5UX0xFVkVMUxABEhQKEE5P",
-            "X1BBUkVOVF9MRVZFTFMQAip5ChxQcm90b0Jvb2ttYXJrSW5kZW50YXRpb25N",
-            "b2RlEiYKIkJPT0tNQVJLX0lOREVOVEFUSU9OX01PREVfQUJTT0xVVEUQABIx",
-            "Ci1CT09LTUFSS19JTkRFTlRBVElPTl9NT0RFX1JFTEFUSVZFX1RPX0NIQVBU",
-            "RVIQASpOChpQcm90b1RhYmxlQ29udGVudEdyb3VwVHlwZRIKCgZIRUFERVIQ",
+            "U1RBVElDEAMSFQoRSU5IRVJJVEFOQ0VfUkVTRVQQBCp5ChxQcm90b0Jvb2tt",
+            "YXJrSW5kZW50YXRpb25Nb2RlEiYKIkJPT0tNQVJLX0lOREVOVEFUSU9OX01P",
+            "REVfQUJTT0xVVEUQABIxCi1CT09LTUFSS19JTkRFTlRBVElPTl9NT0RFX1JF",
+            "TEFUSVZFX1RPX0NIQVBURVIQASpvCg9Qcm90b051bWJlclR5cGUSCgoGQVJB",
+            "QklDEAASEQoNUk9NX1VQUEVSQ0FTRRABEhEKDVJPTV9MT1dFUkNBU0UQAhIU",
+            "ChBMRVRURVJfVVBQRVJDQVNFEAMSFAoQTEVUVEVSX0xPV0VSQ0FTRRAEKk8K",
+            "GVByb3RvTGlzdExldmVsU2V0dGluZ1R5cGUSDgoKVU5OVU1CRVJFRBAAEgsK",
+            "B05VTUVSSUMQARIJCgVJTUFHRRACEgoKBkNVU1RPTRADKmgKHVByb3RvTnVt",
+            "YmVyZWRMZXZlbERpc3BsYXlUeXBlEhUKEUFMTF9QQVJFTlRfTEVWRUxTEAAS",
+            "GgoWTlVNQkVSRURfUEFSRU5UX0xFVkVMUxABEhQKEE5PX1BBUkVOVF9MRVZF",
+            "TFMQAipOChpQcm90b1RhYmxlQ29udGVudEdyb3VwVHlwZRIKCgZIRUFERVIQ",
             "ABIICgRCT0RZEAESCgoGRk9PVEVSEAISDgoKU1VCX0hFQURFUhADKl8KElBy",
             "b3RvVGFibGVDZWxsVHlwZRITCg9UQUJMRV9DRUxMX0JPRFkQABIZChVUQUJM",
             "RV9DRUxMX1JPV19IRUFERVIQARIZChVUQUJMRV9DRUxMX1JPV19GT09URVIQ",
@@ -839,7 +839,7 @@ namespace Docframe {
             "EAJCC6oCCERvY2ZyYW1lYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Docframe.ProtoSPBMode), typeof(global::Docframe.ProtoRuleStyle), typeof(global::Docframe.ProtoMeasureType), typeof(global::Docframe.ProtoAdvancedIllustrationAreaTextFlowType), typeof(global::Docframe.ProtoColorType), typeof(global::Docframe.ProtoHorizontalAlignment), typeof(global::Docframe.ProtoVerticalAlignment), typeof(global::Docframe.ProtoBarcodeType), typeof(global::Docframe.ProtoBarcodeUAMode), typeof(global::Docframe.ProtoPositionMode), typeof(global::Docframe.ProtoUnderlineMode), typeof(global::Docframe.ProtoImageReferencePoint), typeof(global::Docframe.ProtoSemanticType), typeof(global::Docframe.PDFPrintingBehavior), typeof(global::Docframe.Inheritance), typeof(global::Docframe.ProtoNumberType), typeof(global::Docframe.ProtoListLevelSettingType), typeof(global::Docframe.ProtoNumberedLevelDisplayType), typeof(global::Docframe.ProtoBookmarkIndentationMode), typeof(global::Docframe.ProtoTableContentGroupType), typeof(global::Docframe.ProtoTableCellType), typeof(global::Docframe.ColumnBalancing), typeof(global::Docframe.ProtoHeaderMode), typeof(global::Docframe.ProtoFooterMode), typeof(global::Docframe.NodeType), typeof(global::Docframe.ProtoImageScaleType), typeof(global::Docframe.ProtoImageUAMode), typeof(global::Docframe.ProtoImageContentType), typeof(global::Docframe.ProtoVariableSpecialType), typeof(global::Docframe.ProtoPageMode), typeof(global::Docframe.ProtoPageOrientation), typeof(global::Docframe.ProtoSubTotalPosition), typeof(global::Docframe.ProtoRuleMode), typeof(global::Docframe.ProtoDoctypeOutputMode), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Docframe.ProtoSPBMode), typeof(global::Docframe.ProtoRuleStyle), typeof(global::Docframe.ProtoMeasureType), typeof(global::Docframe.ProtoAdvancedIllustrationAreaTextFlowType), typeof(global::Docframe.ProtoColorType), typeof(global::Docframe.ProtoHorizontalAlignment), typeof(global::Docframe.ProtoVerticalAlignment), typeof(global::Docframe.ProtoBarcodeType), typeof(global::Docframe.ProtoBarcodeUAMode), typeof(global::Docframe.ProtoPositionMode), typeof(global::Docframe.ProtoUnderlineMode), typeof(global::Docframe.ProtoImageReferencePoint), typeof(global::Docframe.ProtoSemanticType), typeof(global::Docframe.PDFPrintingBehavior), typeof(global::Docframe.Inheritance), typeof(global::Docframe.ProtoBookmarkIndentationMode), typeof(global::Docframe.ProtoNumberType), typeof(global::Docframe.ProtoListLevelSettingType), typeof(global::Docframe.ProtoNumberedLevelDisplayType), typeof(global::Docframe.ProtoTableContentGroupType), typeof(global::Docframe.ProtoTableCellType), typeof(global::Docframe.ColumnBalancing), typeof(global::Docframe.ProtoHeaderMode), typeof(global::Docframe.ProtoFooterMode), typeof(global::Docframe.NodeType), typeof(global::Docframe.ProtoImageScaleType), typeof(global::Docframe.ProtoImageUAMode), typeof(global::Docframe.ProtoImageContentType), typeof(global::Docframe.ProtoVariableSpecialType), typeof(global::Docframe.ProtoPageMode), typeof(global::Docframe.ProtoPageOrientation), typeof(global::Docframe.ProtoSubTotalPosition), typeof(global::Docframe.ProtoRuleMode), typeof(global::Docframe.ProtoDoctypeOutputMode), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoBoxedBool), global::Docframe.ProtoBoxedBool.Parser, new[]{ "Value", "IsNull" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoBoxedDouble), global::Docframe.ProtoBoxedDouble.Parser, new[]{ "Value", "IsNull" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoBoxedInt32), global::Docframe.ProtoBoxedInt32.Parser, new[]{ "Value", "IsNull" }, null, null, null, null),
@@ -877,6 +877,7 @@ namespace Docframe {
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoFlipSettings), global::Docframe.ProtoFlipSettings.Parser, new[]{ "X", "Y" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoOption), global::Docframe.ProtoOption.Parser, new[]{ "Key", "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoBaseInputField), global::Docframe.ProtoBaseInputField.Parser, new[]{ "Name", "Meta", "Value", "FormatUUID", "DataTypeUUID", "OnChangeCode", "Placeholder", "BindDefaultValue", "DefaultValueCode", "Readonly", "PdfPrintingBehavior", "PdfFormName", "PdfAltText", "ComChannelUUIDs", "Uuid" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoBoxedBookmarkIndentationMode), global::Docframe.ProtoBoxedBookmarkIndentationMode.Parser, new[]{ "Value", "IsNull" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoDocumentElement), global::Docframe.ProtoDocumentElement.Parser, new[]{ "Parent", "ComChannelUUIDs" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoBranchDocumentElement), global::Docframe.ProtoBranchDocumentElement.Parser, new[]{ "Children", "Parent", "ComChannelUUIDs" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoLink), global::Docframe.ProtoLink.Parser, new[]{ "Children", "Url", "ComChannelUUIDs", "ParagraphFormatUUID", "ParagraphFormatInternalName", "UrlCode", "BindUrlCode", "Uuid" }, null, null, null, null),
@@ -890,7 +891,6 @@ namespace Docframe {
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoBoxedListSetting), global::Docframe.ProtoBoxedListSetting.Parser, new[]{ "Value", "IsNull" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoNamedString), global::Docframe.ProtoNamedString.Parser, new[]{ "Children", "Parent", "Name", "ComChannelUUIDs", "Uuid", "Description", "NameCode", "CodeMode" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoParagraph), global::Docframe.ProtoParagraph.Parser, new[]{ "Children", "Parent", "Format", "Overwrite", "ComChannelUUIDs", "ParagraphFormatUUID", "Uuid" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoBoxedBookmarkIndentationMode), global::Docframe.ProtoBoxedBookmarkIndentationMode.Parser, new[]{ "Value", "IsNull" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoParagraphFormat), global::Docframe.ProtoParagraphFormat.Parser, new[]{ "BaseFormat", "Name", "Default", "Font", "Bold", "Italic", "FontColor", "Underline", "FontSize", "CharacterWidth", "CharacterSpacing", "LineFeed", "Alignment", "IndentionWidth", "IndentionLevel", "SpaceAbove", "SpaceBelow", "WidowSetting", "OrphanSetting", "WidowPriority", "Strikethrough", "SuperscriptSubscript", "BackgroundColor", "ListSetting", "Hyphenation", "PreNamedString", "PostNamedString", "SemanticType", "ComChannelUUIDs", "Uuid", "BookmarkIndentationLevel", "BookmarkIndentationMode", "SkipSpaceOnStartOfColumn" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoSection), global::Docframe.ProtoSection.Parser, new[]{ "Children", "Parent", "Uuid", "CDefUuid", "ComChannelUUIDs" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Docframe.ProtoSpaceVertically), global::Docframe.ProtoSpaceVertically.Parser, new[]{ "Parent", "Space", "ComChannelUUIDs", "Uuid" }, null, null, null, null),
@@ -1113,6 +1113,11 @@ namespace Docframe {
     [pbr::OriginalName("INHERITANCE_RESET")] Reset = 4,
   }
 
+  public enum ProtoBookmarkIndentationMode {
+    [pbr::OriginalName("BOOKMARK_INDENTATION_MODE_ABSOLUTE")] BookmarkIndentationModeAbsolute = 0,
+    [pbr::OriginalName("BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER")] BookmarkIndentationModeRelativeToChapter = 1,
+  }
+
   public enum ProtoNumberType {
     [pbr::OriginalName("ARABIC")] Arabic = 0,
     [pbr::OriginalName("ROM_UPPERCASE")] RomUppercase = 1,
@@ -1132,11 +1137,6 @@ namespace Docframe {
     [pbr::OriginalName("ALL_PARENT_LEVELS")] AllParentLevels = 0,
     [pbr::OriginalName("NUMBERED_PARENT_LEVELS")] NumberedParentLevels = 1,
     [pbr::OriginalName("NO_PARENT_LEVELS")] NoParentLevels = 2,
-  }
-
-  public enum ProtoBookmarkIndentationMode {
-    [pbr::OriginalName("BOOKMARK_INDENTATION_MODE_ABSOLUTE")] BookmarkIndentationModeAbsolute = 0,
-    [pbr::OriginalName("BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER")] BookmarkIndentationModeRelativeToChapter = 1,
   }
 
   public enum ProtoTableContentGroupType {
@@ -12743,6 +12743,241 @@ namespace Docframe {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class ProtoBoxedBookmarkIndentationMode : pb::IMessage<ProtoBoxedBookmarkIndentationMode>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ProtoBoxedBookmarkIndentationMode> _parser = new pb::MessageParser<ProtoBoxedBookmarkIndentationMode>(() => new ProtoBoxedBookmarkIndentationMode());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ProtoBoxedBookmarkIndentationMode> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[37]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ProtoBoxedBookmarkIndentationMode() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ProtoBoxedBookmarkIndentationMode(ProtoBoxedBookmarkIndentationMode other) : this() {
+      value_ = other.value_;
+      isNull_ = other.isNull_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ProtoBoxedBookmarkIndentationMode Clone() {
+      return new ProtoBoxedBookmarkIndentationMode(this);
+    }
+
+    /// <summary>Field number for the "value" field.</summary>
+    public const int ValueFieldNumber = 1;
+    private global::Docframe.ProtoBookmarkIndentationMode value_ = global::Docframe.ProtoBookmarkIndentationMode.BookmarkIndentationModeAbsolute;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Docframe.ProtoBookmarkIndentationMode Value {
+      get { return value_; }
+      set {
+        value_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "isNull" field.</summary>
+    public const int IsNullFieldNumber = 2;
+    private bool isNull_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsNull {
+      get { return isNull_; }
+      set {
+        isNull_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ProtoBoxedBookmarkIndentationMode);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ProtoBoxedBookmarkIndentationMode other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Value != other.Value) return false;
+      if (IsNull != other.IsNull) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Value != global::Docframe.ProtoBookmarkIndentationMode.BookmarkIndentationModeAbsolute) hash ^= Value.GetHashCode();
+      if (IsNull != false) hash ^= IsNull.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Value != global::Docframe.ProtoBookmarkIndentationMode.BookmarkIndentationModeAbsolute) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Value);
+      }
+      if (IsNull != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsNull);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Value != global::Docframe.ProtoBookmarkIndentationMode.BookmarkIndentationModeAbsolute) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Value);
+      }
+      if (IsNull != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsNull);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Value != global::Docframe.ProtoBookmarkIndentationMode.BookmarkIndentationModeAbsolute) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Value);
+      }
+      if (IsNull != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ProtoBoxedBookmarkIndentationMode other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Value != global::Docframe.ProtoBookmarkIndentationMode.BookmarkIndentationModeAbsolute) {
+        Value = other.Value;
+      }
+      if (other.IsNull != false) {
+        IsNull = other.IsNull;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Value = (global::Docframe.ProtoBookmarkIndentationMode) input.ReadEnum();
+            break;
+          }
+          case 16: {
+            IsNull = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Value = (global::Docframe.ProtoBookmarkIndentationMode) input.ReadEnum();
+            break;
+          }
+          case 16: {
+            IsNull = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoDocumentElement : pb::IMessage<ProtoDocumentElement>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -12757,7 +12992,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[37]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[38]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12990,7 +13225,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[38]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[39]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13249,7 +13484,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[39]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[40]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13684,7 +13919,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[40]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[41]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14602,7 +14837,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[41]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[42]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15234,7 +15469,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[42]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[43]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15967,7 +16202,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[43]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[44]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16774,7 +17009,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[44]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[45]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17544,7 +17779,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[45]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[46]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17853,7 +18088,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[46]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[47]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18232,7 +18467,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[47]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[48]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18476,7 +18711,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[48]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[49]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18920,7 +19155,7 @@ namespace Docframe {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[49]; }
+      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[50]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19321,241 +19556,6 @@ namespace Docframe {
           }
           case 58: {
             Uuid = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class ProtoBoxedBookmarkIndentationMode : pb::IMessage<ProtoBoxedBookmarkIndentationMode>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<ProtoBoxedBookmarkIndentationMode> _parser = new pb::MessageParser<ProtoBoxedBookmarkIndentationMode>(() => new ProtoBoxedBookmarkIndentationMode());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<ProtoBoxedBookmarkIndentationMode> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Docframe.DocframeReflection.Descriptor.MessageTypes[50]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ProtoBoxedBookmarkIndentationMode() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ProtoBoxedBookmarkIndentationMode(ProtoBoxedBookmarkIndentationMode other) : this() {
-      value_ = other.value_;
-      isNull_ = other.isNull_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ProtoBoxedBookmarkIndentationMode Clone() {
-      return new ProtoBoxedBookmarkIndentationMode(this);
-    }
-
-    /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 1;
-    private global::Docframe.ProtoBookmarkIndentationMode value_ = global::Docframe.ProtoBookmarkIndentationMode.BookmarkIndentationModeAbsolute;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Docframe.ProtoBookmarkIndentationMode Value {
-      get { return value_; }
-      set {
-        value_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "isNull" field.</summary>
-    public const int IsNullFieldNumber = 2;
-    private bool isNull_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNull {
-      get { return isNull_; }
-      set {
-        isNull_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as ProtoBoxedBookmarkIndentationMode);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(ProtoBoxedBookmarkIndentationMode other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Value != other.Value) return false;
-      if (IsNull != other.IsNull) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Value != global::Docframe.ProtoBookmarkIndentationMode.BookmarkIndentationModeAbsolute) hash ^= Value.GetHashCode();
-      if (IsNull != false) hash ^= IsNull.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (Value != global::Docframe.ProtoBookmarkIndentationMode.BookmarkIndentationModeAbsolute) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Value);
-      }
-      if (IsNull != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsNull);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Value != global::Docframe.ProtoBookmarkIndentationMode.BookmarkIndentationModeAbsolute) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Value);
-      }
-      if (IsNull != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsNull);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (Value != global::Docframe.ProtoBookmarkIndentationMode.BookmarkIndentationModeAbsolute) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Value);
-      }
-      if (IsNull != false) {
-        size += 1 + 1;
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(ProtoBoxedBookmarkIndentationMode other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Value != global::Docframe.ProtoBookmarkIndentationMode.BookmarkIndentationModeAbsolute) {
-        Value = other.Value;
-      }
-      if (other.IsNull != false) {
-        IsNull = other.IsNull;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            Value = (global::Docframe.ProtoBookmarkIndentationMode) input.ReadEnum();
-            break;
-          }
-          case 16: {
-            IsNull = input.ReadBool();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 8: {
-            Value = (global::Docframe.ProtoBookmarkIndentationMode) input.ReadEnum();
-            break;
-          }
-          case 16: {
-            IsNull = input.ReadBool();
             break;
           }
         }
