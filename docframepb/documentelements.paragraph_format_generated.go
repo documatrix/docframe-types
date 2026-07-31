@@ -3,22 +3,6 @@
 package docframepb
 
 
-func (boxedBookmarkIndentationMode *ProtoBoxedBookmarkIndentationMode) ToNode(children ...Message) *Node {
-	nodeChildren := make([]*Node, len(children))
-	for i, c := range children {
-		nodeChildren[i] = c.ToNode()
-	}
-
-	node := &Node{
-		Object: &Node_BoxedBookmarkIndentationMode{
-			BoxedBookmarkIndentationMode: boxedBookmarkIndentationMode,
-		},
-		Children: nodeChildren,
-	}
-
-	return node
-}
-
 func (paragraphFormat *ProtoParagraphFormat) ToNode(children ...Message) *Node {
 	nodeChildren := make([]*Node, len(children))
 	for i, c := range children {

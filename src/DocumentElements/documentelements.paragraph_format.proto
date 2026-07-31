@@ -1,13 +1,3 @@
-message ProtoBoxedBookmarkIndentationMode {
-  ProtoBookmarkIndentationMode value = 1;
-  bool isNull = 2;
-}
-
-enum ProtoBookmarkIndentationMode {
-  BOOKMARK_INDENTATION_MODE_ABSOLUTE = 0;
-  BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER = 1;
-}
-
 message ProtoParagraphFormat {
   ProtoParagraphFormat baseFormat = 1;
   ProtoBoxedString name = 2;
