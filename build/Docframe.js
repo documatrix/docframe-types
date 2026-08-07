@@ -19444,9 +19444,8 @@ $root.ProtoParagraphFormat = (function() {
      * @property {IProtoBoxedString|null} [semanticType] ProtoParagraphFormat semanticType
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoParagraphFormat comChannelUUIDs
      * @property {string|null} [uuid] ProtoParagraphFormat uuid
-     * @property {IProtoBoxedInt32|null} [bookmarkIndentationLevel] ProtoParagraphFormat bookmarkIndentationLevel
-     * @property {IProtoBoxedBookmarkIndentationMode|null} [bookmarkIndentationMode] ProtoParagraphFormat bookmarkIndentationMode
      * @property {IProtoBoxedBool|null} [skipSpaceOnStartOfColumn] ProtoParagraphFormat skipSpaceOnStartOfColumn
+     * @property {IProtoBoxedInt32|null} [bookmarkIndentationLevel] ProtoParagraphFormat bookmarkIndentationLevel
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -19708,28 +19707,20 @@ $root.ProtoParagraphFormat = (function() {
     ProtoParagraphFormat.prototype.uuid = "";
 
     /**
-     * ProtoParagraphFormat bookmarkIndentationLevel.
-     * @member {IProtoBoxedInt32|null|undefined} bookmarkIndentationLevel
-     * @memberof ProtoParagraphFormat
-     * @instance
-     */
-    ProtoParagraphFormat.prototype.bookmarkIndentationLevel = null;
-
-    /**
-     * ProtoParagraphFormat bookmarkIndentationMode.
-     * @member {IProtoBoxedBookmarkIndentationMode|null|undefined} bookmarkIndentationMode
-     * @memberof ProtoParagraphFormat
-     * @instance
-     */
-    ProtoParagraphFormat.prototype.bookmarkIndentationMode = null;
-
-    /**
      * ProtoParagraphFormat skipSpaceOnStartOfColumn.
      * @member {IProtoBoxedBool|null|undefined} skipSpaceOnStartOfColumn
      * @memberof ProtoParagraphFormat
      * @instance
      */
     ProtoParagraphFormat.prototype.skipSpaceOnStartOfColumn = null;
+
+    /**
+     * ProtoParagraphFormat bookmarkIndentationLevel.
+     * @member {IProtoBoxedInt32|null|undefined} bookmarkIndentationLevel
+     * @memberof ProtoParagraphFormat
+     * @instance
+     */
+    ProtoParagraphFormat.prototype.bookmarkIndentationLevel = null;
 
     /**
      * Creates a new ProtoParagraphFormat instance using the specified properties.
@@ -19816,12 +19807,10 @@ $root.ProtoParagraphFormat = (function() {
                 writer.uint32(/* id 29, wireType 2 =*/234).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 30, wireType 2 =*/242).string(message.uuid);
-        if (message.bookmarkIndentationLevel != null && Object.hasOwnProperty.call(message, "bookmarkIndentationLevel"))
-            $root.ProtoBoxedInt32.encode(message.bookmarkIndentationLevel, writer.uint32(/* id 31, wireType 2 =*/250).fork()).ldelim();
-        if (message.bookmarkIndentationMode != null && Object.hasOwnProperty.call(message, "bookmarkIndentationMode"))
-            $root.ProtoBoxedBookmarkIndentationMode.encode(message.bookmarkIndentationMode, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
         if (message.skipSpaceOnStartOfColumn != null && Object.hasOwnProperty.call(message, "skipSpaceOnStartOfColumn"))
-            $root.ProtoBoxedBool.encode(message.skipSpaceOnStartOfColumn, writer.uint32(/* id 33, wireType 2 =*/266).fork()).ldelim();
+            $root.ProtoBoxedBool.encode(message.skipSpaceOnStartOfColumn, writer.uint32(/* id 31, wireType 2 =*/250).fork()).ldelim();
+        if (message.bookmarkIndentationLevel != null && Object.hasOwnProperty.call(message, "bookmarkIndentationLevel"))
+            $root.ProtoBoxedInt32.encode(message.bookmarkIndentationLevel, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -20057,19 +20046,13 @@ $root.ProtoParagraphFormat = (function() {
             case 31: {
                     if (wireType !== 2)
                         break;
-                    message.bookmarkIndentationLevel = $root.ProtoBoxedInt32.decode(reader, reader.uint32(), undefined, _depth + 1, message.bookmarkIndentationLevel);
+                    message.skipSpaceOnStartOfColumn = $root.ProtoBoxedBool.decode(reader, reader.uint32(), undefined, _depth + 1, message.skipSpaceOnStartOfColumn);
                     continue;
                 }
             case 32: {
                     if (wireType !== 2)
                         break;
-                    message.bookmarkIndentationMode = $root.ProtoBoxedBookmarkIndentationMode.decode(reader, reader.uint32(), undefined, _depth + 1, message.bookmarkIndentationMode);
-                    continue;
-                }
-            case 33: {
-                    if (wireType !== 2)
-                        break;
-                    message.skipSpaceOnStartOfColumn = $root.ProtoBoxedBool.decode(reader, reader.uint32(), undefined, _depth + 1, message.skipSpaceOnStartOfColumn);
+                    message.bookmarkIndentationLevel = $root.ProtoBoxedInt32.decode(reader, reader.uint32(), undefined, _depth + 1, message.bookmarkIndentationLevel);
                     continue;
                 }
             }
@@ -20263,20 +20246,15 @@ $root.ProtoParagraphFormat = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
-        if (message.bookmarkIndentationLevel != null && message.hasOwnProperty("bookmarkIndentationLevel")) {
-            var error = $root.ProtoBoxedInt32.verify(message.bookmarkIndentationLevel, _depth + 1);
-            if (error)
-                return "bookmarkIndentationLevel." + error;
-        }
-        if (message.bookmarkIndentationMode != null && message.hasOwnProperty("bookmarkIndentationMode")) {
-            var error = $root.ProtoBoxedBookmarkIndentationMode.verify(message.bookmarkIndentationMode, _depth + 1);
-            if (error)
-                return "bookmarkIndentationMode." + error;
-        }
         if (message.skipSpaceOnStartOfColumn != null && message.hasOwnProperty("skipSpaceOnStartOfColumn")) {
             var error = $root.ProtoBoxedBool.verify(message.skipSpaceOnStartOfColumn, _depth + 1);
             if (error)
                 return "skipSpaceOnStartOfColumn." + error;
+        }
+        if (message.bookmarkIndentationLevel != null && message.hasOwnProperty("bookmarkIndentationLevel")) {
+            var error = $root.ProtoBoxedInt32.verify(message.bookmarkIndentationLevel, _depth + 1);
+            if (error)
+                return "bookmarkIndentationLevel." + error;
         }
         return null;
     };
@@ -20447,20 +20425,15 @@ $root.ProtoParagraphFormat = (function() {
         if (object.uuid != null)
             if (typeof object.uuid !== "string" || object.uuid.length)
                 message.uuid = String(object.uuid);
-        if (object.bookmarkIndentationLevel != null) {
-            if (typeof object.bookmarkIndentationLevel !== "object")
-                throw TypeError(".ProtoParagraphFormat.bookmarkIndentationLevel: object expected");
-            message.bookmarkIndentationLevel = $root.ProtoBoxedInt32.fromObject(object.bookmarkIndentationLevel, _depth + 1);
-        }
-        if (object.bookmarkIndentationMode != null) {
-            if (typeof object.bookmarkIndentationMode !== "object")
-                throw TypeError(".ProtoParagraphFormat.bookmarkIndentationMode: object expected");
-            message.bookmarkIndentationMode = $root.ProtoBoxedBookmarkIndentationMode.fromObject(object.bookmarkIndentationMode, _depth + 1);
-        }
         if (object.skipSpaceOnStartOfColumn != null) {
             if (typeof object.skipSpaceOnStartOfColumn !== "object")
                 throw TypeError(".ProtoParagraphFormat.skipSpaceOnStartOfColumn: object expected");
             message.skipSpaceOnStartOfColumn = $root.ProtoBoxedBool.fromObject(object.skipSpaceOnStartOfColumn, _depth + 1);
+        }
+        if (object.bookmarkIndentationLevel != null) {
+            if (typeof object.bookmarkIndentationLevel !== "object")
+                throw TypeError(".ProtoParagraphFormat.bookmarkIndentationLevel: object expected");
+            message.bookmarkIndentationLevel = $root.ProtoBoxedInt32.fromObject(object.bookmarkIndentationLevel, _depth + 1);
         }
         return message;
     };
@@ -20510,9 +20483,8 @@ $root.ProtoParagraphFormat = (function() {
             object.postNamedString = null;
             object.semanticType = null;
             object.uuid = "";
-            object.bookmarkIndentationLevel = null;
-            object.bookmarkIndentationMode = null;
             object.skipSpaceOnStartOfColumn = null;
+            object.bookmarkIndentationLevel = null;
         }
         if (message.baseFormat != null && message.hasOwnProperty("baseFormat"))
             object.baseFormat = $root.ProtoParagraphFormat.toObject(message.baseFormat, options);
@@ -20577,12 +20549,10 @@ $root.ProtoParagraphFormat = (function() {
         }
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
-        if (message.bookmarkIndentationLevel != null && message.hasOwnProperty("bookmarkIndentationLevel"))
-            object.bookmarkIndentationLevel = $root.ProtoBoxedInt32.toObject(message.bookmarkIndentationLevel, options);
-        if (message.bookmarkIndentationMode != null && message.hasOwnProperty("bookmarkIndentationMode"))
-            object.bookmarkIndentationMode = $root.ProtoBoxedBookmarkIndentationMode.toObject(message.bookmarkIndentationMode, options);
         if (message.skipSpaceOnStartOfColumn != null && message.hasOwnProperty("skipSpaceOnStartOfColumn"))
             object.skipSpaceOnStartOfColumn = $root.ProtoBoxedBool.toObject(message.skipSpaceOnStartOfColumn, options);
+        if (message.bookmarkIndentationLevel != null && message.hasOwnProperty("bookmarkIndentationLevel"))
+            object.bookmarkIndentationLevel = $root.ProtoBoxedInt32.toObject(message.bookmarkIndentationLevel, options);
         return object;
     };
 
@@ -56900,8 +56870,6 @@ $root.ProtoChapter = (function() {
      * @property {string|null} [key] ProtoChapter key
      * @property {boolean|null} [createPageBreak] ProtoChapter createPageBreak
      * @property {boolean|null} [createDestination] ProtoChapter createDestination
-     * @property {boolean|null} [createInToc] ProtoChapter createInToc
-     * @property {number|null} [indentationLevel] ProtoChapter indentationLevel
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -57005,22 +56973,6 @@ $root.ProtoChapter = (function() {
     ProtoChapter.prototype.createDestination = false;
 
     /**
-     * ProtoChapter createInToc.
-     * @member {boolean} createInToc
-     * @memberof ProtoChapter
-     * @instance
-     */
-    ProtoChapter.prototype.createInToc = false;
-
-    /**
-     * ProtoChapter indentationLevel.
-     * @member {number} indentationLevel
-     * @memberof ProtoChapter
-     * @instance
-     */
-    ProtoChapter.prototype.indentationLevel = 0;
-
-    /**
      * Creates a new ProtoChapter instance using the specified properties.
      * @function create
      * @memberof ProtoChapter
@@ -57067,10 +57019,6 @@ $root.ProtoChapter = (function() {
             writer.uint32(/* id 9, wireType 0 =*/72).bool(message.createPageBreak);
         if (message.createDestination != null && Object.hasOwnProperty.call(message, "createDestination"))
             writer.uint32(/* id 10, wireType 0 =*/80).bool(message.createDestination);
-        if (message.createInToc != null && Object.hasOwnProperty.call(message, "createInToc"))
-            writer.uint32(/* id 11, wireType 0 =*/88).bool(message.createInToc);
-        if (message.indentationLevel != null && Object.hasOwnProperty.call(message, "indentationLevel"))
-            writer.uint32(/* id 12, wireType 0 =*/96).int32(message.indentationLevel);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -57202,24 +57150,6 @@ $root.ProtoChapter = (function() {
                         delete message.createDestination;
                     continue;
                 }
-            case 11: {
-                    if (wireType !== 0)
-                        break;
-                    if (value = reader.bool())
-                        message.createInToc = value;
-                    else
-                        delete message.createInToc;
-                    continue;
-                }
-            case 12: {
-                    if (wireType !== 0)
-                        break;
-                    if (value = reader.int32())
-                        message.indentationLevel = value;
-                    else
-                        delete message.indentationLevel;
-                    continue;
-                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -57307,12 +57237,6 @@ $root.ProtoChapter = (function() {
         if (message.createDestination != null && message.hasOwnProperty("createDestination"))
             if (typeof message.createDestination !== "boolean")
                 return "createDestination: boolean expected";
-        if (message.createInToc != null && message.hasOwnProperty("createInToc"))
-            if (typeof message.createInToc !== "boolean")
-                return "createInToc: boolean expected";
-        if (message.indentationLevel != null && message.hasOwnProperty("indentationLevel"))
-            if (!$util.isInteger(message.indentationLevel))
-                return "indentationLevel: integer expected";
         return null;
     };
 
@@ -57379,12 +57303,6 @@ $root.ProtoChapter = (function() {
         if (object.createDestination != null)
             if (object.createDestination)
                 message.createDestination = Boolean(object.createDestination);
-        if (object.createInToc != null)
-            if (object.createInToc)
-                message.createInToc = Boolean(object.createInToc);
-        if (object.indentationLevel != null)
-            if (Number(object.indentationLevel) !== 0)
-                message.indentationLevel = object.indentationLevel | 0;
         return message;
     };
 
@@ -57414,8 +57332,6 @@ $root.ProtoChapter = (function() {
             object.key = "";
             object.createPageBreak = false;
             object.createDestination = false;
-            object.createInToc = false;
-            object.indentationLevel = 0;
         }
         if (message._children && message._children.length) {
             object._children = Array(message._children.length);
@@ -57446,10 +57362,6 @@ $root.ProtoChapter = (function() {
             object.createPageBreak = message.createPageBreak;
         if (message.createDestination != null && message.hasOwnProperty("createDestination"))
             object.createDestination = message.createDestination;
-        if (message.createInToc != null && message.hasOwnProperty("createInToc"))
-            object.createInToc = message.createInToc;
-        if (message.indentationLevel != null && message.hasOwnProperty("indentationLevel"))
-            object.indentationLevel = message.indentationLevel;
         return object;
     };
 

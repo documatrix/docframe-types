@@ -591,9 +591,8 @@ ProtoBoxedString postNamedString = 27;
 ProtoBoxedString semanticType = 28;
 repeated string comChannelUUIDs = 29;
 string uuid = 30;
-ProtoBoxedInt32 bookmarkIndentationLevel = 31;
-ProtoBoxedBookmarkIndentationMode bookmarkIndentationMode = 32;
-ProtoBoxedBool skipSpaceOnStartOfColumn = 33;
+ProtoBoxedBool skipSpaceOnStartOfColumn = 31;
+ProtoBoxedInt32 bookmarkIndentationLevel = 32;
 }
 message ProtoSection {
 repeated ProtoDocumentElement _children = 1;
@@ -1638,8 +1637,6 @@ repeated string number = 7;
 string key = 8;
 bool createPageBreak = 9;
 bool createDestination = 10;
-bool createInToc = 11;
-int32 indentationLevel = 12;
 }
 message ProtoTableOfContents {
 repeated ProtoDocumentElement _children = 1;
