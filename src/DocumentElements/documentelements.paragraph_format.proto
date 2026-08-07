@@ -29,7 +29,6 @@ message ProtoParagraphFormat {
   ProtoBoxedString semanticType = 28;
   repeated string comChannelUUIDs = 29;
   string uuid = 30;
-  ProtoBoxedInt32 bookmarkIndentationLevel = 31;
-  ProtoBoxedBookmarkIndentationMode bookmarkIndentationMode = 32;
-  ProtoBoxedBool skipSpaceOnStartOfColumn = 33;
+  ProtoBoxedBool skipSpaceOnStartOfColumn = 31;
+  ProtoBoxedInt32 bookmarkIndentationLevel = 32;
 }

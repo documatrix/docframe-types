@@ -6750,14 +6750,11 @@ export interface IProtoParagraphFormat {
     /** ProtoParagraphFormat uuid */
     uuid?: (string|null);
 
-    /** ProtoParagraphFormat bookmarkIndentationLevel */
-    bookmarkIndentationLevel?: (IProtoBoxedInt32|null);
-
-    /** ProtoParagraphFormat bookmarkIndentationMode */
-    bookmarkIndentationMode?: (IProtoBoxedBookmarkIndentationMode|null);
-
     /** ProtoParagraphFormat skipSpaceOnStartOfColumn */
     skipSpaceOnStartOfColumn?: (IProtoBoxedBool|null);
+
+    /** ProtoParagraphFormat bookmarkIndentationLevel */
+    bookmarkIndentationLevel?: (IProtoBoxedInt32|null);
 
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
@@ -6865,14 +6862,11 @@ export class ProtoParagraphFormat implements IProtoParagraphFormat {
     /** ProtoParagraphFormat uuid. */
     public uuid: string;
 
-    /** ProtoParagraphFormat bookmarkIndentationLevel. */
-    public bookmarkIndentationLevel?: (IProtoBoxedInt32|null);
-
-    /** ProtoParagraphFormat bookmarkIndentationMode. */
-    public bookmarkIndentationMode?: (IProtoBoxedBookmarkIndentationMode|null);
-
     /** ProtoParagraphFormat skipSpaceOnStartOfColumn. */
     public skipSpaceOnStartOfColumn?: (IProtoBoxedBool|null);
+
+    /** ProtoParagraphFormat bookmarkIndentationLevel. */
+    public bookmarkIndentationLevel?: (IProtoBoxedInt32|null);
 
     /**
      * Creates a new ProtoParagraphFormat instance using the specified properties.
@@ -17741,12 +17735,6 @@ export interface IProtoChapter {
     /** ProtoChapter createDestination */
     createDestination?: (boolean|null);
 
-    /** ProtoChapter createInToc */
-    createInToc?: (boolean|null);
-
-    /** ProtoChapter indentationLevel */
-    indentationLevel?: (number|null);
-
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -17792,12 +17780,6 @@ export class ProtoChapter implements IProtoChapter {
 
     /** ProtoChapter createDestination. */
     public createDestination: boolean;
-
-    /** ProtoChapter createInToc. */
-    public createInToc: boolean;
-
-    /** ProtoChapter indentationLevel. */
-    public indentationLevel: number;
 
     /**
      * Creates a new ProtoChapter instance using the specified properties.
