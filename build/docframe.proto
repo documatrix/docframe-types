@@ -365,15 +365,6 @@ INHERITANCE_BIND_CODE = 2;
 INHERITANCE_STATIC = 3;
 INHERITANCE_RESET = 4;
 }
-enum ProtoBookmarkIndentationMode {
-BOOKMARK_INDENTATION_MODE_ABSOLUTE = 0;
-BOOKMARK_INDENTATION_MODE_RELATIVE_TO_CHAPTER = 1;
-}
-
-message ProtoBoxedBookmarkIndentationMode {
-ProtoBookmarkIndentationMode value = 1;
-bool isNull = 2;
-}
 message ProtoDocumentElement {
 ProtoDocumentElement parent = 1;
 repeated string comChannelUUIDs = 2;
