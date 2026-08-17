@@ -37838,6 +37838,8 @@ $root.ProtoImage = (function() {
      * @property {ProtoImageUAMode|null} [uaMode] ProtoImage uaMode
      * @property {string|null} [uaDescription] ProtoImage uaDescription
      * @property {IProtoBoxedBool|null} [leftBorderIsLeftMeasure] ProtoImage leftBorderIsLeftMeasure
+     * @property {IProtoBoxedUint32|null} [dpiWidth] ProtoImage dpiWidth
+     * @property {IProtoBoxedUint32|null} [dpiHeight] ProtoImage dpiHeight
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -38067,6 +38069,22 @@ $root.ProtoImage = (function() {
     ProtoImage.prototype.leftBorderIsLeftMeasure = null;
 
     /**
+     * ProtoImage dpiWidth.
+     * @member {IProtoBoxedUint32|null|undefined} dpiWidth
+     * @memberof ProtoImage
+     * @instance
+     */
+    ProtoImage.prototype.dpiWidth = null;
+
+    /**
+     * ProtoImage dpiHeight.
+     * @member {IProtoBoxedUint32|null|undefined} dpiHeight
+     * @memberof ProtoImage
+     * @instance
+     */
+    ProtoImage.prototype.dpiHeight = null;
+
+    /**
      * Creates a new ProtoImage instance using the specified properties.
      * @function create
      * @memberof ProtoImage
@@ -38143,6 +38161,10 @@ $root.ProtoImage = (function() {
             writer.uint32(/* id 25, wireType 2 =*/202).string(message.uaDescription);
         if (message.leftBorderIsLeftMeasure != null && Object.hasOwnProperty.call(message, "leftBorderIsLeftMeasure"))
             $root.ProtoBoxedBool.encode(message.leftBorderIsLeftMeasure, writer.uint32(/* id 26, wireType 2 =*/210).fork()).ldelim();
+        if (message.dpiWidth != null && Object.hasOwnProperty.call(message, "dpiWidth"))
+            $root.ProtoBoxedUint32.encode(message.dpiWidth, writer.uint32(/* id 27, wireType 2 =*/218).fork()).ldelim();
+        if (message.dpiHeight != null && Object.hasOwnProperty.call(message, "dpiHeight"))
+            $root.ProtoBoxedUint32.encode(message.dpiHeight, writer.uint32(/* id 28, wireType 2 =*/226).fork()).ldelim();
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -38387,6 +38409,18 @@ $root.ProtoImage = (function() {
                     message.leftBorderIsLeftMeasure = $root.ProtoBoxedBool.decode(reader, reader.uint32(), undefined, _depth + 1, message.leftBorderIsLeftMeasure);
                     continue;
                 }
+            case 27: {
+                    if (wireType !== 2)
+                        break;
+                    message.dpiWidth = $root.ProtoBoxedUint32.decode(reader, reader.uint32(), undefined, _depth + 1, message.dpiWidth);
+                    continue;
+                }
+            case 28: {
+                    if (wireType !== 2)
+                        break;
+                    message.dpiHeight = $root.ProtoBoxedUint32.decode(reader, reader.uint32(), undefined, _depth + 1, message.dpiHeight);
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -38564,6 +38598,16 @@ $root.ProtoImage = (function() {
             var error = $root.ProtoBoxedBool.verify(message.leftBorderIsLeftMeasure, _depth + 1);
             if (error)
                 return "leftBorderIsLeftMeasure." + error;
+        }
+        if (message.dpiWidth != null && message.hasOwnProperty("dpiWidth")) {
+            var error = $root.ProtoBoxedUint32.verify(message.dpiWidth, _depth + 1);
+            if (error)
+                return "dpiWidth." + error;
+        }
+        if (message.dpiHeight != null && message.hasOwnProperty("dpiHeight")) {
+            var error = $root.ProtoBoxedUint32.verify(message.dpiHeight, _depth + 1);
+            if (error)
+                return "dpiHeight." + error;
         }
         return null;
     };
@@ -38790,6 +38834,16 @@ $root.ProtoImage = (function() {
                 throw TypeError(".ProtoImage.leftBorderIsLeftMeasure: object expected");
             message.leftBorderIsLeftMeasure = $root.ProtoBoxedBool.fromObject(object.leftBorderIsLeftMeasure, _depth + 1);
         }
+        if (object.dpiWidth != null) {
+            if (typeof object.dpiWidth !== "object")
+                throw TypeError(".ProtoImage.dpiWidth: object expected");
+            message.dpiWidth = $root.ProtoBoxedUint32.fromObject(object.dpiWidth, _depth + 1);
+        }
+        if (object.dpiHeight != null) {
+            if (typeof object.dpiHeight !== "object")
+                throw TypeError(".ProtoImage.dpiHeight: object expected");
+            message.dpiHeight = $root.ProtoBoxedUint32.fromObject(object.dpiHeight, _depth + 1);
+        }
         return message;
     };
 
@@ -38834,6 +38888,8 @@ $root.ProtoImage = (function() {
             object.uaMode = options.enums === String ? "IMAGE_UA_MODE_DO_NOT_USE_AT_ALL" : 0;
             object.uaDescription = "";
             object.leftBorderIsLeftMeasure = null;
+            object.dpiWidth = null;
+            object.dpiHeight = null;
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -38890,6 +38946,10 @@ $root.ProtoImage = (function() {
             object.uaDescription = message.uaDescription;
         if (message.leftBorderIsLeftMeasure != null && message.hasOwnProperty("leftBorderIsLeftMeasure"))
             object.leftBorderIsLeftMeasure = $root.ProtoBoxedBool.toObject(message.leftBorderIsLeftMeasure, options);
+        if (message.dpiWidth != null && message.hasOwnProperty("dpiWidth"))
+            object.dpiWidth = $root.ProtoBoxedUint32.toObject(message.dpiWidth, options);
+        if (message.dpiHeight != null && message.hasOwnProperty("dpiHeight"))
+            object.dpiHeight = $root.ProtoBoxedUint32.toObject(message.dpiHeight, options);
         return object;
     };
 
