@@ -3,6 +3,6 @@ message ProtoText {
   ProtoDocumentElement parent = 1;
   // extends DocumentElement
 
-  string content = 2;
+  string content = 2 [(searchable) = true, (weight) = 3.0, (field_group) = "content"];
   repeated string comChannelUUIDs = 3;
 }

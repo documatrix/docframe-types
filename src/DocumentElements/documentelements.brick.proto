@@ -6,9 +6,9 @@ message ProtoBrick {
 
   // like BrickBody::Brick
   uint64 id = 3;
-  string internName = 4;
-  string uuid = 5;
+  string internName = 4 [(searchable) = true, (weight) = 1.5, (field_group) = "name"];
+  string uuid = 5 [(identity) = true];
   bool editable = 6;
   repeated string comChannelUUIDs = 7;
-  string name = 8;
+  string name = 8 [(searchable) = true, (weight) = 2.0, (field_group) = "name"];
 }

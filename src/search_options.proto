@@ -1,0 +1,30 @@
+import "google/protobuf/descriptor.proto";
+
+// Custom field options for marking which proto fields are full-text
+// searchable, how much they should weigh relative to each other, and which
+// element instance they belong to. Consumers (e.g. a search index) read
+// these via proto reflection instead of maintaining a separate list of
+// searchable fields.
+//
+// Extension numbers 50100-50103 are in the 50000-99999 range reserved for
+// internal use within an organization.
+extend google.protobuf.FieldOptions {
+  // Marks a field's text content as searchable. Only string and
+  // repeated string fields should carry this; other kinds are rejected by
+  // consumers at schema-compile time.
+  bool searchable = 50100;
+
+  // Relevance multiplier applied to term frequencies from this field.
+  // Defaults to 1.0 when searchable is set and weight is unset/zero.
+  float weight = 50101;
+
+  // Logical group shown alongside a search result, e.g. "content", "name",
+  // "alt", "other". Defaults to "other".
+  string field_group = 50102;
+
+  // Marks the field that carries an element's identity. Text found in the
+  // subtree of the innermost element with an identity becomes searchable
+  // under that element's uuid; text outside any identified element is not
+  // indexed. Must sit on a singular string field.
+  bool identity = 50103;
+}

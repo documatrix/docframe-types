@@ -13,7 +13,7 @@ enum ProtoPageOrientation {
 }
 
 message ProtoNewPage {
-  string uuid = 1;
+  string uuid = 1 [(identity) = true];
   // Identifies the paper tray to be used for the following page.
   string paperTrayUuid = 2;
   // Inherited from the referenced tray itself, not set directly.

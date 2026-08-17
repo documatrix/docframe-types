@@ -4,6 +4,6 @@ message ProtoLinebreak {
   //extends DocumentElement
   repeated string comChannelUUIDs = 2;
 
-  string uuid = 3;
+  string uuid = 3 [(identity) = true];
   ProtoBoxedUint32 count = 4;
 }

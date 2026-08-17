@@ -4,7 +4,7 @@ message ProtoSection {
   ProtoDocumentElement parent = 2;
   // extends BranchDocumentElement
 
-  string uuid = 3;
+  string uuid = 3 [(identity) = true];
   string cDefUuid = 4;
 
   repeated string comChannelUUIDs = 5;

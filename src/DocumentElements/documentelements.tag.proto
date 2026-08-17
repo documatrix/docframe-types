@@ -3,9 +3,9 @@ message ProtoTag {
   ProtoDocumentElement parent = 1;
   // extends DocumentElement
 
-  string name = 2;
+  string name = 2 [(searchable) = true, (weight) = 2.0, (field_group) = "name"];
   repeated string comChannelUUIDs = 3;
-  string uuid = 4;
+  string uuid = 4 [(identity) = true];
   repeated string params = 5;
   string nameCode = 6;
   bool codeMode = 7;

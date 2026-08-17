@@ -5,6 +5,6 @@ message ProtoLoop {
   // extends BranchDocumentElement
 
   string path = 3;
-  string uuid = 4;
+  string uuid = 4 [(identity) = true];
   repeated string comChannelUUIDs = 5;
 }

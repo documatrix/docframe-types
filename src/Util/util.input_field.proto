@@ -1,6 +1,6 @@
 message ProtoOption {
     string key = 1;
-    string value = 2;
+    string value = 2 [(searchable) = true, (weight) = 1.5, (field_group) = "content"];
 }
 
 enum PDFPrintingBehavior {
@@ -11,7 +11,7 @@ enum PDFPrintingBehavior {
 }
 
 message ProtoBaseInputField {
-    string name = 1;
+    string name = 1 [(searchable) = true, (weight) = 2.0, (field_group) = "name"];
     bool meta = 2;
     //
     // If value is not null, the value of value should be used as field value.
@@ -20,7 +20,7 @@ message ProtoBaseInputField {
     string formatUUID = 4;
     string dataTypeUUID = 5;
     string onChangeCode = 6;
-    string placeholder = 7;
+    string placeholder = 7 [(searchable) = true, (weight) = 1.5, (field_group) = "alt"];
     //
     // if bindDefaultValue is true, the result of the defaultValueCode evaluation will not be copied to the value field, but re-evaluated for every
     // time the input field is rendered.
@@ -34,8 +34,8 @@ message ProtoBaseInputField {
     PDFPrintingBehavior pdfPrintingBehavior = 11;
 
     string pdfFormName = 12;
-    string pdfAltText = 13;
+    string pdfAltText = 13 [(searchable) = true, (weight) = 1.5, (field_group) = "alt"];
 
     repeated string comChannelUUIDs = 14;
-    string uuid = 15;
+    string uuid = 15 [(identity) = true];
 }

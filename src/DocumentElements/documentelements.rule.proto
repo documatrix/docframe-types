@@ -19,7 +19,7 @@ message ProtoRule {
   // If the rule is a normal rule, this field is ignored.
   ProtoRuleBoundaries boundaries = 9;
   repeated string comChannelUUIDs = 10;
-  string uuid = 11;
+  string uuid = 11 [(identity) = true];
 }
 
 enum ProtoRuleMode {

@@ -6,6 +6,6 @@ message ProtoIndentation {
 
   ProtoBoxedMeasure left = 3;
   ProtoBoxedMeasure right = 4;
-  string uuid = 5;
+  string uuid = 5 [(identity) = true];
   repeated string comChannelUUIDs = 6;
 }

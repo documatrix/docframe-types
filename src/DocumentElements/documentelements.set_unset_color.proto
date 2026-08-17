@@ -11,7 +11,7 @@ message ProtoSetColor {
   ProtoDocumentElement parent = 1;
   ProtoColorChoice color = 2;
 
-  string uuid = 3;
+  string uuid = 3 [(identity) = true];
   repeated string comChannelUUIDs = 4;
 }
 
@@ -20,7 +20,7 @@ message ProtoUnsetColor {
   ProtoDocumentElement parent = 1;
   ProtoColorChoice color = 2;
 
-  string uuid = 3;
+  string uuid = 3 [(identity) = true];
   repeated string comChannelUUIDs = 4;
 }
 
@@ -31,6 +31,6 @@ message ProtoColoredArea {
   repeated ProtoDocumentElement _children = 2;
   ProtoColorChoice color = 3;
 
-  string uuid = 4;
+  string uuid = 4 [(identity) = true];
   repeated string comChannelUUIDs = 5;
 }

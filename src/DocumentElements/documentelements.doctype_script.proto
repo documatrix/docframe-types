@@ -10,8 +10,8 @@ message ProtoDoctypeScript {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
 
-  string content = 2;
+  string content = 2 [(searchable) = true, (weight) = 1.5, (field_group) = "content"];
   ProtoDoctypeOutputMode outputMode = 3;
   repeated string comChannelUUIDs = 4;
-  string uuid = 5;
+  string uuid = 5 [(identity) = true];
 }

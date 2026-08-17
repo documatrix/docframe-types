@@ -3,7 +3,7 @@ message ProtoChapterLink {
   repeated ProtoDocumentElement _children = 1;
   // extends BranchDocumentElement
 
-  string uuid = 2;
-  string name = 3;
+  string uuid = 2 [(identity) = true];
+  string name = 3 [(searchable) = true, (weight) = 2.0, (field_group) = "name"];
   repeated string comChannelUUIDs = 4;
 }

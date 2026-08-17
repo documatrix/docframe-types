@@ -10,16 +10,16 @@ message ProtoBarcode {
   ProtoMeasure height = 7;
   ProtoMeasure padding = 8;
   // keeps the evaluated code
-  string data = 9;
+  string data = 9 [(searchable) = true, (weight) = 1.0, (field_group) = "content"];
   bool positionAbsolute = 10;
   repeated string comChannelUUIDs = 11;
-  string uuid = 12;
+  string uuid = 12 [(identity) = true];
   // keeps the original code, which gives us the possibility to re-evaluate it and save it in data
   // it will be empty if the barcode type is SwissQR
   string code = 13;
   // will only be set if the barcode type is SwissQR
   ProtoSwissQRData swissQRData = 14;
-  string altText = 15;
+  string altText = 15 [(searchable) = true, (weight) = 1.5, (field_group) = "alt"];
   ProtoBarcodeUAMode uaMode = 16;
-  string uaDescription = 17;
+  string uaDescription = 17 [(searchable) = true, (weight) = 1.5, (field_group) = "alt"];
 }

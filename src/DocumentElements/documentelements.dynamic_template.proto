@@ -1,8 +1,8 @@
 message ProtoDynamicTemplate {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
-  string uuid = 2;
+  string uuid = 2 [(identity) = true];
 
-  string script = 3;
+  string script = 3 [(searchable) = true, (weight) = 1.0, (field_group) = "content"];
   repeated string comChannelUUIDs = 4;
 }

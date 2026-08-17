@@ -2,11 +2,11 @@ message ProtoVariable {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
 
-  string path = 2;
-  string content = 3; // Should this be optional or "empty string"
+  string path = 2 [(searchable) = true, (weight) = 2.0, (field_group) = "name"];
+  string content = 3 [(searchable) = true, (weight) = 2.5, (field_group) = "content"]; // Should this be optional or "empty string"
   string formatUuid = 4;
   ProtoVariableSpecialType specialType = 5;
-  string uuid = 6;
+  string uuid = 6 [(identity) = true];
   repeated string comChannelUUIDs = 7;
 }
 

@@ -3,11 +3,11 @@ message ProtoListSetting {
   ProtoDocumentElement parent = 1;
   // extends DocumentElement
 
-  string name = 2;
+  string name = 2 [(searchable) = true, (weight) = 2.0, (field_group) = "name"];
   repeated ProtoListLevelSetting listLevelSettings = 3;
   ProtoListLevelSetting defaultListLevelSetting = 4;
   repeated string comChannelUUIDs = 5;
-  string uuid = 6;
+  string uuid = 6 [(identity) = true];
 }
 
 // go-gen:ignore

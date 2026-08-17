@@ -2,7 +2,7 @@ message ProtoLayout {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
 
-  string name = 2;
+  string name = 2 [(searchable) = true, (weight) = 2.0, (field_group) = "name"];
   repeated string comChannelUUIDs = 3;
-  string uuid = 4;
+  string uuid = 4 [(identity) = true];
 }

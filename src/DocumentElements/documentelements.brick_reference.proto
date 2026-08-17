@@ -1,6 +1,6 @@
 message ProtoBrickReference {
   // comparable with BricksTemplates::BRICK
-  string internName = 1;
+  string internName = 1 [(searchable) = true, (weight) = 1.5, (field_group) = "name"];
   uint32 version = 2;
   repeated string comChannelUUIDs = 3;
 }

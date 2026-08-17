@@ -6,10 +6,10 @@ message ProtoFormatted {
   bool dteditorSyntax = 2;
   string doctypeContent = 3;
   string doctypeCode = 4;
-  string htmlContent = 5;
+  string htmlContent = 5 [(searchable) = true, (weight) = 1.0, (field_group) = "content"];
   string htmlCode = 6;
-  string textContent = 7;
+  string textContent = 7 [(searchable) = true, (weight) = 2.5, (field_group) = "content"];
   string textCode = 8;
   repeated string comChannelUUIDs = 9;
-  string uuid = 10;
+  string uuid = 10 [(identity) = true];
 }

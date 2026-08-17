@@ -5,13 +5,13 @@ message ProtoTable {
   // extends BranchDocumentElement
 
   ProtoTableSettings settings = 3;
-  string configName = 4;
+  string configName = 4 [(searchable) = true, (weight) = 1.5, (field_group) = "name"];
 
   Node carryOver = 5;
   Node subTotal = 6;
   repeated string comChannelUUIDs = 7;
   ProtoTableElementProperties elementProperties = 8;
-  string uuid = 9;
+  string uuid = 9 [(identity) = true];
 }
 
 message ProtoTableConfig {
@@ -20,9 +20,9 @@ message ProtoTableConfig {
   // extends DocumentElement
 
   ProtoTableSettings settings = 2;
-  string configName = 3;
+  string configName = 3 [(searchable) = true, (weight) = 1.5, (field_group) = "name"];
   repeated string comChannelUUIDs = 4;
-  string uuid = 5;
+  string uuid = 5 [(identity) = true];
 }
 
 // go-gen:ignore
@@ -59,7 +59,7 @@ message ProtoTableContentGroup {
   ProtoTableContentGroupSettings settings = 3;
   repeated string comChannelUUIDs = 4;
   ProtoTableElementProperties elementProperties = 5;
-  string uuid = 6;
+  string uuid = 6 [(identity) = true];
 }
 
 message ProtoTableContentGroupConfig {
@@ -68,9 +68,9 @@ message ProtoTableContentGroupConfig {
   // extends DocumentElement
 
   ProtoTableContentGroupSettings settings = 2;
-  string configName = 3;
+  string configName = 3 [(searchable) = true, (weight) = 1.5, (field_group) = "name"];
   repeated string comChannelUUIDs = 4;
-  string uuid = 5;
+  string uuid = 5 [(identity) = true];
 }
 
 // go-gen:ignore
@@ -91,7 +91,7 @@ message ProtoTableRow {
   ProtoBoxedUint32 rowConfigNumber = 4;
   repeated string comChannelUUIDs = 5;
   ProtoTableElementProperties elementProperties = 6;
-  string uuid = 7;
+  string uuid = 7 [(identity) = true];
 }
 
 message ProtoTableRowConfig {
@@ -100,11 +100,11 @@ message ProtoTableRowConfig {
   // extends DocumentElement
 
   ProtoTableRowSettings settings = 2;
-  string configName = 3;
-  string rowHeader = 4;
-  string rowFooter = 5;
+  string configName = 3 [(searchable) = true, (weight) = 1.5, (field_group) = "name"];
+  string rowHeader = 4 [(searchable) = true, (weight) = 1.0, (field_group) = "content"];
+  string rowFooter = 5 [(searchable) = true, (weight) = 1.0, (field_group) = "content"];
   repeated string comChannelUUIDs = 6;
-  string uuid = 7;
+  string uuid = 7 [(identity) = true];
 }
 
 // go-gen:ignore
@@ -139,7 +139,7 @@ message ProtoTableCell {
   bool mergedUp = 6;
   repeated string comChannelUUIDs = 7;
   ProtoTableElementProperties elementProperties = 8;
-  string uuid = 9;
+  string uuid = 9 [(identity) = true];
 }
 
 message ProtoTableCellConfig {
@@ -148,10 +148,10 @@ message ProtoTableCellConfig {
   // extends DocumentElement
 
   ProtoTableCellSettings settings = 2;
-  string configName = 3;
+  string configName = 3 [(searchable) = true, (weight) = 1.5, (field_group) = "name"];
   ProtoBoxedTableCellType cellType = 4;
   repeated string comChannelUUIDs = 5;
-  string uuid = 6;
+  string uuid = 6 [(identity) = true];
 }
 
 // go-gen:ignore

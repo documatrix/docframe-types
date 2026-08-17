@@ -4,10 +4,10 @@ message ProtoNamedString {
   ProtoDocumentElement parent = 2;
   // extends BranchDocumentElement
 
-  string name = 3;
+  string name = 3 [(searchable) = true, (weight) = 2.0, (field_group) = "name"];
   repeated string comChannelUUIDs = 4;
-  string uuid = 5;
-  string description = 6;
+  string uuid = 5 [(identity) = true];
+  string description = 6 [(searchable) = true, (weight) = 1.5, (field_group) = "content"];
   string nameCode = 7;
   bool codeMode = 8;
 }

@@ -5,7 +5,7 @@ message ProtoTemplate {
   // extends BranchDocumentElement
 
   repeated string comChannelUUIDs = 3;
-  string uuid = 4;
+  string uuid = 4 [(identity) = true];
   ColumnBalancing columnBalancing = 5;
   ProtoSemanticType semanticType = 6;
   string templateUuid = 7;

@@ -8,5 +8,5 @@ message ProtoParagraph {
   ProtoParagraphFormat overwrite = 4;
   repeated string comChannelUUIDs = 5;
   string paragraphFormatUUID = 6;
-  string uuid = 7;
+  string uuid = 7 [(identity) = true];
 }

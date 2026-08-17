@@ -8,9 +8,11 @@ mkdir -p build
 > build/docframe.proto
 
 echo 'syntax = "proto3";' >> build/docframe.proto
+echo 'import "google/protobuf/descriptor.proto";' >> build/docframe.proto
 
 # Do not change the order - some .proto files depend on other .proto files
 declare -a FileArray=(
+  "src/search_options.proto"
   "src/Box/box.bool.proto"
   "src/Box/box.double.proto"
   "src/Box/box.int32.proto"
@@ -99,20 +101,31 @@ declare -a FileArray=(
   "src/DocumentElements/documentelements.chapter_link.proto"
 )
 
-for file in ${FileArray[@]}; do
-  while read line; do
+for file in "${FileArray[@]}"; do
+  while IFS= read -r line; do
     if [[ $line != *"syntax = "* ]]; then
       if [[ $line != *"import "* ]]; then
         if [[ $line != "//"* ]]; then
-          echo $line >> build/docframe.proto
+          printf '%s\n' "$line" >> build/docframe.proto
         fi
       fi
     fi
-  done < $file
+  done < "$file"
 done
 
-# replace git with https, because a github account is needed for git, but not for https
-./node_modules/.bin/pbjs -t static-module -w commonjs -o ./build/Docframe.js ./build/docframe.proto
+# pbjs/pbts don't understand the search_options.proto custom field options
+# (they pass the [(searchable) = true, ...] annotations through untouched)
+# but pbjs DOES resolve and bundle the "google/protobuf/descriptor.proto"
+# import wholesale, adding the entire google.protobuf.* descriptor type set
+# to the published JS/TS artifacts for no reason - nothing on the JS/TS side
+# reads these options; search is implemented server-side in Go, which reads
+# them via reflection on the compiled descriptor instead. So the import and
+# the extend block it enables are stripped for the JS/TS build only.
+grep -v 'import "google/protobuf/descriptor.proto";' build/docframe.proto \
+  | awk '/^extend google\.protobuf\.FieldOptions \{/ { skip=1 } skip { if ($0 == "}") skip=0; next } { print }' \
+  > build/docframe.pbjs.proto
+
+./node_modules/.bin/pbjs -t static-module -w commonjs -o ./build/Docframe.js ./build/docframe.pbjs.proto
 node ./repair_pbjs.js < ./build/Docframe.js >./build/Docframe.js.repaired
 mv ./build/Docframe.js.repaired ./build/Docframe.js
 ./node_modules/.bin/pbts -o ./build/Docframe.d.ts ./build/Docframe.js

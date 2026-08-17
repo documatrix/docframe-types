@@ -6,6 +6,6 @@ message ProtoLoopEntry {
 
   string path = 3;
   uint64 index = 4;
-  string uuid = 5;
+  string uuid = 5 [(identity) = true];
   repeated string comChannelUUIDs = 6;
 }

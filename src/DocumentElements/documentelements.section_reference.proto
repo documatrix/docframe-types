@@ -2,10 +2,10 @@ message ProtoSectionReference {
   // LeafDocumentElement (no children)
   ProtoDocumentElement parent = 1;
 
-  string uuid = 2;
+  string uuid = 2 [(identity) = true];
   repeated string comChannelUUIDs = 3;
   string tag = 4;
   string format = 5;
-  string content = 6;
+  string content = 6 [(searchable) = true, (weight) = 1.5, (field_group) = "content"];
   string key = 7;
 }

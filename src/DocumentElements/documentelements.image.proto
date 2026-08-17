@@ -27,10 +27,10 @@ message ProtoImage {
   ProtoDocumentElement parent = 1;
   //extends DocumentElement
 
-  string alt = 2;
-  string name = 3;
+  string alt = 2 [(searchable) = true, (weight) = 1.5, (field_group) = "alt"];
+  string name = 3 [(searchable) = true, (weight) = 2.0, (field_group) = "name"];
   string src = 4;
-  string filename = 5;
+  string filename = 5 [(searchable) = true, (weight) = 1.5, (field_group) = "name"];
   ProtoBoxedDouble scale = 6;
   ProtoBoxedDouble columnScale = 7;
   ProtoBoxedMeasure width = 8;
@@ -42,7 +42,7 @@ message ProtoImage {
   ProtoFlipSettings flipSettings = 14;
   ProtoCropSettings cropSettings = 15;
   ProtoAdvancedIllustrationAreaImageSettings aia = 16;
-  string uuid = 17;
+  string uuid = 17 [(identity) = true];
   ProtoImageReferencePoint referencePoint = 18;
   string hyperlink = 19;
   repeated string comChannelUUIDs = 20;
@@ -50,7 +50,7 @@ message ProtoImage {
   string imageContent = 22;  
   ProtoImageScaleType scaleType = 23; 
   ProtoImageUAMode uaMode = 24;
-  string uaDescription = 25;
+  string uaDescription = 25 [(searchable) = true, (weight) = 1.5, (field_group) = "alt"];
   ProtoBoxedBool leftBorderIsLeftMeasure = 26;
 }
 
