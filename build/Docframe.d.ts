@@ -7284,6 +7284,9 @@ export interface IProtoTable {
     /** ProtoTable uuid */
     uuid?: (string|null);
 
+    /** ProtoTable name */
+    name?: (string|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -7326,6 +7329,9 @@ export class ProtoTable implements IProtoTable {
 
     /** ProtoTable uuid. */
     public uuid: string;
+
+    /** ProtoTable name. */
+    public name: string;
 
     /**
      * Creates a new ProtoTable instance using the specified properties.
@@ -7809,6 +7815,9 @@ export interface IProtoTableContentGroup {
     /** ProtoTableContentGroup uuid */
     uuid?: (string|null);
 
+    /** ProtoTableContentGroup name */
+    name?: (string|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -7842,6 +7851,9 @@ export class ProtoTableContentGroup implements IProtoTableContentGroup {
 
     /** ProtoTableContentGroup uuid. */
     public uuid: string;
+
+    /** ProtoTableContentGroup name. */
+    public name: string;
 
     /**
      * Creates a new ProtoTableContentGroup instance using the specified properties.
@@ -8187,6 +8199,9 @@ export interface IProtoTableRow {
     /** ProtoTableRow uuid */
     uuid?: (string|null);
 
+    /** ProtoTableRow name */
+    name?: (string|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -8223,6 +8238,9 @@ export class ProtoTableRow implements IProtoTableRow {
 
     /** ProtoTableRow uuid. */
     public uuid: string;
+
+    /** ProtoTableRow name. */
+    public name: string;
 
     /**
      * Creates a new ProtoTableRow instance using the specified properties.
@@ -8696,6 +8714,9 @@ export interface IProtoTableCell {
     /** ProtoTableCell uuid */
     uuid?: (string|null);
 
+    /** ProtoTableCell name */
+    name?: (string|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -8738,6 +8759,9 @@ export class ProtoTableCell implements IProtoTableCell {
 
     /** ProtoTableCell uuid. */
     public uuid: string;
+
+    /** ProtoTableCell name. */
+    public name: string;
 
     /**
      * Creates a new ProtoTableCell instance using the specified properties.

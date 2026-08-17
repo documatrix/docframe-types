@@ -629,6 +629,7 @@ Node subTotal = 6;
 repeated string comChannelUUIDs = 7;
 ProtoTableElementProperties elementProperties = 8;
 string uuid = 9;
+string name = 10;
 }
 
 message ProtoTableConfig {
@@ -671,6 +672,7 @@ ProtoTableContentGroupSettings settings = 3;
 repeated string comChannelUUIDs = 4;
 ProtoTableElementProperties elementProperties = 5;
 string uuid = 6;
+string name = 7;
 }
 
 message ProtoTableContentGroupConfig {
@@ -698,6 +700,7 @@ ProtoBoxedUint32 rowConfigNumber = 4;
 repeated string comChannelUUIDs = 5;
 ProtoTableElementProperties elementProperties = 6;
 string uuid = 7;
+string name = 8;
 }
 
 message ProtoTableRowConfig {
@@ -738,6 +741,7 @@ bool mergedUp = 6;
 repeated string comChannelUUIDs = 7;
 ProtoTableElementProperties elementProperties = 8;
 string uuid = 9;
+string name = 10;
 }
 
 message ProtoTableCellConfig {

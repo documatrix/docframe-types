@@ -6435,6 +6435,7 @@ type ProtoTable struct {
 	ComChannelUUIDs   []string                     `protobuf:"bytes,7,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	ElementProperties *ProtoTableElementProperties `protobuf:"bytes,8,opt,name=elementProperties,proto3" json:"elementProperties,omitempty"`
 	Uuid              string                       `protobuf:"bytes,9,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Name              string                       `protobuf:"bytes,10,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -6528,6 +6529,13 @@ func (x *ProtoTable) GetElementProperties() *ProtoTableElementProperties {
 func (x *ProtoTable) GetUuid() string {
 	if x != nil {
 		return x.Uuid
+	}
+	return ""
+}
+
+func (x *ProtoTable) GetName() string {
+	if x != nil {
+		return x.Name
 	}
 	return ""
 }
@@ -6760,6 +6768,7 @@ type ProtoTableContentGroup struct {
 	ComChannelUUIDs   []string                        `protobuf:"bytes,4,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	ElementProperties *ProtoTableElementProperties    `protobuf:"bytes,5,opt,name=elementProperties,proto3" json:"elementProperties,omitempty"`
 	Uuid              string                          `protobuf:"bytes,6,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Name              string                          `protobuf:"bytes,7,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -6832,6 +6841,13 @@ func (x *ProtoTableContentGroup) GetElementProperties() *ProtoTableElementProper
 func (x *ProtoTableContentGroup) GetUuid() string {
 	if x != nil {
 		return x.Uuid
+	}
+	return ""
+}
+
+func (x *ProtoTableContentGroup) GetName() string {
+	if x != nil {
+		return x.Name
 	}
 	return ""
 }
@@ -6981,6 +6997,7 @@ type ProtoTableRow struct {
 	ComChannelUUIDs   []string                     `protobuf:"bytes,5,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	ElementProperties *ProtoTableElementProperties `protobuf:"bytes,6,opt,name=elementProperties,proto3" json:"elementProperties,omitempty"`
 	Uuid              string                       `protobuf:"bytes,7,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Name              string                       `protobuf:"bytes,8,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -7060,6 +7077,13 @@ func (x *ProtoTableRow) GetElementProperties() *ProtoTableElementProperties {
 func (x *ProtoTableRow) GetUuid() string {
 	if x != nil {
 		return x.Uuid
+	}
+	return ""
+}
+
+func (x *ProtoTableRow) GetName() string {
+	if x != nil {
+		return x.Name
 	}
 	return ""
 }
@@ -7271,6 +7295,7 @@ type ProtoTableCell struct {
 	ComChannelUUIDs   []string                     `protobuf:"bytes,7,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	ElementProperties *ProtoTableElementProperties `protobuf:"bytes,8,opt,name=elementProperties,proto3" json:"elementProperties,omitempty"`
 	Uuid              string                       `protobuf:"bytes,9,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Name              string                       `protobuf:"bytes,10,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -7364,6 +7389,13 @@ func (x *ProtoTableCell) GetElementProperties() *ProtoTableElementProperties {
 func (x *ProtoTableCell) GetUuid() string {
 	if x != nil {
 		return x.Uuid
+	}
+	return ""
+}
+
+func (x *ProtoTableCell) GetName() string {
+	if x != nil {
+		return x.Name
 	}
 	return ""
 }
@@ -14828,7 +14860,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\tunderline\x18\b \x01(\v2\x0f.ProtoBoxedBoolR\tunderline\x125\n" +
 	"\rstrikethrough\x18\t \x01(\v2\x0f.ProtoBoxedBoolR\rstrikethrough\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\n" +
-	" \x03(\tR\x0fcomChannelUUIDs\"\x92\x03\n" +
+	" \x03(\tR\x0fcomChannelUUIDs\"\xa6\x03\n" +
 	"\n" +
 	"ProtoTable\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
@@ -14841,7 +14873,9 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\bsubTotal\x18\x06 \x01(\v2\x05.NodeR\bsubTotal\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
 	"\x11elementProperties\x18\b \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
-	"\x04uuid\x18\t \x01(\tR\x04uuid\"\xd0\x01\n" +
+	"\x04uuid\x18\t \x01(\tR\x04uuid\x12\x12\n" +
+	"\x04name\x18\n" +
+	" \x01(\tR\x04name\"\xd0\x01\n" +
 	"\x10ProtoTableConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12/\n" +
 	"\bsettings\x18\x02 \x01(\v2\x13.ProtoTableSettingsR\bsettings\x12\x1e\n" +
@@ -14860,14 +14894,15 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0frepeatSubHeader\x18\a \x01(\v2\x11.ProtoBoxedUint32R\x0frepeatSubHeader\"l\n" +
 	"\x1fProtoBoxedTableContentGroupType\x121\n" +
 	"\x05value\x18\x01 \x01(\x0e2\x1b.ProtoTableContentGroupTypeR\x05value\x12\x16\n" +
-	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xc2\x02\n" +
+	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xd6\x02\n" +
 	"\x16ProtoTableContentGroup\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12;\n" +
 	"\bsettings\x18\x03 \x01(\v2\x1f.ProtoTableContentGroupSettingsR\bsettings\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
 	"\x11elementProperties\x18\x05 \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
-	"\x04uuid\x18\x06 \x01(\tR\x04uuid\"\xe8\x01\n" +
+	"\x04uuid\x18\x06 \x01(\tR\x04uuid\x12\x12\n" +
+	"\x04name\x18\a \x01(\tR\x04name\"\xe8\x01\n" +
 	"\x1cProtoTableContentGroupConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12;\n" +
 	"\bsettings\x18\x02 \x01(\v2\x1f.ProtoTableContentGroupSettingsR\bsettings\x12\x1e\n" +
@@ -14879,7 +14914,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x1eProtoTableContentGroupSettings\x12L\n" +
 	"\x10contentGroupType\x18\x01 \x01(\v2 .ProtoBoxedTableContentGroupTypeR\x10contentGroupType\x127\n" +
 	"\x10backgroundColors\x18\x02 \x03(\v2\v.ProtoColorR\x10backgroundColors\x12\x1d\n" +
-	"\x02ws\x18\x03 \x01(\v2\r.ProtoTableWSR\x02ws\"\xed\x02\n" +
+	"\x02ws\x18\x03 \x01(\v2\r.ProtoTableWSR\x02ws\"\x81\x03\n" +
 	"\rProtoTableRow\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x122\n" +
@@ -14887,7 +14922,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0frowConfigNumber\x18\x04 \x01(\v2\x11.ProtoBoxedUint32R\x0frowConfigNumber\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
 	"\x11elementProperties\x18\x06 \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
-	"\x04uuid\x18\a \x01(\tR\x04uuid\"\x92\x02\n" +
+	"\x04uuid\x18\a \x01(\tR\x04uuid\x12\x12\n" +
+	"\x04name\x18\b \x01(\tR\x04name\"\x92\x02\n" +
 	"\x13ProtoTableRowConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x122\n" +
 	"\bsettings\x18\x02 \x01(\v2\x16.ProtoTableRowSettingsR\bsettings\x12\x1e\n" +
@@ -14903,7 +14939,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x02ws\x18\x02 \x01(\v2\r.ProtoTableWSR\x02ws\"\\\n" +
 	"\x17ProtoBoxedTableCellType\x12)\n" +
 	"\x05value\x18\x01 \x01(\x0e2\x13.ProtoTableCellTypeR\x05value\x12\x16\n" +
-	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xad\x03\n" +
+	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xc1\x03\n" +
 	"\x0eProtoTableCell\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x123\n" +
@@ -14915,7 +14951,9 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\bmergedUp\x18\x06 \x01(\bR\bmergedUp\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\a \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
 	"\x11elementProperties\x18\b \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
-	"\x04uuid\x18\t \x01(\tR\x04uuid\"\x8e\x02\n" +
+	"\x04uuid\x18\t \x01(\tR\x04uuid\x12\x12\n" +
+	"\x04name\x18\n" +
+	" \x01(\tR\x04name\"\x8e\x02\n" +
 	"\x14ProtoTableCellConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x123\n" +
 	"\bsettings\x18\x02 \x01(\v2\x17.ProtoTableCellSettingsR\bsettings\x12\x1e\n" +

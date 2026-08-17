@@ -12,6 +12,7 @@ message ProtoTable {
   repeated string comChannelUUIDs = 7;
   ProtoTableElementProperties elementProperties = 8;
   string uuid = 9;
+  string name = 10;
 }
 
 message ProtoTableConfig {
@@ -60,6 +61,7 @@ message ProtoTableContentGroup {
   repeated string comChannelUUIDs = 4;
   ProtoTableElementProperties elementProperties = 5;
   string uuid = 6;
+  string name = 7;
 }
 
 message ProtoTableContentGroupConfig {
@@ -92,6 +94,7 @@ message ProtoTableRow {
   repeated string comChannelUUIDs = 5;
   ProtoTableElementProperties elementProperties = 6;
   string uuid = 7;
+  string name = 8;
 }
 
 message ProtoTableRowConfig {
@@ -140,6 +143,7 @@ message ProtoTableCell {
   repeated string comChannelUUIDs = 7;
   ProtoTableElementProperties elementProperties = 8;
   string uuid = 9;
+  string name = 10;
 }
 
 message ProtoTableCellConfig {
