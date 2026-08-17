@@ -1,4 +1,4 @@
-enum ProtoImageScaleType { 
+enum ProtoImageScaleType {
   IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
   IMAGE_SCALE_TYPE_RELATIVE = 1;
   IMAGE_SCALE_TYPE_ABSOLUTE = 2;
@@ -47,10 +47,11 @@ message ProtoImage {
   string hyperlink = 19;
   repeated string comChannelUUIDs = 20;
   ProtoImageContentType imageContentType = 21;
-  string imageContent = 22;  
-  ProtoImageScaleType scaleType = 23; 
+  string imageContent = 22;
+  ProtoImageScaleType scaleType = 23;
   ProtoImageUAMode uaMode = 24;
   string uaDescription = 25;
   ProtoBoxedBool leftBorderIsLeftMeasure = 26;
+  ProtoBoxedUint32 dpiWidth = 27;
+  ProtoBoxedUint32 dpiHeight = 28;
 }
-

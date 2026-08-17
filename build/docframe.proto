@@ -1184,8 +1184,9 @@ ProtoImageScaleType scaleType = 23;
 ProtoImageUAMode uaMode = 24;
 string uaDescription = 25;
 ProtoBoxedBool leftBorderIsLeftMeasure = 26;
+ProtoBoxedUint32 dpiWidth = 27;
+ProtoBoxedUint32 dpiHeight = 28;
 }
-
 message ProtoDirectory {
 repeated ProtoDocumentElement _children = 1;
 ProtoDocumentElement parent = 2;

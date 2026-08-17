@@ -11558,6 +11558,12 @@ export interface IProtoImage {
     /** ProtoImage leftBorderIsLeftMeasure */
     leftBorderIsLeftMeasure?: (IProtoBoxedBool|null);
 
+    /** ProtoImage dpiWidth */
+    dpiWidth?: (IProtoBoxedUint32|null);
+
+    /** ProtoImage dpiHeight */
+    dpiHeight?: (IProtoBoxedUint32|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -11651,6 +11657,12 @@ export class ProtoImage implements IProtoImage {
 
     /** ProtoImage leftBorderIsLeftMeasure. */
     public leftBorderIsLeftMeasure?: (IProtoBoxedBool|null);
+
+    /** ProtoImage dpiWidth. */
+    public dpiWidth?: (IProtoBoxedUint32|null);
+
+    /** ProtoImage dpiHeight. */
+    public dpiHeight?: (IProtoBoxedUint32|null);
 
     /**
      * Creates a new ProtoImage instance using the specified properties.
