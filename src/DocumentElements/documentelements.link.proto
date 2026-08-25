@@ -10,4 +10,7 @@ message ProtoLink {
   string urlCode = 6;
   bool bindUrlCode = 7;
   string uuid = 8;
+  string displayText = 9;
+  string displayTextCode = 10;
+  bool bindDisplayTextCode = 11;
 }

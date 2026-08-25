@@ -13150,6 +13150,9 @@ $root.ProtoLink = (function() {
      * @property {string|null} [urlCode] ProtoLink urlCode
      * @property {boolean|null} [bindUrlCode] ProtoLink bindUrlCode
      * @property {string|null} [uuid] ProtoLink uuid
+     * @property {string|null} [displayText] ProtoLink displayText
+     * @property {string|null} [displayTextCode] ProtoLink displayTextCode
+     * @property {boolean|null} [bindDisplayTextCode] ProtoLink bindDisplayTextCode
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -13236,6 +13239,30 @@ $root.ProtoLink = (function() {
     ProtoLink.prototype.uuid = "";
 
     /**
+     * ProtoLink displayText.
+     * @member {string} displayText
+     * @memberof ProtoLink
+     * @instance
+     */
+    ProtoLink.prototype.displayText = "";
+
+    /**
+     * ProtoLink displayTextCode.
+     * @member {string} displayTextCode
+     * @memberof ProtoLink
+     * @instance
+     */
+    ProtoLink.prototype.displayTextCode = "";
+
+    /**
+     * ProtoLink bindDisplayTextCode.
+     * @member {boolean} bindDisplayTextCode
+     * @memberof ProtoLink
+     * @instance
+     */
+    ProtoLink.prototype.bindDisplayTextCode = false;
+
+    /**
      * Creates a new ProtoLink instance using the specified properties.
      * @function create
      * @memberof ProtoLink
@@ -13277,6 +13304,12 @@ $root.ProtoLink = (function() {
             writer.uint32(/* id 7, wireType 0 =*/56).bool(message.bindUrlCode);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 8, wireType 2 =*/66).string(message.uuid);
+        if (message.displayText != null && Object.hasOwnProperty.call(message, "displayText"))
+            writer.uint32(/* id 9, wireType 2 =*/74).string(message.displayText);
+        if (message.displayTextCode != null && Object.hasOwnProperty.call(message, "displayTextCode"))
+            writer.uint32(/* id 10, wireType 2 =*/82).string(message.displayTextCode);
+        if (message.bindDisplayTextCode != null && Object.hasOwnProperty.call(message, "bindDisplayTextCode"))
+            writer.uint32(/* id 11, wireType 0 =*/88).bool(message.bindDisplayTextCode);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -13394,6 +13427,33 @@ $root.ProtoLink = (function() {
                         delete message.uuid;
                     continue;
                 }
+            case 9: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.displayText = value;
+                    else
+                        delete message.displayText;
+                    continue;
+                }
+            case 10: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.displayTextCode = value;
+                    else
+                        delete message.displayTextCode;
+                    continue;
+                }
+            case 11: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.bindDisplayTextCode = value;
+                    else
+                        delete message.bindDisplayTextCode;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -13469,6 +13529,15 @@ $root.ProtoLink = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
+        if (message.displayText != null && message.hasOwnProperty("displayText"))
+            if (!$util.isString(message.displayText))
+                return "displayText: string expected";
+        if (message.displayTextCode != null && message.hasOwnProperty("displayTextCode"))
+            if (!$util.isString(message.displayTextCode))
+                return "displayTextCode: string expected";
+        if (message.bindDisplayTextCode != null && message.hasOwnProperty("bindDisplayTextCode"))
+            if (typeof message.bindDisplayTextCode !== "boolean")
+                return "bindDisplayTextCode: boolean expected";
         return null;
     };
 
@@ -13523,6 +13592,15 @@ $root.ProtoLink = (function() {
         if (object.uuid != null)
             if (typeof object.uuid !== "string" || object.uuid.length)
                 message.uuid = String(object.uuid);
+        if (object.displayText != null)
+            if (typeof object.displayText !== "string" || object.displayText.length)
+                message.displayText = String(object.displayText);
+        if (object.displayTextCode != null)
+            if (typeof object.displayTextCode !== "string" || object.displayTextCode.length)
+                message.displayTextCode = String(object.displayTextCode);
+        if (object.bindDisplayTextCode != null)
+            if (object.bindDisplayTextCode)
+                message.bindDisplayTextCode = Boolean(object.bindDisplayTextCode);
         return message;
     };
 
@@ -13550,6 +13628,9 @@ $root.ProtoLink = (function() {
             object.urlCode = "";
             object.bindUrlCode = false;
             object.uuid = "";
+            object.displayText = "";
+            object.displayTextCode = "";
+            object.bindDisplayTextCode = false;
         }
         if (message._children && message._children.length) {
             object._children = Array(message._children.length);
@@ -13573,6 +13654,12 @@ $root.ProtoLink = (function() {
             object.bindUrlCode = message.bindUrlCode;
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
+        if (message.displayText != null && message.hasOwnProperty("displayText"))
+            object.displayText = message.displayText;
+        if (message.displayTextCode != null && message.hasOwnProperty("displayTextCode"))
+            object.displayTextCode = message.displayTextCode;
+        if (message.bindDisplayTextCode != null && message.hasOwnProperty("bindDisplayTextCode"))
+            object.bindDisplayTextCode = message.bindDisplayTextCode;
         return object;
     };
 

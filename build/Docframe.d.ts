@@ -4812,6 +4812,15 @@ export interface IProtoLink {
     /** ProtoLink uuid */
     uuid?: (string|null);
 
+    /** ProtoLink displayText */
+    displayText?: (string|null);
+
+    /** ProtoLink displayTextCode */
+    displayTextCode?: (string|null);
+
+    /** ProtoLink bindDisplayTextCode */
+    bindDisplayTextCode?: (boolean|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -4851,6 +4860,15 @@ export class ProtoLink implements IProtoLink {
 
     /** ProtoLink uuid. */
     public uuid: string;
+
+    /** ProtoLink displayText. */
+    public displayText: string;
+
+    /** ProtoLink displayTextCode. */
+    public displayTextCode: string;
+
+    /** ProtoLink bindDisplayTextCode. */
+    public bindDisplayTextCode: boolean;
 
     /**
      * Creates a new ProtoLink instance using the specified properties.
