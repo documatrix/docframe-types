@@ -15497,6 +15497,9 @@ export interface IProtoSelection {
     /** ProtoSelection max */
     max?: (number|Long|null);
 
+    /** ProtoSelection arrangeable */
+    arrangeable?: (boolean|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -15539,6 +15542,9 @@ export class ProtoSelection implements IProtoSelection {
 
     /** ProtoSelection max. */
     public max: (number|Long);
+
+    /** ProtoSelection arrangeable. */
+    public arrangeable: boolean;
 
     /**
      * Creates a new ProtoSelection instance using the specified properties.

@@ -50458,6 +50458,7 @@ $root.ProtoSelection = (function() {
      * @property {boolean|null} [multi] ProtoSelection multi
      * @property {number|Long|null} [min] ProtoSelection min
      * @property {number|Long|null} [max] ProtoSelection max
+     * @property {boolean|null} [arrangeable] ProtoSelection arrangeable
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -50552,6 +50553,14 @@ $root.ProtoSelection = (function() {
     ProtoSelection.prototype.max = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
 
     /**
+     * ProtoSelection arrangeable.
+     * @member {boolean} arrangeable
+     * @memberof ProtoSelection
+     * @instance
+     */
+    ProtoSelection.prototype.arrangeable = false;
+
+    /**
      * Creates a new ProtoSelection instance using the specified properties.
      * @function create
      * @memberof ProtoSelection
@@ -50595,6 +50604,8 @@ $root.ProtoSelection = (function() {
             writer.uint32(/* id 8, wireType 0 =*/64).uint64(message.min);
         if (message.max != null && Object.hasOwnProperty.call(message, "max"))
             writer.uint32(/* id 9, wireType 0 =*/72).uint64(message.max);
+        if (message.arrangeable != null && Object.hasOwnProperty.call(message, "arrangeable"))
+            writer.uint32(/* id 10, wireType 0 =*/80).bool(message.arrangeable);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -50718,6 +50729,15 @@ $root.ProtoSelection = (function() {
                         delete message.max;
                     continue;
                 }
+            case 10: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.arrangeable = value;
+                    else
+                        delete message.arrangeable;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -50798,6 +50818,9 @@ $root.ProtoSelection = (function() {
         if (message.max != null && message.hasOwnProperty("max"))
             if (!$util.isInteger(message.max) && !(message.max && $util.isInteger(message.max.low) && $util.isInteger(message.max.high)))
                 return "max: integer|Long expected";
+        if (message.arrangeable != null && message.hasOwnProperty("arrangeable"))
+            if (typeof message.arrangeable !== "boolean")
+                return "arrangeable: boolean expected";
         return null;
     };
 
@@ -50871,6 +50894,9 @@ $root.ProtoSelection = (function() {
                     message.max = object.max;
                 else if (typeof object.max === "object")
                     message.max = new $util.LongBits(object.max.low >>> 0, object.max.high >>> 0).toNumber(true);
+        if (object.arrangeable != null)
+            if (object.arrangeable)
+                message.arrangeable = Boolean(object.arrangeable);
         return message;
     };
 
@@ -50907,6 +50933,7 @@ $root.ProtoSelection = (function() {
                 object.max = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
             } else
                 object.max = options.longs === String ? "0" : 0;
+            object.arrangeable = false;
         }
         if (message._children && message._children.length) {
             object._children = Array(message._children.length);
@@ -50938,6 +50965,8 @@ $root.ProtoSelection = (function() {
                 object.max = options.longs === String ? String(message.max) : message.max;
             else
                 object.max = options.longs === String ? $util.Long.prototype.toString.call(message.max) : options.longs === Number ? new $util.LongBits(message.max.low >>> 0, message.max.high >>> 0).toNumber(true) : message.max;
+        if (message.arrangeable != null && message.hasOwnProperty("arrangeable"))
+            object.arrangeable = message.arrangeable;
         return object;
     };
 
