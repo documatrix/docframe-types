@@ -12765,6 +12765,7 @@ type ProtoSelection struct {
 	Multi           bool                    `protobuf:"varint,7,opt,name=multi,proto3" json:"multi,omitempty"`
 	Min             uint64                  `protobuf:"varint,8,opt,name=min,proto3" json:"min,omitempty"`
 	Max             uint64                  `protobuf:"varint,9,opt,name=max,proto3" json:"max,omitempty"`
+	Arrangeable     bool                    `protobuf:"varint,10,opt,name=arrangeable,proto3" json:"arrangeable,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -12860,6 +12861,13 @@ func (x *ProtoSelection) GetMax() uint64 {
 		return x.Max
 	}
 	return 0
+}
+
+func (x *ProtoSelection) GetArrangeable() bool {
+	if x != nil {
+		return x.Arrangeable
+	}
+	return false
 }
 
 type ProtoSelectionEntry struct {
@@ -15452,7 +15460,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
 	"\x04uuid\x18\x02 \x01(\tR\x04uuid\x12\x16\n" +
 	"\x06script\x18\x03 \x01(\tR\x06script\x12(\n" +
-	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\"\xa3\x02\n" +
+	"\x0fcomChannelUUIDs\x18\x04 \x03(\tR\x0fcomChannelUUIDs\"\xc5\x02\n" +
 	"\x0eProtoSelection\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +
@@ -15462,7 +15470,9 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x04name\x18\x06 \x01(\tR\x04name\x12\x14\n" +
 	"\x05multi\x18\a \x01(\bR\x05multi\x12\x10\n" +
 	"\x03min\x18\b \x01(\x04R\x03min\x12\x10\n" +
-	"\x03max\x18\t \x01(\x04R\x03max\"\x8a\x02\n" +
+	"\x03max\x18\t \x01(\x04R\x03max\x12 \n" +
+	"\varrangeable\x18\n" +
+	" \x01(\bR\varrangeable\"\x8a\x02\n" +
 	"\x13ProtoSelectionEntry\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12\x12\n" +

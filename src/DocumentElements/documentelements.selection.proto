@@ -11,4 +11,5 @@ message ProtoSelection {
   bool multi = 7;
   uint64 min = 8;
   uint64 max = 9;
+  bool arrangeable = 10;
 }
