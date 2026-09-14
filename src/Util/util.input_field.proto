@@ -38,4 +38,7 @@ message ProtoBaseInputField {
 
     repeated string comChannelUUIDs = 14;
     string uuid = 15;
+
+    // States if the input field should be hidden in the PDF output. If true, the input field will not be visible in the PDF output.
+    bool pdfHidden = 16;
 }
