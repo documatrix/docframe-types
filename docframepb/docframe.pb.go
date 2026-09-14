@@ -4313,6 +4313,7 @@ type ProtoBaseInputField struct {
 	PdfAltText          string                 `protobuf:"bytes,13,opt,name=pdfAltText,proto3" json:"pdfAltText,omitempty"`
 	ComChannelUUIDs     []string               `protobuf:"bytes,14,rep,name=comChannelUUIDs,proto3" json:"comChannelUUIDs,omitempty"`
 	Uuid                string                 `protobuf:"bytes,15,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	PdfHidden           bool                   `protobuf:"varint,16,opt,name=pdfHidden,proto3" json:"pdfHidden,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -4450,6 +4451,13 @@ func (x *ProtoBaseInputField) GetUuid() string {
 		return x.Uuid
 	}
 	return ""
+}
+
+func (x *ProtoBaseInputField) GetPdfHidden() bool {
+	if x != nil {
+		return x.PdfHidden
+	}
+	return false
 }
 
 type ProtoDocumentElement struct {
@@ -14665,7 +14673,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x01y\x18\x02 \x01(\bR\x01y\"5\n" +
 	"\vProtoOption\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\xac\x04\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\xca\x04\n" +
 	"\x13ProtoBaseInputField\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n" +
 	"\x04meta\x18\x02 \x01(\bR\x04meta\x12'\n" +
@@ -14686,7 +14694,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"pdfAltText\x18\r \x01(\tR\n" +
 	"pdfAltText\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x0e \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
-	"\x04uuid\x18\x0f \x01(\tR\x04uuid\"o\n" +
+	"\x04uuid\x18\x0f \x01(\tR\x04uuid\x12\x1c\n" +
+	"\tpdfHidden\x18\x10 \x01(\bR\tpdfHidden\"o\n" +
 	"\x14ProtoDocumentElement\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\"\xa9\x01\n" +
