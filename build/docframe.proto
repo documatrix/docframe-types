@@ -1249,6 +1249,9 @@ string textContent = 7;
 string textCode = 8;
 repeated string comChannelUUIDs = 9;
 string uuid = 10;
+bool bindDoctypeCode = 11;
+bool bindHtmlCode = 12;
+bool bindTextCode = 13;
 }
 
 message ProtoApplyProtoCDef {
@@ -1459,6 +1462,7 @@ string content = 2;
 ProtoDoctypeOutputMode outputMode = 3;
 repeated string comChannelUUIDs = 4;
 string uuid = 5;
+bool bindContent = 6;
 }
 message ProtoDmScript {
 ProtoDocumentElement parent = 1;
@@ -1466,6 +1470,7 @@ ProtoDocumentElement parent = 1;
 string content = 2;
 repeated string comChannelUUIDs = 3;
 string uuid = 4;
+bool bindContent = 5;
 }
 message ProtoDynamicTemplate {
 ProtoDocumentElement parent = 1;

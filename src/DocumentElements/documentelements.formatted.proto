@@ -12,4 +12,7 @@ message ProtoFormatted {
   string textCode = 8;
   repeated string comChannelUUIDs = 9;
   string uuid = 10;
+  bool bindDoctypeCode = 11;
+  bool bindHtmlCode = 12;
+  bool bindTextCode = 13;
 }

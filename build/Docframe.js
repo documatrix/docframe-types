@@ -40654,6 +40654,9 @@ $root.ProtoFormatted = (function() {
      * @property {string|null} [textCode] ProtoFormatted textCode
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoFormatted comChannelUUIDs
      * @property {string|null} [uuid] ProtoFormatted uuid
+     * @property {boolean|null} [bindDoctypeCode] ProtoFormatted bindDoctypeCode
+     * @property {boolean|null} [bindHtmlCode] ProtoFormatted bindHtmlCode
+     * @property {boolean|null} [bindTextCode] ProtoFormatted bindTextCode
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -40755,6 +40758,30 @@ $root.ProtoFormatted = (function() {
     ProtoFormatted.prototype.uuid = "";
 
     /**
+     * ProtoFormatted bindDoctypeCode.
+     * @member {boolean} bindDoctypeCode
+     * @memberof ProtoFormatted
+     * @instance
+     */
+    ProtoFormatted.prototype.bindDoctypeCode = false;
+
+    /**
+     * ProtoFormatted bindHtmlCode.
+     * @member {boolean} bindHtmlCode
+     * @memberof ProtoFormatted
+     * @instance
+     */
+    ProtoFormatted.prototype.bindHtmlCode = false;
+
+    /**
+     * ProtoFormatted bindTextCode.
+     * @member {boolean} bindTextCode
+     * @memberof ProtoFormatted
+     * @instance
+     */
+    ProtoFormatted.prototype.bindTextCode = false;
+
+    /**
      * Creates a new ProtoFormatted instance using the specified properties.
      * @function create
      * @memberof ProtoFormatted
@@ -40799,6 +40826,12 @@ $root.ProtoFormatted = (function() {
                 writer.uint32(/* id 9, wireType 2 =*/74).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 10, wireType 2 =*/82).string(message.uuid);
+        if (message.bindDoctypeCode != null && Object.hasOwnProperty.call(message, "bindDoctypeCode"))
+            writer.uint32(/* id 11, wireType 0 =*/88).bool(message.bindDoctypeCode);
+        if (message.bindHtmlCode != null && Object.hasOwnProperty.call(message, "bindHtmlCode"))
+            writer.uint32(/* id 12, wireType 0 =*/96).bool(message.bindHtmlCode);
+        if (message.bindTextCode != null && Object.hasOwnProperty.call(message, "bindTextCode"))
+            writer.uint32(/* id 13, wireType 0 =*/104).bool(message.bindTextCode);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -40932,6 +40965,33 @@ $root.ProtoFormatted = (function() {
                         delete message.uuid;
                     continue;
                 }
+            case 11: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.bindDoctypeCode = value;
+                    else
+                        delete message.bindDoctypeCode;
+                    continue;
+                }
+            case 12: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.bindHtmlCode = value;
+                    else
+                        delete message.bindHtmlCode;
+                    continue;
+                }
+            case 13: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.bindTextCode = value;
+                    else
+                        delete message.bindTextCode;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -41009,6 +41069,15 @@ $root.ProtoFormatted = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
+        if (message.bindDoctypeCode != null && message.hasOwnProperty("bindDoctypeCode"))
+            if (typeof message.bindDoctypeCode !== "boolean")
+                return "bindDoctypeCode: boolean expected";
+        if (message.bindHtmlCode != null && message.hasOwnProperty("bindHtmlCode"))
+            if (typeof message.bindHtmlCode !== "boolean")
+                return "bindHtmlCode: boolean expected";
+        if (message.bindTextCode != null && message.hasOwnProperty("bindTextCode"))
+            if (typeof message.bindTextCode !== "boolean")
+                return "bindTextCode: boolean expected";
         return null;
     };
 
@@ -41064,6 +41133,15 @@ $root.ProtoFormatted = (function() {
         if (object.uuid != null)
             if (typeof object.uuid !== "string" || object.uuid.length)
                 message.uuid = String(object.uuid);
+        if (object.bindDoctypeCode != null)
+            if (object.bindDoctypeCode)
+                message.bindDoctypeCode = Boolean(object.bindDoctypeCode);
+        if (object.bindHtmlCode != null)
+            if (object.bindHtmlCode)
+                message.bindHtmlCode = Boolean(object.bindHtmlCode);
+        if (object.bindTextCode != null)
+            if (object.bindTextCode)
+                message.bindTextCode = Boolean(object.bindTextCode);
         return message;
     };
 
@@ -41092,6 +41170,9 @@ $root.ProtoFormatted = (function() {
             object.textContent = "";
             object.textCode = "";
             object.uuid = "";
+            object.bindDoctypeCode = false;
+            object.bindHtmlCode = false;
+            object.bindTextCode = false;
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -41116,6 +41197,12 @@ $root.ProtoFormatted = (function() {
         }
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
+        if (message.bindDoctypeCode != null && message.hasOwnProperty("bindDoctypeCode"))
+            object.bindDoctypeCode = message.bindDoctypeCode;
+        if (message.bindHtmlCode != null && message.hasOwnProperty("bindHtmlCode"))
+            object.bindHtmlCode = message.bindHtmlCode;
+        if (message.bindTextCode != null && message.hasOwnProperty("bindTextCode"))
+            object.bindTextCode = message.bindTextCode;
         return object;
     };
 
@@ -49396,6 +49483,7 @@ $root.ProtoDoctypeScript = (function() {
      * @property {ProtoDoctypeOutputMode|null} [outputMode] ProtoDoctypeScript outputMode
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoDoctypeScript comChannelUUIDs
      * @property {string|null} [uuid] ProtoDoctypeScript uuid
+     * @property {boolean|null} [bindContent] ProtoDoctypeScript bindContent
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -49457,6 +49545,14 @@ $root.ProtoDoctypeScript = (function() {
     ProtoDoctypeScript.prototype.uuid = "";
 
     /**
+     * ProtoDoctypeScript bindContent.
+     * @member {boolean} bindContent
+     * @memberof ProtoDoctypeScript
+     * @instance
+     */
+    ProtoDoctypeScript.prototype.bindContent = false;
+
+    /**
      * Creates a new ProtoDoctypeScript instance using the specified properties.
      * @function create
      * @memberof ProtoDoctypeScript
@@ -49491,6 +49587,8 @@ $root.ProtoDoctypeScript = (function() {
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 5, wireType 2 =*/42).string(message.uuid);
+        if (message.bindContent != null && Object.hasOwnProperty.call(message, "bindContent"))
+            writer.uint32(/* id 6, wireType 0 =*/48).bool(message.bindContent);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -49579,6 +49677,15 @@ $root.ProtoDoctypeScript = (function() {
                         delete message.uuid;
                     continue;
                 }
+            case 6: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.bindContent = value;
+                    else
+                        delete message.bindContent;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -49647,6 +49754,9 @@ $root.ProtoDoctypeScript = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
+        if (message.bindContent != null && message.hasOwnProperty("bindContent"))
+            if (typeof message.bindContent !== "boolean")
+                return "bindContent: boolean expected";
         return null;
     };
 
@@ -49705,6 +49815,9 @@ $root.ProtoDoctypeScript = (function() {
         if (object.uuid != null)
             if (typeof object.uuid !== "string" || object.uuid.length)
                 message.uuid = String(object.uuid);
+        if (object.bindContent != null)
+            if (object.bindContent)
+                message.bindContent = Boolean(object.bindContent);
         return message;
     };
 
@@ -49728,6 +49841,7 @@ $root.ProtoDoctypeScript = (function() {
             object.content = "";
             object.outputMode = options.enums === String ? "DOCTYPE_OUTPUT_MODE_NOT_SET" : 0;
             object.uuid = "";
+            object.bindContent = false;
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -49742,6 +49856,8 @@ $root.ProtoDoctypeScript = (function() {
         }
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
+        if (message.bindContent != null && message.hasOwnProperty("bindContent"))
+            object.bindContent = message.bindContent;
         return object;
     };
 
@@ -49783,6 +49899,7 @@ $root.ProtoDmScript = (function() {
      * @property {string|null} [content] ProtoDmScript content
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoDmScript comChannelUUIDs
      * @property {string|null} [uuid] ProtoDmScript uuid
+     * @property {boolean|null} [bindContent] ProtoDmScript bindContent
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -49836,6 +49953,14 @@ $root.ProtoDmScript = (function() {
     ProtoDmScript.prototype.uuid = "";
 
     /**
+     * ProtoDmScript bindContent.
+     * @member {boolean} bindContent
+     * @memberof ProtoDmScript
+     * @instance
+     */
+    ProtoDmScript.prototype.bindContent = false;
+
+    /**
      * Creates a new ProtoDmScript instance using the specified properties.
      * @function create
      * @memberof ProtoDmScript
@@ -49868,6 +49993,8 @@ $root.ProtoDmScript = (function() {
                 writer.uint32(/* id 3, wireType 2 =*/26).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 4, wireType 2 =*/34).string(message.uuid);
+        if (message.bindContent != null && Object.hasOwnProperty.call(message, "bindContent"))
+            writer.uint32(/* id 5, wireType 0 =*/40).bool(message.bindContent);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -49947,6 +50074,15 @@ $root.ProtoDmScript = (function() {
                         delete message.uuid;
                     continue;
                 }
+            case 5: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.bindContent = value;
+                    else
+                        delete message.bindContent;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -50006,6 +50142,9 @@ $root.ProtoDmScript = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
+        if (message.bindContent != null && message.hasOwnProperty("bindContent"))
+            if (typeof message.bindContent !== "boolean")
+                return "bindContent: boolean expected";
         return null;
     };
 
@@ -50043,6 +50182,9 @@ $root.ProtoDmScript = (function() {
         if (object.uuid != null)
             if (typeof object.uuid !== "string" || object.uuid.length)
                 message.uuid = String(object.uuid);
+        if (object.bindContent != null)
+            if (object.bindContent)
+                message.bindContent = Boolean(object.bindContent);
         return message;
     };
 
@@ -50065,6 +50207,7 @@ $root.ProtoDmScript = (function() {
             object.parent = null;
             object.content = "";
             object.uuid = "";
+            object.bindContent = false;
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -50077,6 +50220,8 @@ $root.ProtoDmScript = (function() {
         }
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
+        if (message.bindContent != null && message.hasOwnProperty("bindContent"))
+            object.bindContent = message.bindContent;
         return object;
     };
 
