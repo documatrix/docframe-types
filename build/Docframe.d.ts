@@ -12248,6 +12248,15 @@ export interface IProtoFormatted {
     /** ProtoFormatted uuid */
     uuid?: (string|null);
 
+    /** ProtoFormatted bindDoctypeCode */
+    bindDoctypeCode?: (boolean|null);
+
+    /** ProtoFormatted bindHtmlCode */
+    bindHtmlCode?: (boolean|null);
+
+    /** ProtoFormatted bindTextCode */
+    bindTextCode?: (boolean|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -12293,6 +12302,15 @@ export class ProtoFormatted implements IProtoFormatted {
 
     /** ProtoFormatted uuid. */
     public uuid: string;
+
+    /** ProtoFormatted bindDoctypeCode. */
+    public bindDoctypeCode: boolean;
+
+    /** ProtoFormatted bindHtmlCode. */
+    public bindHtmlCode: boolean;
+
+    /** ProtoFormatted bindTextCode. */
+    public bindTextCode: boolean;
 
     /**
      * Creates a new ProtoFormatted instance using the specified properties.
@@ -15116,6 +15134,9 @@ export interface IProtoDoctypeScript {
     /** ProtoDoctypeScript uuid */
     uuid?: (string|null);
 
+    /** ProtoDoctypeScript bindContent */
+    bindContent?: (boolean|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -15146,6 +15167,9 @@ export class ProtoDoctypeScript implements IProtoDoctypeScript {
 
     /** ProtoDoctypeScript uuid. */
     public uuid: string;
+
+    /** ProtoDoctypeScript bindContent. */
+    public bindContent: boolean;
 
     /**
      * Creates a new ProtoDoctypeScript instance using the specified properties.
@@ -15240,6 +15264,9 @@ export interface IProtoDmScript {
     /** ProtoDmScript uuid */
     uuid?: (string|null);
 
+    /** ProtoDmScript bindContent */
+    bindContent?: (boolean|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -15267,6 +15294,9 @@ export class ProtoDmScript implements IProtoDmScript {
 
     /** ProtoDmScript uuid. */
     public uuid: string;
+
+    /** ProtoDmScript bindContent. */
+    public bindContent: boolean;
 
     /**
      * Creates a new ProtoDmScript instance using the specified properties.
