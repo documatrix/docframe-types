@@ -1,0 +1,4 @@
+enum ProtoGenerationType {
+    ALWAYS = 0;
+    ONLY_IF_VISIBLE = 1;
+}

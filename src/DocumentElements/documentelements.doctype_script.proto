@@ -15,4 +15,5 @@ message ProtoDoctypeScript {
   repeated string comChannelUUIDs = 4;
   string uuid = 5;
   bool bindContent = 6;
+  ProtoGenerationType generationType = 7;
 }

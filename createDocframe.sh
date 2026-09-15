@@ -36,6 +36,7 @@ declare -a FileArray=(
   "src/Util/util.semantic_type.proto"
   "src/Util/util.input_field.proto"
   "src/Util/util.inheritance.proto"
+  "src/Util/util.generation_type.proto"
   "src/DocumentElements/documentelements.document_element.proto"
   "src/DocumentElements/documentelements.branch_document_element.proto"
   "src/DocumentElements/documentelements.link.proto"
@@ -97,6 +98,7 @@ declare -a FileArray=(
   "src/DocumentElements/documentelements.table_of_contents.proto"
   "src/DocumentElements/documentelements.section_reference.proto"
   "src/DocumentElements/documentelements.chapter_link.proto"
+  "src/DocumentElements/documentelements.visibility_condition.proto"
 )
 
 for file in ${FileArray[@]}; do

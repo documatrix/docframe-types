@@ -367,6 +367,10 @@ INHERITANCE_BIND_CODE = 2;
 INHERITANCE_STATIC = 3;
 INHERITANCE_RESET = 4;
 }
+enum ProtoGenerationType {
+ALWAYS = 0;
+ONLY_IF_VISIBLE = 1;
+}
 message ProtoDocumentElement {
 ProtoDocumentElement parent = 1;
 repeated string comChannelUUIDs = 2;
@@ -1062,6 +1066,7 @@ ProtoChapter chapter = 84;
 ProtoTableOfContents table_of_contents = 85;
 ProtoSectionReference section_reference = 86;
 ProtoChapterLink chapter_link = 87;
+ProtoVisibilityCondition visibility_condition = 88;
 }
 }
 
@@ -1140,6 +1145,7 @@ DOCUMENT_ELEMENT_CHAPTER = 90;
 DOCUMENT_ELEMENT_TABLE_OF_CONTENTS = 91;
 DOCUMENT_ELEMENT_SECTION_REFERENCE = 92;
 DOCUMENT_ELEMENT_CHAPTER_LINK = 93;
+DOCUMENT_ELEMENT_VISIBILITY_CONDITION = 94;
 }
 enum ProtoImageScaleType {
 IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL = 0;
@@ -1254,6 +1260,9 @@ string uuid = 10;
 bool bindDoctypeCode = 11;
 bool bindHtmlCode = 12;
 bool bindTextCode = 13;
+ProtoGenerationType generationTypeDoctype = 14;
+ProtoGenerationType generationTypeHtml = 15;
+ProtoGenerationType generationTypeText = 16;
 }
 
 message ProtoApplyProtoCDef {
@@ -1465,6 +1474,7 @@ ProtoDoctypeOutputMode outputMode = 3;
 repeated string comChannelUUIDs = 4;
 string uuid = 5;
 bool bindContent = 6;
+ProtoGenerationType generationType = 7;
 }
 message ProtoDmScript {
 ProtoDocumentElement parent = 1;
@@ -1473,6 +1483,7 @@ string content = 2;
 repeated string comChannelUUIDs = 3;
 string uuid = 4;
 bool bindContent = 5;
+ProtoGenerationType generationType = 6;
 }
 message ProtoDynamicTemplate {
 ProtoDocumentElement parent = 1;
@@ -1493,6 +1504,7 @@ bool multi = 7;
 uint64 min = 8;
 uint64 max = 9;
 bool arrangeable = 10;
+string onChangeCode = 11;
 }
 message ProtoSelectionEntry {
 repeated ProtoDocumentElement _children = 1;
@@ -1503,6 +1515,7 @@ repeated string comChannelUUIDs = 4;
 string internalName = 5;
 string name = 6;
 bool selected = 7;
+string onChangeCode = 8;
 }
 message ProtoCondition {
 repeated ProtoDocumentElement _children = 1;
@@ -1669,4 +1682,12 @@ repeated ProtoDocumentElement _children = 1;
 string uuid = 2;
 string name = 3;
 repeated string comChannelUUIDs = 4;
+}
+message ProtoVisibilityCondition {
+repeated ProtoDocumentElement _children = 1;
+ProtoDocumentElement parent = 2;
+string uuid = 3;
+repeated string comChannelUUIDs = 4;
+string code = 5;
+bool visible = 6;
 }

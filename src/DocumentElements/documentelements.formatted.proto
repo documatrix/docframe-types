@@ -15,4 +15,7 @@ message ProtoFormatted {
   bool bindDoctypeCode = 11;
   bool bindHtmlCode = 12;
   bool bindTextCode = 13;
+  ProtoGenerationType generationTypeDoctype = 14;
+  ProtoGenerationType generationTypeHtml = 15;
+  ProtoGenerationType generationTypeText = 16;
 }
