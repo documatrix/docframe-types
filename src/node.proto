@@ -75,6 +75,7 @@ message Node {
     ProtoTableOfContents table_of_contents = 85;
     ProtoSectionReference section_reference = 86;
     ProtoChapterLink chapter_link = 87;
+    ProtoVisibilityCondition visibility_condition = 88;
   }
 }
 
@@ -153,4 +154,5 @@ enum NodeType {
   DOCUMENT_ELEMENT_TABLE_OF_CONTENTS = 91;
   DOCUMENT_ELEMENT_SECTION_REFERENCE = 92;
   DOCUMENT_ELEMENT_CHAPTER_LINK = 93;
+  DOCUMENT_ELEMENT_VISIBILITY_CONDITION = 94;
 }

@@ -6,4 +6,5 @@ message ProtoDmScript {
   repeated string comChannelUUIDs = 3;
   string uuid = 4;
   bool bindContent = 5;
+  ProtoGenerationType generationType = 6;
 }
