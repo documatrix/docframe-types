@@ -1473,9 +1473,14 @@ string content = 2;
 ProtoDoctypeOutputMode outputMode = 3;
 repeated string comChannelUUIDs = 4;
 string uuid = 5;
-bool bindContent = 6;
-ProtoGenerationType generationType = 7;
+ProtoGenerationType generationType = 6;
 }
+enum ProtoDmScriptOutputType {
+DM_SCRIPT_OUTPUT_TYPE_NONE = 0;
+DM_SCRIPT_OUTPUT_TYPE_STRING = 1;
+DM_SCRIPT_OUTPUT_TYPE_DOCTYPE = 2;
+}
+
 message ProtoDmScript {
 ProtoDocumentElement parent = 1;
 
@@ -1484,6 +1489,7 @@ repeated string comChannelUUIDs = 3;
 string uuid = 4;
 bool bindContent = 5;
 ProtoGenerationType generationType = 6;
+ProtoDmScriptOutputType outputType = 7;
 }
 message ProtoDynamicTemplate {
 ProtoDocumentElement parent = 1;

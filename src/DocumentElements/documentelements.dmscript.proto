@@ -1,3 +1,12 @@
+enum ProtoDmScriptOutputType {
+    // Script output should be ignored
+    DM_SCRIPT_OUTPUT_TYPE_NONE = 0;
+    // Script output should be treated as string
+    DM_SCRIPT_OUTPUT_TYPE_STRING = 1;
+    // Script output should be treated as doctype code
+    DM_SCRIPT_OUTPUT_TYPE_DOCTYPE = 2;
+}
+
 message ProtoDmScript {
   // extends DocumentElement
   ProtoDocumentElement parent = 1;
@@ -7,4 +16,5 @@ message ProtoDmScript {
   string uuid = 4;
   bool bindContent = 5;
   ProtoGenerationType generationType = 6;
+  ProtoDmScriptOutputType outputType = 7;
 }
