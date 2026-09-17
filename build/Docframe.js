@@ -49710,7 +49710,6 @@ $root.ProtoDoctypeScript = (function() {
      * @property {ProtoDoctypeOutputMode|null} [outputMode] ProtoDoctypeScript outputMode
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoDoctypeScript comChannelUUIDs
      * @property {string|null} [uuid] ProtoDoctypeScript uuid
-     * @property {boolean|null} [bindContent] ProtoDoctypeScript bindContent
      * @property {ProtoGenerationType|null} [generationType] ProtoDoctypeScript generationType
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
@@ -49773,14 +49772,6 @@ $root.ProtoDoctypeScript = (function() {
     ProtoDoctypeScript.prototype.uuid = "";
 
     /**
-     * ProtoDoctypeScript bindContent.
-     * @member {boolean} bindContent
-     * @memberof ProtoDoctypeScript
-     * @instance
-     */
-    ProtoDoctypeScript.prototype.bindContent = false;
-
-    /**
      * ProtoDoctypeScript generationType.
      * @member {ProtoGenerationType} generationType
      * @memberof ProtoDoctypeScript
@@ -49823,10 +49814,8 @@ $root.ProtoDoctypeScript = (function() {
                 writer.uint32(/* id 4, wireType 2 =*/34).string(message.comChannelUUIDs[i]);
         if (message.uuid != null && Object.hasOwnProperty.call(message, "uuid"))
             writer.uint32(/* id 5, wireType 2 =*/42).string(message.uuid);
-        if (message.bindContent != null && Object.hasOwnProperty.call(message, "bindContent"))
-            writer.uint32(/* id 6, wireType 0 =*/48).bool(message.bindContent);
         if (message.generationType != null && Object.hasOwnProperty.call(message, "generationType"))
-            writer.uint32(/* id 7, wireType 0 =*/56).int32(message.generationType);
+            writer.uint32(/* id 6, wireType 0 =*/48).int32(message.generationType);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -49918,15 +49907,6 @@ $root.ProtoDoctypeScript = (function() {
             case 6: {
                     if (wireType !== 0)
                         break;
-                    if (value = reader.bool())
-                        message.bindContent = value;
-                    else
-                        delete message.bindContent;
-                    continue;
-                }
-            case 7: {
-                    if (wireType !== 0)
-                        break;
                     if (value = reader.int32())
                         message.generationType = value;
                     else
@@ -50001,9 +49981,6 @@ $root.ProtoDoctypeScript = (function() {
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             if (!$util.isString(message.uuid))
                 return "uuid: string expected";
-        if (message.bindContent != null && message.hasOwnProperty("bindContent"))
-            if (typeof message.bindContent !== "boolean")
-                return "bindContent: boolean expected";
         if (message.generationType != null && message.hasOwnProperty("generationType"))
             switch (message.generationType) {
             default:
@@ -50070,9 +50047,6 @@ $root.ProtoDoctypeScript = (function() {
         if (object.uuid != null)
             if (typeof object.uuid !== "string" || object.uuid.length)
                 message.uuid = String(object.uuid);
-        if (object.bindContent != null)
-            if (object.bindContent)
-                message.bindContent = Boolean(object.bindContent);
         if (object.generationType !== 0 && (typeof object.generationType !== "string" || $root.ProtoGenerationType[object.generationType] !== 0))
             switch (object.generationType) {
             default:
@@ -50113,7 +50087,6 @@ $root.ProtoDoctypeScript = (function() {
             object.content = "";
             object.outputMode = options.enums === String ? "DOCTYPE_OUTPUT_MODE_NOT_SET" : 0;
             object.uuid = "";
-            object.bindContent = false;
             object.generationType = options.enums === String ? "ALWAYS" : 0;
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
@@ -50129,8 +50102,6 @@ $root.ProtoDoctypeScript = (function() {
         }
         if (message.uuid != null && message.hasOwnProperty("uuid"))
             object.uuid = message.uuid;
-        if (message.bindContent != null && message.hasOwnProperty("bindContent"))
-            object.bindContent = message.bindContent;
         if (message.generationType != null && message.hasOwnProperty("generationType"))
             object.generationType = options.enums === String ? $root.ProtoGenerationType[message.generationType] === undefined ? message.generationType : $root.ProtoGenerationType[message.generationType] : message.generationType;
         return object;
@@ -50164,6 +50135,22 @@ $root.ProtoDoctypeScript = (function() {
     return ProtoDoctypeScript;
 })();
 
+/**
+ * ProtoDmScriptOutputType enum.
+ * @name ProtoDmScriptOutputType
+ * @enum {number}
+ * @property {number} DM_SCRIPT_OUTPUT_TYPE_NONE=0 DM_SCRIPT_OUTPUT_TYPE_NONE value
+ * @property {number} DM_SCRIPT_OUTPUT_TYPE_STRING=1 DM_SCRIPT_OUTPUT_TYPE_STRING value
+ * @property {number} DM_SCRIPT_OUTPUT_TYPE_DOCTYPE=2 DM_SCRIPT_OUTPUT_TYPE_DOCTYPE value
+ */
+$root.ProtoDmScriptOutputType = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "DM_SCRIPT_OUTPUT_TYPE_NONE"] = 0;
+    values[valuesById[1] = "DM_SCRIPT_OUTPUT_TYPE_STRING"] = 1;
+    values[valuesById[2] = "DM_SCRIPT_OUTPUT_TYPE_DOCTYPE"] = 2;
+    return values;
+})();
+
 $root.ProtoDmScript = (function() {
 
     /**
@@ -50176,6 +50163,7 @@ $root.ProtoDmScript = (function() {
      * @property {string|null} [uuid] ProtoDmScript uuid
      * @property {boolean|null} [bindContent] ProtoDmScript bindContent
      * @property {ProtoGenerationType|null} [generationType] ProtoDmScript generationType
+     * @property {ProtoDmScriptOutputType|null} [outputType] ProtoDmScript outputType
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -50245,6 +50233,14 @@ $root.ProtoDmScript = (function() {
     ProtoDmScript.prototype.generationType = 0;
 
     /**
+     * ProtoDmScript outputType.
+     * @member {ProtoDmScriptOutputType} outputType
+     * @memberof ProtoDmScript
+     * @instance
+     */
+    ProtoDmScript.prototype.outputType = 0;
+
+    /**
      * Creates a new ProtoDmScript instance using the specified properties.
      * @function create
      * @memberof ProtoDmScript
@@ -50281,6 +50277,8 @@ $root.ProtoDmScript = (function() {
             writer.uint32(/* id 5, wireType 0 =*/40).bool(message.bindContent);
         if (message.generationType != null && Object.hasOwnProperty.call(message, "generationType"))
             writer.uint32(/* id 6, wireType 0 =*/48).int32(message.generationType);
+        if (message.outputType != null && Object.hasOwnProperty.call(message, "outputType"))
+            writer.uint32(/* id 7, wireType 0 =*/56).int32(message.outputType);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -50378,6 +50376,15 @@ $root.ProtoDmScript = (function() {
                         delete message.generationType;
                     continue;
                 }
+            case 7: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.int32())
+                        message.outputType = value;
+                    else
+                        delete message.outputType;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -50448,6 +50455,15 @@ $root.ProtoDmScript = (function() {
             case 1:
                 break;
             }
+        if (message.outputType != null && message.hasOwnProperty("outputType"))
+            switch (message.outputType) {
+            default:
+                return "outputType: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+                break;
+            }
         return null;
     };
 
@@ -50505,6 +50521,27 @@ $root.ProtoDmScript = (function() {
                 message.generationType = 1;
                 break;
             }
+        if (object.outputType !== 0 && (typeof object.outputType !== "string" || $root.ProtoDmScriptOutputType[object.outputType] !== 0))
+            switch (object.outputType) {
+            default:
+                if (typeof object.outputType === "number") {
+                    message.outputType = object.outputType;
+                    break;
+                }
+                break;
+            case "DM_SCRIPT_OUTPUT_TYPE_NONE":
+            case 0:
+                message.outputType = 0;
+                break;
+            case "DM_SCRIPT_OUTPUT_TYPE_STRING":
+            case 1:
+                message.outputType = 1;
+                break;
+            case "DM_SCRIPT_OUTPUT_TYPE_DOCTYPE":
+            case 2:
+                message.outputType = 2;
+                break;
+            }
         return message;
     };
 
@@ -50529,6 +50566,7 @@ $root.ProtoDmScript = (function() {
             object.uuid = "";
             object.bindContent = false;
             object.generationType = options.enums === String ? "ALWAYS" : 0;
+            object.outputType = options.enums === String ? "DM_SCRIPT_OUTPUT_TYPE_NONE" : 0;
         }
         if (message.parent != null && message.hasOwnProperty("parent"))
             object.parent = $root.ProtoDocumentElement.toObject(message.parent, options);
@@ -50545,6 +50583,8 @@ $root.ProtoDmScript = (function() {
             object.bindContent = message.bindContent;
         if (message.generationType != null && message.hasOwnProperty("generationType"))
             object.generationType = options.enums === String ? $root.ProtoGenerationType[message.generationType] === undefined ? message.generationType : $root.ProtoGenerationType[message.generationType] : message.generationType;
+        if (message.outputType != null && message.hasOwnProperty("outputType"))
+            object.outputType = options.enums === String ? $root.ProtoDmScriptOutputType[message.outputType] === undefined ? message.outputType : $root.ProtoDmScriptOutputType[message.outputType] : message.outputType;
         return object;
     };
 

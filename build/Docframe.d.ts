@@ -15171,9 +15171,6 @@ export interface IProtoDoctypeScript {
     /** ProtoDoctypeScript uuid */
     uuid?: (string|null);
 
-    /** ProtoDoctypeScript bindContent */
-    bindContent?: (boolean|null);
-
     /** ProtoDoctypeScript generationType */
     generationType?: (ProtoGenerationType|null);
 
@@ -15207,9 +15204,6 @@ export class ProtoDoctypeScript implements IProtoDoctypeScript {
 
     /** ProtoDoctypeScript uuid. */
     public uuid: string;
-
-    /** ProtoDoctypeScript bindContent. */
-    public bindContent: boolean;
 
     /** ProtoDoctypeScript generationType. */
     public generationType: ProtoGenerationType;
@@ -15292,6 +15286,13 @@ export class ProtoDoctypeScript implements IProtoDoctypeScript {
     public static getTypeUrl(prefix?: string): string;
 }
 
+/** ProtoDmScriptOutputType enum. */
+export enum ProtoDmScriptOutputType {
+    DM_SCRIPT_OUTPUT_TYPE_NONE = 0,
+    DM_SCRIPT_OUTPUT_TYPE_STRING = 1,
+    DM_SCRIPT_OUTPUT_TYPE_DOCTYPE = 2
+}
+
 /** Properties of a ProtoDmScript. */
 export interface IProtoDmScript {
 
@@ -15312,6 +15313,9 @@ export interface IProtoDmScript {
 
     /** ProtoDmScript generationType */
     generationType?: (ProtoGenerationType|null);
+
+    /** ProtoDmScript outputType */
+    outputType?: (ProtoDmScriptOutputType|null);
 
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
@@ -15346,6 +15350,9 @@ export class ProtoDmScript implements IProtoDmScript {
 
     /** ProtoDmScript generationType. */
     public generationType: ProtoGenerationType;
+
+    /** ProtoDmScript outputType. */
+    public outputType: ProtoDmScriptOutputType;
 
     /**
      * Creates a new ProtoDmScript instance using the specified properties.
