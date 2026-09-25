@@ -4419,6 +4419,30 @@ export interface IProtoBaseInputField {
     /** ProtoBaseInputField pdfReadonly */
     pdfReadonly?: (boolean|null);
 
+    /** ProtoBaseInputField pdfNoPrint */
+    pdfNoPrint?: (boolean|null);
+
+    /** ProtoBaseInputField pdfInvisible */
+    pdfInvisible?: (boolean|null);
+
+    /** ProtoBaseInputField pdfNoZoom */
+    pdfNoZoom?: (boolean|null);
+
+    /** ProtoBaseInputField pdfNoRotate */
+    pdfNoRotate?: (boolean|null);
+
+    /** ProtoBaseInputField pdfNoView */
+    pdfNoView?: (boolean|null);
+
+    /** ProtoBaseInputField pdfLocked */
+    pdfLocked?: (boolean|null);
+
+    /** ProtoBaseInputField pdfToggleNoView */
+    pdfToggleNoView?: (boolean|null);
+
+    /** ProtoBaseInputField pdfLockedContents */
+    pdfLockedContents?: (boolean|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -4485,6 +4509,30 @@ export class ProtoBaseInputField implements IProtoBaseInputField {
 
     /** ProtoBaseInputField pdfReadonly. */
     public pdfReadonly: boolean;
+
+    /** ProtoBaseInputField pdfNoPrint. */
+    public pdfNoPrint: boolean;
+
+    /** ProtoBaseInputField pdfInvisible. */
+    public pdfInvisible: boolean;
+
+    /** ProtoBaseInputField pdfNoZoom. */
+    public pdfNoZoom: boolean;
+
+    /** ProtoBaseInputField pdfNoRotate. */
+    public pdfNoRotate: boolean;
+
+    /** ProtoBaseInputField pdfNoView. */
+    public pdfNoView: boolean;
+
+    /** ProtoBaseInputField pdfLocked. */
+    public pdfLocked: boolean;
+
+    /** ProtoBaseInputField pdfToggleNoView. */
+    public pdfToggleNoView: boolean;
+
+    /** ProtoBaseInputField pdfLockedContents. */
+    public pdfLockedContents: boolean;
 
     /**
      * Creates a new ProtoBaseInputField instance using the specified properties.

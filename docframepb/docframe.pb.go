@@ -4364,6 +4364,14 @@ type ProtoBaseInputField struct {
 	Uuid                string                 `protobuf:"bytes,15,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	PdfHidden           bool                   `protobuf:"varint,16,opt,name=pdfHidden,proto3" json:"pdfHidden,omitempty"`
 	PdfReadonly         bool                   `protobuf:"varint,17,opt,name=pdfReadonly,proto3" json:"pdfReadonly,omitempty"`
+	PdfNoPrint          bool                   `protobuf:"varint,18,opt,name=pdfNoPrint,proto3" json:"pdfNoPrint,omitempty"`
+	PdfInvisible        bool                   `protobuf:"varint,19,opt,name=pdfInvisible,proto3" json:"pdfInvisible,omitempty"`
+	PdfNoZoom           bool                   `protobuf:"varint,20,opt,name=pdfNoZoom,proto3" json:"pdfNoZoom,omitempty"`
+	PdfNoRotate         bool                   `protobuf:"varint,21,opt,name=pdfNoRotate,proto3" json:"pdfNoRotate,omitempty"`
+	PdfNoView           bool                   `protobuf:"varint,22,opt,name=pdfNoView,proto3" json:"pdfNoView,omitempty"`
+	PdfLocked           bool                   `protobuf:"varint,23,opt,name=pdfLocked,proto3" json:"pdfLocked,omitempty"`
+	PdfToggleNoView     bool                   `protobuf:"varint,24,opt,name=pdfToggleNoView,proto3" json:"pdfToggleNoView,omitempty"`
+	PdfLockedContents   bool                   `protobuf:"varint,25,opt,name=pdfLockedContents,proto3" json:"pdfLockedContents,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -4513,6 +4521,62 @@ func (x *ProtoBaseInputField) GetPdfHidden() bool {
 func (x *ProtoBaseInputField) GetPdfReadonly() bool {
 	if x != nil {
 		return x.PdfReadonly
+	}
+	return false
+}
+
+func (x *ProtoBaseInputField) GetPdfNoPrint() bool {
+	if x != nil {
+		return x.PdfNoPrint
+	}
+	return false
+}
+
+func (x *ProtoBaseInputField) GetPdfInvisible() bool {
+	if x != nil {
+		return x.PdfInvisible
+	}
+	return false
+}
+
+func (x *ProtoBaseInputField) GetPdfNoZoom() bool {
+	if x != nil {
+		return x.PdfNoZoom
+	}
+	return false
+}
+
+func (x *ProtoBaseInputField) GetPdfNoRotate() bool {
+	if x != nil {
+		return x.PdfNoRotate
+	}
+	return false
+}
+
+func (x *ProtoBaseInputField) GetPdfNoView() bool {
+	if x != nil {
+		return x.PdfNoView
+	}
+	return false
+}
+
+func (x *ProtoBaseInputField) GetPdfLocked() bool {
+	if x != nil {
+		return x.PdfLocked
+	}
+	return false
+}
+
+func (x *ProtoBaseInputField) GetPdfToggleNoView() bool {
+	if x != nil {
+		return x.PdfToggleNoView
+	}
+	return false
+}
+
+func (x *ProtoBaseInputField) GetPdfLockedContents() bool {
+	if x != nil {
+		return x.PdfLockedContents
 	}
 	return false
 }
@@ -14886,7 +14950,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x01y\x18\x02 \x01(\bR\x01y\"5\n" +
 	"\vProtoOption\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\xec\x04\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\x84\a\n" +
 	"\x13ProtoBaseInputField\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x12\n" +
 	"\x04meta\x18\x02 \x01(\bR\x04meta\x12'\n" +
@@ -14909,7 +14973,17 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0fcomChannelUUIDs\x18\x0e \x03(\tR\x0fcomChannelUUIDs\x12\x12\n" +
 	"\x04uuid\x18\x0f \x01(\tR\x04uuid\x12\x1c\n" +
 	"\tpdfHidden\x18\x10 \x01(\bR\tpdfHidden\x12 \n" +
-	"\vpdfReadonly\x18\x11 \x01(\bR\vpdfReadonly\"o\n" +
+	"\vpdfReadonly\x18\x11 \x01(\bR\vpdfReadonly\x12\x1e\n" +
+	"\n" +
+	"pdfNoPrint\x18\x12 \x01(\bR\n" +
+	"pdfNoPrint\x12\"\n" +
+	"\fpdfInvisible\x18\x13 \x01(\bR\fpdfInvisible\x12\x1c\n" +
+	"\tpdfNoZoom\x18\x14 \x01(\bR\tpdfNoZoom\x12 \n" +
+	"\vpdfNoRotate\x18\x15 \x01(\bR\vpdfNoRotate\x12\x1c\n" +
+	"\tpdfNoView\x18\x16 \x01(\bR\tpdfNoView\x12\x1c\n" +
+	"\tpdfLocked\x18\x17 \x01(\bR\tpdfLocked\x12(\n" +
+	"\x0fpdfToggleNoView\x18\x18 \x01(\bR\x0fpdfToggleNoView\x12,\n" +
+	"\x11pdfLockedContents\x18\x19 \x01(\bR\x11pdfLockedContents\"o\n" +
 	"\x14ProtoDocumentElement\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\x02 \x03(\tR\x0fcomChannelUUIDs\"\xa9\x01\n" +

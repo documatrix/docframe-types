@@ -11857,6 +11857,14 @@ $root.ProtoBaseInputField = (function() {
      * @property {string|null} [uuid] ProtoBaseInputField uuid
      * @property {boolean|null} [pdfHidden] ProtoBaseInputField pdfHidden
      * @property {boolean|null} [pdfReadonly] ProtoBaseInputField pdfReadonly
+     * @property {boolean|null} [pdfNoPrint] ProtoBaseInputField pdfNoPrint
+     * @property {boolean|null} [pdfInvisible] ProtoBaseInputField pdfInvisible
+     * @property {boolean|null} [pdfNoZoom] ProtoBaseInputField pdfNoZoom
+     * @property {boolean|null} [pdfNoRotate] ProtoBaseInputField pdfNoRotate
+     * @property {boolean|null} [pdfNoView] ProtoBaseInputField pdfNoView
+     * @property {boolean|null} [pdfLocked] ProtoBaseInputField pdfLocked
+     * @property {boolean|null} [pdfToggleNoView] ProtoBaseInputField pdfToggleNoView
+     * @property {boolean|null} [pdfLockedContents] ProtoBaseInputField pdfLockedContents
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -12014,6 +12022,70 @@ $root.ProtoBaseInputField = (function() {
     ProtoBaseInputField.prototype.pdfReadonly = false;
 
     /**
+     * ProtoBaseInputField pdfNoPrint.
+     * @member {boolean} pdfNoPrint
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.pdfNoPrint = false;
+
+    /**
+     * ProtoBaseInputField pdfInvisible.
+     * @member {boolean} pdfInvisible
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.pdfInvisible = false;
+
+    /**
+     * ProtoBaseInputField pdfNoZoom.
+     * @member {boolean} pdfNoZoom
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.pdfNoZoom = false;
+
+    /**
+     * ProtoBaseInputField pdfNoRotate.
+     * @member {boolean} pdfNoRotate
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.pdfNoRotate = false;
+
+    /**
+     * ProtoBaseInputField pdfNoView.
+     * @member {boolean} pdfNoView
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.pdfNoView = false;
+
+    /**
+     * ProtoBaseInputField pdfLocked.
+     * @member {boolean} pdfLocked
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.pdfLocked = false;
+
+    /**
+     * ProtoBaseInputField pdfToggleNoView.
+     * @member {boolean} pdfToggleNoView
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.pdfToggleNoView = false;
+
+    /**
+     * ProtoBaseInputField pdfLockedContents.
+     * @member {boolean} pdfLockedContents
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.pdfLockedContents = false;
+
+    /**
      * Creates a new ProtoBaseInputField instance using the specified properties.
      * @function create
      * @memberof ProtoBaseInputField
@@ -12072,6 +12144,22 @@ $root.ProtoBaseInputField = (function() {
             writer.uint32(/* id 16, wireType 0 =*/128).bool(message.pdfHidden);
         if (message.pdfReadonly != null && Object.hasOwnProperty.call(message, "pdfReadonly"))
             writer.uint32(/* id 17, wireType 0 =*/136).bool(message.pdfReadonly);
+        if (message.pdfNoPrint != null && Object.hasOwnProperty.call(message, "pdfNoPrint"))
+            writer.uint32(/* id 18, wireType 0 =*/144).bool(message.pdfNoPrint);
+        if (message.pdfInvisible != null && Object.hasOwnProperty.call(message, "pdfInvisible"))
+            writer.uint32(/* id 19, wireType 0 =*/152).bool(message.pdfInvisible);
+        if (message.pdfNoZoom != null && Object.hasOwnProperty.call(message, "pdfNoZoom"))
+            writer.uint32(/* id 20, wireType 0 =*/160).bool(message.pdfNoZoom);
+        if (message.pdfNoRotate != null && Object.hasOwnProperty.call(message, "pdfNoRotate"))
+            writer.uint32(/* id 21, wireType 0 =*/168).bool(message.pdfNoRotate);
+        if (message.pdfNoView != null && Object.hasOwnProperty.call(message, "pdfNoView"))
+            writer.uint32(/* id 22, wireType 0 =*/176).bool(message.pdfNoView);
+        if (message.pdfLocked != null && Object.hasOwnProperty.call(message, "pdfLocked"))
+            writer.uint32(/* id 23, wireType 0 =*/184).bool(message.pdfLocked);
+        if (message.pdfToggleNoView != null && Object.hasOwnProperty.call(message, "pdfToggleNoView"))
+            writer.uint32(/* id 24, wireType 0 =*/192).bool(message.pdfToggleNoView);
+        if (message.pdfLockedContents != null && Object.hasOwnProperty.call(message, "pdfLockedContents"))
+            writer.uint32(/* id 25, wireType 0 =*/200).bool(message.pdfLockedContents);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -12268,6 +12356,78 @@ $root.ProtoBaseInputField = (function() {
                         delete message.pdfReadonly;
                     continue;
                 }
+            case 18: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.pdfNoPrint = value;
+                    else
+                        delete message.pdfNoPrint;
+                    continue;
+                }
+            case 19: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.pdfInvisible = value;
+                    else
+                        delete message.pdfInvisible;
+                    continue;
+                }
+            case 20: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.pdfNoZoom = value;
+                    else
+                        delete message.pdfNoZoom;
+                    continue;
+                }
+            case 21: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.pdfNoRotate = value;
+                    else
+                        delete message.pdfNoRotate;
+                    continue;
+                }
+            case 22: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.pdfNoView = value;
+                    else
+                        delete message.pdfNoView;
+                    continue;
+                }
+            case 23: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.pdfLocked = value;
+                    else
+                        delete message.pdfLocked;
+                    continue;
+                }
+            case 24: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.pdfToggleNoView = value;
+                    else
+                        delete message.pdfToggleNoView;
+                    continue;
+                }
+            case 25: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.pdfLockedContents = value;
+                    else
+                        delete message.pdfLockedContents;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -12373,6 +12533,30 @@ $root.ProtoBaseInputField = (function() {
         if (message.pdfReadonly != null && message.hasOwnProperty("pdfReadonly"))
             if (typeof message.pdfReadonly !== "boolean")
                 return "pdfReadonly: boolean expected";
+        if (message.pdfNoPrint != null && message.hasOwnProperty("pdfNoPrint"))
+            if (typeof message.pdfNoPrint !== "boolean")
+                return "pdfNoPrint: boolean expected";
+        if (message.pdfInvisible != null && message.hasOwnProperty("pdfInvisible"))
+            if (typeof message.pdfInvisible !== "boolean")
+                return "pdfInvisible: boolean expected";
+        if (message.pdfNoZoom != null && message.hasOwnProperty("pdfNoZoom"))
+            if (typeof message.pdfNoZoom !== "boolean")
+                return "pdfNoZoom: boolean expected";
+        if (message.pdfNoRotate != null && message.hasOwnProperty("pdfNoRotate"))
+            if (typeof message.pdfNoRotate !== "boolean")
+                return "pdfNoRotate: boolean expected";
+        if (message.pdfNoView != null && message.hasOwnProperty("pdfNoView"))
+            if (typeof message.pdfNoView !== "boolean")
+                return "pdfNoView: boolean expected";
+        if (message.pdfLocked != null && message.hasOwnProperty("pdfLocked"))
+            if (typeof message.pdfLocked !== "boolean")
+                return "pdfLocked: boolean expected";
+        if (message.pdfToggleNoView != null && message.hasOwnProperty("pdfToggleNoView"))
+            if (typeof message.pdfToggleNoView !== "boolean")
+                return "pdfToggleNoView: boolean expected";
+        if (message.pdfLockedContents != null && message.hasOwnProperty("pdfLockedContents"))
+            if (typeof message.pdfLockedContents !== "boolean")
+                return "pdfLockedContents: boolean expected";
         return null;
     };
 
@@ -12471,6 +12655,30 @@ $root.ProtoBaseInputField = (function() {
         if (object.pdfReadonly != null)
             if (object.pdfReadonly)
                 message.pdfReadonly = Boolean(object.pdfReadonly);
+        if (object.pdfNoPrint != null)
+            if (object.pdfNoPrint)
+                message.pdfNoPrint = Boolean(object.pdfNoPrint);
+        if (object.pdfInvisible != null)
+            if (object.pdfInvisible)
+                message.pdfInvisible = Boolean(object.pdfInvisible);
+        if (object.pdfNoZoom != null)
+            if (object.pdfNoZoom)
+                message.pdfNoZoom = Boolean(object.pdfNoZoom);
+        if (object.pdfNoRotate != null)
+            if (object.pdfNoRotate)
+                message.pdfNoRotate = Boolean(object.pdfNoRotate);
+        if (object.pdfNoView != null)
+            if (object.pdfNoView)
+                message.pdfNoView = Boolean(object.pdfNoView);
+        if (object.pdfLocked != null)
+            if (object.pdfLocked)
+                message.pdfLocked = Boolean(object.pdfLocked);
+        if (object.pdfToggleNoView != null)
+            if (object.pdfToggleNoView)
+                message.pdfToggleNoView = Boolean(object.pdfToggleNoView);
+        if (object.pdfLockedContents != null)
+            if (object.pdfLockedContents)
+                message.pdfLockedContents = Boolean(object.pdfLockedContents);
         return message;
     };
 
@@ -12506,6 +12714,14 @@ $root.ProtoBaseInputField = (function() {
             object.uuid = "";
             object.pdfHidden = false;
             object.pdfReadonly = false;
+            object.pdfNoPrint = false;
+            object.pdfInvisible = false;
+            object.pdfNoZoom = false;
+            object.pdfNoRotate = false;
+            object.pdfNoView = false;
+            object.pdfLocked = false;
+            object.pdfToggleNoView = false;
+            object.pdfLockedContents = false;
         }
         if (message.name != null && message.hasOwnProperty("name"))
             object.name = message.name;
@@ -12544,6 +12760,22 @@ $root.ProtoBaseInputField = (function() {
             object.pdfHidden = message.pdfHidden;
         if (message.pdfReadonly != null && message.hasOwnProperty("pdfReadonly"))
             object.pdfReadonly = message.pdfReadonly;
+        if (message.pdfNoPrint != null && message.hasOwnProperty("pdfNoPrint"))
+            object.pdfNoPrint = message.pdfNoPrint;
+        if (message.pdfInvisible != null && message.hasOwnProperty("pdfInvisible"))
+            object.pdfInvisible = message.pdfInvisible;
+        if (message.pdfNoZoom != null && message.hasOwnProperty("pdfNoZoom"))
+            object.pdfNoZoom = message.pdfNoZoom;
+        if (message.pdfNoRotate != null && message.hasOwnProperty("pdfNoRotate"))
+            object.pdfNoRotate = message.pdfNoRotate;
+        if (message.pdfNoView != null && message.hasOwnProperty("pdfNoView"))
+            object.pdfNoView = message.pdfNoView;
+        if (message.pdfLocked != null && message.hasOwnProperty("pdfLocked"))
+            object.pdfLocked = message.pdfLocked;
+        if (message.pdfToggleNoView != null && message.hasOwnProperty("pdfToggleNoView"))
+            object.pdfToggleNoView = message.pdfToggleNoView;
+        if (message.pdfLockedContents != null && message.hasOwnProperty("pdfLockedContents"))
+            object.pdfLockedContents = message.pdfLockedContents;
         return object;
     };
 
