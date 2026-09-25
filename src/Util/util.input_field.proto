@@ -41,4 +41,7 @@ message ProtoBaseInputField {
 
     // States if the input field should be hidden in the PDF output. If true, the input field will not be visible in the PDF output.
     bool pdfHidden = 16;
+
+    // States if the input field should be a read-only PDF form field. If true, the field's value cannot be changed in the PDF output.
+    bool pdfReadonly = 17;
 }

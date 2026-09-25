@@ -359,6 +359,8 @@ repeated string comChannelUUIDs = 14;
 string uuid = 15;
 
 bool pdfHidden = 16;
+
+bool pdfReadonly = 17;
 }
 enum Inheritance {
 INHERITANCE_INHERIT = 0;
