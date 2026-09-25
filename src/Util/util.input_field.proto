@@ -44,4 +44,28 @@ message ProtoBaseInputField {
 
     // States if the input field should be a read-only PDF form field. If true, the field's value cannot be changed in the PDF output.
     bool pdfReadonly = 17;
+
+    // States if the input field should not be printed when the PDF is printed. If false, the PDF annotation flag "Print" is set.
+    bool pdfNoPrint = 18;
+
+    // States if the input field should be invisible in the PDF output if no annotation handler is available (PDF annotation flag "Invisible").
+    bool pdfInvisible = 19;
+
+    // States if the input field's appearance should not scale with the page magnification (PDF annotation flag "NoZoom").
+    bool pdfNoZoom = 20;
+
+    // States if the input field's appearance should not rotate with the page (PDF annotation flag "NoRotate").
+    bool pdfNoRotate = 21;
+
+    // States if the input field should not be displayed or interactable on screen, but may still be printed (PDF annotation flag "NoView").
+    bool pdfNoView = 22;
+
+    // States if the input field cannot be deleted or have its properties modified in the PDF output (PDF annotation flag "Locked").
+    bool pdfLocked = 23;
+
+    // States if the "NoView" flag should be toggled on certain events like mouse hover or selection (PDF annotation flag "ToggleNoView").
+    bool pdfToggleNoView = 24;
+
+    // States if the input field's contents cannot be modified in the PDF output (PDF annotation flag "LockedContents").
+    bool pdfLockedContents = 25;
 }

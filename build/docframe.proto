@@ -361,6 +361,22 @@ string uuid = 15;
 bool pdfHidden = 16;
 
 bool pdfReadonly = 17;
+
+bool pdfNoPrint = 18;
+
+bool pdfInvisible = 19;
+
+bool pdfNoZoom = 20;
+
+bool pdfNoRotate = 21;
+
+bool pdfNoView = 22;
+
+bool pdfLocked = 23;
+
+bool pdfToggleNoView = 24;
+
+bool pdfLockedContents = 25;
 }
 enum Inheritance {
 INHERITANCE_INHERIT = 0;
