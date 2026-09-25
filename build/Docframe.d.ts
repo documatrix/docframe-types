@@ -4416,6 +4416,9 @@ export interface IProtoBaseInputField {
     /** ProtoBaseInputField pdfHidden */
     pdfHidden?: (boolean|null);
 
+    /** ProtoBaseInputField pdfReadonly */
+    pdfReadonly?: (boolean|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -4479,6 +4482,9 @@ export class ProtoBaseInputField implements IProtoBaseInputField {
 
     /** ProtoBaseInputField pdfHidden. */
     public pdfHidden: boolean;
+
+    /** ProtoBaseInputField pdfReadonly. */
+    public pdfReadonly: boolean;
 
     /**
      * Creates a new ProtoBaseInputField instance using the specified properties.

@@ -11856,6 +11856,7 @@ $root.ProtoBaseInputField = (function() {
      * @property {Array.<string>|null} [comChannelUUIDs] ProtoBaseInputField comChannelUUIDs
      * @property {string|null} [uuid] ProtoBaseInputField uuid
      * @property {boolean|null} [pdfHidden] ProtoBaseInputField pdfHidden
+     * @property {boolean|null} [pdfReadonly] ProtoBaseInputField pdfReadonly
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -12005,6 +12006,14 @@ $root.ProtoBaseInputField = (function() {
     ProtoBaseInputField.prototype.pdfHidden = false;
 
     /**
+     * ProtoBaseInputField pdfReadonly.
+     * @member {boolean} pdfReadonly
+     * @memberof ProtoBaseInputField
+     * @instance
+     */
+    ProtoBaseInputField.prototype.pdfReadonly = false;
+
+    /**
      * Creates a new ProtoBaseInputField instance using the specified properties.
      * @function create
      * @memberof ProtoBaseInputField
@@ -12061,6 +12070,8 @@ $root.ProtoBaseInputField = (function() {
             writer.uint32(/* id 15, wireType 2 =*/122).string(message.uuid);
         if (message.pdfHidden != null && Object.hasOwnProperty.call(message, "pdfHidden"))
             writer.uint32(/* id 16, wireType 0 =*/128).bool(message.pdfHidden);
+        if (message.pdfReadonly != null && Object.hasOwnProperty.call(message, "pdfReadonly"))
+            writer.uint32(/* id 17, wireType 0 =*/136).bool(message.pdfReadonly);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -12248,6 +12259,15 @@ $root.ProtoBaseInputField = (function() {
                         delete message.pdfHidden;
                     continue;
                 }
+            case 17: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.pdfReadonly = value;
+                    else
+                        delete message.pdfReadonly;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -12350,6 +12370,9 @@ $root.ProtoBaseInputField = (function() {
         if (message.pdfHidden != null && message.hasOwnProperty("pdfHidden"))
             if (typeof message.pdfHidden !== "boolean")
                 return "pdfHidden: boolean expected";
+        if (message.pdfReadonly != null && message.hasOwnProperty("pdfReadonly"))
+            if (typeof message.pdfReadonly !== "boolean")
+                return "pdfReadonly: boolean expected";
         return null;
     };
 
@@ -12445,6 +12468,9 @@ $root.ProtoBaseInputField = (function() {
         if (object.pdfHidden != null)
             if (object.pdfHidden)
                 message.pdfHidden = Boolean(object.pdfHidden);
+        if (object.pdfReadonly != null)
+            if (object.pdfReadonly)
+                message.pdfReadonly = Boolean(object.pdfReadonly);
         return message;
     };
 
@@ -12479,6 +12505,7 @@ $root.ProtoBaseInputField = (function() {
             object.pdfAltText = "";
             object.uuid = "";
             object.pdfHidden = false;
+            object.pdfReadonly = false;
         }
         if (message.name != null && message.hasOwnProperty("name"))
             object.name = message.name;
@@ -12515,6 +12542,8 @@ $root.ProtoBaseInputField = (function() {
             object.uuid = message.uuid;
         if (message.pdfHidden != null && message.hasOwnProperty("pdfHidden"))
             object.pdfHidden = message.pdfHidden;
+        if (message.pdfReadonly != null && message.hasOwnProperty("pdfReadonly"))
+            object.pdfReadonly = message.pdfReadonly;
         return object;
     };
 
