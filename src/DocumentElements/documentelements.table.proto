@@ -172,6 +172,7 @@ message ProtoTableCellSettings {
   // a paragraph format, which should be used as default paragraph format
   // for content in a table cell using these settings.
   ProtoBoxedString defaultParagraphFormat = 9;
+  ProtoBoxedTableCellSemanticType semanticType = 10;
 }
 
 // go-gen:ignore
@@ -306,4 +307,8 @@ message ProtoTableElementProperties {
   Inheritance repeatSubHeaderInheritance = 91;
   ProtoBoxedUint32 repeatSubHeader = 92;
   string repeatSubHeaderCode = 93;
+
+  Inheritance semanticTypeInheritance = 94;
+  ProtoBoxedTableCellSemanticType semanticType = 95;
+  string semanticTypeCode = 96;
 }

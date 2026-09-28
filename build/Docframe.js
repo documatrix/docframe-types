@@ -11553,6 +11553,323 @@ $root.ProtoSemanticType = (function() {
     return values;
 })();
 
+/**
+ * ProtoTableCellSemanticType enum.
+ * @name ProtoTableCellSemanticType
+ * @enum {number}
+ * @property {number} TABLE_CELL_SEMANTIC_TYPE_AUTO=0 TABLE_CELL_SEMANTIC_TYPE_AUTO value
+ * @property {number} TABLE_CELL_SEMANTIC_TYPE_TD=1 TABLE_CELL_SEMANTIC_TYPE_TD value
+ * @property {number} TABLE_CELL_SEMANTIC_TYPE_TH_COLUMN=2 TABLE_CELL_SEMANTIC_TYPE_TH_COLUMN value
+ * @property {number} TABLE_CELL_SEMANTIC_TYPE_TH_ROW=3 TABLE_CELL_SEMANTIC_TYPE_TH_ROW value
+ * @property {number} TABLE_CELL_SEMANTIC_TYPE_TH_BOTH=4 TABLE_CELL_SEMANTIC_TYPE_TH_BOTH value
+ */
+$root.ProtoTableCellSemanticType = (function() {
+    var valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "TABLE_CELL_SEMANTIC_TYPE_AUTO"] = 0;
+    values[valuesById[1] = "TABLE_CELL_SEMANTIC_TYPE_TD"] = 1;
+    values[valuesById[2] = "TABLE_CELL_SEMANTIC_TYPE_TH_COLUMN"] = 2;
+    values[valuesById[3] = "TABLE_CELL_SEMANTIC_TYPE_TH_ROW"] = 3;
+    values[valuesById[4] = "TABLE_CELL_SEMANTIC_TYPE_TH_BOTH"] = 4;
+    return values;
+})();
+
+$root.ProtoBoxedTableCellSemanticType = (function() {
+
+    /**
+     * Properties of a ProtoBoxedTableCellSemanticType.
+     * @name IProtoBoxedTableCellSemanticType
+     * @interface IProtoBoxedTableCellSemanticType
+     * @property {ProtoTableCellSemanticType|null} [value] ProtoBoxedTableCellSemanticType value
+     * @property {boolean|null} [isNull] ProtoBoxedTableCellSemanticType isNull
+     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
+     */
+
+    /**
+     * Constructs a new ProtoBoxedTableCellSemanticType.
+     * @name ProtoBoxedTableCellSemanticType
+     * @classdesc Represents a ProtoBoxedTableCellSemanticType.
+     * @implements IProtoBoxedTableCellSemanticType
+     * @constructor
+     * @param {IProtoBoxedTableCellSemanticType=} [properties] Properties to set
+     * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
+     */
+    function ProtoBoxedTableCellSemanticType(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null && keys[i] !== "__proto__")
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoBoxedTableCellSemanticType value.
+     * @member {ProtoTableCellSemanticType} value
+     * @memberof ProtoBoxedTableCellSemanticType
+     * @instance
+     */
+    ProtoBoxedTableCellSemanticType.prototype.value = 0;
+
+    /**
+     * ProtoBoxedTableCellSemanticType isNull.
+     * @member {boolean} isNull
+     * @memberof ProtoBoxedTableCellSemanticType
+     * @instance
+     */
+    ProtoBoxedTableCellSemanticType.prototype.isNull = false;
+
+    /**
+     * Creates a new ProtoBoxedTableCellSemanticType instance using the specified properties.
+     * @function create
+     * @memberof ProtoBoxedTableCellSemanticType
+     * @static
+     * @param {IProtoBoxedTableCellSemanticType=} [properties] Properties to set
+     * @returns {ProtoBoxedTableCellSemanticType} ProtoBoxedTableCellSemanticType instance
+     */
+    ProtoBoxedTableCellSemanticType.create = function create(properties) {
+        return new ProtoBoxedTableCellSemanticType(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoBoxedTableCellSemanticType message. Does not implicitly {@link ProtoBoxedTableCellSemanticType.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoBoxedTableCellSemanticType
+     * @static
+     * @param {IProtoBoxedTableCellSemanticType} message ProtoBoxedTableCellSemanticType message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoBoxedTableCellSemanticType.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.value != null && Object.hasOwnProperty.call(message, "value"))
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.value);
+        if (message.isNull != null && Object.hasOwnProperty.call(message, "isNull"))
+            writer.uint32(/* id 2, wireType 0 =*/16).bool(message.isNull);
+        if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
+            for (var i = 0; i < message.$unknowns.length; ++i)
+                writer.raw(message.$unknowns[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoBoxedTableCellSemanticType message, length delimited. Does not implicitly {@link ProtoBoxedTableCellSemanticType.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoBoxedTableCellSemanticType
+     * @static
+     * @param {IProtoBoxedTableCellSemanticType} message ProtoBoxedTableCellSemanticType message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoBoxedTableCellSemanticType.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoBoxedTableCellSemanticType message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoBoxedTableCellSemanticType
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoBoxedTableCellSemanticType} ProtoBoxedTableCellSemanticType
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoBoxedTableCellSemanticType.decode = function decode(reader, length, _end, _depth, _target) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $Reader.recursionLimit)
+            throw Error("max depth exceeded");
+        var end = length === undefined ? reader.len : reader.pos + length, message = _target || new $root.ProtoBoxedTableCellSemanticType(), value;
+        while (reader.pos < end) {
+            var start = reader.pos;
+            var tag = reader.tag();
+            if (tag === _end) {
+                _end = undefined;
+                break;
+            }
+            var wireType = tag & 7;
+            switch (tag >>>= 3) {
+            case 1: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.int32())
+                        message.value = value;
+                    else
+                        delete message.value;
+                    continue;
+                }
+            case 2: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.isNull = value;
+                    else
+                        delete message.isNull;
+                    continue;
+                }
+            }
+            reader.skipType(wireType, _depth, tag);
+            $util.makeProp(message, "$unknowns", false);
+            (message.$unknowns || (message.$unknowns = [])).push(reader.raw(start, reader.pos));
+        }
+        if (_end !== undefined)
+            throw Error("missing end group");
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoBoxedTableCellSemanticType message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoBoxedTableCellSemanticType
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoBoxedTableCellSemanticType} ProtoBoxedTableCellSemanticType
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoBoxedTableCellSemanticType.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoBoxedTableCellSemanticType message.
+     * @function verify
+     * @memberof ProtoBoxedTableCellSemanticType
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoBoxedTableCellSemanticType.verify = function verify(message, _depth) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $util.recursionLimit)
+            return "max depth exceeded";
+        if (message.value != null && message.hasOwnProperty("value"))
+            switch (message.value) {
+            default:
+                return "value: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.isNull != null && message.hasOwnProperty("isNull"))
+            if (typeof message.isNull !== "boolean")
+                return "isNull: boolean expected";
+        return null;
+    };
+
+    /**
+     * Creates a ProtoBoxedTableCellSemanticType message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoBoxedTableCellSemanticType
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoBoxedTableCellSemanticType} ProtoBoxedTableCellSemanticType
+     */
+    ProtoBoxedTableCellSemanticType.fromObject = function fromObject(object, _depth) {
+        if (object instanceof $root.ProtoBoxedTableCellSemanticType)
+            return object;
+        if (_depth === undefined)
+            _depth = 0;
+        if (_depth > $util.recursionLimit)
+            throw Error("max depth exceeded");
+        var message = new $root.ProtoBoxedTableCellSemanticType();
+        if (object.value !== 0 && (typeof object.value !== "string" || $root.ProtoTableCellSemanticType[object.value] !== 0))
+            switch (object.value) {
+            default:
+                if (typeof object.value === "number") {
+                    message.value = object.value;
+                    break;
+                }
+                break;
+            case "TABLE_CELL_SEMANTIC_TYPE_AUTO":
+            case 0:
+                message.value = 0;
+                break;
+            case "TABLE_CELL_SEMANTIC_TYPE_TD":
+            case 1:
+                message.value = 1;
+                break;
+            case "TABLE_CELL_SEMANTIC_TYPE_TH_COLUMN":
+            case 2:
+                message.value = 2;
+                break;
+            case "TABLE_CELL_SEMANTIC_TYPE_TH_ROW":
+            case 3:
+                message.value = 3;
+                break;
+            case "TABLE_CELL_SEMANTIC_TYPE_TH_BOTH":
+            case 4:
+                message.value = 4;
+                break;
+            }
+        if (object.isNull != null)
+            if (object.isNull)
+                message.isNull = Boolean(object.isNull);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoBoxedTableCellSemanticType message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoBoxedTableCellSemanticType
+     * @static
+     * @param {ProtoBoxedTableCellSemanticType} message ProtoBoxedTableCellSemanticType
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoBoxedTableCellSemanticType.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.value = options.enums === String ? "TABLE_CELL_SEMANTIC_TYPE_AUTO" : 0;
+            object.isNull = false;
+        }
+        if (message.value != null && message.hasOwnProperty("value"))
+            object.value = options.enums === String ? $root.ProtoTableCellSemanticType[message.value] === undefined ? message.value : $root.ProtoTableCellSemanticType[message.value] : message.value;
+        if (message.isNull != null && message.hasOwnProperty("isNull"))
+            object.isNull = message.isNull;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoBoxedTableCellSemanticType to JSON.
+     * @function toJSON
+     * @memberof ProtoBoxedTableCellSemanticType
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoBoxedTableCellSemanticType.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the type url for ProtoBoxedTableCellSemanticType
+     * @function getTypeUrl
+     * @memberof ProtoBoxedTableCellSemanticType
+     * @static
+     * @param {string} [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns {string} The type url
+     */
+    ProtoBoxedTableCellSemanticType.getTypeUrl = function getTypeUrl(prefix) {
+        if (prefix === undefined)
+            prefix = "type.googleapis.com";
+        return prefix + "/ProtoBoxedTableCellSemanticType";
+    };
+
+    return ProtoBoxedTableCellSemanticType;
+})();
+
 $root.ProtoOption = (function() {
 
     /**
@@ -27074,6 +27391,7 @@ $root.ProtoTableCellSettings = (function() {
      * @property {IProtoSideMeasures|null} [margin] ProtoTableCellSettings margin
      * @property {IProtoBoxedDouble|null} [rotation] ProtoTableCellSettings rotation
      * @property {IProtoBoxedString|null} [defaultParagraphFormat] ProtoTableCellSettings defaultParagraphFormat
+     * @property {IProtoBoxedTableCellSemanticType|null} [semanticType] ProtoTableCellSettings semanticType
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -27166,6 +27484,14 @@ $root.ProtoTableCellSettings = (function() {
     ProtoTableCellSettings.prototype.defaultParagraphFormat = null;
 
     /**
+     * ProtoTableCellSettings semanticType.
+     * @member {IProtoBoxedTableCellSemanticType|null|undefined} semanticType
+     * @memberof ProtoTableCellSettings
+     * @instance
+     */
+    ProtoTableCellSettings.prototype.semanticType = null;
+
+    /**
      * Creates a new ProtoTableCellSettings instance using the specified properties.
      * @function create
      * @memberof ProtoTableCellSettings
@@ -27207,6 +27533,8 @@ $root.ProtoTableCellSettings = (function() {
             $root.ProtoBoxedDouble.encode(message.rotation, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
         if (message.defaultParagraphFormat != null && Object.hasOwnProperty.call(message, "defaultParagraphFormat"))
             $root.ProtoBoxedString.encode(message.defaultParagraphFormat, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+        if (message.semanticType != null && Object.hasOwnProperty.call(message, "semanticType"))
+            $root.ProtoBoxedTableCellSemanticType.encode(message.semanticType, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -27308,6 +27636,12 @@ $root.ProtoTableCellSettings = (function() {
                     message.defaultParagraphFormat = $root.ProtoBoxedString.decode(reader, reader.uint32(), undefined, _depth + 1, message.defaultParagraphFormat);
                     continue;
                 }
+            case 10: {
+                    if (wireType !== 2)
+                        break;
+                    message.semanticType = $root.ProtoBoxedTableCellSemanticType.decode(reader, reader.uint32(), undefined, _depth + 1, message.semanticType);
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -27394,6 +27728,11 @@ $root.ProtoTableCellSettings = (function() {
             if (error)
                 return "defaultParagraphFormat." + error;
         }
+        if (message.semanticType != null && message.hasOwnProperty("semanticType")) {
+            var error = $root.ProtoBoxedTableCellSemanticType.verify(message.semanticType, _depth + 1);
+            if (error)
+                return "semanticType." + error;
+        }
         return null;
     };
 
@@ -27458,6 +27797,11 @@ $root.ProtoTableCellSettings = (function() {
                 throw TypeError(".ProtoTableCellSettings.defaultParagraphFormat: object expected");
             message.defaultParagraphFormat = $root.ProtoBoxedString.fromObject(object.defaultParagraphFormat, _depth + 1);
         }
+        if (object.semanticType != null) {
+            if (typeof object.semanticType !== "object")
+                throw TypeError(".ProtoTableCellSettings.semanticType: object expected");
+            message.semanticType = $root.ProtoBoxedTableCellSemanticType.fromObject(object.semanticType, _depth + 1);
+        }
         return message;
     };
 
@@ -27484,6 +27828,7 @@ $root.ProtoTableCellSettings = (function() {
             object.margin = null;
             object.rotation = null;
             object.defaultParagraphFormat = null;
+            object.semanticType = null;
         }
         if (message.width != null && message.hasOwnProperty("width"))
             object.width = $root.ProtoMeasure.toObject(message.width, options);
@@ -27503,6 +27848,8 @@ $root.ProtoTableCellSettings = (function() {
             object.rotation = $root.ProtoBoxedDouble.toObject(message.rotation, options);
         if (message.defaultParagraphFormat != null && message.hasOwnProperty("defaultParagraphFormat"))
             object.defaultParagraphFormat = $root.ProtoBoxedString.toObject(message.defaultParagraphFormat, options);
+        if (message.semanticType != null && message.hasOwnProperty("semanticType"))
+            object.semanticType = $root.ProtoBoxedTableCellSemanticType.toObject(message.semanticType, options);
         return object;
     };
 
@@ -27925,6 +28272,9 @@ $root.ProtoTableElementProperties = (function() {
      * @property {Inheritance|null} [repeatSubHeaderInheritance] ProtoTableElementProperties repeatSubHeaderInheritance
      * @property {IProtoBoxedUint32|null} [repeatSubHeader] ProtoTableElementProperties repeatSubHeader
      * @property {string|null} [repeatSubHeaderCode] ProtoTableElementProperties repeatSubHeaderCode
+     * @property {Inheritance|null} [semanticTypeInheritance] ProtoTableElementProperties semanticTypeInheritance
+     * @property {IProtoBoxedTableCellSemanticType|null} [semanticType] ProtoTableElementProperties semanticType
+     * @property {string|null} [semanticTypeCode] ProtoTableElementProperties semanticTypeCode
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -28690,6 +29040,30 @@ $root.ProtoTableElementProperties = (function() {
     ProtoTableElementProperties.prototype.repeatSubHeaderCode = "";
 
     /**
+     * ProtoTableElementProperties semanticTypeInheritance.
+     * @member {Inheritance} semanticTypeInheritance
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.semanticTypeInheritance = 0;
+
+    /**
+     * ProtoTableElementProperties semanticType.
+     * @member {IProtoBoxedTableCellSemanticType|null|undefined} semanticType
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.semanticType = null;
+
+    /**
+     * ProtoTableElementProperties semanticTypeCode.
+     * @member {string} semanticTypeCode
+     * @memberof ProtoTableElementProperties
+     * @instance
+     */
+    ProtoTableElementProperties.prototype.semanticTypeCode = "";
+
+    /**
      * Creates a new ProtoTableElementProperties instance using the specified properties.
      * @function create
      * @memberof ProtoTableElementProperties
@@ -28900,6 +29274,12 @@ $root.ProtoTableElementProperties = (function() {
             $root.ProtoBoxedUint32.encode(message.repeatSubHeader, writer.uint32(/* id 92, wireType 2 =*/738).fork()).ldelim();
         if (message.repeatSubHeaderCode != null && Object.hasOwnProperty.call(message, "repeatSubHeaderCode"))
             writer.uint32(/* id 93, wireType 2 =*/746).string(message.repeatSubHeaderCode);
+        if (message.semanticTypeInheritance != null && Object.hasOwnProperty.call(message, "semanticTypeInheritance"))
+            writer.uint32(/* id 94, wireType 0 =*/752).int32(message.semanticTypeInheritance);
+        if (message.semanticType != null && Object.hasOwnProperty.call(message, "semanticType"))
+            $root.ProtoBoxedTableCellSemanticType.encode(message.semanticType, writer.uint32(/* id 95, wireType 2 =*/762).fork()).ldelim();
+        if (message.semanticTypeCode != null && Object.hasOwnProperty.call(message, "semanticTypeCode"))
+            writer.uint32(/* id 96, wireType 2 =*/770).string(message.semanticTypeCode);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -29693,6 +30073,30 @@ $root.ProtoTableElementProperties = (function() {
                         delete message.repeatSubHeaderCode;
                     continue;
                 }
+            case 94: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.int32())
+                        message.semanticTypeInheritance = value;
+                    else
+                        delete message.semanticTypeInheritance;
+                    continue;
+                }
+            case 95: {
+                    if (wireType !== 2)
+                        break;
+                    message.semanticType = $root.ProtoBoxedTableCellSemanticType.decode(reader, reader.uint32(), undefined, _depth + 1, message.semanticType);
+                    continue;
+                }
+            case 96: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.semanticTypeCode = value;
+                    else
+                        delete message.semanticTypeCode;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -30327,6 +30731,25 @@ $root.ProtoTableElementProperties = (function() {
         if (message.repeatSubHeaderCode != null && message.hasOwnProperty("repeatSubHeaderCode"))
             if (!$util.isString(message.repeatSubHeaderCode))
                 return "repeatSubHeaderCode: string expected";
+        if (message.semanticTypeInheritance != null && message.hasOwnProperty("semanticTypeInheritance"))
+            switch (message.semanticTypeInheritance) {
+            default:
+                return "semanticTypeInheritance: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            }
+        if (message.semanticType != null && message.hasOwnProperty("semanticType")) {
+            var error = $root.ProtoBoxedTableCellSemanticType.verify(message.semanticType, _depth + 1);
+            if (error)
+                return "semanticType." + error;
+        }
+        if (message.semanticTypeCode != null && message.hasOwnProperty("semanticTypeCode"))
+            if (!$util.isString(message.semanticTypeCode))
+                return "semanticTypeCode: string expected";
         return null;
     };
 
@@ -31498,6 +31921,43 @@ $root.ProtoTableElementProperties = (function() {
         if (object.repeatSubHeaderCode != null)
             if (typeof object.repeatSubHeaderCode !== "string" || object.repeatSubHeaderCode.length)
                 message.repeatSubHeaderCode = String(object.repeatSubHeaderCode);
+        if (object.semanticTypeInheritance !== 0 && (typeof object.semanticTypeInheritance !== "string" || $root.Inheritance[object.semanticTypeInheritance] !== 0))
+            switch (object.semanticTypeInheritance) {
+            default:
+                if (typeof object.semanticTypeInheritance === "number") {
+                    message.semanticTypeInheritance = object.semanticTypeInheritance;
+                    break;
+                }
+                break;
+            case "INHERITANCE_INHERIT":
+            case 0:
+                message.semanticTypeInheritance = 0;
+                break;
+            case "INHERITANCE_CODE":
+            case 1:
+                message.semanticTypeInheritance = 1;
+                break;
+            case "INHERITANCE_BIND_CODE":
+            case 2:
+                message.semanticTypeInheritance = 2;
+                break;
+            case "INHERITANCE_STATIC":
+            case 3:
+                message.semanticTypeInheritance = 3;
+                break;
+            case "INHERITANCE_RESET":
+            case 4:
+                message.semanticTypeInheritance = 4;
+                break;
+            }
+        if (object.semanticType != null) {
+            if (typeof object.semanticType !== "object")
+                throw TypeError(".ProtoTableElementProperties.semanticType: object expected");
+            message.semanticType = $root.ProtoBoxedTableCellSemanticType.fromObject(object.semanticType, _depth + 1);
+        }
+        if (object.semanticTypeCode != null)
+            if (typeof object.semanticTypeCode !== "string" || object.semanticTypeCode.length)
+                message.semanticTypeCode = String(object.semanticTypeCode);
         return message;
     };
 
@@ -31609,6 +32069,9 @@ $root.ProtoTableElementProperties = (function() {
             object.repeatSubHeaderInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
             object.repeatSubHeader = null;
             object.repeatSubHeaderCode = "";
+            object.semanticTypeInheritance = options.enums === String ? "INHERITANCE_INHERIT" : 0;
+            object.semanticType = null;
+            object.semanticTypeCode = "";
         }
         if (message.widthInheritance != null && message.hasOwnProperty("widthInheritance"))
             object.widthInheritance = options.enums === String ? $root.Inheritance[message.widthInheritance] === undefined ? message.widthInheritance : $root.Inheritance[message.widthInheritance] : message.widthInheritance;
@@ -31799,6 +32262,12 @@ $root.ProtoTableElementProperties = (function() {
             object.repeatSubHeader = $root.ProtoBoxedUint32.toObject(message.repeatSubHeader, options);
         if (message.repeatSubHeaderCode != null && message.hasOwnProperty("repeatSubHeaderCode"))
             object.repeatSubHeaderCode = message.repeatSubHeaderCode;
+        if (message.semanticTypeInheritance != null && message.hasOwnProperty("semanticTypeInheritance"))
+            object.semanticTypeInheritance = options.enums === String ? $root.Inheritance[message.semanticTypeInheritance] === undefined ? message.semanticTypeInheritance : $root.Inheritance[message.semanticTypeInheritance] : message.semanticTypeInheritance;
+        if (message.semanticType != null && message.hasOwnProperty("semanticType"))
+            object.semanticType = $root.ProtoBoxedTableCellSemanticType.toObject(message.semanticType, options);
+        if (message.semanticTypeCode != null && message.hasOwnProperty("semanticTypeCode"))
+            object.semanticTypeCode = message.semanticTypeCode;
         return object;
     };
 

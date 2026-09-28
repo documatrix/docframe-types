@@ -325,6 +325,19 @@ SEMANTIC_TYPE_TOC = 5;
 SEMANTIC_TYPE_TOCI = 6;
 SEMANTIC_TYPE_REFERENCE = 7;
 }
+
+enum ProtoTableCellSemanticType {
+TABLE_CELL_SEMANTIC_TYPE_AUTO = 0;
+TABLE_CELL_SEMANTIC_TYPE_TD = 1;
+TABLE_CELL_SEMANTIC_TYPE_TH_COLUMN = 2;
+TABLE_CELL_SEMANTIC_TYPE_TH_ROW = 3;
+TABLE_CELL_SEMANTIC_TYPE_TH_BOTH = 4;
+}
+
+message ProtoBoxedTableCellSemanticType {
+ProtoTableCellSemanticType value = 1;
+bool isNull = 2;
+}
 message ProtoOption {
 string key = 1;
 string value = 2;
@@ -788,6 +801,7 @@ ProtoSideBorders border = 6;
 ProtoSideMeasures margin = 7;
 ProtoBoxedDouble rotation = 8;
 ProtoBoxedString defaultParagraphFormat = 9;
+ProtoBoxedTableCellSemanticType semanticType = 10;
 }
 
 message ProtoTableWS {
@@ -920,6 +934,10 @@ string noDocumentStructureCode = 90;
 Inheritance repeatSubHeaderInheritance = 91;
 ProtoBoxedUint32 repeatSubHeader = 92;
 string repeatSubHeaderCode = 93;
+
+Inheritance semanticTypeInheritance = 94;
+ProtoBoxedTableCellSemanticType semanticType = 95;
+string semanticTypeCode = 96;
 }
 message ProtoText {
 ProtoDocumentElement parent = 1;

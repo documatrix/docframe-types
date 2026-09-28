@@ -4248,6 +4248,124 @@ export enum ProtoSemanticType {
     SEMANTIC_TYPE_REFERENCE = 7
 }
 
+/** ProtoTableCellSemanticType enum. */
+export enum ProtoTableCellSemanticType {
+    TABLE_CELL_SEMANTIC_TYPE_AUTO = 0,
+    TABLE_CELL_SEMANTIC_TYPE_TD = 1,
+    TABLE_CELL_SEMANTIC_TYPE_TH_COLUMN = 2,
+    TABLE_CELL_SEMANTIC_TYPE_TH_ROW = 3,
+    TABLE_CELL_SEMANTIC_TYPE_TH_BOTH = 4
+}
+
+/** Properties of a ProtoBoxedTableCellSemanticType. */
+export interface IProtoBoxedTableCellSemanticType {
+
+    /** ProtoBoxedTableCellSemanticType value */
+    value?: (ProtoTableCellSemanticType|null);
+
+    /** ProtoBoxedTableCellSemanticType isNull */
+    isNull?: (boolean|null);
+
+    /** Unknown fields preserved while decoding */
+    $unknowns?: Uint8Array[];
+}
+
+/** Represents a ProtoBoxedTableCellSemanticType. */
+export class ProtoBoxedTableCellSemanticType implements IProtoBoxedTableCellSemanticType {
+
+    /**
+     * Constructs a new ProtoBoxedTableCellSemanticType.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IProtoBoxedTableCellSemanticType);
+
+    /** Unknown fields preserved while decoding */
+    public $unknowns?: Uint8Array[];
+
+    /** ProtoBoxedTableCellSemanticType value. */
+    public value: ProtoTableCellSemanticType;
+
+    /** ProtoBoxedTableCellSemanticType isNull. */
+    public isNull: boolean;
+
+    /**
+     * Creates a new ProtoBoxedTableCellSemanticType instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns ProtoBoxedTableCellSemanticType instance
+     */
+    public static create(properties?: IProtoBoxedTableCellSemanticType): ProtoBoxedTableCellSemanticType;
+
+    /**
+     * Encodes the specified ProtoBoxedTableCellSemanticType message. Does not implicitly {@link ProtoBoxedTableCellSemanticType.verify|verify} messages.
+     * @param message ProtoBoxedTableCellSemanticType message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IProtoBoxedTableCellSemanticType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified ProtoBoxedTableCellSemanticType message, length delimited. Does not implicitly {@link ProtoBoxedTableCellSemanticType.verify|verify} messages.
+     * @param message ProtoBoxedTableCellSemanticType message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IProtoBoxedTableCellSemanticType, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a ProtoBoxedTableCellSemanticType message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns ProtoBoxedTableCellSemanticType
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProtoBoxedTableCellSemanticType;
+
+    /**
+     * Decodes a ProtoBoxedTableCellSemanticType message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns ProtoBoxedTableCellSemanticType
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProtoBoxedTableCellSemanticType;
+
+    /**
+     * Verifies a ProtoBoxedTableCellSemanticType message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a ProtoBoxedTableCellSemanticType message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns ProtoBoxedTableCellSemanticType
+     */
+    public static fromObject(object: { [k: string]: any }): ProtoBoxedTableCellSemanticType;
+
+    /**
+     * Creates a plain object from a ProtoBoxedTableCellSemanticType message. Also converts values to other types if specified.
+     * @param message ProtoBoxedTableCellSemanticType
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: ProtoBoxedTableCellSemanticType, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this ProtoBoxedTableCellSemanticType to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the type url for ProtoBoxedTableCellSemanticType
+     * @param [prefix] Custom type url prefix, defaults to `"type.googleapis.com"`
+     * @returns The type url
+     */
+    public static getTypeUrl(prefix?: string): string;
+}
+
 /** Properties of a ProtoOption. */
 export interface IProtoOption {
 
@@ -9070,6 +9188,9 @@ export interface IProtoTableCellSettings {
     /** ProtoTableCellSettings defaultParagraphFormat */
     defaultParagraphFormat?: (IProtoBoxedString|null);
 
+    /** ProtoTableCellSettings semanticType */
+    semanticType?: (IProtoBoxedTableCellSemanticType|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -9112,6 +9233,9 @@ export class ProtoTableCellSettings implements IProtoTableCellSettings {
 
     /** ProtoTableCellSettings defaultParagraphFormat. */
     public defaultParagraphFormat?: (IProtoBoxedString|null);
+
+    /** ProtoTableCellSettings semanticType. */
+    public semanticType?: (IProtoBoxedTableCellSemanticType|null);
 
     /**
      * Creates a new ProtoTableCellSettings instance using the specified properties.
@@ -9588,6 +9712,15 @@ export interface IProtoTableElementProperties {
     /** ProtoTableElementProperties repeatSubHeaderCode */
     repeatSubHeaderCode?: (string|null);
 
+    /** ProtoTableElementProperties semanticTypeInheritance */
+    semanticTypeInheritance?: (Inheritance|null);
+
+    /** ProtoTableElementProperties semanticType */
+    semanticType?: (IProtoBoxedTableCellSemanticType|null);
+
+    /** ProtoTableElementProperties semanticTypeCode */
+    semanticTypeCode?: (string|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -9882,6 +10015,15 @@ export class ProtoTableElementProperties implements IProtoTableElementProperties
 
     /** ProtoTableElementProperties repeatSubHeaderCode. */
     public repeatSubHeaderCode: string;
+
+    /** ProtoTableElementProperties semanticTypeInheritance. */
+    public semanticTypeInheritance: Inheritance;
+
+    /** ProtoTableElementProperties semanticType. */
+    public semanticType?: (IProtoBoxedTableCellSemanticType|null);
+
+    /** ProtoTableElementProperties semanticTypeCode. */
+    public semanticTypeCode: string;
 
     /**
      * Creates a new ProtoTableElementProperties instance using the specified properties.
