@@ -1,4 +1,4 @@
-enum ProtoSemanticType { 
+enum ProtoSemanticType {
   SEMANTIC_TYPE_NONE = 0;
   SEMANTIC_TYPE_PART = 1;
   SEMANTIC_TYPE_ART = 2;
@@ -7,4 +7,17 @@ enum ProtoSemanticType {
   SEMANTIC_TYPE_TOC = 5;
   SEMANTIC_TYPE_TOCI = 6;
   SEMANTIC_TYPE_REFERENCE = 7;
+}
+
+enum ProtoTableCellSemanticType {
+  TABLE_CELL_SEMANTIC_TYPE_AUTO = 0;
+  TABLE_CELL_SEMANTIC_TYPE_TD = 1;
+  TABLE_CELL_SEMANTIC_TYPE_TH_COLUMN = 2;
+  TABLE_CELL_SEMANTIC_TYPE_TH_ROW = 3;
+  TABLE_CELL_SEMANTIC_TYPE_TH_BOTH = 4;
+}
+
+message ProtoBoxedTableCellSemanticType {
+  ProtoTableCellSemanticType value = 1;
+  bool isNull = 2;
 }
