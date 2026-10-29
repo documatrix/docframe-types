@@ -1,0 +1,1478 @@
+
+úü
+legacy.proto">
+ProtoBoxedBool
+value (Rvalue
+isNull (RisNull"@
+ProtoBoxedDouble
+value (Rvalue
+isNull (RisNull"?
+ProtoBoxedInt32
+value (Rvalue
+isNull (RisNull"@
+ProtoBoxedUint32
+value (Rvalue
+isNull (RisNull"@
+ProtoBoxedString
+value (	Rvalue
+isNull (RisNull"P
+ProtoBoxedSPBMode#
+value (2.ProtoSPBModeRvalue
+isNull (RisNull"Î
+ProtoStrikethroughSpec%
+weight (2.ProtoMeasureRweight'
+mode (2.ProtoUnderlineModeRmode!
+color (2.ProtoColorRcolor
+offsetEm (RoffsetEm%
+style (2.ProtoRuleStyleRstyle"d
+ProtoBoxedStrikethroughSpec-
+value (2.ProtoStrikethroughSpecRvalue
+isNull (RisNull"M
+ProtoMeasure
+value (Rvalue'
+mtype (2.ProtoMeasureTypeRmtype"P
+ProtoBoxedMeasure#
+value (2.ProtoMeasureRvalue
+isNull (RisNull"£
+ProtoSideMeasures
+top (2.ProtoMeasureRtop#
+right (2.ProtoMeasureRright%
+bottom (2.ProtoMeasureRbottom!
+left (2.ProtoMeasureRleft"Š
+.ProtoBoxedAdvancedIllustrationAreaTextFlowType@
+value (2*.ProtoAdvancedIllustrationAreaTextFlowTypeRvalue
+isNull (RisNull"¥
+*ProtoAdvancedIllustrationAreaImageSettingsK
+textFlow (2/.ProtoBoxedAdvancedIllustrationAreaTextFlowTypeRtextFlow*
+margin (2.ProtoSideMeasuresRmargin"/
+	ProtoFont
+id (Rid
+name (	Rname"J
+ProtoBoxedFont 
+value (2
+.ProtoFontRvalue
+isNull (RisNull"º
+
+ProtoColor%
+name (2.ProtoBoxedStringRname#
+type (2.ProtoColorTypeRtype
+r (Rr
+g (Rg
+b (Rb
+c (Rc
+m (Rm
+y (Ry
+k	 (Rk"L
+ProtoBoxedColor!
+value (2.ProtoColorRvalue
+isNull (RisNull"…
+ProtoRGBColor%
+name (2.ProtoBoxedStringRname#
+type (2.ProtoColorTypeRtype
+r (Rr
+g (Rg
+b (Rb"”
+ProtoCMYKColor%
+name (2.ProtoBoxedStringRname#
+type (2.ProtoColorTypeRtype
+c (Rc
+m (Rm
+y (Ry
+k (Rk"h
+ProtoBoxedHorizontalAlignment/
+value (2.ProtoHorizontalAlignmentRvalue
+isNull (RisNull"d
+ProtoBoxedVerticalAlignment-
+value (2.ProtoVerticalAlignmentRvalue
+isNull (RisNull"Ú
+ProtoSwissQRCreditor 
+addressType (	RaddressType
+name (	Rname
+
+postalCode (	R
+postalCode
+town (	Rtown
+country (	Rcountry2
+streetOrAddressLine1 (	RstreetOrAddressLine1B
+buildingNumberOrAddressLine2 (	RbuildingNumberOrAddressLine2
+iban (	Riban
+amount	 (	Ramount
+currency
+ (	Rcurrency"Ñ
+ProtoSwissQRDebitor 
+addressType (	RaddressType
+name (	Rname
+
+postalCode (	R
+postalCode
+town (	Rtown
+country (	Rcountry2
+streetOrAddressLine1 (	RstreetOrAddressLine1B
+buildingNumberOrAddressLine2 (	RbuildingNumberOrAddressLine22
+paymentReferenceType (	RpaymentReferenceType*
+paymentReference	 (	RpaymentReference4
+unstructuredReference
+ (	RunstructuredReference(
+billInformation (	RbillInformation"u
+ProtoSwissQRData1
+creditor (2.ProtoSwissQRCreditorRcreditor.
+debitor (2.ProtoSwissQRDebitorRdebitor"¦
+ProtoLinebreak-
+parent (2.ProtoDocumentElementRparent(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid'
+count (2.ProtoBoxedUint32Rcount"W
+ProtoBorder%
+weight (2.ProtoMeasureRweight!
+color (2.ProtoColorRcolor"ž
+ProtoSideBorders
+top (2.ProtoBorderRtop"
+right (2.ProtoBorderRright$
+bottom (2.ProtoBorderRbottom 
+left (2.ProtoBorderRleft"Z
+ProtoBoxedPositionMode(
+value (2.ProtoPositionModeRvalue
+isNull (RisNull"­
+ProtoColumnSettings(
+width (2.ProtoBoxedMeasureRwidth>
+interColumnSpace (2.ProtoBoxedMeasureRinterColumnSpace:
+positionOffset (2.ProtoBoxedMeasureRpositionOffset6
+positionMode (2.ProtoPositionModeRpositionMode8
+outsideMargin (2.ProtoBoxedMeasureRoutsideMargin"Ö
+ProtoGraphicState#
+bold (2.ProtoBoxedBoolRbold'
+italic (2.ProtoBoxedBoolRitalic+
+
+colorStack (2.ProtoColorR
+colorStack-
+	subscript (2.ProtoBoxedBoolR	subscript1
+superscript (2.ProtoBoxedBoolRsuperscript-
+	underline (2.ProtoBoxedBoolR	underline5
+strikethrough (2.ProtoBoxedBoolRstrikethrough"
+ProtoHtmlParser"Ê
+ProtoUnderlineSpec%
+weight (2.ProtoMeasureRweight'
+mode (2.ProtoUnderlineModeRmode!
+color (2.ProtoColorRcolor
+offsetEm (RoffsetEm%
+style (2.ProtoRuleStyleRstyle"\
+ProtoBoxedUnderlineSpec)
+value (2.ProtoUnderlineSpecRvalue
+isNull (RisNull"­
+ProtoCropSettings 
+x (2.ProtoBoxedMeasureRx 
+y (2.ProtoBoxedMeasureRy(
+width (2.ProtoBoxedMeasureRwidth*
+height (2.ProtoBoxedMeasureRheight"/
+ProtoFlipSettings
+x (Rx
+y (Ry"l
+ProtoBoxedTableCellSemanticType1
+value (2.ProtoTableCellSemanticTypeRvalue
+isNull (RisNull"5
+ProtoOption
+key (	Rkey
+value (	Rvalue"„
+ProtoBaseInputField
+name (	Rname
+meta (Rmeta'
+value (2.ProtoBoxedStringRvalue
+
+formatUUID (	R
+formatUUID"
+dataTypeUUID (	RdataTypeUUID"
+onChangeCode (	RonChangeCode 
+placeholder (	Rplaceholder*
+bindDefaultValue (RbindDefaultValue*
+defaultValueCode	 (	RdefaultValueCode
+readonly
+ (RreadonlyF
+pdfPrintingBehavior (2.PDFPrintingBehaviorRpdfPrintingBehavior 
+pdfFormName (	RpdfFormName
+
+pdfAltText (	R
+pdfAltText(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid
+	pdfHidden (R	pdfHidden 
+pdfReadonly (RpdfReadonly
+
+pdfNoPrint (R
+pdfNoPrint"
+pdfInvisible (RpdfInvisible
+	pdfNoZoom (R	pdfNoZoom 
+pdfNoRotate (RpdfNoRotate
+	pdfNoView (R	pdfNoView
+	pdfLocked (R	pdfLocked(
+pdfToggleNoView (RpdfToggleNoView,
+pdfLockedContents (RpdfLockedContents"o
+ProtoDocumentElement-
+parent (2.ProtoDocumentElementRparent(
+comChannelUUIDs (	RcomChannelUUIDs"©
+ProtoBranchDocumentElement2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent(
+comChannelUUIDs (	RcomChannelUUIDs"½
+	ProtoLink2
+	_children (2.ProtoDocumentElementRChildren
+url (	Rurl(
+comChannelUUIDs (	RcomChannelUUIDs0
+paragraphFormatUUID (	RparagraphFormatUUID@
+paragraphFormatInternalName (	RparagraphFormatInternalName
+urlCode (	RurlCode 
+bindUrlCode (RbindUrlCode
+uuid (	Ruuid 
+displayText	 (	RdisplayText(
+displayTextCode
+ (	RdisplayTextCode0
+bindDisplayTextCode (RbindDisplayTextCode"ñ
+ProtoListLevelSetting(
+listSettingName (	RlistSettingName-
+fontSize (2.ProtoBoxedUint32RfontSize.
+type (2.ProtoListLevelSettingTypeRtype
+level (Rlevel
+prefix (	Rprefix
+suffix (	Rsuffix0
+fixFontFamily (2
+.ProtoFontRfixFontFamily
+fixBold (RfixBold
+	fixItalic	 (R	fixItalic&
+indentionWidth
+ (RindentionWidth!
+color (2.ProtoColorRcolor
+	imageName (	R	imageName*
+
+fontFamily (2
+.ProtoFontR
+fontFamily#
+bold (2.ProtoBoxedBoolRbold'
+italic (2.ProtoBoxedBoolRitalic0
+
+numberType (2.ProtoNumberTypeR
+numberType
+	character (	R	character 
+doctypeCode (	RdoctypeCodeJ
+levelDisplayType (2.ProtoNumberedLevelDisplayTypeRlevelDisplayType"¾
+ProtoImageListLevelSetting(
+listSettingName (	RlistSettingName-
+fontSize (2.ProtoBoxedUint32RfontSize.
+type (2.ProtoListLevelSettingTypeRtype
+level (Rlevel
+prefix (	Rprefix
+suffix (	Rsuffix0
+fixFontFamily (2
+.ProtoFontRfixFontFamily
+fixBold (RfixBold
+	fixItalic	 (R	fixItalic&
+indentionWidth
+ (RindentionWidth!
+color (2.ProtoColorRcolor
+	imageName (	R	imageName"™
+ProtoTextListLevelSetting(
+listSettingName (	RlistSettingName-
+fontSize (2.ProtoBoxedUint32RfontSize.
+type (2.ProtoListLevelSettingTypeRtype
+level (Rlevel
+prefix (	Rprefix
+suffix (	Rsuffix0
+fixFontFamily (2
+.ProtoFontRfixFontFamily
+fixBold (RfixBold
+	fixItalic	 (R	fixItalic&
+indentionWidth
+ (RindentionWidth!
+color (2.ProtoColorRcolor*
+
+fontFamily (2
+.ProtoFontR
+fontFamily#
+bold (2.ProtoBoxedBoolRbold'
+italic (2.ProtoBoxedBoolRitalic"™
+ProtoNumberListLevelSetting(
+listSettingName (	RlistSettingName-
+fontSize (2.ProtoBoxedUint32RfontSize.
+type (2.ProtoListLevelSettingTypeRtype
+level (Rlevel
+prefix (	Rprefix
+suffix (	Rsuffix0
+fixFontFamily (2
+.ProtoFontRfixFontFamily
+fixBold (RfixBold
+	fixItalic	 (R	fixItalic&
+indentionWidth
+ (RindentionWidth!
+color (2.ProtoColorRcolor*
+
+fontFamily (2
+.ProtoFontR
+fontFamily#
+bold (2.ProtoBoxedBoolRbold'
+italic (2.ProtoBoxedBoolRitalic0
+
+numberType (2.ProtoNumberTypeR
+numberTypeJ
+levelDisplayType (2.ProtoNumberedLevelDisplayTypeRlevelDisplayType"½
+ProtoUnnumberedListLevelSetting(
+listSettingName (	RlistSettingName-
+fontSize (2.ProtoBoxedUint32RfontSize.
+type (2.ProtoListLevelSettingTypeRtype
+level (Rlevel
+prefix (	Rprefix
+suffix (	Rsuffix0
+fixFontFamily (2
+.ProtoFontRfixFontFamily
+fixBold (RfixBold
+	fixItalic	 (R	fixItalic&
+indentionWidth
+ (RindentionWidth!
+color (2.ProtoColorRcolor*
+
+fontFamily (2
+.ProtoFontR
+fontFamily#
+bold (2.ProtoBoxedBoolRbold'
+italic (2.ProtoBoxedBoolRitalic
+	character (	R	character"¯
+ProtoCustomListLevelSetting(
+listSettingName (	RlistSettingName.
+type (2.ProtoListLevelSettingTypeRtype
+level (Rlevel 
+doctypeCode (	RdoctypeCode"«
+ProtoListSetting-
+parent (2.ProtoDocumentElementRparent
+name (	RnameD
+listLevelSettings (2.ProtoListLevelSettingRlistLevelSettingsP
+defaultListLevelSetting (2.ProtoListLevelSettingRdefaultListLevelSetting(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"X
+ProtoBoxedListSetting'
+value (2.ProtoListSettingRvalue
+isNull (RisNull"¡
+ProtoNamedString2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+name (	Rname(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid 
+description (	Rdescription
+nameCode (	RnameCode
+codeMode (RcodeMode"Ç
+ProtoParagraph2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent-
+format (2.ProtoParagraphFormatRformat3
+	overwrite (2.ProtoParagraphFormatR	overwrite(
+comChannelUUIDs (	RcomChannelUUIDs0
+paragraphFormatUUID (	RparagraphFormatUUID
+uuid (	Ruuid"Õ
+ProtoParagraphFormat5
+
+baseFormat (2.ProtoParagraphFormatR
+baseFormat%
+name (2.ProtoBoxedStringRname)
+default (2.ProtoBoxedBoolRdefault#
+font (2.ProtoBoxedFontRfont#
+bold (2.ProtoBoxedBoolRbold'
+italic (2.ProtoBoxedBoolRitalic.
+	fontColor (2.ProtoBoxedColorR	fontColor6
+	underline (2.ProtoBoxedUnderlineSpecR	underline.
+fontSize	 (2.ProtoBoxedMeasureRfontSize:
+characterWidth
+ (2.ProtoBoxedMeasureRcharacterWidth>
+characterSpacing (2.ProtoBoxedMeasureRcharacterSpacing.
+lineFeed (2.ProtoBoxedMeasureRlineFeed<
+	alignment (2.ProtoBoxedHorizontalAlignmentR	alignment:
+indentionWidth (2.ProtoBoxedMeasureRindentionWidth8
+indentionLevel (2.ProtoBoxedInt32RindentionLevel2
+
+spaceAbove (2.ProtoBoxedMeasureR
+spaceAbove2
+
+spaceBelow (2.ProtoBoxedMeasureR
+spaceBelow4
+widowSetting (2.ProtoBoxedInt32RwidowSetting6
+orphanSetting (2.ProtoBoxedInt32RorphanSetting6
+widowPriority (2.ProtoBoxedInt32RwidowPriorityB
+strikethrough (2.ProtoBoxedStrikethroughSpecRstrikethroughF
+superscriptSubscript (2.ProtoBoxedSPBModeRsuperscriptSubscript:
+backgroundColor (2.ProtoBoxedColorRbackgroundColor8
+listSetting (2.ProtoBoxedListSettingRlistSetting1
+hyphenation (2.ProtoBoxedBoolRhyphenation9
+preNamedString (2.ProtoBoxedStringRpreNamedString;
+postNamedString (2.ProtoBoxedStringRpostNamedString5
+semanticType (2.ProtoBoxedStringRsemanticType(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	RuuidK
+skipSpaceOnStartOfColumn (2.ProtoBoxedBoolRskipSpaceOnStartOfColumnL
+bookmarkIndentationLevel  (2.ProtoBoxedInt32RbookmarkIndentationLevel"Ë
+ProtoSection2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid
+cDefUuid (	RcDefUuid(
+comChannelUUIDs (	RcomChannelUUIDs"¨
+ProtoSpaceVertically-
+parent (2.ProtoDocumentElementRparent#
+space (2.ProtoMeasureRspace(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"Ñ
+	ProtoSpan2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent#
+bold (2.ProtoBoxedBoolRbold'
+italic (2.ProtoBoxedBoolRitalic!
+color (2.ProtoColorRcolor-
+	subscript (2.ProtoBoxedBoolR	subscript1
+superscript (2.ProtoBoxedBoolRsuperscript-
+	underline (2.ProtoBoxedBoolR	underline5
+strikethrough	 (2.ProtoBoxedBoolRstrikethrough(
+comChannelUUIDs
+ (	RcomChannelUUIDs"¦
+
+ProtoTable2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent/
+settings (2.ProtoTableSettingsRsettings
+
+configName (	R
+configName#
+	carryOver (2.NodeR	carryOver!
+subTotal (2.NodeRsubTotal(
+comChannelUUIDs (	RcomChannelUUIDsJ
+elementProperties (2.ProtoTableElementPropertiesRelementProperties
+uuid	 (	Ruuid
+name
+ (	Rname"Ð
+ProtoTableConfig-
+parent (2.ProtoDocumentElementRparent/
+settings (2.ProtoTableSettingsRsettings
+
+configName (	R
+configName(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"ë
+ProtoTableSettings'
+xOffset (2.ProtoMeasureRxOffset1
+leftMeasure (2.ProtoBoxedBoolRleftMeasure#
+width (2.ProtoMeasureRwidth5
+repeatHeader (2.ProtoBoxedUint32RrepeatHeader
+ws (2.ProtoTableWSRwsA
+noDocumentStructure (2.ProtoBoxedBoolRnoDocumentStructure;
+repeatSubHeader (2.ProtoBoxedUint32RrepeatSubHeader"l
+ProtoBoxedTableContentGroupType1
+value (2.ProtoTableContentGroupTypeRvalue
+isNull (RisNull"Ö
+ProtoTableContentGroup2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent;
+settings (2.ProtoTableContentGroupSettingsRsettings(
+comChannelUUIDs (	RcomChannelUUIDsJ
+elementProperties (2.ProtoTableElementPropertiesRelementProperties
+uuid (	Ruuid
+name (	Rname"è
+ProtoTableContentGroupConfig-
+parent (2.ProtoDocumentElementRparent;
+settings (2.ProtoTableContentGroupSettingsRsettings
+
+configName (	R
+configName(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"Æ
+ProtoTableContentGroupSettingsL
+contentGroupType (2 .ProtoBoxedTableContentGroupTypeRcontentGroupType7
+backgroundColors (2.ProtoColorRbackgroundColors
+ws (2.ProtoTableWSRws"
+ProtoTableRow2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent2
+settings (2.ProtoTableRowSettingsRsettings;
+rowConfigNumber (2.ProtoBoxedUint32RrowConfigNumber(
+comChannelUUIDs (	RcomChannelUUIDsJ
+elementProperties (2.ProtoTableElementPropertiesRelementProperties
+uuid (	Ruuid
+name (	Rname"’
+ProtoTableRowConfig-
+parent (2.ProtoDocumentElementRparent2
+settings (2.ProtoTableRowSettingsRsettings
+
+configName (	R
+configName
+	rowHeader (	R	rowHeader
+	rowFooter (	R	rowFooter(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"c
+ProtoTableRowSettings+
+	minHeight (2.ProtoMeasureR	minHeight
+ws (2.ProtoTableWSRws"\
+ProtoBoxedTableCellType)
+value (2.ProtoTableCellTypeRvalue
+isNull (RisNull"Á
+ProtoTableCell2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent3
+settings (2.ProtoTableCellSettingsRsettings=
+cellConfigNumber (2.ProtoBoxedUint32RcellConfigNumber
+
+mergedLeft (R
+mergedLeft
+mergedUp (RmergedUp(
+comChannelUUIDs (	RcomChannelUUIDsJ
+elementProperties (2.ProtoTableElementPropertiesRelementProperties
+uuid	 (	Ruuid
+name
+ (	Rname"Ž
+ProtoTableCellConfig-
+parent (2.ProtoDocumentElementRparent3
+settings (2.ProtoTableCellSettingsRsettings
+
+configName (	R
+configName4
+cellType (2.ProtoBoxedTableCellTypeRcellType(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"¥
+ProtoTableCellSettings#
+width (2.ProtoMeasureRwidth4
+align (2.ProtoBoxedHorizontalAlignmentRalign4
+valign (2.ProtoBoxedVerticalAlignmentRvalign5
+backgroundColor (2.ProtoColorRbackgroundColor,
+padding (2.ProtoSideMeasuresRpadding)
+border (2.ProtoSideBordersRborder*
+margin (2.ProtoSideMeasuresRmargin-
+rotation (2.ProtoBoxedDoubleRrotationI
+defaultParagraphFormat	 (2.ProtoBoxedStringRdefaultParagraphFormatD
+semanticType
+ (2 .ProtoBoxedTableCellSemanticTypeRsemanticType"x
+ProtoTableWS&
+minLinesBefore (RminLinesBefore$
+minLinesAfter (RminLinesAfter
+priority (Rpriority"¸+
+ProtoTableElementProperties8
+widthInheritance (2.InheritanceRwidthInheritance#
+width (2.ProtoMeasureRwidth
+	widthCode (	R	widthCode8
+alignInheritance (2.InheritanceRalignInheritance4
+align (2.ProtoBoxedHorizontalAlignmentRalign
+	alignCode (	R	alignCode:
+valignInheritance (2.InheritanceRvalignInheritance4
+valign (2.ProtoBoxedVerticalAlignmentRvalign
+
+valignCode	 (	R
+valignCodeL
+backgroundColorInheritance
+ (2.InheritanceRbackgroundColorInheritance5
+backgroundColor (2.ProtoColorRbackgroundColor0
+backgroundColorCode (	RbackgroundColorCodeB
+paddingTopInheritance (2.InheritanceRpaddingTopInheritance-
+
+paddingTop (2.ProtoMeasureR
+paddingTop&
+paddingTopCode (	RpaddingTopCodeF
+paddingRightInheritance (2.InheritanceRpaddingRightInheritance1
+paddingRight (2.ProtoMeasureRpaddingRight*
+paddingRightCode (	RpaddingRightCodeH
+paddingBottomInheritance (2.InheritanceRpaddingBottomInheritance3
+paddingBottom (2.ProtoMeasureRpaddingBottom,
+paddingBottomCode (	RpaddingBottomCodeD
+paddingLeftInheritance (2.InheritanceRpaddingLeftInheritance/
+paddingLeft (2.ProtoMeasureRpaddingLeft(
+paddingLeftCode (	RpaddingLeftCodeJ
+borderTopColorInheritance (2.InheritanceRborderTopColorInheritance3
+borderTopColor (2.ProtoColorRborderTopColor.
+borderTopColorCode (	RborderTopColorCodeL
+borderTopWeightInheritance (2.InheritanceRborderTopWeightInheritance7
+borderTopWeight (2.ProtoMeasureRborderTopWeight0
+borderTopWeightCode (	RborderTopWeightCodeN
+borderRightColorInheritance (2.InheritanceRborderRightColorInheritance7
+borderRightColor  (2.ProtoColorRborderRightColor2
+borderRightColorCode! (	RborderRightColorCodeP
+borderRightWeightInheritance" (2.InheritanceRborderRightWeightInheritance;
+borderRightWeight# (2.ProtoMeasureRborderRightWeight4
+borderRightWeightCode$ (	RborderRightWeightCodeP
+borderBottomColorInheritance% (2.InheritanceRborderBottomColorInheritance9
+borderBottomColor& (2.ProtoColorRborderBottomColor4
+borderBottomColorCode' (	RborderBottomColorCodeR
+borderBottomWeightInheritance( (2.InheritanceRborderBottomWeightInheritance=
+borderBottomWeight) (2.ProtoMeasureRborderBottomWeight6
+borderBottomWeightCode* (	RborderBottomWeightCodeL
+borderLeftColorInheritance+ (2.InheritanceRborderLeftColorInheritance5
+borderLeftColor, (2.ProtoColorRborderLeftColor0
+borderLeftColorCode- (	RborderLeftColorCodeN
+borderLeftWeightInheritance. (2.InheritanceRborderLeftWeightInheritance9
+borderLeftWeight/ (2.ProtoMeasureRborderLeftWeight2
+borderLeftWeightCode0 (	RborderLeftWeightCode@
+marginTopInheritance1 (2.InheritanceRmarginTopInheritance+
+	marginTop2 (2.ProtoMeasureR	marginTop$
+marginTopCode3 (	RmarginTopCodeD
+marginRightInheritance4 (2.InheritanceRmarginRightInheritance/
+marginRight5 (2.ProtoMeasureRmarginRight(
+marginRightCode6 (	RmarginRightCodeF
+marginBottomInheritance7 (2.InheritanceRmarginBottomInheritance1
+marginBottom8 (2.ProtoMeasureRmarginBottom*
+marginBottomCode9 (	RmarginBottomCodeB
+marginLeftInheritance: (2.InheritanceRmarginLeftInheritance-
+
+marginLeft; (2.ProtoMeasureR
+marginLeft&
+marginLeftCode< (	RmarginLeftCode>
+rotationInheritance= (2.InheritanceRrotationInheritance-
+rotation> (2.ProtoBoxedDoubleRrotation"
+rotationCode? (	RrotationCodeb
+%defaultParagraphFormatUUIDInheritance@ (2.InheritanceR%defaultParagraphFormatUUIDInheritanceQ
+defaultParagraphFormatUUIDA (2.ProtoBoxedStringRdefaultParagraphFormatUUIDF
+defaultParagraphFormatUUIDCodeB (	RdefaultParagraphFormatUUIDCodeX
+ tableContentGroupTypeInheritanceC (2.InheritanceR tableContentGroupTypeInheritanceV
+tableContentGroupTypeD (2 .ProtoBoxedTableContentGroupTypeRtableContentGroupType<
+tableContentGroupTypeCodeE (	RtableContentGroupTypeCode>
+cellTypeInheritanceF (2.InheritanceRcellTypeInheritance4
+cellTypeG (2.ProtoBoxedTableCellTypeRcellType"
+cellTypeCodeH (	RcellTypeCodeF
+minRowHeightInheritanceI (2.InheritanceRminRowHeightInheritance1
+minRowHeightJ (2.ProtoMeasureRminRowHeight*
+minRowHeightCodeK (	RminRowHeightCode2
+wsInheritanceL (2.InheritanceRwsInheritance
+wsM (2.ProtoTableWSRws
+wsCodeN (	RwsCode<
+xOffsetInheritanceO (2.InheritanceRxOffsetInheritance'
+xOffsetP (2.ProtoMeasureRxOffset 
+xOffsetCodeQ (	RxOffsetCodeD
+leftMeasureInheritanceR (2.InheritanceRleftMeasureInheritance1
+leftMeasureS (2.ProtoBoxedBoolRleftMeasure(
+leftMeasureCodeT (	RleftMeasureCodeF
+repeatHeaderInheritanceU (2.InheritanceRrepeatHeaderInheritance5
+repeatHeaderV (2.ProtoBoxedUint32RrepeatHeader*
+repeatHeaderCodeW (	RrepeatHeaderCodeT
+noDocumentStructureInheritanceX (2.InheritanceRnoDocumentStructureInheritanceA
+noDocumentStructureY (2.ProtoBoxedBoolRnoDocumentStructure8
+noDocumentStructureCodeZ (	RnoDocumentStructureCodeL
+repeatSubHeaderInheritance[ (2.InheritanceRrepeatSubHeaderInheritance;
+repeatSubHeader\ (2.ProtoBoxedUint32RrepeatSubHeader0
+repeatSubHeaderCode] (	RrepeatSubHeaderCodeF
+semanticTypeInheritance^ (2.InheritanceRsemanticTypeInheritanceD
+semanticType_ (2 .ProtoBoxedTableCellSemanticTypeRsemanticType*
+semanticTypeCode` (	RsemanticTypeCode"~
+	ProtoText-
+parent (2.ProtoDocumentElementRparent
+content (	Rcontent(
+comChannelUUIDs (	RcomChannelUUIDs"÷
+ProtoBarcode%
+type (2.ProtoBarcodeTypeRtype
+x (2.ProtoMeasureRx
+y (2.ProtoMeasureRyA
+referencePoint (2.ProtoImageReferencePointRreferencePoint
+rotation (Rrotation#
+width (2.ProtoMeasureRwidth%
+height (2.ProtoMeasureRheight'
+padding (2.ProtoMeasureRpadding
+data	 (	Rdata*
+positionAbsolute
+ (RpositionAbsolute(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid
+code (	Rcode3
+swissQRData (2.ProtoSwissQRDataRswissQRData
+altText (	RaltText+
+uaMode (2.ProtoBarcodeUAModeRuaMode$
+uaDescription (	RuaDescription"y
+ProtoBrickReference
+
+internName (	R
+internName
+version (Rversion(
+comChannelUUIDs (	RcomChannelUUIDs"
+
+ProtoBrick2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+id (Rid
+
+internName (	R
+internName
+uuid (	Ruuid
+editable (Reditable(
+comChannelUUIDs (	RcomChannelUUIDs
+name (	Rname"È
+ProtoTemplate2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid:
+columnBalancing (2.ColumnBalancingRcolumnBalancing6
+semanticType (2.ProtoSemanticTypeRsemanticType"
+templateUuid (	RtemplateUuid"Ô
+ProtoHeader2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs$
+mode (2.ProtoHeaderModeRmode"Ô
+ProtoFooter2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs$
+mode (2.ProtoFooterModeRmode"â
+Node!
+children (2.NodeRchildren6
+list_setting (2.ProtoListSettingH RlistSetting,
+colorDef (2.ProtoColorDefH RcolorDef#
+brick (2.ProtoBrickH Rbrick,
+template (2.ProtoTemplateH Rtemplate/
+	formatted (2.ProtoFormattedH R	formatted#
+image (2.ProtoImageH RimageB
+paragraph_format (2.ProtoParagraphFormatH RparagraphFormat0
+
+text_brick	 (2.ProtoTextBrickH R	textBrick 
+text
+ (2
+.ProtoTextH Rtext/
+	linebreak (2.ProtoLinebreakH R	linebreakB
+space_vertically (2.ProtoSpaceVerticallyH RspaceVertically&
+footer (2.ProtoFooterH Rfooter&
+header (2.ProtoHeaderH Rheader#
+table (2.ProtoTableH Rtable-
+	table_row (2.ProtoTableRowH RtableRow0
+
+table_cell (2.ProtoTableCellH R	tableCell!
+c_def (2
+.ProtoCDefH RcDef!
+p_def (2
+.ProtoPDefH RpDef6
+apply_c_def (2.ProtoApplyProtoCDefH R	applyCDef6
+apply_p_def (2.ProtoApplyProtoPDefH R	applyPDef=
+apply_pt_config (2.ProtoApplyPtConfigH RapplyPtConfig=
+apply_ul_config (2.ProtoApplyUlConfigH RapplyUlConfig-
+	pt_config (2.ProtoPtConfigH RptConfig-
+	ul_config (2.ProtoUlConfigH RulConfig*
+new_page (2.ProtoNewPageH RnewPage,
+variable (2.ProtoVariableH Rvariable6
+named_string (2.ProtoNamedStringH RnamedString/
+	paragraph (2.ProtoParagraphH R	paragraph)
+section (2.ProtoSectionH Rsection 
+span  (2
+.ProtoSpanH Rspan 
+link! (2
+.ProtoLinkH Rlink/
+	directory" (2.ProtoDirectoryH R	directoryI
+table_content_group# (2.ProtoTableContentGroupH RtableContentGroup6
+table_config$ (2.ProtoTableConfigH RtableConfigC
+table_cell_config% (2.ProtoTableCellConfigH RtableCellConfig@
+table_row_config& (2.ProtoTableRowConfigH RtableRowConfig\
+table_content_group_config' (2.ProtoTableContentGroupConfigH RtableContentGroupConfig?
+brick_reference( (2.ProtoBrickReferenceH RbrickReference5
+indentation7 (2.ProtoIndentationH Rindentation)
+barcode8 (2.ProtoBarcodeH Rbarcode'
+ws_area9 (2.ProtoWsAreaH RwsArea0
+
+carry_over: (2.ProtoCarryOverH R	carryOver-
+	sub_total; (2.ProtoSubTotalH RsubTotal 
+loop< (2
+.ProtoLoopH Rloop0
+
+loop_entry= (2.ProtoLoopEntryH R	loopEntry 
+rule> (2
+.ProtoRuleH Rrule&
+layout? (2.ProtoLayoutH Rlayout^
+advanced_illustration_area@ (2.ProtoAdvancedIllustrationAreaH RadvancedIllustrationAreaK
+adjust_horizontallyA (2.ProtoAdjustHorizontallyH RadjustHorizontally;
+doctypeScriptB (2.ProtoDoctypeScriptH RdoctypeScript,
+dmScriptC (2.ProtoDmScriptH RdmScriptB
+dynamic_templateD (2.ProtoDynamicTemplateH RdynamicTemplate/
+	selectionE (2.ProtoSelectionH R	selection?
+selection_entryF (2.ProtoSelectionEntryH RselectionEntry/
+	conditionG (2.ProtoConditionH R	condition<
+page_conditionH (2.ProtoPageConditionH RpageCondition&
+localeI (2.ProtoLocaleH Rlocale
+tagJ (2	.ProtoTagH RtagO
+paragraph_set_defaultK (2.ProtoParagraphSetDefaultH RparagraphSetDefault@
+input_field_textL (2.ProtoInputFieldTextH RinputFieldText@
+input_field_dateM (2.ProtoInputFieldDateH RinputFieldDateL
+input_field_checkboxN (2.ProtoInputFieldCheckboxH RinputFieldCheckboxC
+input_field_labelO (2.ProtoInputFieldLabelH RinputFieldLabelL
+input_field_dropdownP (2.ProtoInputFieldDropdownH RinputFieldDropdown-
+	set_colorQ (2.ProtoSetColorH RsetColor3
+unset_colorR (2.ProtoUnsetColorH R
+unsetColor6
+colored_areaS (2.ProtoColoredAreaH RcoloredArea)
+chapterT (2.ProtoChapterH RchapterC
+table_of_contentsU (2.ProtoTableOfContentsH RtableOfContentsE
+section_referenceV (2.ProtoSectionReferenceH RsectionReference6
+chapter_linkW (2.ProtoChapterLinkH RchapterLinkN
+visibility_conditionX (2.ProtoVisibilityConditionH RvisibilityConditionB
+object"Æ	
+
+ProtoImage-
+parent (2.ProtoDocumentElementRparent
+alt (	Ralt
+name (	Rname
+src (	Rsrc
+filename (	Rfilename'
+scale (2.ProtoBoxedDoubleRscale3
+columnScale (2.ProtoBoxedDoubleRcolumnScale(
+width (2.ProtoBoxedMeasureRwidth*
+height	 (2.ProtoBoxedMeasureRheight 
+x
+ (2.ProtoBoxedMeasureRx 
+y (2.ProtoBoxedMeasureRy;
+positionAbsolute (2.ProtoBoxedBoolRpositionAbsolute
+rotation (Rrotation6
+flipSettings (2.ProtoFlipSettingsRflipSettings6
+cropSettings (2.ProtoCropSettingsRcropSettings=
+aia (2+.ProtoAdvancedIllustrationAreaImageSettingsRaia
+uuid (	RuuidA
+referencePoint (2.ProtoImageReferencePointRreferencePoint
+	hyperlink (	R	hyperlink(
+comChannelUUIDs (	RcomChannelUUIDsB
+imageContentType (2.ProtoImageContentTypeRimageContentType"
+imageContent (	RimageContent2
+	scaleType (2.ProtoImageScaleTypeR	scaleType)
+uaMode (2.ProtoImageUAModeRuaMode$
+uaDescription (	RuaDescriptionI
+leftBorderIsLeftMeasure (2.ProtoBoxedBoolRleftBorderIsLeftMeasure-
+dpiWidth (2.ProtoBoxedUint32RdpiWidth/
+	dpiHeight (2.ProtoBoxedUint32R	dpiHeight"™
+ProtoDirectory2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs6
+semanticType (2.ProtoSemanticTypeRsemanticType
+editable (Reditable
+name (	Rname"ñ
+ProtoTextBrick2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid
+id (Rid(
+comChannelUUIDs (	RcomChannelUUIDs
+editable (Reditable
+name (	Rname"‡
+ProtoVariable-
+parent (2.ProtoDocumentElementRparent
+path (	Rpath
+content (	Rcontent
+
+formatUuid (	R
+formatUuid;
+specialType (2.ProtoVariableSpecialTypeRspecialType
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs"µ
+ProtoFormatted-
+parent (2.ProtoDocumentElementRparent&
+dteditorSyntax (RdteditorSyntax&
+doctypeContent (	RdoctypeContent 
+doctypeCode (	RdoctypeCode 
+htmlContent (	RhtmlContent
+htmlCode (	RhtmlCode 
+textContent (	RtextContent
+textCode (	RtextCode(
+comChannelUUIDs	 (	RcomChannelUUIDs
+uuid
+ (	Ruuid(
+bindDoctypeCode (RbindDoctypeCode"
+bindHtmlCode (RbindHtmlCode"
+bindTextCode (RbindTextCodeJ
+generationTypeDoctype (2.ProtoGenerationTypeRgenerationTypeDoctypeD
+generationTypeHtml (2.ProtoGenerationTypeRgenerationTypeHtmlD
+generationTypeText (2.ProtoGenerationTypeRgenerationTypeText"o
+ProtoApplyProtoCDef
+cDefUuid (	RcDefUuid(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"o
+ProtoApplyProtoPDef
+pDefUuid (	RpDefUuid(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"v
+ProtoApplyPtConfig"
+ptConfigUuid (	RptConfigUuid(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"v
+ProtoApplyUlConfig"
+ulConfigUuid (	RulConfigUuid(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"
+	ProtoCDef:
+columSettings (2.ProtoColumnSettingsRcolumSettingsA
+applyToHeaderFooter (2.ProtoBoxedBoolRapplyToHeaderFooter7
+applyImmediate (2.ProtoBoxedBoolRapplyImmediate
+Uuid (	RUuid(
+comChannelUUIDs (	RcomChannelUUIDs"­
+	ProtoPDef0
+	pageWidth (2.ProtoBoxedMeasureR	pageWidth0
+	pageDepth (2.ProtoBoxedMeasureR	pageDepth
+Uuid (	RUuid(
+comChannelUUIDs (	RcomChannelUUIDs"™
+ProtoPtConfig*
+height (2.ProtoBoxedMeasureRheight.
+lineFeed (2.ProtoBoxedMeasureRlineFeed:
+characterWidth (2.ProtoBoxedMeasureRcharacterWidth2
+
+spaceWidth (2.ProtoBoxedMeasureR
+spaceWidth
+Uuid (	RUuid(
+comChannelUUIDs (	RcomChannelUUIDs"v
+ProtoUlConfig'
+mode (2.ProtoUnderlineModeRmode
+Uuid (	RUuid(
+comChannelUUIDs (	RcomChannelUUIDs"á
+ProtoNewPage
+uuid (	Ruuid$
+paperTrayUuid (	RpaperTrayUuid(
+paperTrayNumber (RpaperTrayNumber
+
+paperCount (R
+paperCount*
+pageMode (2.ProtoPageModeRpageMode?
+pageOrientation (2.ProtoPageOrientationRpageOrientation
+pDefUuid (	RpDefUuid
+cDefUuid (	RcDefUuid(
+comChannelUUIDs	 (	RcomChannelUUIDs"…
+ProtoIndentation2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent&
+left (2.ProtoBoxedMeasureRleft(
+right (2.ProtoBoxedMeasureRright
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs"±
+ProtoCarryOver2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"Û
+ProtoLoopEntry2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+path (	Rpath
+index (Rindex
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs"À
+	ProtoLoop2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+path (	Rpath
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs"´
+ProtoSubTotal2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent'
+apply_immediate (RapplyImmediate2
+position (2.ProtoSubTotalPositionRposition%
+height (2.ProtoMeasureRheight(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"®
+ProtoWsArea2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"­
+	ProtoRule'
+xOffset (2.ProtoMeasureRxOffset'
+yOffset (2.ProtoMeasureRyOffset#
+width (2.ProtoMeasureRwidth+
+	thickness (2.ProtoMeasureR	thickness
+rotation (Rrotation!
+color (2.ProtoColorRcolor%
+style (2.ProtoRuleStyleRstyle"
+mode (2.ProtoRuleModeRmode4
+
+boundaries	 (2.ProtoRuleBoundariesR
+boundaries(
+comChannelUUIDs
+ (	RcomChannelUUIDs
+uuid (	Ruuid"[
+ProtoRuleBoundaries#
+start (2.ProtoMeasureRstart
+end (2.ProtoMeasureRend"p
+ProtoColorDef!
+color (2.ProtoColorRcolor(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"Ž
+ProtoLayout-
+parent (2.ProtoDocumentElementRparent
+name (	Rname(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"æ
+ProtoAdvancedIllustrationArea2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid
+absolute (Rabsolute#
+width (2.ProtoMeasureRwidth%
+height (2.ProtoMeasureRheight
+x (2.ProtoMeasureRx
+y (2.ProtoMeasureRyF
+textFlow	 (2*.ProtoAdvancedIllustrationAreaTextFlowTypeRtextFlow
+rotation
+ (Rrotation(
+comChannelUUIDs (	RcomChannelUUIDs
+
+noArtifact (R
+noArtifact"œ
+ProtoAdjustHorizontally2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent/
+minFontSize (2.ProtoMeasureRminFontSize/
+maxFontSize (2.ProtoMeasureRmaxFontSize(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid"´
+ProtoDoctypeScript-
+parent (2.ProtoDocumentElementRparent
+content (	Rcontent7
+
+outputMode (2.ProtoDoctypeOutputModeR
+outputMode(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid 
+bindContent (RbindContent<
+generationType (2.ProtoGenerationTypeRgenerationType"ö
+ProtoDmScript-
+parent (2.ProtoDocumentElementRparent
+content (	Rcontent(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid 
+bindContent (RbindContent<
+generationType (2.ProtoGenerationTypeRgenerationType"›
+ProtoDynamicTemplate-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid
+script (	Rscript(
+comChannelUUIDs (	RcomChannelUUIDs"é
+ProtoSelection2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs"
+internalName (	RinternalName
+name (	Rname
+multi (Rmulti
+min (Rmin
+max	 (Rmax 
+arrangeable
+ (Rarrangeable"
+onChangeCode (	RonChangeCode"®
+ProtoSelectionEntry2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs"
+internalName (	RinternalName
+name (	Rname
+selected (Rselected"
+onChangeCode (	RonChangeCode"ý
+ProtoCondition2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs
+code (	Rcode
+result (Rresult
+
+regenerate (R
+regenerate"É
+ProtoPageCondition2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs
+code (	Rcode"ö
+ProtoLocale2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs$
+languageUUIDs (	RlanguageUUIDs 
+regionUUIDs (	RregionUUIDs"Û
+ProtoTag-
+parent (2.ProtoDocumentElementRparent
+name (	Rname(
+comChannelUUIDs (	RcomChannelUUIDs
+uuid (	Ruuid
+params (	Rparams
+nameCode (	RnameCode
+codeMode (RcodeMode"Í
+ProtoParagraphSetDefault-
+parent (2.ProtoDocumentElementRparent
+name (	Rname0
+paragraphFormatUUID (	RparagraphFormatUUID
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs"†
+ProtoBaseTextInputField(
+base (2.ProtoBaseInputFieldRbase-
+pdf_size (2.ProtoBoxedMeasureRpdfSize:
+pdfInputHeight (2.ProtoBoxedMeasureRpdfInputHeight$
+pdfIsReadOnly (RpdfIsReadOnly$
+pdfIsRequired (RpdfIsRequired*
+pdfIsNotExported (RpdfIsNotExported&
+pdfIsMultiline (RpdfIsMultiline.
+pdfIsPasswordField (RpdfIsPasswordField8
+pdfIsFileSelectionField	 (RpdfIsFileSelectionField2
+pdfDisableSpellCheck
+ (RpdfDisableSpellCheck0
+pdfDisableScrolling (RpdfDisableScrolling2
+pdfUseCombFormatting (RpdfUseCombFormatting2
+pdfIsRichTextEnabled (RpdfIsRichTextEnabled"r
+ProtoInputFieldText-
+parent (2.ProtoDocumentElementRparent,
+base (2.ProtoBaseTextInputFieldRbase"r
+ProtoInputFieldDate-
+parent (2.ProtoDocumentElementRparent,
+base (2.ProtoBaseTextInputFieldRbase"r
+ProtoInputFieldCheckbox-
+parent (2.ProtoDocumentElementRparent(
+base (2.ProtoBaseInputFieldRbase"s
+ProtoInputFieldLabel-
+parent (2.ProtoDocumentElementRparent,
+base (2.ProtoBaseTextInputFieldRbase"ê
+ProtoInputFieldDropdown-
+parent (2.ProtoDocumentElementRparent,
+base (2.ProtoBaseTextInputFieldRbase&
+options (2.ProtoOptionRoptions(
+bindOptionsCode (RbindOptionsCode 
+optionsCode (	RoptionsCode"u
+ProtoColorChoice#
+color (2.ProtoColorH Rcolor2
+colorDefinitionUUID (	H RcolorDefinitionUUIDB
+choice"¥
+ProtoSetColor-
+parent (2.ProtoDocumentElementRparent'
+color (2.ProtoColorChoiceRcolor
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs"§
+ProtoUnsetColor-
+parent (2.ProtoDocumentElementRparent'
+color (2.ProtoColorChoiceRcolor
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs"Ü
+ProtoColoredArea-
+parent (2.ProtoDocumentElementRparent2
+	_children (2.ProtoDocumentElementRChildren'
+color (2.ProtoColorChoiceRcolor
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs"Ù
+ProtoChapter2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs
+title (	Rtitle
+tag (	Rtag
+number (	Rnumber
+key (	Rkey(
+createPageBreak	 (RcreatePageBreak,
+createDestination
+ (RcreateDestination"Ï
+ProtoTableOfContents2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs
+levels (Rlevels"Ú
+ProtoSectionReference-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs
+tag (	Rtag
+format (	Rformat
+content (	Rcontent
+key (	Rkey"˜
+ProtoChapterLink2
+	_children (2.ProtoDocumentElementRChildren
+uuid (	Ruuid
+name (	Rname(
+comChannelUUIDs (	RcomChannelUUIDs"é
+ProtoVisibilityCondition2
+	_children (2.ProtoDocumentElementRChildren-
+parent (2.ProtoDocumentElementRparent
+uuid (	Ruuid(
+comChannelUUIDs (	RcomChannelUUIDs
+code (	Rcode
+visible (Rvisible*8
+ProtoSPBMode
+NONE 
+SUPERSCRIPT
+	SUBSCRIPT*ù
+ProtoRuleStyle
+DUMMY_RULE_STYLE 	
+SOLID
+SPARSE_SHADING
+MEDIUM_SHADING
+DENSE_SHADING
+LIGHT_DOTTED
+MEDIUM_DOTTED
+HEAVY_DOTTED
+LIGHT_DASHED
+MEDIUM_DASHED	
+HEAVY_DASHED
+
+DASH_PATTERN
+DOUBLEþ*G
+ProtoMeasureType
+PT 
+CM
+MM
+IN
+PERCENT
+PX*{
+)ProtoAdvancedIllustrationAreaTextFlowType
+DO_NOT_USE_AT_ALL 
+
+AROUND
+NO_FLOW
+
+FOREGROUND
+
+BACKGROUND*9
+ProtoColorType
+DUMMY_COLOR_TYPE 
+RGB
+CMYK*’
+ProtoHorizontalAlignment
+
+ALIGN_LEFT 
+ALIGN_CENTER
+ALIGN_RIGHT
+ALIGN_JUSTIFY
+ALIGN_FULL_JUSTIFY
+ALIGN_CENTER_ON_PAGE*9
+ProtoVerticalAlignment
+TOP 
+
+MIDDLE
+
+BOTTOM*ƒ
+ProtoBarcodeType
+
+PDF417 
+
+DATAMATRIX	
+BC128
+QR
+ITF
+EAN8	
+EAN13
+
+CODE39
+SWISSQR	
+AZTEC	*N
+ProtoBarcodeUAMode
+BARCODE_UA_MODE_SIMPLE 
+BARCODE_UA_MODE_ADVANCED*R
+ProtoPositionMode
+
+CENTER 
+LEFT	
+FOLIO	
+RIGHT
+REVERSE_FOLIO*Ž
+ProtoUnderlineMode
+DUMMY_UNDERLINE_MODE 
+WORDS_NO_BLANKS
+WORDS_AND_BLANKS
+CHARACTERS_NO_BLANKS
+CHARACTERS_AND_BLANKS*¹
+ProtoImageReferencePoint
+REF_POINT_DO_NOT_USE_AT_ALL 
+REF_POINT_BOTTOM_LEFT
+REF_POINT_TOP_LEFT
+REF_POINT_CENTER
+REF_POINT_BOTTOM_RIGHT
+REF_POINT_TOP_RIGHT*Õ
+ProtoSemanticType
+SEMANTIC_TYPE_NONE 
+SEMANTIC_TYPE_PART
+SEMANTIC_TYPE_ART
+SEMANTIC_TYPE_SECT
+SEMANTIC_TYPE_DIV
+SEMANTIC_TYPE_TOC
+SEMANTIC_TYPE_TOCI
+SEMANTIC_TYPE_REFERENCE*Ó
+ProtoTableCellSemanticType!
+TABLE_CELL_SEMANTIC_TYPE_AUTO 
+TABLE_CELL_SEMANTIC_TYPE_TD&
+"TABLE_CELL_SEMANTIC_TYPE_TH_COLUMN#
+TABLE_CELL_SEMANTIC_TYPE_TH_ROW$
+ TABLE_CELL_SEMANTIC_TYPE_TH_BOTH*¦
+PDFPrintingBehavior+
+'PDF_PRINTING_BEHAVIOR_DO_NOT_USE_AT_ALL 
+PDF_PRINTING_BEHAVIOR_INPUT
+PDF_PRINTING_BEHAVIOR_TEXT!
+PDF_PRINTING_BEHAVIOR_INHERIT*†
+Inheritance
+INHERITANCE_INHERIT 
+INHERITANCE_CODE
+INHERITANCE_BIND_CODE
+INHERITANCE_STATIC
+INHERITANCE_RESET*6
+ProtoGenerationType
+
+ALWAYS 
+ONLY_IF_VISIBLE*o
+ProtoNumberType
+
+ARABIC 
+ROM_UPPERCASE
+ROM_LOWERCASE
+LETTER_UPPERCASE
+LETTER_LOWERCASE*O
+ProtoListLevelSettingType
+
+UNNUMBERED 
+NUMERIC	
+IMAGE
+
+CUSTOM*h
+ProtoNumberedLevelDisplayType
+ALL_PARENT_LEVELS 
+NUMBERED_PARENT_LEVELS
+NO_PARENT_LEVELS*N
+ProtoTableContentGroupType
+
+HEADER 
+BODY
+
+FOOTER
+
+SUB_HEADER*_
+ProtoTableCellType
+TABLE_CELL_BODY 
+TABLE_CELL_ROW_HEADER
+TABLE_CELL_ROW_FOOTER*2
+ColumnBalancing
+NO_BALANCING 
+	BALANCING*z
+ProtoHeaderMode
+HEADER_MODE_APPEND_INITIAL 
+HEADER_MODE_APPEND
+HEADER_MODE_EXTEND
+HEADER_MODE_REPLACE*z
+ProtoFooterMode
+FOOTER_MODE_APPEND_INITIAL 
+FOOTER_MODE_APPEND
+FOOTER_MODE_EXTEND
+FOOTER_MODE_REPLACE*¨
+NodeType,
+(DOCUMENT_ELEMENT_BRANCH_DOCUMENT_ELEMENT $
+ DOCUMENT_ELEMENT_BRICK_REFERENCE
+DOCUMENT_ELEMENT_BRICK%
+!DOCUMENT_ELEMENT_DOCUMENT_ELEMENT
+DOCUMENT_ELEMENT_LINEBREAK!
+DOCUMENT_ELEMENT_LIST_SETTING%
+!DOCUMENT_ELEMENT_PARAGRAPH_FORMAT
+DOCUMENT_ELEMENT_PARAGRAPH
+DOCUMENT_ELEMENT_SECTION	
+DOCUMENT_ELEMENT_SPAN
+
+DOCUMENT_ELEMENT_TABLE
+DOCUMENT_ELEMENT_TABLE_CELL
+DOCUMENT_ELEMENT_TABLE_ROW
+DOCUMENT_ELEMENT_TEMPLATE
+DOCUMENT_ELEMENT_TEXT
+DOCUMENT_ELEMENT_COLOR_DEF
+DOCUMENT_ELEMENT_IMAGE!
+DOCUMENT_ELEMENT_NAMED_STRING"(
+$DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP#!
+DOCUMENT_ELEMENT_TABLE_CONFIG$&
+"DOCUMENT_ELEMENT_TABLE_CELL_CONFIG%%
+!DOCUMENT_ELEMENT_TABLE_ROW_CONFIG&/
++DOCUMENT_ELEMENT_TABLE_CONTENT_GROUP_CONFIG'
+DOCUMENT_ELEMENT_LINK(
+DOCUMENT_ELEMENT_DIRECTORY)
+DOCUMENT_ELEMENT_TEXT_BRICK*
+DOCUMENT_ELEMENT_VARIABLE,%
+!DOCUMENT_ELEMENT_SPACE_VERTICALLY-
+DOCUMENT_ELEMENT_FORMATTED. 
+DOCUMENT_ELEMENT_APPLY_C_DEF/ 
+DOCUMENT_ELEMENT_APPLY_P_DEF0$
+ DOCUMENT_ELEMENT_APPLY_PT_CONFIG1$
+ DOCUMENT_ELEMENT_APPLY_UL_CONFIG2
+DOCUMENT_ELEMENT_C_DEF3
+DOCUMENT_ELEMENT_P_DEF4
+DOCUMENT_ELEMENT_PT_CONFIG5
+DOCUMENT_ELEMENT_UL_CONFIG6
+DOCUMENT_ELEMENT_NEW_PAGE7
+DOCUMENT_ELEMENT_HEADER8
+DOCUMENT_ELEMENT_FOOTER9 
+DOCUMENT_ELEMENT_INDENTATION<
+DOCUMENT_ELEMENT_BARCODE=
+DOCUMENT_ELEMENT_WS_AREA>
+DOCUMENT_ELEMENT_CARRY_OVER?
+DOCUMENT_ELEMENT_SUB_TOTAL@
+DOCUMENT_ELEMENT_LOOPA
+DOCUMENT_ELEMENT_LOOP_ENTRYB
+DOCUMENT_ELEMENT_RULEC'
+#DOCUMENT_ELEMENT_LIST_LEVEL_SETTINGD
+DOCUMENT_ELEMENT_LAYOUTE/
++DOCUMENT_ELEMENT_ADVANCED_ILLUSTRATION_AREAF(
+$DOCUMENT_ELEMENT_ADJUST_HORIZONTALLYG#
+DOCUMENT_ELEMENT_DOCTYPE_SCRIPTH
+DOCUMENT_ELEMENT_DM_SCRIPTI%
+!DOCUMENT_ELEMENT_DYNAMIC_TEMPLATEJ
+DOCUMENT_ELEMENT_SELECTIONK$
+ DOCUMENT_ELEMENT_SELECTION_ENTRYL
+DOCUMENT_ELEMENT_CONDITIONM#
+DOCUMENT_ELEMENT_PAGE_CONDITIONN
+DOCUMENT_ELEMENT_LOCALEO
+DOCUMENT_ELEMENT_TAGP*
+&DOCUMENT_ELEMENT_PARAGRAPH_SET_DEFAULTQ%
+!DOCUMENT_ELEMENT_INPUT_FIELD_TEXTR%
+!DOCUMENT_ELEMENT_INPUT_FIELD_DATES)
+%DOCUMENT_ELEMENT_INPUT_FIELD_CHECKBOXT&
+"DOCUMENT_ELEMENT_INPUT_FIELD_LABELU)
+%DOCUMENT_ELEMENT_INPUT_FIELD_DROPDOWNV
+DOCUMENT_ELEMENT_SET_COLORW 
+DOCUMENT_ELEMENT_UNSET_COLORX!
+DOCUMENT_ELEMENT_COLORED_AREAY
+DOCUMENT_ELEMENT_CHAPTERZ&
+"DOCUMENT_ELEMENT_TABLE_OF_CONTENTS[&
+"DOCUMENT_ELEMENT_SECTION_REFERENCE\!
+DOCUMENT_ELEMENT_CHAPTER_LINK])
+%DOCUMENT_ELEMENT_VISIBILITY_CONDITION^*¤
+ProtoImageScaleType&
+"IMAGE_SCALE_TYPE_DO_NOT_USE_AT_ALL 
+IMAGE_SCALE_TYPE_RELATIVE
+IMAGE_SCALE_TYPE_ABSOLUTE'
+#IMAGE_SCALE_TYPE_RELATIVE_TO_COLUMN*Š
+ProtoImageUAMode#
+IMAGE_UA_MODE_DO_NOT_USE_AT_ALL 
+IMAGE_UA_MODE_INHERITED
+IMAGE_UA_MODE_SIMPLE
+IMAGE_UA_MODE_ADVANCED*Ë
+ProtoImageContentType'
+#IMAGE_CONTENT_UUID_REFERENCE_INLINE &
+"IMAGE_CONTENT_UUID_REFERENCE_LOCAL'
+#IMAGE_CONTENT_UUID_REFERENCE_GLOBAL
+IMAGE_CONTENT_DMSCRIPT
+IMAGE_CONTENT_IMAGE_DATA*Ä
+ProtoVariableSpecialType
+NOT_SPECIAL 
+TABLE_NUMBER
+DOC_PAGE_COUNT
+DOC_CUR_PAGE
+CUR_PAGE
+
+PAGE_COUNT
+	PREV_PAGE
+SECTION_PAGE
+
+UPDATED_AT
+GENERATED_AT	*H
+ProtoPageMode
+	NEXT_PAGE 
+NEXT_RECTO_PAGE
+NEXT_VERSO_PAGE*k
+ProtoPageOrientation	
+UNSET 
+PORTRAIT
+	LANDSCAPE
+INVERSE_PORTRAIT
+INVERSE_LANDSCAPE*N
+ProtoSubTotalPosition
+POSITION_ABOVE_FOOTER 
+POSITION_BELOW_CONTENT*)
+ProtoRuleMode
+
+NORMAL 
+BOUNDARY*P
+ProtoDoctypeOutputMode
+DOCTYPE_OUTPUT_MODE_NOT_SET 
+DOCTYPE
+JSONBªDocframebproto3

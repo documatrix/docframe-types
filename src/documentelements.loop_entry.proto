@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package docframe;
+
+message ProtoLoopEntry {
+  string path = 3;
+  uint64 index = 4;
+  string uuid = 5;
+  repeated string comChannelUUIDs = 6;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
+}

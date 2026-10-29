@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package docframe;
+
+import "box.uint32.proto";
+
+message ProtoLinebreak {
+  repeated string comChannelUUIDs = 2;
+
+  string uuid = 3;
+  ProtoBoxedUint32 count = 4;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1;
+  reserved "parent";
+}

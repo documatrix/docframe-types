@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package docframe;
+
+import "util.generation_type.proto";
+
+message ProtoFormatted {
+  bool dteditorSyntax = 2;
+  string doctypeContent = 3;
+  string doctypeCode = 4;
+  string htmlContent = 5;
+  string htmlCode = 6;
+  string textContent = 7;
+  string textCode = 8;
+  repeated string comChannelUUIDs = 9;
+  string uuid = 10;
+  bool bindDoctypeCode = 11;
+  bool bindHtmlCode = 12;
+  bool bindTextCode = 13;
+  ProtoGenerationType generationTypeDoctype = 14;
+  ProtoGenerationType generationTypeHtml = 15;
+  ProtoGenerationType generationTypeText = 16;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1;
+  reserved "parent";
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package docframe;
+
+message ProtoVariable {
+  string path = 2;
+  string content = 3; // Should this be optional or "empty string"
+  string formatUuid = 4;
+  ProtoVariableSpecialType specialType = 5;
+  string uuid = 6;
+  repeated string comChannelUUIDs = 7;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1;
+  reserved "parent";
+}
+
+enum ProtoVariableSpecialType {
+  NOT_SPECIAL = 0;
+  TABLE_NUMBER = 1;
+  DOC_PAGE_COUNT = 2;
+  DOC_CUR_PAGE = 3;
+  CUR_PAGE = 4;
+  PAGE_COUNT = 5;
+  PREV_PAGE = 6;
+  SECTION_PAGE = 7;
+  UPDATED_AT = 8;
+  GENERATED_AT = 9;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package docframe;
+
+import "documentelements.list_level_setting.proto";
+
+message ProtoListSetting {
+  string name = 2;
+  repeated ProtoListLevelSetting listLevelSettings = 3;
+  ProtoListLevelSetting defaultListLevelSetting = 4;
+  repeated string comChannelUUIDs = 5;
+  string uuid = 6;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1;
+  reserved "parent";
+}
+
+// go-gen:ignore
+message ProtoBoxedListSetting {
+  ProtoListSetting value = 1;
+  bool isNull = 2;
+}

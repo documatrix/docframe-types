@@ -1,4 +1,66 @@
-option csharp_namespace = "Docframe";
+syntax = "proto3";
+
+package docframe;
+
+import "documentelements.adjust_horizontally.proto";
+import "documentelements.advanced_illustration_area.proto";
+import "documentelements.apply_cdef.proto";
+import "documentelements.apply_pdef.proto";
+import "documentelements.apply_pt_config.proto";
+import "documentelements.apply_ul_config.proto";
+import "documentelements.barcode.proto";
+import "documentelements.brick.proto";
+import "documentelements.brick_reference.proto";
+import "documentelements.carry_over.proto";
+import "documentelements.cdef.proto";
+import "documentelements.chapter.proto";
+import "documentelements.chapter_link.proto";
+import "documentelements.color_def.proto";
+import "documentelements.condition.proto";
+import "documentelements.directory.proto";
+import "documentelements.dmscript.proto";
+import "documentelements.doctype_script.proto";
+import "documentelements.dynamic_template.proto";
+import "documentelements.footer.proto";
+import "documentelements.formatted.proto";
+import "documentelements.header.proto";
+import "documentelements.image.proto";
+import "documentelements.indentation.proto";
+import "documentelements.input_field.proto";
+import "documentelements.layout.proto";
+import "documentelements.linebreak.proto";
+import "documentelements.link.proto";
+import "documentelements.list_setting.proto";
+import "documentelements.locale.proto";
+import "documentelements.loop.proto";
+import "documentelements.loop_entry.proto";
+import "documentelements.named_string.proto";
+import "documentelements.new_page.proto";
+import "documentelements.page_condition.proto";
+import "documentelements.paragraph.proto";
+import "documentelements.paragraph_format.proto";
+import "documentelements.paragraph_set_default.proto";
+import "documentelements.pdef.proto";
+import "documentelements.pt_config.proto";
+import "documentelements.rule.proto";
+import "documentelements.section.proto";
+import "documentelements.section_reference.proto";
+import "documentelements.selection.proto";
+import "documentelements.selection_entry.proto";
+import "documentelements.set_unset_color.proto";
+import "documentelements.space_vertically.proto";
+import "documentelements.span.proto";
+import "documentelements.sub_total.proto";
+import "documentelements.table.proto";
+import "documentelements.table_of_contents.proto";
+import "documentelements.tag.proto";
+import "documentelements.template.proto";
+import "documentelements.text.proto";
+import "documentelements.textbrick.proto";
+import "documentelements.ul_config.proto";
+import "documentelements.variable.proto";
+import "documentelements.visibility_condition.proto";
+import "documentelements.ws_area.proto";
 
 message Node {
   repeated Node children = 1;
@@ -155,4 +217,23 @@ enum NodeType {
   DOCUMENT_ELEMENT_SECTION_REFERENCE = 92;
   DOCUMENT_ELEMENT_CHAPTER_LINK = 93;
   DOCUMENT_ELEMENT_VISIBILITY_CONDITION = 94;
+}
+
+// ProtoTable lives in node.proto (not in documentelements.table.proto) because it
+// references Node (carryOver / subTotal) while Node references ProtoTable.
+// Protobuf does not allow cyclic imports, so both must share one file.
+message ProtoTable {
+  ProtoTableSettings settings = 3;
+  string configName = 4;
+
+  Node carryOver = 5;
+  Node subTotal = 6;
+  repeated string comChannelUUIDs = 7;
+  ProtoTableElementProperties elementProperties = 8;
+  string uuid = 9;
+  string name = 10;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
 }

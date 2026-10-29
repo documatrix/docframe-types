@@ -1,0 +1,144 @@
+syntax = "proto3";
+
+package docframe;
+
+import "box.bool.proto";
+import "box.uint32.proto";
+import "util.color.proto";
+import "util.font.proto";
+
+enum ProtoNumberType {
+  ARABIC = 0;
+  ROM_UPPERCASE = 1;
+  ROM_LOWERCASE = 2;
+  LETTER_UPPERCASE = 3;
+  LETTER_LOWERCASE = 4;
+}
+
+enum ProtoListLevelSettingType {
+  UNNUMBERED = 0;
+  NUMERIC = 1;
+  IMAGE = 2;
+  CUSTOM = 3;
+}
+
+enum ProtoNumberedLevelDisplayType {
+  ALL_PARENT_LEVELS = 0;
+  NUMBERED_PARENT_LEVELS = 1;
+  NO_PARENT_LEVELS = 2;
+}
+
+// go-gen:ignore
+message ProtoListLevelSetting {
+  string listSettingName = 1;
+  ProtoBoxedUint32 fontSize = 2;
+  ProtoListLevelSettingType type = 3;
+  int32 level = 4;
+  string prefix = 5;
+  string suffix = 6;
+  ProtoFont fixFontFamily = 7;
+  bool fixBold = 8;
+  bool fixItalic = 9;
+  int32 indentionWidth = 10;
+  ProtoColor color = 11;
+
+  string imageName = 12;
+
+  ProtoFont fontFamily = 13;
+  ProtoBoxedBool bold = 14;
+  ProtoBoxedBool italic = 15;
+
+  ProtoNumberType numberType = 16;
+
+  string character = 17;
+
+  string doctypeCode = 18;
+
+  ProtoNumberedLevelDisplayType levelDisplayType = 19;
+}
+
+// go-gen:ignore
+message ProtoImageListLevelSetting {
+  string listSettingName = 1;
+  ProtoBoxedUint32 fontSize = 2;
+  ProtoListLevelSettingType type = 3;
+  int32 level = 4;
+  string prefix = 5;
+  string suffix = 6;
+  ProtoFont fixFontFamily = 7;
+  bool fixBold = 8;
+  bool fixItalic = 9;
+  int32 indentionWidth = 10;
+  ProtoColor color = 11;
+
+  string imageName = 12;
+}
+
+// go-gen:ignore
+message ProtoTextListLevelSetting {
+  string listSettingName = 1;
+  ProtoBoxedUint32 fontSize = 2;
+  ProtoListLevelSettingType type = 3;
+  int32 level = 4;
+  string prefix = 5;
+  string suffix = 6;
+  ProtoFont fixFontFamily = 7;
+  bool fixBold = 8;
+  bool fixItalic = 9;
+  int32 indentionWidth = 10;
+  ProtoColor color = 11;
+
+  ProtoFont fontFamily = 12;
+  ProtoBoxedBool bold = 13;
+  ProtoBoxedBool italic = 14;
+}
+
+// go-gen:ignore
+message ProtoNumberListLevelSetting {
+  string listSettingName = 1;
+  ProtoBoxedUint32 fontSize = 2;
+  ProtoListLevelSettingType type = 3;
+  int32 level = 4;
+  string prefix = 5;
+  string suffix = 6;
+  ProtoFont fixFontFamily = 7;
+  bool fixBold = 8;
+  bool fixItalic = 9;
+  int32 indentionWidth = 10;
+  ProtoColor color = 11;
+  ProtoFont fontFamily = 12;
+  ProtoBoxedBool bold = 13;
+  ProtoBoxedBool italic = 14;
+
+  ProtoNumberType numberType = 15;
+  ProtoNumberedLevelDisplayType levelDisplayType = 16;
+}
+
+// go-gen:ignore
+message ProtoUnnumberedListLevelSetting {
+  string listSettingName = 1;
+  ProtoBoxedUint32 fontSize = 2;
+  ProtoListLevelSettingType type = 3;
+  int32 level = 4;
+  string prefix = 5;
+  string suffix = 6;
+  ProtoFont fixFontFamily = 7;
+  bool fixBold = 8;
+  bool fixItalic = 9;
+  int32 indentionWidth = 10;
+  ProtoColor color = 11;
+  ProtoFont fontFamily = 12;
+  ProtoBoxedBool bold = 13;
+  ProtoBoxedBool italic = 14;
+
+  string character = 15;
+}
+
+// go-gen:ignore
+message ProtoCustomListLevelSetting {
+  string listSettingName = 1;
+  ProtoListLevelSettingType type = 2;
+  int32 level = 3;
+
+  string doctypeCode = 4;
+}

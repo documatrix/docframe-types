@@ -14,7 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
-      - run: bun install
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+      - run: git diff --exit-code
 
   publish-npm:
     needs: build
@@ -27,6 +32,7 @@ jobs:
           node-version: 24
           registry-url: https://registry.npmjs.org/
       - run: bun install --frozen-lockfile
+      # Publishes the committed build/ output, which the build job verified against a fresh generation.
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

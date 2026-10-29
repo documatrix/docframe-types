@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package docframe;
+
+import "util.color.proto";
+import "util.measure.proto";
+import "util.rule_style.proto";
+import "util.underline_spec.proto";
+
+message ProtoStrikethroughSpec {
+  ProtoMeasure weight = 1;
+  ProtoUnderlineMode mode = 2;
+  ProtoColor color = 3;
+  int32 offsetEm = 4;
+  ProtoRuleStyle style = 5;
+
+}
+
+message ProtoBoxedStrikethroughSpec {
+  ProtoStrikethroughSpec value = 1;
+  bool isNull = 2;
+}

@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package docframe;
+
+import "util.color.proto";
+
+// go-gen:ignore
+message ProtoColorChoice {
+  oneof choice {
+    ProtoColor color = 1;
+    string colorDefinitionUUID = 2;
+  }
+}
+
+message ProtoSetColor {
+  ProtoColorChoice color = 2;
+
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1;
+  reserved "parent";
+}
+
+message ProtoUnsetColor {
+  ProtoColorChoice color = 2;
+
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1;
+  reserved "parent";
+}
+
+message ProtoColoredArea {
+  ProtoColorChoice color = 3;
+
+  string uuid = 4;
+  repeated string comChannelUUIDs = 5;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
+}

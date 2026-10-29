@@ -1,4 +1,0 @@
-message ProtoBoxedDouble {
-  double value = 1;
-  bool isNull = 2;
-}
