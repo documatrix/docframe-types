@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package docframe;
+
+import "box.bool.proto";
+import "util.column_settings.proto";
+
+message ProtoCDef {
+  ProtoColumnSettings columSettings = 1;
+  ProtoBoxedBool applyToHeaderFooter = 2;
+  ProtoBoxedBool applyImmediate = 3;
+  string Uuid = 4;
+  repeated string comChannelUUIDs = 5;
+}

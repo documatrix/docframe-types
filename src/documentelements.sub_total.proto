@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package docframe;
+
+import "util.measure.proto";
+
+enum ProtoSubTotalPosition {
+  POSITION_ABOVE_FOOTER = 0;
+  POSITION_BELOW_CONTENT = 1;
+}
+
+message ProtoSubTotal {
+  bool apply_immediate = 3;
+  ProtoSubTotalPosition position = 4;
+  ProtoMeasure height = 5;
+  repeated string comChannelUUIDs = 6;
+  string uuid = 7;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
+}

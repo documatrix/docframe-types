@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package docframe;
+
+enum ProtoFooterMode {
+  FOOTER_MODE_APPEND_INITIAL = 0;
+  FOOTER_MODE_APPEND = 1;
+  FOOTER_MODE_EXTEND = 2;
+  FOOTER_MODE_REPLACE = 3;
+}
+
+message ProtoFooter {
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+  ProtoFooterMode mode = 5;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
+}

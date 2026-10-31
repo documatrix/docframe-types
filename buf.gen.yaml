@@ -1,0 +1,29 @@
+version: v2
+managed:
+  enabled: true
+  override:
+    - file_option: go_package
+      value: github.com/documatrix/docframe-types/docframepb
+    - file_option: csharp_namespace
+      value: Docframe
+plugins:
+  # Go messages (docframepb). Run from go.mod (tool directive), so the generator
+  # version is always the google.golang.org/protobuf version in go.mod.
+  - local: ["go", "run", "google.golang.org/protobuf/cmd/protoc-gen-go"]
+    out: .
+    opt: module=github.com/documatrix/docframe-types
+  # Go ToNode() helpers for every message that is a member of Node.object.
+  - local: ["go", "run", "./tools/protoc-gen-docframe-node"]
+    out: .
+    opt: module=github.com/documatrix/docframe-types
+  # TypeScript / JavaScript via protobuf-es. Local plugin so the generator
+  # version always matches the @bufbuild/protobuf runtime in package.json.
+  # Invoked through node (not the node_modules/.bin shim) so it works on Windows.
+  - local: ["node", "node_modules/@bufbuild/protoc-gen-es/bin/protoc-gen-es"]
+    out: build
+    opt:
+      - target=js+dts
+      - js_import_style=legacy_commonjs
+  # C#
+  - remote: buf.build/protocolbuffers/csharp:v36.2
+    out: build/csharp

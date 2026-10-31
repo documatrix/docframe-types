@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package docframe;
+
+import "util.generation_type.proto";
+
+enum ProtoDoctypeOutputMode {
+  DOCTYPE_OUTPUT_MODE_NOT_SET = 0;
+  DOCTYPE = 1;
+  JSON = 2;
+}
+
+// These elements are actually script snippets (usually dmSCRIPT), whichs result (String) is used
+// as docTYPE code.
+message ProtoDoctypeScript {
+  string content = 2;
+  ProtoDoctypeOutputMode outputMode = 3;
+  repeated string comChannelUUIDs = 4;
+  string uuid = 5;
+  bool bindContent = 6;
+  ProtoGenerationType generationType = 7;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1;
+  reserved "parent";
+}

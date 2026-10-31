@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: bun install --frozen-lockfile
+      - run: bun run lint
+      - name: Breaking change check (wire + JSON compatibility against main)
+        if: github.event_name == 'pull_request'
+        # Skipped only while the base branch has no buf module yet (first PR of the buf migration).
+        run: |
+          if git cat-file -e origin/main:buf.yaml 2>/dev/null; then
+            bun run breaking
+          else
+            echo "origin/main has no buf.yaml; skipping breaking check"
+          fi
+      - run: bun run build
+      - name: Generated code is up to date
+        run: git add -N . && git diff --exit-code
+      - run: go build ./... && go vet ./... && go test ./...

@@ -1,4 +1,0 @@
-message ProtoBoxedBool {
-  bool value = 1;
-  bool isNull = 2;
-}

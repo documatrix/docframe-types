@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package docframe;
+
+import "util.generation_type.proto";
+
+message ProtoDmScript {
+  string content = 2;
+  repeated string comChannelUUIDs = 3;
+  string uuid = 4;
+  bool bindContent = 5;
+  ProtoGenerationType generationType = 6;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1;
+  reserved "parent";
+}

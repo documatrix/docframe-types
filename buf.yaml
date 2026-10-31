@@ -1,0 +1,21 @@
+version: v2
+modules:
+  - path: src
+lint:
+  use:
+    - STANDARD
+  except:
+    # Legacy naming conventions predate buf; renaming would change the
+    # generated APIs of all consumers, so these rules are disabled.
+    - PACKAGE_DIRECTORY_MATCH
+    - PACKAGE_VERSION_SUFFIX
+    - FIELD_LOWER_SNAKE_CASE
+    - ENUM_VALUE_PREFIX
+    - ENUM_ZERO_VALUE_SUFFIX
+    - ENUM_VALUE_UPPER_SNAKE_CASE
+    - FILE_LOWER_SNAKE_CASE
+breaking:
+  use:
+    # Wire and JSON compatibility is a hard requirement: existing serialized
+    # documents must stay readable without migration.
+    - WIRE_JSON

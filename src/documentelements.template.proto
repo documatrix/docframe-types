@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package docframe;
+
+import "util.semantic_type.proto";
+
+message ProtoTemplate {
+  repeated string comChannelUUIDs = 3;
+  string uuid = 4;
+  ColumnBalancing columnBalancing = 5;
+  ProtoSemanticType semanticType = 6;
+  string templateUuid = 7;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
+}
+
+enum ColumnBalancing {
+  NO_BALANCING = 0;
+  BALANCING = 1;
+}

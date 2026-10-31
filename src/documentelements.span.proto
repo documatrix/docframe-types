@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package docframe;
+
+import "box.bool.proto";
+import "util.color.proto";
+
+message ProtoSpan {
+  ProtoBoxedBool bold = 3;
+  ProtoBoxedBool italic = 4;
+  ProtoColor color = 5;
+  ProtoBoxedBool subscript = 6;
+  ProtoBoxedBool superscript = 7;
+  ProtoBoxedBool underline = 8;
+  ProtoBoxedBool strikethrough = 9;
+  repeated string comChannelUUIDs = 10;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
+}

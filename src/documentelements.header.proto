@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package docframe;
+
+enum ProtoHeaderMode {
+  HEADER_MODE_APPEND_INITIAL = 0;
+  HEADER_MODE_APPEND = 1;
+  HEADER_MODE_EXTEND = 2;
+  HEADER_MODE_REPLACE = 3;
+}
+
+message ProtoHeader {
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+  ProtoHeaderMode mode = 5;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package docframe;
+
+import "util.advanced_illustration_area_image_settings.proto";
+import "util.measure.proto";
+
+message ProtoAdvancedIllustrationArea {
+  string uuid = 3;
+  bool absolute = 4;
+  ProtoMeasure width = 5;
+  ProtoMeasure height = 6;
+  ProtoMeasure x = 7;
+  ProtoMeasure y = 8;
+  ProtoAdvancedIllustrationAreaTextFlowType textFlow = 9;
+  float rotation = 10;
+  repeated string comChannelUUIDs = 11;
+  bool noArtifact = 12;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
+}

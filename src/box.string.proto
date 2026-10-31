@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package docframe;
+
+message ProtoBoxedString {
+  string value = 1;
+  bool isNull = 2;
+}

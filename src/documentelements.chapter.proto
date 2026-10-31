@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package docframe;
+
+message ProtoChapter {
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+  string title = 5;
+  string tag = 6;
+  repeated string number = 7;
+  string key = 8;
+  bool createPageBreak = 9;
+  bool createDestination = 10;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
+}

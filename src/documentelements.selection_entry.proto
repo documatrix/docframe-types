@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package docframe;
+
+message ProtoSelectionEntry {
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+  string internalName = 5;
+  string name = 6;
+  bool selected = 7;
+  string onChangeCode = 8;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
+}

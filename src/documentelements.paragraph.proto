@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package docframe;
+
+import "documentelements.paragraph_format.proto";
+
+message ProtoParagraph {
+  ProtoParagraphFormat format = 3;
+  ProtoParagraphFormat overwrite = 4;
+  repeated string comChannelUUIDs = 5;
+  string paragraphFormatUUID = 6;
+  string uuid = 7;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
+}

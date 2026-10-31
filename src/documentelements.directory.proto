@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package docframe;
+
+import "util.semantic_type.proto";
+
+message ProtoDirectory {
+  string uuid = 3;
+  repeated string comChannelUUIDs = 4;
+  ProtoSemanticType semanticType = 5;
+  bool editable = 6;
+  string name = 7;
+
+  // Dropped fields (former parent / _children references). Numbers stay reserved for wire compatibility.
+  reserved 1, 2;
+  reserved "_children", "parent";
+}
