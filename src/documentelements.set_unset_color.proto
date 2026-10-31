@@ -4,7 +4,6 @@ package docframe;
 
 import "util.color.proto";
 
-// go-gen:ignore
 message ProtoColorChoice {
   oneof choice {
     ProtoColor color = 1;

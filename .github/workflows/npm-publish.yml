@@ -19,7 +19,7 @@ jobs:
           go-version-file: go.mod
       - run: bun install --frozen-lockfile
       - run: bun run build
-      - run: git diff --exit-code
+      - run: git add -N . && git diff --exit-code
 
   publish-npm:
     needs: build

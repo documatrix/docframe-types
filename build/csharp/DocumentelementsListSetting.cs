@@ -383,9 +383,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedListSetting : pb::IMessage<ProtoBoxedListSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

@@ -155,9 +155,6 @@ namespace Docframe {
   #endregion
 
   #region Messages
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoListLevelSetting : pb::IMessage<ProtoListLevelSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1076,9 +1073,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoImageListLevelSetting : pb::IMessage<ProtoImageListLevelSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1711,9 +1705,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTextListLevelSetting : pb::IMessage<ProtoTextListLevelSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2447,9 +2438,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoNumberListLevelSetting : pb::IMessage<ProtoNumberListLevelSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3257,9 +3245,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoUnnumberedListLevelSetting : pb::IMessage<ProtoUnnumberedListLevelSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4030,9 +4015,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoCustomListLevelSetting : pb::IMessage<ProtoCustomListLevelSetting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

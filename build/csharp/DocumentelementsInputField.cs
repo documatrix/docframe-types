@@ -73,9 +73,6 @@ namespace Docframe {
 
   }
   #region Messages
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBaseTextInputField : pb::IMessage<ProtoBaseTextInputField>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

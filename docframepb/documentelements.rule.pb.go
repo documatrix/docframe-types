@@ -75,11 +75,10 @@ type ProtoRule struct {
 	Thickness *ProtoMeasure          `protobuf:"bytes,4,opt,name=thickness,proto3" json:"thickness,omitempty"`
 	// Rotation of the rule is stored in degrees clockwise
 	// Examples:
-	//
-	//	0° = a horizontal rule to the right
-	//	90° = a vertical rule downwards
-	//	180° = a horizontal rule to the left
-	//	270° = a vertical rule upwards
+	//      0° = a horizontal rule to the right
+	//      90° = a vertical rule downwards
+	//      180° = a horizontal rule to the left
+	//      270° = a vertical rule upwards
 	Rotation float64        `protobuf:"fixed64,5,opt,name=rotation,proto3" json:"rotation,omitempty"`
 	Color    *ProtoColor    `protobuf:"bytes,6,opt,name=color,proto3" json:"color,omitempty"`
 	Style    ProtoRuleStyle `protobuf:"varint,7,opt,name=style,proto3,enum=docframe.ProtoRuleStyle" json:"style,omitempty"`
@@ -202,7 +201,6 @@ func (x *ProtoRule) GetUuid() string {
 	return ""
 }
 
-// go-gen:ignore
 type ProtoRuleBoundaries struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Start         *ProtoMeasure          `protobuf:"bytes,1,opt,name=start,proto3" json:"start,omitempty"`

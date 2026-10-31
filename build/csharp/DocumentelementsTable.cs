@@ -604,9 +604,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableSettings : pb::IMessage<ProtoTableSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1090,9 +1087,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedTableContentGroupType : pb::IMessage<ProtoBoxedTableContentGroupType>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1988,9 +1982,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableContentGroupSettings : pb::IMessage<ProtoTableContentGroupSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3050,9 +3041,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableRowSettings : pb::IMessage<ProtoTableRowSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3306,9 +3294,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoBoxedTableCellType : pb::IMessage<ProtoBoxedTableCellType>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4376,9 +4361,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableCellSettings : pb::IMessage<ProtoTableCellSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5005,9 +4987,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableWS : pb::IMessage<ProtoTableWS>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5280,9 +5259,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoTableElementProperties : pb::IMessage<ProtoTableElementProperties>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

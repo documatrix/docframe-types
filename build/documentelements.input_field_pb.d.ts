@@ -13,8 +13,6 @@ import type { ProtoBoxedMeasure } from "./util.measure_pb";
 export declare const file_documentelements_input_field: GenFile;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoBaseTextInputField
  */
 export declare type ProtoBaseTextInputField = Message<"docframe.ProtoBaseTextInputField"> & {

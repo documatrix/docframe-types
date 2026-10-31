@@ -24,7 +24,6 @@ message ProtoTableConfig {
   reserved "parent";
 }
 
-// go-gen:ignore
 message ProtoTableSettings {
   ProtoMeasure xOffset = 1;
   ProtoBoxedBool leftMeasure = 2;
@@ -42,7 +41,6 @@ enum ProtoTableContentGroupType {
   SUB_HEADER = 3;
 }
 
-// go-gen:ignore
 message ProtoBoxedTableContentGroupType {
   ProtoTableContentGroupType value = 1;
   bool isNull = 2;
@@ -71,7 +69,6 @@ message ProtoTableContentGroupConfig {
   reserved "parent";
 }
 
-// go-gen:ignore
 message ProtoTableContentGroupSettings {
   ProtoBoxedTableContentGroupType contentGroupType = 1;
   repeated ProtoColor backgroundColors = 2;
@@ -104,7 +101,6 @@ message ProtoTableRowConfig {
   reserved "parent";
 }
 
-// go-gen:ignore
 message ProtoTableRowSettings {
   ProtoMeasure minHeight = 1;
   ProtoTableWS ws = 2;
@@ -116,7 +112,6 @@ enum ProtoTableCellType {
   TABLE_CELL_ROW_FOOTER = 2;
 }
 
-// go-gen:ignore
 message ProtoBoxedTableCellType {
   ProtoTableCellType value = 1;
   bool isNull = 2;
@@ -151,7 +146,6 @@ message ProtoTableCellConfig {
   reserved "parent";
 }
 
-// go-gen:ignore
 message ProtoTableCellSettings {
   ProtoMeasure width = 1;
   ProtoBoxedHorizontalAlignment align = 2;
@@ -168,14 +162,12 @@ message ProtoTableCellSettings {
   ProtoBoxedTableCellSemanticType semanticType = 10;
 }
 
-// go-gen:ignore
 message ProtoTableWS {
   uint32 minLinesBefore = 1;
   uint32 minLinesAfter = 2;
   uint32 priority = 3;
 }
 
-// go-gen:ignore
 message ProtoTableElementProperties {
   Inheritance widthInheritance = 1;
   ProtoMeasure width = 2;

@@ -21,7 +21,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// go-gen:ignore
 type ProtoBaseTextInputField struct {
 	state                   protoimpl.MessageState `protogen:"open.v1"`
 	Base                    *ProtoBaseInputField   `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty"`

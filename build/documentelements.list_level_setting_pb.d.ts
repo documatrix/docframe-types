@@ -15,8 +15,6 @@ import type { ProtoBoxedBool } from "./box.bool_pb";
 export declare const file_documentelements_list_level_setting: GenFile;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoListLevelSetting
  */
 export declare type ProtoListLevelSetting = Message<"docframe.ProtoListLevelSetting"> & {
@@ -123,8 +121,6 @@ export declare type ProtoListLevelSetting = Message<"docframe.ProtoListLevelSett
 export declare const ProtoListLevelSettingSchema: GenMessage<ProtoListLevelSetting>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoImageListLevelSetting
  */
 export declare type ProtoImageListLevelSetting = Message<"docframe.ProtoImageListLevelSetting"> & {
@@ -196,8 +192,6 @@ export declare type ProtoImageListLevelSetting = Message<"docframe.ProtoImageLis
 export declare const ProtoImageListLevelSettingSchema: GenMessage<ProtoImageListLevelSetting>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoTextListLevelSetting
  */
 export declare type ProtoTextListLevelSetting = Message<"docframe.ProtoTextListLevelSetting"> & {
@@ -279,8 +273,6 @@ export declare type ProtoTextListLevelSetting = Message<"docframe.ProtoTextListL
 export declare const ProtoTextListLevelSettingSchema: GenMessage<ProtoTextListLevelSetting>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoNumberListLevelSetting
  */
 export declare type ProtoNumberListLevelSetting = Message<"docframe.ProtoNumberListLevelSetting"> & {
@@ -372,8 +364,6 @@ export declare type ProtoNumberListLevelSetting = Message<"docframe.ProtoNumberL
 export declare const ProtoNumberListLevelSettingSchema: GenMessage<ProtoNumberListLevelSetting>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoUnnumberedListLevelSetting
  */
 export declare type ProtoUnnumberedListLevelSetting = Message<"docframe.ProtoUnnumberedListLevelSetting"> & {
@@ -460,8 +450,6 @@ export declare type ProtoUnnumberedListLevelSetting = Message<"docframe.ProtoUnn
 export declare const ProtoUnnumberedListLevelSettingSchema: GenMessage<ProtoUnnumberedListLevelSetting>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoCustomListLevelSetting
  */
 export declare type ProtoCustomListLevelSetting = Message<"docframe.ProtoCustomListLevelSetting"> & {

@@ -93,8 +93,6 @@ export declare type ProtoRule = Message<"docframe.ProtoRule"> & {
 export declare const ProtoRuleSchema: GenMessage<ProtoRule>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoRuleBoundaries
  */
 export declare type ProtoRuleBoundaries = Message<"docframe.ProtoRuleBoundaries"> & {

@@ -21,10 +21,17 @@ var legacyFieldsRemoved = map[string]bool{"parent": true, "_children": true}
 var legacyMessagesRemoved = map[string]bool{"ProtoDocumentElement": true, "ProtoBranchDocumentElement": true}
 
 // TestWireCompatibleWithLegacySchema guards the byte-level compatibility of
-// serialized documents: every message and enum of the pre-buf schema
-// (testdata/legacy_schema.binpb, generated from the last concatenated
-// build/docframe.proto) must still exist with identical field numbers, names,
-// types, cardinalities and oneof membership.
+// serialized documents: every message and enum of the pre-buf schema must
+// still exist with identical field numbers, names, types, cardinalities and
+// oneof membership.
+//
+// testdata/legacy_schema.binpb is a FileDescriptorSet of the last schema
+// produced by the old createDocframe.sh (commit aea2494, the parent of the buf
+// migration). It is a frozen snapshot and must not be regenerated from the
+// current sources. To audit or rebuild it:
+//
+//	git show aea2494:build/docframe.proto > /tmp/legacy/docframe.proto
+//	protoc --proto_path=/tmp/legacy --descriptor_set_out=docframepb/testdata/legacy_schema.binpb docframe.proto
 func TestWireCompatibleWithLegacySchema(t *testing.T) {
 	raw, err := os.ReadFile("testdata/legacy_schema.binpb")
 	if err != nil {

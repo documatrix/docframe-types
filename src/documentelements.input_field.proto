@@ -5,7 +5,6 @@ package docframe;
 import "util.input_field.proto";
 import "util.measure.proto";
 
-// go-gen:ignore
 message ProtoBaseTextInputField {
     ProtoBaseInputField base = 1;
 

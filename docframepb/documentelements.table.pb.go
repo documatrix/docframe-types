@@ -190,7 +190,6 @@ func (x *ProtoTableConfig) GetUuid() string {
 	return ""
 }
 
-// go-gen:ignore
 type ProtoTableSettings struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
 	XOffset             *ProtoMeasure          `protobuf:"bytes,1,opt,name=xOffset,proto3" json:"xOffset,omitempty"`
@@ -283,7 +282,6 @@ func (x *ProtoTableSettings) GetRepeatSubHeader() *ProtoBoxedUint32 {
 	return nil
 }
 
-// go-gen:ignore
 type ProtoBoxedTableContentGroupType struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
 	Value         ProtoTableContentGroupType `protobuf:"varint,1,opt,name=value,proto3,enum=docframe.ProtoTableContentGroupType" json:"value,omitempty"`
@@ -480,7 +478,6 @@ func (x *ProtoTableContentGroupConfig) GetUuid() string {
 	return ""
 }
 
-// go-gen:ignore
 type ProtoTableContentGroupSettings struct {
 	state            protoimpl.MessageState           `protogen:"open.v1"`
 	ContentGroupType *ProtoBoxedTableContentGroupType `protobuf:"bytes,1,opt,name=contentGroupType,proto3" json:"contentGroupType,omitempty"`
@@ -709,7 +706,6 @@ func (x *ProtoTableRowConfig) GetUuid() string {
 	return ""
 }
 
-// go-gen:ignore
 type ProtoTableRowSettings struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	MinHeight     *ProtoMeasure          `protobuf:"bytes,1,opt,name=minHeight,proto3" json:"minHeight,omitempty"`
@@ -762,7 +758,6 @@ func (x *ProtoTableRowSettings) GetWs() *ProtoTableWS {
 	return nil
 }
 
-// go-gen:ignore
 type ProtoBoxedTableCellType struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Value         ProtoTableCellType     `protobuf:"varint,1,opt,name=value,proto3,enum=docframe.ProtoTableCellType" json:"value,omitempty"`
@@ -993,7 +988,6 @@ func (x *ProtoTableCellConfig) GetUuid() string {
 	return ""
 }
 
-// go-gen:ignore
 type ProtoTableCellSettings struct {
 	state           protoimpl.MessageState         `protogen:"open.v1"`
 	Width           *ProtoMeasure                  `protobuf:"bytes,1,opt,name=width,proto3" json:"width,omitempty"`
@@ -1113,7 +1107,6 @@ func (x *ProtoTableCellSettings) GetSemanticType() *ProtoBoxedTableCellSemanticT
 	return nil
 }
 
-// go-gen:ignore
 type ProtoTableWS struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	MinLinesBefore uint32                 `protobuf:"varint,1,opt,name=minLinesBefore,proto3" json:"minLinesBefore,omitempty"`
@@ -1174,7 +1167,6 @@ func (x *ProtoTableWS) GetPriority() uint32 {
 	return 0
 }
 
-// go-gen:ignore
 type ProtoTableElementProperties struct {
 	state                                 protoimpl.MessageState           `protogen:"open.v1"`
 	WidthInheritance                      Inheritance                      `protobuf:"varint,1,opt,name=widthInheritance,proto3,enum=docframe.Inheritance" json:"widthInheritance,omitempty"`

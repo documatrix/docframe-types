@@ -48,8 +48,6 @@ export declare type ProtoListSetting = Message<"docframe.ProtoListSetting"> & {
 export declare const ProtoListSettingSchema: GenMessage<ProtoListSetting>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoBoxedListSetting
  */
 export declare type ProtoBoxedListSetting = Message<"docframe.ProtoBoxedListSetting"> & {

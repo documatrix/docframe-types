@@ -21,7 +21,8 @@ func main() {
 
 		nodeFile, node := findNode(gen)
 		if node == nil {
-			return fmt.Errorf("message %q not found in any file to generate", nodeMessageName)
+			// Partial generation (buf generate --path ...) without node.proto: nothing to emit.
+			return nil
 		}
 
 		var oneof *protogen.Oneof

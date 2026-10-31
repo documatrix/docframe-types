@@ -16,7 +16,6 @@ message ProtoListSetting {
   reserved "parent";
 }
 
-// go-gen:ignore
 message ProtoBoxedListSetting {
   ProtoListSetting value = 1;
   bool isNull = 2;

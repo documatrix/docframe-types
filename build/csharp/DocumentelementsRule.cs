@@ -691,9 +691,6 @@ namespace Docframe {
 
   }
 
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoRuleBoundaries : pb::IMessage<ProtoRuleBoundaries>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

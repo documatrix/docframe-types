@@ -177,7 +177,6 @@ func (ProtoNumberedLevelDisplayType) EnumDescriptor() ([]byte, []int) {
 	return file_documentelements_list_level_setting_proto_rawDescGZIP(), []int{2}
 }
 
-// go-gen:ignore
 type ProtoListLevelSetting struct {
 	state            protoimpl.MessageState        `protogen:"open.v1"`
 	ListSettingName  string                        `protobuf:"bytes,1,opt,name=listSettingName,proto3" json:"listSettingName,omitempty"`
@@ -366,7 +365,6 @@ func (x *ProtoListLevelSetting) GetLevelDisplayType() ProtoNumberedLevelDisplayT
 	return ProtoNumberedLevelDisplayType_ALL_PARENT_LEVELS
 }
 
-// go-gen:ignore
 type ProtoImageListLevelSetting struct {
 	state           protoimpl.MessageState    `protogen:"open.v1"`
 	ListSettingName string                    `protobuf:"bytes,1,opt,name=listSettingName,proto3" json:"listSettingName,omitempty"`
@@ -499,7 +497,6 @@ func (x *ProtoImageListLevelSetting) GetImageName() string {
 	return ""
 }
 
-// go-gen:ignore
 type ProtoTextListLevelSetting struct {
 	state           protoimpl.MessageState    `protogen:"open.v1"`
 	ListSettingName string                    `protobuf:"bytes,1,opt,name=listSettingName,proto3" json:"listSettingName,omitempty"`
@@ -648,7 +645,6 @@ func (x *ProtoTextListLevelSetting) GetItalic() *ProtoBoxedBool {
 	return nil
 }
 
-// go-gen:ignore
 type ProtoNumberListLevelSetting struct {
 	state            protoimpl.MessageState        `protogen:"open.v1"`
 	ListSettingName  string                        `protobuf:"bytes,1,opt,name=listSettingName,proto3" json:"listSettingName,omitempty"`
@@ -813,7 +809,6 @@ func (x *ProtoNumberListLevelSetting) GetLevelDisplayType() ProtoNumberedLevelDi
 	return ProtoNumberedLevelDisplayType_ALL_PARENT_LEVELS
 }
 
-// go-gen:ignore
 type ProtoUnnumberedListLevelSetting struct {
 	state           protoimpl.MessageState    `protogen:"open.v1"`
 	ListSettingName string                    `protobuf:"bytes,1,opt,name=listSettingName,proto3" json:"listSettingName,omitempty"`
@@ -970,7 +965,6 @@ func (x *ProtoUnnumberedListLevelSetting) GetCharacter() string {
 	return ""
 }
 
-// go-gen:ignore
 type ProtoCustomListLevelSetting struct {
 	state           protoimpl.MessageState    `protogen:"open.v1"`
 	ListSettingName string                    `protobuf:"bytes,1,opt,name=listSettingName,proto3" json:"listSettingName,omitempty"`

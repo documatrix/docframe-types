@@ -52,8 +52,6 @@ export declare type ProtoTableConfig = Message<"docframe.ProtoTableConfig"> & {
 export declare const ProtoTableConfigSchema: GenMessage<ProtoTableConfig>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoTableSettings
  */
 export declare type ProtoTableSettings = Message<"docframe.ProtoTableSettings"> & {
@@ -100,8 +98,6 @@ export declare type ProtoTableSettings = Message<"docframe.ProtoTableSettings"> 
 export declare const ProtoTableSettingsSchema: GenMessage<ProtoTableSettings>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoBoxedTableContentGroupType
  */
 export declare type ProtoBoxedTableContentGroupType = Message<"docframe.ProtoBoxedTableContentGroupType"> & {
@@ -190,8 +186,6 @@ export declare type ProtoTableContentGroupConfig = Message<"docframe.ProtoTableC
 export declare const ProtoTableContentGroupConfigSchema: GenMessage<ProtoTableContentGroupConfig>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoTableContentGroupSettings
  */
 export declare type ProtoTableContentGroupSettings = Message<"docframe.ProtoTableContentGroupSettings"> & {
@@ -300,8 +294,6 @@ export declare type ProtoTableRowConfig = Message<"docframe.ProtoTableRowConfig"
 export declare const ProtoTableRowConfigSchema: GenMessage<ProtoTableRowConfig>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoTableRowSettings
  */
 export declare type ProtoTableRowSettings = Message<"docframe.ProtoTableRowSettings"> & {
@@ -323,8 +315,6 @@ export declare type ProtoTableRowSettings = Message<"docframe.ProtoTableRowSetti
 export declare const ProtoTableRowSettingsSchema: GenMessage<ProtoTableRowSettings>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoBoxedTableCellType
  */
 export declare type ProtoBoxedTableCellType = Message<"docframe.ProtoBoxedTableCellType"> & {
@@ -437,8 +427,6 @@ export declare type ProtoTableCellConfig = Message<"docframe.ProtoTableCellConfi
 export declare const ProtoTableCellConfigSchema: GenMessage<ProtoTableCellConfig>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoTableCellSettings
  */
 export declare type ProtoTableCellSettings = Message<"docframe.ProtoTableCellSettings"> & {
@@ -504,8 +492,6 @@ export declare type ProtoTableCellSettings = Message<"docframe.ProtoTableCellSet
 export declare const ProtoTableCellSettingsSchema: GenMessage<ProtoTableCellSettings>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoTableWS
  */
 export declare type ProtoTableWS = Message<"docframe.ProtoTableWS"> & {
@@ -532,8 +518,6 @@ export declare type ProtoTableWS = Message<"docframe.ProtoTableWS"> & {
 export declare const ProtoTableWSSchema: GenMessage<ProtoTableWS>;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoTableElementProperties
  */
 export declare type ProtoTableElementProperties = Message<"docframe.ProtoTableElementProperties"> & {

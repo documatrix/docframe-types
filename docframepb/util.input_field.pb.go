@@ -129,15 +129,19 @@ type ProtoBaseInputField struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	Name  string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Meta  bool                   `protobuf:"varint,2,opt,name=meta,proto3" json:"meta,omitempty"`
+	//
 	// If value is not null, the value of value should be used as field value.
+	//
 	Value        *ProtoBoxedString `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
 	FormatUUID   string            `protobuf:"bytes,4,opt,name=formatUUID,proto3" json:"formatUUID,omitempty"`
 	DataTypeUUID string            `protobuf:"bytes,5,opt,name=dataTypeUUID,proto3" json:"dataTypeUUID,omitempty"`
 	OnChangeCode string            `protobuf:"bytes,6,opt,name=onChangeCode,proto3" json:"onChangeCode,omitempty"`
 	Placeholder  string            `protobuf:"bytes,7,opt,name=placeholder,proto3" json:"placeholder,omitempty"`
+	//
 	// if bindDefaultValue is true, the result of the defaultValueCode evaluation will not be copied to the value field, but re-evaluated for every
 	// time the input field is rendered.
 	// if bindDefaultValue is false, the defaultValueCode will be evaluated once and the result will be copied to the value field.
+	//
 	BindDefaultValue    bool                `protobuf:"varint,8,opt,name=bindDefaultValue,proto3" json:"bindDefaultValue,omitempty"`
 	DefaultValueCode    string              `protobuf:"bytes,9,opt,name=defaultValueCode,proto3" json:"defaultValueCode,omitempty"`
 	Readonly            bool                `protobuf:"varint,10,opt,name=readonly,proto3" json:"readonly,omitempty"`

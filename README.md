@@ -25,7 +25,7 @@ the npm package `docframe-types`.
 bun install
 bun run build     # buf generate + index
 bun run lint      # buf lint
-bun run breaking  # buf breaking against main
+bun run breaking  # buf breaking against origin/main (needs the buf layout on main)
 ```
 
 `buf generate` uses remote plugins for Go and C#, and the local

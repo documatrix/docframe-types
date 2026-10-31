@@ -12,8 +12,6 @@ import type { ProtoColor } from "./util.color_pb";
 export declare const file_documentelements_set_unset_color: GenFile;
 
 /**
- * go-gen:ignore
- *
  * @generated from message docframe.ProtoColorChoice
  */
 export declare type ProtoColorChoice = Message<"docframe.ProtoColorChoice"> & {

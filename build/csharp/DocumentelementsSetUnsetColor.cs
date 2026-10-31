@@ -56,9 +56,6 @@ namespace Docframe {
 
   }
   #region Messages
-  /// <summary>
-  /// go-gen:ignore
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class ProtoColorChoice : pb::IMessage<ProtoColorChoice>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

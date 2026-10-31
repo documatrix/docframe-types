@@ -32,5 +32,5 @@ jobs:
           fi
       - run: bun run build
       - name: Generated code is up to date
-        run: git diff --exit-code
+        run: git add -N . && git diff --exit-code
       - run: go build ./... && go vet ./... && go test ./...

@@ -35,7 +35,6 @@ enum ProtoRuleMode {
   BOUNDARY = 1;
 }
 
-// go-gen:ignore
 message ProtoRuleBoundaries {
   ProtoMeasure start = 1;
   ProtoMeasure end = 2;

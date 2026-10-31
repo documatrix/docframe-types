@@ -97,7 +97,6 @@ func (x *ProtoListSetting) GetUuid() string {
 	return ""
 }
 
-// go-gen:ignore
 type ProtoBoxedListSetting struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Value         *ProtoListSetting      `protobuf:"bytes,1,opt,name=value,proto3" json:"value,omitempty"`
