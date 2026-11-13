@@ -6672,6 +6672,8 @@ type ProtoTable struct {
 	ElementProperties *ProtoTableElementProperties `protobuf:"bytes,8,opt,name=elementProperties,proto3" json:"elementProperties,omitempty"`
 	Uuid              string                       `protobuf:"bytes,9,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	Name              string                       `protobuf:"bytes,10,opt,name=name,proto3" json:"name,omitempty"`
+	TableLayout       string                       `protobuf:"bytes,11,opt,name=tableLayout,proto3" json:"tableLayout,omitempty"`
+	TableLayoutCode   string                       `protobuf:"bytes,12,opt,name=tableLayoutCode,proto3" json:"tableLayoutCode,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -6772,6 +6774,20 @@ func (x *ProtoTable) GetUuid() string {
 func (x *ProtoTable) GetName() string {
 	if x != nil {
 		return x.Name
+	}
+	return ""
+}
+
+func (x *ProtoTable) GetTableLayout() string {
+	if x != nil {
+		return x.TableLayout
+	}
+	return ""
+}
+
+func (x *ProtoTable) GetTableLayoutCode() string {
+	if x != nil {
+		return x.TableLayoutCode
 	}
 	return ""
 }
@@ -7234,6 +7250,7 @@ type ProtoTableRow struct {
 	ElementProperties *ProtoTableElementProperties `protobuf:"bytes,6,opt,name=elementProperties,proto3" json:"elementProperties,omitempty"`
 	Uuid              string                       `protobuf:"bytes,7,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	Name              string                       `protobuf:"bytes,8,opt,name=name,proto3" json:"name,omitempty"`
+	Repeating         bool                         `protobuf:"varint,9,opt,name=repeating,proto3" json:"repeating,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -7322,6 +7339,13 @@ func (x *ProtoTableRow) GetName() string {
 		return x.Name
 	}
 	return ""
+}
+
+func (x *ProtoTableRow) GetRepeating() bool {
+	if x != nil {
+		return x.Repeating
+	}
+	return false
 }
 
 type ProtoTableRowConfig struct {
@@ -7532,6 +7556,7 @@ type ProtoTableCell struct {
 	ElementProperties *ProtoTableElementProperties `protobuf:"bytes,8,opt,name=elementProperties,proto3" json:"elementProperties,omitempty"`
 	Uuid              string                       `protobuf:"bytes,9,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	Name              string                       `protobuf:"bytes,10,opt,name=name,proto3" json:"name,omitempty"`
+	Repeating         bool                         `protobuf:"varint,11,opt,name=repeating,proto3" json:"repeating,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -7634,6 +7659,13 @@ func (x *ProtoTableCell) GetName() string {
 		return x.Name
 	}
 	return ""
+}
+
+func (x *ProtoTableCell) GetRepeating() bool {
+	if x != nil {
+		return x.Repeating
+	}
+	return false
 }
 
 type ProtoTableCellConfig struct {
@@ -15347,7 +15379,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\tunderline\x18\b \x01(\v2\x0f.ProtoBoxedBoolR\tunderline\x125\n" +
 	"\rstrikethrough\x18\t \x01(\v2\x0f.ProtoBoxedBoolR\rstrikethrough\x12(\n" +
 	"\x0fcomChannelUUIDs\x18\n" +
-	" \x03(\tR\x0fcomChannelUUIDs\"\xa6\x03\n" +
+	" \x03(\tR\x0fcomChannelUUIDs\"\xf2\x03\n" +
 	"\n" +
 	"ProtoTable\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
@@ -15362,7 +15394,9 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x11elementProperties\x18\b \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
 	"\x04uuid\x18\t \x01(\tR\x04uuid\x12\x12\n" +
 	"\x04name\x18\n" +
-	" \x01(\tR\x04name\"\xd0\x01\n" +
+	" \x01(\tR\x04name\x12 \n" +
+	"\vtableLayout\x18\v \x01(\tR\vtableLayout\x12(\n" +
+	"\x0ftableLayoutCode\x18\f \x01(\tR\x0ftableLayoutCode\"\xd0\x01\n" +
 	"\x10ProtoTableConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x12/\n" +
 	"\bsettings\x18\x02 \x01(\v2\x13.ProtoTableSettingsR\bsettings\x12\x1e\n" +
@@ -15401,7 +15435,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x1eProtoTableContentGroupSettings\x12L\n" +
 	"\x10contentGroupType\x18\x01 \x01(\v2 .ProtoBoxedTableContentGroupTypeR\x10contentGroupType\x127\n" +
 	"\x10backgroundColors\x18\x02 \x03(\v2\v.ProtoColorR\x10backgroundColors\x12\x1d\n" +
-	"\x02ws\x18\x03 \x01(\v2\r.ProtoTableWSR\x02ws\"\x81\x03\n" +
+	"\x02ws\x18\x03 \x01(\v2\r.ProtoTableWSR\x02ws\"\x9f\x03\n" +
 	"\rProtoTableRow\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x122\n" +
@@ -15410,7 +15444,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x0fcomChannelUUIDs\x18\x05 \x03(\tR\x0fcomChannelUUIDs\x12J\n" +
 	"\x11elementProperties\x18\x06 \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
 	"\x04uuid\x18\a \x01(\tR\x04uuid\x12\x12\n" +
-	"\x04name\x18\b \x01(\tR\x04name\"\x92\x02\n" +
+	"\x04name\x18\b \x01(\tR\x04name\x12\x1c\n" +
+	"\trepeating\x18\t \x01(\bR\trepeating\"\x92\x02\n" +
 	"\x13ProtoTableRowConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x122\n" +
 	"\bsettings\x18\x02 \x01(\v2\x16.ProtoTableRowSettingsR\bsettings\x12\x1e\n" +
@@ -15426,7 +15461,7 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x02ws\x18\x02 \x01(\v2\r.ProtoTableWSR\x02ws\"\\\n" +
 	"\x17ProtoBoxedTableCellType\x12)\n" +
 	"\x05value\x18\x01 \x01(\x0e2\x13.ProtoTableCellTypeR\x05value\x12\x16\n" +
-	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xc1\x03\n" +
+	"\x06isNull\x18\x02 \x01(\bR\x06isNull\"\xdf\x03\n" +
 	"\x0eProtoTableCell\x122\n" +
 	"\t_children\x18\x01 \x03(\v2\x15.ProtoDocumentElementR\bChildren\x12-\n" +
 	"\x06parent\x18\x02 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x123\n" +
@@ -15440,7 +15475,8 @@ const file_build_docframe_proto_rawDesc = "" +
 	"\x11elementProperties\x18\b \x01(\v2\x1c.ProtoTableElementPropertiesR\x11elementProperties\x12\x12\n" +
 	"\x04uuid\x18\t \x01(\tR\x04uuid\x12\x12\n" +
 	"\x04name\x18\n" +
-	" \x01(\tR\x04name\"\x8e\x02\n" +
+	" \x01(\tR\x04name\x12\x1c\n" +
+	"\trepeating\x18\v \x01(\bR\trepeating\"\x8e\x02\n" +
 	"\x14ProtoTableCellConfig\x12-\n" +
 	"\x06parent\x18\x01 \x01(\v2\x15.ProtoDocumentElementR\x06parent\x123\n" +
 	"\bsettings\x18\x02 \x01(\v2\x17.ProtoTableCellSettingsR\bsettings\x12\x1e\n" +
