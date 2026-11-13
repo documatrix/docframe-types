@@ -667,6 +667,8 @@ repeated string comChannelUUIDs = 7;
 ProtoTableElementProperties elementProperties = 8;
 string uuid = 9;
 string name = 10;
+string tableLayout = 11;
+string tableLayoutCode = 12;
 }
 
 message ProtoTableConfig {
@@ -738,6 +740,7 @@ repeated string comChannelUUIDs = 5;
 ProtoTableElementProperties elementProperties = 6;
 string uuid = 7;
 string name = 8;
+bool repeating = 9;
 }
 
 message ProtoTableRowConfig {
@@ -779,6 +782,7 @@ repeated string comChannelUUIDs = 7;
 ProtoTableElementProperties elementProperties = 8;
 string uuid = 9;
 string name = 10;
+bool repeating = 11;
 }
 
 message ProtoTableCellConfig {

@@ -13,6 +13,11 @@ message ProtoTable {
   ProtoTableElementProperties elementProperties = 8;
   string uuid = 9;
   string name = 10;
+  // Internal name of the table layout which formats the table. Empty if the table uses none.
+  string tableLayout = 11;
+  // dmSCRIPT code which returns the internal name of the table layout. If it is set, it is used
+  // instead of tableLayout.
+  string tableLayoutCode = 12;
 }
 
 message ProtoTableConfig {
@@ -95,6 +100,9 @@ message ProtoTableRow {
   ProtoTableElementProperties elementProperties = 6;
   string uuid = 7;
   string name = 8;
+  // Only used in a table layout: indicates that this row formats all rows of a table
+  // for which the layout has no own row. Without a repeating row the last row is used.
+  bool repeating = 9;
 }
 
 message ProtoTableRowConfig {
@@ -144,6 +152,9 @@ message ProtoTableCell {
   ProtoTableElementProperties elementProperties = 8;
   string uuid = 9;
   string name = 10;
+  // Only used in a table layout: indicates that this cell formats all cells of a row
+  // for which the layout has no own cell. Without a repeating cell the last cell is used.
+  bool repeating = 11;
 }
 
 message ProtoTableCellConfig {

@@ -22264,6 +22264,8 @@ $root.ProtoTable = (function() {
      * @property {IProtoTableElementProperties|null} [elementProperties] ProtoTable elementProperties
      * @property {string|null} [uuid] ProtoTable uuid
      * @property {string|null} [name] ProtoTable name
+     * @property {string|null} [tableLayout] ProtoTable tableLayout
+     * @property {string|null} [tableLayoutCode] ProtoTable tableLayoutCode
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -22366,6 +22368,22 @@ $root.ProtoTable = (function() {
     ProtoTable.prototype.name = "";
 
     /**
+     * ProtoTable tableLayout.
+     * @member {string} tableLayout
+     * @memberof ProtoTable
+     * @instance
+     */
+    ProtoTable.prototype.tableLayout = "";
+
+    /**
+     * ProtoTable tableLayoutCode.
+     * @member {string} tableLayoutCode
+     * @memberof ProtoTable
+     * @instance
+     */
+    ProtoTable.prototype.tableLayoutCode = "";
+
+    /**
      * Creates a new ProtoTable instance using the specified properties.
      * @function create
      * @memberof ProtoTable
@@ -22411,6 +22429,10 @@ $root.ProtoTable = (function() {
             writer.uint32(/* id 9, wireType 2 =*/74).string(message.uuid);
         if (message.name != null && Object.hasOwnProperty.call(message, "name"))
             writer.uint32(/* id 10, wireType 2 =*/82).string(message.name);
+        if (message.tableLayout != null && Object.hasOwnProperty.call(message, "tableLayout"))
+            writer.uint32(/* id 11, wireType 2 =*/90).string(message.tableLayout);
+        if (message.tableLayoutCode != null && Object.hasOwnProperty.call(message, "tableLayoutCode"))
+            writer.uint32(/* id 12, wireType 2 =*/98).string(message.tableLayoutCode);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -22531,6 +22553,24 @@ $root.ProtoTable = (function() {
                         delete message.name;
                     continue;
                 }
+            case 11: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.tableLayout = value;
+                    else
+                        delete message.tableLayout;
+                    continue;
+                }
+            case 12: {
+                    if (wireType !== 2)
+                        break;
+                    if ((value = reader.string()).length)
+                        message.tableLayoutCode = value;
+                    else
+                        delete message.tableLayoutCode;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -22622,6 +22662,12 @@ $root.ProtoTable = (function() {
         if (message.name != null && message.hasOwnProperty("name"))
             if (!$util.isString(message.name))
                 return "name: string expected";
+        if (message.tableLayout != null && message.hasOwnProperty("tableLayout"))
+            if (!$util.isString(message.tableLayout))
+                return "tableLayout: string expected";
+        if (message.tableLayoutCode != null && message.hasOwnProperty("tableLayoutCode"))
+            if (!$util.isString(message.tableLayoutCode))
+                return "tableLayoutCode: string expected";
         return null;
     };
 
@@ -22692,6 +22738,12 @@ $root.ProtoTable = (function() {
         if (object.name != null)
             if (typeof object.name !== "string" || object.name.length)
                 message.name = String(object.name);
+        if (object.tableLayout != null)
+            if (typeof object.tableLayout !== "string" || object.tableLayout.length)
+                message.tableLayout = String(object.tableLayout);
+        if (object.tableLayoutCode != null)
+            if (typeof object.tableLayoutCode !== "string" || object.tableLayoutCode.length)
+                message.tableLayoutCode = String(object.tableLayoutCode);
         return message;
     };
 
@@ -22721,6 +22773,8 @@ $root.ProtoTable = (function() {
             object.elementProperties = null;
             object.uuid = "";
             object.name = "";
+            object.tableLayout = "";
+            object.tableLayoutCode = "";
         }
         if (message._children && message._children.length) {
             object._children = Array(message._children.length);
@@ -22748,6 +22802,10 @@ $root.ProtoTable = (function() {
             object.uuid = message.uuid;
         if (message.name != null && message.hasOwnProperty("name"))
             object.name = message.name;
+        if (message.tableLayout != null && message.hasOwnProperty("tableLayout"))
+            object.tableLayout = message.tableLayout;
+        if (message.tableLayoutCode != null && message.hasOwnProperty("tableLayoutCode"))
+            object.tableLayoutCode = message.tableLayoutCode;
         return object;
     };
 
@@ -25002,6 +25060,7 @@ $root.ProtoTableRow = (function() {
      * @property {IProtoTableElementProperties|null} [elementProperties] ProtoTableRow elementProperties
      * @property {string|null} [uuid] ProtoTableRow uuid
      * @property {string|null} [name] ProtoTableRow name
+     * @property {boolean|null} [repeating] ProtoTableRow repeating
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -25088,6 +25147,14 @@ $root.ProtoTableRow = (function() {
     ProtoTableRow.prototype.name = "";
 
     /**
+     * ProtoTableRow repeating.
+     * @member {boolean} repeating
+     * @memberof ProtoTableRow
+     * @instance
+     */
+    ProtoTableRow.prototype.repeating = false;
+
+    /**
      * Creates a new ProtoTableRow instance using the specified properties.
      * @function create
      * @memberof ProtoTableRow
@@ -25129,6 +25196,8 @@ $root.ProtoTableRow = (function() {
             writer.uint32(/* id 7, wireType 2 =*/58).string(message.uuid);
         if (message.name != null && Object.hasOwnProperty.call(message, "name"))
             writer.uint32(/* id 8, wireType 2 =*/66).string(message.name);
+        if (message.repeating != null && Object.hasOwnProperty.call(message, "repeating"))
+            writer.uint32(/* id 9, wireType 0 =*/72).bool(message.repeating);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -25234,6 +25303,15 @@ $root.ProtoTableRow = (function() {
                         delete message.name;
                     continue;
                 }
+            case 9: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.repeating = value;
+                    else
+                        delete message.repeating;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -25317,6 +25395,9 @@ $root.ProtoTableRow = (function() {
         if (message.name != null && message.hasOwnProperty("name"))
             if (!$util.isString(message.name))
                 return "name: string expected";
+        if (message.repeating != null && message.hasOwnProperty("repeating"))
+            if (typeof message.repeating !== "boolean")
+                return "repeating: boolean expected";
         return null;
     };
 
@@ -25379,6 +25460,9 @@ $root.ProtoTableRow = (function() {
         if (object.name != null)
             if (typeof object.name !== "string" || object.name.length)
                 message.name = String(object.name);
+        if (object.repeating != null)
+            if (object.repeating)
+                message.repeating = Boolean(object.repeating);
         return message;
     };
 
@@ -25406,6 +25490,7 @@ $root.ProtoTableRow = (function() {
             object.elementProperties = null;
             object.uuid = "";
             object.name = "";
+            object.repeating = false;
         }
         if (message._children && message._children.length) {
             object._children = Array(message._children.length);
@@ -25429,6 +25514,8 @@ $root.ProtoTableRow = (function() {
             object.uuid = message.uuid;
         if (message.name != null && message.hasOwnProperty("name"))
             object.name = message.name;
+        if (message.repeating != null && message.hasOwnProperty("repeating"))
+            object.repeating = message.repeating;
         return object;
     };
 
@@ -26467,6 +26554,7 @@ $root.ProtoTableCell = (function() {
      * @property {IProtoTableElementProperties|null} [elementProperties] ProtoTableCell elementProperties
      * @property {string|null} [uuid] ProtoTableCell uuid
      * @property {string|null} [name] ProtoTableCell name
+     * @property {boolean|null} [repeating] ProtoTableCell repeating
      * @property {Array.<Uint8Array>} [$unknowns] Unknown fields preserved while decoding
      */
 
@@ -26569,6 +26657,14 @@ $root.ProtoTableCell = (function() {
     ProtoTableCell.prototype.name = "";
 
     /**
+     * ProtoTableCell repeating.
+     * @member {boolean} repeating
+     * @memberof ProtoTableCell
+     * @instance
+     */
+    ProtoTableCell.prototype.repeating = false;
+
+    /**
      * Creates a new ProtoTableCell instance using the specified properties.
      * @function create
      * @memberof ProtoTableCell
@@ -26614,6 +26710,8 @@ $root.ProtoTableCell = (function() {
             writer.uint32(/* id 9, wireType 2 =*/74).string(message.uuid);
         if (message.name != null && Object.hasOwnProperty.call(message, "name"))
             writer.uint32(/* id 10, wireType 2 =*/82).string(message.name);
+        if (message.repeating != null && Object.hasOwnProperty.call(message, "repeating"))
+            writer.uint32(/* id 11, wireType 0 =*/88).bool(message.repeating);
         if (message.$unknowns != null && Object.hasOwnProperty.call(message, "$unknowns"))
             for (var i = 0; i < message.$unknowns.length; ++i)
                 writer.raw(message.$unknowns[i]);
@@ -26737,6 +26835,15 @@ $root.ProtoTableCell = (function() {
                         delete message.name;
                     continue;
                 }
+            case 11: {
+                    if (wireType !== 0)
+                        break;
+                    if (value = reader.bool())
+                        message.repeating = value;
+                    else
+                        delete message.repeating;
+                    continue;
+                }
             }
             reader.skipType(wireType, _depth, tag);
             $util.makeProp(message, "$unknowns", false);
@@ -26826,6 +26933,9 @@ $root.ProtoTableCell = (function() {
         if (message.name != null && message.hasOwnProperty("name"))
             if (!$util.isString(message.name))
                 return "name: string expected";
+        if (message.repeating != null && message.hasOwnProperty("repeating"))
+            if (typeof message.repeating !== "boolean")
+                return "repeating: boolean expected";
         return null;
     };
 
@@ -26894,6 +27004,9 @@ $root.ProtoTableCell = (function() {
         if (object.name != null)
             if (typeof object.name !== "string" || object.name.length)
                 message.name = String(object.name);
+        if (object.repeating != null)
+            if (object.repeating)
+                message.repeating = Boolean(object.repeating);
         return message;
     };
 
@@ -26923,6 +27036,7 @@ $root.ProtoTableCell = (function() {
             object.elementProperties = null;
             object.uuid = "";
             object.name = "";
+            object.repeating = false;
         }
         if (message._children && message._children.length) {
             object._children = Array(message._children.length);
@@ -26950,6 +27064,8 @@ $root.ProtoTableCell = (function() {
             object.uuid = message.uuid;
         if (message.name != null && message.hasOwnProperty("name"))
             object.name = message.name;
+        if (message.repeating != null && message.hasOwnProperty("repeating"))
+            object.repeating = message.repeating;
         return object;
     };
 

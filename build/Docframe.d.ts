@@ -7471,6 +7471,12 @@ export interface IProtoTable {
     /** ProtoTable name */
     name?: (string|null);
 
+    /** ProtoTable tableLayout */
+    tableLayout?: (string|null);
+
+    /** ProtoTable tableLayoutCode */
+    tableLayoutCode?: (string|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -7516,6 +7522,12 @@ export class ProtoTable implements IProtoTable {
 
     /** ProtoTable name. */
     public name: string;
+
+    /** ProtoTable tableLayout. */
+    public tableLayout: string;
+
+    /** ProtoTable tableLayoutCode. */
+    public tableLayoutCode: string;
 
     /**
      * Creates a new ProtoTable instance using the specified properties.
@@ -8386,6 +8398,9 @@ export interface IProtoTableRow {
     /** ProtoTableRow name */
     name?: (string|null);
 
+    /** ProtoTableRow repeating */
+    repeating?: (boolean|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -8425,6 +8440,9 @@ export class ProtoTableRow implements IProtoTableRow {
 
     /** ProtoTableRow name. */
     public name: string;
+
+    /** ProtoTableRow repeating. */
+    public repeating: boolean;
 
     /**
      * Creates a new ProtoTableRow instance using the specified properties.
@@ -8901,6 +8919,9 @@ export interface IProtoTableCell {
     /** ProtoTableCell name */
     name?: (string|null);
 
+    /** ProtoTableCell repeating */
+    repeating?: (boolean|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -8946,6 +8967,9 @@ export class ProtoTableCell implements IProtoTableCell {
 
     /** ProtoTableCell name. */
     public name: string;
+
+    /** ProtoTableCell repeating. */
+    public repeating: boolean;
 
     /**
      * Creates a new ProtoTableCell instance using the specified properties.
