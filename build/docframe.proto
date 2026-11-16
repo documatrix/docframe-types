@@ -624,6 +624,7 @@ repeated string comChannelUUIDs = 29;
 string uuid = 30;
 ProtoBoxedBool skipSpaceOnStartOfColumn = 31;
 ProtoBoxedInt32 bookmarkIndentationLevel = 32;
+ProtoBoxedInt32 listBehaviour = 33;
 }
 message ProtoSection {
 repeated ProtoDocumentElement _children = 1;

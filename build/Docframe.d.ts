@@ -6843,6 +6843,9 @@ export interface IProtoParagraphFormat {
     /** ProtoParagraphFormat bookmarkIndentationLevel */
     bookmarkIndentationLevel?: (IProtoBoxedInt32|null);
 
+    /** ProtoParagraphFormat listBehaviour */
+    listBehaviour?: (IProtoBoxedInt32|null);
+
     /** Unknown fields preserved while decoding */
     $unknowns?: Uint8Array[];
 }
@@ -6954,6 +6957,9 @@ export class ProtoParagraphFormat implements IProtoParagraphFormat {
 
     /** ProtoParagraphFormat bookmarkIndentationLevel. */
     public bookmarkIndentationLevel?: (IProtoBoxedInt32|null);
+
+    /** ProtoParagraphFormat listBehaviour. */
+    public listBehaviour?: (IProtoBoxedInt32|null);
 
     /**
      * Creates a new ProtoParagraphFormat instance using the specified properties.
